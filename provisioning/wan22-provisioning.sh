@@ -43,19 +43,19 @@ NODES=(
 )
 
 WORKFLOWS=(
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/PMP-LoRaStack-Upscale-Wildcards.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-I2V-AutoPrompt.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-I2V-AutoPrompt-GGUF.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-I2V-AutoPrompt-Story.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-I2V-Full-AutoPrompt-MMAudio.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-I2V-Full-AutoPrompt-MMAudio-GGUF.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-I2V-SVI-AutoPrompt.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-I2V-SVI-AutoPrompt-GGUF.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-I2V-SVI-AutoPrompt-Story.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-T2V-AutoPrompt.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-T2V-AutoPrompt-GGUF.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-T2V-I2V-AutoPrompt-Story.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/WAN2.2-T2V-I2V-Full-AutoPrompt-MMAudio-GGUF.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/pony/PMP-LoRaStack-Upscale-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/fp8/WAN2.2-I2V-AutoPrompt.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/gguf/WAN2.2-I2V-AutoPrompt-GGUF.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/fp8/WAN2.2-I2V-AutoPrompt-Story.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/fp8/WAN2.2-I2V-Full-AutoPrompt-MMAudio.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/gguf/WAN2.2-I2V-Full-AutoPrompt-MMAudio-GGUF.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/fp8/WAN2.2-I2V-SVI-AutoPrompt.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/gguf/WAN2.2-I2V-SVI-AutoPrompt-GGUF.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/fp8/WAN2.2-I2V-SVI-AutoPrompt-Story.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/fp8/WAN2.2-T2V-AutoPrompt.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/gguf/WAN2.2-T2V-AutoPrompt-GGUF.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/fp8/WAN2.2-T2V-I2V-AutoPrompt-Story.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/wan22/gguf/WAN2.2-T2V-I2V-Full-AutoPrompt-MMAudio-GGUF.json"
 )
 
 CHECKPOINT_MODELS=(
