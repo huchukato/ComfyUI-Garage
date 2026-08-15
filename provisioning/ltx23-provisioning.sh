@@ -38,8 +38,8 @@ NODES=(
 )
 
 WORKFLOWS=(
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/ltx/LTX23-I2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-QwenVL-Mod/raw/main/vastai/workflows/PMP-LoRaStack-Upscale-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/ltx/23/LTX23-I2VA-Qwen3VL.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/pony/PMP-LoRaStack-Upscale-Wildcards.json"
 )
 
 CHECKPOINT_MODELS=(
