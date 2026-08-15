@@ -7,7 +7,7 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    "--upgrade --force-reinstall --no-cache-dir https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.45-cu131-linux-20260801/llama_cpp_python-0.3.45+cu131-cp312-cp312-linux_x86_64.whl"
+    "--upgrade --force-reinstall --no-cache-dir https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.46-cu131-linux-20260808/llama_cpp_python-0.3.46+cu131-cp312-cp312-linux_x86_64.whl"
     "sageattention"
     "tensorrt_cu13==10.15.1.29"
     "tensorrt_cu13_bindings==10.15.1.29"
