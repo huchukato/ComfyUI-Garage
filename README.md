@@ -54,10 +54,10 @@ ComfyUI-Garage/
 ## Link raw dei provisioning
 
 ```
-https://github.com/huchukato/ComfyUI-Garage/raw/main/vastai/wan22-provisioning.sh
-https://github.com/huchukato/ComfyUI-Garage/raw/main/vastai/ltx23-provisioning.sh
-https://github.com/huchukato/ComfyUI-Garage/raw/main/vastai/ltx25-provisioning.sh
-https://github.com/huchukato/ComfyUI-Garage/raw/main/vastai/mmh3-provisioning.sh
+https://github.com/huchukato/ComfyUI-Garage/raw/master/vastai/wan22-provisioning.sh
+https://github.com/huchukato/ComfyUI-Garage/raw/master/vastai/ltx23-provisioning.sh
+https://github.com/huchukato/ComfyUI-Garage/raw/master/vastai/ltx25-provisioning.sh
+https://github.com/huchukato/ComfyUI-Garage/raw/master/vastai/mmh3-provisioning.sh
 ```
 
 ## Workflow disponibili (24 totali)
