@@ -87,6 +87,33 @@ https://github.com/huchukato/ComfyUI-Garage/raw/main/vastai/mmh3-provisioning.sh
 | `CU13-LTX25` | runpod/comfyui:cuda13.0 | LTX 2.5 |
 | `CU13-MMH3` | runpod/comfyui:cuda13.0 | MiniMax H3 |
 
+## Build con `one_script_to_build_them_all.sh`
+
+Un Anello per dominarli tutti. Builda e pusha le immagini Docker su Docker Hub in un colpo solo.
+
+```bash
+# Build di tutte e 5 le immagini
+./one_script_to_build_them_all.sh
+
+# Build solo una
+./one_script_to_build_them_all.sh wan22-cu128
+./one_script_to_build_them_all.sh wan22-cu13
+./one_script_to_build_them_all.sh ltx23
+./one_script_to_build_them_all.sh ltx25
+./one_script_to_build_them_all.sh mmh3
+
+# Build più di una
+./one_script_to_build_them_all.sh wan22-cu128 ltx25 mmh3
+
+# Forza rebuild senza cache
+./one_script_to_build_them_all.sh --no-cache
+
+# Combina target + no-cache
+./one_script_to_build_them_all.sh wan22-cu128 ltx25 --no-cache
+```
+
+Per ogni immagine: build con `docker buildx` (linux/amd64) → push su Docker Hub → riepilogo finale con built/failed.
+
 ## Note
 
 - I provisioning script scaricano i WF da questa repo via `raw/main/`.
