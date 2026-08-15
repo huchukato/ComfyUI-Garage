@@ -38,9 +38,9 @@ NODES=(
 )
 
 WORKFLOWS=(
-    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/ltx/25/LTX25-I2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/ltx/25/LTX25-FL2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/main/workflows/pony/PMP-LoRaStack-Upscale-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/ltx/25/LTX25-I2VA-Qwen3VL.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/ltx/25/LTX25-FL2VA-Qwen3VL.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PMP-LoRaStack-Upscale-Wildcards.json"
 )
 
 CHECKPOINT_MODELS=(
