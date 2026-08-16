@@ -1,375 +1,22 @@
 {
   "id": "0112e9af-5129-48ba-af78-92c40ac40b40",
   "revision": 0,
-  "last_node_id": 271,
-  "last_link_id": 409,
+  "last_node_id": 258,
+  "last_link_id": 386,
   "nodes": [
-    {
-      "id": 254,
-      "type": "MarkdownNote",
-      "pos": [
-        790,
-        2310
-      ],
-      "size": [
-        440,
-        1640
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: About LTX-2.5",
-      "properties": {},
-      "widgets_values": [
-        "# LTX-2.5\n\nLTX-2.5 is Lightricks' open video generation model : fast, local-first, and built for production. Run it locally, fine-tune it for your own use case, or integrate it into your pipeline.\n\n**Key highlights:**\n\n- **Pixel Diffusion** : keyframes-first generation that builds every scene on a grid of high-fidelity keyframes for industry-leading pixel quality\n- **Diffusion Video Decoder** : sharper faces, legible text, fewer smears in fast motion\n- **Native multishot** : one generation yields multiple connected shots holding character, environment, lighting, voice, and style across cuts\n- **Custom Gemma 4 12B text encoder** : retains multiple subjects, actions, lighting, detail, and camera direction across complex prompts\n- **Dedicated Prompt Enhancer** : a lightweight model that expands short prompts into rich cinematic instructions at near-zero extra compute\n- **Auto Duration** : predicts the right clip length from the described action before diffusion begins\n- **Better distilled model** : carries far more quality, prompt adherence, and motion into a smaller, faster variant\n- Carried over from LTX-2.3: native 4K, synchronized audio-video\n\nOfficial model & files: https://huggingface.co/Lightricks/LTX-2.5\n## What this workflow does\n\nThis **First & Last Frame** workflow interpolates between two images. Load a first and a last frame, and the model generates the connected shots in between : holding character, environment, lighting, and style across the transition, with synchronized audio.\n\n## Subgraph parameters\n\nThe **First & Last Frame to Video (LTX-2.5)** node is a subgraph. Click the **Enter subgraph** button at the bottom of the node to open its internal graph, where you can inspect and fine-tune every step of the pipeline (conditioning, sampler, CFG guider, VAE decode, and more).\n\n| Parameter | What it does |\n|---|---|\n| first_frame | Starting image of the transition (load your own image in **Load First Frame**) |\n| last_frame | Ending image of the transition (load your own image in **Load Last Frame**) |\n| prompt | Text prompt describing the motion, scene, lighting, camera, and style |\n| prompt_enhance | Toggle the built-in Prompt Enhancer: expands short prompts into rich cinematic instructions at near-zero extra compute |\n| duration | Clip length in seconds (Auto Duration can predict it from the action) |\n| width / height | Output resolution in pixels (e.g. 1280\u00d7720) |\n| seed | Random seed : set a fixed value to reproduce the same result |\n| frame_rate | Frames per second |\n| unet_name | Main model: LTX-2.5 distilled transformer (ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors) |\n| video_vae | Video VAE used for decoding (ltx-2.5-video-vae-bf16.safetensors) |\n| audio_vae | Audio VAE that produces synchronized audio (ltx-2.5-audio-vae-bf16.safetensors) |\n| clip_name | Text encoder: custom Gemma 4 12B with projection (gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors) |\n| prompt_enhance_model | Model checkpoint used by the Prompt Enhancer |\n\n## How to use\n\n1. Download the models listed in **Note: Model Links** and place them in ComfyUI's `models/` folder\n2. Replace the images in **Load First Frame** and **Load Last Frame** with your own start/end frames\n3. Write a prompt describing the transition, optionally toggle **prompt_enhance** for short prompts\n4. Set **duration** / **width** / **height** / **frame_rate** (defaults work well) and hit **Queue**\n5. To dive deeper, click **Enter subgraph** at the bottom of the main node : every internal step (conditioning, sampler, CFG, VAE decode) can be edited there\n"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 255,
-      "type": "MarkdownNote",
-      "pos": [
-        190,
-        2320
-      ],
-      "size": [
-        550,
-        880
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Model Links",
-      "properties": {},
-      "widgets_values": [
-        "Guide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Model Links\n\n**Input Assets** \n\n- [robot_hand_back.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/robot_hand_back.png) \u2014 required workflow input (`input/robot_hand_back.png`)\n- [robot_hand_energy.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/robot_hand_energy.png) \u2014 required workflow input (`input/robot_hand_energy.png`)\n\n**diffusion_models**\n\n- [ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors)\n\n**vae**\n\n- [ltx-2.5-video-vae-bf16.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-video-vae-bf16.safetensors)\n- [ltx-2.5-audio-vae-bf16.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-audio-vae-bf16.safetensors)\n\n**text_encoders**\n\n- [gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors)\n- [gemma4_e2b_it_bf16.safetensors](https://huggingface.co/Comfy-Org/gemma-4/resolve/main/text_encoders/gemma4_e2b_it_bf16.safetensors)\n\n\n## Model Storage Location\n\n```\n\ud83d\udcc2 ComfyUI/\n\u251c\u2500\u2500 \ud83d\udcc2 models/\n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 diffusion_models/\n\u2502   \u2502   \u2514\u2500\u2500 ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors\n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 vae/\n\u2502   \u2502   \u251c\u2500\u2500 ltx-2.5-video-vae-bf16.safetensors\n\u2502   \u2502   \u2514\u2500\u2500 ltx-2.5-audio-vae-bf16.safetensors\n\u2502   \u2514\u2500\u2500 \ud83d\udcc2 text_encoders/\n\u2502       \u251c\u2500\u2500 gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors\n\u2502       \u2514\u2500\u2500 gemma4_e2b_it_bf16.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 258,
-      "type": "MarkdownNote",
-      "pos": [
-        190,
-        2170
-      ],
-      "size": [
-        340,
-        90
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Model Links",
-      "properties": {},
-      "widgets_values": [
-        "Before you download all the models, please make sure you have granted access to [LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5) first."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 259,
-      "type": "WidgetToString",
-      "pos": [
-        1361.394654300181,
-        5991.25460457334
-      ],
-      "size": [
-        294.341796875,
-        154
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "any_input",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            389
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
-        "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
-      },
-      "widgets_values": [
-        395,
-        "image",
-        false,
-        "FirstFrame",
-        2
-      ]
-    },
-    {
-      "id": 260,
-      "type": "easy showAnything",
-      "pos": [
-        1292.157858709098,
-        6588.477173528336
-      ],
-      "size": [
-        493.0790813905219,
-        528.9588990441507
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything"
-      },
-      "widgets_values": [
-        "The three voluptuous women stand in a sun-drenched courtyard framed by lush tropical foliage and modern architecture, their bodies glistening with sweat under the warm, golden midday light that casts soft shadows across their skin and the surrounding greenery; the woman on the left with fiery red hair and a shimmering black lace bodysuit begins to slowly sway her hips and gently run a finger along her hipbone as she gazes off to the side with a sultry smirk, the central brunette in a bold red and black bikini slowly brings her hand to her lips, her fingers delicately tracing the curve of her cheek as she turns her head slightly to meet the camera\u2019s gaze with a knowing, seductive expression, while the blonde on the right with intricate black tattoos cascading down her arms and torso, clad in a revealing red bodysuit with fishnet panels, slowly raises both hands to frame her face, her fingers brushing her hair back as she opens her mouth slightly in a soft, breathy gasp, her eyes locked directly on the viewer; as the camera glides forward in a smooth, slow dolly movement, maintaining a medium close-up that captures the full curve of their bodies and the intricate details of their outfits, the ambient sounds of rustling leaves and the gentle drip of unseen water from the plants blend with the soft, rhythmic breathing of the women and the faintest whisper of fabric against skin as they shift their weight, their expressions evolving from poised confidence to open, inviting sensuality, their movements synchronized with the camera\u2019s glide, creating a seamless, hypnotic flow that draws the viewer deeper into the scene; the red-haired woman\u2019s smirk deepens as she leans forward slightly, the brunette\u2019s hand moves to her neck, her eyes narrowing in anticipation, and the blonde\u2019s gasp turns into a low, throaty moan as she arches her back subtly, her tattoos catching the light like living ink; the audio crescendos with the soft slap of her hand against her thigh, the rustling of her fishnet stockings as she shifts, and the faint, sensual hum of the environment as the camera holds its final position, capturing the moment of peak allure before the scene gently fades, leaving the viewer immersed in the heat and beauty of the moment."
-      ]
-    },
-    {
-      "id": 261,
-      "type": "RIFE VFI",
-      "pos": [
-        1860.6367198910514,
-        5840.7112658255555
-      ],
-      "size": [
-        321.8046875,
-        270
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "frames",
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "optional_interpolation_states",
-          "shape": 7,
-          "type": "INTERPOLATION_STATES",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            387
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-frame-interpolation",
-        "ver": "26545cc2dd95bc3d27f056016300673bdeee78f5",
-        "Node name for S&R": "RIFE VFI",
-        "aux_id": "Fannovel16/ComfyUI-Frame-Interpolation"
-      },
-      "widgets_values": [
-        "rife49.pth",
-        100,
-        2,
-        true,
-        true,
-        1,
-        "float32",
-        false,
-        1
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 263,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        2284.188432802587,
-        5844.197657154519
-      ],
-      "size": [
-        1155.5330597730813,
-        986.7373461223583
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 387
-        },
-        {
-          "name": "audio",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        },
-        {
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          },
-          "link": 389
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null
-        }
-      ],
-      "title": "50FPS",
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
-        "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
-      },
-      "widgets_values": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "video/MiniMax_H3_48FPS",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": true,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "k1183.jpg_00001-audio.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 48,
-            "workflow": "k1183.jpg_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/k1183.jpg_00001-audio.mp4"
-          }
-        }
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 31,
-      "type": "LoadImage",
-      "pos": [
-        1300,
-        2310
-      ],
-      "size": [
-        430,
-        580
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            367,
-            393
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "FirstFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "LoadImage",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.5.2"
-        }
-      },
-      "widgets_values": [
-        "robot_hand_back.png",
-        "image"
-      ]
-    },
     {
       "id": 39,
       "type": "LoadImage",
       "pos": [
-        1299.370862657182,
-        3001.631915490264
+        1300,
+        2950
       ],
       "size": [
-        440,
-        570
+        439.984375,
+        569.984375
       ],
       "flags": {},
-      "order": 7,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -386,7 +33,7 @@
           "links": null
         }
       ],
-      "title": "LastFrame",
+      "title": "Load Last Frame",
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.8.2",
@@ -410,86 +57,54 @@
       ]
     },
     {
-      "id": 264,
-      "type": "WidgetToString",
+      "id": 68,
+      "type": "SaveVideo",
       "pos": [
-        2001.980775356164,
-        2571.655581461999
+        2510,
+        2300
       ],
       "size": [
-        294.341796875,
-        154
+        1109.984375,
+        106
       ],
       "flags": {},
-      "order": 9,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
-          "name": "any_input",
-          "shape": 7,
-          "type": "*",
-          "link": 393
+          "name": "video",
+          "type": "VIDEO",
+          "link": 369
         }
       ],
       "outputs": [
         {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            392
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
-        "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
-      },
-      "widgets_values": [
-        31,
-        "image",
-        false,
-        "FirstFrame",
-        2
-      ]
-    },
-    {
-      "id": 265,
-      "type": "easy showAnything",
-      "pos": [
-        1898.813643165865,
-        3085.830960162196
-      ],
-      "size": [
-        493.0790813905219,
-        528.9588990441507
-      ],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 404
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
+          "name": "video",
+          "type": "VIDEO",
           "links": null
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything"
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1",
+        "Node name for S&R": "SaveVideo",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
-        "The three voluptuous women stand in a sun-drenched courtyard framed by lush tropical foliage and modern architecture, their bodies glistening with sweat under the warm, golden midday light that casts soft shadows across their skin and the surrounding greenery; the woman on the left with fiery red hair and a shimmering black lace bodysuit begins to slowly sway her hips and gently run a finger along her hipbone as she gazes off to the side with a sultry smirk, the central brunette in a bold red and black bikini slowly brings her hand to her lips, her fingers delicately tracing the curve of her cheek as she turns her head slightly to meet the camera\u2019s gaze with a knowing, seductive expression, while the blonde on the right with intricate black tattoos cascading down her arms and torso, clad in a revealing red bodysuit with fishnet panels, slowly raises both hands to frame her face, her fingers brushing her hair back as she opens her mouth slightly in a soft, breathy gasp, her eyes locked directly on the viewer; as the camera glides forward in a smooth, slow dolly movement, maintaining a medium close-up that captures the full curve of their bodies and the intricate details of their outfits, the ambient sounds of rustling leaves and the gentle drip of unseen water from the plants blend with the soft, rhythmic breathing of the women and the faintest whisper of fabric against skin as they shift their weight, their expressions evolving from poised confidence to open, inviting sensuality, their movements synchronized with the camera\u2019s glide, creating a seamless, hypnotic flow that draws the viewer deeper into the scene; the red-haired woman\u2019s smirk deepens as she leans forward slightly, the brunette\u2019s hand moves to her neck, her eyes narrowing in anticipation, and the blonde\u2019s gasp turns into a low, throaty moan as she arches her back subtly, her tattoos catching the light like living ink; the audio crescendos with the soft slap of her hand against her thigh, the rustling of her fishnet stockings as she shifts, and the faint, sensual hum of the environment as the camera holds its final position, capturing the moment of peak allure before the scene gently fades, leaving the viewer immersed in the heat and beauty of the moment."
+        "video/ltx2.5_flf2v",
+        "auto",
+        "auto"
       ]
     },
     {
@@ -500,11 +115,11 @@
         2300
       ],
       "size": [
-        520,
-        710
+        519.984375,
+        709.984375
       ],
       "flags": {},
-      "order": 10,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -608,27 +223,6 @@
           "links": [
             369
           ]
-        },
-        {
-          "name": "output",
-          "type": "STRING",
-          "links": [
-            404
-          ]
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            405
-          ]
-        },
-        {
-          "name": "Audio",
-          "type": "AUDIO",
-          "links": [
-            406
-          ]
         }
       ],
       "properties": {
@@ -637,7 +231,7 @@
         "previewExposures": []
       },
       "widgets_values": [
-        "",
+        "Use the provided start image as the first frame and the provided end image as the final frame anchor. The video opens on the back of the robotic hand, four fingers slightly curled, joints glowing faintly in the darkness, a low electrical hum filling the space. The hand rotates slowly at the wrist, turning from the back view toward the palm side, the four visible fingers uncurling gently one by one, starting with the index finger, then the middle, ring, and pinky, each joint clicking softly. As the palm turns upward, the thumb swings out from the side of the hand into view, clearly separate from the four fingers, all five fingers spreading open. A blue energy crystal fades into existence above the palm, its hum rising into a resonant tone, thin energy threads coiling around it, particles crackling softly as they spiral away like sparks. The crystal rotates slowly, hovering above the fully open hand, light spilling between the five spread fingers, the crystal's steady hum filling the silence as the video ends on the open palm with the glowing crystal.\n",
         true,
         5,
         1280,
@@ -648,188 +242,115 @@
         "ltx-2.5-video-vae-bf16.safetensors",
         "ltx-2.5-audio-vae-bf16.safetensors",
         "gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
-        "gemma4_e2b_it_bf16.safetensors",
-        "Qwen3-VL-8B-Heretic-Stable",
-        "\ud83c\udfa5 LTX 2.3 NSFW I2V"
+        "gemma4_e2b_it_bf16.safetensors"
       ]
     },
     {
-      "id": 266,
-      "type": "RIFE VFI",
+      "id": 254,
+      "type": "MarkdownNote",
       "pos": [
-        2475.8340407111823,
-        2288.9303963056345
+        790,
+        2310
       ],
       "size": [
-        321.8046875,
-        270
+        439.984375,
+        1639.984375
       ],
       "flags": {},
-      "order": 14,
+      "order": 1,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "frames",
-          "type": "IMAGE",
-          "link": 405
-        },
-        {
-          "name": "optional_interpolation_states",
-          "shape": 7,
-          "type": "INTERPOLATION_STATES",
-          "link": null
-        }
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: About LTX-2.5",
+      "properties": {},
+      "widgets_values": [
+        "# LTX-2.5\n\nLTX-2.5 is Lightricks' open video generation model : fast, local-first, and built for production. Run it locally, fine-tune it for your own use case, or integrate it into your pipeline.\n\n**Key highlights:**\n\n- **Pixel Diffusion** : keyframes-first generation that builds every scene on a grid of high-fidelity keyframes for industry-leading pixel quality\n- **Diffusion Video Decoder** : sharper faces, legible text, fewer smears in fast motion\n- **Native multishot** : one generation yields multiple connected shots holding character, environment, lighting, voice, and style across cuts\n- **Custom Gemma 4 12B text encoder** : retains multiple subjects, actions, lighting, detail, and camera direction across complex prompts\n- **Dedicated Prompt Enhancer** : a lightweight model that expands short prompts into rich cinematic instructions at near-zero extra compute\n- **Auto Duration** : predicts the right clip length from the described action before diffusion begins\n- **Better distilled model** : carries far more quality, prompt adherence, and motion into a smaller, faster variant\n- Carried over from LTX-2.3: native 4K, synchronized audio-video\n\nOfficial model & files: https://huggingface.co/Lightricks/LTX-2.5\n## What this workflow does\n\nThis **First & Last Frame** workflow interpolates between two images. Load a first and a last frame, and the model generates the connected shots in between : holding character, environment, lighting, and style across the transition, with synchronized audio.\n\n## Subgraph parameters\n\nThe **First & Last Frame to Video (LTX-2.5)** node is a subgraph. Click the **Enter subgraph** button at the bottom of the node to open its internal graph, where you can inspect and fine-tune every step of the pipeline (conditioning, sampler, CFG guider, VAE decode, and more).\n\n| Parameter | What it does |\n|---|---|\n| first_frame | Starting image of the transition (load your own image in **Load First Frame**) |\n| last_frame | Ending image of the transition (load your own image in **Load Last Frame**) |\n| prompt | Text prompt describing the motion, scene, lighting, camera, and style |\n| prompt_enhance | Toggle the built-in Prompt Enhancer: expands short prompts into rich cinematic instructions at near-zero extra compute |\n| duration | Clip length in seconds (Auto Duration can predict it from the action) |\n| width / height | Output resolution in pixels (e.g. 1280×720) |\n| seed | Random seed : set a fixed value to reproduce the same result |\n| frame_rate | Frames per second |\n| unet_name | Main model: LTX-2.5 distilled transformer (ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors) |\n| video_vae | Video VAE used for decoding (ltx-2.5-video-vae-bf16.safetensors) |\n| audio_vae | Audio VAE that produces synchronized audio (ltx-2.5-audio-vae-bf16.safetensors) |\n| clip_name | Text encoder: custom Gemma 4 12B with projection (gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors) |\n| prompt_enhance_model | Model checkpoint used by the Prompt Enhancer |\n\n## How to use\n\n1. Download the models listed in **Note: Model Links** and place them in ComfyUI's `models/` folder\n2. Replace the images in **Load First Frame** and **Load Last Frame** with your own start/end frames\n3. Write a prompt describing the transition, optionally toggle **prompt_enhance** for short prompts\n4. Set **duration** / **width** / **height** / **frame_rate** (defaults work well) and hit **Queue**\n5. To dive deeper, click **Enter subgraph** at the bottom of the main node : every internal step (conditioning, sampler, CFG, VAE decode) can be edited there\n"
       ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 255,
+      "type": "MarkdownNote",
+      "pos": [
+        190,
+        2320
+      ],
+      "size": [
+        549.984375,
+        879.984375
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Model Links",
+      "properties": {},
+      "widgets_values": [
+        "Guide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Model Links\n\n**Input Assets** \n\n- [robot_hand.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/robot_hand.png) — required workflow input (`input/robot_hand.png`)\n- [robot_hand_energy.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/robot_hand_energy.png) — required workflow input (`input/robot_hand_energy.png`)\n\n**diffusion_models**\n\n- [ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors)\n\n**vae**\n\n- [ltx-2.5-video-vae-bf16.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-video-vae-bf16.safetensors)\n- [ltx-2.5-audio-vae-bf16.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-audio-vae-bf16.safetensors)\n\n**text_encoders**\n\n- [gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors)\n- [gemma4_e2b_it_bf16.safetensors](https://huggingface.co/Comfy-Org/gemma-4/resolve/main/text_encoders/gemma4_e2b_it_bf16.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   └── ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors\n│   ├── 📂 vae/\n│   │   ├── ltx-2.5-video-vae-bf16.safetensors\n│   │   └── ltx-2.5-audio-vae-bf16.safetensors\n│   └── 📂 text_encoders/\n│       ├── gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors\n│       └── gemma4_e2b_it_bf16.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 258,
+      "type": "MarkdownNote",
+      "pos": [
+        190,
+        2170
+      ],
+      "size": [
+        339.984375,
+        89.984375
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Model Links",
+      "properties": {},
+      "widgets_values": [
+        "Before you download all the models, please make sure you have granted access to [LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5) first."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 31,
+      "type": "LoadImage",
+      "pos": [
+        1300,
+        2310
+      ],
+      "size": [
+        429.984375,
+        579.984375
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
       "outputs": [
         {
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            390
+            367
           ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-frame-interpolation",
-        "ver": "26545cc2dd95bc3d27f056016300673bdeee78f5",
-        "Node name for S&R": "RIFE VFI",
-        "aux_id": "Fannovel16/ComfyUI-Frame-Interpolation"
-      },
-      "widgets_values": [
-        "rife49.pth",
-        100,
-        2,
-        true,
-        true,
-        1,
-        "float32",
-        false,
-        1
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 268,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        2872.2871936080064,
-        2277.4756560854967
-      ],
-      "size": [
-        1155.5330597730813,
-        986.7373461223583
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 390
         },
         {
-          "name": "audio",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": 406
-        },
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        },
-        {
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          },
-          "link": 392
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
+          "name": "MASK",
+          "type": "MASK",
           "links": null
         }
       ],
-      "title": "50FPS",
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
-        "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
-      },
-      "widgets_values": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "video/MiniMax_H3_48FPS",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": true,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "k1183.jpg_00001-audio.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 48,
-            "workflow": "k1183.jpg_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/k1183.jpg_00001-audio.mp4"
-          }
-        }
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 68,
-      "type": "SaveVideo",
-      "pos": [
-        2928.357368215321,
-        3911.484508785644
-      ],
-      "size": [
-        1110,
-        106
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "video",
-          "type": "VIDEO",
-          "link": 369
-        }
-      ],
-      "outputs": [
-        {
-          "name": "video",
-          "type": "VIDEO",
-          "links": null
-        }
-      ],
+      "title": "Load First Frame",
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.14.1",
-        "Node name for S&R": "SaveVideo",
+        "ver": "0.8.2",
+        "Node name for S&R": "LoadImage",
         "enableTabs": false,
         "tabWidth": 65,
         "tabXOffset": 10,
@@ -839,14 +360,13 @@
         "secondTabWidth": 65,
         "ue_properties": {
           "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
         }
       },
       "widgets_values": [
-        "video/ltx2.5_flf2v",
-        "auto",
-        "auto"
+        "robot_hand.png",
+        "image"
       ]
     }
   ],
@@ -874,70 +394,6 @@
       68,
       0,
       "VIDEO"
-    ],
-    [
-      387,
-      261,
-      0,
-      263,
-      0,
-      "IMAGE"
-    ],
-    [
-      389,
-      259,
-      0,
-      263,
-      4,
-      "STRING"
-    ],
-    [
-      390,
-      266,
-      0,
-      268,
-      0,
-      "IMAGE"
-    ],
-    [
-      392,
-      264,
-      0,
-      268,
-      4,
-      "STRING"
-    ],
-    [
-      393,
-      31,
-      0,
-      264,
-      0,
-      "IMAGE"
-    ],
-    [
-      404,
-      251,
-      1,
-      265,
-      0,
-      "STRING"
-    ],
-    [
-      405,
-      251,
-      2,
-      266,
-      0,
-      "IMAGE"
-    ],
-    [
-      406,
-      251,
-      3,
-      268,
-      1,
-      "AUDIO"
     ]
   ],
   "groups": [],
@@ -948,8 +404,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 9,
-          "lastNodeId": 269,
-          "lastLinkId": 406,
+          "lastNodeId": 258,
+          "lastLinkId": 386,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -961,7 +417,7 @@
             -280,
             2210,
             183.814453125,
-            368
+            328
           ]
         },
         "outputNode": {
@@ -970,7 +426,7 @@
             3540,
             2261,
             128,
-            128
+            68
           ]
         },
         "inputs": [
@@ -979,8 +435,7 @@
             "name": "input",
             "type": "IMAGE,MASK",
             "linkIds": [
-              325,
-              394
+              325
             ],
             "localized_name": "input",
             "label": "first_frame",
@@ -994,8 +449,7 @@
             "name": "input_1",
             "type": "IMAGE,MASK",
             "linkIds": [
-              326,
-              395
+              326
             ],
             "localized_name": "input_1",
             "label": "last_frame",
@@ -1009,7 +463,7 @@
             "name": "value",
             "type": "STRING",
             "linkIds": [
-              398
+              373
             ],
             "label": "prompt",
             "pos": [
@@ -1156,30 +610,6 @@
               -120.185546875,
               2494
             ]
-          },
-          {
-            "id": "6d3bbe2f-81c1-4712-ac23-9fc507e7da9a",
-            "name": "model_name",
-            "type": "COMBO",
-            "linkIds": [
-              396
-            ],
-            "pos": [
-              -120.185546875,
-              2514
-            ]
-          },
-          {
-            "id": "15eda976-1954-4185-9f17-d091e7bf4c9c",
-            "name": "preset_prompt",
-            "type": "COMBO",
-            "linkIds": [
-              397
-            ],
-            "pos": [
-              -120.185546875,
-              2534
-            ]
           }
         ],
         "outputs": [
@@ -1194,42 +624,6 @@
             "pos": [
               3564,
               2285
-            ]
-          },
-          {
-            "id": "db5a7660-0eb6-4131-acab-db860ce84752",
-            "name": "output",
-            "type": "STRING",
-            "linkIds": [
-              400
-            ],
-            "pos": [
-              3564,
-              2305
-            ]
-          },
-          {
-            "id": "d7b4534c-33e3-4bab-b3dd-dc44c6128e20",
-            "name": "IMAGE",
-            "type": "IMAGE",
-            "linkIds": [
-              401
-            ],
-            "pos": [
-              3564,
-              2325
-            ]
-          },
-          {
-            "id": "47679891-eb3f-4267-8697-4f5a95b9ab22",
-            "name": "Audio",
-            "type": "AUDIO",
-            "linkIds": [
-              402
-            ],
-            "pos": [
-              3564,
-              2345
             ]
           }
         ],
@@ -1277,6 +671,127 @@
               "cnr_id": "comfy-core",
               "ver": "0.7.0",
               "Node name for S&R": "LTXVConcatAVLatent",
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.5.2",
+                "input_ue_unconnectable": {}
+              },
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 219,
+            "type": "VAEDecodeTiled",
+            "pos": [
+              2740,
+              2150
+            ],
+            "size": [
+              280,
+              190
+            ],
+            "flags": {},
+            "order": 23,
+            "mode": 0,
+            "showAdvanced": true,
+            "inputs": [
+              {
+                "localized_name": "samples",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 319
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 336
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  316
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.7.0",
+              "Node name for S&R": "VAEDecodeTiled",
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.5.2",
+                "input_ue_unconnectable": {}
+              },
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65
+            },
+            "widgets_values": [
+              512,
+              64,
+              64,
+              16
+            ]
+          },
+          {
+            "id": 220,
+            "type": "LTXVAudioVAEDecode",
+            "pos": [
+              2740,
+              2440
+            ],
+            "size": [
+              280,
+              100
+            ],
+            "flags": {},
+            "order": 24,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "samples",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 321
+              },
+              {
+                "label": "Audio VAE",
+                "localized_name": "audio_vae",
+                "name": "audio_vae",
+                "type": "VAE",
+                "link": 333
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "Audio",
+                "name": "Audio",
+                "type": "AUDIO",
+                "links": [
+                  317
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.7.0",
+              "Node name for S&R": "LTXVAudioVAEDecode",
               "ue_properties": {
                 "widget_ue_connectable": {},
                 "version": "7.5.2",
@@ -2274,7 +1789,7 @@
               "secondTabWidth": 65
             },
             "widgets_values": [
-              "blurry, out of focus, overexposed, underexposed, low contrast, washed out colors, excessive noise, grainy texture, poor lighting, flickering, motion blur, distorted proportions, unnatural skin tones, deformed facial features, asymmetrical face, missing facial features, extra limbs, disfigured hands, wrong hand count, artifacts around text, unreadable text on shirt or hat, incorrect lettering on cap (\u201cPNTR\u201d), incorrect t-shirt slogan (\u201cJUST DO IT\u201d), missing microphone, misplaced microphone, inconsistent perspective, camera shake, incorrect depth of field, background too sharp, background clutter, distracting reflections, harsh shadows, inconsistent lighting direction, color banding, cartoonish rendering, 3D CGI look, unrealistic materials, uncanny valley effect, incorrect ethnicity, wrong gender, exaggerated expressions, smiling, laughing, exaggerated sadness, wrong gaze direction, eyes looking at camera, mismatched lip sync, silent or muted audio, distorted voice, robotic voice, echo, background noise, off-sync audio, missing sniff sounds, incorrect dialogue, added dialogue, repetitive speech, jittery movement, awkward pauses, incorrect timing, unnatural transitions, inconsistent framing, tilted camera, missing door or shelves, missing shallow depth of field, flat lighting, inconsistent tone, cinematic oversaturation, stylized filters, or AI artifacts."
+              "blurry, out of focus, overexposed, underexposed, low contrast, washed out colors, excessive noise, grainy texture, poor lighting, flickering, motion blur, distorted proportions, unnatural skin tones, deformed facial features, asymmetrical face, missing facial features, extra limbs, disfigured hands, wrong hand count, artifacts around text, unreadable text on shirt or hat, incorrect lettering on cap (“PNTR”), incorrect t-shirt slogan (“JUST DO IT”), missing microphone, misplaced microphone, inconsistent perspective, camera shake, incorrect depth of field, background too sharp, background clutter, distracting reflections, harsh shadows, inconsistent lighting direction, color banding, cartoonish rendering, 3D CGI look, unrealistic materials, uncanny valley effect, incorrect ethnicity, wrong gender, exaggerated expressions, smiling, laughing, exaggerated sadness, wrong gaze direction, eyes looking at camera, mismatched lip sync, silent or muted audio, distorted voice, robotic voice, echo, background noise, off-sync audio, missing sniff sounds, incorrect dialogue, added dialogue, repetitive speech, jittery movement, awkward pauses, incorrect timing, unnatural transitions, inconsistent framing, tilted camera, missing door or shelves, missing shallow depth of field, flat lighting, inconsistent tone, cinematic oversaturation, stylized filters, or AI artifacts."
             ],
             "color": "#323",
             "bgcolor": "#535"
@@ -2342,6 +1857,70 @@
             ],
             "color": "#232",
             "bgcolor": "#353"
+          },
+          {
+            "id": 248,
+            "type": "ComfySwitchNode",
+            "pos": [
+              1650,
+              1510
+            ],
+            "size": [
+              270,
+              130
+            ],
+            "flags": {},
+            "order": 35,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "STRING",
+                "link": 372
+              },
+              {
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "STRING",
+                "link": 361
+              },
+              {
+                "localized_name": "switch",
+                "name": "switch",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "switch"
+                },
+                "link": 362
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "output",
+                "name": "output",
+                "type": "STRING",
+                "links": [
+                  363,
+                  364
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.22.0",
+              "Node name for S&R": "ComfySwitchNode",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65
+            },
+            "widgets_values": [
+              false
+            ]
           },
           {
             "id": 203,
@@ -2570,7 +2149,7 @@
                 "widget": {
                   "name": "prompt"
                 },
-                "link": 399
+                "link": 371
               }
             ],
             "outputs": [
@@ -2768,6 +2347,50 @@
             ]
           },
           {
+            "id": 249,
+            "type": "PreviewAny",
+            "pos": [
+              1960,
+              1120
+            ],
+            "size": [
+              510,
+              360
+            ],
+            "flags": {},
+            "order": 36,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "source",
+                "name": "source",
+                "type": "*",
+                "link": 363
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": []
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.16.3",
+              "Node name for S&R": "PreviewAny",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65
+            },
+            "widgets_values": []
+          },
+          {
             "id": 230,
             "type": "UNETLoader",
             "pos": [
@@ -2852,8 +2475,7 @@
                 "links": [
                   334,
                   335,
-                  336,
-                  408
+                  336
                 ]
               }
             ],
@@ -3044,7 +2666,7 @@
               100
             ],
             "flags": {},
-            "order": 36,
+            "order": 37,
             "mode": 0,
             "inputs": [
               {
@@ -3476,387 +3098,50 @@
             ]
           },
           {
-            "id": 248,
-            "type": "ComfySwitchNode",
+            "id": 252,
+            "type": "PrimitiveStringMultiline",
             "pos": [
-              1650,
-              1510
+              690,
+              2870
             ],
             "size": [
-              270,
-              130
+              430,
+              630
             ],
             "flags": {},
-            "order": 35,
+            "order": 38,
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "on_false",
-                "name": "on_false",
+                "localized_name": "value",
+                "name": "value",
                 "type": "STRING",
-                "link": 403
-              },
-              {
-                "localized_name": "on_true",
-                "name": "on_true",
-                "type": "STRING",
-                "link": 361
-              },
-              {
-                "localized_name": "switch",
-                "name": "switch",
-                "type": "BOOLEAN",
                 "widget": {
-                  "name": "switch"
+                  "name": "value"
                 },
-                "link": 362
+                "link": 373
               }
             ],
             "outputs": [
               {
-                "localized_name": "output",
-                "name": "output",
+                "localized_name": "STRING",
+                "name": "STRING",
                 "type": "STRING",
                 "links": [
-                  364,
-                  400
+                  371,
+                  372
                 ]
               }
             ],
+            "title": "Prompt",
             "properties": {
               "cnr_id": "comfy-core",
-              "ver": "0.22.0",
-              "Node name for S&R": "ComfySwitchNode",
-              "enableTabs": false,
-              "tabWidth": 65,
-              "tabXOffset": 10,
-              "hasSecondTab": false,
-              "secondTabText": "Send Back",
-              "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "ver": "0.30.0",
+              "Node name for S&R": "PrimitiveStringMultiline"
             },
             "widgets_values": [
-              false
+              ""
             ]
-          },
-          {
-            "id": 219,
-            "type": "VAEDecodeTiled",
-            "pos": [
-              2740,
-              2150
-            ],
-            "size": [
-              280,
-              150
-            ],
-            "flags": {},
-            "order": 23,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "samples",
-                "name": "samples",
-                "type": "LATENT",
-                "link": 409
-              },
-              {
-                "localized_name": "vae",
-                "name": "vae",
-                "type": "VAE",
-                "link": 336
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "IMAGE",
-                "name": "IMAGE",
-                "type": "IMAGE",
-                "links": [
-                  316,
-                  401
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.7.0",
-              "Node name for S&R": "VAEDecodeTiled",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.5.2",
-                "input_ue_unconnectable": {}
-              },
-              "enableTabs": false,
-              "tabWidth": 65,
-              "tabXOffset": 10,
-              "hasSecondTab": false,
-              "secondTabText": "Send Back",
-              "secondTabOffset": 80,
-              "secondTabWidth": 65
-            },
-            "widgets_values": [
-              768,
-              64,
-              4096,
-              64
-            ]
-          },
-          {
-            "id": 220,
-            "type": "LTXVAudioVAEDecode",
-            "pos": [
-              2740,
-              2440
-            ],
-            "size": [
-              280,
-              100
-            ],
-            "flags": {},
-            "order": 24,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "samples",
-                "name": "samples",
-                "type": "LATENT",
-                "link": 321
-              },
-              {
-                "label": "Audio VAE",
-                "localized_name": "audio_vae",
-                "name": "audio_vae",
-                "type": "VAE",
-                "link": 333
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "Audio",
-                "name": "Audio",
-                "type": "AUDIO",
-                "links": [
-                  317,
-                  402
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.7.0",
-              "Node name for S&R": "LTXVAudioVAEDecode",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.5.2",
-                "input_ue_unconnectable": {}
-              },
-              "enableTabs": false,
-              "tabWidth": 65,
-              "tabXOffset": 10,
-              "hasSecondTab": false,
-              "secondTabText": "Send Back",
-              "secondTabOffset": 80,
-              "secondTabWidth": 65
-            },
-            "widgets_values": []
-          },
-          {
-            "id": 269,
-            "type": "AILab_QwenVL_Advanced",
-            "pos": [
-              707.627762458884,
-              2886.3183779210744
-            ],
-            "size": [
-              389.09698052409476,
-              656.8134568928854
-            ],
-            "flags": {},
-            "order": 37,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 394
-              },
-              {
-                "localized_name": "image2",
-                "name": "image2",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 395
-              },
-              {
-                "localized_name": "model_name",
-                "name": "model_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model_name"
-                },
-                "link": 396
-              },
-              {
-                "localized_name": "preset_prompt",
-                "name": "preset_prompt",
-                "type": "COMBO",
-                "widget": {
-                  "name": "preset_prompt"
-                },
-                "link": 397
-              },
-              {
-                "localized_name": "custom_prompt",
-                "name": "custom_prompt",
-                "type": "STRING",
-                "widget": {
-                  "name": "custom_prompt"
-                },
-                "link": 398
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "RESPONSE",
-                "name": "RESPONSE",
-                "type": "STRING",
-                "links": [
-                  399,
-                  403
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "ver": "94843a8153cce9336810388f9322ef699e2d99ec",
-              "Node name for S&R": "AILab_QwenVL_Advanced"
-            },
-            "widgets_values": [
-              "Qwen3-VL-8B-Heretic-Stable",
-              "None (FP16)",
-              "auto",
-              false,
-              "auto",
-              "\ud83c\udfa5 LTX 2.3 NSFW I2V",
-              "",
-              8192,
-              0.6,
-              0.9,
-              1,
-              1,
-              1,
-              false,
-              4079920092,
-              "randomize",
-              false
-            ],
-            "color": "#28403f",
-            "bgcolor": "#374539"
-          },
-          {
-            "id": 270,
-            "type": "LatentUpscaleModelLoader",
-            "pos": [
-              2740,
-              1850
-            ],
-            "size": [
-              410,
-              140
-            ],
-            "flags": {},
-            "order": 31,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model_name",
-                "name": "model_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model_name"
-                },
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "LATENT_UPSCALE_MODEL",
-                "name": "LATENT_UPSCALE_MODEL",
-                "type": "LATENT_UPSCALE_MODEL",
-                "links": [
-                  407
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.7.0",
-              "Node name for S&R": "LatentUpscaleModelLoader",
-              "models": [
-                {
-                  "name": "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
-                  "url": "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
-                  "directory": "latent_upscale_models"
-                }
-              ]
-            },
-            "widgets_values": [
-              "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors"
-            ]
-          },
-          {
-            "id": 271,
-            "type": "LTXVLatentUpsampler",
-            "pos": [
-              2740,
-              2000
-            ],
-            "size": [
-              330,
-              120
-            ],
-            "flags": {},
-            "order": 32,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "samples",
-                "name": "samples",
-                "type": "LATENT",
-                "link": 319
-              },
-              {
-                "localized_name": "upscale_model",
-                "name": "upscale_model",
-                "type": "LATENT_UPSCALE_MODEL",
-                "link": 407
-              },
-              {
-                "localized_name": "vae",
-                "name": "vae",
-                "type": "VAE",
-                "link": 408
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "LATENT",
-                "name": "LATENT",
-                "type": "LATENT",
-                "links": [
-                  409
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.14.1",
-              "Node name for S&R": "LTXVLatentUpsampler"
-            },
-            "widgets_values": []
           }
         ],
         "groups": [
@@ -3989,7 +3274,7 @@
             "id": 319,
             "origin_id": 200,
             "origin_slot": 2,
-            "target_id": 271,
+            "target_id": 219,
             "target_slot": 0,
             "type": "LATENT"
           },
@@ -4402,6 +3687,14 @@
             "type": "INT"
           },
           {
+            "id": 363,
+            "origin_id": 248,
+            "origin_slot": 0,
+            "target_id": 249,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
             "id": 310,
             "origin_id": 205,
             "origin_slot": 0,
@@ -4448,6 +3741,30 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "VIDEO"
+          },
+          {
+            "id": 371,
+            "origin_id": 252,
+            "origin_slot": 0,
+            "target_id": 247,
+            "target_slot": 4,
+            "type": "STRING"
+          },
+          {
+            "id": 372,
+            "origin_id": 252,
+            "origin_slot": 0,
+            "target_id": 248,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 373,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 252,
+            "target_slot": 0,
+            "type": "STRING"
           },
           {
             "id": 374,
@@ -4536,110 +3853,6 @@
             "target_id": 246,
             "target_slot": 0,
             "type": "COMBO"
-          },
-          {
-            "id": 394,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 269,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 395,
-            "origin_id": -10,
-            "origin_slot": 1,
-            "target_id": 269,
-            "target_slot": 1,
-            "type": "IMAGE"
-          },
-          {
-            "id": 396,
-            "origin_id": -10,
-            "origin_slot": 14,
-            "target_id": 269,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 397,
-            "origin_id": -10,
-            "origin_slot": 15,
-            "target_id": 269,
-            "target_slot": 3,
-            "type": "COMBO"
-          },
-          {
-            "id": 398,
-            "origin_id": -10,
-            "origin_slot": 2,
-            "target_id": 269,
-            "target_slot": 4,
-            "type": "STRING"
-          },
-          {
-            "id": 399,
-            "origin_id": 269,
-            "origin_slot": 0,
-            "target_id": 247,
-            "target_slot": 4,
-            "type": "STRING"
-          },
-          {
-            "id": 400,
-            "origin_id": 248,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 401,
-            "origin_id": 219,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 2,
-            "type": "IMAGE"
-          },
-          {
-            "id": 402,
-            "origin_id": 220,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 3,
-            "type": "AUDIO"
-          },
-          {
-            "id": 403,
-            "origin_id": 269,
-            "origin_slot": 0,
-            "target_id": 248,
-            "target_slot": 0,
-            "type": "STRING"
-          },
-          {
-            "id": 407,
-            "origin_id": 270,
-            "origin_slot": 0,
-            "target_id": 271,
-            "target_slot": 1,
-            "type": "LATENT_UPSCALE_MODEL"
-          },
-          {
-            "id": 408,
-            "origin_id": 229,
-            "origin_slot": 0,
-            "target_id": 271,
-            "target_slot": 2,
-            "type": "VAE"
-          },
-          {
-            "id": 409,
-            "origin_id": 271,
-            "origin_slot": 0,
-            "target_id": 219,
-            "target_slot": 0,
-            "type": "LATENT"
           }
         ],
         "extra": {}
@@ -4649,10 +3862,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8865065495901652,
+      "scale": 0.886514118870551,
       "offset": [
-        -577.6438207645363,
-        -1971.2910512336596
+        -908.1188902355217,
+        -2036.602407691501
       ]
     },
     "frontendVersion": "1.48.7",
