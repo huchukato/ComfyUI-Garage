@@ -38,14 +38,14 @@ NODES=(
 )
 
 WORKFLOWS=(
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/base/MiniMaxH3-I2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/base/MiniMaxH3-FL2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/base/MiniMaxH3-T2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/base/MiniMaxH3-R2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/turbo/MiniMaxH3-Turbo-I2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/turbo/MiniMaxH3-Turbo-FL2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/turbo/MiniMaxH3-Turbo-T2VA-Qwen3VL.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/turbo/MiniMaxH3-Turbo-R2VA-Qwen3VL.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/base/MiniMaxH3-I2VA-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/base/MiniMaxH3-FL2VA-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/base/MiniMaxH3-T2VA-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/base/MiniMaxH3-R2VA-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/turbo/MiniMaxH3-Turbo-I2VA-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/turbo/MiniMaxH3-Turbo-FL2VA-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/turbo/MiniMaxH3-Turbo-T2VA-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/turbo/MiniMaxH3-Turbo-R2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PMP-LoRaStack-Upscale-Wildcards.json"
 )
 
