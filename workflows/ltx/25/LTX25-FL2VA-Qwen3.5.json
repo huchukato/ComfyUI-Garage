@@ -1784,7 +1784,7 @@
           },
           {
             "id": 111,
-            "type": "LTXVAddGuide",
+            "type": "LTXVImgToVideoInplaceAtIndex",
             "pos": [
               2749.9996757000185,
               3699.9997315699334
@@ -1798,72 +1798,28 @@
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "positive",
-                "name": "positive",
-                "type": "CONDITIONING",
-                "link": 225
-              },
-              {
-                "localized_name": "negative",
-                "name": "negative",
-                "type": "CONDITIONING",
-                "link": 226
-              },
-              {
-                "localized_name": "vae",
                 "name": "vae",
+                "label": "vae",
                 "type": "VAE",
-                "link": 305
+                "link": 227
               },
               {
-                "localized_name": "latent",
-                "name": "latent",
-                "type": "LATENT",
-                "link": 228
-              },
-              {
-                "localized_name": "image",
                 "name": "image",
+                "label": "image",
                 "type": "IMAGE",
                 "link": 229
               },
               {
-                "localized_name": "attention_mask",
-                "name": "attention_mask",
-                "shape": 7,
-                "type": "MASK",
-                "link": null
-              },
-              {
-                "localized_name": "iclora_parameters",
-                "name": "iclora_parameters",
-                "shape": 7,
-                "type": "IC_LORA_PARAMETERS",
-                "link": null
+                "name": "latent",
+                "label": "latent",
+                "type": "LATENT",
+                "link": 228
               }
             ],
             "outputs": [
               {
-                "localized_name": "positive",
-                "name": "positive",
-                "type": "CONDITIONING",
-                "links": [
-                  213,
-                  242
-                ]
-              },
-              {
-                "localized_name": "negative",
-                "name": "negative",
-                "type": "CONDITIONING",
-                "links": [
-                  214,
-                  243
-                ]
-              },
-              {
-                "localized_name": "latent",
                 "name": "latent",
+                "label": "latent",
                 "type": "LATENT",
                 "links": [
                   244
@@ -1871,25 +1827,16 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.12.3",
-              "Node name for S&R": "LTXVAddGuide",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.7",
-                "input_ue_unconnectable": {}
-              },
-              "enableTabs": false,
-              "tabWidth": 65,
-              "tabXOffset": 10,
-              "hasSecondTab": false,
-              "secondTabText": "Send Back",
-              "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "Node name for S&R": "LTXVImgToVideoInplaceAtIndex"
             },
             "widgets_values": [
               -1,
-              1.0
+              1.0,
+              29,
+              0,
+              "lanczos",
+              "disabled",
+              false
             ]
           },
           {
@@ -1954,7 +1901,7 @@
           },
           {
             "id": 115,
-            "type": "LTXVAddGuide",
+            "type": "LTXVImgToVideoInplaceAtIndex",
             "pos": [
               2749.9996757000185,
               3429.999892880235
@@ -1968,70 +1915,28 @@
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "positive",
-                "name": "positive",
-                "type": "CONDITIONING",
-                "link": 236
-              },
-              {
-                "localized_name": "negative",
-                "name": "negative",
-                "type": "CONDITIONING",
-                "link": 237
-              },
-              {
-                "localized_name": "vae",
                 "name": "vae",
+                "label": "vae",
                 "type": "VAE",
-                "link": 304
+                "link": 238
               },
               {
-                "localized_name": "latent",
-                "name": "latent",
-                "type": "LATENT",
-                "link": 239
-              },
-              {
-                "localized_name": "image",
                 "name": "image",
+                "label": "image",
                 "type": "IMAGE",
                 "link": 240
               },
               {
-                "localized_name": "attention_mask",
-                "name": "attention_mask",
-                "shape": 7,
-                "type": "MASK",
-                "link": null
-              },
-              {
-                "localized_name": "iclora_parameters",
-                "name": "iclora_parameters",
-                "shape": 7,
-                "type": "IC_LORA_PARAMETERS",
-                "link": null
+                "name": "latent",
+                "label": "latent",
+                "type": "LATENT",
+                "link": 239
               }
             ],
             "outputs": [
               {
-                "localized_name": "positive",
-                "name": "positive",
-                "type": "CONDITIONING",
-                "links": [
-                  225
-                ]
-              },
-              {
-                "localized_name": "negative",
-                "name": "negative",
-                "type": "CONDITIONING",
-                "links": [
-                  226
-                ]
-              },
-              {
-                "localized_name": "latent",
                 "name": "latent",
+                "label": "latent",
                 "type": "LATENT",
                 "links": [
                   228
@@ -2039,25 +1944,16 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.12.3",
-              "Node name for S&R": "LTXVAddGuide",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.7",
-                "input_ue_unconnectable": {}
-              },
-              "enableTabs": false,
-              "tabWidth": 65,
-              "tabXOffset": 10,
-              "hasSecondTab": false,
-              "secondTabText": "Send Back",
-              "secondTabOffset": 80,
-              "secondTabWidth": 65
+              "Node name for S&R": "LTXVImgToVideoInplaceAtIndex"
             },
             "widgets_values": [
               0,
-              1.0
+              1.0,
+              29,
+              0,
+              "lanczos",
+              "disabled",
+              false
             ]
           },
           {
@@ -3563,22 +3459,6 @@
             "type": "IMAGE"
           },
           {
-            "id": 213,
-            "origin_id": 111,
-            "origin_slot": 0,
-            "target_id": 106,
-            "target_slot": 0,
-            "type": "CONDITIONING"
-          },
-          {
-            "id": 214,
-            "origin_id": 111,
-            "origin_slot": 1,
-            "target_id": 106,
-            "target_slot": 1,
-            "type": "CONDITIONING"
-          },
-          {
             "id": 215,
             "origin_id": 121,
             "origin_slot": 0,
@@ -3635,27 +3515,11 @@
             "type": "IMAGE"
           },
           {
-            "id": 225,
+            "id": 228,
             "origin_id": 115,
             "origin_slot": 0,
             "target_id": 111,
-            "target_slot": 0,
-            "type": "CONDITIONING"
-          },
-          {
-            "id": 226,
-            "origin_id": 115,
-            "origin_slot": 1,
-            "target_id": 111,
-            "target_slot": 1,
-            "type": "CONDITIONING"
-          },
-          {
-            "id": 228,
-            "origin_id": 115,
-            "origin_slot": 2,
-            "target_id": 111,
-            "target_slot": 3,
+            "target_slot": 2,
             "type": "LATENT"
           },
           {
@@ -3663,14 +3527,14 @@
             "origin_id": 99,
             "origin_slot": 0,
             "target_id": 111,
-            "target_slot": 4,
+            "target_slot": 1,
             "type": "IMAGE"
           },
           {
             "id": 236,
             "origin_id": 109,
             "origin_slot": 0,
-            "target_id": 115,
+            "target_id": 106,
             "target_slot": 0,
             "type": "CONDITIONING"
           },
@@ -3678,7 +3542,7 @@
             "id": 237,
             "origin_id": 109,
             "origin_slot": 1,
-            "target_id": 115,
+            "target_id": 106,
             "target_slot": 1,
             "type": "CONDITIONING"
           },
@@ -3687,7 +3551,7 @@
             "origin_id": 108,
             "origin_slot": 0,
             "target_id": 115,
-            "target_slot": 3,
+            "target_slot": 2,
             "type": "LATENT"
           },
           {
@@ -3695,12 +3559,12 @@
             "origin_id": 104,
             "origin_slot": 0,
             "target_id": 115,
-            "target_slot": 4,
+            "target_slot": 1,
             "type": "IMAGE"
           },
           {
             "id": 242,
-            "origin_id": 111,
+            "origin_id": 109,
             "origin_slot": 0,
             "target_id": 116,
             "target_slot": 1,
@@ -3708,7 +3572,7 @@
           },
           {
             "id": 243,
-            "origin_id": 111,
+            "origin_id": 109,
             "origin_slot": 1,
             "target_id": 116,
             "target_slot": 2,
@@ -3717,7 +3581,7 @@
           {
             "id": 244,
             "origin_id": 111,
-            "origin_slot": 2,
+            "origin_slot": 0,
             "target_id": 119,
             "target_slot": 0,
             "type": "LATENT"
@@ -4039,7 +3903,7 @@
             "origin_id": 210,
             "origin_slot": 0,
             "target_id": 115,
-            "target_slot": 2,
+            "target_slot": 0,
             "type": "VAE"
           },
           {
@@ -4047,7 +3911,7 @@
             "origin_id": 210,
             "origin_slot": 0,
             "target_id": 111,
-            "target_slot": 2,
+            "target_slot": 0,
             "type": "VAE"
           },
           {
