@@ -297,6 +297,8 @@ function download_ltx_models() {
         local repo_id repo_path tmp_dir
         repo_id=$(echo "$url" | awk -F/ '{print $4"/"$5}')
         repo_path=$(echo "$url" | sed -E 's#https?://[^/]+/[^/]+/[^/]+/resolve/main/(.+)#\1#')
+        # URL-decode repo_path (hf download expects real filename, not %20-encoded)
+        repo_path=$(printf '%b' "${repo_path//%/\\x}")
         tmp_dir="$base_dir/.tmp_download_${name//\//_}"
         rm -rf "$tmp_dir"
         mkdir -p "$tmp_dir"
