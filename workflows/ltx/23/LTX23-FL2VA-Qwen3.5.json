@@ -1,8 +1,8 @@
 {
   "id": "0112e9af-5129-48ba-af78-92c40ac40b40",
   "revision": 0,
-  "last_node_id": 208,
-  "last_link_id": 300,
+  "last_node_id": 209,
+  "last_link_id": 302,
   "nodes": [
     {
       "id": 198,
@@ -16,7 +16,7 @@
         334
       ],
       "flags": {},
-      "order": 12,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -60,10 +60,10 @@
       ],
       "title": "50FPS",
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
         "frame_rate": 50,
@@ -107,7 +107,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 8,
+      "order": 9,
       "mode": 4,
       "inputs": [
         {
@@ -205,7 +205,7 @@
         229.6878304442398
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -297,7 +297,7 @@
         94
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -346,7 +346,7 @@
         154
       ],
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -366,10 +366,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
+        "cnr_id": "comfyui-kjnodes"
       },
       "widgets_values": [
         196,
@@ -415,115 +415,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 196,
-      "type": "LoadImage",
-      "pos": [
-        -706.6911173236431,
-        2247.9705842542144
-      ],
-      "size": [
-        579.6733735229459,
-        837.4977672437481
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            285,
-            287
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "FirstFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.16.3",
-        "Node name for S&R": "LoadImage",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "S02_EP08_MakingConnections_185.jpg",
-        "image"
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 201,
-      "type": "LoadImage",
-      "pos": [
-        -98.11739187847581,
-        2240.8316376719376
-      ],
-      "size": [
-        579.6733735229459,
-        837.4977672437481
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            288
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "LastFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.16.3",
-        "Node name for S&R": "LoadImage",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "S02_EP08_MakingConnections_186.jpg",
-        "image"
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 207,
       "type": "easy showAnything",
       "pos": [
@@ -535,7 +426,7 @@
         328.08862972416637
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -553,16 +444,46 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-easy-use",
+        "aux_id": "yolain/ComfyUI-Easy-Use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
+        "cnr_id": "comfyui-easy-use"
       },
       "widgets_values": [
         "The woman in the gold metallic dress straddles the man, her hips grinding rhythmically against him as she arches her back, her hands gripping his shoulders while her head tilts back with a moan. Her legs clamp around his waist, her thighs pressing against his chest as he thrusts upward, his hands sliding up her hips. Her mouth opens wider in a gasp, her tongue darting out slightly as she looks up at him with intense desire. The red wine glasses on the table remain still, reflecting the dim ambient light from the brick wall and the abstract painting behind them. No speech, only soft, wet moans and the rhythmic sound of skin slapping against skin, punctuated by the occasional soft gasp and the gentle clink of glassware as the scene pulses with intimate, sensual energy."
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 208,
+      "type": "MarkdownNote",
+      "pos": [
+        -1525.984437358144,
+        2241.233905771903
+      ],
+      "size": [
+        754.7124038197308,
+        851.3196877576256
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Model Links",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "- Huggingface: [Lightricks/LTX-2.3](https://huggingface.co/Lightricks/LTX-2.3/)\n- Github: [LTX-2](https://github.com/Lightricks/LTX-2)\n\n## LTX-2.3 Prompting Tips\n\n1. **Core Actions**: Describe events and actions as they occur over time  \n2. **Visual Details**: Describe all visual details you want to appear in the video  \n3. **Audio**: Describe sounds and dialogue needed for the scene\n\n## Report LTX-2.3 Issues\nTo report any issues when running this workflow, [go to GitHub](https://github.com/Lightricks/ComfyUI-LTXVideo/issues)\n\n## Model Links (for Local Users)\n\n**checkpoints**\n\n- [10Eros_v1.5_fp8mixed_experimental_learned.safetensors](https://huggingface.co/LokkenJP/10EROS_1.5_fp8_exp_learned/resolve/main/10Eros_v1.5_fp8mixed_experimental_learned.safetensors)\n\n**text_encoders**\n\n- [gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors](https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/text_encoders/gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors)\n\n**loras**\n\n- [ltx23/LTX2.3_DMD_hybrid_v2.safetensors](https://huggingface.co/TenStrip/LTX2.3_DMD_Lora/resolve/main/LTX2.3_DMD_hybrid_v2.safetensors)\n\n**latent_upscale_models**\n\n- [ltx-2.3-spatial-upscaler-x2-1.1.safetensors](https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.1.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 checkpoints/\n│   │   └── 10Eros_v1.5_fp8mixed_experimental_learned.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors\n│   ├── 📂 loras/\n│   │   └── ltx23/LTX2.3_DMD_hybrid_v2.safetensors\n│   └── 📂 latent_upscale_models/\n│       └── ltx-2.3-spatial-upscaler-x2-1.1.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- Workflow issues: [ComfyUI-LTXVideo/issues](https://github.com/Lightricks/ComfyUI-LTXVideo/issues)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 129,
@@ -576,7 +497,7 @@
         830.1554872337929
       ],
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -598,7 +519,7 @@
           "widget": {
             "name": "value"
           },
-          "link": null
+          "link": 301
         },
         {
           "label": "height",
@@ -607,7 +528,7 @@
           "widget": {
             "name": "value_1"
           },
-          "link": null
+          "link": 302
         },
         {
           "label": "duration",
@@ -679,38 +600,62 @@
       },
       "widgets_values": [
         "",
-        1280,
-        720,
-        5,
+        1344,
+        768,
+        10,
         25,
-        1057873976344810,
+        612122782091531,
         "10Eros_v1.5_fp8mixed_experimental_learned.safetensors",
         "gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors",
         "Qwen3.5-4B-heretic-v2",
-        "🎥 LTX 2.3 NSFW I2V",
+        "🔀 LTX 2.3 NSFW FL2VA (10s)",
         "ltx23/LTX2.3_DMD_hybrid_v2.safetensors"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
-      "id": 208,
-      "type": "MarkdownNote",
+      "id": 196,
+      "type": "LoadImage",
       "pos": [
-        -1525.984437358144,
-        2241.233905771903
+        -706.6911173236431,
+        2247.9705842542144
       ],
       "size": [
-        754.7124038197308,
-        851.3196877576256
+        579.6733735229459,
+        837.4977672437481
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
-      "outputs": [],
-      "title": "Model Links",
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            285,
+            287
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "FirstFrame",
       "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3",
+        "Node name for S&R": "LoadImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
         "ue_properties": {
           "widget_ue_connectable": {},
           "version": "7.7",
@@ -718,7 +663,106 @@
         }
       },
       "widgets_values": [
-        "- Huggingface: [Lightricks/LTX-2.3](https://huggingface.co/Lightricks/LTX-2.3/)\n- Github: [LTX-2](https://github.com/Lightricks/LTX-2)\n\n## LTX-2.3 Prompting Tips\n\n1. **Core Actions**: Describe events and actions as they occur over time  \n2. **Visual Details**: Describe all visual details you want to appear in the video  \n3. **Audio**: Describe sounds and dialogue needed for the scene\n\n## Report LTX-2.3 Issues\nTo report any issues when running this workflow, [go to GitHub](https://github.com/Lightricks/ComfyUI-LTXVideo/issues)\n\n## Model Links (for Local Users)\n\n**checkpoints**\n\n- [10Eros_v1.5_fp8mixed_experimental_learned.safetensors](https://huggingface.co/LokkenJP/10EROS_1.5_fp8_exp_learned/resolve/main/10Eros_v1.5_fp8mixed_experimental_learned.safetensors)\n\n**text_encoders**\n\n- [gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors](https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/text_encoders/gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors)\n\n**loras**\n\n- [ltx23/LTX2.3_DMD_hybrid_v2.safetensors](https://huggingface.co/TenStrip/LTX2.3_DMD_Lora/resolve/main/LTX2.3_DMD_hybrid_v2.safetensors)\n\n**latent_upscale_models**\n\n- [ltx-2.3-spatial-upscaler-x2-1.1.safetensors](https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.1.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 checkpoints/\n│   │   └── 10Eros_v1.5_fp8mixed_experimental_learned.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors\n│   ├── 📂 loras/\n│   │   └── ltx23/LTX2.3_DMD_hybrid_v2.safetensors\n│   └── 📂 latent_upscale_models/\n│       └── ltx-2.3-spatial-upscaler-x2-1.1.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- Workflow issues: [ComfyUI-LTXVideo/issues](https://github.com/Lightricks/ComfyUI-LTXVideo/issues)"
+        "S02_EP08_MakingConnections_252.jpg",
+        "image"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 201,
+      "type": "LoadImage",
+      "pos": [
+        -105.17436130273342,
+        2256.05010546112
+      ],
+      "size": [
+        579.6733735229459,
+        837.4977672437481
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            288
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "LastFrame",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3",
+        "Node name for S&R": "LoadImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "S02_EP08_MakingConnections_253.jpg",
+        "image"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 209,
+      "type": "ResolutionSelector",
+      "pos": [
+        187.63834242803867,
+        3158.0454556990876
+      ],
+      "size": [
+        270,
+        126
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            301
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            302
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.1",
+        "Node name for S&R": "ResolutionSelector"
+      },
+      "widgets_values": [
+        "16:9 (Widescreen)",
+        1,
+        32
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -820,6 +864,22 @@
       207,
       0,
       "STRING"
+    ],
+    [
+      301,
+      209,
+      0,
+      129,
+      2,
+      "INT"
+    ],
+    [
+      302,
+      209,
+      1,
+      129,
+      3,
+      "INT"
     ]
   ],
   "groups": [
@@ -879,8 +939,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 26,
-          "lastNodeId": 208,
-          "lastLinkId": 300,
+          "lastNodeId": 209,
+          "lastLinkId": 302,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3478,7 +3538,7 @@
               1,
               1,
               false,
-              1753319974,
+              775846529,
               "randomize",
               false
             ],
@@ -4204,8 +4264,8 @@
     "ds": {
       "scale": 0.6350424842476471,
       "offset": [
-        2852.218295157117,
-        -1495.6206507611562
+        1552.4046402180045,
+        -1700.9754986511925
       ]
     }
   },
