@@ -40,7 +40,6 @@ NODES=(
 WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/ltx/23/LTX23-I2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/ltx/23/LTX23-FL2VA-Qwen3.5.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/ltx/23/LTX23-LORA-ID-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PMP-LoRaStack-Upscale-Wildcards.json"
 )
 

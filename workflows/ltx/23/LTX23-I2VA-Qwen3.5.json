@@ -130,94 +130,10 @@
         }
       },
       "widgets_values": [
-        "- Huggingface: [Lightricks/LTX-2.3](https://huggingface.co/Lightricks/LTX-2.3/)\n- Github: [LTX-2](https://github.com/Lightricks/LTX-2)\n\n## LTX-2.3 Prompting Tips\n\n1. **Core Actions**: Describe events and actions as they occur over time  \n2. **Visual Details**: Describe all visual details you want to appear in the video  \n3. **Audio**: Describe sounds and dialogue needed for the scene\n\n## Report LTX-2.3 Issues\nTo report any issues when running this workflow, [go to GitHub](https://github.com/Lightricks/ComfyUI-LTXVideo/issues)\n\n## Model Links (for Local Users)\n\n**checkpoints**\n\n- [10Eros_v1.5_fp8mixed_experimental_learned.safetensors](https://huggingface.co/LokkenJP/10EROS_1.5_fp8_exp_learned/resolve/main/10Eros_v1.5_fp8mixed_experimental_learned.safetensors)\n\n**text_encoders**\n\n- [gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors](https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/text_encoders/gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors)\n\n**loras**\n\n- [LTX2.3_DMD_hybrid_v2.safetensors](https://huggingface.co/TenStrip/LTX2.3_DMD_Lora/resolve/main/LTX2.3_DMD_hybrid_v2.safetensors)\n\n**latent_upscale_models**\n\n- [ltx-2.3-spatial-upscaler-x2-1.1.safetensors](https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.1.safetensors)\n\n\n## Model Storage Location\n\n```\n\ud83d\udcc2 ComfyUI/\n\u251c\u2500\u2500 \ud83d\udcc2 models/\n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 checkpoints/\n\u2502   \u2502   \u2514\u2500\u2500 10Eros_v1.5_fp8mixed_experimental_learned.safetensors\n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 text_encoders/\n\u2502   \u2502   \u2514\u2500\u2500 gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors\n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 loras/\n\u2502   \u2502   \u251c\u2500\u2500 ltx23/\n\u2502   \u2502   \u2502   \u2514\u2500\u2500 LTX2.3_DMD_hybrid_v2.safetensors\n\u2502   \u2514\u2500\u2500 \ud83d\udcc2 latent_upscale_models/\n\u2502       \u2514\u2500\u2500 ltx-2.3-spatial-upscaler-x2-1.1.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- Workflow issues: [ComfyUI-LTXVideo/issues](https://github.com/Lightricks/ComfyUI-LTXVideo/issues)"
+        "- Huggingface: [Lightricks/LTX-2.3](https://huggingface.co/Lightricks/LTX-2.3/)\n- Github: [LTX-2](https://github.com/Lightricks/LTX-2)\n\n## LTX-2.3 Prompting Tips\n\n1. **Core Actions**: Describe events and actions as they occur over time  \n2. **Visual Details**: Describe all visual details you want to appear in the video  \n3. **Audio**: Describe sounds and dialogue needed for the scene\n\n## Report LTX-2.3 Issues\nTo report any issues when running this workflow, [go to GitHub](https://github.com/Lightricks/ComfyUI-LTXVideo/issues)\n\n## Model Links (for Local Users)\n\n**checkpoints**\n\n- [10Eros_v1.5_fp8mixed_experimental_learned.safetensors](https://huggingface.co/LokkenJP/10EROS_1.5_fp8_exp_learned/resolve/main/10Eros_v1.5_fp8mixed_experimental_learned.safetensors)\n\n**text_encoders**\n\n- [gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors](https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/text_encoders/gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors)\n\n**loras**\n\n- [LTX2.3_DMD_hybrid_v2.safetensors](https://huggingface.co/TenStrip/LTX2.3_DMD_Lora/resolve/main/LTX2.3_DMD_hybrid_v2.safetensors)\n\n**latent_upscale_models**\n\n- [ltx-2.3-spatial-upscaler-x2-1.1.safetensors](https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.1.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 checkpoints/\n│   │   └── 10Eros_v1.5_fp8mixed_experimental_learned.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors\n│   ├── 📂 loras/\n│   │   ├── ltx23/\n│   │   │   └── LTX2.3_DMD_hybrid_v2.safetensors\n│   └── 📂 latent_upscale_models/\n│       └── ltx-2.3-spatial-upscaler-x2-1.1.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- Workflow issues: [ComfyUI-LTXVideo/issues](https://github.com/Lightricks/ComfyUI-LTXVideo/issues)"
       ],
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 334,
-      "type": "UpscalerTensorrt",
-      "pos": [
-        688.9174882365751,
-        4248.135167021986
-      ],
-      "size": [
-        294.81271348921337,
-        76
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 663
-        },
-        {
-          "name": "upscaler_trt_model",
-          "type": "UPSCALER_TRT_MODEL",
-          "link": 656
-        }
-      ],
-      "outputs": [
-        {
-          "name": "upscaled_images",
-          "type": "IMAGE",
-          "links": [
-            657
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-        "ver": "6b8951d7413b41d9639be91888ef65b63827b930",
-        "Node name for S&R": "UpscalerTensorrt"
-      },
-      "widgets_values": [
-        "1080p",
-        2560,
-        1440
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 333,
-      "type": "LoadUpscalerTensorrtModel",
-      "pos": [
-        683.1253452107234,
-        4097.416139311401
-      ],
-      "size": [
-        295.4078125,
-        82
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "upscaler_trt_model",
-          "type": "UPSCALER_TRT_MODEL",
-          "links": [
-            656
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-        "ver": "6b8951d7413b41d9639be91888ef65b63827b930",
-        "Node name for S&R": "LoadUpscalerTensorrtModel"
-      },
-      "widgets_values": [
-        "RealESRGAN_x4",
-        "fp16"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
     },
     {
       "id": 336,
@@ -228,11 +144,11 @@
       ],
       "size": [
         1155.5330597730813,
-        991.4687338714127
+        986.7373461223583
       ],
       "flags": {},
       "order": 11,
-      "mode": 4,
+      "mode": 0,
       "inputs": [
         {
           "name": "images",
@@ -275,10 +191,10 @@
       ],
       "title": "50FPS",
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
         "frame_rate": 50,
@@ -295,13 +211,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "k1008.jpg_00001-audio.webm",
+            "filename": "S02_EP08_MakingConnections_182.jpg_00001-audio.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 50,
-            "workflow": "k1008.jpg_00001.png",
-            "fullpath": "/workspace/ComfyUI/output/k1008.jpg_00001-audio.webm"
+            "workflow": "S02_EP08_MakingConnections_182.jpg_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP08_MakingConnections_182.jpg_00001-audio.webm"
           }
         }
       },
@@ -317,13 +233,13 @@
       ],
       "size": [
         1190.7118923586802,
-        772.7367390032522
+        106
       ],
       "flags": {
         "collapsed": false
       },
       "order": 9,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "video",
@@ -372,41 +288,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 335,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -615.4182650042561,
-        4450.630325006877
-      ],
-      "size": [
-        492.5463282006857,
-        130
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "OPTIONS",
-      "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "position",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 337,
       "type": "WidgetToString",
       "pos": [
@@ -439,10 +320,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
+        "cnr_id": "comfyui-kjnodes"
       },
       "widgets_values": [
         269,
@@ -451,6 +332,222 @@
         "LoadImage",
         2
       ]
+    },
+    {
+      "id": 341,
+      "type": "easy showAnything",
+      "pos": [
+        6.161401344376822,
+        4216.118589119377
+      ],
+      "size": [
+        624.810913316046,
+        330.7089975457475
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 676
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "yolain/ComfyUI-Easy-Use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+        "Node name for S&R": "easy showAnything",
+        "cnr_id": "comfyui-easy-use"
+      },
+      "widgets_values": [
+        "A man in a maroon shirt gently cups a blonde woman’s breast as she stands bare-chested, her other hand delicately touching her own shoulder, her expression serene and receptive; behind them, a second woman in a blue top watches intently, her finger tracing the man’s arm, her lips slightly parted in quiet observation; the camera glides smoothly rightward and slightly downward, revealing more of the plush burgundy sofa and the abstract black-and-white artwork on the wall; warm ambient lighting casts soft shadows across their skin, highlighting the natural contours and subtle sheen; the man’s thumb slowly strokes the woman’s nipple, her breath hitches slightly as she leans into his touch; she murmurs “yes” in a soft, breathy whisper as his hand moves lower; ambient sounds include the gentle rustle of fabric, the soft thump of her heartbeat, and the faint hum of the room’s air conditioning; no speech after the whisper, only the rhythmic sighs and the quiet creak of the sofa as they shift slightly."
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 335,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -615.4182650042561,
+        4450.630325006877
+      ],
+      "size": [
+        492.5463282006857,
+        130
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 333,
+      "type": "LoadUpscalerTensorrtModel",
+      "pos": [
+        683.1253452107234,
+        4097.416139311401
+      ],
+      "size": [
+        295.4078125,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "upscaler_trt_model",
+          "type": "UPSCALER_TRT_MODEL",
+          "links": [
+            656
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+        "ver": "6b8951d7413b41d9639be91888ef65b63827b930",
+        "Node name for S&R": "LoadUpscalerTensorrtModel"
+      },
+      "widgets_values": [
+        "RealESRGAN_x2plus",
+        "fp16"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 334,
+      "type": "UpscalerTensorrt",
+      "pos": [
+        688.9174882365751,
+        4248.135167021986
+      ],
+      "size": [
+        294.81271348921337,
+        94
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 663
+        },
+        {
+          "name": "upscaler_trt_model",
+          "type": "UPSCALER_TRT_MODEL",
+          "link": 656
+        }
+      ],
+      "outputs": [
+        {
+          "name": "upscaled_images",
+          "type": "IMAGE",
+          "links": [
+            657
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+        "ver": "6b8951d7413b41d9639be91888ef65b63827b930",
+        "Node name for S&R": "UpscalerTensorrt"
+      },
+      "widgets_values": [
+        "2K",
+        "2",
+        1440,
+        2048
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 269,
+      "type": "LoadImage",
+      "pos": [
+        -637.8291352235673,
+        3519.0113405231773
+      ],
+      "size": [
+        579.6733735229459,
+        837.4977672437481
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            633,
+            660
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "LoadImage",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3",
+        "Node name for S&R": "LoadImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "S02_EP08_MakingConnections_188.jpg",
+        "image"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
       "id": 320,
@@ -635,113 +732,18 @@
         1088,
         5,
         50,
-        828650789547225,
+        914767155445334,
         "10Eros_v1.5_fp8mixed_experimental_learned.safetensors",
         "ltx23/LTX2.3_DMD_hybrid_v2.safetensors",
         "gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors",
         "ltx-2.3-spatial-upscaler-x2-1.1.safetensors",
         "gemma-3-12b-it-abliterated_lora_rank64_bf16.safetensors",
-        "Qwen3-VL-8B-Heretic-Stable",
+        "Qwen3.5-4B-heretic-v2",
         "None (FP16)",
-        "\ud83c\udfa5 LTX 2.3 NSFW I2V"
+        "🎥 LTX 2.3 NSFW I2V"
       ],
       "color": "#233",
       "bgcolor": "#355"
-    },
-    {
-      "id": 269,
-      "type": "LoadImage",
-      "pos": [
-        -622.9518325776311,
-        3522.9689646881006
-      ],
-      "size": [
-        579.6733735229459,
-        837.4977672437481
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            633,
-            660
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "LoadImage",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.16.3",
-        "Node name for S&R": "LoadImage",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "r1993.jpg",
-        "image"
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 341,
-      "type": "easy showAnything",
-      "pos": [
-        6.161401344376822,
-        4216.118589119377
-      ],
-      "size": [
-        624.810913316046,
-        330.7089975457475
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 676
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything"
-      },
-      "widgets_values": [
-        "The woman in the gold metallic dress straddles the man, her hips grinding rhythmically against him as she arches her back, her hands gripping his shoulders while her head tilts back with a moan. Her legs clamp around his waist, her thighs pressing against his chest as he thrusts upward, his hands sliding up her hips. Her mouth opens wider in a gasp, her tongue darting out slightly as she looks up at him with intense desire. The red wine glasses on the table remain still, reflecting the dim ambient light from the brick wall and the abstract painting behind them. No speech, only soft, wet moans and the rhythmic sound of skin slapping against skin, punctuated by the occasional soft gasp and the gentle clink of glassware as the scene pulses with intimate, sensual energy."
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
     }
   ],
   "links": [
@@ -1727,78 +1729,6 @@
               }
             },
             "widgets_values": []
-          },
-          {
-            "id": 285,
-            "type": "LoraLoaderModelOnly",
-            "pos": [
-              1660,
-              3890
-            ],
-            "size": [
-              430,
-              140
-            ],
-            "flags": {},
-            "order": 12,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 520
-              },
-              {
-                "localized_name": "lora_name",
-                "name": "lora_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "lora_name"
-                },
-                "link": 602
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "MODEL",
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": [
-                  478,
-                  541,
-                  641
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.3.75",
-              "Node name for S&R": "LoraLoaderModelOnly",
-              "enableTabs": false,
-              "tabWidth": 65,
-              "tabXOffset": 10,
-              "hasSecondTab": false,
-              "secondTabText": "Send Back",
-              "secondTabOffset": 80,
-              "secondTabWidth": 65,
-              "models": [
-                {
-                  "name": "ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
-                  "url": "https://huggingface.co/Comfy-Org/ltx-2.3/resolve/main/split_files/loras/ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
-                  "directory": "loras"
-                }
-              ],
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.7",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
-              0.5
-            ]
           },
           {
             "id": 287,
@@ -4012,7 +3942,7 @@
               "auto",
               false,
               "auto",
-              "\ud83c\udfa5 LTX 2.3 NSFW I2V",
+              "🎥 LTX 2.3 NSFW I2V",
               "",
               8192,
               0.6,
@@ -4021,7 +3951,7 @@
               1,
               16,
               false,
-              1860759248,
+              3930985578,
               "randomize",
               false
             ],
@@ -4397,6 +4327,78 @@
             },
             "widgets_values": [
               false
+            ]
+          },
+          {
+            "id": 285,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              1660,
+              3890
+            ],
+            "size": [
+              430,
+              140
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 520
+              },
+              {
+                "localized_name": "lora_name",
+                "name": "lora_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "lora_name"
+                },
+                "link": 602
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  478,
+                  541,
+                  641
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.3.75",
+              "Node name for S&R": "LoraLoaderModelOnly",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "models": [
+                {
+                  "name": "ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/ltx-2.3/resolve/main/split_files/loras/ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
+                  "directory": "loras"
+                }
+              ],
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.7",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              "ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
+              0.5
             ]
           }
         ],
@@ -5329,7 +5331,7 @@
         },
         "class_type": "LTXVGemmaCLIPModelLoader",
         "_meta": {
-          "title": "\ud83c\udd5b\ud83c\udd63\ud83c\udd67 Gemma 3 Model Loader"
+          "title": "🅛🅣🅧 Gemma 3 Model Loader"
         }
       },
       "3": {
@@ -5415,7 +5417,7 @@
         },
         "class_type": "LTXVAudioVAELoader",
         "_meta": {
-          "title": "\ud83c\udd5b\ud83c\udd63\ud83c\udd67 LTXV Audio VAE Loader"
+          "title": "🅛🅣🅧 LTXV Audio VAE Loader"
         }
       },
       "14": {
@@ -5431,7 +5433,7 @@
         },
         "class_type": "LTXVAudioVAEDecode",
         "_meta": {
-          "title": "\ud83c\udd5b\ud83c\udd63\ud83c\udd67 LTXV Audio VAE Decode"
+          "title": "🅛🅣🅧 LTXV Audio VAE Decode"
         }
       },
       "15": {
@@ -5460,7 +5462,7 @@
         },
         "class_type": "VHS_VideoCombine",
         "_meta": {
-          "title": "Video Combine \ud83c\udfa5\ud83c\udd65\ud83c\udd57\ud83c\udd62"
+          "title": "Video Combine 🎥🅥🅗🅢"
         }
       },
       "17": {
@@ -5485,7 +5487,7 @@
         },
         "class_type": "MultimodalGuider",
         "_meta": {
-          "title": "\ud83c\udd5b\ud83c\udd63\ud83c\udd67 Multimodal Guider"
+          "title": "🅛🅣🅧 Multimodal Guider"
         }
       },
       "18": {
@@ -5502,7 +5504,7 @@
         },
         "class_type": "GuiderParameters",
         "_meta": {
-          "title": "\ud83c\udd5b\ud83c\udd63\ud83c\udd67 Guider Parameters"
+          "title": "🅛🅣🅧 Guider Parameters"
         }
       },
       "19": {
@@ -5515,7 +5517,7 @@
         },
         "class_type": "GuiderParameters",
         "_meta": {
-          "title": "\ud83c\udd5b\ud83c\udd63\ud83c\udd67 Guider Parameters"
+          "title": "🅛🅣🅧 Guider Parameters"
         }
       },
       "21": {
@@ -5574,7 +5576,7 @@
         },
         "class_type": "LTXVEmptyLatentAudio",
         "_meta": {
-          "title": "\ud83c\udd5b\ud83c\udd63\ud83c\udd67 LTXV Empty Latent Audio"
+          "title": "🅛🅣🅧 LTXV Empty Latent Audio"
         }
       },
       "27": {
@@ -5603,7 +5605,7 @@
         },
         "class_type": "LTXVConcatAVLatent",
         "_meta": {
-          "title": "\ud83c\udd5b\ud83c\udd63\ud83c\udd67 LTXV Concat AV Latent"
+          "title": "🅛🅣🅧 LTXV Concat AV Latent"
         }
       },
       "29": {
@@ -5619,7 +5621,7 @@
         },
         "class_type": "LTXVSeparateAVLatent",
         "_meta": {
-          "title": "\ud83c\udd5b\ud83c\udd63\ud83c\udd67 LTXV Separate AV Latent"
+          "title": "🅛🅣🅧 LTXV Separate AV Latent"
         }
       },
       "41": {
@@ -5709,10 +5711,10 @@
     "VHS_KeepIntermediate": true,
     "ue_links": [],
     "ds": {
-      "scale": 0.6281029605030921,
+      "scale": 0.8360050404296158,
       "offset": [
-        1163.2035563478028,
-        -3471.0536850513945
+        1009.0570156806178,
+        -3284.4149315553595
       ]
     }
   },
