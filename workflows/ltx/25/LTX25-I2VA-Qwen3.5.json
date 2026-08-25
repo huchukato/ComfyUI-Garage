@@ -2,7 +2,7 @@
   "id": "07824bbb-6672-4bb0-ac36-4313a519e35b",
   "revision": 0,
   "last_node_id": 415,
-  "last_link_id": 805,
+  "last_link_id": 807,
   "nodes": [
     {
       "id": 399,
@@ -88,7 +88,7 @@
         154
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -178,13 +178,13 @@
         229.6878304442398
       ],
       "flags": {},
-      "order": 8,
+      "order": 12,
       "mode": 4,
       "inputs": [
         {
           "name": "frames",
           "type": "IMAGE",
-          "link": null
+          "link": 806
         },
         {
           "name": "rife_trt_model",
@@ -259,106 +259,104 @@
       "bgcolor": "#335"
     },
     {
-      "id": 414,
-      "type": "UpscalerTensorrt",
+      "id": 415,
+      "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
-        2574.2923960649005,
-        7138.903144976434
+        1414.2706170756637,
+        7127.7122612322455
       ],
       "size": [
-        294.81271348921337,
-        94
+        492.5463282006857,
+        154
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 402,
+      "type": "MarkdownNote",
+      "pos": [
+        1399.6795064269807,
+        7362.762636894644
+      ],
+      "size": [
+        300,
+        520
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Size Settings Reference",
+      "properties": {},
+      "widgets_values": [
+        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 408,
+      "type": "easy showAnything",
+      "pos": [
+        1989.9994286517067,
+        7145.5054343391885
+      ],
+      "size": [
+        496.7338176471126,
+        435.21847717594756
       ],
       "flags": {},
       "order": 11,
       "mode": 0,
       "inputs": [
         {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 804
-        },
-        {
-          "name": "upscaler_trt_model",
-          "type": "UPSCALER_TRT_MODEL",
-          "link": 805
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 797
         }
       ],
       "outputs": [
         {
-          "name": "upscaled_images",
-          "type": "IMAGE",
-          "links": []
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-        "ver": "6b8951d7413b41d9639be91888ef65b63827b930",
-        "Node name for S&R": "UpscalerTensorrt"
-      },
-      "widgets_values": [
-        "2K",
-        "2",
-        1440,
-        2048
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 75,
-      "type": "SaveVideo",
-      "pos": [
-        3030.657954860472,
-        7639.858274409117
-      ],
-      "size": [
-        800,
-        106
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 12,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "video",
-          "type": "VIDEO",
-          "link": 759
-        }
-      ],
-      "outputs": [
-        {
-          "name": "video",
-          "type": "VIDEO",
+          "name": "output",
+          "type": "*",
           "links": null
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.5.1",
-        "Node name for S&R": "SaveVideo",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
-        }
+        "aux_id": "yolain/ComfyUI-Easy-Use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+        "Node name for S&R": "easy showAnything",
+        "cnr_id": "comfyui-easy-use"
       },
       "widgets_values": [
-        "video/LTX-2.5_i2v",
-        "auto",
-        "auto"
+        "In a warmly lit, intimate indoor setting with soft, golden-hour lighting filtering through a window in the background, a photorealistic 3D-rendered blonde woman with blue eyes and a delicate earring is captured in a close-up shot from a slightly low angle, leaning over a partner whose bare torso and penis are visible in the foreground. The scene begins with her lips gently touching the glans of the erect penis, her tongue extending to begin the oral act. As the first few seconds progress, she maintains steady, rhythmic motion, her head bobbing slightly with the movement, while her expression shifts from focused concentration to a soft, contented smile, her eyes half-lidded and gazing down at her partner. Her hand, partially visible, rests lightly on the partner’s hip or thigh, providing subtle support. Around the five-second mark, the camera slowly tilts upward slightly to capture more of her face as she deepens the action, her breathing becoming heavier and more audible, synchronized with the wet, slick sounds of skin on skin. As the scene continues, her movements become more fluid and deliberate, her tongue tracing the shaft with a slow, sensual rhythm. The ambient sounds include soft, muffled background noise and the distinct, wet sounds of oral sex. By the final seconds, she pauses briefly, her head lifting slightly to meet the camera’s gaze, her expression one of pleasure and satisfaction, before gently resuming the motion as the clip concludes. Throughout, the lighting remains consistent and warm, highlighting the natural textures of the skin and the glossy sheen of the penis. No dialogue is spoken; the audio is entirely diegetic, consisting of her soft, breathy moans, the sound of her tongue and lips moving, and the ambient room tones. The camera maintains a smooth, continuous handheld-style movement, subtly pushing in slightly as the scene intensifies, then pulling back slightly at the end to frame her face and upper body more fully."
       ],
-      "color": "#223",
-      "bgcolor": "#335"
+      "color": "#233",
+      "bgcolor": "#355"
     },
     {
       "id": 407,
@@ -369,7 +367,7 @@
       ],
       "size": [
         1155.5330597730813,
-        334
+        996.8760341560464
       ],
       "flags": {},
       "order": 14,
@@ -378,7 +376,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 802
+          "link": 807
         },
         {
           "name": "audio",
@@ -414,7 +412,7 @@
           "links": null
         }
       ],
-      "title": "48FPS",
+      "title": "50FPS",
       "properties": {
         "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
@@ -428,21 +426,21 @@
         "format": "video/webm",
         "pix_fmt": "yuv420p",
         "crf": 20,
-        "save_metadata": true,
-        "trim_to_audio": true,
+        "save_metadata": false,
+        "trim_to_audio": false,
         "pingpong": false,
         "save_output": true,
         "videopreview": {
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "k1183.jpg_00001-audio.mp4",
+            "filename": "S02_EP08_MakingConnections_250.jpg_00002-audio.webm",
             "subfolder": "",
             "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 48,
-            "workflow": "k1183.jpg_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/k1183.jpg_00001-audio.mp4"
+            "format": "video/webm",
+            "frame_rate": 50,
+            "workflow": "S02_EP08_MakingConnections_250.jpg_00002.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP08_MakingConnections_250.jpg_00002-audio.webm"
           }
         }
       },
@@ -461,7 +459,7 @@
         650
       ],
       "flags": {},
-      "order": 5,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -505,104 +503,108 @@
       "bgcolor": "#355"
     },
     {
-      "id": 415,
-      "type": "Fast Groups Bypasser (rgthree)",
+      "id": 75,
+      "type": "SaveVideo",
       "pos": [
-        1414.2706170756637,
-        7127.7122612322455
+        3018.0496696028836,
+        7796.259276650611
       ],
       "size": [
-        492.5463282006857,
-        154
+        1060.6209120305725,
+        106
       ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 10,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 759
+        }
+      ],
       "outputs": [
         {
-          "name": "OPT_CONNECTION",
-          "type": "*",
+          "name": "video",
+          "type": "VIDEO",
           "links": null
         }
       ],
-      "title": "OPTIONS",
       "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "position",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
+        "cnr_id": "comfy-core",
+        "ver": "0.5.1",
+        "Node name for S&R": "SaveVideo",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
       },
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 402,
-      "type": "MarkdownNote",
-      "pos": [
-        1399.6795064269807,
-        7362.762636894644
-      ],
-      "size": [
-        300,
-        520
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Size Settings Reference",
-      "properties": {},
       "widgets_values": [
-        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+        "video/LTX-2.5_i2v",
+        "auto",
+        "auto"
       ],
-      "color": "#222",
-      "bgcolor": "#000"
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
-      "id": 408,
-      "type": "easy showAnything",
+      "id": 414,
+      "type": "UpscalerTensorrt",
       "pos": [
-        1989.9994286517067,
-        7145.5054343391885
+        2574.2923960649005,
+        7138.903144976434
       ],
       "size": [
-        496.7338176471126,
-        435.21847717594756
+        294.81271348921337,
+        94
       ],
       "flags": {},
       "order": 13,
       "mode": 0,
       "inputs": [
         {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 797
+          "name": "images",
+          "type": "IMAGE",
+          "link": 804
+        },
+        {
+          "name": "upscaler_trt_model",
+          "type": "UPSCALER_TRT_MODEL",
+          "link": 805
         }
       ],
       "outputs": [
         {
-          "name": "output",
-          "type": "*",
-          "links": null
+          "name": "upscaled_images",
+          "type": "IMAGE",
+          "links": [
+            807
+          ]
         }
       ],
       "properties": {
-        "aux_id": "yolain/ComfyUI-Easy-Use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
-        "cnr_id": "comfyui-easy-use"
+        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+        "ver": "6b8951d7413b41d9639be91888ef65b63827b930",
+        "Node name for S&R": "UpscalerTensorrt"
       },
       "widgets_values": [
-        "In a warmly lit, intimate bedroom setting, a photorealistic close-up captures a blonde woman with blue eyes and a small gold hoop earring leaning over a man, her expression focused and sensual as she begins to suckle his erect penis with her mouth. At the start of the ten seconds, the camera holds a tight, low-angle shot, emphasizing the texture of the man's skin and the woman's lips around the glans, while the ambient sound of soft breathing and skin contact fills the space. First, she gently pulls away, her tongue visible as she licks the tip, her eyes locking with his gaze with a look of anticipation. Then, she resumes the motion, moving her head up and down rhythmically, her body pressed close to his, and her breathing becomes slightly heavier as the act continues. As the seconds progress, the camera slowly tilts down slightly to follow the movement, capturing the fluidity of her hair and the subtle shifts in her facial expression, which transitions from focused to a soft, contented smile. Meanwhile, the man remains still, his body tense, while the woman adjusts her grip, her cheeks slightly flushed. Gradually, the pace of the motion intensifies, her movements becoming more deliberate and passionate, her eyes closing briefly as she leans in deeper. Finally, in the last few seconds, she pulls back with a satisfied exhale, her lips glistening, and she looks up at him with a mix of desire and affection, the scene ending on a moment of quiet intimacy. Throughout, the lighting remains soft and warm, highlighting the natural contours of their bodies, and the audio is a seamless blend of wet, rhythmic sounds and soft, unspoken moans that match the visual intensity."
+        "2K",
+        "2",
+        1440,
+        2048
       ],
-      "color": "#233",
-      "bgcolor": "#355"
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
       "id": 398,
@@ -616,7 +618,7 @@
         670
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -735,7 +737,7 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            802
+            806
           ]
         },
         {
@@ -755,14 +757,14 @@
         "",
         false,
         10,
-        1920,
-        1080,
-        445260247898487,
+        1344,
+        768,
+        433392261827629,
         50,
         "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
         "ltx-2.5-video-vae-bf16.safetensors",
         "ltx-2.5-audio-vae-bf16.safetensors",
-        "Gemma-4-12B-it-uncensored-heretic - DeepNeuralNerd -LTX 2.5-ComfyUI-int8convrot.safetensors",
+        "gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors",
         "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
         "gemma4_e2b_it_bf16.safetensors",
         "Qwen3.5-4B-heretic-v2",
@@ -822,14 +824,6 @@
       "STRING"
     ],
     [
-      802,
-      398,
-      2,
-      407,
-      0,
-      "IMAGE"
-    ],
-    [
       803,
       411,
       0,
@@ -852,6 +846,22 @@
       414,
       1,
       "UPSCALER_TRT_MODEL"
+    ],
+    [
+      806,
+      398,
+      2,
+      412,
+      0,
+      "IMAGE"
+    ],
+    [
+      807,
+      414,
+      0,
+      407,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -885,20 +895,20 @@
       "bounding": [
         2933.4547364984414,
         6372.810100917038,
-        1175.5330597730813,
-        414
+        1176.7546986332231,
+        1088.9707407140122
       ],
       "color": "#a1309b",
       "flags": {}
     },
     {
       "id": 31,
-      "title": "24FPS",
+      "title": "25FPS",
       "bounding": [
-        3020.657954860472,
-        7569.858274409117,
-        820,
-        186
+        3008.0496696028836,
+        7726.259276650611,
+        1084.7807654148592,
+        193.90643143235138
       ],
       "color": "#a1309b",
       "flags": {}
@@ -912,7 +922,7 @@
         "state": {
           "lastGroupId": 31,
           "lastNodeId": 415,
-          "lastLinkId": 805,
+          "lastLinkId": 807,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1506,54 +1516,6 @@
             ]
           },
           {
-            "id": 363,
-            "type": "PrimitiveBoolean",
-            "pos": [
-              160,
-              6480
-            ],
-            "size": [
-              370,
-              100
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "BOOLEAN",
-                "name": "BOOLEAN",
-                "type": "BOOLEAN",
-                "links": [
-                  683,
-                  693
-                ]
-              }
-            ],
-            "title": "Switch to Text to Video?",
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.16.0",
-              "Node name for S&R": "PrimitiveBoolean",
-              "enableTabs": false,
-              "tabWidth": 65,
-              "tabXOffset": 10,
-              "hasSecondTab": false,
-              "secondTabText": "Send Back",
-              "secondTabOffset": 80,
-              "secondTabWidth": 65,
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.7",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              false
-            ]
-          },
-          {
             "id": 365,
             "type": "LTXVConditioning",
             "pos": [
@@ -1974,7 +1936,7 @@
               110
             ],
             "flags": {},
-            "order": 1,
+            "order": 0,
             "mode": 0,
             "inputs": [],
             "outputs": [
@@ -2077,7 +2039,7 @@
               100
             ],
             "flags": {},
-            "order": 2,
+            "order": 1,
             "mode": 0,
             "inputs": [],
             "outputs": [
@@ -3282,7 +3244,7 @@
               110
             ],
             "flags": {},
-            "order": 3,
+            "order": 2,
             "mode": 0,
             "inputs": [],
             "outputs": [
@@ -3386,7 +3348,7 @@
               110
             ],
             "flags": {},
-            "order": 4,
+            "order": 3,
             "mode": 0,
             "inputs": [],
             "outputs": [
@@ -3493,7 +3455,7 @@
               110
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [],
             "outputs": [
@@ -4063,12 +4025,60 @@
               1,
               16,
               false,
-              1104234841,
+              1097701527,
               "randomize",
               false
             ],
             "color": "#28403f",
             "bgcolor": "#374539"
+          },
+          {
+            "id": 363,
+            "type": "PrimitiveBoolean",
+            "pos": [
+              138.798421955902,
+              6472.9611440976305
+            ],
+            "size": [
+              370,
+              100
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "BOOLEAN",
+                "name": "BOOLEAN",
+                "type": "BOOLEAN",
+                "links": [
+                  683,
+                  693
+                ]
+              }
+            ],
+            "title": "Switch to Text to Video?",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.16.0",
+              "Node name for S&R": "PrimitiveBoolean",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.7",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              false
+            ]
           }
         ],
         "groups": [
@@ -5275,8 +5285,8 @@
     "ds": {
       "scale": 0.7674117372881365,
       "offset": [
-        -428.0059341498945,
-        -6101.805397294857
+        -947.1292198489859,
+        -6218.058160665524
       ]
     }
   },
