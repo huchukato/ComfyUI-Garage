@@ -1,81 +1,9 @@
 {
   "id": "07824bbb-6672-4bb0-ac36-4313a519e35b",
   "revision": 0,
-  "last_node_id": 415,
-  "last_link_id": 807,
+  "last_node_id": 416,
+  "last_link_id": 808,
   "nodes": [
-    {
-      "id": 399,
-      "type": "MarkdownNote",
-      "pos": [
-        530,
-        6390
-      ],
-      "size": [
-        780,
-        1280
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: About LTX-2.5",
-      "properties": {},
-      "widgets_values": [
-        "# LTX-2.5\n\nLTX-2.5 is Lightricks' open video generation model : fast, local-first, and built for production. Run it locally, fine-tune it for your own use case, or integrate it into your pipeline.\n\n**Key highlights:**\n\n- **Pixel Diffusion** : keyframes-first generation that builds every scene on a grid of high-fidelity keyframes for industry-leading pixel quality\n- **Diffusion Video Decoder** : sharper faces, legible text, fewer smears in fast motion\n- **Native multishot** : one generation yields multiple connected shots holding character, environment, lighting, voice, and style across cuts\n- **Custom Gemma 4 12B text encoder** : retains multiple subjects, actions, lighting, detail, and camera direction across complex prompts\n- **Dedicated Prompt Enhancer** : a lightweight model that expands short prompts into rich cinematic instructions at near-zero extra compute\n- **Auto Duration** : predicts the right clip length from the described action before diffusion begins\n- **Better distilled model** : carries far more quality, prompt adherence, and motion into a smaller, faster variant\n- Carried over from LTX-2.3: native 4K, synchronized audio-video\n\nOfficial model & files: https://huggingface.co/Lightricks/LTX-2.5\n## What this workflow does\n\nThis **Image-to-Video** workflow animates a first frame into a video. Load a starting image, describe the motion in the prompt, and the model continues the scene while holding character, lighting, and style : with synchronized audio.\n\n## Subgraph parameters\n\nThe **Image to Video (LTX-2.5)** node is a subgraph. Click the **Enter subgraph** button at the bottom of the node to open its internal graph, where you can inspect and fine-tune every step of the pipeline (conditioning, sampler, CFG guider, VAE decode, and more).\n\n| Parameter | What it does |\n|---|---|\n| first_frame | Starting image that the video continues from (load your own image in **Load First Frame**) |\n| prompt | Text prompt describing the motion, scene, lighting, camera, and style |\n| prompt_enhance | Toggle the built-in Prompt Enhancer: expands short prompts into rich cinematic instructions at near-zero extra compute |\n| duration | Clip length in seconds (Auto Duration can predict it from the action) |\n| width / height | Output resolution in pixels (e.g. 1280×720) |\n| seed | Random seed : set a fixed value to reproduce the same result |\n| frame_rate | Frames per second |\n| unet_name | Main model: LTX-2.5 distilled transformer (ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors) |\n| video_vae | Video VAE used for decoding (ltx-2.5-video-vae-bf16.safetensors) |\n| audio_vae | Audio VAE that produces synchronized audio (ltx-2.5-audio-vae-bf16.safetensors) |\n| clip_name | Text encoder: uncensored Gemma 4 12B heretic with LTX-2.5 projection (gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors) |\n| upscale_model | Latent upscaler applied before decoding for higher-fidelity output |\n| prompt_enhance_model | Model checkpoint used by the Prompt Enhancer |\n\n## How to use\n\n1. Download the models listed in **Note: Model Links** and place them in ComfyUI's `models/` folder\n2. Replace the image in **Load First Frame** with your own starting frame\n3. Write a prompt describing the motion, optionally toggle **prompt_enhance** for short prompts\n4. Set **duration** / **width** / **height** / **frame_rate** (defaults work well) and hit **Queue**\n5. To dive deeper, click **Enter subgraph** at the bottom of the main node : every internal step (conditioning, sampler, CFG, VAE decode) can be edited there\n"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 401,
-      "type": "MarkdownNote",
-      "pos": [
-        -60,
-        6390
-      ],
-      "size": [
-        550,
-        880
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Model Links",
-      "properties": {},
-      "widgets_values": [
-        "Guide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Model Links\n\n**Input Asset** \n\n- [neon_cyborg_portrait.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/neon_cyborg_portrait.png) — required workflow input (`input/neon_cyborg_portrait.png`)\n\n**text_encoders**\n\n- [gemma4_e2b_it_bf16.safetensors](https://huggingface.co/Comfy-Org/gemma-4/resolve/main/text_encoders/gemma4_e2b_it_bf16.safetensors)\n- [gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors](https://huggingface.co/DeepNeuralNerd/Gemma-4-12B-it-uncensored-heretic-DeepNeuralNerd-LTX_2.5_ComfyUI/resolve/main/Gemma-4-12B-it-uncensored-heretic%20-%20DeepNeuralNerd%20-LTX%202.5-ComfyUI-int8convrot.safetensors)\n\n**diffusion_models**\n\n- [ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors)\n\n**vae**\n\n- [ltx-2.5-video-vae-bf16.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-video-vae-bf16.safetensors)\n- [ltx-2.5-audio-vae-bf16.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-audio-vae-bf16.safetensors)\n\n**latent_upscale_models**\n\n- [ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 text_encoders/\n│   │   ├── gemma4_e2b_it_bf16.safetensors\n│   │   └── gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors\n│   ├── 📂 vae/\n│   │   ├── ltx-2.5-video-vae-bf16.safetensors\n│   │   └── ltx-2.5-audio-vae-bf16.safetensors\n│   └── 📂 latent_upscale_models/\n│       └── ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 404,
-      "type": "MarkdownNote",
-      "pos": [
-        -60,
-        6260
-      ],
-      "size": [
-        340,
-        90
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Model Links",
-      "properties": {},
-      "widgets_values": [
-        "Before you download all the models, please make sure you have granted access to [LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5) first."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
     {
       "id": 406,
       "type": "WidgetToString",
@@ -108,10 +36,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "cnr_id": "comfyui-kjnodes"
+        "aux_id": "kijai/ComfyUI-KJNodes"
       },
       "widgets_values": [
         395,
@@ -133,7 +61,7 @@
         130
       ],
       "flags": {},
-      "order": 3,
+      "order": 0,
       "mode": 4,
       "inputs": [
         {
@@ -234,7 +162,7 @@
         82
       ],
       "flags": {},
-      "order": 4,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -270,7 +198,7 @@
         154
       ],
       "flags": {},
-      "order": 5,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -305,7 +233,7 @@
         520
       ],
       "flags": {},
-      "order": 6,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -347,10 +275,10 @@
         }
       ],
       "properties": {
-        "aux_id": "yolain/ComfyUI-Easy-Use",
+        "cnr_id": "comfyui-easy-use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "cnr_id": "comfyui-easy-use"
+        "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
         "In a warmly lit, intimate indoor setting with soft, golden-hour lighting filtering through a window in the background, a photorealistic 3D-rendered blonde woman with blue eyes and a delicate earring is captured in a close-up shot from a slightly low angle, leaning over a partner whose bare torso and penis are visible in the foreground. The scene begins with her lips gently touching the glans of the erect penis, her tongue extending to begin the oral act. As the first few seconds progress, she maintains steady, rhythmic motion, her head bobbing slightly with the movement, while her expression shifts from focused concentration to a soft, contented smile, her eyes half-lidded and gazing down at her partner. Her hand, partially visible, rests lightly on the partner’s hip or thigh, providing subtle support. Around the five-second mark, the camera slowly tilts upward slightly to capture more of her face as she deepens the action, her breathing becoming heavier and more audible, synchronized with the wet, slick sounds of skin on skin. As the scene continues, her movements become more fluid and deliberate, her tongue tracing the shaft with a slow, sensual rhythm. The ambient sounds include soft, muffled background noise and the distinct, wet sounds of oral sex. By the final seconds, she pauses briefly, her head lifting slightly to meet the camera’s gaze, her expression one of pleasure and satisfaction, before gently resuming the motion as the clip concludes. Throughout, the lighting remains consistent and warm, highlighting the natural textures of the skin and the glossy sheen of the penis. No dialogue is spoken; the audio is entirely diegetic, consisting of her soft, breathy moans, the sound of her tongue and lips moving, and the ambient room tones. The camera maintains a smooth, continuous handheld-style movement, subtly pushing in slightly as the scene intensifies, then pulling back slightly at the end to frame her face and upper body more fully."
@@ -367,7 +295,7 @@
       ],
       "size": [
         1155.5330597730813,
-        996.8760341560464
+        334
       ],
       "flags": {},
       "order": 14,
@@ -414,10 +342,10 @@
       ],
       "title": "50FPS",
       "properties": {
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
+        "cnr_id": "comfyui-videohelpersuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "cnr_id": "comfyui-videohelpersuite"
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
       },
       "widgets_values": {
         "frame_rate": 50,
@@ -446,61 +374,6 @@
       },
       "color": "#223",
       "bgcolor": "#335"
-    },
-    {
-      "id": 395,
-      "type": "LoadImage",
-      "pos": [
-        1420,
-        6400
-      ],
-      "size": [
-        530,
-        650
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            764,
-            794
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "FirstFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "LoadImage",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.5.2"
-        }
-      },
-      "widgets_values": [
-        "S02_EP08_MakingConnections_250.jpg",
-        "image"
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
     },
     {
       "id": 75,
@@ -607,6 +480,61 @@
       "bgcolor": "#335"
     },
     {
+      "id": 395,
+      "type": "LoadImage",
+      "pos": [
+        1375.5323454908446,
+        6409.238643879821
+      ],
+      "size": [
+        530,
+        650
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            764,
+            794
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "FirstFrame",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "LoadImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "S02_EP08_MakingConnections_250.jpg",
+        "image"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
       "id": 398,
       "type": "6e397a2b-68f7-48f6-8930-f3a5491a163c",
       "pos": [
@@ -622,17 +550,20 @@
       "mode": 0,
       "inputs": [
         {
-          "label": "first_frame",
-          "name": "input",
-          "type": "IMAGE,MASK",
-          "link": 764
-        },
-        {
           "label": "prompt",
           "name": "value",
           "type": "STRING",
           "widget": {
             "name": "value"
+          },
+          "link": null
+        },
+        {
+          "label": "Switch To Text To Video",
+          "name": "value_6",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "value_6"
           },
           "link": null
         },
@@ -716,6 +647,12 @@
             "name": "clip_name_1"
           },
           "link": null
+        },
+        {
+          "label": "first_frame",
+          "name": "input",
+          "type": "IMAGE,MASK",
+          "link": 764
         }
       ],
       "outputs": [
@@ -756,7 +693,8 @@
       "widgets_values": [
         "",
         false,
-        10,
+        false,
+        5,
         1344,
         768,
         433392261827629,
@@ -768,10 +706,82 @@
         "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
         "gemma4_e2b_it_bf16.safetensors",
         "Qwen3.5-4B-heretic-v2",
-        "🎥 LTX 2.3 NSFW I2V (10s)"
+        "🎥 LTX 2.3 NSFW I2V"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 404,
+      "type": "MarkdownNote",
+      "pos": [
+        -53.44896161249039,
+        6254.714375865122
+      ],
+      "size": [
+        340,
+        90
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Model Links",
+      "properties": {},
+      "widgets_values": [
+        "Before you download all the models, please make sure you have granted access to [LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5) first."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 401,
+      "type": "MarkdownNote",
+      "pos": [
+        -60,
+        6390
+      ],
+      "size": [
+        550,
+        880
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Model Links",
+      "properties": {},
+      "widgets_values": [
+        "Guide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Model Links\n\n**Input Asset** \n\n- [neon_cyborg_portrait.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/neon_cyborg_portrait.png) — required workflow input (`input/neon_cyborg_portrait.png`)\n\n**text_encoders**\n\n- [gemma4_e2b_it_bf16.safetensors](https://huggingface.co/Comfy-Org/gemma-4/resolve/main/text_encoders/gemma4_e2b_it_bf16.safetensors)\n- [gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors](https://huggingface.co/DeepNeuralNerd/Gemma-4-12B-it-uncensored-heretic-DeepNeuralNerd-LTX_2.5_ComfyUI/resolve/main/Gemma-4-12B-it-uncensored-heretic%20-%20DeepNeuralNerd%20-LTX%202.5-ComfyUI-int8convrot.safetensors)\n\n**diffusion_models**\n\n- [ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors)\n\n**vae**\n\n- [ltx-2.5-video-vae-bf16.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-video-vae-bf16.safetensors)\n- [ltx-2.5-audio-vae-bf16.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-audio-vae-bf16.safetensors)\n\n**latent_upscale_models**\n\n- [ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors](https://huggingface.co/Lightricks/LTX-2.5/resolve/main/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 text_encoders/\n│   │   ├── gemma4_e2b_it_bf16.safetensors\n│   │   └── gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors\n│   ├── 📂 vae/\n│   │   ├── ltx-2.5-video-vae-bf16.safetensors\n│   │   └── ltx-2.5-audio-vae-bf16.safetensors\n│   └── 📂 latent_upscale_models/\n│       └── ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 399,
+      "type": "MarkdownNote",
+      "pos": [
+        530,
+        6390
+      ],
+      "size": [
+        780,
+        1280
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: About LTX-2.5",
+      "properties": {},
+      "widgets_values": [
+        "# LTX-2.5\n\nLTX-2.5 is Lightricks' open video generation model : fast, local-first, and built for production. Run it locally, fine-tune it for your own use case, or integrate it into your pipeline.\n\n**Key highlights:**\n\n- **Pixel Diffusion** : keyframes-first generation that builds every scene on a grid of high-fidelity keyframes for industry-leading pixel quality\n- **Diffusion Video Decoder** : sharper faces, legible text, fewer smears in fast motion\n- **Native multishot** : one generation yields multiple connected shots holding character, environment, lighting, voice, and style across cuts\n- **Custom Gemma 4 12B text encoder** : retains multiple subjects, actions, lighting, detail, and camera direction across complex prompts\n- **Dedicated Prompt Enhancer** : a lightweight model that expands short prompts into rich cinematic instructions at near-zero extra compute\n- **Auto Duration** : predicts the right clip length from the described action before diffusion begins\n- **Better distilled model** : carries far more quality, prompt adherence, and motion into a smaller, faster variant\n- Carried over from LTX-2.3: native 4K, synchronized audio-video\n\nOfficial model & files: https://huggingface.co/Lightricks/LTX-2.5\n## What this workflow does\n\nThis **Image-to-Video** workflow animates a first frame into a video. Load a starting image, describe the motion in the prompt, and the model continues the scene while holding character, lighting, and style : with synchronized audio.\n\n## Subgraph parameters\n\nThe **Image to Video (LTX-2.5)** node is a subgraph. Click the **Enter subgraph** button at the bottom of the node to open its internal graph, where you can inspect and fine-tune every step of the pipeline (conditioning, sampler, CFG guider, VAE decode, and more).\n\n| Parameter | What it does |\n|---|---|\n| first_frame | Starting image that the video continues from (load your own image in **Load First Frame**) |\n| prompt | Text prompt describing the motion, scene, lighting, camera, and style |\n| prompt_enhance | Toggle the built-in Prompt Enhancer: expands short prompts into rich cinematic instructions at near-zero extra compute |\n| duration | Clip length in seconds (Auto Duration can predict it from the action) |\n| width / height | Output resolution in pixels (e.g. 1280×720) |\n| seed | Random seed : set a fixed value to reproduce the same result |\n| frame_rate | Frames per second |\n| unet_name | Main model: LTX-2.5 distilled transformer (ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors) |\n| video_vae | Video VAE used for decoding (ltx-2.5-video-vae-bf16.safetensors) |\n| audio_vae | Audio VAE that produces synchronized audio (ltx-2.5-audio-vae-bf16.safetensors) |\n| clip_name | Text encoder: uncensored Gemma 4 12B heretic with LTX-2.5 projection (gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors) |\n| upscale_model | Latent upscaler applied before decoding for higher-fidelity output |\n| prompt_enhance_model | Model checkpoint used by the Prompt Enhancer |\n\n## How to use\n\n1. Download the models listed in **Note: Model Links** and place them in ComfyUI's `models/` folder\n2. Replace the image in **Load First Frame** with your own starting frame\n3. Write a prompt describing the motion, optionally toggle **prompt_enhance** for short prompts\n4. Set **duration** / **width** / **height** / **frame_rate** (defaults work well) and hit **Queue**\n5. To dive deeper, click **Enter subgraph** at the bottom of the main node : every internal step (conditioning, sampler, CFG, VAE decode) can be edited there\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -788,7 +798,7 @@
       395,
       0,
       398,
-      0,
+      11,
       "IMAGE"
     ],
     [
@@ -921,8 +931,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 31,
-          "lastNodeId": 415,
-          "lastLinkId": 807,
+          "lastNodeId": 416,
+          "lastLinkId": 808,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -933,8 +943,8 @@
           "bounding": [
             -640,
             6460,
-            183.814453125,
-            368
+            184.6640625,
+            388
           ]
         },
         "outputNode": {
@@ -948,20 +958,6 @@
         },
         "inputs": [
           {
-            "id": "075be400-91e7-40a7-8f4e-d5c907af36e8",
-            "name": "input",
-            "type": "IMAGE,MASK",
-            "linkIds": [
-              763,
-              785
-            ],
-            "label": "first_frame",
-            "pos": [
-              -480.185546875,
-              6484
-            ]
-          },
-          {
             "id": "5dab3f68-2044-46e7-b01f-4bf4b8bf4e79",
             "name": "value",
             "type": "STRING",
@@ -970,7 +966,20 @@
             ],
             "label": "prompt",
             "pos": [
-              -480.185546875,
+              -479.3359375,
+              6484
+            ]
+          },
+          {
+            "id": "143aa049-34cb-4c9b-a816-d56df5e1ee40",
+            "name": "value_6",
+            "type": "BOOLEAN",
+            "linkIds": [
+              808
+            ],
+            "label": "Switch To Text To Video",
+            "pos": [
+              -479.3359375,
               6504
             ]
           },
@@ -983,7 +992,7 @@
             ],
             "label": "prompt_enhance",
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6524
             ]
           },
@@ -996,7 +1005,7 @@
             ],
             "label": "duration",
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6544
             ]
           },
@@ -1009,7 +1018,7 @@
             ],
             "label": "width",
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6564
             ]
           },
@@ -1022,7 +1031,7 @@
             ],
             "label": "height",
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6584
             ]
           },
@@ -1034,7 +1043,7 @@
               770
             ],
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6604
             ]
           },
@@ -1047,7 +1056,7 @@
             ],
             "label": "frame_rate",
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6624
             ]
           },
@@ -1059,7 +1068,7 @@
               777
             ],
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6644
             ]
           },
@@ -1072,7 +1081,7 @@
             ],
             "label": "video_vae",
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6664
             ]
           },
@@ -1085,7 +1094,7 @@
             ],
             "label": "audio_vae",
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6684
             ]
           },
@@ -1097,7 +1106,7 @@
               780
             ],
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6704
             ]
           },
@@ -1110,7 +1119,7 @@
             ],
             "label": "upscale_model",
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6724
             ]
           },
@@ -1123,7 +1132,7 @@
             ],
             "label": "prompt_enhance_model",
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6744
             ]
           },
@@ -1135,7 +1144,7 @@
               791
             ],
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6764
             ]
           },
@@ -1147,8 +1156,22 @@
               792
             ],
             "pos": [
-              -480.185546875,
+              -479.3359375,
               6784
+            ]
+          },
+          {
+            "id": "075be400-91e7-40a7-8f4e-d5c907af36e8",
+            "name": "input",
+            "type": "IMAGE,MASK",
+            "linkIds": [
+              763,
+              785
+            ],
+            "label": "first_frame",
+            "pos": [
+              -479.3359375,
+              6804
             ]
           }
         ],
@@ -1403,58 +1426,6 @@
             ],
             "color": "#232",
             "bgcolor": "#353"
-          },
-          {
-            "id": 384,
-            "type": "UNETLoader",
-            "pos": [
-              650,
-              6200
-            ],
-            "size": [
-              420,
-              130
-            ],
-            "flags": {},
-            "order": 38,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "unet_name",
-                "name": "unet_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "unet_name"
-                },
-                "link": 777
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "MODEL",
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": [
-                  771
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.29.0",
-              "Node name for S&R": "UNETLoader",
-              "models": [
-                {
-                  "name": "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
-                  "url": "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
-                  "directory": "diffusion_models"
-                }
-              ]
-            },
-            "widgets_values": [
-              "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
-              "default"
-            ]
           },
           {
             "id": 362,
@@ -4032,11 +4003,106 @@
             "bgcolor": "#374539"
           },
           {
+            "id": 384,
+            "type": "UNETLoader",
+            "pos": [
+              667.3313482011484,
+              6043.783144416809
+            ],
+            "size": [
+              420,
+              130
+            ],
+            "flags": {},
+            "order": 38,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "unet_name",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 777
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  771
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.29.0",
+              "Node name for S&R": "UNETLoader",
+              "models": [
+                {
+                  "name": "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+                  "url": "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+                  "directory": "diffusion_models"
+                }
+              ]
+            },
+            "widgets_values": [
+              "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+              "default"
+            ]
+          },
+          {
+            "id": 416,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              685.5068620281872,
+              6239.315557726994
+            ],
+            "size": [
+              375.21565048510456,
+              93.33008341407458
+            ],
+            "flags": {},
+            "order": 46,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 771
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  794,
+                  795
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.18.1",
+              "Node name for S&R": "LoraLoaderModelOnly"
+            },
+            "widgets_values": [
+              "LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors",
+              1.87
+            ]
+          },
+          {
             "id": 363,
             "type": "PrimitiveBoolean",
             "pos": [
-              138.798421955902,
-              6472.9611440976305
+              141.49166686803318,
+              6477.176908617476
             ],
             "size": [
               370,
@@ -4045,7 +4111,17 @@
             "flags": {},
             "order": 5,
             "mode": 0,
-            "inputs": [],
+            "inputs": [
+              {
+                "localized_name": "value",
+                "name": "value",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "value"
+                },
+                "link": 808
+              }
+            ],
             "outputs": [
               {
                 "localized_name": "BOOLEAN",
@@ -4078,48 +4154,6 @@
             "widgets_values": [
               false
             ]
-          },
-          {
-            "id": 406,
-            "type": "LoraLoaderModelOnly",
-            "pos": [
-              209,
-              2244
-            ],
-            "size": [
-              315,
-              82
-            ],
-            "flags": {},
-            "order": 2,
-            "mode": 0,
-            "inputs": [
-              {
-                "name": "model",
-                "type": "MODEL",
-                "link": 771
-              }
-            ],
-            "outputs": [
-              {
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": [
-                  794,
-                  795
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.18.1"
-            },
-            "widgets_values": [
-              "LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors",
-              0.7
-            ],
-            "color": "#2a363b",
-            "bgcolor": "#3f5159"
           }
         ],
         "groups": [
@@ -4712,7 +4746,7 @@
           {
             "id": 763,
             "origin_id": -10,
-            "origin_slot": 0,
+            "origin_slot": 16,
             "target_id": 351,
             "target_slot": 0,
             "type": "IMAGE,MASK"
@@ -4761,7 +4795,7 @@
             "id": 771,
             "origin_id": 384,
             "origin_slot": 0,
-            "target_id": 406,
+            "target_id": 416,
             "target_slot": 0,
             "type": "MODEL"
           },
@@ -4848,7 +4882,7 @@
           {
             "id": 785,
             "origin_id": -10,
-            "origin_slot": 0,
+            "origin_slot": 16,
             "target_id": 405,
             "target_slot": 0,
             "type": "IMAGE"
@@ -4856,7 +4890,7 @@
           {
             "id": 786,
             "origin_id": -10,
-            "origin_slot": 1,
+            "origin_slot": 0,
             "target_id": 405,
             "target_slot": 4,
             "type": "STRING"
@@ -4911,7 +4945,7 @@
           },
           {
             "id": 794,
-            "origin_id": 406,
+            "origin_id": 416,
             "origin_slot": 0,
             "target_id": 388,
             "target_slot": 0,
@@ -4919,11 +4953,19 @@
           },
           {
             "id": 795,
-            "origin_id": 406,
+            "origin_id": 416,
             "origin_slot": 0,
             "target_id": 391,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 808,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 363,
+            "target_slot": 0,
+            "type": "BOOLEAN"
           }
         ],
         "extra": {}
@@ -5332,10 +5374,10 @@
     "VHS_KeepIntermediate": true,
     "ue_links": [],
     "ds": {
-      "scale": 0.7674117372881365,
+      "scale": 0.6976470338983058,
       "offset": [
-        -947.1292198489859,
-        -6218.058160665524
+        -28.754710317225165,
+        -5988.505092618228
       ]
     }
   },
