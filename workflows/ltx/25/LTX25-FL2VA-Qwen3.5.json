@@ -1508,13 +1508,13 @@
                 "localized_name": "positive",
                 "name": "positive",
                 "type": "CONDITIONING",
-                "link": 213
+                "link": 236
               },
               {
                 "localized_name": "negative",
                 "name": "negative",
                 "type": "CONDITIONING",
-                "link": 214
+                "link": 237
               },
               {
                 "localized_name": "latent",
@@ -1684,7 +1684,8 @@
                 "name": "positive",
                 "type": "CONDITIONING",
                 "links": [
-                  236
+                  236,
+                  242
                 ]
               },
               {
@@ -1692,7 +1693,8 @@
                 "name": "negative",
                 "type": "CONDITIONING",
                 "links": [
-                  237
+                  237,
+                  243
                 ]
               }
             ],
@@ -1801,7 +1803,7 @@
                 "name": "vae",
                 "label": "vae",
                 "type": "VAE",
-                "link": 227
+                "link": 305
               },
               {
                 "name": "image",
@@ -1918,7 +1920,7 @@
                 "name": "vae",
                 "label": "vae",
                 "type": "VAE",
-                "link": 238
+                "link": 304
               },
               {
                 "name": "image",
