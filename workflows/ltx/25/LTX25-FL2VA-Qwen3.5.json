@@ -1977,7 +1977,7 @@
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 308
+                "link": 318
               },
               {
                 "localized_name": "positive",
@@ -3335,6 +3335,47 @@
             "widgets_values": [
               "ltx-2.5-audio-vae-bf16.safetensors"
             ]
+          },
+          {
+            "id": 215,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              209,
+              2244
+            ],
+            "size": [
+              315,
+              82
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "model",
+                "type": "MODEL",
+                "link": 318
+              }
+            ],
+            "outputs": [
+              {
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  308
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.18.1"
+            },
+            "widgets_values": [
+              "LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors",
+              0.7
+            ],
+            "color": "#2a363b",
+            "bgcolor": "#3f5159"
           }
         ],
         "groups": [
@@ -3936,7 +3977,7 @@
             "id": 308,
             "origin_id": 209,
             "origin_slot": 0,
-            "target_id": 116,
+            "target_id": 215,
             "target_slot": 0,
             "type": "MODEL"
           },
@@ -3987,6 +4028,14 @@
             "target_id": 214,
             "target_slot": 0,
             "type": "COMBO"
+          },
+          {
+            "id": 318,
+            "origin_id": 215,
+            "origin_slot": 0,
+            "target_id": 116,
+            "target_slot": 0,
+            "type": "MODEL"
           }
         ],
         "extra": {

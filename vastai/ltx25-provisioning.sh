@@ -75,6 +75,7 @@ LTX_MODELS=(
     "latent_upscale_models|ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|990000000"
     "latent_upscale_models|ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/latent_upscale_models/ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|250000000"
     "model_patches|ltx-2.5-duration-head-bf16.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/model_patches/ltx-2.5-duration-head-bf16.safetensors|3800000"
+    "loras|LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors|https://huggingface.co/maximsobolev275/LTX-10Eros-LoRA-r768/resolve/main/LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors|3400000000"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -276,7 +277,7 @@ function provisioning_download() {
 
 function download_ltx_models() {
     local base_dir="${COMFYUI_DIR}/models"
-    mkdir -p "$base_dir"/{diffusion_models,text_encoders,vae,latent_upscale_models,model_patches}
+    mkdir -p "$base_dir"/{diffusion_models,text_encoders,vae,latent_upscale_models,model_patches,loras}
 
     local hf_cmd="hf"
     command -v hf >/dev/null 2>&1 || hf_cmd="huggingface-cli"
