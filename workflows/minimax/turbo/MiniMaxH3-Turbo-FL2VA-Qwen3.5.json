@@ -1,8 +1,8 @@
 {
   "id": "c0033410-f90d-46e0-9e2a-7228d5a7b623",
   "revision": 0,
-  "last_node_id": 196,
-  "last_link_id": 404,
+  "last_node_id": 197,
+  "last_link_id": 406,
   "nodes": [
     {
       "id": 135,
@@ -159,10 +159,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "cnr_id": "comfyui-kjnodes"
+        "aux_id": "kijai/ComfyUI-KJNodes"
       },
       "widgets_values": [
         114,
@@ -355,51 +355,6 @@
       "bgcolor": "#535"
     },
     {
-      "id": 179,
-      "type": "AutoLoadRifeTensorrtModel",
-      "pos": [
-        -193.33301286097637,
-        4945.848315445741
-      ],
-      "size": [
-        322.5669921875,
-        130
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "custom_config",
-          "shape": 7,
-          "type": "RIFE_RESOLUTION_CONFIG",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "rife_trt_model",
-          "type": "RIFE_TRT_MODEL",
-          "links": [
-            355
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
-        "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
-        "Node name for S&R": "AutoLoadRifeTensorrtModel"
-      },
-      "widgets_values": [
-        "rife49_ensemble_True_scale_1_sim",
-        "fp16",
-        "large",
-        1
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 180,
       "type": "AutoRifeTensorrt",
       "pos": [
@@ -511,10 +466,10 @@
       ],
       "title": "48FPS",
       "properties": {
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
+        "cnr_id": "comfyui-videohelpersuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "cnr_id": "comfyui-videohelpersuite"
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -531,18 +486,131 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "01randallreturns09.jpg_00001-audio.webm",
+            "filename": "S02_EP08_MakingConnections_256.jpg_00001-audio.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "01randallreturns09.jpg_00001.png",
-            "fullpath": "/workspace/ComfyUI/output/01randallreturns09.jpg_00001-audio.webm"
+            "workflow": "S02_EP08_MakingConnections_256.jpg_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP08_MakingConnections_256.jpg_00001-audio.webm"
           }
         }
       },
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 194,
+      "type": "LoadUpscalerTensorrtModel",
+      "pos": [
+        -172.00907542564994,
+        5484.098684097444
+      ],
+      "size": [
+        295.4078125,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "upscaler_trt_model",
+          "type": "UPSCALER_TRT_MODEL",
+          "links": [
+            394
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+        "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
+        "Node name for S&R": "LoadUpscalerTensorrtModel"
+      },
+      "widgets_values": [
+        "RealESRGAN_x2plus",
+        "fp16"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 137,
+      "type": "easy showAnything",
+      "pos": [
+        -870.821895043023,
+        5442.977795962867
+      ],
+      "size": [
+        644.4670905794355,
+        323.47297362020254
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "title": "QWEN3VL GENERATED PROMPT",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+        "Node name for S&R": "easy showAnything",
+        "aux_id": "yolain/ComfyUI-Easy-Use"
+      },
+      "widgets_values": [
+        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 10.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] The scene opens in a dimly lit, intimate bedroom environment where a woman with short blue-tipped hair and a nose ring lies on her back on a patterned sofa, her head resting on a dark cushion with gold leaf motifs. She is nude, wearing only white fishnet stockings, and her expression is one of intense anticipation, mouth slightly agape. A shirtless man with a dark complexion dominates the foreground, his massive, muscular back and buttocks arching over her, obscuring her upper body as he prepares to mount her. The lighting is warm and moody, casting deep shadows across the dark wood furniture and highlighting the sheen of sweat on the woman's skin. The camera starts with a low-angle shot focusing on the woman's face and the man's rear, then executes a smooth, continuous push-in and tilt-down movement. As the video progresses, the man's weight shifts, his legs wrapping around her waist, and the camera descends rapidly to focus on the point of contact between their bodies. Around the midpoint, the man's hips lower, and the camera captures the friction and the wet sounds of skin sliding against skin, while the woman's hands grip his shoulders, her nails digging into his skin. The depth of field tightens, blurring the background clutter of bottles and books to isolate the couple's bodies. The lighting intensifies slightly on their contact points, emphasizing the heat and passion. By the end of the clip, the camera settles on a close-up of the woman's chest and the man's chest meeting, with her hand resting on his stomach, fingers splayed. The man's chest is visible, showing a navel and the texture of his skin, as he leans in closer, his body pressing firmly against hers. The woman's gaze is fixed upward, eyes wide and pupils dilated, capturing the climax of the moment.\n\noverall_soundscape: The room is filled with the heavy, rhythmic breathing of both partners, the woman inhaling sharply and exhaling in long, controlled bursts. The man's breathing is deeper, more guttural, matching the pressure of his movement. Wet, slick sounds of skin sliding against skin fill the air, punctuated by the soft slap of thighs and the friction of stockings against bare skin. Occasional gasps and moans escape the woman's lips as the man's weight settles, and the man lets out a low, rumbling groan that vibrates through the sofa. The ambient room tone is a low hum of electricity and the distant creak of the wooden frame, but it is completely drowned out by the primal sounds of their coupling.\n\nnon_diegetic_music: N/A"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 153,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -861.1763664387001,
+        5828.377706858523
+      ],
+      "size": [
+        626.6430184350608,
+        154
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 193,
@@ -585,10 +653,55 @@
         "Node name for S&R": "UpscalerTensorrt"
       },
       "widgets_values": [
-        "1080p",
+        "2K",
         "2",
         2048,
         2048
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 179,
+      "type": "AutoLoadRifeTensorrtModel",
+      "pos": [
+        -193.33301286097637,
+        4945.848315445741
+      ],
+      "size": [
+        322.5669921875,
+        130
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "custom_config",
+          "shape": 7,
+          "type": "RIFE_RESOLUTION_CONFIG",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "rife_trt_model",
+          "type": "RIFE_TRT_MODEL",
+          "links": [
+            355
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+        "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
+        "Node name for S&R": "AutoLoadRifeTensorrtModel"
+      },
+      "widgets_values": [
+        "rife49_ensemble_True_scale_1_sim",
+        "fp16",
+        "large",
+        1
       ],
       "color": "#223",
       "bgcolor": "#335"
@@ -605,7 +718,7 @@
         717.2904207205629
       ],
       "flags": {},
-      "order": 4,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -630,7 +743,7 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "01randallreturns09.jpg",
+        "S02_EP08_HelpingJessicaMain_Render_457a_v01.jpg",
         "image"
       ],
       "color": "#223",
@@ -648,7 +761,7 @@
         715.9489903021231
       ],
       "flags": {},
-      "order": 5,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -672,71 +785,11 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "01randallreturns09a.jpg",
+        "S02_EP08_HelpingJessicaMain_Render_457b_v01.jpg",
         "image"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 194,
-      "type": "LoadUpscalerTensorrtModel",
-      "pos": [
-        -172.00907542564994,
-        5484.098684097444
-      ],
-      "size": [
-        295.4078125,
-        82
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "upscaler_trt_model",
-          "type": "UPSCALER_TRT_MODEL",
-          "links": [
-            394
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-        "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
-        "Node name for S&R": "LoadUpscalerTensorrtModel"
-      },
-      "widgets_values": [
-        "RealESRGAN_x2plus",
-        "fp16"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 118,
-      "type": "MarkdownNote",
-      "pos": [
-        -1178.7173714328817,
-        4893.525038519361
-      ],
-      "size": [
-        273.898817712653,
-        524.5531021895404
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Size Settings Reference",
-      "properties": {},
-      "widgets_values": [
-        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 105,
@@ -840,104 +893,50 @@
         "",
         1344,
         768,
-        5,
-        18280526650029,
-        "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        10,
+        527985087429751,
+        "10Eros_Max_H3_FL2VA-INT8-ConvRot-HQ.safetensors",
         "qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
         "minimax_h3_video_vae_fp16.safetensors",
         "minimax_h3_audio_vae_fp32.safetensors",
         "Qwen3.5-4B-heretic-v2",
-        "🔄 MiniMax H3 NSFW FL2VA (5s)",
+        "🔄 MiniMax H3 NSFW FL2VA (10s)",
         false,
-        8,
-        "minimax_h3_turbo_v4_step600_ema.safetensors"
+        6
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
-      "id": 137,
-      "type": "easy showAnything",
+      "id": 118,
+      "type": "MarkdownNote",
       "pos": [
-        -870.821895043023,
-        5442.977795962867
+        -1180,
+        5350
       ],
       "size": [
-        644.4670905794355,
-        323.47297362020254
-      ],
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 253
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": []
-        }
-      ],
-      "title": "QWEN3VL GENERATED PROMPT",
-      "properties": {
-        "aux_id": "yolain/ComfyUI-Easy-Use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
-        "cnr_id": "comfyui-easy-use"
-      },
-      "widgets_values": [
-        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: The scene opens in a dimly lit, intimate bedroom where a hyper-realistic, dark-haired woman in a red bra and jeans is pinned against a man in a black suit jacket, their faces inches apart in a passionate, breathless embrace. At the start, the camera is locked tight on the couple's faces, capturing the sweat on the man's skin and the intense, glazed look in the woman's eyes as she gazes directly at him, her hand gripping his shoulder tightly. As the clip progresses, the camera executes a slow, fluid arc around the woman, tilting upward to reveal her exposed midriff and the sheer tension in her body. The man leans in, his lips parting as he begins to kiss her deeply, his hands moving from her waist to her hips, pulling her closer into the friction of the sheets. The woman's expression shifts from anticipation to a mix of pleasure and surrender as the camera pulls back slightly to show the full context of their entanglement. Her arms flail slightly as she is lifted, and her body arches back, her chest heaving with rapid, heavy breathing. The lighting remains soft but highlights the glistening moisture on her skin and the texture of the red straps digging into her shoulders. By the end, the camera settles on her face, now slightly flushed, as she looks down with a look of overwhelmed ecstasy, her body limp in his arms, signaling the peak of their connection.\n\noverall_soundscape: The room is filled with the heavy, rhythmic sound of their breathing, starting as a tense, shallow intake and deepening into loud, wet gasps and moans as the kiss intensifies. The sound of skin slapping against skin is audible as they move, accompanied by the soft, wet squeak of sheets shifting under their weight. The audio crescendos into a high-pitched, continuous moan from the woman as she is lifted, followed by the heavy thud of their bodies settling together.\n\nnon_diegetic_music: N/A"
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 153,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -861.1763664387001,
-        5828.377706858523
-      ],
-      "size": [
-        626.6430184350608,
-        130
+        273.898817712653,
+        524.5531021895404
       ],
       "flags": {},
       "order": 8,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
+      "outputs": [],
+      "title": "Note: Size Settings Reference",
+      "properties": {},
+      "widgets_values": [
+        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
       ],
-      "title": "OPTIONS",
-      "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "position",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 184,
       "type": "PrimitiveInt",
       "pos": [
-        -1478.3251047754275,
-        4764.400835395634
+        -1170.6920579004272,
+        5207.341186958137
       ],
       "size": [
         270,
@@ -953,7 +952,7 @@
           "widget": {
             "name": "value"
           },
-          "link": 404
+          "link": 406
         }
       ],
       "outputs": [
@@ -981,55 +980,11 @@
       "bgcolor": "#535"
     },
     {
-      "id": 196,
-      "type": "ResolutionSelector",
-      "pos": [
-        -2237.068616027701,
-        4703.663638540963
-      ],
-      "size": [
-        338.3984375,
-        126
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            403
-          ]
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            404
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.32.0",
-        "Node name for S&R": "ResolutionSelector"
-      },
-      "widgets_values": [
-        "16:9 (Widescreen)",
-        0.5,
-        32
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 183,
       "type": "PrimitiveInt",
       "pos": [
-        -1789.4840987061887,
-        4746.422195973811
+        -1168.8958955811904,
+        5075.452391286311
       ],
       "size": [
         269.9026034273984,
@@ -1045,7 +1000,7 @@
           "widget": {
             "name": "value"
           },
-          "link": 403
+          "link": 405
         }
       ],
       "outputs": [
@@ -1071,6 +1026,50 @@
       ],
       "color": "#323",
       "bgcolor": "#535"
+    },
+    {
+      "id": 197,
+      "type": "ResolutionSelector",
+      "pos": [
+        -1174.4805577671111,
+        4890.275788710475
+      ],
+      "size": [
+        270,
+        126
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            405
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            406
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.1",
+        "Node name for S&R": "ResolutionSelector"
+      },
+      "widgets_values": [
+        "16:9 (Widescreen)",
+        1,
+        32
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -1243,16 +1242,16 @@
       "IMAGE"
     ],
     [
-      403,
-      196,
+      405,
+      197,
       0,
       183,
       0,
       "INT"
     ],
     [
-      404,
-      196,
+      406,
+      197,
       1,
       184,
       0,
@@ -1316,8 +1315,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 15,
-          "lastNodeId": 196,
-          "lastLinkId": 404,
+          "lastNodeId": 197,
+          "lastLinkId": 406,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1329,7 +1328,7 @@
             -2560,
             4720,
             147.9609375,
-            368
+            348
           ]
         },
         "outputNode": {
@@ -1524,18 +1523,6 @@
             "pos": [
               -2436.0390625,
               5024
-            ]
-          },
-          {
-            "id": "83279060-1f6e-46f8-b8f3-cd2b32465922",
-            "name": "lora_name",
-            "type": "COMBO",
-            "linkIds": [
-              343
-            ],
-            "pos": [
-              -2436.0390625,
-              5044
             ]
           }
         ],
@@ -2252,10 +2239,10 @@
               }
             ],
             "properties": {
-              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo",
+              "cnr_id": "comfyui-minimax-h3-turbo",
               "ver": "55fee864dd7b2976b1c4ce3c3d5f7968f181409f",
               "Node name for S&R": "MiniMaxH3TurboSampler",
-              "cnr_id": "comfyui-minimax-h3-turbo"
+              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo"
             },
             "widgets_values": []
           },
@@ -2505,7 +2492,7 @@
               1,
               1,
               false,
-              887010823,
+              1924954437,
               "randomize",
               false
             ],
@@ -2532,15 +2519,6 @@
                 "name": "model",
                 "type": "MODEL",
                 "link": 293
-              },
-              {
-                "localized_name": "lora_name",
-                "name": "lora_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "lora_name"
-                },
-                "link": 343
               }
             ],
             "outputs": [
@@ -2554,10 +2532,10 @@
               }
             ],
             "properties": {
-              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo",
+              "cnr_id": "comfyui-minimax-h3-turbo",
               "ver": "55fee864dd7b2976b1c4ce3c3d5f7968f181409f",
               "Node name for S&R": "MiniMaxH3TurboLoRA",
-              "cnr_id": "comfyui-minimax-h3-turbo"
+              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo"
             },
             "widgets_values": [
               "minimax_h3_turbo_v4_step600_ema.safetensors",
@@ -2760,14 +2738,14 @@
           },
           {
             "id": 11,
-            "title": "SOL-ATTN TURBO LORA",
+            "title": "SOL-ATTN",
             "bounding": [
               -1296.0904942987474,
               4054.584789014698,
               787.2662663193973,
               462.5113093708387
             ],
-            "color": "#883883",
+            "color": "#b58b2a",
             "flags": {}
           },
           {
@@ -2779,7 +2757,7 @@
               356.625,
               192.578125
             ],
-            "color": "#883883",
+            "color": "#a1309b",
             "flags": {}
           }
         ],
@@ -3113,14 +3091,6 @@
             "type": "MODEL"
           },
           {
-            "id": 343,
-            "origin_id": -10,
-            "origin_slot": 15,
-            "target_id": 154,
-            "target_slot": 1,
-            "type": "COMBO"
-          },
-          {
             "id": 398,
             "origin_id": 173,
             "origin_slot": 0,
@@ -3159,8 +3129,8 @@
     "ds": {
       "scale": 0.8264462809917354,
       "offset": [
-        3285.2500108921345,
-        -4058.5912574604804
+        2805.409385892109,
+        -4299.863366835473
       ]
     }
   },
