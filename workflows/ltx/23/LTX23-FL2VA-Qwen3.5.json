@@ -1527,13 +1527,17 @@
                 "localized_name": "positive",
                 "name": "positive",
                 "type": "CONDITIONING",
-                "links": []
+                "links": [
+                  242
+                ]
               },
               {
                 "localized_name": "negative",
                 "name": "negative",
                 "type": "CONDITIONING",
-                "links": []
+                "links": [
+                  243
+                ]
               },
               {
                 "localized_name": "latent",
@@ -3695,7 +3699,7 @@
           },
           {
             "id": 242,
-            "origin_id": 109,
+            "origin_id": 106,
             "origin_slot": 0,
             "target_id": 116,
             "target_slot": 1,
@@ -3703,7 +3707,7 @@
           },
           {
             "id": 243,
-            "origin_id": 109,
+            "origin_id": 106,
             "origin_slot": 1,
             "target_id": 116,
             "target_slot": 2,
