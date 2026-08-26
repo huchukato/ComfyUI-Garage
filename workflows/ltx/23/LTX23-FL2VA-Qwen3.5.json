@@ -1543,9 +1543,7 @@
                 "localized_name": "latent",
                 "name": "latent",
                 "type": "LATENT",
-                "links": [
-                  211
-                ]
+                "links": []
               }
             ],
             "properties": {
@@ -2151,6 +2149,7 @@
                 "name": "latent",
                 "type": "LATENT",
                 "links": [
+                  215,
                   250
                 ]
               }
@@ -2762,7 +2761,7 @@
                 "name": "video_latent",
                 "type": "LATENT",
                 "links": [
-                  215
+                  211
                 ]
               },
               {
@@ -3579,7 +3578,7 @@
           },
           {
             "id": 215,
-            "origin_id": 121,
+            "origin_id": 119,
             "origin_slot": 0,
             "target_id": 106,
             "target_slot": 2,
@@ -3843,8 +3842,8 @@
           },
           {
             "id": 211,
-            "origin_id": 106,
-            "origin_slot": 2,
+            "origin_id": 121,
+            "origin_slot": 0,
             "target_id": 105,
             "target_slot": 0,
             "type": "LATENT"
