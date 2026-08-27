@@ -418,14 +418,14 @@
         100,
         2,
         false,
-        1,
+        4,
         ""
       ],
       "widgets_values_named": {
         "clear_cache_after_n_frames": 100,
         "multiplier": 2,
         "keep_model_loaded": false,
-        "batch_size": 1,
+        "batch_size": 4,
         "multiplier_list": ""
       },
       "color": "#223",
@@ -670,14 +670,14 @@
         "2",
         2048,
         2048,
-        2
+        4
       ],
       "widgets_values_named": {
         "resize_to": "2K",
         "scale": "2",
         "resize_width": 2048,
         "resize_height": 2048,
-        "batch_size": 2
+        "batch_size": 4
       },
       "color": "#223",
       "bgcolor": "#335"
@@ -722,13 +722,13 @@
         "rife49_ensemble_True_scale_1_sim",
         "fp16",
         "large",
-        1
+        4
       ],
       "widgets_values_named": {
         "model": "rife49_ensemble_True_scale_1_sim",
         "precision": "fp16",
         "resolution_profile": "large",
-        "batch_size": 1
+        "batch_size": 4
       },
       "color": "#223",
       "bgcolor": "#335"
@@ -918,12 +918,12 @@
       "widgets_values": [
         "2xLexicaRRDBNet_Sharp",
         "fp16",
-        2
+        4
       ],
       "widgets_values_named": {
         "model": "2xLexicaRRDBNet_Sharp",
         "precision": "fp16",
-        "batch_size": 2
+        "batch_size": 4
       },
       "color": "#223",
       "bgcolor": "#335"
