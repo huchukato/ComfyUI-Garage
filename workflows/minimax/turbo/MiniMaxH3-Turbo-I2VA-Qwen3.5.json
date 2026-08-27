@@ -190,7 +190,7 @@
         "rife49_ensemble_True_scale_1_sim",
         "fp16",
         "large",
-        1
+        4
       ],
       "color": "#223",
       "bgcolor": "#335"
@@ -282,7 +282,7 @@
         100,
         2,
         false,
-        1,
+        2,
         ""
       ],
       "color": "#223",
@@ -676,13 +676,15 @@
       },
       "widgets_values": [
         "2K",
-        1,
+        2,
         2048,
         2048
       ],
       "color": "#223",
       "bgcolor": "#335",
-      "widgets_values_named": {}
+      "widgets_values_named": {
+        "batch_size": 2
+      }
     },
     {
       "id": 186,
@@ -716,7 +718,7 @@
       "widgets_values": [
         "RealESRGAN_x2plus",
         "fp16",
-        1
+        2
       ],
       "color": "#223",
       "bgcolor": "#335"
