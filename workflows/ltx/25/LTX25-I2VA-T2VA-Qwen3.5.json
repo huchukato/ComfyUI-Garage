@@ -16,7 +16,7 @@
         154
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -166,46 +166,6 @@
         "keep_model_loaded": false,
         "batch_size": 1,
         "multiplier_list": ""
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 413,
-      "type": "LoadUpscalerTensorrtModel",
-      "pos": [
-        2568.500253039049,
-        6988.184117265849
-      ],
-      "size": [
-        295.4078125,
-        82
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "upscaler_trt_model",
-          "type": "UPSCALER_TRT_MODEL",
-          "links": [
-            805
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-        "ver": "6b8951d7413b41d9639be91888ef65b63827b930",
-        "Node name for S&R": "LoadUpscalerTensorrtModel"
-      },
-      "widgets_values": [
-        "RealESRGAN_x2plus",
-        "fp16"
-      ],
-      "widgets_values_named": {
-        "model": "RealESRGAN_x2plus",
-        "precision": "fp16"
       },
       "color": "#223",
       "bgcolor": "#335"
@@ -486,65 +446,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 395,
-      "type": "LoadImage",
-      "pos": [
-        1375.5323454908446,
-        6409.238643879821
-      ],
-      "size": [
-        530,
-        650
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            764,
-            794
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "FirstFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.8.2",
-        "Node name for S&R": "LoadImage",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.5.2"
-        }
-      },
-      "widgets_values": [
-        "S02_EP08_MakingConnections_250.jpg",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "S02_EP08_MakingConnections_250.jpg",
-        "upload": "image"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 404,
       "type": "MarkdownNote",
       "pos": [
@@ -556,7 +457,7 @@
         90
       ],
       "flags": {},
-      "order": 3,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -583,7 +484,7 @@
         880
       ],
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -610,7 +511,7 @@
         1280
       ],
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -637,7 +538,7 @@
         170.97059983213512
       ],
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -672,7 +573,7 @@
         670
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -823,7 +724,7 @@
         false,
         false,
         5,
-        433392261827629,
+        136297137712621,
         50,
         "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
         "ltx-2.5-video-vae-bf16.safetensors",
@@ -841,7 +742,7 @@
         "value_6": false,
         "value_1": false,
         "value_2": 5,
-        "noise_seed": 433392261827629,
+        "noise_seed": 136297137712621,
         "value_5": 50,
         "unet_name": "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
         "vae_name": "ltx-2.5-video-vae-bf16.safetensors",
@@ -867,7 +768,7 @@
         126
       ],
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -916,7 +817,7 @@
         520
       ],
       "flags": {},
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -930,6 +831,105 @@
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 395,
+      "type": "LoadImage",
+      "pos": [
+        1375.5323454908446,
+        6409.238643879821
+      ],
+      "size": [
+        530,
+        650
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            764,
+            794
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "FirstFrame",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "LoadImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "S02_EP09_FindingDancers_Render_119_v01.jpg",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "S02_EP09_FindingDancers_Render_119_v01.jpg",
+        "upload": "image"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 413,
+      "type": "LoadUpscalerTensorrtModel",
+      "pos": [
+        2568.500253039049,
+        6988.184117265849
+      ],
+      "size": [
+        295.4078125,
+        82
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "upscaler_trt_model",
+          "type": "UPSCALER_TRT_MODEL",
+          "links": [
+            805
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+        "ver": "6b8951d7413b41d9639be91888ef65b63827b930",
+        "Node name for S&R": "LoadUpscalerTensorrtModel"
+      },
+      "widgets_values": [
+        "2xLexicaRRDBNet_Sharp",
+        "fp16"
+      ],
+      "widgets_values_named": {
+        "model": "2xLexicaRRDBNet_Sharp",
+        "precision": "fp16"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
     }
   ],
   "links": [
@@ -4294,7 +4294,7 @@
               1,
               16,
               false,
-              1097701527,
+              900395276,
               "randomize",
               false
             ],
@@ -4313,7 +4313,7 @@
               "repetition_penalty": 1,
               "frame_count": 16,
               "keep_model_loaded": false,
-              "seed": 1097701527,
+              "seed": 900395276,
               "control_after_generate": "randomize",
               "keep_last_prompt": false
             },
