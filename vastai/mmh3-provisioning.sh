@@ -34,6 +34,7 @@ NODES=(
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/Saganaki22/ComfyUI-sol-attn"
+    "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
 )
 
