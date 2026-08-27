@@ -669,13 +669,15 @@
         "2K",
         "2",
         2048,
-        2048
+        2048,
+        2
       ],
       "widgets_values_named": {
         "resize_to": "2K",
         "scale": "2",
         "resize_width": 2048,
-        "resize_height": 2048
+        "resize_height": 2048,
+        "batch_size": 2
       },
       "color": "#223",
       "bgcolor": "#335"
@@ -915,11 +917,13 @@
       },
       "widgets_values": [
         "2xLexicaRRDBNet_Sharp",
-        "fp16"
+        "fp16",
+        2
       ],
       "widgets_values_named": {
         "model": "2xLexicaRRDBNet_Sharp",
-        "precision": "fp16"
+        "precision": "fp16",
+        "batch_size": 2
       },
       "color": "#223",
       "bgcolor": "#335"
