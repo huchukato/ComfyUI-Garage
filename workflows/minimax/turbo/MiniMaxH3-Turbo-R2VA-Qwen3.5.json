@@ -2,7 +2,7 @@
   "id": "b25965af-2005-4e6d-b188-e9c5ea0224c8",
   "revision": 0,
   "last_node_id": 166,
-  "last_link_id": 332,
+  "last_link_id": 333,
   "nodes": [
     {
       "id": 118,
@@ -869,7 +869,8 @@
         "Qwen3.5-4B-heretic-v2",
         "🎞️ MiniMax H3 NSFW R2VA (10s)",
         false,
-        6
+        8,
+        "minimax_h3_turbo_v4_step600_ema.safetensors"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -1063,7 +1064,7 @@
         "state": {
           "lastGroupId": 12,
           "lastNodeId": 166,
-          "lastLinkId": 332,
+          "lastLinkId": 333,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2427,6 +2428,15 @@
                 "name": "model",
                 "type": "MODEL",
                 "link": 307
+              },
+              {
+                "localized_name": "lora_name",
+                "name": "lora_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "lora_name"
+                },
+                "link": 333
               }
             ],
             "outputs": [
@@ -3008,6 +3018,14 @@
             "target_id": 166,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 333,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 157,
+            "target_slot": 1,
+            "type": "COMBO"
           }
         ],
         "extra": {}
