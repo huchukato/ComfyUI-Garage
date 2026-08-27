@@ -71,7 +71,7 @@ MINIMAX_MODELS=(
     # ── NVFP4 models (Blackwell sm_120+ only — 2.7x faster than INT8 ConvRot on cu13) ──
     "diffusion_models|minimax_h3_fl2va_pruned_nvfp4.safetensors|https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4.safetensors|12000000000"
     "diffusion_models|minimax_h3_ref2va_pruned_nvfp4.safetensors|https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_ref2va_pruned_nvfp4.safetensors|12000000000"
-    "text_encoders|qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors|https://huggingface.co/ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot/resolve/main/qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors|26000000000"
+    "text_encoders|qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|15000000000"
     "loras|minimax_h3_turbo_v4_step600_ema.safetensors|https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors|779849816"
     # 10Eros-Max NVFP4 HQ (~14.6GB) — 170 NVFP4 + 30 BF16 sensitive matrices, Blackwell only
     "diffusion_models|10Eros_Max_H3_FL2VA-NVFP4-HQ.safetensors|https://huggingface.co/DmitryDB/MiniMax-H3-10Eros-Max-Quants/resolve/main/FL2VA/10Eros_Max_H3_FL2VA-NVFP4-HQ.safetensors|14000000000"
