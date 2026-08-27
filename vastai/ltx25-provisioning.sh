@@ -32,9 +32,7 @@ NODES=(
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/yolain/ComfyUI-Easy-Use"
-    "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
     "https://github.com/ashtar1984/comfyui-find-perfect-resolution"
-    "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/MoonGoblinDev/Civicomfy"
 )
 
