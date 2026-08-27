@@ -21,6 +21,7 @@ Custom ComfyUI on Vast.ai, provisioned with QwenVL-Mod and native MiniMax H3 vid
 - **GGUF backend** via llama-cpp-python CUDA 13
 - **Sage Attention**, FP16 accumulation, async offload
 - **TensorRT** upscaling and frame interpolation (batch_size support)
+- **Auto-detect upscale factor**: scale (2x/4x) derived from model name, no manual dropdown
 - **Persistent** `/workspace` (models survive restarts)
 
 ---
