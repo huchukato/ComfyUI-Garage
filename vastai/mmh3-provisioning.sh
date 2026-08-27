@@ -19,7 +19,6 @@ PIP_PACKAGES=(
 NODES=(
     "https://github.com/huchukato/comfy-tagcomplete"
     "https://github.com/huchukato/ComfyUI-QwenVL-Mod"
-    "https://github.com/BobRandomNumber/ComfyUI-Crystools-MonitorOnly"
     "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo"
     "https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto"
