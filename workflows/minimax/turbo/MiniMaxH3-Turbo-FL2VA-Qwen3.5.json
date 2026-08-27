@@ -2,32 +2,8 @@
   "id": "c0033410-f90d-46e0-9e2a-7228d5a7b623",
   "revision": 0,
   "last_node_id": 197,
-  "last_link_id": 406,
+  "last_link_id": 407,
   "nodes": [
-    {
-      "id": 135,
-      "type": "MarkdownNote",
-      "pos": [
-        -2238.03165615049,
-        5660.0944417958935
-      ],
-      "size": [
-        1060.006044363952,
-        1206.2827858230276
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "USER HINTS",
-      "properties": {},
-      "widgets_values": [
-        "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **FL2VA** (first frame + last frame) and **L2VA** (last frame only) are handled automatically by the preset when you load more than one image or clearly indicate the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
     {
       "id": 117,
       "type": "MarkdownNote",
@@ -40,7 +16,7 @@
         513.7942890234126
       ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -49,6 +25,9 @@
       "widgets_values": [
         "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_minimax_h3_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_int8_convrot.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_minimax_h3_int8_convrot.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
       ],
+      "widgets_values_named": {
+        "text": "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_minimax_h3_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_int8_convrot.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_minimax_h3_int8_convrot.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      },
       "color": "#432",
       "bgcolor": "#653"
     },
@@ -64,7 +43,7 @@
         398.05346639868276
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -73,6 +52,9 @@
       "widgets_values": [
         "## MiniMax H3\n\n[MiniMax H3](https://www.minimax.io/blog/minimax-h3) is MiniMax's general-purpose, omni-modal generation model. It jointly understands text, image, video, and audio, and generates video with **native stereo audio**: voice, sound effects, and music are modeled jointly in a single forward pass, not layered on afterward. Output is 768p, 24fps, and up to about 15 seconds. The open weights are 768p only. 2K comes from MiniMax's hosted H3-Regenerate-2K API and is not available locally.\n\n## About this workflow\n\nThis template runs the **Image to Video** task (`MiniMaxH3ImageToVideo` node), which covers both:\n\n- **t2va** (text-to-video), when no images are connected\n- **fl2va** (first/last-frame image-to-video), when `first_frame` and/or `last_frame` are connected\n\n**Key inputs**\n\n- **first_frame / last_frame**: optional keyframes; the model generates the motion between them\n- **prompt**: describe the shots, motion, and the accompanying audio (dialogue, SFX, music) in one block\n- **width / height**: set via Resolution Selector. H3's native canvas is a 768px short edge, capped at 768x1344 pixels, rounded to a multiple of 32\n- **duration (seconds)**: converted to a valid frame `length` by the Math Expression node, snapping up to the model's 17-frame-per-block (17k+5) grid at 24fps"
       ],
+      "widgets_values_named": {
+        "text": "## MiniMax H3\n\n[MiniMax H3](https://www.minimax.io/blog/minimax-h3) is MiniMax's general-purpose, omni-modal generation model. It jointly understands text, image, video, and audio, and generates video with **native stereo audio**: voice, sound effects, and music are modeled jointly in a single forward pass, not layered on afterward. Output is 768p, 24fps, and up to about 15 seconds. The open weights are 768p only. 2K comes from MiniMax's hosted H3-Regenerate-2K API and is not available locally.\n\n## About this workflow\n\nThis template runs the **Image to Video** task (`MiniMaxH3ImageToVideo` node), which covers both:\n\n- **t2va** (text-to-video), when no images are connected\n- **fl2va** (first/last-frame image-to-video), when `first_frame` and/or `last_frame` are connected\n\n**Key inputs**\n\n- **first_frame / last_frame**: optional keyframes; the model generates the motion between them\n- **prompt**: describe the shots, motion, and the accompanying audio (dialogue, SFX, music) in one block\n- **width / height**: set via Resolution Selector. H3's native canvas is a 768px short edge, capped at 768x1344 pixels, rounded to a multiple of 32\n- **duration (seconds)**: converted to a valid frame `length` by the Math Expression node, snapping up to the model's 17-frame-per-block (17k+5) grid at 24fps"
+      },
       "color": "#332922",
       "bgcolor": "#593930"
     },
@@ -121,8 +103,15 @@
       "widgets_values": [
         "video/MiniMax_H3_24FPS",
         "auto",
+        "auto",
         "auto"
       ],
+      "widgets_values_named": {
+        "filename_prefix": "video/MiniMax_H3_24FPS",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      },
       "color": "#223",
       "bgcolor": "#335"
     },
@@ -138,7 +127,7 @@
         154
       ],
       "flags": {},
-      "order": 10,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -170,7 +159,14 @@
         false,
         "FirstFrame",
         2
-      ]
+      ],
+      "widgets_values_named": {
+        "id": 114,
+        "widget_name": "image",
+        "return_all": false,
+        "node_title": "FirstFrame",
+        "allowed_float_decimals": 2
+      }
     },
     {
       "id": 186,
@@ -260,6 +256,15 @@
         "none",
         "#000000"
       ],
+      "widgets_values_named": {
+        "desired_width": 0,
+        "desired_height": 0,
+        "divisible_by": 32,
+        "upscale": false,
+        "upscale_method": "lanczos",
+        "small_image_mode": "none",
+        "pad_color": "#000000"
+      },
       "color": "#323",
       "bgcolor": "#535"
     },
@@ -351,6 +356,15 @@
         "none",
         "#000000"
       ],
+      "widgets_values_named": {
+        "desired_width": 0,
+        "desired_height": 0,
+        "divisible_by": 32,
+        "upscale": false,
+        "upscale_method": "lanczos",
+        "small_image_mode": "none",
+        "pad_color": "#000000"
+      },
       "color": "#323",
       "bgcolor": "#535"
     },
@@ -407,6 +421,13 @@
         1,
         ""
       ],
+      "widgets_values_named": {
+        "clear_cache_after_n_frames": 100,
+        "multiplier": 2,
+        "keep_model_loaded": false,
+        "batch_size": 1,
+        "multiplier_list": ""
+      },
       "color": "#223",
       "bgcolor": "#335"
     },
@@ -486,52 +507,41 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP08_MakingConnections_256.jpg_00001-audio.webm",
+            "filename": "S02_EP09_Extra_1.jpg_00001-audio.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "S02_EP08_MakingConnections_256.jpg_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP08_MakingConnections_256.jpg_00001-audio.webm"
+            "workflow": "S02_EP09_Extra_1.jpg_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP09_Extra_1.jpg_00001-audio.webm"
           }
         }
       },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 194,
-      "type": "LoadUpscalerTensorrtModel",
-      "pos": [
-        -172.00907542564994,
-        5484.098684097444
-      ],
-      "size": [
-        295.4078125,
-        82
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "upscaler_trt_model",
-          "type": "UPSCALER_TRT_MODEL",
-          "links": [
-            394
-          ]
+      "widgets_values_named": {
+        "frame_rate": 48,
+        "loop_count": 0,
+        "filename_prefix": "video/MiniMax_H3_48FPS",
+        "format": "video/webm",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "S02_EP09_Extra_1.jpg_00001-audio.webm",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/webm",
+            "frame_rate": 48,
+            "workflow": "S02_EP09_Extra_1.jpg_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP09_Extra_1.jpg_00001-audio.webm"
+          }
         }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-        "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
-        "Node name for S&R": "LoadUpscalerTensorrtModel"
       },
-      "widgets_values": [
-        "RealESRGAN_x2plus",
-        "fp16"
-      ],
       "color": "#223",
       "bgcolor": "#335"
     },
@@ -572,8 +582,11 @@
         "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
-        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 10.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] The scene opens in a dimly lit, intimate bedroom environment where a woman with short blue-tipped hair and a nose ring lies on her back on a patterned sofa, her head resting on a dark cushion with gold leaf motifs. She is nude, wearing only white fishnet stockings, and her expression is one of intense anticipation, mouth slightly agape. A shirtless man with a dark complexion dominates the foreground, his massive, muscular back and buttocks arching over her, obscuring her upper body as he prepares to mount her. The lighting is warm and moody, casting deep shadows across the dark wood furniture and highlighting the sheen of sweat on the woman's skin. The camera starts with a low-angle shot focusing on the woman's face and the man's rear, then executes a smooth, continuous push-in and tilt-down movement. As the video progresses, the man's weight shifts, his legs wrapping around her waist, and the camera descends rapidly to focus on the point of contact between their bodies. Around the midpoint, the man's hips lower, and the camera captures the friction and the wet sounds of skin sliding against skin, while the woman's hands grip his shoulders, her nails digging into his skin. The depth of field tightens, blurring the background clutter of bottles and books to isolate the couple's bodies. The lighting intensifies slightly on their contact points, emphasizing the heat and passion. By the end of the clip, the camera settles on a close-up of the woman's chest and the man's chest meeting, with her hand resting on his stomach, fingers splayed. The man's chest is visible, showing a navel and the texture of his skin, as he leans in closer, his body pressing firmly against hers. The woman's gaze is fixed upward, eyes wide and pupils dilated, capturing the climax of the moment.\n\noverall_soundscape: The room is filled with the heavy, rhythmic breathing of both partners, the woman inhaling sharply and exhaling in long, controlled bursts. The man's breathing is deeper, more guttural, matching the pressure of his movement. Wet, slick sounds of skin sliding against skin fill the air, punctuated by the soft slap of thighs and the friction of stockings against bare skin. Occasional gasps and moans escape the woman's lips as the man's weight settles, and the man lets out a low, rumbling groan that vibrates through the sofa. The ambient room tone is a low hum of electricity and the distant creak of the wooden frame, but it is completely drowned out by the primal sounds of their coupling.\n\nnon_diegetic_music: N/A"
+        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 10.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] The scene opens on a tight, intimate close-up in a softly lit, modern interior with a blurred pink and blue background, capturing two distinct women engaged in an intense act. On the left, a blonde woman with wavy hair and heavy eyelashes wears a pink floral strap top, her expression a mix of exertion and focus as she leans forward. On the right, a brunette woman with dark hair pulled back and wearing dark eye makeup leans in to perform oral sex on a large, textured male penis held horizontally between them. The lighting is warm and directional, highlighting the glistening skin and sweat on the genitalia, establishing a mood of raw, tactile intimacy.\n\nThe action begins at 0.00s with the blonde woman holding the shaft firmly while the brunette woman initiates the stroke, her mouth opening wide to engulf the head. As the clip progresses, the camera executes a slow, smooth push-in, moving closer to the subjects to emphasize the texture of the skin and the fluidity of the act. The brunette woman's head moves rhythmically, tilting back and forth to create suction, while her eyes remain closed in concentration. The blonde woman shifts her weight, her arms trembling slightly as she supports the weight of the penis, her gaze fixed downward with a look of intense participation. Around the midpoint, the camera angle shifts slightly to reveal more of the blonde woman's shoulder and the floral strap of her top, while the brunette woman's tongue presses firmly against the glans, creating a wet, slapping sound. The interaction builds in intensity; the brunette woman deepens her throat, her jaw working hard, while the blonde woman's grip tightens, veins visible on her forearm. The lighting remains consistent but casts deeper shadows in the crevices of the anatomy, enhancing the three-dimensional feel of the movement.\n\nBy 7.50s, the brunette woman is fully engulfing the shaft, her throat expanding, while the blonde woman leans her forehead against the brunette's, their bodies pressed together in a shared moment of pleasure. The camera continues its slow push, now framing the action from a slightly lower angle, bringing the viewer closer to the glans and the brunette woman's open mouth. The motion becomes faster, the brunette woman's head bobbing more vigorously as she reaches the peak of the act. The sweat on the skin becomes more pronounced, glistening under the warm light. At 10.00s, the scene resolves exactly as the reference image shows: the brunette woman is mid-stroke, mouth wide open around the head of the penis, eyes closed tight, while the blonde woman holds the shaft firmly, her face close to the brunette's, capturing the peak of the sexual encounter with high-definition clarity.\n\noverall_soundscape: The audio is dominated by the wet, rhythmic slapping of the brunette woman's mouth against the skin of the penis, accompanied by the distinct sound of saliva and fluid. The blonde woman's breathing is heavy and ragged, her inhales and exhales audible as she leans forward, while the brunette woman lets out deep, guttural moans and gasps that sync with her strokes. Occasional wet squeaks and the friction of skin on skin provide a visceral layer to the diegetic soundscape, underscored by the low, thrumming vibration of their shared arousal.\n\nnon_diegetic_music: N/A"
       ],
+      "widgets_values_named": {
+        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 10.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] The scene opens on a tight, intimate close-up in a softly lit, modern interior with a blurred pink and blue background, capturing two distinct women engaged in an intense act. On the left, a blonde woman with wavy hair and heavy eyelashes wears a pink floral strap top, her expression a mix of exertion and focus as she leans forward. On the right, a brunette woman with dark hair pulled back and wearing dark eye makeup leans in to perform oral sex on a large, textured male penis held horizontally between them. The lighting is warm and directional, highlighting the glistening skin and sweat on the genitalia, establishing a mood of raw, tactile intimacy.\n\nThe action begins at 0.00s with the blonde woman holding the shaft firmly while the brunette woman initiates the stroke, her mouth opening wide to engulf the head. As the clip progresses, the camera executes a slow, smooth push-in, moving closer to the subjects to emphasize the texture of the skin and the fluidity of the act. The brunette woman's head moves rhythmically, tilting back and forth to create suction, while her eyes remain closed in concentration. The blonde woman shifts her weight, her arms trembling slightly as she supports the weight of the penis, her gaze fixed downward with a look of intense participation. Around the midpoint, the camera angle shifts slightly to reveal more of the blonde woman's shoulder and the floral strap of her top, while the brunette woman's tongue presses firmly against the glans, creating a wet, slapping sound. The interaction builds in intensity; the brunette woman deepens her throat, her jaw working hard, while the blonde woman's grip tightens, veins visible on her forearm. The lighting remains consistent but casts deeper shadows in the crevices of the anatomy, enhancing the three-dimensional feel of the movement.\n\nBy 7.50s, the brunette woman is fully engulfing the shaft, her throat expanding, while the blonde woman leans her forehead against the brunette's, their bodies pressed together in a shared moment of pleasure. The camera continues its slow push, now framing the action from a slightly lower angle, bringing the viewer closer to the glans and the brunette woman's open mouth. The motion becomes faster, the brunette woman's head bobbing more vigorously as she reaches the peak of the act. The sweat on the skin becomes more pronounced, glistening under the warm light. At 10.00s, the scene resolves exactly as the reference image shows: the brunette woman is mid-stroke, mouth wide open around the head of the penis, eyes closed tight, while the blonde woman holds the shaft firmly, her face close to the brunette's, capturing the peak of the sexual encounter with high-definition clarity.\n\noverall_soundscape: The audio is dominated by the wet, rhythmic slapping of the brunette woman's mouth against the skin of the penis, accompanied by the distinct sound of saliva and fluid. The blonde woman's breathing is heavy and ragged, her inhales and exhales audible as she leans forward, while the brunette woman lets out deep, guttural moans and gasps that sync with her strokes. Occasional wet squeaks and the friction of skin on skin provide a visceral layer to the diegetic soundscape, underscored by the low, thrumming vibration of their shared arousal.\n\nnon_diegetic_music: N/A"
+      },
       "color": "#233",
       "bgcolor": "#355"
     },
@@ -589,7 +602,7 @@
         154
       ],
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -658,6 +671,12 @@
         2048,
         2048
       ],
+      "widgets_values_named": {
+        "resize_to": "2K",
+        "scale": "2",
+        "resize_width": 2048,
+        "resize_height": 2048
+      },
       "color": "#223",
       "bgcolor": "#335"
     },
@@ -673,7 +692,7 @@
         130
       ],
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
@@ -703,8 +722,261 @@
         "large",
         1
       ],
+      "widgets_values_named": {
+        "model": "rife49_ensemble_True_scale_1_sim",
+        "precision": "fp16",
+        "resolution_profile": "large",
+        "batch_size": 1
+      },
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 184,
+      "type": "PrimitiveInt",
+      "pos": [
+        -1170.6920579004272,
+        5207.341186958137
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          },
+          "link": 406
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            367,
+            371,
+            375
+          ]
+        }
+      ],
+      "title": "HEIGHT",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.31.0",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        768,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "value": 768,
+        "fixed": "fixed"
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 183,
+      "type": "PrimitiveInt",
+      "pos": [
+        -1168.8958955811904,
+        5075.452391286311
+      ],
+      "size": [
+        269.9026034273984,
+        82
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          },
+          "link": 405
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            366,
+            370,
+            374
+          ]
+        }
+      ],
+      "title": "WIDTH",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.31.0",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        1344,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "value": 1344,
+        "fixed": "fixed"
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 197,
+      "type": "ResolutionSelector",
+      "pos": [
+        -1174.4805577671111,
+        4890.275788710475
+      ],
+      "size": [
+        270,
+        126
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            405
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            406
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.1",
+        "Node name for S&R": "ResolutionSelector"
+      },
+      "widgets_values": [
+        "16:9 (Widescreen)",
+        1,
+        32
+      ],
+      "widgets_values_named": {
+        "aspect_ratio": "16:9 (Widescreen)",
+        "megapixels": 1,
+        "multiple": 32
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 194,
+      "type": "LoadUpscalerTensorrtModel",
+      "pos": [
+        -172.00907542564994,
+        5484.098684097444
+      ],
+      "size": [
+        295.4078125,
+        82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "upscaler_trt_model",
+          "type": "UPSCALER_TRT_MODEL",
+          "links": [
+            394
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+        "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
+        "Node name for S&R": "LoadUpscalerTensorrtModel"
+      },
+      "widgets_values": [
+        "2xLexicaRRDBNet_Sharp",
+        "fp16"
+      ],
+      "widgets_values_named": {
+        "model": "2xLexicaRRDBNet_Sharp",
+        "precision": "fp16"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 118,
+      "type": "MarkdownNote",
+      "pos": [
+        -1180,
+        5350
+      ],
+      "size": [
+        273.898817712653,
+        524.5531021895404
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Size Settings Reference",
+      "properties": {},
+      "widgets_values": [
+        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      ],
+      "widgets_values_named": {
+        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 135,
+      "type": "MarkdownNote",
+      "pos": [
+        -2231.7784139629966,
+        5656.908738670894
+      ],
+      "size": [
+        1013.766083426452,
+        1204.0376686355276
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "USER HINTS",
+      "properties": {},
+      "widgets_values": [
+        "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **FL2VA** (first frame + last frame) and **L2VA** (last frame only) are handled automatically by the preset when you load more than one image or clearly indicate the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
+      ],
+      "widgets_values_named": {
+        "text": "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **FL2VA** (first frame + last frame) and **L2VA** (last frame only) are handled automatically by the preset when you load more than one image or clearly indicate the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
       "id": 114,
@@ -718,7 +990,7 @@
         717.2904207205629
       ],
       "flags": {},
-      "order": 6,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -743,9 +1015,13 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "S02_EP08_HelpingJessicaMain_Render_457a_v01.jpg",
+        "S02_EP09_Extra_1.jpg",
         "image"
       ],
+      "widgets_values_named": {
+        "image": "S02_EP09_Extra_1.jpg",
+        "upload": "image"
+      },
       "color": "#223",
       "bgcolor": "#335"
     },
@@ -761,7 +1037,7 @@
         715.9489903021231
       ],
       "flags": {},
-      "order": 7,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -785,9 +1061,13 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "S02_EP08_HelpingJessicaMain_Render_457b_v01.jpg",
+        "S02_EP09_Extra_2.jpg",
         "image"
       ],
+      "widgets_values_named": {
+        "image": "S02_EP09_Extra_2.jpg",
+        "upload": "image"
+      },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
@@ -894,182 +1174,33 @@
         1344,
         768,
         10,
-        527985087429751,
+        778018200563903,
         "10Eros_Max_H3_FL2VA-INT8-ConvRot-HQ.safetensors",
         "qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
         "minimax_h3_video_vae_fp16.safetensors",
         "minimax_h3_audio_vae_fp32.safetensors",
         "Qwen3.5-4B-heretic-v2",
         "🔄 MiniMax H3 NSFW FL2VA (10s)",
-        false,
-        6
+        6,
+        "minimax_h3_fl2v_turbo_8step_v1.0_10ErosMax_beta1_pruned_compat_v001_T8.safetensors"
       ],
+      "widgets_values_named": {
+        "prompt": "",
+        "width": 1344,
+        "height": 768,
+        "value_1": 10,
+        "noise_seed": 778018200563903,
+        "unet_name": "10Eros_Max_H3_FL2VA-INT8-ConvRot-HQ.safetensors",
+        "clip_name": "qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
+        "vae_name": "minimax_h3_video_vae_fp16.safetensors",
+        "vae_name_1": "minimax_h3_audio_vae_fp32.safetensors",
+        "model_name": "Qwen3.5-4B-heretic-v2",
+        "preset_prompt": "🔄 MiniMax H3 NSFW FL2VA (10s)",
+        "steps": 6,
+        "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_10ErosMax_beta1_pruned_compat_v001_T8.safetensors"
+      },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 118,
-      "type": "MarkdownNote",
-      "pos": [
-        -1180,
-        5350
-      ],
-      "size": [
-        273.898817712653,
-        524.5531021895404
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Size Settings Reference",
-      "properties": {},
-      "widgets_values": [
-        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 184,
-      "type": "PrimitiveInt",
-      "pos": [
-        -1170.6920579004272,
-        5207.341186958137
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "INT",
-          "widget": {
-            "name": "value"
-          },
-          "link": 406
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            367,
-            371,
-            375
-          ]
-        }
-      ],
-      "title": "HEIGHT",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.31.0",
-        "Node name for S&R": "PrimitiveInt"
-      },
-      "widgets_values": [
-        768,
-        "fixed"
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 183,
-      "type": "PrimitiveInt",
-      "pos": [
-        -1168.8958955811904,
-        5075.452391286311
-      ],
-      "size": [
-        269.9026034273984,
-        82
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "INT",
-          "widget": {
-            "name": "value"
-          },
-          "link": 405
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            366,
-            370,
-            374
-          ]
-        }
-      ],
-      "title": "WIDTH",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.31.0",
-        "Node name for S&R": "PrimitiveInt"
-      },
-      "widgets_values": [
-        1344,
-        "fixed"
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 197,
-      "type": "ResolutionSelector",
-      "pos": [
-        -1174.4805577671111,
-        4890.275788710475
-      ],
-      "size": [
-        270,
-        126
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            405
-          ]
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            406
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.33.1",
-        "Node name for S&R": "ResolutionSelector"
-      },
-      "widgets_values": [
-        "16:9 (Widescreen)",
-        1,
-        32
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -1316,7 +1447,7 @@
         "state": {
           "lastGroupId": 15,
           "lastNodeId": 197,
-          "lastLinkId": 406,
+          "lastLinkId": 407,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1327,7 +1458,7 @@
           "bounding": [
             -2560,
             4720,
-            147.9609375,
+            130.44140625,
             348
           ]
         },
@@ -1349,7 +1480,7 @@
               283
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4744
             ]
           },
@@ -1361,7 +1492,7 @@
               200
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4764
             ]
           },
@@ -1373,7 +1504,7 @@
               201
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4784
             ]
           },
@@ -1386,7 +1517,7 @@
             ],
             "label": "duration",
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4804
             ]
           },
@@ -1398,7 +1529,7 @@
               207
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4824
             ]
           },
@@ -1410,7 +1541,7 @@
               221
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4844
             ]
           },
@@ -1422,7 +1553,7 @@
               227
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4864
             ]
           },
@@ -1434,7 +1565,7 @@
               223
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4884
             ]
           },
@@ -1447,7 +1578,7 @@
             ],
             "label": "audio_vae",
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4904
             ]
           },
@@ -1459,7 +1590,7 @@
               281
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4924
             ]
           },
@@ -1471,7 +1602,7 @@
               282
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4944
             ]
           },
@@ -1484,7 +1615,7 @@
               279
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4964
             ]
           },
@@ -1497,20 +1628,8 @@
               280
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
               4984
-            ]
-          },
-          {
-            "id": "da627ce6-2c3e-4d59-8809-67ea38a33c60",
-            "name": "keep_last_prompt",
-            "type": "BOOLEAN",
-            "linkIds": [
-              284
-            ],
-            "pos": [
-              -2436.0390625,
-              5004
             ]
           },
           {
@@ -1521,7 +1640,19 @@
               277
             ],
             "pos": [
-              -2436.0390625,
+              -2453.55859375,
+              5004
+            ]
+          },
+          {
+            "id": "89ec7008-72c0-4d06-bab6-e5994564e571",
+            "name": "lora_name",
+            "type": "COMBO",
+            "linkIds": [
+              407
+            ],
+            "pos": [
+              -2453.55859375,
               5024
             ]
           }
@@ -1630,7 +1761,10 @@
             },
             "widgets_values": [
               "minimax_h3_video_vae_fp16.safetensors"
-            ]
+            ],
+            "widgets_values_named": {
+              "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+            }
           },
           {
             "id": 24,
@@ -1681,7 +1815,10 @@
             },
             "widgets_values": [
               "minimax_h3_audio_vae_fp32.safetensors"
-            ]
+            ],
+            "widgets_values_named": {
+              "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+            }
           },
           {
             "id": 14,
@@ -1750,8 +1887,7 @@
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
               "Node name for S&R": "SamplerCustomAdvanced"
-            },
-            "widgets_values": []
+            }
           },
           {
             "id": 13,
@@ -1804,7 +1940,12 @@
               "qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
               "minimax",
               "default"
-            ]
+            ],
+            "widgets_values_named": {
+              "clip_name": "qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
+              "type": "minimax",
+              "device": "default"
+            }
           },
           {
             "id": 15,
@@ -1849,7 +1990,11 @@
             "widgets_values": [
               1,
               "randomize"
-            ]
+            ],
+            "widgets_values_named": {
+              "noise_seed": 1,
+              "control_after_generate": "randomize"
+            }
           },
           {
             "id": 107,
@@ -1913,7 +2058,10 @@
             },
             "widgets_values": [
               "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17"
-            ]
+            ],
+            "widgets_values_named": {
+              "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17"
+            }
           },
           {
             "id": 111,
@@ -1958,7 +2106,10 @@
             },
             "widgets_values": [
               2
-            ]
+            ],
+            "widgets_values_named": {
+              "value": 2
+            }
           },
           {
             "id": 91,
@@ -1969,7 +2120,7 @@
             ],
             "size": [
               270,
-              110
+              126
             ],
             "flags": {},
             "order": 11,
@@ -2006,8 +2157,14 @@
             },
             "widgets_values": [
               24,
-              8
-            ]
+              8,
+              "sRGB"
+            ],
+            "widgets_values_named": {
+              "fps": 24,
+              "bit_depth": 8,
+              "color_space": "sRGB"
+            }
           },
           {
             "id": 10,
@@ -2054,8 +2211,7 @@
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
               "Node name for S&R": "VAEDecode"
-            },
-            "widgets_values": []
+            }
           },
           {
             "id": 23,
@@ -2102,8 +2258,7 @@
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
               "Node name for S&R": "VAEDecodeAudio"
-            },
-            "widgets_values": []
+            }
           },
           {
             "id": 104,
@@ -2211,7 +2366,13 @@
               1344,
               768,
               73
-            ]
+            ],
+            "widgets_values_named": {
+              "prompt": "Vaporwave title sequence look: pink and blue gradient palette, VHS tracking artifacts, Greek statue motifs, chrome palm trees, RGB chromatic aberration, lo-fi retro atmosphere, mood languid and nostalgic.\n\nTimeline:\n[0s-1s] VHS static opens the frame, the title \"COMFYUI\" appears with RGB split and a slight horizontal jitter.\n[1s-2.5s] Hard cut, a Greek plaster bust close-up, pink-purple gradient sky, a pixelated sun.\n[2.5s-4s] Clean \"STARRING\" credits appear, \"LATENT\" and \"CONTROLNET\" each shown exactly once.\n[4s-5s] Final card \"DIRECTED BY COMFYUI\" holds, one VHS tracking glitch settling into stability.\n\nHard cuts only, transitions landing with tape jumps, no push-ins, no dissolves.\n\nAudio: lo-fi vaporwave score, slow drum machine with soft bass, VHS tape-noise sample joins at 2.5s, melody fading for the last 1s.\n\nAll text must be clearly legible, do not misspell English, no Chinese characters, do not repeat names or job titles, no soft dissolves, no subtitle bars.",
+              "width": 1344,
+              "height": 768,
+              "length": 73
+            }
           },
           {
             "id": 155,
@@ -2243,8 +2404,7 @@
               "ver": "55fee864dd7b2976b1c4ce3c3d5f7968f181409f",
               "Node name for S&R": "MiniMaxH3TurboSampler",
               "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo"
-            },
-            "widgets_values": []
+            }
           },
           {
             "id": 6,
@@ -2296,7 +2456,11 @@
             "widgets_values": [
               "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
               "default"
-            ]
+            ],
+            "widgets_values_named": {
+              "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+              "weight_dtype": "default"
+            }
           },
           {
             "id": 16,
@@ -2340,8 +2504,7 @@
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
               "Node name for S&R": "BasicGuider"
-            },
-            "widgets_values": []
+            }
           },
           {
             "id": 9,
@@ -2393,155 +2556,12 @@
               "simple",
               20,
               1
-            ]
-          },
-          {
-            "id": 151,
-            "type": "AILab_QwenVL_Advanced",
-            "pos": [
-              -2033.752254854808,
-              3996.1196043816235
             ],
-            "size": [
-              340,
-              512
-            ],
-            "flags": {},
-            "order": 15,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 279
-              },
-              {
-                "localized_name": "image2",
-                "name": "image2",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 280
-              },
-              {
-                "localized_name": "model_name",
-                "name": "model_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model_name"
-                },
-                "link": 281
-              },
-              {
-                "localized_name": "preset_prompt",
-                "name": "preset_prompt",
-                "type": "COMBO",
-                "widget": {
-                  "name": "preset_prompt"
-                },
-                "link": 282
-              },
-              {
-                "localized_name": "custom_prompt",
-                "name": "custom_prompt",
-                "type": "STRING",
-                "widget": {
-                  "name": "custom_prompt"
-                },
-                "link": 283
-              },
-              {
-                "localized_name": "keep_last_prompt",
-                "name": "keep_last_prompt",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "keep_last_prompt"
-                },
-                "link": 284
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "RESPONSE",
-                "name": "RESPONSE",
-                "type": "STRING",
-                "links": [
-                  285,
-                  286
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "ver": "94843a8153cce9336810388f9322ef699e2d99ec",
-              "Node name for S&R": "AILab_QwenVL_Advanced"
-            },
-            "widgets_values": [
-              "Qwen3.5-4B-heretic-v2",
-              "None (FP16)",
-              "auto",
-              false,
-              "auto",
-              "🎥 LTX 2.3 NSFW I2V",
-              "",
-              8192,
-              0.6,
-              0.9,
-              1,
-              1,
-              1,
-              false,
-              1924954437,
-              "randomize",
-              false
-            ],
-            "color": "#28403f",
-            "bgcolor": "#374539"
-          },
-          {
-            "id": 154,
-            "type": "MiniMaxH3TurboLoRA",
-            "pos": [
-              -1667.2647543146984,
-              4379.229611481927
-            ],
-            "size": [
-              336.625,
-              112.578125
-            ],
-            "flags": {},
-            "order": 16,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 293
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "MODEL",
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": [
-                  402
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfyui-minimax-h3-turbo",
-              "ver": "55fee864dd7b2976b1c4ce3c3d5f7968f181409f",
-              "Node name for S&R": "MiniMaxH3TurboLoRA",
-              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo"
-            },
-            "widgets_values": [
-              "minimax_h3_turbo_v4_step600_ema.safetensors",
-              1,
-              false
-            ]
+            "widgets_values_named": {
+              "scheduler": "simple",
+              "steps": 20,
+              "denoise": 1
+            }
           },
           {
             "id": 171,
@@ -2599,7 +2619,21 @@
               false,
               "exact_kv",
               ""
-            ]
+            ],
+            "widgets_values_named": {
+              "enabled": true,
+              "tau_start": 1.3,
+              "tau_end": 0.8,
+              "curve": "linear",
+              "min_tokens": 4096,
+              "strict": false,
+              "dense_percent": 0,
+              "thresh_type": "diag",
+              "int8_qk": false,
+              "int8_pv": false,
+              "sink_conditioning": "exact_kv",
+              "dense_blocks": ""
+            }
           },
           {
             "id": 172,
@@ -2640,7 +2674,10 @@
             },
             "widgets_values": [
               true
-            ]
+            ],
+            "widgets_values_named": {
+              "enabled": true
+            }
           },
           {
             "id": 173,
@@ -2684,7 +2721,184 @@
               true,
               2,
               8192
-            ]
+            ],
+            "widgets_values_named": {
+              "enabled": true,
+              "chunks": 2,
+              "min_tokens": 8192
+            }
+          },
+          {
+            "id": 151,
+            "type": "AILab_QwenVL_Advanced",
+            "pos": [
+              -2033.752254854808,
+              3996.1196043816235
+            ],
+            "size": [
+              340,
+              512
+            ],
+            "flags": {},
+            "order": 15,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 279
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 280
+              },
+              {
+                "localized_name": "model_name",
+                "name": "model_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model_name"
+                },
+                "link": 281
+              },
+              {
+                "localized_name": "preset_prompt",
+                "name": "preset_prompt",
+                "type": "COMBO",
+                "widget": {
+                  "name": "preset_prompt"
+                },
+                "link": 282
+              },
+              {
+                "localized_name": "custom_prompt",
+                "name": "custom_prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "custom_prompt"
+                },
+                "link": 283
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "RESPONSE",
+                "name": "RESPONSE",
+                "type": "STRING",
+                "links": [
+                  285,
+                  286
+                ]
+              }
+            ],
+            "properties": {
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
+              "ver": "94843a8153cce9336810388f9322ef699e2d99ec",
+              "Node name for S&R": "AILab_QwenVL_Advanced"
+            },
+            "widgets_values": [
+              "Qwen3.5-4B-heretic-v2",
+              "None (FP16)",
+              "auto",
+              false,
+              "auto",
+              "🎥 LTX 2.3 NSFW I2V",
+              "",
+              8192,
+              0.6,
+              0.9,
+              1,
+              1,
+              1,
+              false,
+              255506195,
+              "randomize",
+              false
+            ],
+            "widgets_values_named": {
+              "model_name": "Qwen3.5-4B-heretic-v2",
+              "quantization": "None (FP16)",
+              "attention_mode": "auto",
+              "use_torch_compile": false,
+              "device": "auto",
+              "preset_prompt": "🎥 LTX 2.3 NSFW I2V",
+              "custom_prompt": "",
+              "max_tokens": 8192,
+              "temperature": 0.6,
+              "top_p": 0.9,
+              "num_beams": 1,
+              "repetition_penalty": 1,
+              "frame_count": 1,
+              "keep_model_loaded": false,
+              "seed": 255506195,
+              "control_after_generate": "randomize",
+              "keep_last_prompt": false
+            },
+            "color": "#28403f",
+            "bgcolor": "#374539"
+          },
+          {
+            "id": 154,
+            "type": "MiniMaxH3TurboLoRA",
+            "pos": [
+              -1667.2647543146984,
+              4379.229611481927
+            ],
+            "size": [
+              336.625,
+              112.578125
+            ],
+            "flags": {},
+            "order": 16,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 293
+              },
+              {
+                "localized_name": "lora_name",
+                "name": "lora_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "lora_name"
+                },
+                "link": 407
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  402
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfyui-minimax-h3-turbo",
+              "ver": "55fee864dd7b2976b1c4ce3c3d5f7968f181409f",
+              "Node name for S&R": "MiniMaxH3TurboLoRA",
+              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo"
+            },
+            "widgets_values": [
+              "minimax_h3_turbo_v4_step600_ema.safetensors",
+              1,
+              false
+            ],
+            "widgets_values_named": {
+              "lora_name": "minimax_h3_turbo_v4_step600_ema.safetensors",
+              "strength": 1,
+              "low_vram": false
+            }
           }
         ],
         "groups": [
@@ -2989,7 +3203,7 @@
           {
             "id": 277,
             "origin_id": -10,
-            "origin_slot": 14,
+            "origin_slot": 13,
             "target_id": 9,
             "target_slot": 1,
             "type": "INT"
@@ -3033,14 +3247,6 @@
             "target_id": 151,
             "target_slot": 4,
             "type": "STRING"
-          },
-          {
-            "id": 284,
-            "origin_id": -10,
-            "origin_slot": 13,
-            "target_id": 151,
-            "target_slot": 5,
-            "type": "BOOLEAN"
           },
           {
             "id": 285,
@@ -3113,6 +3319,14 @@
             "target_id": 171,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 407,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 154,
+            "target_slot": 1,
+            "type": "COMBO"
           }
         ],
         "extra": {}
@@ -3121,16 +3335,16 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.48.7",
+    "frontendVersion": "1.49.6",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.8264462809917354,
+      "scale": 0.7513148009015777,
       "offset": [
-        2805.409385892109,
-        -4299.863366835473
+        2633.395959757229,
+        -4534.966840804674
       ]
     }
   },
