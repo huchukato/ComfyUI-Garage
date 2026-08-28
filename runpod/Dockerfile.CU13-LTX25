@@ -391,10 +391,10 @@ update_custom_nodes() {
         else
             echo "$(date): ⚠️  $name update failed, leaving as-is" | tee -a "$COMFY_LOG"
         fi
-        if [ -f "$node_dir/requirements.txt" ]; then
-            echo "$(date): 🔄 Installing requirements for $name..." | tee -a "$COMFY_LOG"
-            pip install --no-cache-dir -r "$node_dir/requirements.txt" 2>>"$COMFY_LOG" | tail -n 5 | tee -a "$COMFY_LOG" || true
-        fi
+        # NOTE: requirements.txt is NOT installed at boot time.
+        # pip install at boot can break torch/transformers by upgrading
+        # packages that are pinned to specific CUDA versions in the image.
+        # Requirements are installed only at Docker build time.
     done
 }
 
