@@ -42,7 +42,19 @@ RUN cd /opt/comfyui-baked/custom_nodes && \
     git clone https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto.git && \
     git clone https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto.git && \
     git clone https://github.com/huchukato/ComfyUI-HuggingFace.git && \
-    git clone https://github.com/huchukato/comfy-tagcomplete.git
+    git clone https://github.com/huchukato/comfy-tagcomplete.git && \
+    echo "Updating ALL baked custom nodes to latest..." && \
+    for node_dir in /opt/comfyui-baked/custom_nodes/*/; do \
+        if [ -d "$node_dir/.git" ]; then \
+            name=$(basename "$node_dir"); \
+            branch=$(git -C "$node_dir" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main"); \
+            echo "  Updating $name ($branch)..."; \
+            git -C "$node_dir" fetch origin "$branch" 2>/dev/null && \
+            git -C "$node_dir" reset --hard "origin/$branch" 2>/dev/null && \
+            git -C "$node_dir" clean -fd 2>/dev/null && \
+            echo "  ✅ $name" || echo "  ⚠️ $name failed"; \
+        fi; \
+    done
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)
@@ -363,21 +375,24 @@ update_custom_nodes() {
     echo "$(date): 🔄 Updating custom nodes in $nodes_dir..." | tee -a "$COMFY_LOG"
     for node_dir in "$nodes_dir"/*; do
         [ ! -d "$node_dir/.git" ] && continue
-        local name branch
+        local name branch remote_url
         name=$(basename "$node_dir")
         branch=$(git -C "$node_dir" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main")
+        remote_url=$(git -C "$node_dir" config --get remote.origin.url 2>/dev/null || echo "")
+        if [ -z "$remote_url" ]; then
+            echo "$(date): ⚠️  $name has no remote.origin.url, skipping" | tee -a "$COMFY_LOG"
+            continue
+        fi
         echo "$(date): ⏳ Updating $name (branch $branch)..." | tee -a "$COMFY_LOG"
-        # Try fast-forward first; if the repo is divergent/dirty, hard-reset to remote.
-        if timeout 60 git -C "$node_dir" pull --ff-only origin "$branch" 2>>"$COMFY_LOG"; then
-            echo "$(date): ✅ $name updated" | tee -a "$COMFY_LOG"
+        # Always fetch + hard reset to ensure baked nodes are updated too.
+        # Baked nodes from the base image often have divergent/dirty state
+        # that makes git pull --ff-only fail silently.
+        if timeout 60 git -C "$node_dir" fetch origin "$branch" 2>>"$COMFY_LOG" && \
+           timeout 30 git -C "$node_dir" reset --hard "origin/$branch" 2>>"$COMFY_LOG" && \
+           timeout 30 git -C "$node_dir" clean -fd 2>>"$COMFY_LOG"; then
+            echo "$(date): ✅ $name updated to origin/$branch" | tee -a "$COMFY_LOG"
         else
-            echo "$(date): ⚠️  $name pull failed, attempting hard reset to origin/$branch" | tee -a "$COMFY_LOG"
-            if timeout 60 git -C "$node_dir" fetch origin "$branch" 2>>"$COMFY_LOG" && \
-               timeout 30 git -C "$node_dir" reset --hard "origin/$branch" 2>>"$COMFY_LOG"; then
-                echo "$(date): ✅ $name reset to origin/$branch" | tee -a "$COMFY_LOG"
-            else
-                echo "$(date): ⚠️  $name update failed, leaving as-is" | tee -a "$COMFY_LOG"
-            fi
+            echo "$(date): ⚠️  $name update failed, leaving as-is" | tee -a "$COMFY_LOG"
         fi
         if [ -f "$node_dir/requirements.txt" ]; then
             echo "$(date): 🔄 Installing requirements for $name..." | tee -a "$COMFY_LOG"
