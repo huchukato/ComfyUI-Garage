@@ -42,7 +42,9 @@ NODES=(
 )
 
 WORKFLOWS=(
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PMP-LoRaStack-Upscale-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-AutoPrompt.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/gguf/WAN2.2-I2V-AutoPrompt-GGUF.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-AutoPrompt-Story.json"
@@ -101,14 +103,15 @@ function provisioning_start() {
     provisioning_get_pip_packages
     
     echo "📁 Downloading workflows..."
-    # Create workflows directory
-    mkdir -p "${COMFYUI_DIR}/user/default/workflows"
-    
-    provisioning_get_files \
-        "${COMFYUI_DIR}/user/default/workflows" \
-        "${WORKFLOWS[@]}"
-        
-    echo "✅ Workflows downloaded to: ${COMFYUI_DIR}/user/default/workflows"
+    WF_BASE="${COMFYUI_DIR}/user/default/workflows"
+    for url in "${WORKFLOWS[@]}"; do
+        rel="${url#*workflows/}"
+        subdir=$(dirname "$rel")
+        mkdir -p "$WF_BASE/$subdir"
+        provisioning_download "$url" "$WF_BASE/$subdir"
+    done
+
+    echo "✅ Workflows downloaded to: $WF_BASE"
         
     echo "🎯 Downloading checkpoint models..."
     provisioning_get_files \
