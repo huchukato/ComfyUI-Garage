@@ -20,7 +20,7 @@ Custom ComfyUI on Vast.ai, provisioned with QwenVL-Mod and native MiniMax H3 vid
 - **Multilingual prompts** with visual style detection via QwenVL-Mod
 - **GGUF backend** via llama-cpp-python CUDA 13
 - **Sage Attention**, FP16 accumulation, async offload
-- **TensorRT**: verified Upscaler batch `2/2`; RIFE remains at stable batch `1/1`
+- **TensorRT**: verified Upscaler batch `2/2`; RIFE v4.25 at batch `1/1`
 - **Auto-detect upscale factor**: scale (2x/4x) derived from model name, no manual dropdown
 - **Persistent** `/workspace` (models survive restarts)
 
@@ -108,8 +108,9 @@ Add to ComfyUI launch arguments:
 - **Turbo workflows**: 8 steps with Turbo LoRA + SOL-ATTN + Spectrum
 - **NVFP4+INT8 ConvRot hybrid** (rockerBOO/lilcheaty) is the default — NVFP4 on MLP, INT8 ConvRot on attention, BF16 on sensitive layers. Best speed/quality on Blackwell
 - The standard MiniMax H3 hybrid model is the verified default
+- **RIFE v4.25** — recommended for diffusion video. ONNX from HF, TRT engine built at first use
 - **10Eros-Max**: optional, INT8 ConvRot HQ. NVFP4 degrades this fine-tune. Switch model + matching LoRA together
-- Keep RIFE loader/runner at `1/1`; use Upscaler loader/runner at the verified `2/2`
+- Keep RIFE v4.25 loader/runner at `1/1`; use Upscaler loader/runner at the verified `2/2`
 
 ---
 

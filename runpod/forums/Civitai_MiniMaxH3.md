@@ -225,7 +225,7 @@ The workflows include built-in NSFW presets for the Qwen3-VL prompt enhancer:
 - **Output**: 768p, 24 fps (native), up to ~15 seconds
 - **Audio**: Native stereo, generated jointly with video
 - **Upscale**: TensorRT RealESRGAN x4 (FL2VA + R2VA workflows)
-- **Frame interpolation**: RIFE rife49 → 48 fps (FL2VA + R2VA workflows)
+- **Frame interpolation**: RIFE v4.25 → 48 fps (FL2VA + R2VA workflows)
 - **Sage Attention**: FP16 accumulation, async offload
 - **Smart caching**: Reuse prompts with same inputs, Fixed Seed Mode for text-only caching
 
@@ -306,7 +306,7 @@ The workflows include built-in NSFW presets for the Qwen3-VL prompt enhancer:
 **TensorRT Engines (FL2VA + R2VA only)**
 
 - `models/upscale_models/` → `RealESRGAN_x4` (TensorRT engine)
-- `models/rife/` → `rife49_ensemble_True_scale_1_sim` (TensorRT engine)
+- `models/rife/` → `rife425_ensemble_False_scale_1_sim` (TensorRT engine, ONNX auto-downloaded from HF)
 
 > TensorRT engines must be built for your specific GPU. See [ComfyUI-RIFE-TensorRT-Auto](https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto) and [ComfyUI-Upscaler-TensorRT-Auto](https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto) for build instructions.
 

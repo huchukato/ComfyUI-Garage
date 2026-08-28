@@ -18,7 +18,7 @@ Custom ComfyUI based on `runpod/comfyui:cuda13.0`, enhanced with QwenVL-Mod and 
 - **Multilingual prompts** with visual style detection via QwenVL-Mod
 - **GGUF backend** via llama-cpp-python CUDA 13
 - **Sage Attention**, FP16 accumulation, async offload
-- **TensorRT**: verified Upscaler batch `2/2`; RIFE remains at stable batch `1/1`
+- **TensorRT**: verified Upscaler batch `2/2`; RIFE v4.25 at batch `1/1`
 - **Auto-detect upscale factor**: scale (2x/4x) derived from model name, no manual dropdown
 - **Persistent** `/workspace` (models survive restarts)
 - **ComfyUI v0.33.1+** forced at boot (MiniMax H3 requirement)
@@ -96,14 +96,14 @@ HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ## 🎬 Prompting Notes
 
 - Use QwenVL-Mod **MiniMax H3 NSFW (5s/10s/15s)** presets for native video+audio prompts
-- Presets produce the official three-field format: `integrated_multimodal_description`, `overall_soundscape`, `non_diegetic_music`
 - Audio is generated natively; describe sounds explicitly in the prompt
 - Native resolution: **768px short edge**, long edge capped at **1344px**, multiples of 32
 - Avoid direct 1080p. Generate at native resolution, then upscale/interpolate with TensorRT nodes
 - **Turbo workflows**: 8 steps with `minimax_h3_turbo_v4_step600_ema` LoRA + SOL-ATTN + Spectrum
 - **NVFP4+INT8 ConvRot hybrid** (rockerBOO/lilcheaty) — default, best speed/quality on Blackwell. NVFP4 on MLP, INT8 ConvRot on attention
+- **RIFE v4.25** — recommended for diffusion video. ONNX from HF, TRT engine built at first use
 - **10Eros-Max**: optional INT8 ConvRot HQ. NVFP4 degrades it. Switch model + LoRA together
-- Keep RIFE loader/runner at `1/1`; use Upscaler loader/runner at the verified `2/2`
+- Keep RIFE v4.25 loader/runner at `1/1`; use Upscaler loader/runner at the verified `2/2`
 
 ---
 
