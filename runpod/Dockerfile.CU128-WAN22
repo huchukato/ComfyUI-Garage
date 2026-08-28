@@ -466,7 +466,7 @@ INNER
 echo "Overwrote comfyui_args.txt with WAN2.2 optimized args"
 
 # Disable uv in ComfyUI-Manager to prevent it from breaking torch/transformers
-MANAGER_CONFIG_DIR="/workspace/runpod-slim/ComfyUI/user/default/ComfyUI-Manager"
+MANAGER_CONFIG_DIR="/workspace/runpod-slim/ComfyUI/user/__manager"
 mkdir -p "$MANAGER_CONFIG_DIR"
 if [ ! -f "$MANAGER_CONFIG_DIR/config.ini" ]; then
     cat > "$MANAGER_CONFIG_DIR/config.ini" << 'INNER'

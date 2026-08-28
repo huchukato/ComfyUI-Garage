@@ -451,7 +451,7 @@ echo "Overwrote comfyui_args.txt with MiniMax H3 / QwenVL-Mod optimized args"
 # Disable uv in ComfyUI-Manager to prevent it from breaking torch/transformers
 # uv resolves dependencies more aggressively and can overwrite the CUDA-specific
 # torch build with a generic one, causing "PyTorch not installed" errors.
-MANAGER_CONFIG_DIR="/workspace/runpod-slim/ComfyUI/user/default/ComfyUI-Manager"
+MANAGER_CONFIG_DIR="/workspace/runpod-slim/ComfyUI/user/__manager"
 mkdir -p "$MANAGER_CONFIG_DIR"
 if [ ! -f "$MANAGER_CONFIG_DIR/config.ini" ]; then
     cat > "$MANAGER_CONFIG_DIR/config.ini" << 'INNER'
