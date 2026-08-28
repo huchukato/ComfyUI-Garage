@@ -7,10 +7,10 @@
 FROM runpod/comfyui:cuda13.0
 
 # ──────────────────────────────────────────────────────────────────────────────
-# ComfyUI core version — override at build time with --build-arg COMFYUI_VERSION=v0.34.1
+# ComfyUI core version — override at build time with --build-arg COMFYUI_VERSION=v0.34.2
 # The base image may ship an older tag, so we force-checkout the release.
 # ──────────────────────────────────────────────────────────────────────────────
-ARG COMFYUI_VERSION=v0.34.1
+ARG COMFYUI_VERSION=v0.34.2
 ENV COMFYUI_VERSION=${COMFYUI_VERSION}
 RUN cd /opt/comfyui-baked && \
     git fetch --tags --force origin && \
@@ -327,7 +327,7 @@ RUN chmod +x /usr/local/bin/download-ltx-models.sh
 RUN cat > /usr/local/bin/custom-entrypoint.sh << 'EOF'
 #!/bin/bash
 COMFY_LOG="/var/log/comfyui-update.log"
-COMFY_TAG="${COMFYUI_VERSION:-v0.34.1}"
+COMFY_TAG="${COMFYUI_VERSION:-v0.34.2}"
 
 force_comfyui_version() {
     local repo_dir="$1"
