@@ -1,7 +1,7 @@
 {
   "id": "237ff12c-6141-4077-9f5e-d530111c6d41",
   "revision": 0,
-  "last_node_id": 204,
+  "last_node_id": 205,
   "last_link_id": 415,
   "nodes": [
     {
@@ -32,33 +32,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 117,
-      "type": "MarkdownNote",
-      "pos": [
-        -1661.841716481801,
-        4855.670355316772
-      ],
-      "size": [
-        469.952857010293,
-        513.7942890234126
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Model Links",
-      "properties": {},
-      "widgets_values": [
-        "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors](https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors](https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
-      ],
-      "widgets_values_named": {
-        "text": "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors](https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors](https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 116,
       "type": "MarkdownNote",
       "pos": [
@@ -70,7 +43,7 @@
         386.73203108836515
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -97,7 +70,7 @@
         330.12154760866815
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -122,10 +95,10 @@
         "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
-        "```\nintegrated_multimodal_description: [Shot 1] 2D-animated, cel-shaded, vibrant anime color palette, cinematic close-up focuses on Cammy White's upper torso against a blurred casino backdrop at sunset. She stands center frame, blonde hair flowing slightly, blue eyes wide with desire, mouth open with tongue extended as thick saliva drips down her chest onto her bare, heaving breasts. Her nipples are prominently visible, being gently rubbed and stimulated by unseen hands causing her to arch back involuntarily while gasping loudly. Soft stage lights bathe the scene in warm amber hues contrasting with cool blue underlighting casting dramatic shadows across her skin. A single camera push-in slowly zooms closer over 3 seconds, capturing every bead of sweat forming on her collarbone and the rhythmic pulsing of her chest beneath a translucent cupless bra. Diegetic sounds of heavy panting mix with wet friction noises as fingers massage her sensitive areas, building tension until she lets out a sharp moan at the 2.5-second mark before the cut.\noverall_soundscape: Intense breathing paired with wet, slick sounds of fingers rubbing sensitive nipples, interspersed with sharp gasps and low-throated moans that rise in pitch as stimulation increases. Background ambience of distant casino chatter fades into silence, leaving only the visceral audio of her arousal and the rhythmic slap of wet skin against wet skin.\nnon_diegetic_music: N/A\n```"
+        "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a wide-angle medium shot captures Rikku standing amidst a rain-slicked, neon-drenched cyberpunk alleyway transitioning into a sunlit morning dungeon entrance; the scene begins with heavy magenta and cyan holographic billboards reflecting off wet chrome surfaces, then dissolves to bright morning sunlight filtering through high arches casting long, dramatic shadows and creating a high-contrast chiaroscuro effect; Rikku, a blonde woman with striking green eyes and a high-low skirt, stands in a vulnerable pose with her arm tucked under a breast, revealing nippleless clothing that exposes ample cleavage and the curvature of her chest; she performs subtle breast lift movements while her tongue lolls slightly outward, allowing a visible saliva drip to fall onto her skin; the camera slowly pushes in smoothly while panning left to follow the trajectory of the dripping saliva, capturing the glistening texture against the metallic background; atmospheric sounds of rhythmic rain pattering on metal, the faint hum of distant holograms, and Rikku’s ragged, aroused breathing fill the air, punctuated by the wet slap of her own saliva hitting the ground; the audio layer blends the cool synth-wave ambiance of the city with organic body sounds of anticipation and slight panting; non_diegetic_music: N/A\noverall_soundscape: Heavy rain drums relentlessly on chrome rooftops and pavement, intercut with the electric buzz of flickering neon signs and the wet, slick sound of saliva sliding down skin; Rikku’s breathing is shallow yet labored, rising and falling heavily with each subtle shift in her posture, mixed with the occasional soft gasp and the audible squelch of moisture meeting cold stone; the ambient noise creates a tense, humid atmosphere where mechanical city sounds collide with primal biological reactions."
       ],
       "widgets_values_named": {
-        "text": "```\nintegrated_multimodal_description: [Shot 1] 2D-animated, cel-shaded, vibrant anime color palette, cinematic close-up focuses on Cammy White's upper torso against a blurred casino backdrop at sunset. She stands center frame, blonde hair flowing slightly, blue eyes wide with desire, mouth open with tongue extended as thick saliva drips down her chest onto her bare, heaving breasts. Her nipples are prominently visible, being gently rubbed and stimulated by unseen hands causing her to arch back involuntarily while gasping loudly. Soft stage lights bathe the scene in warm amber hues contrasting with cool blue underlighting casting dramatic shadows across her skin. A single camera push-in slowly zooms closer over 3 seconds, capturing every bead of sweat forming on her collarbone and the rhythmic pulsing of her chest beneath a translucent cupless bra. Diegetic sounds of heavy panting mix with wet friction noises as fingers massage her sensitive areas, building tension until she lets out a sharp moan at the 2.5-second mark before the cut.\noverall_soundscape: Intense breathing paired with wet, slick sounds of fingers rubbing sensitive nipples, interspersed with sharp gasps and low-throated moans that rise in pitch as stimulation increases. Background ambience of distant casino chatter fades into silence, leaving only the visceral audio of her arousal and the rhythmic slap of wet skin against wet skin.\nnon_diegetic_music: N/A\n```"
+        "text": "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a wide-angle medium shot captures Rikku standing amidst a rain-slicked, neon-drenched cyberpunk alleyway transitioning into a sunlit morning dungeon entrance; the scene begins with heavy magenta and cyan holographic billboards reflecting off wet chrome surfaces, then dissolves to bright morning sunlight filtering through high arches casting long, dramatic shadows and creating a high-contrast chiaroscuro effect; Rikku, a blonde woman with striking green eyes and a high-low skirt, stands in a vulnerable pose with her arm tucked under a breast, revealing nippleless clothing that exposes ample cleavage and the curvature of her chest; she performs subtle breast lift movements while her tongue lolls slightly outward, allowing a visible saliva drip to fall onto her skin; the camera slowly pushes in smoothly while panning left to follow the trajectory of the dripping saliva, capturing the glistening texture against the metallic background; atmospheric sounds of rhythmic rain pattering on metal, the faint hum of distant holograms, and Rikku’s ragged, aroused breathing fill the air, punctuated by the wet slap of her own saliva hitting the ground; the audio layer blends the cool synth-wave ambiance of the city with organic body sounds of anticipation and slight panting; non_diegetic_music: N/A\noverall_soundscape: Heavy rain drums relentlessly on chrome rooftops and pavement, intercut with the electric buzz of flickering neon signs and the wet, slick sound of saliva sliding down skin; Rikku’s breathing is shallow yet labored, rising and falling heavily with each subtle shift in her posture, mixed with the occasional soft gasp and the audible squelch of moisture meeting cold stone; the ambient noise creates a tense, humid atmosphere where mechanical city sounds collide with primal biological reactions."
       },
       "color": "#233",
       "bgcolor": "#355"
@@ -142,7 +115,7 @@
         106
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 4,
       "inputs": [
         {
@@ -193,7 +166,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -235,7 +208,7 @@
         170
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "showAdvanced": false,
       "inputs": [],
@@ -285,7 +258,7 @@
         251
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -343,7 +316,7 @@
         2382.4967320934375
       ],
       "flags": {},
-      "order": 12,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -399,13 +372,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "MiniMax_H3_48FPS_00002-audio.webm",
+            "filename": "MiniMax_H3_48FPS_00004-audio.webm",
             "subfolder": "video",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "MiniMax_H3_48FPS_00002.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/video/MiniMax_H3_48FPS_00002-audio.webm"
+            "workflow": "MiniMax_H3_48FPS_00004.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/video/MiniMax_H3_48FPS_00004-audio.webm"
           }
         }
       },
@@ -424,13 +397,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "MiniMax_H3_48FPS_00002-audio.webm",
+            "filename": "MiniMax_H3_48FPS_00004-audio.webm",
             "subfolder": "video",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "MiniMax_H3_48FPS_00002.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/video/MiniMax_H3_48FPS_00002-audio.webm"
+            "workflow": "MiniMax_H3_48FPS_00004.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/video/MiniMax_H3_48FPS_00004-audio.webm"
           }
         }
       },
@@ -449,7 +422,7 @@
         172.30078125
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -484,7 +457,7 @@
         981.5786108902821
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -511,7 +484,7 @@
         489.3815332386903
       ],
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -610,7 +583,7 @@
         1344,
         768,
         5,
-        824707991992812,
+        272585180198989,
         "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
         "minimax_h3_video_vae_fp16.safetensors",
@@ -625,7 +598,7 @@
         "width": 1344,
         "height": 768,
         "value_1": 5,
-        "noise_seed": 824707991992812,
+        "noise_seed": 272585180198989,
         "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         "clip_name": "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
         "vae_name": "minimax_h3_video_vae_fp16.safetensors",
@@ -650,7 +623,7 @@
         410.3550106534095
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -669,22 +642,76 @@
       },
       "widgets_values": [
         "__mbe/prmpt/vidstyle__, __mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, __mbe/actsolo/brstplng__",
-        716213143560423,
+        485119182989844,
         "randomize",
         true,
-        "[anime] 2D-animated, cel-shaded, vibrant anime color palette, clean lineart, anime-style lighting, full body, casino, sunset, stage lights, underlighting, shadow, 1girl, cammy white, street fighter, blonde hair, blue eyes, large breasts, , topless, solo, cupless bra, nipple stimulation, nipple rub, mouth open, tongue out, saliva drip, saliva on breasts",
-        "[anime] 2D-animated, cel-shaded, vibrant anime color palette, clean lineart, anime-style lighting, full body, casino, sunset, stage lights, underlighting, shadow, 1girl, cammy white, street fighter, blonde hair, blue eyes, large breasts, , topless, solo, cupless bra, nipple stimulation, nipple rub, mouth open, tongue out, saliva drip, saliva on breasts"
+        "[cyberpunk] Cyberpunk, neon-lit, holographic displays, rainy night, chrome reflections, magenta-cyan palette, wide shot, dungeon, morning, sunlight, underlighting, shade, 1girl, rikku \\(final fantasy x\\), final fantasy, blonde hair, green eyes, large breasts, high-low skirt, nipple slip, solo, nippleless clothes, arm under breast, breast lift, nipple stimulation, nipple pull, tongue out, saliva drip, saliva on breasts",
+        "[cyberpunk] Cyberpunk, neon-lit, holographic displays, rainy night, chrome reflections, magenta-cyan palette, wide shot, dungeon, morning, sunlight, underlighting, shade, 1girl, rikku \\(final fantasy x\\), final fantasy, blonde hair, green eyes, large breasts, high-low skirt, nipple slip, solo, nippleless clothes, arm under breast, breast lift, nipple stimulation, nipple pull, tongue out, saliva drip, saliva on breasts"
       ],
       "widgets_values_named": {
         "text": "__mbe/prmpt/vidstyle__, __mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, __mbe/actsolo/brstplng__",
-        "seed": 716213143560423,
+        "seed": 485119182989844,
         "control_after_generate": "randomize",
         "populate": true,
-        "populated_text": "[anime] 2D-animated, cel-shaded, vibrant anime color palette, clean lineart, anime-style lighting, full body, casino, sunset, stage lights, underlighting, shadow, 1girl, cammy white, street fighter, blonde hair, blue eyes, large breasts, , topless, solo, cupless bra, nipple stimulation, nipple rub, mouth open, tongue out, saliva drip, saliva on breasts",
-        "preview": "[anime] 2D-animated, cel-shaded, vibrant anime color palette, clean lineart, anime-style lighting, full body, casino, sunset, stage lights, underlighting, shadow, 1girl, cammy white, street fighter, blonde hair, blue eyes, large breasts, , topless, solo, cupless bra, nipple stimulation, nipple rub, mouth open, tongue out, saliva drip, saliva on breasts"
+        "populated_text": "[cyberpunk] Cyberpunk, neon-lit, holographic displays, rainy night, chrome reflections, magenta-cyan palette, wide shot, dungeon, morning, sunlight, underlighting, shade, 1girl, rikku \\(final fantasy x\\), final fantasy, blonde hair, green eyes, large breasts, high-low skirt, nipple slip, solo, nippleless clothes, arm under breast, breast lift, nipple stimulation, nipple pull, tongue out, saliva drip, saliva on breasts",
+        "preview": "[cyberpunk] Cyberpunk, neon-lit, holographic displays, rainy night, chrome reflections, magenta-cyan palette, wide shot, dungeon, morning, sunlight, underlighting, shade, 1girl, rikku \\(final fantasy x\\), final fantasy, blonde hair, green eyes, large breasts, high-low skirt, nipple slip, solo, nippleless clothes, arm under breast, breast lift, nipple stimulation, nipple pull, tongue out, saliva drip, saliva on breasts"
       },
       "color": "#323",
       "bgcolor": "#535"
+    },
+    {
+      "id": 117,
+      "type": "MarkdownNote",
+      "pos": [
+        -1661.841716481801,
+        4855.670355316772
+      ],
+      "size": [
+        469.952857010293,
+        513.7942890234126
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Model Links",
+      "properties": {},
+      "widgets_values": [
+        "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors](https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors](https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      ],
+      "widgets_values_named": {
+        "text": "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors](https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors](https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 205,
+      "type": "MarkdownNote",
+      "pos": [
+        -1665.2443694584117,
+        4259.220665333196
+      ],
+      "size": [
+        763.274034274521,
+        532.6856681414565
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Wildcards",
+      "properties": {},
+      "widgets_values": [
+        "## 🎲 Wildcards (T2VA Workflow)\n\nThe T2VA Turbo workflow includes a **WildcardProcessor** node that injects randomized prompt fragments from the **MadBe's Prompt Engine** (`__mbe/prmpt/*`) wildcard library. Each generation picks a random entry from each wildcard file, so the same seed produces different results across runs unless you pin the seed.\n\n### Wildcards Used in the T2VA Workflow\n\n| Wildcard | Category | What it randomizes |\n|---|---|---|\n| `__mbe/prmpt/vidstyle__` | Video style | Cinematic / anime / vintage film / 3D CG / claymation / watercolor / fantasy etc. |\n| `__mbe/prmpt/imgcmp/shots__` | Camera shot | Close-up / wide / medium / dolly / crane / orbit / handheld etc. |\n| `__mbe/prmpt/lctns/rndmlctns__` | Location | Random setting (bedroom / beach / studio / alley / forest / rooftop etc.) |\n| `__mbe/prmpt/light/rndmlight__` | Lighting | Key light direction, color temperature, soft/hard, ambient mood |\n| `__mbe/prmpt/char/favchar__` | Character | Random character archetype (age, body type, hair, ethnicity) |\n| `__mbe/prmpt/clths/rndmclth__` | Clothing | Random outfit / garment description |\n| `__mbe/prmpt/clths/nudty_brsts__` | NSFW | Breast / nudity descriptors (NSFW preset) |\n| `__mbe/actsolo/brstplng__` | NSFW action | Solo breast-play action verbs (NSFW preset) |\n\n### How It Works\n\n1. The **WildcardProcessor** node sits before the Qwen3-VL prompt enhancer\n2. At queue time, each `__wildcard__` token is replaced with a random line from the corresponding `.txt` file inside `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/`\n3. The expanded text is passed to Qwen3-VL, which converts it into the official MiniMax H3 prompt format\n4. **Different seed = different wildcard picks** — use a fixed seed if you want reproducible results\n\n### Customizing Wildcards\n\n- **Edit existing**: open the `.txt` files under `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/` and add/remove lines (one entry per line)\n- **Add your own**: create a new `.txt` file, e.g. `mbe/prmpt/mytags.txt`, then reference it as `__mbe/prmpt/mytags__`\n- **Remove a wildcard**: delete the `__...__` token from the WildcardProcessor `text` field in the workflow\n- **Disable randomization**: replace the `__wildcard__` token with a fixed string\n\n### Required Custom Node\n\n- **ComfyUI-TagComplete** (includes the `WildcardProcessor` node and the `__mbe/prmpt/*` wildcard set) — [huchukato/comfy-tagcomplete](https://github.com/huchukato/comfy-tagcomplete)\n\n> The wildcard files ship with the custom node. If a wildcard resolves to empty, the custom node is missing or the wildcard folder is not installed.\n"
+      ],
+      "widgets_values_named": {
+        "text": "## 🎲 Wildcards (T2VA Workflow)\n\nThe T2VA Turbo workflow includes a **WildcardProcessor** node that injects randomized prompt fragments from the **MadBe's Prompt Engine** (`__mbe/prmpt/*`) wildcard library. Each generation picks a random entry from each wildcard file, so the same seed produces different results across runs unless you pin the seed.\n\n### Wildcards Used in the T2VA Workflow\n\n| Wildcard | Category | What it randomizes |\n|---|---|---|\n| `__mbe/prmpt/vidstyle__` | Video style | Cinematic / anime / vintage film / 3D CG / claymation / watercolor / fantasy etc. |\n| `__mbe/prmpt/imgcmp/shots__` | Camera shot | Close-up / wide / medium / dolly / crane / orbit / handheld etc. |\n| `__mbe/prmpt/lctns/rndmlctns__` | Location | Random setting (bedroom / beach / studio / alley / forest / rooftop etc.) |\n| `__mbe/prmpt/light/rndmlight__` | Lighting | Key light direction, color temperature, soft/hard, ambient mood |\n| `__mbe/prmpt/char/favchar__` | Character | Random character archetype (age, body type, hair, ethnicity) |\n| `__mbe/prmpt/clths/rndmclth__` | Clothing | Random outfit / garment description |\n| `__mbe/prmpt/clths/nudty_brsts__` | NSFW | Breast / nudity descriptors (NSFW preset) |\n| `__mbe/actsolo/brstplng__` | NSFW action | Solo breast-play action verbs (NSFW preset) |\n\n### How It Works\n\n1. The **WildcardProcessor** node sits before the Qwen3-VL prompt enhancer\n2. At queue time, each `__wildcard__` token is replaced with a random line from the corresponding `.txt` file inside `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/`\n3. The expanded text is passed to Qwen3-VL, which converts it into the official MiniMax H3 prompt format\n4. **Different seed = different wildcard picks** — use a fixed seed if you want reproducible results\n\n### Customizing Wildcards\n\n- **Edit existing**: open the `.txt` files under `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/` and add/remove lines (one entry per line)\n- **Add your own**: create a new `.txt` file, e.g. `mbe/prmpt/mytags.txt`, then reference it as `__mbe/prmpt/mytags__`\n- **Remove a wildcard**: delete the `__...__` token from the WildcardProcessor `text` field in the workflow\n- **Disable randomization**: replace the `__wildcard__` token with a fixed string\n\n### Required Custom Node\n\n- **ComfyUI-TagComplete** (includes the `WildcardProcessor` node and the `__mbe/prmpt/*` wildcard set) — [huchukato/comfy-tagcomplete](https://github.com/huchukato/comfy-tagcomplete)\n\n> The wildcard files ship with the custom node. If a wildcard resolves to empty, the custom node is missing or the wildcard folder is not installed.\n"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
     }
   ],
   "links": [
@@ -794,7 +821,7 @@
         "version": 1,
         "state": {
           "lastGroupId": 15,
-          "lastNodeId": 204,
+          "lastNodeId": 205,
           "lastLinkId": 415,
           "lastRerouteId": 0
         },
@@ -2300,7 +2327,7 @@
               0.9,
               1.1,
               false,
-              1256179911,
+              2331924409,
               "randomize",
               false
             ],
@@ -2318,7 +2345,7 @@
               "top_p": 0.9,
               "repetition_penalty": 1.1,
               "keep_model_loaded": false,
-              "seed": 1256179911,
+              "seed": 2331924409,
               "control_after_generate": "randomize",
               "keep_last_prompt": false
             },
@@ -2753,7 +2780,7 @@
         "version": 1,
         "state": {
           "lastGroupId": 15,
-          "lastNodeId": 204,
+          "lastNodeId": 205,
           "lastLinkId": 415,
           "lastRerouteId": 0
         },
@@ -3345,10 +3372,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.9448340768806756,
+      "scale": 0.8589400698915238,
       "offset": [
-        1596.768755323677,
-        -4160.801820679499
+        2286.3996455388233,
+        -3909.175325397002
       ]
     }
   },
