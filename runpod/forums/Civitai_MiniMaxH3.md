@@ -48,7 +48,7 @@ The T2VA Turbo workflow includes a **WildcardProcessor** node that injects rando
 
 ### 🔄 Sampler Change — MiniMaxH3TurboSampler → KSamplerSelect + MiniMaxH3SigmaShift
 
-All 4 Turbo workflows (T2VA, I2VA, FL2VA, R2VA) have been updated to use **ComfyUI core nodes** instead of the custom `MiniMaxH3TurboSampler`:
+All 5 Turbo workflows (T2VA, I2VA, FL2VA, FL2VA Loop, R2VA) have been updated to use **ComfyUI core nodes** instead of the custom `MiniMaxH3TurboSampler`:
 
 - **Removed**: `MiniMaxH3TurboSampler` (custom node from `Larryvrh/ComfyUI-MiniMax-H3-Turbo`)
 - **Added**: `KSamplerSelect` (sampler: `euler`) + `MiniMaxH3SigmaShift` (shift_video=12, shift_audio=3) — both **ComfyUI core nodes**, no custom node required
@@ -80,8 +80,8 @@ All 4 Turbo workflows (T2VA, I2VA, FL2VA, R2VA) have been updated to use **Comfy
 - ⚠️ **Non-Blackwell GPUs**: Use pure INT8 ConvRot models from [Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-Org/MiniMax-H3) instead. NVFP4 requires sm_120+ (RTX 5090 / PRO 6000).
 
 ### SOL-ATTN + Spectrum Integration
-- All 4 Turbo workflows now include **SOL-ATTN** (Scheduled Sol Attention) for sharper output
-- All 4 Turbo workflows now include **Spectrum** adaptive smoothing (offline replay disabled for speed)
+- All 5 Turbo workflows now include **SOL-ATTN** (Scheduled Sol Attention) for sharper output
+- All 5 Turbo workflows now include **Spectrum** adaptive smoothing (offline replay disabled for speed)
 - Turbo LoRA linked from preset to subgraph in all workflows
 
 ### Turbo Step Standardization
@@ -193,9 +193,20 @@ Think: *"Your all-in-one solution for intelligent prompt enhancement and video+a
 
 ---
 
-## 📦 What's Included — 4 Turbo Workflows
+## 📦 What's Included — 5 Turbo Workflows
 
 All workflows are pre-wired with `MiniMax-H3 Turbo LoRA` + `MiniMax-H3 Turbo Sampler` at **8 steps** + SOL-ATTN + Spectrum.
+
+### 📥 Download
+
+| File | Contents | Link |
+|---|---|---|
+| `MiniMaxH3-Turbo-All-Workflows.zip` | All 5 workflows (T2VA + I2VA + FL2VA + FL2VA Loop + R2VA) | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/releases/MiniMaxH3-Turbo-All-Workflows.zip) |
+| `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.zip` | Loop workflow only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/releases/MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.zip) |
+
+> Individual `.json` files also available in [`workflows/minimax/`](https://github.com/huchukato/ComfyUI-Garage/tree/master/workflows/minimax).
+
+### Workflows
 
 1. ⚡ **T2VA Turbo** — `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` — text only — Text-to-video+audio. Simplest workflow.
 2. ⚡ **I2VA Turbo** — `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` — text + first-frame image (`image`) — Image-to-video. First-frame animation with audio.
@@ -520,7 +531,7 @@ Prefer a ready-to-go environment? Use the **OneClick - ComfyUI - MiniMax H3 Turb
 - **Docker image**: `huchukato/comfyui-qwenvl-runpod:cu13-mmh3`
 - **Base**: `huchukato/comfyui-base:cu130`
 - All custom nodes pre-installed
-- All 4 Turbo workflows auto-downloaded at boot
+- All 5 Turbo workflows auto-downloaded at boot
 - Models auto-downloaded at first boot (~81 GB including INT8 diffusion, NVFP4 text encoder, 10Eros INT8 HQ and Turbo LoRAs; persistent)
 - ComfyUI v0.34.2 baked into base image
 - Sage Attention, FP16 accumulation, async offload
@@ -591,8 +602,8 @@ Prefer a ready-to-go environment? Use the **OneClick - ComfyUI - MiniMax H3 Turb
 - ✅ Pure INT8 ConvRot models still available for non-Blackwell GPUs
 
 ### 🔧 SOL-ATTN + Spectrum Integration
-- ✅ All 4 Turbo workflows now include **SOL-ATTN** (Scheduled Sol Attention) for sharper output
-- ✅ All 4 Turbo workflows now include **Spectrum** adaptive smoothing (offline replay disabled for speed)
+- ✅ All 5 Turbo workflows now include **SOL-ATTN** (Scheduled Sol Attention) for sharper output
+- ✅ All 5 Turbo workflows now include **Spectrum** adaptive smoothing (offline replay disabled for speed)
 - ✅ Turbo LoRA linked from preset to subgraph in all workflows
 
 ### ⚡ Turbo Step Standardization
