@@ -3,7 +3,54 @@
 ![MiniMax H3 Qwen3VL](https://raw.githubusercontent.com/huchukato/ComfyUI-QwenVL-Mod/main/img/bannerminimax.png)
 
 ComfyUI-QwenVL-Mod — Enhanced Vision-Language with MiniMax H3
-Version 2.7.0 (2026/08/31) — 🎬 MiniMax H3 Native Video+Audio + NVFP4 Blackwell + SOL-ATTN + Spectrum + Turbo LoRA + Wildcards + 10Eros-Max Support
+Version 2.8.0 (2026/09/02) — 🎬 MiniMax H3 Native Video+Audio + NVFP4 Blackwell + SOL-ATTN + Spectrum + Turbo LoRA + Wildcards + 10Eros-Max Support + Camera Tag Dropdown + Unified FL2VA Loop
+
+---
+
+## ⬆️ 2026/09/02 UPDATE ⬆️
+
+### 🎥 Camera Tag Dropdown (19 movements)
+
+The QwenVL node now has a **`camera_tag` dropdown** — no more typing `[ORBIT]` manually in the prompt. Select from 19 camera movements directly in the node UI:
+
+| Category | Tags |
+|---|---|
+| Static | `[STATIC_CAMERA]`, `[LOCKED_OFF]` |
+| Slow zoom | `[SLOW_ZOOM_IN]`, `[SLOW_ZOOM_OUT]` |
+| Fast zoom | `[FAST_ZOOM_IN]`, `[FAST_ZOOM_OUT]` |
+| Pan | `[PAN_LEFT]`, `[PAN_RIGHT]` |
+| Tilt | `[TILT_UP]`, `[TILT_DOWN]` |
+| Dolly | `[DOLLY_IN]`, `[DOLLY_OUT]` |
+| Tracking | `[TRACKING_LEFT]`, `[TRACKING_RIGHT]` |
+| Crane | `[CRANE_UP]`, `[CRANE_DOWN]` |
+| Other | `[ORBIT]`, `[HANDHELD]`, `[ROLL]` |
+
+**How it works**: when you select a tag, it's injected both at the start of the prompt and as a `FINAL CAMERA DIRECTIVE` at the end — so Qwen 9B actually respects it despite recency bias on long prompts. The tag also gets a short description so Qwen knows exactly what to write.
+
+**Subject stays alive**: the directive explicitly tells Qwen that the camera tag controls ONLY the camera — the subject must still have natural, lively action (breathing, gestures, expression, body motion) throughout the clip. No more "statue during orbit" problem.
+
+**Manual tags still work**: if you leave the dropdown on `None` and type `[ORBIT]` in your prompt, it's detected and injected automatically as a fallback.
+
+Available on all three QwenVL nodes: `AILab_QwenVL`, `AILab_QwenVL_Advanced`, and `AILab_QwenVL_PromptEnhancer`.
+
+### 🔄 FL2VA Loop Merged into FL2VA — One Workflow, Bypass Group
+
+The separate `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5` workflow is **removed**. The loop trim logic now lives inside the main FL2VA workflow, wrapped in a **"Loop Trim" group** that can be toggled via the rgthree **Fast Groups Bypasser** node:
+
+- **Loop mode (trim active)**: the `ImageFromBatch` + `ComfyMathExpression` nodes trim the frozen tail (~5 frames) for seamless looping
+- **Non-loop mode (trim bypassed)**: toggle the group off in the Bypasser → VAEDecode passes directly to RIFE/upscale, full frames preserved
+
+No more switching between two workflows — just toggle the group.
+
+### 🧹 PromptEnhancer Cleanup
+
+- Removed the redundant `custom_system_prompt` input — `enhancement_style` (presets) + `prompt_text` (user input) cover all use cases
+- Removed `CUSTOM_ONLY_STYLE` ("✍️ Custom Only (no preset)") — no longer needed
+- Added `camera_tag` dropdown (same as main QwenVL nodes)
+
+### 📦 Workflow Count: 5 → 4
+
+With the loop merged into FL2VA, the pack now ships **4 workflows** (T2VA, I2VA, FL2VA, R2VA) plus the combined ALL-WFs zip. All workflows updated with the new `camera_tag` input.
 
 ---
 
@@ -193,7 +240,7 @@ Think: *"Your all-in-one solution for intelligent prompt enhancement and video+a
 
 ---
 
-## 📦 What's Included — 5 Turbo Workflows
+## 📦 What's Included — 4 Turbo Workflows
 
 All workflows are pre-wired with `MiniMax-H3 Turbo LoRA` + `MiniMax-H3 Turbo Sampler` at **8 steps** + SOL-ATTN + Spectrum.
 
@@ -201,11 +248,10 @@ All workflows are pre-wired with `MiniMax-H3 Turbo LoRA` + `MiniMax-H3 Turbo Sam
 
 | File | Contents | Link |
 |---|---|---|
-| `MiniMaxH3-Turbo-Qwen3.5-ALL-WFs.zip` | All 5 workflows (T2VA + I2VA + FL2VA + FL2VA Loop + R2VA) | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-Qwen3.5-ALL-WFs.zip) |
+| `MiniMaxH3-Turbo-Qwen3.5-ALL-WFs.zip` | All 4 workflows (T2VA + I2VA + FL2VA + R2VA) | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-Qwen3.5-ALL-WFs.zip) |
 | `MiniMaxH3-Turbo-T2VA-Qwen3.5.zip` | T2VA only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-T2VA-Qwen3.5.zip) |
 | `MiniMaxH3-Turbo-I2VA-Qwen3.5.zip` | I2VA only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-I2VA-Qwen3.5.zip) |
-| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.zip` | FL2VA only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-FL2VA-Qwen3.5.zip) |
-| `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.zip` | FL2VA Loop only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.zip) |
+| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.zip` | FL2VA only (includes bypassable loop trim) | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-FL2VA-Qwen3.5.zip) |
 | `MiniMaxH3-Turbo-R2VA-Qwen3.5.zip` | R2VA only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-R2VA-Qwen3.5.zip) |
 
 > Individual `.json` files also available in [`workflows/minimax/`](https://github.com/huchukato/ComfyUI-Garage/tree/master/workflows/minimax).
@@ -214,11 +260,10 @@ All workflows are pre-wired with `MiniMax-H3 Turbo LoRA` + `MiniMax-H3 Turbo Sam
 
 1. ⚡ **T2VA Turbo** — `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` — text only — Text-to-video+audio. Simplest workflow.
 2. ⚡ **I2VA Turbo** — `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` — text + first-frame image (`image`) — Image-to-video. First-frame animation with audio.
-3. ⚡ **FL2VA Turbo** — `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` — text + first-frame (`image`) + last-frame (`image2`) — First-Last-Frame to video. Includes TensorRT upscale + RIFE frame interpolation for 48 fps output.
-4. ⚡ **FL2VA Loop Turbo** — `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.json` — text + **same image** for both frames — Seamless loop video. Automatically trims the frozen tail (~5 frames) and sets infinite playback.
-5. ⚡ **R2VA Turbo** — `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` — text + reference images (`image` + `image2`) — Reference-to-video. Lock identity, style, motion, camera, or voice using up to 9 ref images.
+3. ⚡ **FL2VA Turbo** — `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` — text + first-frame (`image`) + last-frame (`image2`) — First-Last-Frame to video. Includes TensorRT upscale + RIFE frame interpolation for 48 fps output. **Loop trim is built in** — toggle the "Loop Trim" group via the Fast Groups Bypasser node for seamless loops.
+4. ⚡ **R2VA Turbo** — `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` — text + reference images (`image` + `image2`) — Reference-to-video. Lock identity, style, motion, camera, or voice using up to 9 ref images.
 
-> Workflows 3, 4 and 5 include **TensorRT upscaling** and **RIFE frame interpolation** for 48 fps high-resolution output.
+> Workflows 3 and 4 include **TensorRT upscaling** and **RIFE frame interpolation** for 48 fps high-resolution output.
 
 ---
 
@@ -443,21 +488,37 @@ Choose a preset: **5s / 10s / 15s**. The Math Expression node snaps the frame co
 
 ### 🎥 Camera Control Tags
 
-All MiniMax H3 NSFW presets support optional camera control tags. Put them anywhere in your user prompt — Qwen3-VL will detect them and override the default camera behavior:
+All MiniMax H3 NSFW presets support camera control via the **`camera_tag` dropdown** on the QwenVL node — no need to type tags manually. Select from 19 camera movements:
 
 | Tag | Effect |
 |---|---|
-| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion. Overrides the default RICHNESS RULES camera movement. |
-| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |
-| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |
+| `[STATIC_CAMERA]` / `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |
+| `[SLOW_ZOOM_IN]` | Slow continuous push-in (dolly toward subject) |
+| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back (dolly away from subject) |
+| `[FAST_ZOOM_IN]` | Fast aggressive push-in, dramatic |
+| `[FAST_ZOOM_OUT]` | Fast pull-back, reveal context |
+| `[PAN_LEFT]` | Smooth horizontal pan from right to left |
+| `[PAN_RIGHT]` | Smooth horizontal pan from left to right |
+| `[TILT_UP]` | Smooth vertical tilt from bottom to top, revealing the subject |
+| `[TILT_DOWN]` | Smooth vertical tilt from top to bottom |
+| `[DOLLY_IN]` | Physical dolly movement toward the subject (parallax, not optical zoom) |
+| `[DOLLY_OUT]` | Physical dolly movement away from the subject (parallax) |
+| `[TRACKING_LEFT]` | Lateral tracking shot moving left, subject stays in frame |
+| `[TRACKING_RIGHT]` | Lateral tracking shot moving right, subject stays in frame |
+| `[CRANE_UP]` | Crane/jib movement rising upward, revealing the scene from above |
+| `[CRANE_DOWN]` | Crane/jib movement descending toward the subject |
 | `[ORBIT]` | Smooth 360-degree orbit around the subject |
 | `[HANDHELD]` | Subtle handheld sway with natural micro-movements |
+| `[ROLL]` | Slow camera roll (rotation around the lens axis) |
 
-If no tag is provided, Qwen3-VL chooses a natural camera movement automatically.
+**How it works**: the selected tag is injected at the start of the prompt AND as a `FINAL CAMERA DIRECTIVE` at the end, so Qwen respects it despite recency bias on long prompts. The subject stays alive and active — the tag controls only the camera.
+
+If the dropdown is set to `None`, Qwen3-VL chooses a natural camera movement automatically. You can also type tags manually in your prompt as a fallback.
 
 **Example:**
 ```
-[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily
+Dropdown: [ORBIT]
+Prompt: she continues a slow rhythmic motion, breathing steadily
 ```
 
 ### 🔄 Loop Mode (FL2VA Only)
@@ -472,13 +533,18 @@ The FL2VA presets include automatic **loop mode** detection. When you load the *
 - Camera motion in loop mode uses continuous circular or oscillating movements that return to the starting position (combine with `[STATIC_CAMERA]` if you want a locked-off loop)
 
 **To use loop mode:**
-1. Load `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.json` (dedicated loop workflow with automatic trim)
+1. Load `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` (the main FL2VA workflow — loop is built in)
 2. Upload the **same image** to both `image` (first frame) and `image2` (last frame)
 3. Select preset `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`
 4. Describe the action — the preset handles the cyclic structure automatically
-5. (Optional) Add `[STATIC_CAMERA]` if you want no camera movement
+5. (Optional) Set `camera_tag` to `[STATIC_CAMERA]` if you want no camera movement
 
-> ✂️ **Automatic trim**: The loop workflow includes a `Trim Frozen Tail` node that removes the last 5 frames (0.2s at 24fps) — the frozen tail that MiniMax H3 adds at the end of FL2VA generation. Update the `length` value if you change duration:
+**Loop Trim Bypass Group**: the FL2VA workflow includes a **"Loop Trim" group** (wrapped around `ImageFromBatch` + `ComfyMathExpression`) controlled by the rgthree **Fast Groups Bypasser** node:
+
+- **Group ACTIVE (default)** → trim removes the frozen tail (~5 frames) for seamless looping
+- **Group BYPASSED** → full frames preserved, VAEDecode passes directly to RIFE/upscale (non-loop use)
+
+> ✂️ **Automatic trim**: The trim removes the last 5 frames (0.2s at 24fps) — the frozen tail that MiniMax H3 adds at the end of FL2VA generation. The `ComfyMathExpression` node calculates the trim length automatically from the duration:
 > - 5s → `119` (124 - 5)
 > - 10s → `238` (243 - 5)
 > - 15s → `357` (362 - 5)
@@ -535,7 +601,7 @@ Prefer a ready-to-go environment? Use the **OneClick - ComfyUI - MiniMax H3 Turb
 - **Docker image**: `huchukato/comfyui-qwenvl-runpod:cu13-mmh3`
 - **Base**: `huchukato/comfyui-base:cu130`
 - All custom nodes pre-installed
-- All 5 Turbo workflows auto-downloaded at boot
+- All 4 Turbo workflows auto-downloaded at boot
 - Models auto-downloaded at first boot (~81 GB including INT8 diffusion, NVFP4 text encoder, 10Eros INT8 HQ and Turbo LoRAs; persistent)
 - ComfyUI v0.34.2 baked into base image
 - Sage Attention, FP16 accumulation, async offload
