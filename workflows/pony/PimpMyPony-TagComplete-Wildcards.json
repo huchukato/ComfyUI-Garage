@@ -5,111 +5,6 @@
   "last_link_id": 191,
   "nodes": [
     {
-      "id": 29,
-      "type": "SaveImage",
-      "pos": [
-        -830,
-        -520
-      ],
-      "size": [
-        690,
-        1080
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 99
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.67",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "PMP/%date:yyyy-MM-dd%/%date:hhmmss%"
-      ],
-      "widgets_values_named": {
-        "filename_prefix": "PMP/%date:yyyy-MM-dd%/%date:hhmmss%"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 66,
-      "type": "MarkdownNote",
-      "pos": [
-        -1340,
-        -520
-      ],
-      "size": [
-        486.92212063569946,
-        935.309829500961
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "README",
-      "properties": {},
-      "widgets_values": [
-        "# PIMPMYPONY TXT2IMG with WILDCARDS support\n\n## 🖥️ Civitai Model \n\n \n- [🔗 PimpMyPony - Real Anime](https://civitai.com/models/1195827?modelVersionId=2628215)\n- [🔗 PimpMyPony - InCase Style](https://civitai.com/models/1195827?modelVersionId=2611135)\n- [🔗 PimpMyPony - Semi Real Anime](https://civitai.com/models/1195827?modelVersionId=1346446)\n\n---\n\n## ⬆️ UPSCALE MODEL\n\n- [🔗 2xLexicaRRDBNet](https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet.pth)\n- [🔗 2xLexicaRRDBNet_Sharp](https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet_Sharp.pth)\n\n---\n\n## 🎛️ AutoTag Node with Wildcards included\nInstall it from ComfyUI Manager or clone the repo\n```\ncd ComfyUI/custom_nodes\ngit clone https://github.com/huchukato/comfy-tagcomplete.git\n```\n\n✨ New in v2.0.0 - Wildcard Sub-Selection\nThis version introduces a1111-sd-webui-tagcomplete style wildcard sub-selection, making wildcard usage more intuitive and powerful:\n\n🎯 Wildcard Workflow\n- Type __ to see available wildcards\n- Select a wildcard with arrow keys and press Enter → inserts __wildcard_name__\n- Auto-show options → immediately displays all options from that wildcard\n- Select an option with arrow keys and press Enter → replaces wildcard with chosen option\nESC → keeps inserted wildcard and closes options\n\n🌟 Features\n- Smart parsing: Handles wildcards with complex paths (e.g., __mbe/blwjob/blwjb__)\n- Line-by-line options: Each line in wildcard file becomes a separate option\n- Text overflow handling: Long options are truncated with hover expansion\n- Full compatibility: Works with existing wildcard files and formats\n- Multiple sources: Supports wildcards from repository, ComfyUI/models, DynamicPrompts, and Impact-Pack\n\n📁 Wildcard Sources (in priority order):\n- Repository wildcards/ folder\n- ComfyUI models/wildcards/\n- ComfyUI custom_nodes/wildcards/\n- DynamicPrompts wildcards/\n- Extra model paths configuration\n- Impact-Pack wildcards\n- Impact-Pack.ini custom paths\n\nThis extension is based on ComfyUI-Custom-Scripts.\n\n## 📁 Manual Wildcard Setup (Optional)\n\nIf you're installing manually or want to use wildcards with Easy-Use, you may need to copy the wildcards folder:\n\n1. **Copy wildcards to Impact Pack:**\n   ```bash\n   cp -r /path/to/comfy-tagcomplete/wildcards /path/to/ComfyUI/custom_nodes/ComfyUI-Easy-Use/wildcards/\n   ```\n\n2. **Restart ComfyUI** to load the new wildcards\n\n"
-      ],
-      "widgets_values_named": {
-        "text": "# PIMPMYPONY TXT2IMG with WILDCARDS support\n\n## 🖥️ Civitai Model \n\n \n- [🔗 PimpMyPony - Real Anime](https://civitai.com/models/1195827?modelVersionId=2628215)\n- [🔗 PimpMyPony - InCase Style](https://civitai.com/models/1195827?modelVersionId=2611135)\n- [🔗 PimpMyPony - Semi Real Anime](https://civitai.com/models/1195827?modelVersionId=1346446)\n\n---\n\n## ⬆️ UPSCALE MODEL\n\n- [🔗 2xLexicaRRDBNet](https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet.pth)\n- [🔗 2xLexicaRRDBNet_Sharp](https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet_Sharp.pth)\n\n---\n\n## 🎛️ AutoTag Node with Wildcards included\nInstall it from ComfyUI Manager or clone the repo\n```\ncd ComfyUI/custom_nodes\ngit clone https://github.com/huchukato/comfy-tagcomplete.git\n```\n\n✨ New in v2.0.0 - Wildcard Sub-Selection\nThis version introduces a1111-sd-webui-tagcomplete style wildcard sub-selection, making wildcard usage more intuitive and powerful:\n\n🎯 Wildcard Workflow\n- Type __ to see available wildcards\n- Select a wildcard with arrow keys and press Enter → inserts __wildcard_name__\n- Auto-show options → immediately displays all options from that wildcard\n- Select an option with arrow keys and press Enter → replaces wildcard with chosen option\nESC → keeps inserted wildcard and closes options\n\n🌟 Features\n- Smart parsing: Handles wildcards with complex paths (e.g., __mbe/blwjob/blwjb__)\n- Line-by-line options: Each line in wildcard file becomes a separate option\n- Text overflow handling: Long options are truncated with hover expansion\n- Full compatibility: Works with existing wildcard files and formats\n- Multiple sources: Supports wildcards from repository, ComfyUI/models, DynamicPrompts, and Impact-Pack\n\n📁 Wildcard Sources (in priority order):\n- Repository wildcards/ folder\n- ComfyUI models/wildcards/\n- ComfyUI custom_nodes/wildcards/\n- DynamicPrompts wildcards/\n- Extra model paths configuration\n- Impact-Pack wildcards\n- Impact-Pack.ini custom paths\n\nThis extension is based on ComfyUI-Custom-Scripts.\n\n## 📁 Manual Wildcard Setup (Optional)\n\nIf you're installing manually or want to use wildcards with Easy-Use, you may need to copy the wildcards folder:\n\n1. **Copy wildcards to Impact Pack:**\n   ```bash\n   cp -r /path/to/comfy-tagcomplete/wildcards /path/to/ComfyUI/custom_nodes/ComfyUI-Easy-Use/wildcards/\n   ```\n\n2. **Restart ComfyUI** to load the new wildcards\n\n"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 62,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -1338.5975788352278,
-        471.373691761364
-      ],
-      "size": [
-        480,
-        130
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "properties": {
-        "matchColors": "",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "position",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 53,
       "type": "Power Lora Loader (rgthree)",
       "pos": [
@@ -158,11 +53,11 @@
         }
       ],
       "properties": {
-        "aux_id": "rgthree/rgthree-comfy",
+        "cnr_id": "rgthree-comfy",
         "ver": "1.0.2512112053",
         "Show Strengths": "Single Strength",
         "Match": "",
-        "cnr_id": "rgthree-comfy",
+        "aux_id": "rgthree/rgthree-comfy",
         "Node name for S&R": "Power Lora Loader (rgthree)"
       },
       "widgets_values": [
@@ -187,15 +82,15 @@
       "id": 61,
       "type": "LoadUpscalerTensorrtModel",
       "pos": [
-        1042.3037040945542,
-        -427.40753548333305
+        452.49263746232117,
+        3.980071050757598
       ],
       "size": [
         295.4078125,
         106
       ],
       "flags": {},
-      "order": 2,
+      "order": 0,
       "mode": 4,
       "inputs": [],
       "outputs": [
@@ -214,68 +109,14 @@
         "cnr_id": "ComfyUI-Upscaler-Tensorrt"
       },
       "widgets_values": [
-        "RealESRGAN_x2plus",
+        "2xLexicaRRDBNet_Sharp",
         "fp16",
-        1
+        2
       ],
       "widgets_values_named": {
-        "model": "RealESRGAN_x2plus",
+        "model": "2xLexicaRRDBNet_Sharp",
         "precision": "fp16",
-        "batch_size": 1
-      }
-    },
-    {
-      "id": 60,
-      "type": "UpscalerTensorrt",
-      "pos": [
-        1045.7479409553503,
-        -284.9940578554972
-      ],
-      "size": [
-        270,
-        94
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 174
-        },
-        {
-          "name": "upscaler_trt_model",
-          "type": "UPSCALER_TRT_MODEL",
-          "link": 97
-        }
-      ],
-      "outputs": [
-        {
-          "name": "upscaled_images",
-          "type": "IMAGE",
-          "links": [
-            99
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt",
-        "ver": "dfc266538368e4c9a03a296917716a214517ccb5",
-        "Node name for S&R": "UpscalerTensorrt",
-        "cnr_id": "ComfyUI-Upscaler-Tensorrt"
-      },
-      "widgets_values": [
-        "2x",
-        "2",
-        1024,
-        2048
-      ],
-      "widgets_values_named": {
-        "resize_to": "2x",
-        "batch_size": "2",
-        "resize_width": 1024,
-        "resize_height": 2048
+        "batch_size": 2
       }
     },
     {
@@ -290,7 +131,7 @@
         402.8049715909093
       ],
       "flags": {},
-      "order": 3,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -308,23 +149,101 @@
         "Node name for S&R": "WildcardProcessor"
       },
       "widgets_values": [
-        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, __mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, __mbe/actsolo/brstplng__",
-        2215856156589,
+        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, 1boy, large penis, veiny penis, __mbe/blwjob/blwjb__, ",
+        842751342828536,
         "randomize",
         "score_9, score_8_up, score_7_up, cowboy shot, hospital, dawn, dappled sunlight, backlighting, colored shadow, (2girls, 1boy) ffm threesome, pov, looking at viewer, smug, penis, cum in mouth, cum swap, french kissing BREAK 1girl, light brown hair, absurdly long hair, butch cut hair, messy hair, green eyes, average body, large breasts, short, haute couture, breasts out BREAK 1girl, platinum blone hair, big hair, oseledets hair, blunt ends, hazel eyes, athletic body, large breasts, average height, sleepwear, cupless bra",
-        "",
-        ""
+        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
+        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, "
       ],
       "widgets_values_named": {
-        "text": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, __mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, __mbe/actsolo/brstplng__",
-        "seed": 2215856156589,
+        "text": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, 1boy, large penis, veiny penis, __mbe/blwjob/blwjb__, ",
+        "seed": 842751342828536,
         "control_after_generate": "randomize",
         "populate": "score_9, score_8_up, score_7_up, cowboy shot, hospital, dawn, dappled sunlight, backlighting, colored shadow, (2girls, 1boy) ffm threesome, pov, looking at viewer, smug, penis, cum in mouth, cum swap, french kissing BREAK 1girl, light brown hair, absurdly long hair, butch cut hair, messy hair, green eyes, average body, large breasts, short, haute couture, breasts out BREAK 1girl, platinum blone hair, big hair, oseledets hair, blunt ends, hazel eyes, athletic body, large breasts, average height, sleepwear, cupless bra",
-        "populated_text": "",
-        "preview": ""
+        "populated_text": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
+        "preview": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, "
       },
       "color": "#323",
       "bgcolor": "#535"
+    },
+    {
+      "id": 29,
+      "type": "SaveImage",
+      "pos": [
+        -830,
+        -520
+      ],
+      "size": [
+        689.4109285156251,
+        823.0046968749998
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 99
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "PMP/%date:yyyy-MM-dd%/%date:hhmmss%"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "PMP/%date:yyyy-MM-dd%/%date:hhmmss%"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 62,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -826.2613639914763,
+        358.94578551136334
+      ],
+      "size": [
+        480,
+        130
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 92,
@@ -334,8 +253,8 @@
         -516.1659755940694
       ],
       "size": [
-        621.1022265625002,
-        389.78671875
+        453.08828028150856,
+        409.13072701446276
       ],
       "flags": {},
       "order": 7,
@@ -391,10 +310,10 @@
       "widgets_values": [
         "score_9, score_8_up, score_7_up, __mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, (2girls, 1boy) __mbe/actffm/coop_fellatio__ BREAK __mbe/prmpt/char/rndmcharlb__, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__ BREAK __mbe/prmpt/char/rndmcharlb__, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__",
         "score_6, score_5, score_4, score_3, worst quality, low quality, ugly, malformed, bad anatomy, grayscale, watermark, artist name,",
-        394216693345033,
-        "pimpmypony_pmpIncaseStyle.safetensors",
+        851692741321995,
+        "pimpmypony_pmpInCaseEnhanced.safetensors",
         30,
-        5,
+        5.9999999999999964,
         "dpmpp_2m_sde",
         "karras",
         "1152 x 896 (1.286:1)",
@@ -403,10 +322,10 @@
       "widgets_values_named": {
         "text": "score_9, score_8_up, score_7_up, __mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, (2girls, 1boy) __mbe/actffm/coop_fellatio__ BREAK __mbe/prmpt/char/rndmcharlb__, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__ BREAK __mbe/prmpt/char/rndmcharlb__, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__",
         "text_1": "score_6, score_5, score_4, score_3, worst quality, low quality, ugly, malformed, bad anatomy, grayscale, watermark, artist name,",
-        "seed": 394216693345033,
-        "ckpt_name": "pimpmypony_pmpIncaseStyle.safetensors",
+        "seed": 851692741321995,
+        "ckpt_name": "pimpmypony_pmpInCaseEnhanced.safetensors",
         "steps": 30,
-        "cfg": 5,
+        "cfg": 5.9999999999999964,
         "sampler_name": "dpmpp_2m_sde",
         "scheduler": "karras",
         "dimensions": "1152 x 896 (1.286:1)",
@@ -414,6 +333,87 @@
       },
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 60,
+      "type": "UpscalerTensorrt",
+      "pos": [
+        457.82288930245556,
+        163.81559155049393
+      ],
+      "size": [
+        270,
+        94
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 174
+        },
+        {
+          "name": "upscaler_trt_model",
+          "type": "UPSCALER_TRT_MODEL",
+          "link": 97
+        }
+      ],
+      "outputs": [
+        {
+          "name": "upscaled_images",
+          "type": "IMAGE",
+          "links": [
+            99
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt",
+        "ver": "dfc266538368e4c9a03a296917716a214517ccb5",
+        "Node name for S&R": "UpscalerTensorrt",
+        "cnr_id": "ComfyUI-Upscaler-Tensorrt"
+      },
+      "widgets_values": [
+        "2x",
+        "2",
+        1024,
+        2048
+      ],
+      "widgets_values_named": {
+        "resize_to": "2x",
+        "batch_size": "2",
+        "resize_width": 1024,
+        "resize_height": 2048
+      }
+    },
+    {
+      "id": 66,
+      "type": "MarkdownNote",
+      "pos": [
+        -1340,
+        -520
+      ],
+      "size": [
+        490.76352688569955,
+        1009.3142630947108
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "README",
+      "properties": {},
+      "widgets_values": [
+        "# PIMPMYPONY TXT2IMG with WILDCARDS support\n\n## 🖥️ Civitai Model \n\n \n- [🔗 PimpMyPony - Real Anime](https://civitai.com/models/1195827?modelVersionId=2628215)\n- [🔗 PimpMyPony - InCase Style](https://civitai.com/models/1195827?modelVersionId=2611135)\n- [🔗 PimpMyPony - Semi Real Anime](https://civitai.com/models/1195827?modelVersionId=1346446)\n\n---\n\n## ⬆️ UPSCALE MODEL\n\n- [🔗 2xLexicaRRDBNet](https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet.pth)\n- [🔗 2xLexicaRRDBNet_Sharp](https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet_Sharp.pth)\n\n---\n\n## 🎛️ AutoTag Node with Wildcards included\nInstall it from ComfyUI Manager or clone the repo\n```\ncd ComfyUI/custom_nodes\ngit clone https://github.com/huchukato/comfy-tagcomplete.git\n```\n\n✨ New in v2.0.0 - Wildcard Sub-Selection\nThis version introduces a1111-sd-webui-tagcomplete style wildcard sub-selection, making wildcard usage more intuitive and powerful:\n\n🎯 Wildcard Workflow\n- Type __ to see available wildcards\n- Select a wildcard with arrow keys and press Enter → inserts __wildcard_name__\n- Auto-show options → immediately displays all options from that wildcard\n- Select an option with arrow keys and press Enter → replaces wildcard with chosen option\nESC → keeps inserted wildcard and closes options\n\n🌟 Features\n- Smart parsing: Handles wildcards with complex paths (e.g., __mbe/blwjob/blwjb__)\n- Line-by-line options: Each line in wildcard file becomes a separate option\n- Text overflow handling: Long options are truncated with hover expansion\n- Full compatibility: Works with existing wildcard files and formats\n- Multiple sources: Supports wildcards from repository, ComfyUI/models, DynamicPrompts, and Impact-Pack\n\n📁 Wildcard Sources (in priority order):\n- Repository wildcards/ folder\n- ComfyUI models/wildcards/\n- ComfyUI custom_nodes/wildcards/\n- DynamicPrompts wildcards/\n- Extra model paths configuration\n- Impact-Pack wildcards\n- Impact-Pack.ini custom paths\n\nThis extension is based on ComfyUI-Custom-Scripts.\n\n## 📁 Manual Wildcard Setup (Optional)\n\nIf you're installing manually or want to use wildcards with Easy-Use, you may need to copy the wildcards folder:\n\n1. **Copy wildcards to Impact Pack:**\n   ```bash\n   cp -r /path/to/comfy-tagcomplete/wildcards /path/to/ComfyUI/custom_nodes/ComfyUI-Easy-Use/wildcards/\n   ```\n\n2. **Restart ComfyUI** to load the new wildcards\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "# PIMPMYPONY TXT2IMG with WILDCARDS support\n\n## 🖥️ Civitai Model \n\n \n- [🔗 PimpMyPony - Real Anime](https://civitai.com/models/1195827?modelVersionId=2628215)\n- [🔗 PimpMyPony - InCase Style](https://civitai.com/models/1195827?modelVersionId=2611135)\n- [🔗 PimpMyPony - Semi Real Anime](https://civitai.com/models/1195827?modelVersionId=1346446)\n\n---\n\n## ⬆️ UPSCALE MODEL\n\n- [🔗 2xLexicaRRDBNet](https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet.pth)\n- [🔗 2xLexicaRRDBNet_Sharp](https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet_Sharp.pth)\n\n---\n\n## 🎛️ AutoTag Node with Wildcards included\nInstall it from ComfyUI Manager or clone the repo\n```\ncd ComfyUI/custom_nodes\ngit clone https://github.com/huchukato/comfy-tagcomplete.git\n```\n\n✨ New in v2.0.0 - Wildcard Sub-Selection\nThis version introduces a1111-sd-webui-tagcomplete style wildcard sub-selection, making wildcard usage more intuitive and powerful:\n\n🎯 Wildcard Workflow\n- Type __ to see available wildcards\n- Select a wildcard with arrow keys and press Enter → inserts __wildcard_name__\n- Auto-show options → immediately displays all options from that wildcard\n- Select an option with arrow keys and press Enter → replaces wildcard with chosen option\nESC → keeps inserted wildcard and closes options\n\n🌟 Features\n- Smart parsing: Handles wildcards with complex paths (e.g., __mbe/blwjob/blwjb__)\n- Line-by-line options: Each line in wildcard file becomes a separate option\n- Text overflow handling: Long options are truncated with hover expansion\n- Full compatibility: Works with existing wildcard files and formats\n- Multiple sources: Supports wildcards from repository, ComfyUI/models, DynamicPrompts, and Impact-Pack\n\n📁 Wildcard Sources (in priority order):\n- Repository wildcards/ folder\n- ComfyUI models/wildcards/\n- ComfyUI custom_nodes/wildcards/\n- DynamicPrompts wildcards/\n- Extra model paths configuration\n- Impact-Pack wildcards\n- Impact-Pack.ini custom paths\n\nThis extension is based on ComfyUI-Custom-Scripts.\n\n## 📁 Manual Wildcard Setup (Optional)\n\nIf you're installing manually or want to use wildcards with Easy-Use, you may need to copy the wildcards folder:\n\n1. **Copy wildcards to Impact Pack:**\n   ```bash\n   cp -r /path/to/comfy-tagcomplete/wildcards /path/to/ComfyUI/custom_nodes/ComfyUI-Easy-Use/wildcards/\n   ```\n\n2. **Restart ComfyUI** to load the new wildcards\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -487,10 +487,10 @@
       "id": 1,
       "title": "UPSCALE TENSORRT",
       "bounding": [
-        1014.1061677834714,
-        -527.5300037581894,
-        343.15440340909095,
-        412.7242471590913
+        362.6957984652883,
+        -75.6103724307106,
+        450.27604597107444,
+        372.6125477789261
       ],
       "color": "#A88",
       "flags": {}
@@ -509,7 +509,7 @@
         },
         "revision": 0,
         "config": {},
-        "name": "New Subgraph",
+        "name": "Sampler",
         "inputNode": {
           "id": -10,
           "bounding": [
@@ -1027,81 +1027,6 @@
             }
           },
           {
-            "id": 91,
-            "type": "EmptyLatentImagePresets",
-            "pos": [
-              1252.2247287744176,
-              408.8848767334266
-            ],
-            "size": [
-              285.0787109375,
-              146
-            ],
-            "flags": {},
-            "order": 7,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "dimensions",
-                "name": "dimensions",
-                "type": "COMBO",
-                "widget": {
-                  "name": "dimensions"
-                },
-                "link": 183
-              },
-              {
-                "localized_name": "invert",
-                "name": "invert",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "invert"
-                },
-                "link": 184
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "Latent",
-                "name": "Latent",
-                "type": "LATENT",
-                "links": [
-                  161
-                ]
-              },
-              {
-                "localized_name": "Width",
-                "name": "Width",
-                "type": "INT",
-                "links": []
-              },
-              {
-                "localized_name": "Height",
-                "name": "Height",
-                "type": "INT",
-                "links": []
-              }
-            ],
-            "properties": {
-              "aux_id": "kijai/ComfyUI-KJNodes",
-              "ver": "1.2.2",
-              "Node name for S&R": "EmptyLatentImagePresets",
-              "cnr_id": "comfyui-kjnodes"
-            },
-            "widgets_values": [
-              "1344 x 768 (1.75:1)",
-              false,
-              1
-            ],
-            "widgets_values_named": {
-              "dimensions": "1344 x 768 (1.75:1)",
-              "invert": false,
-              "batch_size": 1
-            },
-            "color": "#233",
-            "bgcolor": "#355"
-          },
-          {
             "id": 80,
             "type": "CLIPTextEncode",
             "pos": [
@@ -1224,6 +1149,81 @@
             },
             "color": "#232",
             "bgcolor": "#353"
+          },
+          {
+            "id": 91,
+            "type": "EmptyLatentImagePresets",
+            "pos": [
+              1252.2247287744176,
+              408.8848767334266
+            ],
+            "size": [
+              285.0787109375,
+              146
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "dimensions",
+                "name": "dimensions",
+                "type": "COMBO",
+                "widget": {
+                  "name": "dimensions"
+                },
+                "link": 183
+              },
+              {
+                "localized_name": "invert",
+                "name": "invert",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "invert"
+                },
+                "link": 184
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "Latent",
+                "name": "Latent",
+                "type": "LATENT",
+                "links": [
+                  161
+                ]
+              },
+              {
+                "localized_name": "Width",
+                "name": "Width",
+                "type": "INT",
+                "links": []
+              },
+              {
+                "localized_name": "Height",
+                "name": "Height",
+                "type": "INT",
+                "links": []
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfyui-kjnodes",
+              "ver": "1.2.2",
+              "Node name for S&R": "EmptyLatentImagePresets",
+              "aux_id": "kijai/ComfyUI-KJNodes"
+            },
+            "widgets_values": [
+              "1344 x 768 (1.75:1)",
+              false,
+              1
+            ],
+            "widgets_values_named": {
+              "dimensions": "1344 x 768 (1.75:1)",
+              "invert": false,
+              "batch_size": 1
+            },
+            "color": "#233",
+            "bgcolor": "#355"
           }
         ],
         "groups": [],
@@ -1425,10 +1425,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 1.2100000000000002,
+      "scale": 0.9090909090909091,
       "offset": [
-        1104.556616345592,
-        793.135915139098
+        1605.4645257097343,
+        704.5307416863418
       ]
     }
   },
