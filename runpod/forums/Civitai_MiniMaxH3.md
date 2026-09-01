@@ -201,8 +201,12 @@ All workflows are pre-wired with `MiniMax-H3 Turbo LoRA` + `MiniMax-H3 Turbo Sam
 
 | File | Contents | Link |
 |---|---|---|
-| `MiniMaxH3-Turbo-All-Workflows.zip` | All 5 workflows (T2VA + I2VA + FL2VA + FL2VA Loop + R2VA) | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/releases/MiniMaxH3-Turbo-All-Workflows.zip) |
-| `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.zip` | Loop workflow only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/releases/MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.zip) |
+| `MiniMaxH3-Turbo-Qwen3.5-ALL-WFs.zip` | All 5 workflows (T2VA + I2VA + FL2VA + FL2VA Loop + R2VA) | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-Qwen3.5-ALL-WFs.zip) |
+| `MiniMaxH3-Turbo-T2VA-Qwen3.5.zip` | T2VA only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-T2VA-Qwen3.5.zip) |
+| `MiniMaxH3-Turbo-I2VA-Qwen3.5.zip` | I2VA only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-I2VA-Qwen3.5.zip) |
+| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.zip` | FL2VA only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-FL2VA-Qwen3.5.zip) |
+| `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.zip` | FL2VA Loop only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.zip) |
+| `MiniMaxH3-Turbo-R2VA-Qwen3.5.zip` | R2VA only | [Download](https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-R2VA-Qwen3.5.zip) |
 
 > Individual `.json` files also available in [`workflows/minimax/`](https://github.com/huchukato/ComfyUI-Garage/tree/master/workflows/minimax).
 
