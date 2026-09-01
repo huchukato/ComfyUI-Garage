@@ -200,9 +200,10 @@ All workflows are pre-wired with `MiniMax-H3 Turbo LoRA` + `MiniMax-H3 Turbo Sam
 1. ⚡ **T2VA Turbo** — `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` — text only — Text-to-video+audio. Simplest workflow.
 2. ⚡ **I2VA Turbo** — `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` — text + first-frame image (`image`) — Image-to-video. First-frame animation with audio.
 3. ⚡ **FL2VA Turbo** — `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` — text + first-frame (`image`) + last-frame (`image2`) — First-Last-Frame to video. Includes TensorRT upscale + RIFE frame interpolation for 48 fps output.
-4. ⚡ **R2VA Turbo** — `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` — text + reference images (`image` + `image2`) — Reference-to-video. Lock identity, style, motion, camera, or voice using up to 9 ref images.
+4. ⚡ **FL2VA Loop Turbo** — `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.json` — text + **same image** for both frames — Seamless loop video. Automatically trims the frozen tail (~5 frames) and sets infinite playback.
+5. ⚡ **R2VA Turbo** — `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` — text + reference images (`image` + `image2`) — Reference-to-video. Lock identity, style, motion, camera, or voice using up to 9 ref images.
 
-> Workflows 3 and 4 include **TensorRT upscaling** and **RIFE frame interpolation** for 48 fps high-resolution output.
+> Workflows 3, 4 and 5 include **TensorRT upscaling** and **RIFE frame interpolation** for 48 fps high-resolution output.
 
 ---
 
@@ -456,13 +457,18 @@ The FL2VA presets include automatic **loop mode** detection. When you load the *
 - Camera motion in loop mode uses continuous circular or oscillating movements that return to the starting position (combine with `[STATIC_CAMERA]` if you want a locked-off loop)
 
 **To use loop mode:**
-1. Load `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json`
+1. Load `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.json` (dedicated loop workflow with automatic trim)
 2. Upload the **same image** to both `image` (first frame) and `image2` (last frame)
 3. Select preset `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`
 4. Describe the action — the preset handles the cyclic structure automatically
 5. (Optional) Add `[STATIC_CAMERA]` if you want no camera movement
 
-> ⚠️ **Limitations**: Loop mode improves endpoint continuity but does not guarantee a mathematically perfect loop. MiniMax H3 is not trained with an explicit loop constraint — the preset steers the prompt toward cyclic behavior, but velocity, camera phase, and object motion at the cut point may still show minor discontinuity. For a pixel-perfect loop, generate the video normally and crossfade the last 0.5s with the first 0.5s in post-production.
+> ✂️ **Automatic trim**: The loop workflow includes a `Trim Frozen Tail` node that removes the last 5 frames (0.2s at 24fps) — the frozen tail that MiniMax H3 adds at the end of FL2VA generation. Update the `length` value if you change duration:
+> - 5s → `119` (124 - 5)
+> - 10s → `238` (243 - 5)
+> - 15s → `357` (362 - 5)
+
+> ⚠️ **Limitations**: The automatic trim removes the frozen tail but minor discontinuity at the cut point may still occur due to velocity or camera phase differences. For a pixel-perfect loop, crossfade the last 0.5s with the first 0.5s in post-production.
 
 ---
 
