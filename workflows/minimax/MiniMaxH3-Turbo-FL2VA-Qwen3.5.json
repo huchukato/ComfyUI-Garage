@@ -651,7 +651,7 @@
         1344,
         768,
         5,
-        77436369399029,
+        244902182590858,
         "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
         "minimax_h3_video_vae_fp16.safetensors",
@@ -667,7 +667,7 @@
         "width": 1344,
         "height": 768,
         "value_1": 5,
-        "noise_seed": 77436369399029,
+        "noise_seed": 244902182590858,
         "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         "clip_name": "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
         "vae_name": "minimax_h3_video_vae_fp16.safetensors",
@@ -680,61 +680,6 @@
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 208,
-      "type": "EmptyLatentImagePresets",
-      "pos": [
-        -1185.023912511474,
-        4893.133420350308
-      ],
-      "size": [
-        285.0787109375,
-        146
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "Latent",
-          "type": "LATENT",
-          "links": []
-        },
-        {
-          "name": "Width",
-          "type": "INT",
-          "links": [
-            429
-          ]
-        },
-        {
-          "name": "Height",
-          "type": "INT",
-          "links": [
-            430
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "1.2.2",
-        "Node name for S&R": "EmptyLatentImagePresets",
-        "aux_id": "kijai/ComfyUI-KJNodes"
-      },
-      "widgets_values": [
-        "1152 x 896 (1.286:1)",
-        true,
-        1
-      ],
-      "widgets_values_named": {
-        "dimensions": "1152 x 896 (1.286:1)",
-        "invert": true,
-        "batch_size": 1
-      },
-      "color": "#233",
-      "bgcolor": "#355"
     },
     {
       "id": 183,
@@ -852,7 +797,7 @@
         401.09532327839497
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -904,10 +849,10 @@
         "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
-        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: The scene opens on a close-up, high-angle shot of a blue-haired anime-style woman with red eyes, wearing only blue bottoms and a headband with white accents, positioned in a sterile, metallic room with white cabinets and control panels in the background. The lighting is bright and clinical, casting sharp shadows while highlighting the wet sheen of her skin and the glossy texture of the male anatomy she is holding between her legs. At 0.00s, the camera is locked in a tight framing on her face and upper torso as she performs oral sex, her mouth wide open around the erect penis, eyes wide and focused on the act, with white fluid dripping from her lips onto her chest. The motion begins immediately at the start of the clip with a rhythmic, thrusting motion of her hips and head, maintaining a continuous oral sex action. As the clip progresses to the 2.50-second mark, her body sways slightly with the motion, her hands gripping the shaft firmly, and the fluid on her skin glistens more intensely under the light. The camera remains static but the depth of field slightly softens the background cabinets while keeping her face and the genitalia in sharp focus, emphasizing the mechanical precision of the thrusting. By 4.00s, the intensity of the thrusting increases slightly, her cheeks flush with effort, and the fluid drips faster down her chest, pooling slightly on her stomach. The final state at 5.00s returns to the exact starting composition: her mouth is still wide open around the penis, eyes fixed forward, hands gripping the shaft, with the fluid dripping down her chest, creating a seamless loop where the motion flows continuously without interruption.\n\noverall_soundscape: The audio is dominated by wet, rhythmic oral sounds, the slick friction of skin against skin, and the audible drip of fluid onto her chest, layered with heavy, labored breathing and sharp, guttural moans that sync with the thrusting. The ambient room tone is a low, sterile hum of machinery in the background, but it is completely drowned out by the visceral, intimate sounds of the sexual act.\n\nnon_diegetic_music: N/A"
+        "integrated_multimodal_description: [Shot 1] 2D animated, bold outlines, flat colors, cinematic close-up tracking shot, DOLLY_IN towards Catwoman's torso against a dark riverbank at night pierced by a single sunbeam; the camera physically pushes forward through the shadowed air, creating strong parallax as it closes in on her form; she wears a tattered, revealing black leather outfit with lacing details, her long black hair cascading over shoulders as her blue eyes gleam in the backlight; she leans back slightly into the cool shade, her large breasts heaving rhythmically under the strain of her pose, one hand firmly pressing down on her right chest while her left hand grips her own nipple, causing the thin material to stretch and distort; a heavy saliva drip falls from her open mouth onto her collarbone, coating her exposed skin in wet sheen; as the camera rushes closer, her expression shifts to intense pleasure, her tongue darting out again to lick her lips before sliding down her throat, the wet sounds of her breath hitching audible; the lighting contrasts sharply between the warm golden rim light hitting her sweat-slicked skin and the deep indigo shadows of the river bank behind her, highlighting every curve and texture of the fabric lifting around her waist; subtle fabric rustles and wet skin slick noises fill the audio mix as she presses deeper into herself, her body tense and reactive to the sensation.\n\noverall_soundscape: Heavy ragged breathing fills the space, punctuated by sharp gasps and the wet, squelching sound of saliva dripping onto her collarbone and chest. The friction of the leather biker suit stretching tight over her skin creates low, rumbling creaks whenever she shifts her weight, mixed with the distant, muffled flow of the river beneath the tree line. Her intake of air is shallow and rapid, accompanied by a distinct, wet slap of her tongue against her teeth and then sliding down her throat, emphasizing the heat and intensity of the moment.\n\nnon_diegetic_music: N/A"
       ],
       "widgets_values_named": {
-        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: The scene opens on a close-up, high-angle shot of a blue-haired anime-style woman with red eyes, wearing only blue bottoms and a headband with white accents, positioned in a sterile, metallic room with white cabinets and control panels in the background. The lighting is bright and clinical, casting sharp shadows while highlighting the wet sheen of her skin and the glossy texture of the male anatomy she is holding between her legs. At 0.00s, the camera is locked in a tight framing on her face and upper torso as she performs oral sex, her mouth wide open around the erect penis, eyes wide and focused on the act, with white fluid dripping from her lips onto her chest. The motion begins immediately at the start of the clip with a rhythmic, thrusting motion of her hips and head, maintaining a continuous oral sex action. As the clip progresses to the 2.50-second mark, her body sways slightly with the motion, her hands gripping the shaft firmly, and the fluid on her skin glistens more intensely under the light. The camera remains static but the depth of field slightly softens the background cabinets while keeping her face and the genitalia in sharp focus, emphasizing the mechanical precision of the thrusting. By 4.00s, the intensity of the thrusting increases slightly, her cheeks flush with effort, and the fluid drips faster down her chest, pooling slightly on her stomach. The final state at 5.00s returns to the exact starting composition: her mouth is still wide open around the penis, eyes fixed forward, hands gripping the shaft, with the fluid dripping down her chest, creating a seamless loop where the motion flows continuously without interruption.\n\noverall_soundscape: The audio is dominated by wet, rhythmic oral sounds, the slick friction of skin against skin, and the audible drip of fluid onto her chest, layered with heavy, labored breathing and sharp, guttural moans that sync with the thrusting. The ambient room tone is a low, sterile hum of machinery in the background, but it is completely drowned out by the visceral, intimate sounds of the sexual act.\n\nnon_diegetic_music: N/A"
+        "text": "integrated_multimodal_description: [Shot 1] 2D animated, bold outlines, flat colors, cinematic close-up tracking shot, DOLLY_IN towards Catwoman's torso against a dark riverbank at night pierced by a single sunbeam; the camera physically pushes forward through the shadowed air, creating strong parallax as it closes in on her form; she wears a tattered, revealing black leather outfit with lacing details, her long black hair cascading over shoulders as her blue eyes gleam in the backlight; she leans back slightly into the cool shade, her large breasts heaving rhythmically under the strain of her pose, one hand firmly pressing down on her right chest while her left hand grips her own nipple, causing the thin material to stretch and distort; a heavy saliva drip falls from her open mouth onto her collarbone, coating her exposed skin in wet sheen; as the camera rushes closer, her expression shifts to intense pleasure, her tongue darting out again to lick her lips before sliding down her throat, the wet sounds of her breath hitching audible; the lighting contrasts sharply between the warm golden rim light hitting her sweat-slicked skin and the deep indigo shadows of the river bank behind her, highlighting every curve and texture of the fabric lifting around her waist; subtle fabric rustles and wet skin slick noises fill the audio mix as she presses deeper into herself, her body tense and reactive to the sensation.\n\noverall_soundscape: Heavy ragged breathing fills the space, punctuated by sharp gasps and the wet, squelching sound of saliva dripping onto her collarbone and chest. The friction of the leather biker suit stretching tight over her skin creates low, rumbling creaks whenever she shifts her weight, mixed with the distant, muffled flow of the river beneath the tree line. Her intake of air is shallow and rapid, accompanied by a distinct, wet slap of her tongue against her teeth and then sliding down her throat, emphasizing the heat and intensity of the moment.\n\nnon_diegetic_music: N/A"
       },
       "color": "#233",
       "bgcolor": "#355"
@@ -924,7 +869,7 @@
         398.05346639868276
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -951,7 +896,7 @@
         513.7942890234126
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1036,7 +981,7 @@
         198.55274872512564
       ],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1058,6 +1003,61 @@
       },
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 208,
+      "type": "EmptyLatentImagePresets",
+      "pos": [
+        -1185.023912511474,
+        4893.133420350308
+      ],
+      "size": [
+        285.0787109375,
+        146
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "Latent",
+          "type": "LATENT",
+          "links": []
+        },
+        {
+          "name": "Width",
+          "type": "INT",
+          "links": [
+            429
+          ]
+        },
+        {
+          "name": "Height",
+          "type": "INT",
+          "links": [
+            430
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.2.2",
+        "Node name for S&R": "EmptyLatentImagePresets",
+        "aux_id": "kijai/ComfyUI-KJNodes"
+      },
+      "widgets_values": [
+        "1152 x 896 (1.286:1)",
+        true,
+        1
+      ],
+      "widgets_values_named": {
+        "dimensions": "1152 x 896 (1.286:1)",
+        "invert": true,
+        "batch_size": 1
+      },
+      "color": "#233",
+      "bgcolor": "#355"
     }
   ],
   "links": [
@@ -1245,18 +1245,6 @@
         1076.5950648723574
       ],
       "color": "#a1309b",
-      "flags": {}
-    },
-    {
-      "id": 11,
-      "title": "Loop Trim (bypass for non-loop)",
-      "bounding": [
-        -105,
-        5410,
-        430,
-        360
-      ],
-      "color": "#3f789e",
       "flags": {}
     }
   ],
@@ -2780,7 +2768,7 @@
               1,
               16,
               false,
-              1588777947,
+              3151045289,
               "randomize",
               false
             ],
@@ -2800,7 +2788,7 @@
               "repetition_penalty": 1,
               "frame_count": 16,
               "keep_model_loaded": false,
-              "seed": 1588777947,
+              "seed": 3151045289,
               "control_after_generate": "randomize",
               "keep_last_prompt": false
             },
@@ -4129,8 +4117,8 @@
     "ds": {
       "scale": 0.7104845439762018,
       "offset": [
-        2529.347962872561,
-        -4699.547517300561
+        2728.0349908970975,
+        -4534.05196606456
       ]
     }
   },
