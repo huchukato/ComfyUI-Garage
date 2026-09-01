@@ -8,10 +8,10 @@
 
 | Workflow | Mode | Required inputs | Preset icon |
 |---|---|---|---|
-| `MiniMaxH3-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only | 🎬 |
-| `MiniMaxH3-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image (`image`) | 🎬 |
-| `MiniMaxH3-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame (`image`) + last-frame (`image2`) | 🔄 |
-| `MiniMaxH3-R2VA-Qwen3.5.json` | 🎞️ **R2VA** | text + reference images (`image` + `image2`) | 🎞️ |
+| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only | 🎬 |
+| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image (`image`) | 🎬 |
+| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame (`image`) + last-frame (`image2`) | 🔄 |
+| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA** | text + reference images (`image` + `image2`) | 🎞️ |
 > 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.
 
 ---
