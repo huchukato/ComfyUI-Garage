@@ -1513,20 +1513,30 @@
         "widgets": [],
         "nodes": [
           {
-            "id": 155,
-            "type": "MiniMaxH3TurboSampler",
+            "id": 202,
+            "type": "KSamplerSelect",
             "pos": [
               -777.4494365866396,
-              4952.998319228787
+              5031.192560505112
             ],
             "size": [
-              371.4342968750001,
-              61.260156249999454
+              370,
+              90
             ],
             "flags": {},
             "order": 0,
             "mode": 0,
-            "inputs": [],
+            "inputs": [
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sampler_name"
+                },
+                "link": 414
+              }
+            ],
             "outputs": [
               {
                 "localized_name": "SAMPLER",
@@ -1538,10 +1548,62 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-minimax-h3-turbo",
-              "ver": "55fee864dd7b2976b1c4ce3c3d5f7968f181409f",
-              "Node name for S&R": "MiniMaxH3TurboSampler",
-              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo"
+              "cnr_id": "comfy-core",
+              "ver": "0.33.0",
+              "Node name for S&R": "KSamplerSelect"
+            },
+            "widgets_values": [
+              "euler"
+            ],
+            "widgets_values_named": {
+              "sampler_name": "euler"
+            }
+          },
+          {
+            "id": 203,
+            "type": "MiniMaxH3SigmaShift",
+            "pos": [
+              -767.8287208878761,
+              4618.766609369181
+            ],
+            "size": [
+              357.68998449843036,
+              82
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 413
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  398,
+                  399
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.34.2",
+              "Node name for S&R": "MiniMaxH3SigmaShift"
+            },
+            "widgets_values": [
+              12,
+              3
+            ],
+            "widgets_values_named": {
+              "shift_video": 12,
+              "shift_audio": 3
             }
           },
           {

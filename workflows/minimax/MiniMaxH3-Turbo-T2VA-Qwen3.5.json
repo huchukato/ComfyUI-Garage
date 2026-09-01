@@ -1,8 +1,8 @@
 {
   "id": "237ff12c-6141-4077-9f5e-d530111c6d41",
   "revision": 0,
-  "last_node_id": 205,
-  "last_link_id": 415,
+  "last_node_id": 206,
+  "last_link_id": 416,
   "nodes": [
     {
       "id": 118,
@@ -1086,7 +1086,7 @@
         "nodes": [
           {
             "id": 155,
-            "type": "MiniMaxH3TurboSampler",
+            "type": "KSamplerSelect",
             "pos": [
               -784.4907312391242,
               4966.351062975663
@@ -1098,7 +1098,17 @@
             "flags": {},
             "order": 0,
             "mode": 0,
-            "inputs": [],
+            "inputs": [
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sampler_name"
+                },
+                "link": null
+              }
+            ],
             "outputs": [
               {
                 "localized_name": "SAMPLER",
@@ -1110,10 +1120,15 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-minimax-h3-turbo",
-              "ver": "55fee864dd7b2976b1c4ce3c3d5f7968f181409f",
-              "Node name for S&R": "MiniMaxH3TurboSampler",
-              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo"
+              "cnr_id": "comfy-core",
+              "ver": "0.33.0",
+              "Node name for S&R": "KSamplerSelect"
+            },
+            "widgets_values": [
+              "euler"
+            ],
+            "widgets_values_named": {
+              "sampler_name": "euler"
             }
           },
           {
@@ -1413,8 +1428,7 @@
                 "name": "model",
                 "type": "MODEL",
                 "links": [
-                  311,
-                  312
+                  416
                 ]
               }
             ],
@@ -1480,6 +1494,53 @@
             },
             "color": "#432",
             "bgcolor": "#653"
+          },
+          {
+            "id": 206,
+            "type": "MiniMaxH3SigmaShift",
+            "pos": [
+              -767.8287208878761,
+              4618.766609369181
+            ],
+            "size": [
+              357.68998449843036,
+              82
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 416
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  311,
+                  312
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.34.2",
+              "Node name for S&R": "MiniMaxH3SigmaShift"
+            },
+            "widgets_values": [
+              12,
+              3
+            ],
+            "widgets_values_named": {
+              "shift_video": 12,
+              "shift_audio": 3
+            }
           },
           {
             "id": 9,
@@ -2750,7 +2811,7 @@
           },
           {
             "id": 311,
-            "origin_id": 160,
+            "origin_id": 206,
             "origin_slot": 0,
             "target_id": 16,
             "target_slot": 0,
@@ -2758,7 +2819,7 @@
           },
           {
             "id": 312,
-            "origin_id": 160,
+            "origin_id": 206,
             "origin_slot": 0,
             "target_id": 9,
             "target_slot": 0,
@@ -2769,6 +2830,14 @@
             "origin_id": 159,
             "origin_slot": 0,
             "target_id": 160,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 416,
+            "origin_id": 160,
+            "origin_slot": 0,
+            "target_id": 206,
             "target_slot": 0,
             "type": "MODEL"
           }
