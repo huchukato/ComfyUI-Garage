@@ -369,9 +369,20 @@ ARGS_FILE="/workspace/runpod-slim/comfyui_args.txt"
 mkdir -p /workspace/runpod-slim
 cat > "$ARGS_FILE" << 'INNER'
 # Custom ComfyUI arguments (one per line, # = comment)
---disable-auto-launch --fast fp16_accumulation --use-sage-attention --cuda-malloc --async-offload
+--disable-auto-launch --fast fp16_accumulation --use-sage-attention --cuda-malloc --async-offload --front-end-version Comfy-Org/ComfyUI_frontend@latest
 INNER
 echo "Overwrote comfyui_args.txt with Pony/SDXL optimized args"
+
+# Enable Nodes 2.0 (Vue) for UmeAiRT Toolkit compatibility
+SETTINGS_FILE="/workspace/runpod-slim/ComfyUI/user/default/comfy.settings.json"
+mkdir -p "$(dirname "$SETTINGS_FILE")"
+cat > "$SETTINGS_FILE" << 'SETTINGS'
+{
+  "Comfy.VueNodes.Enabled": true,
+  "Comfy.VueNodes.AutoScaleLayout": true
+}
+SETTINGS
+echo "Enabled Nodes 2.0 in comfy.settings.json"
 
 # Launch boot updates (ComfyUI git pull + workflow refresh) in background
 setsid /usr/local/bin/boot-updates.sh </dev/null &
