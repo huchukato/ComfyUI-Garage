@@ -32,6 +32,8 @@ NODES=(
     "https://github.com/Saganaki22/ComfyUI-sol-attn"
     "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/ltdrdata/ComfyUI-Impack-Subpack"
 )
 
 WORKFLOWS=(
@@ -42,6 +44,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
 )
 
 CHECKPOINT_MODELS=(
@@ -78,6 +81,15 @@ MINIMAX_MODELS=(
     "diffusion_models|10Eros_Max_H3_FL2VA-INT8-ConvRot-HQ.safetensors|https://huggingface.co/DmitryDB/MiniMax-H3-10Eros-Max-Quants/resolve/main/FL2VA/10Eros_Max_H3_FL2VA-INT8-ConvRot-HQ.safetensors|23000000000"
     # Turbo LoRA 8-step for 10Eros-Max pruned (1.96GB) — compat full-width
     "loras|minimax_h3_fl2v_turbo_8step_v1.0_10ErosMax_beta1_pruned_compat_v001_T8.safetensors|https://huggingface.co/t8star/minimax_h3_turbo_4step_10ErosMax_test4_pruned_curveproj1025_T8/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_10ErosMax_beta1_pruned_compat_v001_T8.safetensors|1950000000"
+)
+
+
+YOLO_MODELS=(
+    "https://huggingface.co/huchukato/favs/resolve/main/adetailer/face_yolov8m.pt"
+)
+
+SAM_MODELS=(
+    "https://huggingface.co/bingbangboom/sam_vit_b/resolve/main/sam_vit_b_01ec64.pth"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -144,6 +156,14 @@ function provisioning_start() {
     echo "🎬 Downloading MiniMax H3 models (large files via hf)..."
     download_minimax_models
 
+    echo "🔍 Downloading YOLO models..."
+    mkdir -p "${COMFYUI_DIR}/models/ultralytics/bbox"
+    provisioning_get_files         "${COMFYUI_DIR}/models/ultralytics/bbox"         "${YOLO_MODELS[@]}"
+        
+    echo "🧩 Downloading SAM models..."
+    mkdir -p "${COMFYUI_DIR}/models/sams"
+    provisioning_get_files         "${COMFYUI_DIR}/models/sams"         "${SAM_MODELS[@]}"
+        
     provisioning_print_end
 }
 

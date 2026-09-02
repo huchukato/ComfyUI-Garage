@@ -33,7 +33,9 @@ RUN dl_gh() { \
     dl_gh ashtar1984 comfyui-find-perfect-resolution main comfyui-find-perfect-resolution && \
     dl_gh huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
     dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete && \
-    dl_gh huchukato ComfyUI-QwenVL-Mod main ComfyUI-QwenVL-Mod
+    dl_gh huchukato ComfyUI-QwenVL-Mod main ComfyUI-QwenVL-Mod && \
+    dl_gh ltdrdata ComfyUI-Impact-Pack main ComfyUI-Impact-Pack && \
+    dl_gh ltdrdata ComfyUI-Impack-Subpack main ComfyUI-Impack-Subpack
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)
@@ -56,7 +58,9 @@ RUN mkdir -p /opt/comfyui-baked/models/checkpoints && \
     mkdir -p /opt/comfyui-baked/models/vae && \
     mkdir -p /opt/comfyui-baked/models/upscale_models && \
     mkdir -p /opt/comfyui-baked/models/loras && \
-    mkdir -p /opt/comfyui-baked/models/controlnet
+    mkdir -p /opt/comfyui-baked/models/controlnet && \
+    mkdir -p /opt/comfyui-baked/models/ultralytics/bbox && \
+    mkdir -p /opt/comfyui-baked/models/sams
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Pre-baked essential models (~1.5GB, copied to /workspace on first boot by start.sh)
@@ -73,7 +77,13 @@ RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
         -O /opt/comfyui-baked/models/upscale_models/2xLexicaRRDBNet_Sharp.pth && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
         "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/RealESRGAN_x2plus.pth" \
-        -O /opt/comfyui-baked/models/upscale_models/RealESRGAN_x2plus.pth
+        -O /opt/comfyui-baked/models/upscale_models/RealESRGAN_x2plus.pth && \
+    wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/huchukato/favs/resolve/main/adetailer/face_yolov8m.pt" \
+        -O /opt/comfyui-baked/models/ultralytics/bbox/face_yolov8m.pt && \
+    wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/bingbangboom/sam_vit_b/resolve/main/sam_vit_b_01ec64.pth" \
+        -O /opt/comfyui-baked/models/sams/sam_vit_b_01ec64.pth
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Pre-baked Pony workflow
@@ -82,6 +92,7 @@ RUN mkdir -p /opt/comfyui-baked/user/default/workflows/{pony,utils,umeairt} && \
     cd /opt/comfyui-baked/user/default/workflows && \
     wget -q -P pony "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json" && \
     wget -q -P pony "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json" && \
+    wget -q -P pony "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json" && \
     wget -q -P utils "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json" && \
     wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Outpaint.json" && \
     wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Inpaint.json" && \
@@ -291,7 +302,7 @@ update_custom_nodes() {
 WORKFLOWS=(
     "pony/PimpMyPony-TagComplete-Wildcards.json"
     "pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
-    "pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
+    "pony/PimpMyPony-TagComplete-FaceDet.json"
     "utils/2in1-LoRaStack-Merge.json"
     "umeairt/SDXL_Outpaint.json"
     "umeairt/SDXL_Inpaint.json"

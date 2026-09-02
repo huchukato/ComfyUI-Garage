@@ -25,6 +25,8 @@ NODES=(
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler"
     "https://github.com/ltdrdata/was-node-suite-comfyui"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/ltdrdata/ComfyUI-Impack-Subpack"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/yolain/ComfyUI-Easy-Use"
@@ -45,6 +47,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-AutoPrompt.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/gguf/WAN2.2-I2V-AutoPrompt-GGUF.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-AutoPrompt-Story.json"
@@ -85,6 +88,15 @@ TEXT_ENCODERS=(
 )
 
 CONTROLNET_MODELS=(
+)
+
+
+YOLO_MODELS=(
+    "https://huggingface.co/huchukato/favs/resolve/main/adetailer/face_yolov8m.pt"
+)
+
+SAM_MODELS=(
+    "https://huggingface.co/bingbangboom/sam_vit_b/resolve/main/sam_vit_b_01ec64.pth"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -147,6 +159,14 @@ function provisioning_start() {
     provisioning_get_files \
         "${COMFYUI_DIR}/models/text_encoders" \
         "${TEXT_ENCODERS[@]}"        
+        
+    echo "🔍 Downloading YOLO models..."
+    mkdir -p "${COMFYUI_DIR}/models/ultralytics/bbox"
+    provisioning_get_files         "${COMFYUI_DIR}/models/ultralytics/bbox"         "${YOLO_MODELS[@]}"
+        
+    echo "🧩 Downloading SAM models..."
+    mkdir -p "${COMFYUI_DIR}/models/sams"
+    provisioning_get_files         "${COMFYUI_DIR}/models/sams"         "${SAM_MODELS[@]}"
         
     provisioning_print_end
 }

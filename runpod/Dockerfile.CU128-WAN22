@@ -42,7 +42,9 @@ RUN dl_gh() { \
     dl_gh huchukato ComfyUI-Upscaler-TensorRT-Auto master ComfyUI-Upscaler-TensorRT-Auto && \
     dl_gh huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
     dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete && \
-    dl_gh huchukato ComfyUI-Selectors main ComfyUI-Selectors
+    dl_gh huchukato ComfyUI-Selectors main ComfyUI-Selectors && \
+    dl_gh ltdrdata ComfyUI-Impact-Pack main ComfyUI-Impact-Pack && \
+    dl_gh ltdrdata ComfyUI-Impack-Subpack main ComfyUI-Impack-Subpack
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)
@@ -61,7 +63,9 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
 RUN mkdir -p /opt/comfyui-baked/models/vae && \
     mkdir -p /opt/comfyui-baked/models/upscale_models && \
     mkdir -p /opt/comfyui-baked/models/text_encoders && \
-    mkdir -p /opt/comfyui-baked/models/diffusion_models
+    mkdir -p /opt/comfyui-baked/models/diffusion_models && \
+    mkdir -p /opt/comfyui-baked/models/ultralytics/bbox && \
+    mkdir -p /opt/comfyui-baked/models/sams
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Pre-baked essential models (~1GB, copied to /workspace on first boot by start.sh)
@@ -74,7 +78,13 @@ RUN wget -q "https://huggingface.co/huchukato/pimp-my-wan/resolve/main/vae/wan_2
     wget -q "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet.pth" \
         -O /opt/comfyui-baked/models/upscale_models/2xLexicaRRDBNet.pth && \
     wget -q "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet_Sharp.pth" \
-        -O /opt/comfyui-baked/models/upscale_models/2xLexicaRRDBNet_Sharp.pth
+        -O /opt/comfyui-baked/models/upscale_models/2xLexicaRRDBNet_Sharp.pth && \
+    wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/huchukato/favs/resolve/main/adetailer/face_yolov8m.pt" \
+        -O /opt/comfyui-baked/models/ultralytics/bbox/face_yolov8m.pt && \
+    wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/bingbangboom/sam_vit_b/resolve/main/sam_vit_b_01ec64.pth" \
+        -O /opt/comfyui-baked/models/sams/sam_vit_b_01ec64.pth
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Pre-baked WAN 2.2 workflows
@@ -86,6 +96,7 @@ RUN mkdir -p /opt/comfyui-baked/user/default/workflows/{pony,wan22/fp8,wan22/ggu
         "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json" \
         "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json" \
         "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json" \
+        "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json" \
         "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-AutoPrompt-Story.json" \
         "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-T2V-I2V-AutoPrompt-Story.json" \
         "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-SVI-AutoPrompt-Story.json" \
@@ -345,6 +356,7 @@ WORKFLOWS=(
     "utils/RIFE-TensorRT-60FPS.json"
     "pony/PimpMyPony-TagComplete-Wildcards.json"
     "pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
+    "pony/PimpMyPony-TagComplete-FaceDet.json"
     "wan22/fp8/WAN2.2-I2V-AutoPrompt-Story.json"
     "wan22/fp8/WAN2.2-T2V-I2V-AutoPrompt-Story.json"
     "wan22/fp8/WAN2.2-I2V-SVI-AutoPrompt-Story.json"

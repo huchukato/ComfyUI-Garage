@@ -29,6 +29,8 @@ NODES=(
     "https://github.com/huchukato/ComfyUI-HuggingFace"
     "https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler"
     "https://github.com/ltdrdata/was-node-suite-comfyui"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/ltdrdata/ComfyUI-Impack-Subpack"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/yolain/ComfyUI-Easy-Use"
@@ -42,6 +44,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
 )
 
 CHECKPOINT_MODELS=(
@@ -74,6 +77,15 @@ LTX_MODELS=(
     "latent_upscale_models|ltx-2.3-spatial-upscaler-x2-1.1.safetensors|https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.1.safetensors|900000000"
     "latent_upscale_models|ltx-2.3-temporal-upscaler-x2-1.0.safetensors|https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-temporal-upscaler-x2-1.0.safetensors|250000000"
     "vae|pruna_ltx2.3_vae_comfy_bf16.safetensors|https://huggingface.co/Kijai/LTX2.3_comfy/resolve/main/vae/pruna_ltx2.3_vae_comfy_bf16.safetensors|500000000"
+)
+
+
+YOLO_MODELS=(
+    "https://huggingface.co/huchukato/favs/resolve/main/adetailer/face_yolov8m.pt"
+)
+
+SAM_MODELS=(
+    "https://huggingface.co/bingbangboom/sam_vit_b/resolve/main/sam_vit_b_01ec64.pth"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -140,6 +152,14 @@ function provisioning_start() {
     echo "🎬 Downloading LTX 2.3 models (large files via hf)..."
     download_ltx_models
 
+    echo "🔍 Downloading YOLO models..."
+    mkdir -p "${COMFYUI_DIR}/models/ultralytics/bbox"
+    provisioning_get_files         "${COMFYUI_DIR}/models/ultralytics/bbox"         "${YOLO_MODELS[@]}"
+        
+    echo "🧩 Downloading SAM models..."
+    mkdir -p "${COMFYUI_DIR}/models/sams"
+    provisioning_get_files         "${COMFYUI_DIR}/models/sams"         "${SAM_MODELS[@]}"
+        
     provisioning_print_end
 }
 

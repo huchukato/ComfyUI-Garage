@@ -36,7 +36,9 @@ RUN dl() { \
     dl huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
     dl huchukato comfy-tagcomplete main comfy-tagcomplete && \
     dl Saganaki22 ComfyUI-sol-attn main ComfyUI-sol-attn && \
-    dl xmarre ComfyUI-Spectrum-MiniMax-H3 main ComfyUI-Spectrum-MiniMax-H3
+    dl xmarre ComfyUI-Spectrum-MiniMax-H3 main ComfyUI-Spectrum-MiniMax-H3 && \
+    dl ltdrdata ComfyUI-Impact-Pack main ComfyUI-Impact-Pack && \
+    dl ltdrdata ComfyUI-Impack-Subpack main ComfyUI-Impack-Subpack
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements for our custom nodes (single layer, cached)
@@ -54,7 +56,19 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
 # ──────────────────────────────────────────────────────────────────────────────
 RUN mkdir -p /opt/comfyui-baked/models/vae && \
     mkdir -p /opt/comfyui-baked/models/diffusion_models && \
-    mkdir -p /opt/comfyui-baked/models/text_encoders
+    mkdir -p /opt/comfyui-baked/models/text_encoders && \
+    mkdir -p /opt/comfyui-baked/models/ultralytics/bbox && \
+    mkdir -p /opt/comfyui-baked/models/sams
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Pre-baked YOLO + SAM models for Impact Pack FaceDetailer
+# ──────────────────────────────────────────────────────────────────────────────
+RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/huchukato/favs/resolve/main/adetailer/face_yolov8m.pt" \
+        -O /opt/comfyui-baked/models/ultralytics/bbox/face_yolov8m.pt && \
+    wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/bingbangboom/sam_vit_b/resolve/main/sam_vit_b_01ec64.pth" \
+        -O /opt/comfyui-baked/models/sams/sam_vit_b_01ec64.pth
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Optional Hugging Face token (runtime env var) for gated/high-rate-limit
@@ -83,6 +97,7 @@ MINIMAX_TURBO_WORKFLOWS=(
 EXTRA_WORKFLOWS=(
     "PimpMyPony-TagComplete-Wildcards.json"
     "PimpMyPony-TagComplete-Wildcards-HiresFix.json"
+    "PimpMyPony-TagComplete-FaceDet.json"
 )
 UTIL_WORKFLOWS=(
     "2in1-LoRaStack-Merge.json"

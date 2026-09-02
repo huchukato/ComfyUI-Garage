@@ -29,6 +29,8 @@ NODES=(
     "https://github.com/huchukato/ComfyUI-HuggingFace"
     "https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler"
     "https://github.com/ltdrdata/was-node-suite-comfyui"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/ltdrdata/ComfyUI-Impack-Subpack"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/yolain/ComfyUI-Easy-Use"
@@ -42,6 +44,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
 )
 
 CHECKPOINT_MODELS=(
@@ -76,6 +79,15 @@ LTX_MODELS=(
     "latent_upscale_models|ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/latent_upscale_models/ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|250000000"
     "model_patches|ltx-2.5-duration-head-bf16.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/model_patches/ltx-2.5-duration-head-bf16.safetensors|3800000"
     "loras|LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors|https://huggingface.co/maximsobolev275/LTX-10Eros-LoRA-r768/resolve/main/LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors|3400000000"
+)
+
+
+YOLO_MODELS=(
+    "https://huggingface.co/huchukato/favs/resolve/main/adetailer/face_yolov8m.pt"
+)
+
+SAM_MODELS=(
+    "https://huggingface.co/bingbangboom/sam_vit_b/resolve/main/sam_vit_b_01ec64.pth"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -142,6 +154,14 @@ function provisioning_start() {
     echo "🎬 Downloading LTX 2.5 models (large files via hf)..."
     download_ltx_models
 
+    echo "🔍 Downloading YOLO models..."
+    mkdir -p "${COMFYUI_DIR}/models/ultralytics/bbox"
+    provisioning_get_files         "${COMFYUI_DIR}/models/ultralytics/bbox"         "${YOLO_MODELS[@]}"
+        
+    echo "🧩 Downloading SAM models..."
+    mkdir -p "${COMFYUI_DIR}/models/sams"
+    provisioning_get_files         "${COMFYUI_DIR}/models/sams"         "${SAM_MODELS[@]}"
+        
     provisioning_print_end
 }
 

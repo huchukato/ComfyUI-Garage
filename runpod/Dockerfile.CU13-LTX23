@@ -35,7 +35,9 @@ RUN dl_gh() { \
     dl_gh huchukato ComfyUI-RIFE-TensorRT-Auto master ComfyUI-RIFE-TensorRT-Auto && \
     dl_gh huchukato ComfyUI-Upscaler-TensorRT-Auto master ComfyUI-Upscaler-TensorRT-Auto && \
     dl_gh huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
-    dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete
+    dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete && \
+    dl_gh ltdrdata ComfyUI-Impact-Pack main ComfyUI-Impact-Pack && \
+    dl_gh ltdrdata ComfyUI-Impack-Subpack main ComfyUI-Impack-Subpack
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)
@@ -57,7 +59,19 @@ RUN mkdir -p /opt/comfyui-baked/models/checkpoints && \
     mkdir -p /opt/comfyui-baked/models/text_encoders && \
     mkdir -p /opt/comfyui-baked/models/loras && \
     mkdir -p /opt/comfyui-baked/models/upscale_models && \
-    mkdir -p /opt/comfyui-baked/models/vae
+    mkdir -p /opt/comfyui-baked/models/vae && \
+    mkdir -p /opt/comfyui-baked/models/ultralytics/bbox && \
+    mkdir -p /opt/comfyui-baked/models/sams
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Pre-baked YOLO + SAM models for Impact Pack FaceDetailer
+# ──────────────────────────────────────────────────────────────────────────────
+RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/huchukato/favs/resolve/main/adetailer/face_yolov8m.pt" \
+        -O /opt/comfyui-baked/models/ultralytics/bbox/face_yolov8m.pt && \
+    wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/bingbangboom/sam_vit_b/resolve/main/sam_vit_b_01ec64.pth" \
+        -O /opt/comfyui-baked/models/sams/sam_vit_b_01ec64.pth
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Optional Hugging Face token (runtime env var) for gated/high-rate-limit
@@ -90,6 +104,7 @@ LTX_WORKFLOWS=(
 PONY_WORKFLOWS=(
     "PimpMyPony-TagComplete-Wildcards.json"
     "PimpMyPony-TagComplete-Wildcards-HiresFix.json"
+    "PimpMyPony-TagComplete-FaceDet.json"
 )
 UTIL_WORKFLOWS=(
     "2in1-LoRaStack-Merge.json"
