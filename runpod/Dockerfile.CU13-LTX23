@@ -1,31 +1,32 @@
-# ComfyUI-Garage RunPod Worker (CUDA 13.0) — MiniMax H3 edition
+# ComfyUI-Garage RunPod Worker (CUDA 13.0) — LTX 2.3 edition
 # Based on comfyui-base:cu130 (our custom base with ComfyUI v0.34.2, TensorRT,
 # Manager with use_uv=False, dynamic venv naming, no uv).
-# Adds: QwenVL-Mod + MiniMax H3 support nodes, all heavy MiniMax-H3 models
-#       downloaded at boot in background (~50GB total).
+# Adds: QwenVL-Mod + LTXVideo support nodes, all heavy LTX-2.3 models
+#       downloaded at boot in background (~40GB total, uncensored 10Eros setup).
 
 FROM huchukato/comfyui-base:cu130
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Custom nodes — our specific repos (base already has Manager, KJNodes,
-# Civicomfy, RunpodDirect)
+# Custom nodes — ALL repos cloned once (cached by Docker)
+# LTX 2.3 core support is built into ComfyUI 0.30.0+; LTXVideo node adds workflow nodes.
+# Use --no-cache to force re-clone when nodes need updating.
 # ──────────────────────────────────────────────────────────────────────────────
 ARG CACHEBUST=1
 
 RUN cd /opt/comfyui-baked/custom_nodes && \
-    git clone https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo.git && \
+    git clone https://github.com/Lightricks/ComfyUI-LTXVideo.git && \
     git clone https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler.git && \
+    git clone https://github.com/ltdrdata/was-node-suite-comfyui.git && \
     git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
     git clone https://github.com/rgthree/rgthree-comfy.git && \
     git clone https://github.com/yolain/ComfyUI-Easy-Use.git && \
     git clone https://github.com/ashtar1984/comfyui-find-perfect-resolution.git && \
+    git clone https://github.com/domprosys/ComfyUI-LTXVideo-Extra.git && \
     git clone https://github.com/huchukato/ComfyUI-QwenVL-Mod.git && \
     git clone https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto.git && \
     git clone https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto.git && \
     git clone https://github.com/huchukato/ComfyUI-HuggingFace.git && \
     git clone https://github.com/huchukato/comfy-tagcomplete.git && \
-    git clone https://github.com/Saganaki22/ComfyUI-sol-attn.git && \
-    git clone https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3.git && \
     echo "Updating ALL baked custom nodes to latest..." && \
     for node_dir in /opt/comfyui-baked/custom_nodes/*/; do \
         if [ -d "$node_dir/.git" ]; then \
@@ -40,7 +41,8 @@ RUN cd /opt/comfyui-baked/custom_nodes && \
     done
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Install requirements for our custom nodes (single layer, cached)
+# Install requirements (single layer, cached)
+# Also pin kornia<0.8.3 — ComfyUI-LTXVideo breaks on newer kornia (pad import)
 # ──────────────────────────────────────────────────────────────────────────────
 RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
         if [ -f "$node_dir/requirements.txt" ]; then \
@@ -48,14 +50,17 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
             pip install --no-cache-dir -r "$node_dir/requirements.txt" || echo "Failed to install requirements for $node_dir"; \
         fi; \
     done' && \
+    pip install --no-cache-dir "kornia==0.8.2" && \
     pip cache purge
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Model directories (models downloaded at boot, not baked due to 50GB total)
+# Model directories (models downloaded at boot, not baked due to ~40GB total)
 # ──────────────────────────────────────────────────────────────────────────────
-RUN mkdir -p /opt/comfyui-baked/models/vae && \
-    mkdir -p /opt/comfyui-baked/models/diffusion_models && \
-    mkdir -p /opt/comfyui-baked/models/text_encoders
+RUN mkdir -p /opt/comfyui-baked/models/checkpoints && \
+    mkdir -p /opt/comfyui-baked/models/text_encoders && \
+    mkdir -p /opt/comfyui-baked/models/loras && \
+    mkdir -p /opt/comfyui-baked/models/upscale_models && \
+    mkdir -p /opt/comfyui-baked/models/vae
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Optional Hugging Face token (runtime env var) for gated/high-rate-limit
@@ -64,24 +69,28 @@ RUN mkdir -p /opt/comfyui-baked/models/vae && \
 ENV HF_TOKEN=""
 
 # ──────────────────────────────────────────────────────────────────────────────
-# MiniMax H3 workflow download script (small JSONs, downloaded at boot)
+# Enable Rust-based Hugging Face downloader (hf-transfer) for model downloads
+# This is much faster than aria2/wget single-connection on HF-hosted files.
+# ──────────────────────────────────────────────────────────────────────────────
+ENV HF_HUB_ENABLE_HF_TRANSFER=1
+
+# ──────────────────────────────────────────────────────────────────────────────
+# LTX 2.3 workflow download script (small JSON, downloaded at boot)
 # Always fetches latest from GitHub into the active /workspace install.
 # Overwrites existing files at every boot.
 # ──────────────────────────────────────────────────────────────────────────────
-RUN cat > /usr/local/bin/download-minimax-workflows.sh << 'EOF'
+RUN cat > /usr/local/bin/download-ltx-workflows.sh << 'EOF'
 #!/bin/bash
-LOG="/var/log/minimax-h3-workflows.log"
+LOG="/var/log/ltx-workflows.log"
 BASE_DIR="/workspace/runpod-slim/ComfyUI/user/default/workflows"
-MINIMAX_TURBO_WF_URL="https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax"
-EXTRA_WF_URL="https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony"
+LTX_WF_URL="https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/ltx/23"
+PONY_WF_URL="https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony"
 READY_MARKER="/workspace/runpod-slim/ComfyUI/main.py"
-MINIMAX_TURBO_WORKFLOWS=(
-    "MiniMaxH3-Turbo-I2VA-Qwen3.5.json"
-    "MiniMaxH3-Turbo-FL2VA-Qwen3.5.json"
-    "MiniMaxH3-Turbo-T2VA-Qwen3.5.json"
-    "MiniMaxH3-Turbo-R2VA-Qwen3.5.json"
+LTX_WORKFLOWS=(
+    "LTX23-I2VA-T2VA-Qwen3.5.json"
+    "LTX23-FL2VA-Qwen3.5.json"
 )
-EXTRA_WORKFLOWS=(
+PONY_WORKFLOWS=(
     "PimpMyPony-TagComplete-Wildcards.json"
     "PimpMyPony-TagComplete-Wildcards-HiresFix.json"
 )
@@ -103,7 +112,7 @@ download_list() {
         if wget -q --tries=3 --timeout=30 "$base_url/$wf" -O "$dest"; then
             log "✅ $subdir/$wf downloaded"
         else
-            log "❌ $wf download failed"
+            log "❌ $subdir/$wf download failed"
         fi
     done
 }
@@ -120,60 +129,62 @@ if [ ! -f "$READY_MARKER" ]; then
 fi
 
 mkdir -p "$BASE_DIR"
-log "🔄 Downloading MiniMax Turbo workflows..."
-download_list "$MINIMAX_TURBO_WF_URL" "minimax" "${MINIMAX_TURBO_WORKFLOWS[@]}"
-
-log "🔄 Downloading extra workflows..."
-download_list "$EXTRA_WF_URL" "pony" "${EXTRA_WORKFLOWS[@]}"
-
+log "🔄 Downloading latest LTX 2.3 workflows..."
+download_list "$LTX_WF_URL" "ltx/23" "${LTX_WORKFLOWS[@]}"
+log "🔄 Downloading shared Pony/LoRA-stack workflow..."
+download_list "$PONY_WF_URL" "pony" "${PONY_WORKFLOWS[@]}"
 log "🔄 Downloading utility workflows..."
 download_list "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils" "utils" "${UTIL_WORKFLOWS[@]}"
 
 log "🏁 Workflow downloads done"
 EOF
-RUN chmod +x /usr/local/bin/download-minimax-workflows.sh
+RUN chmod +x /usr/local/bin/download-ltx-workflows.sh
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Enable Rust-based Hugging Face downloader (hf-transfer) for model downloads
+# NO models baked-in here — all LTX-2.3 models are huge:
+#   ~40GB total. Instead, a boot script downloads them to /workspace on first run.
+#   Only uncensored/required models are downloaded:
+#     - 10Eros v1.5 FP8 (checkpoint, ~30GB) — uncensored I2V merge of Sulphur 2
+#     - Gemma 3 12B IT FP4 (text encoder, ~9.4GB)
+#     - Gemma 3 12B abliterated LoRA (~628MB) — uncensors text encoder (bypass/strength 0 in workflow, available if needed)
+#     - LTX 2.3 DMD hybrid v2 LoRA (~662MB) — required by 10Eros v1.5
+#     - LTX 2.3 spatial upscaler (~996MB) — doubles resolution
+#     - LTX 2.3 temporal upscaler (~262MB) — doubles frame count
 # ──────────────────────────────────────────────────────────────────────────────
-ENV HF_HUB_ENABLE_HF_TRANSFER=1
 
 # ──────────────────────────────────────────────────────────────────────────────
-# MiniMax H3 model download script (~50GB, downloaded at boot in background)
+
+# LTX 2.3 model download script (~40GB, downloaded at boot in background)
 # Waits for /workspace/runpod-slim/ComfyUI to exist, then downloads if missing.
 # Robust: retries with backoff, resumes interrupted downloads, verifies size.
 # ──────────────────────────────────────────────────────────────────────────────
-RUN cat > /usr/local/bin/download-minimax-h3-models.sh << 'EOF'
+RUN cat > /usr/local/bin/download-ltx-models.sh << 'EOF'
 #!/bin/bash
 BASE_DIR="/workspace/runpod-slim/ComfyUI/models"
-LOG="/var/log/minimax-h3-models.log"
-READY_MARKER="/workspace/runpod-slim/ComfyUI/main.py"
+LOG="/var/log/ltx-models.log"
+READY_MARKER="/workspace/runpod-slim/ComfyUI/main.py"   # created by start.sh copy
 
+# Ensure hf-transfer is available (Rust accelerator for HF downloads)
 pip install --no-cache-dir -q "hf-transfer" "huggingface_hub" 2>/dev/null
 export HF_HUB_ENABLE_HF_TRANSFER=1
 export HF_XET_HIGH_PERFORMANCE=1
 
-# Models: subdir|name|url|min_size_bytes (min_size = sanity check)
+# Models: subdir|name|repo_id|repo_path|min_size_bytes (min_size = sanity check)
 MODELS=(
-    "vae|minimax_h3_video_vae_fp16.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors|5200000000"
-    "vae|minimax_h3_audio_vae_fp32.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors|600000000"
-    # ── NVFP4+INT8 ConvRot hybrid (rockerBOO/lilcheaty) — default, best speed/quality on Blackwell ──
-    "diffusion_models|minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors|https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors|20070947267"
-    "diffusion_models|minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors|https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors|20070947267"
-    "text_encoders|qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|15000000000"
-    "loras|minimax_h3_turbo_v4_step600_ema.safetensors|https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors|779849816"
-    # 10Eros-Max INT8 ConvRot HQ (~23.5GB) — 145 INT8 + 55 BF16, best quality for 10Eros
-    "diffusion_models|10Eros_Max_H3_FL2VA-INT8-ConvRot-HQ.safetensors|https://huggingface.co/DmitryDB/MiniMax-H3-10Eros-Max-Quants/resolve/main/FL2VA/10Eros_Max_H3_FL2VA-INT8-ConvRot-HQ.safetensors|23000000000"
-    # Turbo LoRA 8-step for 10Eros-Max pruned (1.96GB) — compat full-width
-    "loras|minimax_h3_fl2v_turbo_8step_v1.0_10ErosMax_beta1_pruned_compat_v001_T8.safetensors|https://huggingface.co/t8star/minimax_h3_turbo_4step_10ErosMax_test4_pruned_curveproj1025_T8/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_10ErosMax_beta1_pruned_compat_v001_T8.safetensors|1950000000"
+    "checkpoints|10Eros_v1.5_fp8mixed_experimental_learned.safetensors|LokkenJP/10EROS_1.5_fp8_exp_learned|10Eros_v1.5_fp8mixed_experimental_learned.safetensors|28000000000"
+    "text_encoders|gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors|TenStrip/LTX2.3-10Eros|text_encoders/gemma-3-12b-it-ablit-norms-biproj-fp8mixed.safetensors|12000000000"
+    "loras|ltx23/LTX2.3_DMD_hybrid_v2.safetensors|TenStrip/LTX2.3_DMD_Lora|LTX2.3_DMD_hybrid_v2.safetensors|600000000"
+    # ── Gemma 3 12B abliterated LoRA (referenziata nel workflow I2VA, nodo in bypass/strength 0) ──
+    "loras|gemma-3-12b-it-abliterated_lora_rank64_bf16.safetensors|Comfy-Org/ltx-2|split_files/loras/gemma-3-12b-it-abliterated_lora_rank64_bf16.safetensors|600000000"
+    "latent_upscale_models|ltx-2.3-spatial-upscaler-x2-1.1.safetensors|Lightricks/LTX-2.3|ltx-2.3-spatial-upscaler-x2-1.1.safetensors|900000000"
+    "latent_upscale_models|ltx-2.3-temporal-upscaler-x2-1.0.safetensors|Lightricks/LTX-2.3|ltx-2.3-temporal-upscaler-x2-1.0.safetensors|250000000"
+    # Pruna optimized VAE (faster decode than stock LTX VAE)
+    "vae|pruna_ltx2.3_vae_comfy_bf16.safetensors|Kijai/LTX2.3_comfy|vae/pruna_ltx2.3_vae_comfy_bf16.safetensors|500000000"
 )
 
 log() { echo "$(date): $*" | tee -a "$LOG"; }
 
-TOTAL_MODELS=${#MODELS[@]}
-CURRENT=0
-
-log "📥 === MiniMax H3 model download started (PID $$) — $TOTAL_MODELS models ==="
+log "📥 === LTX 2.3 model download started (PID $$) — ${#MODELS[@]} models ==="
 log "⏳ Waiting for /workspace mount and ComfyUI ready marker..."
 for i in $(seq 1 120); do
     [ -f "$READY_MARKER" ] && break
@@ -186,17 +197,14 @@ if [ ! -f "$READY_MARKER" ]; then
 fi
 
 log "✅ ComfyUI ready, base dir: $BASE_DIR"
-mkdir -p "$BASE_DIR"/{vae,diffusion_models,text_encoders,loras}
+mkdir -p "$BASE_DIR"/{checkpoints,text_encoders,loras/ltx23,latent_upscale_models,vae}
 
 download_model() {
-    local subdir="$1" name="$2" url="$3" min_size="$4"
+    local subdir="$1" name="$2" repo_id="$3" repo_path="$4" min_size="$5"
     local dest="$BASE_DIR/$subdir/$name"
     local max_retries=5
 
-    local repo_id repo_path
-    repo_id=$(echo "$url" | awk -F/ '{print $4"/"$5}')
-    repo_path=$(echo "$url" | sed -E 's#https?://[^/]+/[^/]+/[^/]+/resolve/main/(.+)#\1#')
-
+    # Use 'hf' command (newer huggingface_hub) or fall back to 'huggingface-cli'
     local hf_cmd="hf"
     command -v hf >/dev/null 2>&1 || hf_cmd="huggingface-cli"
 
@@ -214,19 +222,23 @@ download_model() {
             log "📥 Downloading $name (attempt $attempt/$max_retries)..."
         fi
 
+        # Download to a temp dir to avoid path nesting issues.
         local tmp_dir="$BASE_DIR/.tmp_download_${name//\//_}"
         rm -rf "$tmp_dir"
         mkdir -p "$tmp_dir" "$(dirname "$dest")"
         export HF_HUB_ENABLE_HF_TRANSFER=1
         export HF_XET_HIGH_PERFORMANCE=1
+        # hf: resume is automatic; huggingface-cli: needs --resume-download
         local resume_flag=""
         [ "$hf_cmd" = "huggingface-cli" ] && resume_flag="--resume-download"
-
+        # Timeout: 15 min per file, prevents infinite stalls
         if timeout 900 $hf_cmd download "$repo_id" "$repo_path" \
                 --local-dir "$tmp_dir" \
                 $resume_flag 2>&1 | tee -a "$LOG"; then
+            # Find the downloaded file (hf preserves repo_path structure)
             local downloaded_path="$tmp_dir/$repo_path"
             if [ -f "$downloaded_path" ] || [ -L "$downloaded_path" ]; then
+                # Move/symlink to final destination
                 if [ -L "$downloaded_path" ]; then
                     ln -sf "$(readlink -f "$downloaded_path")" "$dest"
                 else
@@ -250,7 +262,7 @@ download_model() {
             rm -rf "$tmp_dir"
         fi
 
-        [ "$attempt" -lt "$max_retries" ] && sleep $((attempt * 30))
+        [ "$attempt" -lt "$max_retries" ] && sleep $((attempt * 10))
     done
 
     log "❌ FAILED: $name could not be downloaded after $max_retries attempts"
@@ -259,22 +271,22 @@ download_model() {
 
 failures=0
 MODEL_IDX=0
+TOTAL_MODELS=${#MODELS[@]}
 for entry in "${MODELS[@]}"; do
     MODEL_IDX=$((MODEL_IDX + 1))
-    IFS='|' read -r subdir name url min_size <<< "$entry"
+    IFS='|' read -r subdir name repo_id repo_path min_size <<< "$entry"
     log "━━━ [$MODEL_IDX/$TOTAL_MODELS] ━━━"
-    download_model "$subdir" "$name" "$url" "$min_size" || failures=$((failures + 1))
-    sleep 5
+    download_model "$subdir" "$name" "$repo_id" "$repo_path" "$min_size" || failures=$((failures + 1))
 done
 
-log "📦 === MiniMax H3 model download finished ($failures failures) ==="
-log "✅ All models ready — ComfyUI can now use MiniMax H3 workflows"
+log "📦 === LTX 2.3 model download finished ($failures failures) ==="
+log "✅ All models ready — ComfyUI can now use LTX 2.3 workflows"
 EOF
-RUN chmod +x /usr/local/bin/download-minimax-h3-models.sh
+RUN chmod +x /usr/local/bin/download-ltx-models.sh
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Custom entrypoint: update custom nodes at boot, pre-populate args,
-# launch model/workflow downloads in background, then exec /start.sh
+# Custom entrypoint: force baked ComfyUI to selected version, pre-populate args,
+# launch LTX model download in background, then exec /start.sh
 # ──────────────────────────────────────────────────────────────────────────────
 RUN cat > /usr/local/bin/custom-entrypoint.sh << 'EOF'
 #!/bin/bash
@@ -302,9 +314,6 @@ update_custom_nodes() {
         else
             echo "$(date): ⚠️  $name update failed, leaving as-is" | tee -a "$COMFY_LOG"
         fi
-        # NOTE: requirements.txt is NOT installed at boot time.
-        # pip install at boot can break torch/transformers by upgrading
-        # packages that are pinned to specific CUDA versions in the image.
     done
 }
 
@@ -313,22 +322,21 @@ if [ -d /workspace/runpod-slim/ComfyUI/.git ]; then
     update_custom_nodes /workspace/runpod-slim/ComfyUI/custom_nodes
 fi
 
-# Overwrite comfyui_args.txt with MiniMax H3 / QwenVL-Mod optimized args
+# Overwrite comfyui_args.txt with LTX 2.3 / QwenVL-Mod optimized args
 ARGS_FILE="/workspace/runpod-slim/comfyui_args.txt"
 mkdir -p /workspace/runpod-slim
 cat > "$ARGS_FILE" << 'INNER'
 # Custom ComfyUI arguments (one per line, # = comment)
 --disable-auto-launch --fast fp16_accumulation --use-sage-attention --cuda-malloc --async-offload
 INNER
-echo "Overwrote comfyui_args.txt with MiniMax H3 / QwenVL-Mod optimized args"
+echo "Overwrote comfyui_args.txt with LTX 2.3 / QwenVL-Mod optimized args"
 
-# Launch MiniMax H3 workflow download in background
-setsid /usr/local/bin/download-minimax-workflows.sh </dev/null &
+# Launch LTX 2.3 workflow download in background
+setsid /usr/local/bin/download-ltx-workflows.sh </dev/null &
 
-# Launch MiniMax H3 model download in a detached session
-setsid /usr/local/bin/download-minimax-h3-models.sh </dev/null &
+# Launch LTX 2.3 model download in a detached session
+setsid /usr/local/bin/download-ltx-models.sh </dev/null &
 
-# Execute start.sh from base image — ComfyUI starts immediately.
 exec /start.sh
 EOF
 RUN chmod +x /usr/local/bin/custom-entrypoint.sh
