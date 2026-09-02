@@ -21,6 +21,7 @@ RUN cd /opt/comfyui-baked/custom_nodes && \
     git clone https://github.com/ashtar1984/comfyui-find-perfect-resolution.git && \
     git clone https://github.com/huchukato/ComfyUI-HuggingFace.git && \
     git clone https://github.com/huchukato/comfy-tagcomplete.git && \
+    git clone https://github.com/huchukato/ComfyUI-QwenVL-Mod.git && \
     echo "Updating ALL baked custom nodes to latest..." && \
     for node_dir in /opt/comfyui-baked/custom_nodes/*/; do \
         if [ -d "$node_dir/.git" ]; then \
