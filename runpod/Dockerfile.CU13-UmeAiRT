@@ -46,6 +46,7 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
         fi; \
     done' && \
     pip install --no-cache-dir "git+https://github.com/huggingface/transformers.git" && \
+    pip install --no-cache-dir --pre -U comfyui-manager && \
     pip cache purge
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -80,7 +81,6 @@ RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
 RUN mkdir -p /opt/comfyui-baked/user/default/workflows/{pony,utils,umeairt} && \
     cd /opt/comfyui-baked/user/default/workflows && \
     wget -q -P pony "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json" && \
-    wget -q -P pony "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json" && \
     wget -q -P utils "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json" && \
     wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Outpaint.json" && \
     wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Inpaint.json" && \
@@ -371,7 +371,7 @@ ARGS_FILE="/workspace/runpod-slim/comfyui_args.txt"
 mkdir -p /workspace/runpod-slim
 cat > "$ARGS_FILE" << 'INNER'
 # Custom ComfyUI arguments (one per line, # = comment)
---disable-auto-launch --fast fp16_accumulation --use-sage-attention --cuda-malloc --async-offload --front-end-version Comfy-Org/ComfyUI_frontend@latest
+--disable-auto-launch --fast fp16_accumulation --use-sage-attention --cuda-malloc --async-offload --front-end-version Comfy-Org/ComfyUI_frontend@latest --enable-manager
 INNER
 echo "Overwrote comfyui_args.txt with Pony/SDXL optimized args"
 
