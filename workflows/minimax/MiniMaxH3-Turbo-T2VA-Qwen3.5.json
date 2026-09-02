@@ -1,8 +1,8 @@
 {
   "id": "237ff12c-6141-4077-9f5e-d530111c6d41",
   "revision": 0,
-  "last_node_id": 212,
-  "last_link_id": 434,
+  "last_node_id": 213,
+  "last_link_id": 441,
   "nodes": [
     {
       "id": 118,
@@ -59,51 +59,6 @@
       "bgcolor": "#593930"
     },
     {
-      "id": 137,
-      "type": "easy showAnything",
-      "pos": [
-        -856.1781450430237,
-        5402.11021783787
-      ],
-      "size": [
-        656.8253750145943,
-        330.12154760866815
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 253
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": []
-        }
-      ],
-      "title": "QWEN3VL GENERATED PROMPT",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
-      },
-      "widgets_values": [
-        "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium-wide shot captures Claire Redfield standing amidst twisted branches under a twilight sky, her vibrant red hair catching the dappled sunlight filtering through the canopy; she wears a delicate lace lingerie set with a breast slip, her blue eyes wide with a shy yet overwhelmed expression as she instinctively covers her exposed nipples with trembling hands; the camera executes a smooth, continuous CRANE_UP movement, slowly rising vertically to reveal the expansive, chaotic forest floor below, where shadows stretch long against the rough bark of ancient trees; the lighting shifts from the warm glow of filtered light to deeper cool blues as the altitude increases, casting dramatic chiaroscuro effects across her form and the surrounding foliage; as the camera ascends, Claire takes a tentative step forward, her bare feet crunching softly on dry leaves, while she lets out a sharp intake of breath followed by a low, involuntary moan that vibrates through her chest; the scene remains focused on her upper body and face initially, with the background blurring slightly due to shallow depth of field, emphasizing her isolation and vulnerability before the view opens up to the vast, silent woods; subtle rustling of wind through high branches accompanies her breathing, creating an immersive, quiet tension.\noverall_soundscape: The ambient layer consists of the crisp, distant rustle of wind moving through high tree canopies mixed with the soft, damp crunch of Claire's barefoot steps on dry pine needles. As she shifts her weight and clutches her chest, audible breath hitching in her throat transitions into a low, suppressed moan that fades quickly into a rapid, ragged panting rhythm, accompanied by the faint, rhythmic slap of fabric against skin.\nnon_diegetic_music: N/A"
-      ],
-      "widgets_values_named": {
-        "text": "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium-wide shot captures Claire Redfield standing amidst twisted branches under a twilight sky, her vibrant red hair catching the dappled sunlight filtering through the canopy; she wears a delicate lace lingerie set with a breast slip, her blue eyes wide with a shy yet overwhelmed expression as she instinctively covers her exposed nipples with trembling hands; the camera executes a smooth, continuous CRANE_UP movement, slowly rising vertically to reveal the expansive, chaotic forest floor below, where shadows stretch long against the rough bark of ancient trees; the lighting shifts from the warm glow of filtered light to deeper cool blues as the altitude increases, casting dramatic chiaroscuro effects across her form and the surrounding foliage; as the camera ascends, Claire takes a tentative step forward, her bare feet crunching softly on dry leaves, while she lets out a sharp intake of breath followed by a low, involuntary moan that vibrates through her chest; the scene remains focused on her upper body and face initially, with the background blurring slightly due to shallow depth of field, emphasizing her isolation and vulnerability before the view opens up to the vast, silent woods; subtle rustling of wind through high branches accompanies her breathing, creating an immersive, quiet tension.\noverall_soundscape: The ambient layer consists of the crisp, distant rustle of wind moving through high tree canopies mixed with the soft, damp crunch of Claire's barefoot steps on dry pine needles. As she shifts her weight and clutches her chest, audible breath hitching in her throat transitions into a low, suppressed moan that fades quickly into a rapid, ragged panting rhythm, accompanied by the faint, rhythmic slap of fabric against skin.\nnon_diegetic_music: N/A"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 152,
       "type": "VRAMCleanup",
       "pos": [
@@ -137,8 +92,8 @@
       ],
       "properties": {
         "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-        "ver": "ba8b0648b7ea5fcc15c62d535343b275cae5de3e",
-        "Node name for S&R": "VRAMCleanup"
+        "Node name for S&R": "VRAMCleanup",
+        "ver": "ba8b0648b7ea5fcc15c62d535343b275cae5de3e"
       },
       "widgets_values": [
         "Full Cleanup"
@@ -268,54 +223,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 204,
-      "type": "WildcardProcessor",
-      "pos": [
-        -866.8488170137822,
-        4385.142925127828
-      ],
-      "size": [
-        660.1394957386365,
-        410.3550106534095
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            415
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/comfy-tagcomplete",
-        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
-        "Node name for S&R": "WildcardProcessor"
-      },
-      "widgets_values": [
-        "__mbe/prmpt/vidstyle__, __mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, __mbe/actsolo/brstplng__",
-        13783539392775,
-        "randomize",
-        true,
-        "[cartoon] 2D cartoon, bold outlines, flat colors, exaggerated expressions, cartoon-style animation, lower body, river, night, sunbeam, backlighting, shade, 1girl, catwoman, dc comics, black hair, blue eyes , large breasts, bitchsuit, clothes lift, solo, clothes lift, grabbing own breast, breast press, tongue out, saliva drip, saliva on breasts",
-        "[cartoon] 2D cartoon, bold outlines, flat colors, exaggerated expressions, cartoon-style animation, lower body, river, night, sunbeam, backlighting, shade, 1girl, catwoman, dc comics, black hair, blue eyes , large breasts, bitchsuit, clothes lift, solo, clothes lift, grabbing own breast, breast press, tongue out, saliva drip, saliva on breasts"
-      ],
-      "widgets_values_named": {
-        "text": "__mbe/prmpt/vidstyle__, __mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, __mbe/actsolo/brstplng__",
-        "seed": 13783539392775,
-        "control_after_generate": "randomize",
-        "populate": true,
-        "populated_text": "[cartoon] 2D cartoon, bold outlines, flat colors, exaggerated expressions, cartoon-style animation, lower body, river, night, sunbeam, backlighting, shade, 1girl, catwoman, dc comics, black hair, blue eyes , large breasts, bitchsuit, clothes lift, solo, clothes lift, grabbing own breast, breast press, tongue out, saliva drip, saliva on breasts",
-        "preview": "[cartoon] 2D cartoon, bold outlines, flat colors, exaggerated expressions, cartoon-style animation, lower body, river, night, sunbeam, backlighting, shade, 1girl, catwoman, dc comics, black hair, blue eyes , large breasts, bitchsuit, clothes lift, solo, clothes lift, grabbing own breast, breast press, tongue out, saliva drip, saliva on breasts"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 117,
       "type": "MarkdownNote",
       "pos": [
@@ -327,7 +234,7 @@
         513.7942890234126
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -341,33 +248,6 @@
       },
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 205,
-      "type": "MarkdownNote",
-      "pos": [
-        -1665.2443694584117,
-        4259.220665333196
-      ],
-      "size": [
-        763.274034274521,
-        532.6856681414565
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Wildcards",
-      "properties": {},
-      "widgets_values": [
-        "## 🎲 Wildcards (T2VA Workflow)\n\nThe T2VA Turbo workflow includes a **WildcardProcessor** node that injects randomized prompt fragments from the **MadBe's Prompt Engine** (`__mbe/prmpt/*`) wildcard library. Each generation picks a random entry from each wildcard file, so the same seed produces different results across runs unless you pin the seed.\n\n### Wildcards Used in the T2VA Workflow\n\n| Wildcard | Category | What it randomizes |\n|---|---|---|\n| `__mbe/prmpt/vidstyle__` | Video style | Cinematic / anime / vintage film / 3D CG / claymation / watercolor / fantasy etc. |\n| `__mbe/prmpt/imgcmp/shots__` | Camera shot | Close-up / wide / medium / dolly / crane / orbit / handheld etc. |\n| `__mbe/prmpt/lctns/rndmlctns__` | Location | Random setting (bedroom / beach / studio / alley / forest / rooftop etc.) |\n| `__mbe/prmpt/light/rndmlight__` | Lighting | Key light direction, color temperature, soft/hard, ambient mood |\n| `__mbe/prmpt/char/favchar__` | Character | Random character archetype (age, body type, hair, ethnicity) |\n| `__mbe/prmpt/clths/rndmclth__` | Clothing | Random outfit / garment description |\n| `__mbe/prmpt/clths/nudty_brsts__` | NSFW | Breast / nudity descriptors (NSFW preset) |\n| `__mbe/actsolo/brstplng__` | NSFW action | Solo breast-play action verbs (NSFW preset) |\n\n### How It Works\n\n1. The **WildcardProcessor** node sits before the Qwen3-VL prompt enhancer\n2. At queue time, each `__wildcard__` token is replaced with a random line from the corresponding `.txt` file inside `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/`\n3. The expanded text is passed to Qwen3-VL, which converts it into the official MiniMax H3 prompt format\n4. **Different seed = different wildcard picks** — use a fixed seed if you want reproducible results\n\n### Customizing Wildcards\n\n- **Edit existing**: open the `.txt` files under `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/` and add/remove lines (one entry per line)\n- **Add your own**: create a new `.txt` file, e.g. `mbe/prmpt/mytags.txt`, then reference it as `__mbe/prmpt/mytags__`\n- **Remove a wildcard**: delete the `__...__` token from the WildcardProcessor `text` field in the workflow\n- **Disable randomization**: replace the `__wildcard__` token with a fixed string\n\n### Required Custom Node\n\n- **ComfyUI-TagComplete** (includes the `WildcardProcessor` node and the `__mbe/prmpt/*` wildcard set) — [huchukato/comfy-tagcomplete](https://github.com/huchukato/comfy-tagcomplete)\n\n> The wildcard files ship with the custom node. If a wildcard resolves to empty, the custom node is missing or the wildcard folder is not installed.\n"
-      ],
-      "widgets_values_named": {
-        "text": "## 🎲 Wildcards (T2VA Workflow)\n\nThe T2VA Turbo workflow includes a **WildcardProcessor** node that injects randomized prompt fragments from the **MadBe's Prompt Engine** (`__mbe/prmpt/*`) wildcard library. Each generation picks a random entry from each wildcard file, so the same seed produces different results across runs unless you pin the seed.\n\n### Wildcards Used in the T2VA Workflow\n\n| Wildcard | Category | What it randomizes |\n|---|---|---|\n| `__mbe/prmpt/vidstyle__` | Video style | Cinematic / anime / vintage film / 3D CG / claymation / watercolor / fantasy etc. |\n| `__mbe/prmpt/imgcmp/shots__` | Camera shot | Close-up / wide / medium / dolly / crane / orbit / handheld etc. |\n| `__mbe/prmpt/lctns/rndmlctns__` | Location | Random setting (bedroom / beach / studio / alley / forest / rooftop etc.) |\n| `__mbe/prmpt/light/rndmlight__` | Lighting | Key light direction, color temperature, soft/hard, ambient mood |\n| `__mbe/prmpt/char/favchar__` | Character | Random character archetype (age, body type, hair, ethnicity) |\n| `__mbe/prmpt/clths/rndmclth__` | Clothing | Random outfit / garment description |\n| `__mbe/prmpt/clths/nudty_brsts__` | NSFW | Breast / nudity descriptors (NSFW preset) |\n| `__mbe/actsolo/brstplng__` | NSFW action | Solo breast-play action verbs (NSFW preset) |\n\n### How It Works\n\n1. The **WildcardProcessor** node sits before the Qwen3-VL prompt enhancer\n2. At queue time, each `__wildcard__` token is replaced with a random line from the corresponding `.txt` file inside `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/`\n3. The expanded text is passed to Qwen3-VL, which converts it into the official MiniMax H3 prompt format\n4. **Different seed = different wildcard picks** — use a fixed seed if you want reproducible results\n\n### Customizing Wildcards\n\n- **Edit existing**: open the `.txt` files under `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/` and add/remove lines (one entry per line)\n- **Add your own**: create a new `.txt` file, e.g. `mbe/prmpt/mytags.txt`, then reference it as `__mbe/prmpt/mytags__`\n- **Remove a wildcard**: delete the `__...__` token from the WildcardProcessor `text` field in the workflow\n- **Disable randomization**: replace the `__wildcard__` token with a fixed string\n\n### Required Custom Node\n\n- **ComfyUI-TagComplete** (includes the `WildcardProcessor` node and the `__mbe/prmpt/*` wildcard set) — [huchukato/comfy-tagcomplete](https://github.com/huchukato/comfy-tagcomplete)\n\n> The wildcard files ship with the custom node. If a wildcard resolves to empty, the custom node is missing or the wildcard folder is not installed.\n"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
     },
     {
       "id": 92,
@@ -419,61 +299,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 211,
-      "type": "EmptyLatentImagePresets",
-      "pos": [
-        -1149.294125878294,
-        4859.752636676257
-      ],
-      "size": [
-        263.5963064299982,
-        146
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "Latent",
-          "type": "LATENT",
-          "links": []
-        },
-        {
-          "name": "Width",
-          "type": "INT",
-          "links": [
-            427
-          ]
-        },
-        {
-          "name": "Height",
-          "type": "INT",
-          "links": [
-            428
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "1.2.2",
-        "Node name for S&R": "EmptyLatentImagePresets",
-        "aux_id": "kijai/ComfyUI-KJNodes"
-      },
-      "widgets_values": [
-        "1152 x 896 (1.286:1)",
-        true,
-        1
-      ],
-      "widgets_values_named": {
-        "dimensions": "1152 x 896 (1.286:1)",
-        "invert": true,
-        "batch_size": 1
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 126,
       "type": "VHS_VideoCombine",
       "pos": [
@@ -482,7 +307,7 @@
       ],
       "size": [
         510.10398280105346,
-        978.133692172783
+        1205.6819699018436
       ],
       "flags": {},
       "order": 13,
@@ -521,10 +346,10 @@
       ],
       "title": "48FPS",
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -541,13 +366,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "MiniMax_H3_48FPS_00001-audio.mp4",
+            "filename": "MiniMax_H3_48FPS_00003-audio.mp4",
             "subfolder": "video",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 48,
-            "workflow": "MiniMax_H3_48FPS_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/video/MiniMax_H3_48FPS_00001-audio.mp4"
+            "workflow": "MiniMax_H3_48FPS_00003.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/video/MiniMax_H3_48FPS_00003-audio.mp4"
           }
         }
       },
@@ -566,18 +391,152 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "MiniMax_H3_48FPS_00001-audio.mp4",
+            "filename": "MiniMax_H3_48FPS_00003-audio.mp4",
             "subfolder": "video",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 48,
-            "workflow": "MiniMax_H3_48FPS_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/video/MiniMax_H3_48FPS_00001-audio.mp4"
+            "workflow": "MiniMax_H3_48FPS_00003.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/video/MiniMax_H3_48FPS_00003-audio.mp4"
           }
         }
       },
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 211,
+      "type": "EmptyLatentImagePresets",
+      "pos": [
+        -1149.294125878294,
+        4859.752636676257
+      ],
+      "size": [
+        263.5963064299982,
+        146
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "Latent",
+          "type": "LATENT",
+          "links": []
+        },
+        {
+          "name": "Width",
+          "type": "INT",
+          "links": [
+            427
+          ]
+        },
+        {
+          "name": "Height",
+          "type": "INT",
+          "links": [
+            428
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ver": "1.2.2",
+        "Node name for S&R": "EmptyLatentImagePresets",
+        "cnr_id": "comfyui-kjnodes"
+      },
+      "widgets_values": [
+        "1344 x 768 (1.75:1)",
+        true,
+        1
+      ],
+      "widgets_values_named": {
+        "dimensions": "1344 x 768 (1.75:1)",
+        "invert": true,
+        "batch_size": 1
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 205,
+      "type": "MarkdownNote",
+      "pos": [
+        -1665.2443694584117,
+        4259.220665333196
+      ],
+      "size": [
+        763.274034274521,
+        532.6856681414565
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Wildcards",
+      "properties": {},
+      "widgets_values": [
+        "## 🎲 Wildcards (T2VA Workflow)\n\nThe T2VA Turbo workflow includes a **WildcardProcessor** node that injects randomized prompt fragments from the **MadBe's Prompt Engine** (`__mbe/prmpt/*`) wildcard library. Each generation picks a random entry from each wildcard file, so the same seed produces different results across runs unless you pin the seed.\n\n### Wildcards Used in the T2VA Workflow\n\n| Wildcard | Category | What it randomizes |\n|---|---|---|\n| `__mbe/prmpt/vidstyle__` | Video style | Cinematic / anime / vintage film / 3D CG / claymation / watercolor / fantasy etc. |\n| `__mbe/prmpt/imgcmp/shots__` | Camera shot | Close-up / wide / medium / dolly / crane / orbit / handheld etc. |\n| `__mbe/prmpt/lctns/rndmlctns__` | Location | Random setting (bedroom / beach / studio / alley / forest / rooftop etc.) |\n| `__mbe/prmpt/light/rndmlight__` | Lighting | Key light direction, color temperature, soft/hard, ambient mood |\n| `__mbe/prmpt/char/favchar__` | Character | Random character archetype (age, body type, hair, ethnicity) |\n| `__mbe/prmpt/clths/rndmclth__` | Clothing | Random outfit / garment description |\n| `__mbe/prmpt/clths/nudty_brsts__` | NSFW | Breast / nudity descriptors (NSFW preset) |\n| `__mbe/actsolo/brstplng__` | NSFW action | Solo breast-play action verbs (NSFW preset) |\n\n### How It Works\n\n1. The **WildcardProcessor** node sits before the Qwen3-VL prompt enhancer\n2. At queue time, each `__wildcard__` token is replaced with a random line from the corresponding `.txt` file inside `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/`\n3. The expanded text is passed to Qwen3-VL, which converts it into the official MiniMax H3 prompt format\n4. **Different seed = different wildcard picks** — use a fixed seed if you want reproducible results\n\n### Customizing Wildcards\n\n- **Edit existing**: open the `.txt` files under `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/` and add/remove lines (one entry per line)\n- **Add your own**: create a new `.txt` file, e.g. `mbe/prmpt/mytags.txt`, then reference it as `__mbe/prmpt/mytags__`\n- **Remove a wildcard**: delete the `__...__` token from the WildcardProcessor `text` field in the workflow\n- **Disable randomization**: replace the `__wildcard__` token with a fixed string\n\n### Required Custom Node\n\n- **ComfyUI-TagComplete** (includes the `WildcardProcessor` node and the `__mbe/prmpt/*` wildcard set) — [huchukato/comfy-tagcomplete](https://github.com/huchukato/comfy-tagcomplete)\n\n> The wildcard files ship with the custom node. If a wildcard resolves to empty, the custom node is missing or the wildcard folder is not installed.\n"
+      ],
+      "widgets_values_named": {
+        "text": "## 🎲 Wildcards (T2VA Workflow)\n\nThe T2VA Turbo workflow includes a **WildcardProcessor** node that injects randomized prompt fragments from the **MadBe's Prompt Engine** (`__mbe/prmpt/*`) wildcard library. Each generation picks a random entry from each wildcard file, so the same seed produces different results across runs unless you pin the seed.\n\n### Wildcards Used in the T2VA Workflow\n\n| Wildcard | Category | What it randomizes |\n|---|---|---|\n| `__mbe/prmpt/vidstyle__` | Video style | Cinematic / anime / vintage film / 3D CG / claymation / watercolor / fantasy etc. |\n| `__mbe/prmpt/imgcmp/shots__` | Camera shot | Close-up / wide / medium / dolly / crane / orbit / handheld etc. |\n| `__mbe/prmpt/lctns/rndmlctns__` | Location | Random setting (bedroom / beach / studio / alley / forest / rooftop etc.) |\n| `__mbe/prmpt/light/rndmlight__` | Lighting | Key light direction, color temperature, soft/hard, ambient mood |\n| `__mbe/prmpt/char/favchar__` | Character | Random character archetype (age, body type, hair, ethnicity) |\n| `__mbe/prmpt/clths/rndmclth__` | Clothing | Random outfit / garment description |\n| `__mbe/prmpt/clths/nudty_brsts__` | NSFW | Breast / nudity descriptors (NSFW preset) |\n| `__mbe/actsolo/brstplng__` | NSFW action | Solo breast-play action verbs (NSFW preset) |\n\n### How It Works\n\n1. The **WildcardProcessor** node sits before the Qwen3-VL prompt enhancer\n2. At queue time, each `__wildcard__` token is replaced with a random line from the corresponding `.txt` file inside `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/`\n3. The expanded text is passed to Qwen3-VL, which converts it into the official MiniMax H3 prompt format\n4. **Different seed = different wildcard picks** — use a fixed seed if you want reproducible results\n\n### Customizing Wildcards\n\n- **Edit existing**: open the `.txt` files under `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/mbe/prmpt/` and add/remove lines (one entry per line)\n- **Add your own**: create a new `.txt` file, e.g. `mbe/prmpt/mytags.txt`, then reference it as `__mbe/prmpt/mytags__`\n- **Remove a wildcard**: delete the `__...__` token from the WildcardProcessor `text` field in the workflow\n- **Disable randomization**: replace the `__wildcard__` token with a fixed string\n\n### Required Custom Node\n\n- **ComfyUI-TagComplete** (includes the `WildcardProcessor` node and the `__mbe/prmpt/*` wildcard set) — [huchukato/comfy-tagcomplete](https://github.com/huchukato/comfy-tagcomplete)\n\n> The wildcard files ship with the custom node. If a wildcard resolves to empty, the custom node is missing or the wildcard folder is not installed.\n"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 204,
+      "type": "WildcardProcessor",
+      "pos": [
+        -866.8488170137822,
+        4385.142925127828
+      ],
+      "size": [
+        660.1394957386365,
+        410.3550106534095
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            415
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "huchukato/comfy-tagcomplete",
+        "Node name for S&R": "WildcardProcessor",
+        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119"
+      },
+      "widgets_values": [
+        "__mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, __mbe/actsolo/brstplng__",
+        975423601890539,
+        "randomize",
+        true,
+        "wide shot, otaku room, dusk, sunbeam, sidelighting, colored shadow, 1girl, frieren, frieren: beyond journey's end, silver hair, green eyes, large breasts, sleepwear, one breast out, solo, nipple flick, finger on nipple, gasping, mouth open",
+        "[cartoon] 2D cartoon, bold outlines, flat colors, exaggerated expressions, cartoon-style animation, lower body, river, night, sunbeam, backlighting, shade, 1girl, catwoman, dc comics, black hair, blue eyes , large breasts, bitchsuit, clothes lift, solo, clothes lift, grabbing own breast, breast press, tongue out, saliva drip, saliva on breasts",
+        0.5,
+        "wide shot, otaku room, dusk, sunbeam, sidelighting, colored shadow, 1girl, frieren, frieren: beyond journey's end, silver hair, green eyes, large breasts, sleepwear, one breast out, solo, nipple flick, finger on nipple, gasping, mouth open"
+      ],
+      "widgets_values_named": {
+        "text": "__mbe/prmpt/imgcmp/shots__, __mbe/prmpt/lctns/rndmlctns__, __mbe/prmpt/light/rndmlight__, __mbe/prmpt/char/favchar__, large breasts, __mbe/prmpt/clths/rndmclth__, __mbe/prmpt/clths/nudty_brsts__, __mbe/actsolo/brstplng__",
+        "seed": 975423601890539,
+        "control_after_generate": "randomize",
+        "populate": true,
+        "populated_text": "wide shot, otaku room, dusk, sunbeam, sidelighting, colored shadow, 1girl, frieren, frieren: beyond journey's end, silver hair, green eyes, large breasts, sleepwear, one breast out, solo, nipple flick, finger on nipple, gasping, mouth open",
+        "deduplicate": "[cartoon] 2D cartoon, bold outlines, flat colors, exaggerated expressions, cartoon-style animation, lower body, river, night, sunbeam, backlighting, shade, 1girl, catwoman, dc comics, black hair, blue eyes , large breasts, bitchsuit, clothes lift, solo, clothes lift, grabbing own breast, breast press, tongue out, saliva drip, saliva on breasts",
+        "downvote_factor": 0.5,
+        "preview": "wide shot, otaku room, dusk, sunbeam, sidelighting, colored shadow, 1girl, frieren, frieren: beyond journey's end, silver hair, green eyes, large breasts, sleepwear, one breast out, solo, nipple flick, finger on nipple, gasping, mouth open"
+      },
+      "color": "#323",
+      "bgcolor": "#535"
     },
     {
       "id": 105,
@@ -635,18 +594,6 @@
             "name": "vae_name_1"
           },
           "link": null
-        },
-        {
-          "name": "first_frame",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "last_frame",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
         }
       ],
       "outputs": [
@@ -690,35 +637,82 @@
         1344,
         768,
         5,
-        173242267070334,
+        918847677325553,
         "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
         "minimax_h3_video_vae_fp16.safetensors",
         "minimax_h3_audio_vae_fp32.safetensors",
         8,
         "minimax_h3_turbo_v4_step600_ema.safetensors",
-        "Qwen3.5-4B-heretic-v2",
+        "Qwen3.5-9B-ultra-uncensored-heretic",
         "🎬 MiniMax H3 NSFW (5s)",
-        "None"
+        "[PAN_RIGHT]",
+        "[PHOTOREALISTIC]"
       ],
       "widgets_values_named": {
         "prompt": "",
         "width": 1344,
         "height": 768,
         "value_1": 5,
-        "noise_seed": 173242267070334,
+        "noise_seed": 918847677325553,
         "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         "clip_name": "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
         "vae_name": "minimax_h3_video_vae_fp16.safetensors",
         "vae_name_1": "minimax_h3_audio_vae_fp32.safetensors",
         "steps": 8,
         "lora_name": "minimax_h3_turbo_v4_step600_ema.safetensors",
-        "model_name": "Qwen3.5-4B-heretic-v2",
+        "model_name": "Qwen3.5-9B-ultra-uncensored-heretic",
         "enhancement_style": "🎬 MiniMax H3 NSFW (5s)",
-        "camera_tag": "None"
+        "camera_tag": "[PAN_RIGHT]",
+        "style_tag": "[PHOTOREALISTIC]"
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 137,
+      "type": "easy showAnything",
+      "pos": [
+        -856.1781450430237,
+        5402.11021783787
+      ],
+      "size": [
+        656.8253750145943,
+        330.12154760866815
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "title": "QWEN3VL GENERATED PROMPT",
+      "properties": {
+        "aux_id": "yolain/ComfyUI-Easy-Use",
+        "Node name for S&R": "easy showAnything",
+        "cnr_id": "comfyui-easy-use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7"
+      },
+      "widgets_values": [
+        "integrated_multimodal_description: [Shot 1] Live-action, cinematic photorealism, a medium-wide shot captures Frieren from Beyond Journey's End lounging in her otaku room during dusk, where golden sunbeams pierce through blinds casting long colored shadows across the floor. She has flowing silver hair, piercing green eyes, and a voluptuous figure clad in sheer sleepwear with one breast exposed, nipples visible. As she lies back, her chest rises and falls heavily, causing a distinct nipple flick against her skin; her hand moves to gently pinch and stroke her nipple, eliciting a sharp gasp as her mouth opens wide in pleasure. The camera executes a smooth, continuous horizontal pan from left to right, revealing more of the cluttered anime memorabilia and dust motes dancing in the light beams, while maintaining focus on her reacting face and the rhythmic motion of her body. Diegetic sounds fill the air with the rustle of fabric shifting, the wet thud of skin pinching, heavy labored breathing, and a loud, expressive gasp followed by low moans vibrating in the quiet room.\n\noverall_soundscape: The soundscape is dominated by the intimate, close-range audio of her heavy breathing syncing with her rising hips, punctuated by the squelch and friction of skin-on-skin contact as her fingers work her sensitive spot. Layers of soft fabric rustling mix with the wet slap of her body moving slightly in bed, creating a humid, sensory-rich atmosphere of pure relaxation and arousal without external noise.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "text": "integrated_multimodal_description: [Shot 1] Live-action, cinematic photorealism, a medium-wide shot captures Frieren from Beyond Journey's End lounging in her otaku room during dusk, where golden sunbeams pierce through blinds casting long colored shadows across the floor. She has flowing silver hair, piercing green eyes, and a voluptuous figure clad in sheer sleepwear with one breast exposed, nipples visible. As she lies back, her chest rises and falls heavily, causing a distinct nipple flick against her skin; her hand moves to gently pinch and stroke her nipple, eliciting a sharp gasp as her mouth opens wide in pleasure. The camera executes a smooth, continuous horizontal pan from left to right, revealing more of the cluttered anime memorabilia and dust motes dancing in the light beams, while maintaining focus on her reacting face and the rhythmic motion of her body. Diegetic sounds fill the air with the rustle of fabric shifting, the wet thud of skin pinching, heavy labored breathing, and a loud, expressive gasp followed by low moans vibrating in the quiet room.\n\noverall_soundscape: The soundscape is dominated by the intimate, close-range audio of her heavy breathing syncing with her rising hips, punctuated by the squelch and friction of skin-on-skin contact as her fingers work her sensitive spot. Layers of soft fabric rustling mix with the wet slap of her body moving slightly in bed, creating a humid, sensory-rich atmosphere of pure relaxation and arousal without external noise.\n\nnon_diegetic_music: N/A"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
     }
   ],
   "links": [
@@ -828,8 +822,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 16,
-          "lastNodeId": 212,
-          "lastLinkId": 434,
+          "lastNodeId": 213,
+          "lastLinkId": 441,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -841,7 +835,7 @@
             -2560,
             4720,
             158.056640625,
-            368
+            348
           ]
         },
         "outputNode": {
@@ -859,7 +853,7 @@
             "name": "prompt",
             "type": "STRING",
             "linkIds": [
-              431
+              435
             ],
             "pos": [
               -2425.943359375,
@@ -965,30 +959,6 @@
             ]
           },
           {
-            "id": "d6eaa195-2266-4016-b7ed-b2d17a3e53c2",
-            "name": "first_frame",
-            "type": "IMAGE",
-            "linkIds": [
-              195
-            ],
-            "pos": [
-              -2425.943359375,
-              4924
-            ]
-          },
-          {
-            "id": "03b95567-f496-4279-9d38-989dd34fa882",
-            "name": "last_frame",
-            "type": "IMAGE",
-            "linkIds": [
-              196
-            ],
-            "pos": [
-              -2425.943359375,
-              4944
-            ]
-          },
-          {
             "id": "d0aff93f-003f-4601-863b-594c25e437c2",
             "name": "steps",
             "type": "INT",
@@ -997,7 +967,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4964
+              4924
             ]
           },
           {
@@ -1009,7 +979,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4984
+              4944
             ]
           },
           {
@@ -1017,11 +987,11 @@
             "name": "model_name",
             "type": "COMBO",
             "linkIds": [
-              432
+              436
             ],
             "pos": [
               -2425.943359375,
-              5004
+              4964
             ]
           },
           {
@@ -1029,11 +999,11 @@
             "name": "enhancement_style",
             "type": "COMBO",
             "linkIds": [
-              433
+              437
             ],
             "pos": [
               -2425.943359375,
-              5024
+              4984
             ]
           },
           {
@@ -1041,11 +1011,23 @@
             "name": "camera_tag",
             "type": "COMBO",
             "linkIds": [
-              434
+              438
             ],
             "pos": [
               -2425.943359375,
-              5044
+              5004
+            ]
+          },
+          {
+            "id": "a2c04db0-b273-43b7-8b93-7939756269d0",
+            "name": "style_tag",
+            "type": "COMBO",
+            "linkIds": [
+              439
+            ],
+            "pos": [
+              -2425.943359375,
+              5024
             ]
           }
         ],
@@ -1092,7 +1074,7 @@
             "name": "output",
             "type": "*",
             "linkIds": [
-              430
+              441
             ],
             "label": "PROMPT",
             "pos": [
@@ -1115,7 +1097,7 @@
               90
             ],
             "flags": {},
-            "order": 1,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
@@ -1171,7 +1153,7 @@
               82
             ],
             "flags": {},
-            "order": 16,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -1220,7 +1202,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 3,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -1265,7 +1247,7 @@
               70
             ],
             "flags": {},
-            "order": 4,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -1320,7 +1302,7 @@
               120
             ],
             "flags": {},
-            "order": 5,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -1378,7 +1360,7 @@
               140
             ],
             "flags": {},
-            "order": 6,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -1449,7 +1431,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 9,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -1494,7 +1476,7 @@
               70
             ],
             "flags": {},
-            "order": 10,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -1548,7 +1530,7 @@
               126
             ],
             "flags": {},
-            "order": 11,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -1605,7 +1587,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 13,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -1670,7 +1652,7 @@
               70
             ],
             "flags": {},
-            "order": 14,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -1718,7 +1700,7 @@
               402.4929101562493
             ],
             "flags": {},
-            "order": 17,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -1746,8 +1728,8 @@
             ],
             "properties": {
               "aux_id": "Saganaki22/ComfyUI-sol-attn",
-              "ver": "e1d211026583064d33dc4326207c6502e2442208",
-              "Node name for S&R": "MiniMaxH3ScheduledSolAttentionPatch"
+              "Node name for S&R": "MiniMaxH3ScheduledSolAttentionPatch",
+              "ver": "e1d211026583064d33dc4326207c6502e2442208"
             },
             "widgets_values": [
               true,
@@ -1792,7 +1774,7 @@
               58
             ],
             "flags": {},
-            "order": 18,
+            "order": 19,
             "mode": 0,
             "inputs": [
               {
@@ -1814,8 +1796,8 @@
             ],
             "properties": {
               "aux_id": "Saganaki22/ComfyUI-sol-attn",
-              "ver": "e1d211026583064d33dc4326207c6502e2442208",
-              "Node name for S&R": "MiniMaxH3FusedModulation"
+              "Node name for S&R": "MiniMaxH3FusedModulation",
+              "ver": "e1d211026583064d33dc4326207c6502e2442208"
             },
             "widgets_values": [
               true
@@ -1838,7 +1820,7 @@
               106
             ],
             "flags": {},
-            "order": 19,
+            "order": 20,
             "mode": 0,
             "inputs": [
               {
@@ -1860,8 +1842,8 @@
             ],
             "properties": {
               "aux_id": "Saganaki22/ComfyUI-sol-attn",
-              "ver": "e1d211026583064d33dc4326207c6502e2442208",
-              "Node name for S&R": "MiniMaxH3ChunkFeedForward"
+              "Node name for S&R": "MiniMaxH3ChunkFeedForward",
+              "ver": "e1d211026583064d33dc4326207c6502e2442208"
             },
             "widgets_values": [
               true,
@@ -1888,7 +1870,7 @@
               112.578125
             ],
             "flags": {},
-            "order": 15,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -1918,10 +1900,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-minimax-h3-turbo",
-              "ver": "55fee864dd7b2976b1c4ce3c3d5f7968f181409f",
+              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo",
               "Node name for S&R": "MiniMaxH3TurboLoRA",
-              "aux_id": "Larryvrh/ComfyUI-MiniMax-H3-Turbo"
+              "cnr_id": "comfyui-minimax-h3-turbo",
+              "ver": "55fee864dd7b2976b1c4ce3c3d5f7968f181409f"
             },
             "widgets_values": [
               "minimax_h3_turbo_v4_step600_ema.safetensors",
@@ -1946,7 +1928,7 @@
               130
             ],
             "flags": {},
-            "order": 2,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
@@ -2040,7 +2022,7 @@
               60
             ],
             "flags": {},
-            "order": 8,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -2084,7 +2066,7 @@
               90
             ],
             "flags": {},
-            "order": 7,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -2133,7 +2115,7 @@
               658
             ],
             "flags": {},
-            "order": 20,
+            "order": 21,
             "mode": 0,
             "inputs": [
               {
@@ -2155,10 +2137,10 @@
             ],
             "title": "Spectrum H3",
             "properties": {
-              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3",
-              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0",
+              "aux_id": "xmarre/ComfyUI-Spectrum-MiniMax-H3",
               "Node name for S&R": "SpectrumApplyMiniMaxH3",
-              "aux_id": "xmarre/ComfyUI-Spectrum-MiniMax-H3"
+              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3",
+              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0"
             },
             "widgets_values": [
               true,
@@ -2231,7 +2213,7 @@
               550
             ],
             "flags": {},
-            "order": 12,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -2251,14 +2233,14 @@
                 "name": "first_frame",
                 "shape": 7,
                 "type": "IMAGE",
-                "link": 195
+                "link": null
               },
               {
                 "localized_name": "last_frame",
                 "name": "last_frame",
                 "shape": 7,
                 "type": "IMAGE",
-                "link": 196
+                "link": null
               },
               {
                 "localized_name": "prompt",
@@ -2267,7 +2249,7 @@
                 "widget": {
                   "name": "prompt"
                 },
-                "link": 429
+                "link": 440
               },
               {
                 "localized_name": "width",
@@ -2334,7 +2316,7 @@
             }
           },
           {
-            "id": 212,
+            "id": 213,
             "type": "AILab_QwenVL_PromptEnhancer",
             "pos": [
               -2045.4744860015862,
@@ -2345,7 +2327,7 @@
               478
             ],
             "flags": {},
-            "order": 21,
+            "order": 1,
             "mode": 0,
             "inputs": [
               {
@@ -2355,7 +2337,7 @@
                 "widget": {
                   "name": "model_name"
                 },
-                "link": 432
+                "link": 436
               },
               {
                 "localized_name": "prompt_text",
@@ -2364,7 +2346,7 @@
                 "widget": {
                   "name": "prompt_text"
                 },
-                "link": 431
+                "link": 435
               },
               {
                 "localized_name": "enhancement_style",
@@ -2373,7 +2355,7 @@
                 "widget": {
                   "name": "enhancement_style"
                 },
-                "link": 433
+                "link": 437
               },
               {
                 "localized_name": "camera_tag",
@@ -2382,7 +2364,16 @@
                 "widget": {
                   "name": "camera_tag"
                 },
-                "link": 434
+                "link": 438
+              },
+              {
+                "localized_name": "style_tag",
+                "name": "style_tag",
+                "type": "COMBO",
+                "widget": {
+                  "name": "style_tag"
+                },
+                "link": 439
               }
             ],
             "outputs": [
@@ -2391,18 +2382,18 @@
                 "name": "ENHANCED_OUTPUT",
                 "type": "STRING",
                 "links": [
-                  429,
-                  430
+                  440,
+                  441
                 ]
               }
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "ver": "4daa881fffefd050c6a02f3bd840e2c6c9b6fa06",
-              "Node name for S&R": "AILab_QwenVL_PromptEnhancer"
+              "Node name for S&R": "AILab_QwenVL_PromptEnhancer",
+              "ver": "4daa881fffefd050c6a02f3bd840e2c6c9b6fa06"
             },
             "widgets_values": [
-              "Qwen3.5-4B-heretic-v2",
+              "Qwen3.5-9B-ultra-uncensored-heretic",
               "None (FP16)",
               "auto",
               false,
@@ -2410,17 +2401,18 @@
               "",
               "🎬 MiniMax H3 NSFW (5s)",
               "None",
+              "None",
               8192,
               0.7,
               0.9,
               1.1,
               false,
-              2205869080,
+              3358488670,
               "randomize",
               false
             ],
             "widgets_values_named": {
-              "model_name": "Qwen3.5-4B-heretic-v2",
+              "model_name": "Qwen3.5-9B-ultra-uncensored-heretic",
               "quantization": "None (FP16)",
               "attention_mode": "auto",
               "use_torch_compile": false,
@@ -2428,12 +2420,13 @@
               "prompt_text": "",
               "enhancement_style": "🎬 MiniMax H3 NSFW (5s)",
               "camera_tag": "None",
+              "style_tag": "None",
               "max_tokens": 8192,
               "temperature": 0.7,
               "top_p": 0.9,
               "repetition_penalty": 1.1,
               "keep_model_loaded": false,
-              "seed": 2205869080,
+              "seed": 3358488670,
               "control_after_generate": "randomize",
               "keep_last_prompt": false
             },
@@ -2597,22 +2590,6 @@
             "type": "VIDEO"
           },
           {
-            "id": 195,
-            "origin_id": -10,
-            "origin_slot": 9,
-            "target_id": 104,
-            "target_slot": 2,
-            "type": "IMAGE"
-          },
-          {
-            "id": 196,
-            "origin_id": -10,
-            "origin_slot": 10,
-            "target_id": 104,
-            "target_slot": 3,
-            "type": "IMAGE"
-          },
-          {
             "id": 199,
             "origin_id": 107,
             "origin_slot": 1,
@@ -2743,7 +2720,7 @@
           {
             "id": 273,
             "origin_id": -10,
-            "origin_slot": 11,
+            "origin_slot": 9,
             "target_id": 9,
             "target_slot": 1,
             "type": "INT"
@@ -2783,7 +2760,7 @@
           {
             "id": 417,
             "origin_id": -10,
-            "origin_slot": 12,
+            "origin_slot": 10,
             "target_id": 156,
             "target_slot": 1,
             "type": "COMBO"
@@ -2829,52 +2806,60 @@
             "type": "MODEL"
           },
           {
-            "id": 429,
-            "origin_id": 212,
+            "id": 435,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 213,
+            "target_slot": 1,
+            "type": "STRING"
+          },
+          {
+            "id": 436,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": 213,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 437,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": 213,
+            "target_slot": 2,
+            "type": "COMBO"
+          },
+          {
+            "id": 438,
+            "origin_id": -10,
+            "origin_slot": 13,
+            "target_id": 213,
+            "target_slot": 3,
+            "type": "COMBO"
+          },
+          {
+            "id": 439,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 213,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 440,
+            "origin_id": 213,
             "origin_slot": 0,
             "target_id": 104,
             "target_slot": 4,
             "type": "STRING"
           },
           {
-            "id": 430,
-            "origin_id": 212,
+            "id": 441,
+            "origin_id": 213,
             "origin_slot": 0,
             "target_id": -20,
             "target_slot": 3,
             "type": "STRING"
-          },
-          {
-            "id": 431,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 212,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 432,
-            "origin_id": -10,
-            "origin_slot": 13,
-            "target_id": 212,
-            "target_slot": 0,
-            "type": "COMBO"
-          },
-          {
-            "id": 433,
-            "origin_id": -10,
-            "origin_slot": 14,
-            "target_id": 212,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 434,
-            "origin_id": -10,
-            "origin_slot": 15,
-            "target_id": 212,
-            "target_slot": 3,
-            "type": "COMBO"
           }
         ],
         "extra": {}
@@ -2884,8 +2869,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 16,
-          "lastNodeId": 212,
-          "lastLinkId": 434,
+          "lastNodeId": 213,
+          "lastLinkId": 441,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3090,8 +3075,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
-              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
-              "Node name for S&R": "AutoLoadRifeTensorrtModel"
+              "Node name for S&R": "AutoLoadRifeTensorrtModel",
+              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -3173,8 +3158,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
-              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
-              "Node name for S&R": "AutoRifeTensorrt"
+              "Node name for S&R": "AutoRifeTensorrt",
+              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92"
             },
             "widgets_values": [
               100,
@@ -3239,8 +3224,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
-              "Node name for S&R": "LoadUpscalerTensorrtModel"
+              "Node name for S&R": "LoadUpscalerTensorrtModel",
+              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -3313,8 +3298,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
-              "Node name for S&R": "UpscalerTensorrt"
+              "Node name for S&R": "UpscalerTensorrt",
+              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687"
             },
             "widgets_values": [
               "1080p",
@@ -3476,10 +3461,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7579409543179699,
+      "scale": 0.8264462809917354,
       "offset": [
-        2145.531065577911,
-        -4245.566643471387
+        1963.1280776741476,
+        -4147.744856678771
       ]
     }
   },
