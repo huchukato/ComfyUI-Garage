@@ -55,7 +55,24 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
 # ──────────────────────────────────────────────────────────────────────────────
 RUN mkdir -p /opt/comfyui-baked/models/vae && \
     mkdir -p /opt/comfyui-baked/models/diffusion_models && \
-    mkdir -p /opt/comfyui-baked/models/text_encoders
+    mkdir -p /opt/comfyui-baked/models/text_encoders && \
+    mkdir -p /opt/comfyui-baked/models/upscale_models
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Pre-baked 4x upscaler models (~340MB, PTH format for standard ComfyUI upscaler)
+# ──────────────────────────────────────────────────────────────────────────────
+RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/4xUltrasharp_4xUltrasharpV10.pth" \
+        -O /opt/comfyui-baked/models/upscale_models/4xUltrasharp_4xUltrasharpV10.pth && \
+    wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/4x-AnimeSharp.pth" \
+        -O /opt/comfyui-baked/models/upscale_models/4x-AnimeSharp.pth && \
+    wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/4xNomos2_hq_dat2.pth" \
+        -O /opt/comfyui-baked/models/upscale_models/4xNomos2_hq_dat2.pth && \
+    wget -q --tries=5 --timeout=60 --retry-connrefused \
+        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/RealESRGAN_x4plus.pth" \
+        -O /opt/comfyui-baked/models/upscale_models/RealESRGAN_x4plus.pth
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Optional Hugging Face token (runtime env var) for gated/high-rate-limit
