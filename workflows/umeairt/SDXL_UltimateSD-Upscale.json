@@ -1,0 +1,386 @@
+{
+  "id": "f30dd463-d8c5-44f6-98b9-98964a1e58a6",
+  "revision": 0,
+  "last_node_id": 52,
+  "last_link_id": 63,
+  "nodes": [
+    {
+      "id": 9,
+      "type": "UmeAiRT_PipelineImageSaver",
+      "pos": [
+        3340.0000791358525,
+        170.0000049952073
+      ],
+      "size": [
+        550,
+        850
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "gen_pipe",
+          "type": "UME_PIPELINE",
+          "link": 61
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "aux_id": "UmeAiRT/ComfyUI-UmeAiRT-Toolkit",
+        "ver": "516987a96eb20591e340acd038d58410e06cfe60",
+        "Node name for S&R": "UmeAiRT_PipelineImageSaver",
+        "cnr_id": "comfyui-umeairt-toolkit"
+      },
+      "widgets_values": [
+        "Upscale/%date/%time_%seed"
+      ],
+      "color": "#1A5653",
+      "bgcolor": "#0D2B29",
+      "shape": 1
+    },
+    {
+      "id": 39,
+      "type": "UmeAiRT_BlockImageLoader",
+      "pos": [
+        2320.000023649347,
+        170.0000049952073
+      ],
+      "size": [
+        500,
+        610
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image_bundle",
+          "type": "UME_IMAGE",
+          "links": [
+            51
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit",
+        "ver": "cda2d295225e3faa1610c17d135b59befa618edd",
+        "Node name for S&R": "UmeAiRT_BlockImageLoader",
+        "cnr_id": "comfyui-umeairt-toolkit"
+      },
+      "widgets_values": [
+        "5eaff214-5266-4355-9fe4-dd122137700a.jpeg",
+        "image"
+      ],
+      "color": "#6B2D1A",
+      "bgcolor": "#35160D",
+      "shape": 1
+    },
+    {
+      "id": 41,
+      "type": "UmeAiRT_PackPipeline",
+      "pos": [
+        2320,
+        820
+      ],
+      "size": [
+        500,
+        199.328125
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "UME_IMAGE",
+          "link": 51
+        },
+        {
+          "name": "model_bundle",
+          "shape": 7,
+          "type": "UME_BUNDLE",
+          "link": 55
+        },
+        {
+          "name": "positive",
+          "shape": 7,
+          "type": "POSITIVE",
+          "link": null
+        },
+        {
+          "name": "negative",
+          "shape": 7,
+          "type": "NEGATIVE",
+          "link": null
+        },
+        {
+          "name": "settings",
+          "shape": 7,
+          "type": "UME_SETTINGS",
+          "link": null
+        },
+        {
+          "name": "loras",
+          "shape": 7,
+          "type": "UME_LORA_STACK",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "gen_pipe",
+          "type": "UME_PIPELINE",
+          "links": [
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit",
+        "ver": "e859c4ff373c541e48b9f501c377494fda44b9a3",
+        "Node name for S&R": "UmeAiRT_PackPipeline"
+      },
+      "widgets_values": [
+        67037736115091,
+        "randomize"
+      ],
+      "color": "#2C3E50",
+      "bgcolor": "#1A252F",
+      "shape": 1
+    },
+    {
+      "id": 46,
+      "type": "UmeAiRT_FilesSettings_Checkpoint",
+      "pos": [
+        1809.9999681628406,
+        170.00003273846016
+      ],
+      "size": [
+        500,
+        150
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "showAdvanced": true,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model_bundle",
+          "type": "UME_BUNDLE",
+          "links": [
+            55
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit",
+        "ver": "e859c4ff373c541e48b9f501c377494fda44b9a3",
+        "Node name for S&R": "UmeAiRT_FilesSettings_Checkpoint"
+      },
+      "widgets_values": [
+        "waiNSFWIllustrious_v130.safetensors",
+        "Baked VAE",
+        1
+      ],
+      "color": "#154360",
+      "bgcolor": "#0A2130",
+      "shape": 1
+    },
+    {
+      "id": 51,
+      "type": "UmeAiRT_PipelineUltimateUpscale",
+      "pos": [
+        2830.0000791358525,
+        170.0000049952073
+      ],
+      "size": [
+        500,
+        820
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "showAdvanced": true,
+      "inputs": [
+        {
+          "name": "gen_pipe",
+          "type": "UME_PIPELINE",
+          "link": 60
+        }
+      ],
+      "outputs": [
+        {
+          "name": "gen_pipe",
+          "type": "UME_PIPELINE",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit",
+        "ver": "e859c4ff373c541e48b9f501c377494fda44b9a3",
+        "Node name for S&R": "UmeAiRT_PipelineUltimateUpscale"
+      },
+      "widgets_values": [
+        true,
+        "4x-AnimeSharp.pth",
+        2,
+        0.35,
+        true,
+        0,
+        1,
+        "euler",
+        "simple",
+        "Linear",
+        1024,
+        1024,
+        8,
+        32,
+        "None",
+        1,
+        64,
+        8,
+        16,
+        true,
+        false
+      ],
+      "color": "#2471A3",
+      "bgcolor": "#123851",
+      "shape": 1
+    },
+    {
+      "id": 52,
+      "type": "UmeAiRT_LoraBlock_5",
+      "pos": [
+        1809.999945137548,
+        390.00001861834323
+      ],
+      "size": [
+        500,
+        630
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "loras",
+          "shape": 7,
+          "type": "UME_LORA_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "loras",
+          "type": "UME_LORA_STACK",
+          "links": [
+            63
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit",
+        "ver": "e859c4ff373c541e48b9f501c377494fda44b9a3",
+        "Node name for S&R": "UmeAiRT_LoraBlock_5"
+      },
+      "widgets_values": [
+        false,
+        "None",
+        1,
+        false,
+        "None",
+        1,
+        false,
+        "None",
+        1,
+        false,
+        "None",
+        1,
+        false,
+        "None",
+        1
+      ],
+      "color": "#4A235A",
+      "bgcolor": "#25122D",
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      51,
+      39,
+      0,
+      41,
+      0,
+      "UME_IMAGE"
+    ],
+    [
+      55,
+      46,
+      0,
+      41,
+      1,
+      "UME_BUNDLE"
+    ],
+    [
+      60,
+      41,
+      0,
+      51,
+      0,
+      "UME_PIPELINE"
+    ],
+    [
+      61,
+      51,
+      0,
+      9,
+      0,
+      "UME_PIPELINE"
+    ],
+    [
+      63,
+      52,
+      0,
+      41,
+      5,
+      "UME_LORA_STACK"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "UmeAiRT - SDXL - UltimateSD Upscale",
+      "bounding": [
+        1800,
+        100,
+        2100,
+        930
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.1,
+      "offset": [
+        -1665.7578005134826,
+        83.13987547305037
+      ]
+    },
+    "frontendVersion": "1.42.15",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

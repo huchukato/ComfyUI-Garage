@@ -72,10 +72,19 @@ RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
 # ──────────────────────────────────────────────────────────────────────────────
 # Pre-baked Pony workflow
 # ──────────────────────────────────────────────────────────────────────────────
-RUN mkdir -p /opt/comfyui-baked/user/default/workflows/{pony,utils} && \
+RUN mkdir -p /opt/comfyui-baked/user/default/workflows/{pony,utils,umeairt} && \
     cd /opt/comfyui-baked/user/default/workflows && \
     wget -q -P pony "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json" && \
-    wget -q -P utils "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
+    wget -q -P utils "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json" && \
+    wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Outpaint.json" && \
+    wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Inpaint.json" && \
+    wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Img2Img.json" && \
+    wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Txt2Img.json" && \
+    wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_LoraTester.json" && \
+    wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_UltimateSD-Upscale.json" && \
+    wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_ControlNet.json" && \
+    wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/Z-IMG_ALL2IMG.json" && \
+    wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/AllToolkitNodes.json"
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Enable Rust-based Hugging Face downloader (hf-transfer) for model downloads
@@ -275,6 +284,15 @@ update_custom_nodes() {
 WORKFLOWS=(
     "pony/PimpMyPony-TagComplete-Wildcards.json"
     "utils/2in1-LoRaStack-Merge.json"
+    "umeairt/SDXL_Outpaint.json"
+    "umeairt/SDXL_Inpaint.json"
+    "umeairt/SDXL_Img2Img.json"
+    "umeairt/SDXL_Txt2Img.json"
+    "umeairt/SDXL_LoraTester.json"
+    "umeairt/SDXL_UltimateSD-Upscale.json"
+    "umeairt/SDXL_ControlNet.json"
+    "umeairt/Z-IMG_ALL2IMG.json"
+    "umeairt/AllToolkitNodes.json"
 )
 WF_BASE_URL="https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows"
 WF_BAKED="/opt/comfyui-baked/user/default/workflows"
