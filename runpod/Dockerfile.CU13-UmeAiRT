@@ -72,19 +72,7 @@ RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
         -O /opt/comfyui-baked/models/upscale_models/2xLexicaRRDBNet_Sharp.pth && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
         "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/RealESRGAN_x2plus.pth" \
-        -O /opt/comfyui-baked/models/upscale_models/RealESRGAN_x2plus.pth && \
-    wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/4xUltrasharp_4xUltrasharpV10.pth" \
-        -O /opt/comfyui-baked/models/upscale_models/4xUltrasharp_4xUltrasharpV10.pth && \
-    wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/4x-AnimeSharp.pth" \
-        -O /opt/comfyui-baked/models/upscale_models/4x-AnimeSharp.pth && \
-    wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/4xNomos2_hq_dat2.pth" \
-        -O /opt/comfyui-baked/models/upscale_models/4xNomos2_hq_dat2.pth && \
-    wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/RealESRGAN_x4plus.pth" \
-        -O /opt/comfyui-baked/models/upscale_models/RealESRGAN_x4plus.pth
+        -O /opt/comfyui-baked/models/upscale_models/RealESRGAN_x2plus.pth
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Pre-baked Pony workflow
