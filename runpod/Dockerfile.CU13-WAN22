@@ -42,8 +42,8 @@ RUN dl_gh() { \
     dl_gh huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
     dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete && \
     dl_gh huchukato ComfyUI-Selectors main ComfyUI-Selectors && \
-    dl_gh ltdrdata ComfyUI-Impact-Pack main ComfyUI-Impact-Pack && \
-    dl_gh ltdrdata ComfyUI-Impack-Subpack main ComfyUI-Impack-Subpack
+    dl_gh ltdrdata ComfyUI-Impact-Pack Main ComfyUI-Impact-Pack && \
+    dl_gh ltdrdata ComfyUI-Impact-Subpack main ComfyUI-Impact-Subpack
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)
