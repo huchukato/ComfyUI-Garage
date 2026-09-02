@@ -95,7 +95,7 @@ The T2VA Turbo workflow includes a **WildcardProcessor** node that injects rando
 
 ### 🔄 Sampler Change — MiniMaxH3TurboSampler → KSamplerSelect + MiniMaxH3SigmaShift
 
-All 5 Turbo workflows (T2VA, I2VA, FL2VA, FL2VA Loop, R2VA) have been updated to use **ComfyUI core nodes** instead of the custom `MiniMaxH3TurboSampler`:
+All 4 Turbo workflows (T2VA, I2VA, FL2VA, R2VA) have been updated to use **ComfyUI core nodes** instead of the custom `MiniMaxH3TurboSampler`:
 
 - **Removed**: `MiniMaxH3TurboSampler` (custom node from `Larryvrh/ComfyUI-MiniMax-H3-Turbo`)
 - **Added**: `KSamplerSelect` (sampler: `euler`) + `MiniMaxH3SigmaShift` (shift_video=12, shift_audio=3) — both **ComfyUI core nodes**, no custom node required

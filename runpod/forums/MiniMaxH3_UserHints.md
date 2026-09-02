@@ -11,10 +11,9 @@
 | `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only | 🎬 |
 | `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image (`image`) | 🎬 |
 | `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame (`image`) + last-frame (`image2`) | 🔄 |
-| `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.json` | 🔄 **FL2VA Loop** | text + same image for both frames | 🔄 |
 | `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA** | text + reference images (`image` + `image2`) | 🎞️ |
 > 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.
-> 🔄 **Loop workflow** automatically trims the frozen tail (~5 frames) and sets infinite playback. Use the same image for both frames.
+> 🔄 **Loop mode**: use the same image for both frames in FL2VA. The loop trim is built into the FL2VA workflow as a bypassable group (toggle via rgthree Fast Groups Bypasser).
 
 ---
 
@@ -227,11 +226,12 @@ When you load the **same image** as both first frame (`image`) and last frame (`
 - Camera motion uses continuous circular or oscillating movements that return to the starting position
 
 **To use loop mode:**
-1. Load `MiniMaxH3-Turbo-FL2VA-Loop-Qwen3.5.json` (dedicated loop workflow with automatic trim)
+1. Load `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` (the loop trim is built in as a bypassable group)
 2. Upload the **same image** to both `image` (first frame) and `image2` (last frame)
-3. Select preset `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`
-4. Describe the action — the preset handles the cyclic structure automatically
-5. (Optional) Add `[STATIC_CAMERA]` if you want no camera movement
+3. Enable the "Loop Trim" group via the rgthree Fast Groups Bypasser node
+4. Select preset `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`
+5. Describe the action — the preset handles the cyclic structure automatically
+6. (Optional) Add `[STATIC_CAMERA]` if you want no camera movement
 
 > ✂️ **Automatic trim**: The loop workflow includes a `Trim Frozen Tail` node that removes the last 5 frames (0.2s at 24fps) — the frozen tail that MiniMax H3 adds at the end of FL2VA generation. Update the `length` value if you change duration:
 > - 5s → `119` (124 - 5)
