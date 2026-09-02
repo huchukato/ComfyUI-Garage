@@ -81,11 +81,11 @@ LTX_MODELS=(
 
 
 YOLO_MODELS=(
-    "https://huggingface.co/huchukato/favs/resolve/main/adetailer/face_yolov8m.pt"
+    "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8m.pt"
 )
 
 SAM_MODELS=(
-    "https://huggingface.co/bingbangboom/sam_vit_b/resolve/main/sam_vit_b_01ec64.pth"
+    "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
