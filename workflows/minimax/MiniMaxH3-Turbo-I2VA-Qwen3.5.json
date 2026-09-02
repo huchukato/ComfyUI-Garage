@@ -2,7 +2,7 @@
   "id": "2e5fb033-7e4f-4e73-a580-590a2a38a074",
   "revision": 0,
   "last_node_id": 195,
-  "last_link_id": 390,
+  "last_link_id": 396,
   "nodes": [
     {
       "id": 135,
@@ -32,110 +32,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 178,
-      "type": "FindPerfectResolution",
-      "pos": [
-        -1574.2957697301467,
-        4921.491844932597
-      ],
-      "size": [
-        271.712890625,
-        332
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 341
-        },
-        {
-          "name": "mask",
-          "shape": 7,
-          "type": "MASK",
-          "link": null
-        },
-        {
-          "name": "desired_width",
-          "type": "INT",
-          "widget": {
-            "name": "desired_width"
-          },
-          "link": 342
-        },
-        {
-          "name": "desired_height",
-          "type": "INT",
-          "widget": {
-            "name": "desired_height"
-          },
-          "link": 343
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            345
-          ]
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            346
-          ]
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            344
-          ]
-        },
-        {
-          "name": "mask_output",
-          "type": "MASK",
-          "links": null
-        },
-        {
-          "name": "resolution_info",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
-        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
-        "Node name for S&R": "FindPerfectResolution"
-      },
-      "widgets_values": [
-        0,
-        0,
-        32,
-        false,
-        "lanczos",
-        "none",
-        "#000000"
-      ],
-      "widgets_values_named": {
-        "desired_width": 0,
-        "desired_height": 0,
-        "divisible_by": 32,
-        "upscale": false,
-        "upscale_method": "lanczos",
-        "small_image_mode": "none",
-        "pad_color": "#000000"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 159,
       "type": "WidgetToString",
       "pos": [
@@ -149,7 +45,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 9,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -218,161 +114,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 175,
-      "type": "PrimitiveInt",
-      "pos": [
-        -1149.0632992468281,
-        5084.074024776365
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "INT",
-          "widget": {
-            "name": "value"
-          },
-          "link": 381
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            343
-          ]
-        }
-      ],
-      "title": "HEIGHT",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.31.0",
-        "Node name for S&R": "PrimitiveInt"
-      },
-      "widgets_values": [
-        768,
-        "fixed"
-      ],
-      "widgets_values_named": {
-        "value": 768,
-        "fixed": "fixed"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 174,
-      "type": "PrimitiveInt",
-      "pos": [
-        -1148.6973703021179,
-        4959.947782715442
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "INT",
-          "widget": {
-            "name": "value"
-          },
-          "link": 380
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            342
-          ]
-        }
-      ],
-      "title": "WIDTH",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.31.0",
-        "Node name for S&R": "PrimitiveInt"
-      },
-      "widgets_values": [
-        1344,
-        "fixed"
-      ],
-      "widgets_values_named": {
-        "value": 1344,
-        "fixed": "fixed"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 194,
-      "type": "EmptyLatentImagePresets",
-      "pos": [
-        -1143.2720351053802,
-        4766.283936799482
-      ],
-      "size": [
-        263.5963064299982,
-        146
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "Latent",
-          "type": "LATENT",
-          "links": []
-        },
-        {
-          "name": "Width",
-          "type": "INT",
-          "links": [
-            380
-          ]
-        },
-        {
-          "name": "Height",
-          "type": "INT",
-          "links": [
-            381
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "1.2.2",
-        "Node name for S&R": "EmptyLatentImagePresets",
-        "aux_id": "kijai/ComfyUI-KJNodes"
-      },
-      "widgets_values": [
-        "1152 x 896 (1.286:1)",
-        true,
-        1
-      ],
-      "widgets_values_named": {
-        "dimensions": "1152 x 896 (1.286:1)",
-        "invert": true,
-        "batch_size": 1
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 126,
       "type": "VHS_VideoCombine",
       "pos": [
@@ -381,10 +122,10 @@
       ],
       "size": [
         471.684350491249,
-        1002.8701871409326
+        928.7370220601773
       ],
       "flags": {},
-      "order": 15,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -498,7 +239,7 @@
         106
       ],
       "flags": {},
-      "order": 12,
+      "order": 10,
       "mode": 4,
       "inputs": [
         {
@@ -544,53 +285,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 114,
-      "type": "LoadImage",
-      "pos": [
-        -1658.6997312899255,
-        4782.4301224545425
-      ],
-      "size": [
-        477.98084200614335,
-        807.3279897620059
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            299,
-            341
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "LoadImage",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "S02_EP07_NewJob_404.jpg",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "S02_EP07_NewJob_404.jpg",
-        "upload": "image"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 105,
       "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
       "pos": [
@@ -602,7 +296,7 @@
         488.1139551136903
       ],
       "flags": {},
-      "order": 11,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -611,7 +305,7 @@
           "widget": {
             "name": "width"
           },
-          "link": 345
+          "link": 395
         },
         {
           "name": "height",
@@ -619,7 +313,7 @@
           "widget": {
             "name": "height"
           },
-          "link": 346
+          "link": 396
         },
         {
           "label": "duration",
@@ -729,7 +423,7 @@
         334.35740569392055
       ],
       "flags": {},
-      "order": 14,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -774,7 +468,7 @@
         251.23139641139096
       ],
       "flags": {},
-      "order": 13,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -832,7 +526,7 @@
         240.071161494664
       ],
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -867,7 +561,7 @@
         573.3983160983225
       ],
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -894,7 +588,7 @@
         386.73203108836515
       ],
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -908,6 +602,212 @@
       },
       "color": "#332922",
       "bgcolor": "#593930"
+    },
+    {
+      "id": 178,
+      "type": "FindPerfectResolution",
+      "pos": [
+        -1583.3624820794814,
+        4816.5681495389135
+      ],
+      "size": [
+        271.712890625,
+        332
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 341
+        },
+        {
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": null
+        },
+        {
+          "name": "desired_width",
+          "type": "INT",
+          "widget": {
+            "name": "desired_width"
+          },
+          "link": 393
+        },
+        {
+          "name": "desired_height",
+          "type": "INT",
+          "widget": {
+            "name": "desired_height"
+          },
+          "link": 394
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            395
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            396
+          ]
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            344
+          ]
+        },
+        {
+          "name": "mask_output",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "resolution_info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
+        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
+        "Node name for S&R": "FindPerfectResolution"
+      },
+      "widgets_values": [
+        0,
+        0,
+        32,
+        false,
+        "lanczos",
+        "none",
+        "#000000"
+      ],
+      "widgets_values_named": {
+        "desired_width": 0,
+        "desired_height": 0,
+        "divisible_by": 32,
+        "upscale": false,
+        "upscale_method": "lanczos",
+        "small_image_mode": "none",
+        "pad_color": "#000000"
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 114,
+      "type": "LoadImage",
+      "pos": [
+        -1658.8835856455273,
+        4789.287387338087
+      ],
+      "size": [
+        477.98084200614335,
+        807.3279897620059
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            299,
+            341
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "LoadImage",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.1",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "S02_EP07_NewJob_404.jpg",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "S02_EP07_NewJob_404.jpg",
+        "upload": "image"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 194,
+      "type": "EmptyLatentImagePresets",
+      "pos": [
+        -1140.0835257366004,
+        4774.734601490132
+      ],
+      "size": [
+        263.5963064299982,
+        146
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "Latent",
+          "type": "LATENT",
+          "links": []
+        },
+        {
+          "name": "Width",
+          "type": "INT",
+          "links": [
+            393
+          ]
+        },
+        {
+          "name": "Height",
+          "type": "INT",
+          "links": [
+            394
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.2.2",
+        "Node name for S&R": "EmptyLatentImagePresets",
+        "aux_id": "kijai/ComfyUI-KJNodes"
+      },
+      "widgets_values": [
+        "1344 x 768 (1.75:1)",
+        false,
+        1
+      ],
+      "widgets_values_named": {
+        "dimensions": "1344 x 768 (1.75:1)",
+        "invert": false,
+        "batch_size": 1
+      },
+      "color": "#323",
+      "bgcolor": "#535"
     }
   ],
   "links": [
@@ -960,44 +860,12 @@
       "IMAGE"
     ],
     [
-      342,
-      174,
-      0,
-      178,
-      2,
-      "INT"
-    ],
-    [
-      343,
-      175,
-      0,
-      178,
-      3,
-      "INT"
-    ],
-    [
       344,
       178,
       2,
       105,
       4,
       "IMAGE"
-    ],
-    [
-      345,
-      178,
-      0,
-      105,
-      0,
-      "INT"
-    ],
-    [
-      346,
-      178,
-      1,
-      105,
-      1,
-      "INT"
     ],
     [
       355,
@@ -1024,19 +892,35 @@
       "IMAGE"
     ],
     [
-      380,
+      393,
       194,
       1,
-      174,
+      178,
+      2,
+      "INT"
+    ],
+    [
+      394,
+      194,
+      2,
+      178,
+      3,
+      "INT"
+    ],
+    [
+      395,
+      178,
+      0,
+      105,
       0,
       "INT"
     ],
     [
-      381,
-      194,
-      2,
-      175,
-      0,
+      396,
+      178,
+      1,
+      105,
+      1,
       "INT"
     ]
   ],
@@ -1074,7 +958,7 @@
         "state": {
           "lastGroupId": 13,
           "lastNodeId": 195,
-          "lastLinkId": 390,
+          "lastLinkId": 396,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1349,7 +1233,7 @@
               90
             ],
             "flags": {},
-            "order": 2,
+            "order": 1,
             "mode": 0,
             "inputs": [
               {
@@ -1407,7 +1291,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 4,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
@@ -1452,7 +1336,7 @@
               70
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -1507,7 +1391,7 @@
               120
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -1565,7 +1449,7 @@
               140
             ],
             "flags": {},
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -1636,7 +1520,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -1681,7 +1565,7 @@
               70
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -1735,7 +1619,7 @@
               126
             ],
             "flags": {},
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -1792,7 +1676,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 14,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -1857,7 +1741,7 @@
               70
             ],
             "flags": {},
-            "order": 15,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -1905,7 +1789,7 @@
               112.578125
             ],
             "flags": {},
-            "order": 16,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -1965,7 +1849,7 @@
               130
             ],
             "flags": {},
-            "order": 3,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
@@ -2022,7 +1906,7 @@
               60
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -2066,7 +1950,7 @@
               82
             ],
             "flags": {},
-            "order": 21,
+            "order": 20,
             "mode": 0,
             "inputs": [
               {
@@ -2113,7 +1997,7 @@
               90
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -2162,7 +2046,7 @@
               402.4929101562493
             ],
             "flags": {},
-            "order": 19,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -2236,7 +2120,7 @@
               58
             ],
             "flags": {},
-            "order": 18,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -2282,7 +2166,7 @@
               106
             ],
             "flags": {},
-            "order": 17,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -2332,7 +2216,7 @@
               658
             ],
             "flags": {},
-            "order": 20,
+            "order": 19,
             "mode": 0,
             "inputs": [
               {
@@ -2467,7 +2351,7 @@
               550
             ],
             "flags": {},
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -2581,7 +2465,7 @@
               516
             ],
             "flags": {},
-            "order": 1,
+            "order": 21,
             "mode": 0,
             "inputs": [
               {
@@ -3139,7 +3023,7 @@
         "state": {
           "lastGroupId": 13,
           "lastNodeId": 195,
-          "lastLinkId": 390,
+          "lastLinkId": 396,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3730,10 +3614,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.5982843441967866,
+      "scale": 0.8759481083385153,
       "offset": [
-        3136.0493595702737,
-        -4244.202828648478
+        2288.3597542368934,
+        -4458.183462279306
       ]
     }
   },
