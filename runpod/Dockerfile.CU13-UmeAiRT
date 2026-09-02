@@ -80,6 +80,7 @@ RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
 RUN mkdir -p /opt/comfyui-baked/user/default/workflows/{pony,utils,umeairt} && \
     cd /opt/comfyui-baked/user/default/workflows && \
     wget -q -P pony "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json" && \
+    wget -q -P pony "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json" && \
     wget -q -P utils "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json" && \
     wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Outpaint.json" && \
     wget -q -P umeairt "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/umeairt/SDXL_Inpaint.json" && \
@@ -288,6 +289,7 @@ update_custom_nodes() {
 
 WORKFLOWS=(
     "pony/PimpMyPony-TagComplete-Wildcards.json"
+    "pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
     "utils/2in1-LoRaStack-Merge.json"
     "umeairt/SDXL_Outpaint.json"
     "umeairt/SDXL_Inpaint.json"
