@@ -13,32 +13,29 @@ FROM huchukato/comfyui-base:cu130
 # ──────────────────────────────────────────────────────────────────────────────
 ARG CACHEBUST=1
 
-RUN cd /opt/comfyui-baked/custom_nodes && \
-    git clone https://github.com/Lightricks/ComfyUI-LTXVideo.git && \
-    git clone https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler.git && \
-    git clone https://github.com/ltdrdata/was-node-suite-comfyui.git && \
-    git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
-    git clone https://github.com/rgthree/rgthree-comfy.git && \
-    git clone https://github.com/yolain/ComfyUI-Easy-Use.git && \
-    git clone https://github.com/ashtar1984/comfyui-find-perfect-resolution.git && \
-    git clone https://github.com/domprosys/ComfyUI-LTXVideo-Extra.git && \
-    git clone https://github.com/huchukato/ComfyUI-QwenVL-Mod.git && \
-    git clone https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto.git && \
-    git clone https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto.git && \
-    git clone https://github.com/huchukato/ComfyUI-HuggingFace.git && \
-    git clone https://github.com/huchukato/comfy-tagcomplete.git && \
-    echo "Updating ALL baked custom nodes to latest..." && \
-    for node_dir in /opt/comfyui-baked/custom_nodes/*/; do \
-        if [ -d "$node_dir/.git" ]; then \
-            name=$(basename "$node_dir"); \
-            branch=$(git -C "$node_dir" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main"); \
-            echo "  Updating $name ($branch)..."; \
-            git -C "$node_dir" fetch origin "$branch" 2>/dev/null && \
-            git -C "$node_dir" reset --hard "origin/$branch" 2>/dev/null && \
-            git -C "$node_dir" clean -fd 2>/dev/null && \
-            echo "  ✅ $name" || echo "  ⚠️ $name failed"; \
-        fi; \
-    done
+ENV GIT_TERMINAL_PROMPT=0
+RUN dl_gh() { \
+    local user="$1" repo="$2" branch="${3:-main}" dir="$4"; \
+    echo "Downloading $user/$repo ($branch) -> $dir"; \
+    curl -fsSL "https://codeload.github.com/$user/$repo/tar.gz/refs/heads/$branch" -o "/tmp/$dir.tgz" && \
+    mkdir -p "/opt/comfyui-baked/custom_nodes/$dir" && \
+    tar -xzf "/tmp/$dir.tgz" -C "/opt/comfyui-baked/custom_nodes/$dir" --strip-components=1 && \
+    rm -f "/tmp/$dir.tgz"; \
+  } && \
+    cd /opt/comfyui-baked/custom_nodes && \
+    dl_gh Lightricks ComfyUI-LTXVideo master ComfyUI-LTXVideo && \
+    dl_gh Koishi-Star Euler-Smea-Dyn-Sampler main Euler-Smea-Dyn-Sampler && \
+    dl_gh ltdrdata was-node-suite-comfyui main was-node-suite-comfyui && \
+    dl_gh Kosinkadink ComfyUI-VideoHelperSuite main ComfyUI-VideoHelperSuite && \
+    dl_gh rgthree rgthree-comfy main rgthree-comfy && \
+    dl_gh yolain ComfyUI-Easy-Use main ComfyUI-Easy-Use && \
+    dl_gh ashtar1984 comfyui-find-perfect-resolution main comfyui-find-perfect-resolution && \
+    dl_gh domprosys ComfyUI-LTXVideo-Extra master ComfyUI-LTXVideo-Extra && \
+    dl_gh huchukato ComfyUI-QwenVL-Mod main ComfyUI-QwenVL-Mod && \
+    dl_gh huchukato ComfyUI-RIFE-TensorRT-Auto master ComfyUI-RIFE-TensorRT-Auto && \
+    dl_gh huchukato ComfyUI-Upscaler-TensorRT-Auto master ComfyUI-Upscaler-TensorRT-Auto && \
+    dl_gh huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
+    dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)

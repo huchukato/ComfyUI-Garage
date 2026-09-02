@@ -12,32 +12,31 @@ FROM huchukato/comfyui-base:cu130
 # ──────────────────────────────────────────────────────────────────────────────
 ARG CACHEBUST=1
 
-RUN cd /opt/comfyui-baked/custom_nodes && \
-    git clone https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo.git && \
-    git clone https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler.git && \
-    git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
-    git clone https://github.com/rgthree/rgthree-comfy.git && \
-    git clone https://github.com/yolain/ComfyUI-Easy-Use.git && \
-    git clone https://github.com/ashtar1984/comfyui-find-perfect-resolution.git && \
-    git clone https://github.com/huchukato/ComfyUI-QwenVL-Mod.git && \
-    git clone https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto.git && \
-    git clone https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto.git && \
-    git clone https://github.com/huchukato/ComfyUI-HuggingFace.git && \
-    git clone https://github.com/huchukato/comfy-tagcomplete.git && \
-    git clone https://github.com/Saganaki22/ComfyUI-sol-attn.git && \
-    git clone https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3.git && \
-    echo "Updating ALL baked custom nodes to latest..." && \
-    for node_dir in /opt/comfyui-baked/custom_nodes/*/; do \
-        if [ -d "$node_dir/.git" ]; then \
-            name=$(basename "$node_dir"); \
-            branch=$(git -C "$node_dir" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main"); \
-            echo "  Updating $name ($branch)..."; \
-            git -C "$node_dir" fetch origin "$branch" 2>/dev/null && \
-            git -C "$node_dir" reset --hard "origin/$branch" 2>/dev/null && \
-            git -C "$node_dir" clean -fd 2>/dev/null && \
-            echo "  ✅ $name" || echo "  ⚠️ $name failed"; \
-        fi; \
-    done
+ENV GIT_TERMINAL_PROMPT=0
+# GitHub smart-HTTP clone fails intermittently inside BuildKit (401 + no tty).
+# Use codeload tarballs instead: no auth, no git prompt, smaller.
+RUN dl() { \
+    local user="$1" repo="$2" branch="${3:-main}" dir="$4"; \
+    echo "Downloading $user/$repo ($branch) -> $dir"; \
+    curl -fsSL "https://codeload.github.com/$user/$repo/tar.gz/refs/heads/$branch" -o "/tmp/$dir.tgz" && \
+    mkdir -p "/opt/comfyui-baked/custom_nodes/$dir" && \
+    tar -xzf "/tmp/$dir.tgz" -C "/opt/comfyui-baked/custom_nodes/$dir" --strip-components=1 && \
+    rm -f "/tmp/$dir.tgz"; \
+  } && \
+    cd /opt/comfyui-baked/custom_nodes && \
+    dl Larryvrh ComfyUI-MiniMax-H3-Turbo main ComfyUI-MiniMax-H3-Turbo && \
+    dl Koishi-Star Euler-Smea-Dyn-Sampler main Euler-Smea-Dyn-Sampler && \
+    dl Kosinkadink ComfyUI-VideoHelperSuite main ComfyUI-VideoHelperSuite && \
+    dl rgthree rgthree-comfy main rgthree-comfy && \
+    dl yolain ComfyUI-Easy-Use main ComfyUI-Easy-Use && \
+    dl ashtar1984 comfyui-find-perfect-resolution main comfyui-find-perfect-resolution && \
+    dl huchukato ComfyUI-QwenVL-Mod main ComfyUI-QwenVL-Mod && \
+    dl huchukato ComfyUI-RIFE-TensorRT-Auto master ComfyUI-RIFE-TensorRT-Auto && \
+    dl huchukato ComfyUI-Upscaler-TensorRT-Auto master ComfyUI-Upscaler-TensorRT-Auto && \
+    dl huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
+    dl huchukato comfy-tagcomplete main comfy-tagcomplete && \
+    dl Saganaki22 ComfyUI-sol-attn main ComfyUI-sol-attn && \
+    dl xmarre ComfyUI-Spectrum-MiniMax-H3 main ComfyUI-Spectrum-MiniMax-H3
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements for our custom nodes (single layer, cached)
