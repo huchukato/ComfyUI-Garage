@@ -6,6 +6,9 @@
 
 FROM huchukato/comfyui-base:cu130
 
+COPY base/start.sh /start.sh
+RUN chmod +x /start.sh
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Custom nodes — ALL repos cloned once (cached by Docker)
 # Use --no-cache to force re-clone when nodes need updating.
@@ -36,8 +39,9 @@ RUN dl_gh() { \
     dl_gh huchukato ComfyUI-Upscaler-TensorRT-Auto master ComfyUI-Upscaler-TensorRT-Auto && \
     dl_gh huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
     dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete && \
-    dl_gh ltdrdata ComfyUI-Impact-Pack Main ComfyUI-Impact-Pack && \
-    dl_gh ltdrdata ComfyUI-Impact-Subpack main ComfyUI-Impact-Subpack
+    dl_gh ltdrdata ComfyUI-Impact-Pack Main comfyui-impact-pack && \
+    dl_gh ltdrdata ComfyUI-Impact-Subpack main comfyui-impact-subpack
+RUN echo "WORKER_BUNDLE=cu13-ltx25-${CACHEBUST}" >> /opt/comfyui-baked/.runpod-bundle-version
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)
@@ -50,6 +54,7 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
         fi; \
     done' && \
     pip install --no-cache-dir "kornia==0.8.2" && \
+    COMFYUI_PATH=/opt/comfyui-baked COMFYUI_MODEL_PATH=/opt/comfyui-baked/models python3.12 /opt/comfyui-baked/custom_nodes/comfyui-impact-pack/install.py && \
     pip cache purge
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -184,15 +189,14 @@ export HF_XET_HIGH_PERFORMANCE=1
 
 # Models: subdir|name|repo_id|repo_path|min_size_bytes (min_size = sanity check)
 MODELS=(
-    # ── LTX 2.5 (native uncensored, from huchukato/pimp-my-wan mirror) ──
-    "diffusion_models|ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|huchukato/pimp-my-wan|LTX/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|21000000000"
+    # ── LTX 2.5 (native uncensored, from huchukato/garage) ──
+    "diffusion_models|ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|huchukato/garage|diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|21000000000"
     "text_encoders|gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors|DeepNeuralNerd/Gemma-4-12B-it-uncensored-heretic-DeepNeuralNerd-LTX_2.5_ComfyUI|Gemma-4-12B-it-uncensored-heretic - DeepNeuralNerd -LTX 2.5-ComfyUI-int8convrot.safetensors|13000000000"
     "text_encoders|gemma4_e2b_it_bf16.safetensors|TrevorJS/gemma-4-E2B-it-uncensored|model.safetensors|10000000000"
-    "vae|ltx-2.5-video-vae-bf16.safetensors|huchukato/pimp-my-wan|LTX/vae/ltx-2.5-video-vae-bf16.safetensors|1400000000"
-    "vae|ltx-2.5-audio-vae-bf16.safetensors|huchukato/pimp-my-wan|LTX/vae/ltx-2.5-audio-vae-bf16.safetensors|350000000"
-    "latent_upscale_models|ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|huchukato/pimp-my-wan|LTX/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|990000000"
-    "latent_upscale_models|ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|huchukato/pimp-my-wan|LTX/latent_upscale_models/ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|250000000"
-    "model_patches|ltx-2.5-duration-head-bf16.safetensors|huchukato/pimp-my-wan|LTX/model_patches/ltx-2.5-duration-head-bf16.safetensors|3800000"
+    "vae|ltx-2.5-video-vae-conv-bf16.safetensors|huchukato/garage|vae/ltx-2.5-video-vae-conv-bf16.safetensors|1400000000"
+    "vae|ltx-2.5-audio-vae-bf16.safetensors|huchukato/garage|vae/ltx-2.5-audio-vae-bf16.safetensors|350000000"
+    "latent_upscale_models|ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|huchukato/garage|latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|990000000"
+    "latent_upscale_models|ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|huchukato/garage|latent_upscale_models/ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|250000000"
     "loras|LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors|maximsobolev275/LTX-10Eros-LoRA-r768|LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors|3400000000"
 )
 

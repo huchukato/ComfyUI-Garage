@@ -29,8 +29,8 @@ NODES=(
     "https://github.com/huchukato/ComfyUI-HuggingFace"
     "https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler"
     "https://github.com/ltdrdata/was-node-suite-comfyui"
-    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
-    "https://github.com/ltdrdata/ComfyUI-Impack-Subpack"
+    "https://github.com/ltdrdata/comfyui-impact-pack"
+    "https://github.com/ltdrdata/comfyui-impact-subpack"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/yolain/ComfyUI-Easy-Use"
@@ -44,6 +44,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
 )
 
@@ -70,14 +71,13 @@ CONTROLNET_MODELS=(
 
 # LTX 2.5 large models downloaded via hf/huggingface-cli (format: subdir|name|url|min_size_bytes)
 LTX_MODELS=(
-    "diffusion_models|ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|21000000000"
+    "diffusion_models|ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|https://huggingface.co/huchukato/garage/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|21000000000"
     "text_encoders|gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors|https://huggingface.co/DeepNeuralNerd/Gemma-4-12B-it-uncensored-heretic-DeepNeuralNerd-LTX_2.5_ComfyUI/resolve/main/Gemma-4-12B-it-uncensored-heretic%20-%20DeepNeuralNerd%20-LTX%202.5-ComfyUI-int8convrot.safetensors|13000000000"
     "text_encoders|gemma4_e2b_it_bf16.safetensors|https://huggingface.co/TrevorJS/gemma-4-E2B-it-uncensored/resolve/main/model.safetensors|10000000000"
-    "vae|ltx-2.5-video-vae-bf16.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/vae/ltx-2.5-video-vae-bf16.safetensors|1400000000"
-    "vae|ltx-2.5-audio-vae-bf16.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/vae/ltx-2.5-audio-vae-bf16.safetensors|350000000"
-    "latent_upscale_models|ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|990000000"
-    "latent_upscale_models|ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/latent_upscale_models/ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|250000000"
-    "model_patches|ltx-2.5-duration-head-bf16.safetensors|https://huggingface.co/huchukato/pimp-my-wan/resolve/main/LTX/model_patches/ltx-2.5-duration-head-bf16.safetensors|3800000"
+    "vae|ltx-2.5-video-vae-conv-bf16.safetensors|https://huggingface.co/huchukato/garage/resolve/main/vae/ltx-2.5-video-vae-conv-bf16.safetensors|1400000000"
+    "vae|ltx-2.5-audio-vae-bf16.safetensors|https://huggingface.co/huchukato/garage/resolve/main/vae/ltx-2.5-audio-vae-bf16.safetensors|350000000"
+    "latent_upscale_models|ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|https://huggingface.co/huchukato/garage/resolve/main/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors|990000000"
+    "latent_upscale_models|ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|https://huggingface.co/huchukato/garage/resolve/main/latent_upscale_models/ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors|250000000"
     "loras|LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors|https://huggingface.co/maximsobolev275/LTX-10Eros-LoRA-r768/resolve/main/LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors|3400000000"
 )
 
@@ -224,6 +224,9 @@ function provisioning_get_nodes() {
         fi
 
     done
+    COMFYUI_PATH="${COMFYUI_DIR}" COMFYUI_MODEL_PATH="${COMFYUI_DIR}/models" python "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack/install.py"
+    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Pack"
+    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-subpack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Subpack"
     echo "All nodes processed successfully!"
 }
 

@@ -6,6 +6,9 @@
 
 FROM huchukato/comfyui-base:cu130
 
+COPY base/start.sh /start.sh
+RUN chmod +x /start.sh
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Custom nodes — our specific repos (base already has Manager, KJNodes,
 # Civicomfy, RunpodDirect)
@@ -37,8 +40,9 @@ RUN dl() { \
     dl huchukato comfy-tagcomplete main comfy-tagcomplete && \
     dl Saganaki22 ComfyUI-sol-attn main ComfyUI-sol-attn && \
     dl xmarre ComfyUI-Spectrum-MiniMax-H3 main ComfyUI-Spectrum-MiniMax-H3 && \
-    dl ltdrdata ComfyUI-Impact-Pack Main ComfyUI-Impact-Pack && \
-    dl ltdrdata ComfyUI-Impact-Subpack main ComfyUI-Impact-Subpack
+    dl ltdrdata ComfyUI-Impact-Pack Main comfyui-impact-pack && \
+    dl ltdrdata ComfyUI-Impact-Subpack main comfyui-impact-subpack
+RUN echo "WORKER_BUNDLE=cu13-mmh3-${CACHEBUST}" >> /opt/comfyui-baked/.runpod-bundle-version
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements for our custom nodes (single layer, cached)
@@ -49,6 +53,7 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
             pip install --no-cache-dir -r "$node_dir/requirements.txt" || echo "Failed to install requirements for $node_dir"; \
         fi; \
     done' && \
+    COMFYUI_PATH=/opt/comfyui-baked COMFYUI_MODEL_PATH=/opt/comfyui-baked/models python3.12 /opt/comfyui-baked/custom_nodes/comfyui-impact-pack/install.py && \
     pip cache purge
 
 # ──────────────────────────────────────────────────────────────────────────────

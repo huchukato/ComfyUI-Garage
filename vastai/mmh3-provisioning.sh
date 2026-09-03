@@ -32,8 +32,8 @@ NODES=(
     "https://github.com/Saganaki22/ComfyUI-sol-attn"
     "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
-    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
-    "https://github.com/ltdrdata/ComfyUI-Impack-Subpack"
+    "https://github.com/ltdrdata/comfyui-impact-pack"
+    "https://github.com/ltdrdata/comfyui-impact-subpack"
 )
 
 WORKFLOWS=(
@@ -44,6 +44,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
 )
 
@@ -226,6 +227,9 @@ function provisioning_get_nodes() {
         fi
 
     done
+    COMFYUI_PATH="${COMFYUI_DIR}" COMFYUI_MODEL_PATH="${COMFYUI_DIR}/models" python "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack/install.py"
+    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Pack"
+    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-subpack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Subpack"
     echo "All nodes processed successfully!"
 }
 

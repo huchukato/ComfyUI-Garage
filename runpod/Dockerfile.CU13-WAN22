@@ -5,6 +5,9 @@
 
 FROM huchukato/comfyui-base:cu130
 
+COPY base/start.sh /start.sh
+RUN chmod +x /start.sh
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Custom nodes — ALL repos cloned once (cached by Docker)
 # Use --no-cache to force re-clone when nodes need updating.
@@ -42,8 +45,9 @@ RUN dl_gh() { \
     dl_gh huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
     dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete && \
     dl_gh huchukato ComfyUI-Selectors main ComfyUI-Selectors && \
-    dl_gh ltdrdata ComfyUI-Impact-Pack Main ComfyUI-Impact-Pack && \
-    dl_gh ltdrdata ComfyUI-Impact-Subpack main ComfyUI-Impact-Subpack
+    dl_gh ltdrdata ComfyUI-Impact-Pack Main comfyui-impact-pack && \
+    dl_gh ltdrdata ComfyUI-Impact-Subpack main comfyui-impact-subpack
+RUN echo "WORKER_BUNDLE=cu13-wan22-${CACHEBUST}" >> /opt/comfyui-baked/.runpod-bundle-version
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)
@@ -54,6 +58,7 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
             pip install --no-cache-dir -r "$node_dir/requirements.txt" || echo "Failed to install requirements for $node_dir"; \
         fi; \
     done' && \
+    COMFYUI_PATH=/opt/comfyui-baked COMFYUI_MODEL_PATH=/opt/comfyui-baked/models python3.12 /opt/comfyui-baked/custom_nodes/comfyui-impact-pack/install.py && \
     pip cache purge
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -71,16 +76,16 @@ RUN mkdir -p /opt/comfyui-baked/models/vae && \
 # Text encoder (~5GB) moved to boot-time download to reduce image size.
 # ──────────────────────────────────────────────────────────────────────────────
 RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/pimp-my-wan/resolve/main/vae/wan_2.1_vae.safetensors" \
+        "https://huggingface.co/huchukato/garage/resolve/main/vae/wan_2.1_vae.safetensors" \
         -O /opt/comfyui-baked/models/vae/wan_2.1_vae.safetensors && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/VAE/sdxl.vae.safetensors" \
+        "https://huggingface.co/huchukato/garage/resolve/main/vae/sdxl.vae.safetensors" \
         -O /opt/comfyui-baked/models/vae/sdxl_vae.safetensors && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet.pth" \
+        "https://huggingface.co/huchukato/garage/resolve/main/esrgan/2xLexicaRRDBNet.pth" \
         -O /opt/comfyui-baked/models/upscale_models/2xLexicaRRDBNet.pth && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet_Sharp.pth" \
+        "https://huggingface.co/huchukato/garage/resolve/main/esrgan/2xLexicaRRDBNet_Sharp.pth" \
         -O /opt/comfyui-baked/models/upscale_models/2xLexicaRRDBNet_Sharp.pth && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
         "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8m.pt" \
@@ -132,8 +137,10 @@ READY_MARKER="/workspace/runpod-slim/ComfyUI/main.py"   # created by start.sh co
 
 # Models: subdir|name|repo_id|repo_path|min_size_bytes (min_size = sanity check, ~98% of real size)
 MODELS=(
-    "diffusion_models|wan22RemixT2VI2V_i2vHighV30.safetensors|huchukato/pimp-my-wan|FP8/wan22RemixT2VI2V_i2vHighV30.safetensors|14000000000"
-    "diffusion_models|wan22RemixT2VI2V_i2vLowV30.safetensors|huchukato/pimp-my-wan|FP8/wan22RemixT2VI2V_i2vLowV30.safetensors|14000000000"
+    "diffusion_models|wan22RemixT2VI2V_i2vHighV30.safetensors|huchukato/garage|diffusion_models/wan22RemixT2VI2V_i2vHighV30.safetensors|14000000000"
+    "diffusion_models|wan22RemixT2VI2V_i2vLowV30.safetensors|huchukato/garage|diffusion_models/wan22RemixT2VI2V_i2vLowV30.safetensors|14000000000"
+    "diffusion_models|wan22EnhancedNSFWSVICamera_nsfwV2FP8H.safetensors|huchukato/garage|diffusion_models/wan22EnhancedNSFWSVICamera_nsfwV2FP8H.safetensors|14000000000"
+    "diffusion_models|wan22EnhancedNSFWSVICamera_nsfwV2FP8L.safetensors|huchukato/garage|diffusion_models/wan22EnhancedNSFWSVICamera_nsfwV2FP8L.safetensors|14000000000"
     "text_encoders|nsfw_wan_umt5-xxl_fp8_scaled.safetensors|NSFW-API/NSFW-Wan-UMT5-XXL|nsfw_wan_umt5-xxl_fp8_scaled.safetensors|4800000000"
 )
 

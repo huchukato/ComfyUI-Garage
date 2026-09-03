@@ -25,8 +25,8 @@ NODES=(
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler"
     "https://github.com/ltdrdata/was-node-suite-comfyui"
-    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
-    "https://github.com/ltdrdata/ComfyUI-Impack-Subpack"
+    "https://github.com/ltdrdata/comfyui-impact-pack"
+    "https://github.com/ltdrdata/comfyui-impact-subpack"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/yolain/ComfyUI-Easy-Use"
@@ -47,6 +47,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-AutoPrompt.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/gguf/WAN2.2-I2V-AutoPrompt-GGUF.json"
@@ -75,12 +76,12 @@ LORA_MODELS=(
 
 VAE_MODELS=(
     "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors"
-    "https://huggingface.co/huchukato/favs/resolve/main/VAE/sdxl.vae.safetensors"
+    "https://huggingface.co/huchukato/garage/resolve/main/vae/sdxl.vae.safetensors"
 )
 
 ESRGAN_MODELS=(
-    "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet.pth"
-    "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet_Sharp.pth"
+    "https://huggingface.co/huchukato/garage/resolve/main/esrgan/2xLexicaRRDBNet.pth"
+    "https://huggingface.co/huchukato/garage/resolve/main/esrgan/2xLexicaRRDBNet_Sharp.pth"
 )
 
 TEXT_ENCODERS=(
@@ -230,6 +231,9 @@ function provisioning_get_nodes() {
         fi
         
     done
+    COMFYUI_PATH="${COMFYUI_DIR}" COMFYUI_MODEL_PATH="${COMFYUI_DIR}/models" python "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack/install.py"
+    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Pack"
+    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-subpack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Subpack"
     echo "All nodes processed successfully!"
 }
 

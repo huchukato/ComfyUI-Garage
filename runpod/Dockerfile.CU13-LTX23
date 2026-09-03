@@ -6,6 +6,9 @@
 
 FROM huchukato/comfyui-base:cu130
 
+COPY base/start.sh /start.sh
+RUN chmod +x /start.sh
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Custom nodes — ALL repos cloned once (cached by Docker)
 # LTX 2.3 core support is built into ComfyUI 0.30.0+; LTXVideo node adds workflow nodes.
@@ -36,8 +39,9 @@ RUN dl_gh() { \
     dl_gh huchukato ComfyUI-Upscaler-TensorRT-Auto master ComfyUI-Upscaler-TensorRT-Auto && \
     dl_gh huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
     dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete && \
-    dl_gh ltdrdata ComfyUI-Impact-Pack Main ComfyUI-Impact-Pack && \
-    dl_gh ltdrdata ComfyUI-Impact-Subpack main ComfyUI-Impact-Subpack
+    dl_gh ltdrdata ComfyUI-Impact-Pack Main comfyui-impact-pack && \
+    dl_gh ltdrdata ComfyUI-Impact-Subpack main comfyui-impact-subpack
+RUN echo "WORKER_BUNDLE=cu13-ltx23-${CACHEBUST}" >> /opt/comfyui-baked/.runpod-bundle-version
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)
@@ -50,6 +54,7 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
         fi; \
     done' && \
     pip install --no-cache-dir "kornia==0.8.2" && \
+    COMFYUI_PATH=/opt/comfyui-baked COMFYUI_MODEL_PATH=/opt/comfyui-baked/models python3.12 /opt/comfyui-baked/custom_nodes/comfyui-impact-pack/install.py && \
     pip cache purge
 
 # ──────────────────────────────────────────────────────────────────────────────

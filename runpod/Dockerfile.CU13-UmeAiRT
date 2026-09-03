@@ -6,6 +6,9 @@
 
 FROM huchukato/comfyui-base:cu130
 
+COPY base/start.sh /start.sh
+RUN chmod +x /start.sh
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Custom nodes — ALL repos cloned once (cached by Docker)
 # Use --no-cache to force re-clone when nodes need updating.
@@ -22,7 +25,7 @@ RUN dl_gh() { \
     rm -f "/tmp/$dir.tgz"; \
   } && \
     cd /opt/comfyui-baked/custom_nodes && \
-    curl -fsSL "https://gitlab.com/UmeAiRT-Studio/comfyui-umeairt-toolkit/-/archive/main/comfyui-umeairt-toolkit-main.tar.gz" -o /tmp/umeairt.tgz && \
+    curl -fsSL --retry 5 --retry-all-errors --retry-delay 5 "https://gitlab.com/UmeAiRT-Studio/comfyui-umeairt-toolkit/-/archive/main/comfyui-umeairt-toolkit-main.tar.gz" -o /tmp/umeairt.tgz && \
     mkdir -p comfyui-umeairt-toolkit && \
     tar -xzf /tmp/umeairt.tgz -C comfyui-umeairt-toolkit --strip-components=1 && \
     rm -f /tmp/umeairt.tgz && \
@@ -34,8 +37,9 @@ RUN dl_gh() { \
     dl_gh huchukato ComfyUI-HuggingFace main ComfyUI-HuggingFace && \
     dl_gh huchukato comfy-tagcomplete main comfy-tagcomplete && \
     dl_gh huchukato ComfyUI-QwenVL-Mod main ComfyUI-QwenVL-Mod && \
-    dl_gh ltdrdata ComfyUI-Impact-Pack Main ComfyUI-Impact-Pack && \
-    dl_gh ltdrdata ComfyUI-Impact-Subpack main ComfyUI-Impact-Subpack
+    dl_gh ltdrdata ComfyUI-Impact-Pack Main comfyui-impact-pack && \
+    dl_gh ltdrdata ComfyUI-Impact-Subpack main comfyui-impact-subpack
+RUN echo "WORKER_BUNDLE=cu13-umeairt-${CACHEBUST}" >> /opt/comfyui-baked/.runpod-bundle-version
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Install requirements (single layer, cached)
@@ -49,6 +53,7 @@ RUN bash -c 'cd /opt/comfyui-baked/custom_nodes && for node_dir in */; do \
     done' && \
     pip install --no-cache-dir -U transformers && \
     pip install --no-cache-dir --pre -U comfyui-manager && \
+    COMFYUI_PATH=/opt/comfyui-baked COMFYUI_MODEL_PATH=/opt/comfyui-baked/models python3.12 /opt/comfyui-baked/custom_nodes/comfyui-impact-pack/install.py && \
     pip cache purge
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -67,16 +72,16 @@ RUN mkdir -p /opt/comfyui-baked/models/checkpoints && \
 # Pony checkpoints (~13GB) moved to boot-time download to reduce image size.
 # ──────────────────────────────────────────────────────────────────────────────
 RUN wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/VAE/sdxl.vae.safetensors" \
+        "https://huggingface.co/huchukato/garage/resolve/main/vae/sdxl.vae.safetensors" \
         -O /opt/comfyui-baked/models/vae/sdxl_vae.safetensors && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet.pth" \
+        "https://huggingface.co/huchukato/garage/resolve/main/esrgan/2xLexicaRRDBNet.pth" \
         -O /opt/comfyui-baked/models/upscale_models/2xLexicaRRDBNet.pth && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/2xLexicaRRDBNet_Sharp.pth" \
+        "https://huggingface.co/huchukato/garage/resolve/main/esrgan/2xLexicaRRDBNet_Sharp.pth" \
         -O /opt/comfyui-baked/models/upscale_models/2xLexicaRRDBNet_Sharp.pth && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
-        "https://huggingface.co/huchukato/favs/resolve/main/ESRGAN/RealESRGAN_x2plus.pth" \
+        "https://huggingface.co/huchukato/garage/resolve/main/esrgan/RealESRGAN_x2plus.pth" \
         -O /opt/comfyui-baked/models/upscale_models/RealESRGAN_x2plus.pth && \
     wget -q --tries=5 --timeout=60 --retry-connrefused \
         "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8m.pt" \
@@ -122,8 +127,8 @@ READY_MARKER="/workspace/runpod-slim/ComfyUI/main.py"
 
 # Models: subdir|name|repo_id|repo_path|min_size_bytes (min_size = sanity check, ~98% of real size)
 MODELS=(
-    "checkpoints|pimpmypony_pmpInCaseEnhanced.safetensors|huchukato/favs|ckpt/pimpmypony_pmpInCaseEnhanced.safetensors|6000000000"
-    "checkpoints|pimpmypony_pmpIncaseStyle.safetensors|huchukato/favs|ckpt/pimpmypony_pmpIncaseStyle.safetensors|6000000000"
+    "checkpoints|pimpmypony_pmpInCaseEnhanced.safetensors|huchukato/garage|checkpoints/pmp/pimpmypony_pmpInCaseEnhanced.safetensors|6000000000"
+    "checkpoints|pimpmypony_pmpIncaseStyle.safetensors|huchukato/garage|checkpoints/pmp/pimpmypony_pmpIncaseStyle.safetensors|6000000000"
 )
 
 log() { echo "$(date): $*" | tee -a "$LOG"; }
