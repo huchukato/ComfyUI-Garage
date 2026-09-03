@@ -19,7 +19,6 @@ PIP_PACKAGES=(
 NODES=(
     "https://github.com/huchukato/comfy-tagcomplete"
     "https://github.com/huchukato/ComfyUI-QwenVL-Mod"
-    "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo"
     "https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-HuggingFace"
@@ -31,6 +30,7 @@ NODES=(
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/Saganaki22/ComfyUI-sol-attn"
     "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
+    "https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler"
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
     "https://github.com/ltdrdata/comfyui-impact-pack"
     "https://github.com/ltdrdata/comfyui-impact-subpack"
@@ -77,11 +77,13 @@ MINIMAX_MODELS=(
     "diffusion_models|minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors|https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors|20070947267"
     "diffusion_models|minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors|https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors|20070947267"
     "text_encoders|qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|15000000000"
-    "loras|minimax_h3_turbo_v4_step600_ema.safetensors|https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors|779849816"
-    # 10Eros-Max INT8 ConvRot HQ (~23.5GB) — 145 INT8 + 55 BF16, best quality for 10Eros
-    "diffusion_models|10Eros_Max_H3_FL2VA-INT8-ConvRot-HQ.safetensors|https://huggingface.co/DmitryDB/MiniMax-H3-10Eros-Max-Quants/resolve/main/FL2VA/10Eros_Max_H3_FL2VA-INT8-ConvRot-HQ.safetensors|23000000000"
-    # Turbo LoRA 8-step for 10Eros-Max pruned (1.96GB) — compat full-width
-    "loras|minimax_h3_fl2v_turbo_8step_v1.0_10ErosMax_beta1_pruned_compat_v001_T8.safetensors|https://huggingface.co/t8star/minimax_h3_turbo_4step_10ErosMax_test4_pruned_curveproj1025_T8/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_10ErosMax_beta1_pruned_compat_v001_T8.safetensors|1950000000"
+    # ── lightx2v Turbo LoRA 8-step 768p (Apache-2.0, trained at 1344×768) — no custom node needed ──
+    "loras|minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
+    "loras|minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
+    # ── MiniMax H3 Latent Upscaler 3D (fp16, 691MB) — neural upscaler for 24-ch H3 latents, 1×–4× scale ──
+    "latent_upscale_models|minimax_h3_latent_upscaler_3d_fp16.safetensors|https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler/resolve/main/minimax_h3_latent_upscaler_3d_fp16.safetensors|691000000"
+    # ── 10Eros-Max TURBO Hybrid Beta3 INT8 ConvRot skip edges (cicalooo, 22.5GB) — TURBO fuso, native ComfyUI, blocchi 0/1/48/49 in BF16 ──
+    "diffusion_models|10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors|https://huggingface.co/cicalooo/10Eros-Max-h3-int8-convrot/resolve/main/10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors|22500000000"
 )
 
 
@@ -305,7 +307,7 @@ function provisioning_download() {
 
 function download_minimax_models() {
     local base_dir="${COMFYUI_DIR}/models"
-    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,loras}
+    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,loras,latent_upscale_models}
 
     local hf_cmd="hf"
     command -v hf >/dev/null 2>&1 || hf_cmd="huggingface-cli"
