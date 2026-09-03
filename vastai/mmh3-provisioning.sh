@@ -81,7 +81,7 @@ MINIMAX_MODELS=(
     "loras|minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
     "loras|minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
     # ── MiniMax H3 Latent Upscaler 3D (fp16, 691MB) — neural upscaler for 24-ch H3 latents, 1×–4× scale ──
-    "latent_upscale_models|minimax_h3_latent_upscaler_3d_fp16.safetensors|https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler/resolve/main/minimax_h3_latent_upscaler_3d_fp16.safetensors|691000000"
+    "latent_upscale_models|minimax_h3_latent_upscaler_3d_fp16.safetensors|https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler/resolve/main/minimax_h3_latent_upscaler_3d_fp16.safetensors|690000000"
     # ── 10Eros-Max TURBO Hybrid Beta3 INT8 ConvRot skip edges (cicalooo, 22.5GB) — TURBO fuso, native ComfyUI, blocchi 0/1/48/49 in BF16 ──
     "diffusion_models|10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors|https://huggingface.co/cicalooo/10Eros-Max-h3-int8-convrot/resolve/main/10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors|22500000000"
 )
