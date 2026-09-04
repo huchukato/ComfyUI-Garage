@@ -2,7 +2,7 @@
   "id": "2e5fb033-7e4f-4e73-a580-590a2a38a074",
   "revision": 0,
   "last_node_id": 201,
-  "last_link_id": 407,
+  "last_link_id": 408,
   "nodes": [
     {
       "id": 135,
@@ -122,7 +122,7 @@
       ],
       "size": [
         471.684350491249,
-        602.0724471513275
+        334
       ],
       "flags": {},
       "order": 14,
@@ -807,7 +807,8 @@
         8,
         "Qwen3.5-9B-ultra-uncensored-heretic",
         "🎬 MiniMax H3 NSFW (5s)",
-        "[TRACKING_RIGHT]"
+        "None",
+        "euler"
       ],
       "widgets_values_named": {
         "prompt": "",
@@ -818,7 +819,8 @@
         "steps": 8,
         "model_name": "Qwen3.5-9B-ultra-uncensored-heretic",
         "preset_prompt": "🎬 MiniMax H3 NSFW (5s)",
-        "camera_tag": "[TRACKING_RIGHT]"
+        "camera_tag": "None",
+        "sampler_name": "euler"
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -972,7 +974,7 @@
         "state": {
           "lastGroupId": 16,
           "lastNodeId": 201,
-          "lastLinkId": 407,
+          "lastLinkId": 408,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -983,8 +985,8 @@
           "bounding": [
             -2560,
             4720,
-            130.44140625,
-            248
+            130.564453125,
+            268
           ]
         },
         "outputNode": {
@@ -1005,7 +1007,7 @@
               386
             ],
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4744
             ]
           },
@@ -1017,7 +1019,7 @@
               200
             ],
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4764
             ]
           },
@@ -1029,7 +1031,7 @@
               201
             ],
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4784
             ]
           },
@@ -1042,7 +1044,7 @@
             ],
             "label": "duration",
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4804
             ]
           },
@@ -1054,7 +1056,7 @@
               221
             ],
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4824
             ]
           },
@@ -1067,7 +1069,7 @@
               384
             ],
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4844
             ]
           },
@@ -1079,7 +1081,7 @@
               273
             ],
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4864
             ]
           },
@@ -1091,7 +1093,7 @@
               388
             ],
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4884
             ]
           },
@@ -1103,7 +1105,7 @@
               389
             ],
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4904
             ]
           },
@@ -1115,8 +1117,20 @@
               390
             ],
             "pos": [
-              -2453.55859375,
+              -2453.435546875,
               4924
+            ]
+          },
+          {
+            "id": "f6fa95a5-66da-4e2c-af88-dfb24fc22938",
+            "name": "sampler_name",
+            "type": "COMBO",
+            "linkIds": [
+              408
+            ],
+            "pos": [
+              -2453.435546875,
+              4944
             ]
           }
         ],
@@ -1188,7 +1202,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -1326,7 +1340,7 @@
               140
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -1397,7 +1411,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -1486,7 +1500,7 @@
               126
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -1543,7 +1557,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -1608,7 +1622,7 @@
               70
             ],
             "flags": {},
-            "order": 14,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -1656,7 +1670,7 @@
               130
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -1713,7 +1727,7 @@
               60
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -1832,43 +1846,6 @@
             }
           },
           {
-            "id": 192,
-            "type": "KSamplerSelect",
-            "pos": [
-              -777.1658506622381,
-              5031.366519245653
-            ],
-            "size": [
-              370,
-              90
-            ],
-            "flags": {},
-            "order": 4,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "SAMPLER",
-                "name": "SAMPLER",
-                "type": "SAMPLER",
-                "links": [
-                  375
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.33.0",
-              "Node name for S&R": "KSamplerSelect"
-            },
-            "widgets_values": [
-              "euler"
-            ],
-            "widgets_values_named": {
-              "sampler_name": "euler"
-            }
-          },
-          {
             "id": 104,
             "type": "MiniMaxH3ImageToVideo",
             "pos": [
@@ -1880,7 +1857,7 @@
               550
             ],
             "flags": {},
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -2119,7 +2096,7 @@
               90
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -2478,6 +2455,53 @@
             },
             "color": "#223",
             "bgcolor": "#335"
+          },
+          {
+            "id": 192,
+            "type": "KSamplerSelect",
+            "pos": [
+              -777.1658506622381,
+              5031.366519245653
+            ],
+            "size": [
+              370,
+              90
+            ],
+            "flags": {},
+            "order": 14,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sampler_name"
+                },
+                "link": 408
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "SAMPLER",
+                "name": "SAMPLER",
+                "type": "SAMPLER",
+                "links": [
+                  375
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.33.0",
+              "Node name for S&R": "KSamplerSelect"
+            },
+            "widgets_values": [
+              "euler"
+            ],
+            "widgets_values_named": {
+              "sampler_name": "euler"
+            }
           }
         ],
         "groups": [
@@ -2886,6 +2910,14 @@
             "target_id": 193,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 408,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 192,
+            "target_slot": 0,
+            "type": "COMBO"
           }
         ],
         "extra": {}
@@ -2896,7 +2928,7 @@
         "state": {
           "lastGroupId": 16,
           "lastNodeId": 201,
-          "lastLinkId": 407,
+          "lastLinkId": 408,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3458,10 +3490,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.8759481083385153,
+      "scale": 0.4609931094024045,
       "offset": [
-        2013.5057871946424,
-        -4466.714397135945
+        3517.7647032406558,
+        -4397.10841440761
       ]
     }
   },

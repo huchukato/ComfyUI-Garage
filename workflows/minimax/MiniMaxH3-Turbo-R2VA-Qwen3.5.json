@@ -2,7 +2,7 @@
   "id": "b25965af-2005-4e6d-b188-e9c5ea0224c8",
   "revision": 0,
   "last_node_id": 218,
-  "last_link_id": 461,
+  "last_link_id": 462,
   "nodes": [
     {
       "id": 155,
@@ -209,7 +209,7 @@
       ],
       "size": [
         492.2040276006055,
-        613.6147655253405
+        334
       ],
       "flags": {},
       "order": 22,
@@ -1109,132 +1109,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 105,
-      "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
-      "pos": [
-        -864.7982620932786,
-        4836.1428940448495
-      ],
-      "size": [
-        643.7447588082441,
-        488.1139551136903
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "widget": {
-            "name": "width"
-          },
-          "link": 433
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "widget": {
-            "name": "height"
-          },
-          "link": 434
-        },
-        {
-          "label": "duration",
-          "name": "value_1",
-          "type": "FLOAT",
-          "widget": {
-            "name": "value_1"
-          },
-          "link": null
-        },
-        {
-          "name": "ref_images.ref_image_0",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 441
-        },
-        {
-          "name": "ref_images.ref_image_1",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 442
-        },
-        {
-          "name": "ref_images.ref_image_2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 445
-        },
-        {
-          "name": "ref_images.ref_image_3",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 446
-        }
-      ],
-      "outputs": [
-        {
-          "name": "VIDEO",
-          "type": "VIDEO",
-          "links": [
-            194
-          ]
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            324
-          ]
-        },
-        {
-          "name": "AUDIO",
-          "type": "AUDIO",
-          "links": [
-            242
-          ]
-        },
-        {
-          "label": "PROMPT",
-          "name": "output",
-          "type": "*",
-          "links": [
-            253
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "previewExposures": []
-      },
-      "widgets_values": [
-        "",
-        1344,
-        768,
-        10,
-        "minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors",
-        8,
-        "Qwen3.5-9B-ultra-uncensored-heretic",
-        "🎞️ MiniMax H3 NSFW R2VA (10s)",
-        "None"
-      ],
-      "widgets_values_named": {
-        "prompt": "",
-        "width": 1344,
-        "height": 768,
-        "value_1": 10,
-        "unet_name": "minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors",
-        "steps": 8,
-        "model_name": "Qwen3.5-9B-ultra-uncensored-heretic",
-        "preset_prompt": "🎞️ MiniMax H3 NSFW R2VA (10s)",
-        "camera_tag": "None"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 169,
       "type": "8143d14a-a0ac-4f77-80ab-b72ff376a8b5",
       "pos": [
@@ -1361,6 +1235,134 @@
       },
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 105,
+      "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
+      "pos": [
+        -864.7982620932786,
+        4836.1428940448495
+      ],
+      "size": [
+        643.7447588082441,
+        488.1139551136903
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 433
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 434
+        },
+        {
+          "label": "duration",
+          "name": "value_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "value_1"
+          },
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_0",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 441
+        },
+        {
+          "name": "ref_images.ref_image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 442
+        },
+        {
+          "name": "ref_images.ref_image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 445
+        },
+        {
+          "name": "ref_images.ref_image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 446
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            194
+          ]
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            324
+          ]
+        },
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            242
+          ]
+        },
+        {
+          "label": "PROMPT",
+          "name": "output",
+          "type": "*",
+          "links": [
+            253
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.1",
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "",
+        1344,
+        768,
+        10,
+        "minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors",
+        8,
+        "Qwen3.5-9B-ultra-uncensored-heretic",
+        "🎞️ MiniMax H3 NSFW R2VA (10s)",
+        "None",
+        "euler"
+      ],
+      "widgets_values_named": {
+        "prompt": "",
+        "width": 1344,
+        "height": 768,
+        "value_1": 10,
+        "unet_name": "minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors",
+        "steps": 8,
+        "model_name": "Qwen3.5-9B-ultra-uncensored-heretic",
+        "preset_prompt": "🎞️ MiniMax H3 NSFW R2VA (10s)",
+        "camera_tag": "None",
+        "sampler_name": "euler"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     }
   ],
   "links": [
@@ -1663,7 +1665,7 @@
         "state": {
           "lastGroupId": 23,
           "lastNodeId": 218,
-          "lastLinkId": 461,
+          "lastLinkId": 462,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1675,7 +1677,7 @@
             -2560,
             4720,
             182.53125,
-            308
+            328
           ]
         },
         "outputNode": {
@@ -1846,6 +1848,18 @@
               -2401.46875,
               4984
             ]
+          },
+          {
+            "id": "86da6a60-0d6d-4d51-a0bd-e921286e5431",
+            "name": "sampler_name",
+            "type": "COMBO",
+            "linkIds": [
+              462
+            ],
+            "pos": [
+              -2401.46875,
+              5004
+            ]
           }
         ],
         "outputs": [
@@ -1916,7 +1930,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -2054,7 +2068,7 @@
               140
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -2125,7 +2139,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -2215,7 +2229,7 @@
               126
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -2272,7 +2286,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -2337,7 +2351,7 @@
               70
             ],
             "flags": {},
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -2385,7 +2399,7 @@
               404
             ],
             "flags": {},
-            "order": 14,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -2557,7 +2571,7 @@
               130
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -2614,7 +2628,7 @@
               60
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -2730,43 +2744,6 @@
             "widgets_values_named": {
               "shift_video": 12,
               "shift_audio": 3
-            }
-          },
-          {
-            "id": 156,
-            "type": "KSamplerSelect",
-            "pos": [
-              -775.3180826258708,
-              5060.755203901618
-            ],
-            "size": [
-              371.4342968750001,
-              61.260156249999454
-            ],
-            "flags": {},
-            "order": 4,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "SAMPLER",
-                "name": "SAMPLER",
-                "type": "SAMPLER",
-                "links": [
-                  306
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.33.0",
-              "Node name for S&R": "KSamplerSelect"
-            },
-            "widgets_values": [
-              "euler"
-            ],
-            "widgets_values_named": {
-              "sampler_name": "euler"
             }
           },
           {
@@ -3076,7 +3053,7 @@
               90
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -3265,6 +3242,53 @@
             },
             "color": "#223",
             "bgcolor": "#335"
+          },
+          {
+            "id": 156,
+            "type": "KSamplerSelect",
+            "pos": [
+              -775.3180826258708,
+              5060.755203901618
+            ],
+            "size": [
+              371.4342968750001,
+              61.260156249999454
+            ],
+            "flags": {},
+            "order": 14,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sampler_name"
+                },
+                "link": 462
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "SAMPLER",
+                "name": "SAMPLER",
+                "type": "SAMPLER",
+                "links": [
+                  306
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.33.0",
+              "Node name for S&R": "KSamplerSelect"
+            },
+            "widgets_values": [
+              "euler"
+            ],
+            "widgets_values_named": {
+              "sampler_name": "euler"
+            }
           }
         ],
         "groups": [
@@ -3713,6 +3737,14 @@
             "target_id": 170,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 462,
+            "origin_id": -10,
+            "origin_slot": 13,
+            "target_id": 156,
+            "target_slot": 0,
+            "type": "COMBO"
           }
         ],
         "extra": {}
@@ -3723,7 +3755,7 @@
         "state": {
           "lastGroupId": 23,
           "lastNodeId": 218,
-          "lastLinkId": 461,
+          "lastLinkId": 462,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -4314,10 +4346,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7963164621259253,
+      "scale": 0.34473323705753756,
       "offset": [
-        2813.7427434271367,
-        -4093.2675075087177
+        4629.926960071022,
+        -3596.697251952887
       ]
     }
   },

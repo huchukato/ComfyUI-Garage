@@ -2,7 +2,7 @@
   "id": "237ff12c-6141-4077-9f5e-d530111c6d41",
   "revision": 0,
   "last_node_id": 219,
-  "last_link_id": 452,
+  "last_link_id": 453,
   "nodes": [
     {
       "id": 118,
@@ -713,7 +713,8 @@
         "Qwen3.5-9B-ultra-uncensored-heretic",
         "🎬 MiniMax H3 NSFW (5s)",
         "None",
-        "None"
+        "None",
+        "euler"
       ],
       "widgets_values_named": {
         "prompt": "",
@@ -725,7 +726,8 @@
         "model_name": "Qwen3.5-9B-ultra-uncensored-heretic",
         "enhancement_style": "🎬 MiniMax H3 NSFW (5s)",
         "camera_tag": "None",
-        "style_tag": "None"
+        "style_tag": "None",
+        "sampler_name": "euler"
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -839,7 +841,7 @@
         "state": {
           "lastGroupId": 19,
           "lastNodeId": 219,
-          "lastLinkId": 452,
+          "lastLinkId": 453,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -851,7 +853,7 @@
             -2560,
             4720,
             158.056640625,
-            248
+            268
           ]
         },
         "outputNode": {
@@ -984,6 +986,18 @@
               -2425.943359375,
               4924
             ]
+          },
+          {
+            "id": "25555858-0864-4b48-9760-3419eb0c4a1d",
+            "name": "sampler_name",
+            "type": "COMBO",
+            "linkIds": [
+              453
+            ],
+            "pos": [
+              -2425.943359375,
+              4944
+            ]
           }
         ],
         "outputs": [
@@ -1101,7 +1115,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -1239,7 +1253,7 @@
               140
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -1310,7 +1324,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -1399,7 +1413,7 @@
               126
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -1456,7 +1470,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -1521,7 +1535,7 @@
               70
             ],
             "flags": {},
-            "order": 14,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -1569,7 +1583,7 @@
               130
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -1615,43 +1629,6 @@
             }
           },
           {
-            "id": 155,
-            "type": "KSamplerSelect",
-            "pos": [
-              -788.4043249891242,
-              5065.887742663165
-            ],
-            "size": [
-              371.4342968750001,
-              61.260156249999454
-            ],
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "SAMPLER",
-                "name": "SAMPLER",
-                "type": "SAMPLER",
-                "links": [
-                  295
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.33.0",
-              "Node name for S&R": "KSamplerSelect"
-            },
-            "widgets_values": [
-              "euler"
-            ],
-            "widgets_values_named": {
-              "sampler_name": "euler"
-            }
-          },
-          {
             "id": 16,
             "type": "BasicGuider",
             "pos": [
@@ -1663,7 +1640,7 @@
               60
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -1707,7 +1684,7 @@
               90
             ],
             "flags": {},
-            "order": 4,
+            "order": 3,
             "mode": 0,
             "inputs": [],
             "outputs": [
@@ -1746,7 +1723,7 @@
               550
             ],
             "flags": {},
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -2196,7 +2173,7 @@
               90
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -2337,6 +2314,53 @@
             },
             "color": "#223",
             "bgcolor": "#335"
+          },
+          {
+            "id": 155,
+            "type": "KSamplerSelect",
+            "pos": [
+              -788.4043249891242,
+              5065.887742663165
+            ],
+            "size": [
+              371.4342968750001,
+              61.260156249999454
+            ],
+            "flags": {},
+            "order": 14,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sampler_name"
+                },
+                "link": 453
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "SAMPLER",
+                "name": "SAMPLER",
+                "type": "SAMPLER",
+                "links": [
+                  295
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.33.0",
+              "Node name for S&R": "KSamplerSelect"
+            },
+            "widgets_values": [
+              "euler"
+            ],
+            "widgets_values_named": {
+              "sampler_name": "euler"
+            }
           }
         ],
         "groups": [
@@ -2737,6 +2761,14 @@
             "target_id": 206,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 453,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 155,
+            "target_slot": 0,
+            "type": "COMBO"
           }
         ],
         "extra": {}
@@ -2747,7 +2779,7 @@
         "state": {
           "lastGroupId": 19,
           "lastNodeId": 219,
-          "lastLinkId": 452,
+          "lastLinkId": 453,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3338,10 +3370,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.620921323059155,
+      "scale": 0.35358504895254117,
       "offset": [
-        2465.669127739355,
-        -4051.241070801315
+        4076.0613293425617,
+        -3791.459365900252
       ]
     }
   },
