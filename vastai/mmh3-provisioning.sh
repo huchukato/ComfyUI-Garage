@@ -30,7 +30,6 @@ NODES=(
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/Saganaki22/ComfyUI-sol-attn"
     "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
-    "https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler"
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
     "https://github.com/ltdrdata/comfyui-impact-pack"
     "https://github.com/ltdrdata/comfyui-impact-subpack"
@@ -39,7 +38,6 @@ NODES=(
 WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-I2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-FL2VA-Qwen3.5.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-FL2VA-Qwen3.5-x2Latent.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-T2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-R2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
@@ -81,8 +79,6 @@ MINIMAX_MODELS=(
     # ── lightx2v Turbo LoRA 8-step 768p (Apache-2.0, trained at 1344×768) — no custom node needed ──
     "loras|minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
     "loras|minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
-    # ── MiniMax H3 Latent Upscaler 3D (fp16, 691MB) — neural upscaler for 24-ch H3 latents, 1×–4× scale ──
-    "latent_upscale_models|minimax_h3_latent_upscaler_3d_fp16.safetensors|https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler/resolve/main/minimax_h3_latent_upscaler_3d_fp16.safetensors|690000000"
     # ── 10Eros-Max TURBO Hybrid Beta3 INT8 ConvRot skip edges (cicalooo, 22.5GB) — TURBO fuso, native ComfyUI, blocchi 0/1/48/49 in BF16 ──
     "diffusion_models|10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors|https://huggingface.co/cicalooo/10Eros-Max-h3-int8-convrot/resolve/main/10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors|22500000000"
 )
@@ -308,7 +304,7 @@ function provisioning_download() {
 
 function download_minimax_models() {
     local base_dir="${COMFYUI_DIR}/models"
-    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,loras,latent_upscale_models}
+    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,loras}
 
     local hf_cmd="hf"
     command -v hf >/dev/null 2>&1 || hf_cmd="huggingface-cli"
