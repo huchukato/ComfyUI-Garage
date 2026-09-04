@@ -118,6 +118,19 @@ function provisioning_start() {
 
     echo "✅ Workflows downloaded to: $WF_BASE"
 
+    # ── Download PMP wildcards from Garage (so wildcard updates don't require Docker rebuild) ──
+    echo "🎲 Downloading PMP wildcards from Garage..."
+    WILDCARD_DIR="${COMFYUI_DIR}/custom_nodes/comfy-tagcomplete/wildcards/pmp"
+    mkdir -p "$WILDCARD_DIR"
+    WILDCARD_FILES=$(curl -sL "https://api.github.com/repos/huchukato/ComfyUI-Garage/git/trees/master?recursive=1" | grep -o '"path": "wildcards/pmp/[^"]*\.txt"' | sed 's/"path": "//;s/"$//')
+    for wf in $WILDCARD_FILES; do
+        rel="${wf#wildcards/pmp/}"
+        dest="$WILDCARD_DIR/$rel"
+        mkdir -p "$(dirname "$dest")"
+        wget -q --tries=3 --timeout=30 "https://github.com/huchukato/ComfyUI-Garage/raw/master/$wf" -O "$dest" && echo "  ✅ $rel" || echo "  ❌ $rel"
+    done
+    echo "✅ PMP wildcards downloaded to: $WILDCARD_DIR"
+
     echo "🎯 Downloading checkpoint models..."
     provisioning_get_files \
         "${COMFYUI_DIR}/models/checkpoints" \
