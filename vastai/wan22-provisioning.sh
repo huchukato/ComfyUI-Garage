@@ -71,6 +71,15 @@ UNET_MODELS=(
    
 )
 
+DIFFUSION_MODELS=(
+    "diffusion_models|wan22RemixT2VI2V_i2vHighV30.safetensors|https://huggingface.co/huchukato/garage/resolve/main/diffusion_models/wan22RemixT2VI2V_i2vHighV30.safetensors|14000000000"
+    "diffusion_models|wan22RemixT2VI2V_i2vLowV30.safetensors|https://huggingface.co/huchukato/garage/resolve/main/diffusion_models/wan22RemixT2VI2V_i2vLowV30.safetensors|14000000000"
+    "diffusion_models|wan22RemixT2VI2V_t2vHighV20.safetensors|https://huggingface.co/huchukato/garage/resolve/main/diffusion_models/wan22RemixT2VI2V_t2vHighV20.safetensors|14000000000"
+    "diffusion_models|wan22RemixT2VI2V_t2vLowV20.safetensors|https://huggingface.co/huchukato/garage/resolve/main/diffusion_models/wan22RemixT2VI2V_t2vLowV20.safetensors|14000000000"
+    "diffusion_models|wan22EnhancedNSFWSVICamera_nsfwV2FP8H.safetensors|https://huggingface.co/huchukato/garage/resolve/main/diffusion_models/wan22EnhancedNSFWSVICamera_nsfwV2FP8H.safetensors|14000000000"
+    "diffusion_models|wan22EnhancedNSFWSVICamera_nsfwV2FP8L.safetensors|https://huggingface.co/huchukato/garage/resolve/main/diffusion_models/wan22EnhancedNSFWSVICamera_nsfwV2FP8L.safetensors|14000000000"
+)
+
 LORA_MODELS=(
             
 )
@@ -149,6 +158,11 @@ function provisioning_start() {
     provisioning_get_files \
         "${COMFYUI_DIR}/models/unet" \
         "${UNET_MODELS[@]}"
+        
+    echo "🔮 Downloading diffusion models..."
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/diffusion_models" \
+        "${DIFFUSION_MODELS[@]}"
         
     echo "🎨 Downloading LoRA models..."
     provisioning_get_files \
