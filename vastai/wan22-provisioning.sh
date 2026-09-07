@@ -79,8 +79,6 @@ VAE_MODELS=(
 )
 
 ESRGAN_MODELS=(
-    "https://huggingface.co/huchukato/garage/resolve/main/esrgan/2xLexicaRRDBNet.pth"
-    "https://huggingface.co/huchukato/garage/resolve/main/esrgan/2xLexicaRRDBNet_Sharp.pth"
 )
 
 TEXT_ENCODERS=(
