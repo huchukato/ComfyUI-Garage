@@ -33,6 +33,7 @@ NODES=(
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
     "https://github.com/ltdrdata/comfyui-impact-pack"
     "https://github.com/ltdrdata/comfyui-impact-subpack"
+    "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
 )
 
 WORKFLOWS=(

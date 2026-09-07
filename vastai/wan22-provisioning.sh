@@ -41,27 +41,18 @@ NODES=(
     "https://github.com/GACLove/ComfyUI-VFI"
     "https://github.com/stduhpf/ComfyUI-WanMoeKSampler"
     "https://github.com/melMass/comfy_mtb"
+    "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
 )
 
 WORKFLOWS=(
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-Qwen3.5.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-FL2V-Qwen3.5.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/gguf/WAN2.2-I2V-Qwen3.5-GGUF.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-Qwen3.5-Story.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-Full-Qwen3.5-MMAudio.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/gguf/WAN2.2-I2V-Full-Qwen3.5-MMAudio-GGUF.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-SVI-Qwen3.5.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/gguf/WAN2.2-I2V-SVI-Qwen3.5-GGUF.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-I2V-SVI-Qwen3.5-Story.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-T2V-Qwen3.5.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/gguf/WAN2.2-T2V-Qwen3.5-GGUF.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/fp8/WAN2.2-T2V-I2V-Qwen3.5-Story.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/gguf/WAN2.2-T2V-I2V-Full-Qwen3.5-MMAudio-GGUF.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-FL2V-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-I2V-20s-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-I2V-20s-Story-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-I2V-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-I2V-SVI-20s-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-I2V-SVI-20s-Story-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-T2V-I2V-Story-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-T2V-Qwen3.5.json"
 )
 
 CHECKPOINT_MODELS=(

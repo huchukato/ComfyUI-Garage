@@ -36,6 +36,7 @@ NODES=(
     "https://github.com/yolain/ComfyUI-Easy-Use"
     "https://github.com/ashtar1984/comfyui-find-perfect-resolution"
     "https://github.com/MoonGoblinDev/Civicomfy"
+    "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
 )
 
 WORKFLOWS=(
