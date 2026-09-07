@@ -21,7 +21,7 @@ ComfyUI-Garage/
 │   ├── pony/               Pony Diffusion (1 WF)
 │   ├── utils/              Utility WF (LoRa merge, RIFE TensorRT)
 │   └── wan22/
-│       ├── fp8/            WAN 2.2 in FP8 (7 WF)
+│       ├── fp8/            WAN 2.2 in FP8 (8 WF)
 │       └── gguf/           WAN 2.2 in GGUF (5 WF)
 └── img/                    Banner per README
 ```
@@ -45,8 +45,8 @@ https://github.com/huchukato/ComfyUI-Garage/raw/master/vastai/mmh3-provisioning.
 - **base/** — FL2VA, I2VA, R2VA, T2VA
 - **turbo/** — FL2VA, I2VA, R2VA, T2VA
 
-### WAN 2.2 (12)
-- **fp8/** — I2V, T2V, Story, SVI, Full+MMAudio
+### WAN 2.2 (13)
+- **fp8/** — I2V, FL2V, T2V, Story, SVI, Full+MMAudio
 - **gguf/** — varianti GGUF dei precedenti
 
 ### Pony (1)
