@@ -16,7 +16,7 @@ PIP_PACKAGES=(
 
 NODES=(
     "https://github.com/Comfy-Org/ComfyUI-Manager"
-    "https://github.com/huchukato/comfy-tagcomplete"
+    "https://github.com/huchukato/ComfyUI-TagForge"
     "https://github.com/huchukato/ComfyUI-QwenVL-Mod"
     "https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto"
@@ -125,7 +125,7 @@ function provisioning_start() {
 
     # ── Download PMP wildcards from Garage (single zip, ~120KB) ──
     echo "🎲 Downloading PMP wildcards zip from Garage..."
-    WILDCARD_DIR="${COMFYUI_DIR}/custom_nodes/comfy-tagcomplete/wildcards"
+    WILDCARD_DIR="${COMFYUI_DIR}/custom_nodes/ComfyUI-TagForge/wildcards"
     WILDCARD_ZIP_URL="https://github.com/huchukato/ComfyUI-Garage/raw/master/wildcards/pmp-wildcards.zip"
     mkdir -p "$WILDCARD_DIR"
     if wget -q --tries=3 --timeout=30 "$WILDCARD_ZIP_URL" -O "$WILDCARD_DIR/pmp-wildcards.zip"; then
