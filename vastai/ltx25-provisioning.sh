@@ -21,7 +21,6 @@ PIP_PACKAGES=(
 NODES=(
     "https://github.com/huchukato/comfy-tagcomplete"
     "https://github.com/huchukato/ComfyUI-QwenVL-Mod"
-    "https://github.com/BobRandomNumber/ComfyUI-Crystools-MonitorOnly"
     "https://github.com/Lightricks/ComfyUI-LTXVideo"
     "https://github.com/domprosys/ComfyUI-LTXVideo-Extra"
     "https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto"
