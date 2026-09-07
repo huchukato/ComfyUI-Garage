@@ -37,10 +37,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
+        "cnr_id": "comfyui-kjnodes"
       },
       "widgets_values": [
         114,
@@ -56,33 +56,6 @@
         "node_title": "FirstFrame",
         "allowed_float_decimals": 2
       }
-    },
-    {
-      "id": 135,
-      "type": "MarkdownNote",
-      "pos": [
-        -2231.7784139629966,
-        5656.908738670894
-      ],
-      "size": [
-        1013.766083426452,
-        1204.0376686355276
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "USER HINTS",
-      "properties": {},
-      "widgets_values": [
-        "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n---\n\n## 🔄 Loop Mode *(FL2VA only)*\n\nWhen you load the **same image** as both first frame (`image`) and last frame (`image2`), the preset automatically generates a seamless cyclic action:\n\n- Motion starts immediately from frame 0 (no wind-up)\n- Action continues at steady rhythm for the entire duration (no early freeze)\n- Final state matches the first frame exactly\n- For repetitive actions: rhythm continues without interruption, with natural variations\n- Combine with `[STATIC_CAMERA]` for a locked-off loop\n\n**To use:** upload the same image to both `image` and `image2`, select `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`, describe the action.\n\n> ⚠️ Loop mode improves endpoint continuity but does not guarantee a pixel-perfect loop. For a perfect loop, crossfade the last 0.5s with the first 0.5s in post-production.\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
-      ],
-      "widgets_values_named": {
-        "text": "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n---\n\n## 🔄 Loop Mode *(FL2VA only)*\n\nWhen you load the **same image** as both first frame (`image`) and last frame (`image2`), the preset automatically generates a seamless cyclic action:\n\n- Motion starts immediately from frame 0 (no wind-up)\n- Action continues at steady rhythm for the entire duration (no early freeze)\n- Final state matches the first frame exactly\n- For repetitive actions: rhythm continues without interruption, with natural variations\n- Combine with `[STATIC_CAMERA]` for a locked-off loop\n\n**To use:** upload the same image to both `image` and `image2`, select `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`, describe the action.\n\n> ⚠️ Loop mode improves endpoint continuity but does not guarantee a pixel-perfect loop. For a perfect loop, crossfade the last 0.5s with the first 0.5s in post-production.\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
     },
     {
       "id": 92,
@@ -153,7 +126,7 @@
         398.05346639868276
       ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -180,7 +153,7 @@
         513.7942890234126
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -204,7 +177,7 @@
       ],
       "size": [
         511.3966496168314,
-        624.4106154094677
+        334
       ],
       "flags": {},
       "order": 18,
@@ -252,9 +225,9 @@
       "title": "48FPS",
       "properties": {
         "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
+        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b"
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -321,7 +294,7 @@
         198.55274872512564
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -420,8 +393,8 @@
       ],
       "properties": {
         "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
-        "Node name for S&R": "FindPerfectResolution",
-        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb"
+        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
+        "Node name for S&R": "FindPerfectResolution"
       },
       "widgets_values": [
         0,
@@ -520,8 +493,8 @@
       ],
       "properties": {
         "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
-        "Node name for S&R": "FindPerfectResolution",
-        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb"
+        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
+        "Node name for S&R": "FindPerfectResolution"
       },
       "widgets_values": [
         0,
@@ -556,7 +529,7 @@
         401.09532327839497
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -583,7 +556,7 @@
         146
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -612,10 +585,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "1.2.2",
         "Node name for S&R": "EmptyLatentImagePresets",
-        "aux_id": "kijai/ComfyUI-KJNodes"
+        "cnr_id": "comfyui-kjnodes"
       },
       "widgets_values": [
         "1344 x 768 (1.75:1)",
@@ -689,33 +662,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 219,
-      "type": "MarkdownNote",
-      "pos": [
-        -188.33040508939936,
-        4354.566529077164
-      ],
-      "size": [
-        881.5036313554738,
-        468.9007988939975
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "CONFIGURATION",
-      "properties": {},
-      "widgets_values": [
-        "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Notes |\n|--------|-----------|----------|----------|--------------|---------|-------|-------|\n| **A — Turbo pure** | ON | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | Max speed, acceptable quality |\n| **B — Turbo + Sol** | ON | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | Conservative Sol-Attn, marginal gain |\n| **C — Native + Spectrum** | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | Max quality, Spectrum cuts ~45% |\n| **D — Native pure** | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | Quality reference, slowest |\n\n## Rules\n\n- **Spectrum + Turbo = forbidden**: continuous fallbacks, slowdown, quality degradation\n- **Sol-Attn with Turbo**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.5 | ~20% blocks approximated | Turbo 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Expected performance (RTX 5090, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (Turbo pure) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5-x2Latent.json` | A + latent upscaler | ~4-5 min |\n| Native (to create) | C (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | Turbo ON | Native 20-step |\n|-----------|-------|----------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON |\n| Sol-Attn | sparse attention (node) | OFF or tau 1.5+ | ON tau 1.0 |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | ON |\n| Turbo LoRA | few-step distillation (node) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON |\n| `--cuda-malloc` | arg | ON | ON |\n| `--async-offload` | arg | ON | ON |\n"
-      ],
-      "widgets_values_named": {
-        "text": "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Notes |\n|--------|-----------|----------|----------|--------------|---------|-------|-------|\n| **A — Turbo pure** | ON | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | Max speed, acceptable quality |\n| **B — Turbo + Sol** | ON | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | Conservative Sol-Attn, marginal gain |\n| **C — Native + Spectrum** | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | Max quality, Spectrum cuts ~45% |\n| **D — Native pure** | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | Quality reference, slowest |\n\n## Rules\n\n- **Spectrum + Turbo = forbidden**: continuous fallbacks, slowdown, quality degradation\n- **Sol-Attn with Turbo**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.5 | ~20% blocks approximated | Turbo 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Expected performance (RTX 5090, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (Turbo pure) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5-x2Latent.json` | A + latent upscaler | ~4-5 min |\n| Native (to create) | C (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | Turbo ON | Native 20-step |\n|-----------|-------|----------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON |\n| Sol-Attn | sparse attention (node) | OFF or tau 1.5+ | ON tau 1.0 |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | ON |\n| Turbo LoRA | few-step distillation (node) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON |\n| `--cuda-malloc` | arg | ON | ON |\n| `--async-offload` | arg | ON | ON |\n"
-      },
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 114,
       "type": "LoadImage",
       "pos": [
@@ -727,7 +673,7 @@
         717.2904207205629
       ],
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -774,7 +720,7 @@
         715.9489903021231
       ],
       "flags": {},
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -840,9 +786,9 @@
       "title": "QWEN3VL GENERATED PROMPT",
       "properties": {
         "aux_id": "yolain/ComfyUI-Easy-Use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7"
+        "cnr_id": "comfyui-easy-use"
       },
       "widgets_values": [
         "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A high-angle side view from above captures a steamy sauna scene featuring two nude women with glistening, sweat-slicked skin under warm, amber lighting. The woman in the foreground is on all fours in a deep kneeling position, her back arched and hips thrust forward, exposing her buttocks and lower spine. Her left breast is visible, with her nipple erect and prominent. She is actively engaged in oral sex, her mouth wide open in an expression of intense pleasure, tongue extended to lick and suck the shaft of a penis. Her left hand firmly grips the base of the penis, while her right hand caresses the scrotum, fingers pressing into the testicles. The penis is inserted deeply into her mouth, the glans clearly visible inside her lips. The woman in the background leans in closely, her face near the first woman's, observing the act with a smug, satisfied expression. As the clip progresses, the camera slowly pushes in and tilts down slightly, focusing more tightly on the central action. The woman in the foreground increases the depth of the oral penetration, her mouth opening wider to accommodate the shaft, her tongue darting out to lap at the veins and head. Her breathing becomes heavier, audible as sharp gasps and moans. The woman in the background shifts her weight, her gaze locking onto the penis as she watches the other woman perform. The lighting highlights the sheen of sweat on their skin and the wetness of the oral sex. By the final second, the camera holds steady on the deep insertion, the woman in the foreground maintaining her wide-mouthed expression of ecstasy, her hands holding the penis steady as she continues the rhythmic sucking and licking motion.\n\noverall_soundscape: The soundscape is dominated by the visceral sounds of sex: the wet, rhythmic suction of the mouth on the penis, the slap of skin against skin as the woman's face moves, and the heavy, labored breathing of both women. The woman in the foreground emits sharp, guttural moans and gasps, her voice rising in pitch as the depth of penetration increases. The woman in the background hums low, approvingly, her voice a soft counterpoint to the louder sounds of the main action. The ambient sound of the sauna—distant, muffled steam hissing and wood creaking—is barely audible beneath the primary focus on the sexual sounds.\n\nnon_diegetic_music: N/A"
@@ -852,54 +798,6 @@
       },
       "color": "#233",
       "bgcolor": "#355"
-    },
-    {
-      "id": 221,
-      "type": "WildcardProcessor",
-      "pos": [
-        -918.5142736500152,
-        4431.2086396668665
-      ],
-      "size": [
-        400,
-        296
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            469
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "WildcardProcessor"
-      },
-      "widgets_values": [
-        "__mbe/blwjob/blwjb_clean__",
-        562156146102218,
-        "randomize",
-        true,
-        "from side pov from above, looking at viewer up, one breast out, nipples, penis, doggystyle kneeling, open mouth wide open mouth, tongue out drooling, licking penis sucking penis, holding penis handjob, oral sex fellatio, veined penis deep oral insertion, caressing testicles, shock happy smug",
-        true,
-        0.5,
-        "from side pov from above, looking at viewer up, one breast out, nipples, penis, doggystyle kneeling, open mouth wide open mouth, tongue out drooling, licking penis sucking penis, holding penis handjob, oral sex fellatio, veined penis deep oral insertion, caressing testicles, shock happy smug"
-      ],
-      "widgets_values_named": {
-        "text": "__mbe/blwjob/blwjb_clean__",
-        "seed": 562156146102218,
-        "control_after_generate": "randomize",
-        "populate": true,
-        "populated_text": "from side pov from above, looking at viewer up, one breast out, nipples, penis, doggystyle kneeling, open mouth wide open mouth, tongue out drooling, licking penis sucking penis, holding penis handjob, oral sex fellatio, veined penis deep oral insertion, caressing testicles, shock happy smug",
-        "deduplicate": true,
-        "downvote_factor": 0.5,
-        "preview": "from side pov from above, looking at viewer up, one breast out, nipples, penis, doggystyle kneeling, open mouth wide open mouth, tongue out drooling, licking penis sucking penis, holding penis handjob, oral sex fellatio, veined penis deep oral insertion, caressing testicles, shock happy smug"
-      }
     },
     {
       "id": 218,
@@ -913,7 +811,7 @@
         106.21204325921644
       ],
       "flags": {},
-      "order": 10,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1062,6 +960,112 @@
         "scheduler": "simple",
         "shift_video": 6,
         "shift_audio": 3
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 221,
+      "type": "WildcardProcessor",
+      "pos": [
+        -871.845228534553,
+        4461.152338378328
+      ],
+      "size": [
+        625.9388175500485,
+        365.052479265898
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            469
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "huchukato/comfy-tagcomplete",
+        "ver": "29bbcd3667b4c4d71666f0566f27517755fed209",
+        "Node name for S&R": "WildcardProcessor"
+      },
+      "widgets_values": [
+        "__mbe/blwjob/blwjb_clean__",
+        562156146102218,
+        "randomize",
+        true,
+        "from side pov from above, looking at viewer up, one breast out, nipples, penis, doggystyle kneeling, open mouth wide open mouth, tongue out drooling, licking penis sucking penis, holding penis handjob, oral sex fellatio, veined penis deep oral insertion, caressing testicles, shock happy smug",
+        true,
+        0.5,
+        "from side pov from above, looking at viewer up, one breast out, nipples, penis, doggystyle kneeling, open mouth wide open mouth, tongue out drooling, licking penis sucking penis, holding penis handjob, oral sex fellatio, veined penis deep oral insertion, caressing testicles, shock happy smug"
+      ],
+      "widgets_values_named": {
+        "text": "__mbe/blwjob/blwjb_clean__",
+        "seed": 562156146102218,
+        "control_after_generate": "randomize",
+        "populate": true,
+        "populated_text": "from side pov from above, looking at viewer up, one breast out, nipples, penis, doggystyle kneeling, open mouth wide open mouth, tongue out drooling, licking penis sucking penis, holding penis handjob, oral sex fellatio, veined penis deep oral insertion, caressing testicles, shock happy smug",
+        "deduplicate": true,
+        "downvote_factor": 0.5,
+        "preview": "from side pov from above, looking at viewer up, one breast out, nipples, penis, doggystyle kneeling, open mouth wide open mouth, tongue out drooling, licking penis sucking penis, holding penis handjob, oral sex fellatio, veined penis deep oral insertion, caressing testicles, shock happy smug"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 135,
+      "type": "MarkdownNote",
+      "pos": [
+        -2231.7784139629966,
+        5656.908738670894
+      ],
+      "size": [
+        1011.7582107540695,
+        779.7536104096289
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "USER HINTS",
+      "properties": {},
+      "widgets_values": [
+        "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n---\n\n## 🔄 Loop Mode *(FL2VA only)*\n\nWhen you load the **same image** as both first frame (`image`) and last frame (`image2`), the preset automatically generates a seamless cyclic action:\n\n- Motion starts immediately from frame 0 (no wind-up)\n- Action continues at steady rhythm for the entire duration (no early freeze)\n- Final state matches the first frame exactly\n- For repetitive actions: rhythm continues without interruption, with natural variations\n- Combine with `[STATIC_CAMERA]` for a locked-off loop\n\n**To use:** upload the same image to both `image` and `image2`, select `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`, describe the action.\n\n> ⚠️ Loop mode improves endpoint continuity but does not guarantee a pixel-perfect loop. For a perfect loop, crossfade the last 0.5s with the first 0.5s in post-production.\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
+      ],
+      "widgets_values_named": {
+        "text": "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n---\n\n## 🔄 Loop Mode *(FL2VA only)*\n\nWhen you load the **same image** as both first frame (`image`) and last frame (`image2`), the preset automatically generates a seamless cyclic action:\n\n- Motion starts immediately from frame 0 (no wind-up)\n- Action continues at steady rhythm for the entire duration (no early freeze)\n- Final state matches the first frame exactly\n- For repetitive actions: rhythm continues without interruption, with natural variations\n- Combine with `[STATIC_CAMERA]` for a locked-off loop\n\n**To use:** upload the same image to both `image` and `image2`, select `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`, describe the action.\n\n> ⚠️ Loop mode improves endpoint continuity but does not guarantee a pixel-perfect loop. For a perfect loop, crossfade the last 0.5s with the first 0.5s in post-production.\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 219,
+      "type": "MarkdownNote",
+      "pos": [
+        -194.2512103492257,
+        4350.863455470832
+      ],
+      "size": [
+        896.4175289762429,
+        479.82314240701726
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "CONFIGURATION",
+      "properties": {},
+      "widgets_values": [
+        "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | OFF | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Turbo LoRA + Sol** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | 6/3 | Conservative Sol-Attn, marginal gain |\n| **D — Native + Spectrum** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, Spectrum cuts ~45% |\n| **E — Native pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Quality reference, slowest |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n- **Spectrum mutual exclusivity**: `selective_rollback_correction` and `offline_smoothing_replay` are mutually exclusive — keep `selective_rollback_correction: false`, `offline_smoothing_replay: true`\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX 5090, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA pure) | ~2-3 min |\n| Native (to create) | D (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |\n| Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Fast Groups Bypasser** — toggle Spectrum and Sol-Attn groups:\n   - 10Eros → Sol-Attn **active**, Spectrum **bypassed**\n   - Turbo LoRA → both **bypassed**\n   - Native → both **active**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
+      ],
+      "widgets_values_named": {
+        "text": "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | OFF | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Turbo LoRA + Sol** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | 6/3 | Conservative Sol-Attn, marginal gain |\n| **D — Native + Spectrum** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, Spectrum cuts ~45% |\n| **E — Native pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Quality reference, slowest |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n- **Spectrum mutual exclusivity**: `selective_rollback_correction` and `offline_smoothing_replay` are mutually exclusive — keep `selective_rollback_correction: false`, `offline_smoothing_replay: true`\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX 5090, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA pure) | ~2-3 min |\n| Native (to create) | D (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |\n| Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Fast Groups Bypasser** — toggle Spectrum and Sol-Attn groups:\n   - 10Eros → Sol-Attn **active**, Spectrum **bypassed**\n   - Turbo LoRA → both **bypassed**\n   - Native → both **active**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -2102,8 +2106,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "Node name for S&R": "AILab_QwenVL_Advanced",
-              "ver": "9abf364fc3acd1ea93ed18fec343295050398881"
+              "ver": "9abf364fc3acd1ea93ed18fec343295050398881",
+              "Node name for S&R": "AILab_QwenVL_Advanced"
             },
             "widgets_values": [
               "Qwen3.5-4B-heretic-v2",
@@ -2353,8 +2357,8 @@
             ],
             "properties": {
               "aux_id": "Saganaki22/ComfyUI-sol-attn",
-              "Node name for S&R": "MiniMaxH3FusedModulation",
-              "ver": "e1d211026583064d33dc4326207c6502e2442208"
+              "ver": "e1d211026583064d33dc4326207c6502e2442208",
+              "Node name for S&R": "MiniMaxH3FusedModulation"
             },
             "widgets_values": [
               true
@@ -2399,8 +2403,8 @@
             ],
             "properties": {
               "aux_id": "Saganaki22/ComfyUI-sol-attn",
-              "Node name for S&R": "MiniMaxH3ChunkFeedForward",
-              "ver": "e1d211026583064d33dc4326207c6502e2442208"
+              "ver": "e1d211026583064d33dc4326207c6502e2442208",
+              "Node name for S&R": "MiniMaxH3ChunkFeedForward"
             },
             "widgets_values": [
               true,
@@ -2678,9 +2682,9 @@
             "title": "Spectrum H3",
             "properties": {
               "aux_id": "xmarre/ComfyUI-Spectrum-MiniMax-H3",
+              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0",
               "Node name for S&R": "SpectrumApplyMiniMaxH3",
-              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3",
-              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0"
+              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3"
             },
             "widgets_values": [
               true,
@@ -2829,8 +2833,8 @@
             ],
             "properties": {
               "aux_id": "Saganaki22/ComfyUI-sol-attn",
-              "Node name for S&R": "MiniMaxH3ScheduledSolAttentionPatch",
-              "ver": "e1d211026583064d33dc4326207c6502e2442208"
+              "ver": "e1d211026583064d33dc4326207c6502e2442208",
+              "Node name for S&R": "MiniMaxH3ScheduledSolAttentionPatch"
             },
             "widgets_values": [
               true,
@@ -3541,8 +3545,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
-              "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92"
+              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
+              "Node name for S&R": "AutoLoadRifeTensorrtModel"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -3624,8 +3628,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
-              "Node name for S&R": "AutoRifeTensorrt",
-              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92"
+              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
+              "Node name for S&R": "AutoRifeTensorrt"
             },
             "widgets_values": [
               100,
@@ -3690,8 +3694,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-              "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687"
+              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
+              "Node name for S&R": "LoadUpscalerTensorrtModel"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -3764,8 +3768,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-              "Node name for S&R": "UpscalerTensorrt",
-              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687"
+              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
+              "Node name for S&R": "UpscalerTensorrt"
             },
             "widgets_values": [
               "1080p",
@@ -3927,10 +3931,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.9456549280323263,
+      "scale": 0.6458950399783663,
       "offset": [
-        1269.765002956403,
-        -4681.779540262418
+        2335.2728670105475,
+        -3891.3425746440366
       ]
     }
   },

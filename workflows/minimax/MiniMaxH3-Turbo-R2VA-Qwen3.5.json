@@ -1,8 +1,8 @@
 {
   "id": "b25965af-2005-4e6d-b188-e9c5ea0224c8",
   "revision": 0,
-  "last_node_id": 218,
-  "last_link_id": 462,
+  "last_node_id": 219,
+  "last_link_id": 465,
   "nodes": [
     {
       "id": 155,
@@ -18,7 +18,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 19,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -38,8 +38,8 @@
       ],
       "properties": {
         "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-        "Node name for S&R": "VRAMCleanup",
-        "ver": "ba8b0648b7ea5fcc15c62d535343b275cae5de3e"
+        "ver": "ba8b0648b7ea5fcc15c62d535343b275cae5de3e",
+        "Node name for S&R": "VRAMCleanup"
       },
       "widgets_values": [
         "Full Cleanup"
@@ -60,7 +60,7 @@
         154
       ],
       "flags": {},
-      "order": 12,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -81,10 +81,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "6ab7e8130e449ed2c0037589bcf84146ceb7fc9c",
         "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
+        "cnr_id": "comfyui-kjnodes"
       },
       "widgets_values": [
         114,
@@ -113,7 +113,7 @@
         617.148754310283
       ],
       "flags": {},
-      "order": 20,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -133,9 +133,9 @@
       "title": "QWEN3VL GENERATED PROMPT",
       "properties": {
         "aux_id": "yolain/ComfyUI-Easy-Use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7"
+        "cnr_id": "comfyui-easy-use"
       },
       "widgets_values": [
         "subject_definitions:\n<Picture 1> is the initial keyframe showing a young woman with long lavender hair and teal eyes, wearing a tight, high-collared dark blue latex outfit with a zipper down the front, standing in a sunlit room with a window casting geometric shadows.\n<Picture 2> is the final keyframe showing the same character with a star-shaped emblem on the chest, a black armband on her left arm, and a more open stance, highlighting the texture of the latex and the lighting on her skin.\n[Subject 1] is the anime-style female character, characterized by her pale skin, long flowing lavender hair, teal eyes, and an hourglass figure. She is wearing a form-fitting, sleeveless dark blue latex dress with a high collar, zipper details, and a star emblem on the chest. Her expression is calm and alluring, with a slight smile.\n\nsummary:\nkeyframe completion + reference generation\n\nretention_analysis:\n<Picture 1> (appears in [Shot 1], [Shot 2]): fully_preserved - character identity, outfit, lighting, and camera angle are strictly maintained from the first frame to the end.\n<Picture 2> (appears in [Shot 2]): fully_preserved - the star emblem, armband, and final pose composition are locked to this frame.\n\ndetailed_description:\nThe target video uses a cinematic anime style with a focus on material textures, specifically the sheen of latex and the softness of skin.\n[Shot 1] The camera begins with a close-up of the character, <Subject 1>, standing in a sunlit room. The lighting is warm and directional, coming from a window to the left, casting sharp geometric shadows across the wall behind her. She is wearing a tight, dark blue latex dress, <Picture 1>, that clings to her body, highlighting her curves. Her hands are raised, gently pulling the fabric of the dress apart at her chest, revealing the texture underneath. Her teal eyes gaze directly at the viewer, and her long lavender hair flows around her shoulders. The atmosphere is intimate and slightly tense, with the light creating a halo effect around her hair.\nAt 00:03.500, the shot cuts to a slightly wider angle, <Picture 2>. The character shifts her pose, crossing her arms in front of her chest. The camera pans left, following her movement. The focus remains on her upper body, showing the star emblem on her chest and the black armband on her left arm. The lighting shifts slightly as she turns, emphasizing the wet look of the latex and the smoothness of her skin. Her expression remains serene as she looks over her shoulder.\n[Shot 2] The camera continues its smooth pan left, keeping the character centered. She maintains her pose, her fingers interlaced, showcasing the details of the dress and the way the light reflects off the material. The background remains consistent with the window and shadows. The scene ends with her holding the pose, the lighting highlighting her features and the texture of her outfit.\n\noverall_soundscape:\nThe audio is dominated by the subtle, wet sound of latex fabric stretching and snapping softly as her hands pull the dress apart. This is layered with the soft, rhythmic sound of her breathing, which is calm but deliberate. As the camera pans to the second pose, the sound of her arms crossing creates a gentle rustle of the tight material. There is a faint, ambient hum of the room, but the primary focus remains on the tactile sounds of the clothing and the character's breathing.\n\nnon_diegetic_music:\nA low, ambient synth pad with a slow, building beat provides a sensual backdrop, matching the slow, deliberate camera movement."
@@ -212,7 +212,7 @@
         334
       ],
       "flags": {},
-      "order": 22,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -257,9 +257,9 @@
       "title": "48FPS",
       "properties": {
         "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
+        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b"
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -328,7 +328,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 14,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -390,8 +390,8 @@
       ],
       "properties": {
         "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
-        "Node name for S&R": "FindPerfectResolution",
-        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb"
+        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
+        "Node name for S&R": "FindPerfectResolution"
       },
       "widgets_values": [
         0,
@@ -428,7 +428,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 13,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -490,8 +490,8 @@
       ],
       "properties": {
         "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
-        "Node name for S&R": "FindPerfectResolution",
-        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb"
+        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
+        "Node name for S&R": "FindPerfectResolution"
       },
       "widgets_values": [
         0,
@@ -528,7 +528,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 15,
+      "order": 16,
       "mode": 4,
       "inputs": [
         {
@@ -590,8 +590,8 @@
       ],
       "properties": {
         "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
-        "Node name for S&R": "FindPerfectResolution",
-        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb"
+        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
+        "Node name for S&R": "FindPerfectResolution"
       },
       "widgets_values": [
         0,
@@ -628,7 +628,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 16,
+      "order": 17,
       "mode": 4,
       "inputs": [
         {
@@ -690,8 +690,8 @@
       ],
       "properties": {
         "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
-        "Node name for S&R": "FindPerfectResolution",
-        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb"
+        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
+        "Node name for S&R": "FindPerfectResolution"
       },
       "widgets_values": [
         0,
@@ -971,10 +971,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "1.2.2",
         "Node name for S&R": "EmptyLatentImagePresets",
-        "aux_id": "kijai/ComfyUI-KJNodes"
+        "cnr_id": "comfyui-kjnodes"
       },
       "widgets_values": [
         "1344 x 768 (1.75:1)",
@@ -1001,7 +1001,7 @@
         106
       ],
       "flags": {},
-      "order": 18,
+      "order": 19,
       "mode": 4,
       "inputs": [
         {
@@ -1120,7 +1120,7 @@
         251
       ],
       "flags": {},
-      "order": 21,
+      "order": 22,
       "mode": 0,
       "inputs": [
         {
@@ -1248,7 +1248,7 @@
         488.1139551136903
       ],
       "flags": {},
-      "order": 17,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -1347,7 +1347,10 @@
         "Qwen3.5-9B-ultra-uncensored-heretic",
         "🎞️ MiniMax H3 NSFW R2VA (10s)",
         "None",
-        "euler"
+        "euler",
+        "simple",
+        6,
+        3
       ],
       "widgets_values_named": {
         "prompt": "",
@@ -1359,7 +1362,37 @@
         "model_name": "Qwen3.5-9B-ultra-uncensored-heretic",
         "preset_prompt": "🎞️ MiniMax H3 NSFW R2VA (10s)",
         "camera_tag": "None",
-        "sampler_name": "euler"
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "shift_video": 6,
+        "shift_audio": 3
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 219,
+      "type": "MarkdownNote",
+      "pos": [
+        -266.551792939357,
+        4066.2193614044572
+      ],
+      "size": [
+        957.5512784799153,
+        705.8832200139814
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "CONFIGURATION",
+      "properties": {},
+      "widgets_values": [
+        "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | OFF | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Turbo LoRA + Sol** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | 6/3 | Conservative Sol-Attn, marginal gain |\n| **D — Native + Spectrum** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, Spectrum cuts ~45% |\n| **E — Native pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Quality reference, slowest |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n- **Spectrum mutual exclusivity**: `selective_rollback_correction` and `offline_smoothing_replay` are mutually exclusive — keep `selective_rollback_correction: false`, `offline_smoothing_replay: true`\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX 5090, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA pure) | ~2-3 min |\n| Native (to create) | D (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |\n| Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Fast Groups Bypasser** — toggle Spectrum and Sol-Attn groups:\n   - 10Eros → Sol-Attn **active**, Spectrum **bypassed**\n   - Turbo LoRA → both **bypassed**\n   - Native → both **active**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
+      ],
+      "widgets_values_named": {
+        "text": "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | OFF | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Turbo LoRA + Sol** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | 6/3 | Conservative Sol-Attn, marginal gain |\n| **D — Native + Spectrum** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, Spectrum cuts ~45% |\n| **E — Native pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Quality reference, slowest |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n- **Spectrum mutual exclusivity**: `selective_rollback_correction` and `offline_smoothing_replay` are mutually exclusive — keep `selective_rollback_correction: false`, `offline_smoothing_replay: true`\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX 5090, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA pure) | ~2-3 min |\n| Native (to create) | D (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |\n| Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Fast Groups Bypasser** — toggle Spectrum and Sol-Attn groups:\n   - 10Eros → Sol-Attn **active**, Spectrum **bypassed**\n   - Turbo LoRA → both **bypassed**\n   - Native → both **active**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -1664,8 +1697,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 218,
-          "lastLinkId": 462,
+          "lastNodeId": 219,
+          "lastLinkId": 465,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1677,7 +1710,7 @@
             -2560,
             4720,
             182.53125,
-            328
+            388
           ]
         },
         "outputNode": {
@@ -1859,6 +1892,42 @@
             "pos": [
               -2401.46875,
               5004
+            ]
+          },
+          {
+            "id": "92df884f-7f2a-4ab1-9e7e-fa89e4ac1a20",
+            "name": "scheduler",
+            "type": "COMBO",
+            "linkIds": [
+              463
+            ],
+            "pos": [
+              -2401.46875,
+              5024
+            ]
+          },
+          {
+            "id": "c890ee3a-9d2f-4fc5-b3fd-6fb9567f7740",
+            "name": "shift_video",
+            "type": "FLOAT",
+            "linkIds": [
+              464
+            ],
+            "pos": [
+              -2401.46875,
+              5044
+            ]
+          },
+          {
+            "id": "87c25f6c-d1b5-46db-8b08-5175ae161fd0",
+            "name": "shift_audio",
+            "type": "FLOAT",
+            "linkIds": [
+              465
+            ],
+            "pos": [
+              -2401.46875,
+              5064
             ]
           }
         ],
@@ -2560,63 +2629,6 @@
             }
           },
           {
-            "id": 9,
-            "type": "BasicScheduler",
-            "pos": [
-              -781.9402290680931,
-              5174.509321530373
-            ],
-            "size": [
-              370,
-              130
-            ],
-            "flags": {},
-            "order": 5,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 331
-              },
-              {
-                "localized_name": "steps",
-                "name": "steps",
-                "type": "INT",
-                "widget": {
-                  "name": "steps"
-                },
-                "link": 273
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "SIGMAS",
-                "name": "SIGMAS",
-                "type": "SIGMAS",
-                "links": [
-                  18
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "BasicScheduler"
-            },
-            "widgets_values": [
-              "simple",
-              20,
-              1
-            ],
-            "widgets_values_named": {
-              "scheduler": "simple",
-              "steps": 20,
-              "denoise": 1
-            }
-          },
-          {
             "id": 16,
             "type": "BasicGuider",
             "pos": [
@@ -2700,53 +2712,6 @@
             }
           },
           {
-            "id": 170,
-            "type": "MiniMaxH3SigmaShift",
-            "pos": [
-              -763.9710310974134,
-              4646.139112169473
-            ],
-            "size": [
-              357.68998449843036,
-              82
-            ],
-            "flags": {},
-            "order": 15,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 461
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "MODEL",
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": [
-                  330,
-                  331
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.34.2",
-              "Node name for S&R": "MiniMaxH3SigmaShift"
-            },
-            "widgets_values": [
-              12,
-              3
-            ],
-            "widgets_values_named": {
-              "shift_video": 12,
-              "shift_audio": 3
-            }
-          },
-          {
             "id": 206,
             "type": "AILab_QwenVL_Advanced",
             "pos": [
@@ -2825,8 +2790,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "Node name for S&R": "AILab_QwenVL_Advanced",
-              "ver": "94843a8153cce9336810388f9322ef699e2d99ec"
+              "ver": "94843a8153cce9336810388f9322ef699e2d99ec",
+              "Node name for S&R": "AILab_QwenVL_Advanced"
             },
             "widgets_values": [
               "Qwen3.5-4B-heretic-v2",
@@ -2884,7 +2849,7 @@
             ],
             "flags": {},
             "order": 18,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "model",
@@ -2911,8 +2876,8 @@
             ],
             "properties": {
               "aux_id": "Saganaki22/ComfyUI-sol-attn",
-              "Node name for S&R": "MiniMaxH3ScheduledSolAttentionPatch",
-              "ver": "e1d211026583064d33dc4326207c6502e2442208"
+              "ver": "e1d211026583064d33dc4326207c6502e2442208",
+              "Node name for S&R": "MiniMaxH3ScheduledSolAttentionPatch"
             },
             "widgets_values": [
               true,
@@ -2958,7 +2923,7 @@
             ],
             "flags": {},
             "order": 19,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "model",
@@ -2979,8 +2944,8 @@
             ],
             "properties": {
               "aux_id": "Saganaki22/ComfyUI-sol-attn",
-              "Node name for S&R": "MiniMaxH3FusedModulation",
-              "ver": "e1d211026583064d33dc4326207c6502e2442208"
+              "ver": "e1d211026583064d33dc4326207c6502e2442208",
+              "Node name for S&R": "MiniMaxH3FusedModulation"
             },
             "widgets_values": [
               true
@@ -3004,7 +2969,7 @@
             ],
             "flags": {},
             "order": 20,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "model",
@@ -3025,8 +2990,8 @@
             ],
             "properties": {
               "aux_id": "Saganaki22/ComfyUI-sol-attn",
-              "Node name for S&R": "MiniMaxH3ChunkFeedForward",
-              "ver": "e1d211026583064d33dc4326207c6502e2442208"
+              "ver": "e1d211026583064d33dc4326207c6502e2442208",
+              "Node name for S&R": "MiniMaxH3ChunkFeedForward"
             },
             "widgets_values": [
               true,
@@ -3180,9 +3145,9 @@
             "title": "Spectrum H3",
             "properties": {
               "aux_id": "xmarre/ComfyUI-Spectrum-MiniMax-H3",
+              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0",
               "Node name for S&R": "SpectrumApplyMiniMaxH3",
-              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3",
-              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0"
+              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3"
             },
             "widgets_values": [
               true,
@@ -3226,7 +3191,7 @@
               "history_storage": "system_ram",
               "bootstrap_first_forecast": true,
               "anchor_residual_feedback": false,
-              "selective_rollback_correction": true,
+              "selective_rollback_correction": false,
               "offline_smoothing_replay": true,
               "audio_blend_weight": 0,
               "offline_archive_storage": "system_ram",
@@ -3288,6 +3253,137 @@
             ],
             "widgets_values_named": {
               "sampler_name": "euler"
+            }
+          },
+          {
+            "id": 9,
+            "type": "BasicScheduler",
+            "pos": [
+              -781.9402290680931,
+              5174.509321530373
+            ],
+            "size": [
+              370,
+              130
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 331
+              },
+              {
+                "localized_name": "scheduler",
+                "name": "scheduler",
+                "type": "COMBO",
+                "widget": {
+                  "name": "scheduler"
+                },
+                "link": 463
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "type": "INT",
+                "widget": {
+                  "name": "steps"
+                },
+                "link": 273
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "SIGMAS",
+                "name": "SIGMAS",
+                "type": "SIGMAS",
+                "links": [
+                  18
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.30.1",
+              "Node name for S&R": "BasicScheduler"
+            },
+            "widgets_values": [
+              "simple",
+              20,
+              1
+            ],
+            "widgets_values_named": {
+              "scheduler": "simple",
+              "steps": 20,
+              "denoise": 1
+            }
+          },
+          {
+            "id": 170,
+            "type": "MiniMaxH3SigmaShift",
+            "pos": [
+              -763.9710310974134,
+              4646.139112169473
+            ],
+            "size": [
+              357.68998449843036,
+              82
+            ],
+            "flags": {},
+            "order": 15,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 461
+              },
+              {
+                "localized_name": "shift_video",
+                "name": "shift_video",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "shift_video"
+                },
+                "link": 464
+              },
+              {
+                "localized_name": "shift_audio",
+                "name": "shift_audio",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "shift_audio"
+                },
+                "link": 465
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  330,
+                  331
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.34.2",
+              "Node name for S&R": "MiniMaxH3SigmaShift"
+            },
+            "widgets_values": [
+              12,
+              3
+            ],
+            "widgets_values_named": {
+              "shift_video": 12,
+              "shift_audio": 3
             }
           }
         ],
@@ -3503,7 +3599,7 @@
             "origin_id": -10,
             "origin_slot": 5,
             "target_id": 9,
-            "target_slot": 1,
+            "target_slot": 2,
             "type": "INT"
           },
           {
@@ -3745,6 +3841,30 @@
             "target_id": 156,
             "target_slot": 0,
             "type": "COMBO"
+          },
+          {
+            "id": 463,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 9,
+            "target_slot": 1,
+            "type": "COMBO"
+          },
+          {
+            "id": 464,
+            "origin_id": -10,
+            "origin_slot": 15,
+            "target_id": 170,
+            "target_slot": 1,
+            "type": "FLOAT"
+          },
+          {
+            "id": 465,
+            "origin_id": -10,
+            "origin_slot": 16,
+            "target_id": 170,
+            "target_slot": 2,
+            "type": "FLOAT"
           }
         ],
         "extra": {}
@@ -3754,8 +3874,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 218,
-          "lastLinkId": 462,
+          "lastNodeId": 219,
+          "lastLinkId": 465,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3960,8 +4080,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
-              "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92"
+              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
+              "Node name for S&R": "AutoLoadRifeTensorrtModel"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -4043,8 +4163,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
-              "Node name for S&R": "AutoRifeTensorrt",
-              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92"
+              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
+              "Node name for S&R": "AutoRifeTensorrt"
             },
             "widgets_values": [
               100,
@@ -4109,8 +4229,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-              "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687"
+              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
+              "Node name for S&R": "LoadUpscalerTensorrtModel"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -4183,8 +4303,8 @@
             ],
             "properties": {
               "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
-              "Node name for S&R": "UpscalerTensorrt",
-              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687"
+              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
+              "Node name for S&R": "UpscalerTensorrt"
             },
             "widgets_values": [
               "1080p",
@@ -4346,10 +4466,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.34473323705753756,
+      "scale": 0.555196325613535,
       "offset": [
-        4629.926960071022,
-        -3596.697251952887
+        2901.9292962836203,
+        -3604.0162871111293
       ]
     }
   },
