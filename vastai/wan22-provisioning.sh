@@ -36,6 +36,7 @@ NODES=(
     "https://github.com/ashtar1984/comfyui-find-perfect-resolution"
     "https://github.com/huchukato/ComfyUI-Selectors"
     "https://github.com/city96/ComfyUI-GGUF"
+    "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/kijai/ComfyUI-MMAudio"
     "https://github.com/GACLove/ComfyUI-VFI"
     "https://github.com/stduhpf/ComfyUI-WanMoeKSampler"
@@ -52,6 +53,11 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-I2V-SVI-20s-Story-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-T2V-I2V-Story-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/wan22/WAN2.2-T2V-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
 )
 
 CHECKPOINT_MODELS=(
@@ -147,9 +153,7 @@ function provisioning_start() {
         "${UNET_MODELS[@]}"
         
     echo "🔮 Downloading diffusion models..."
-    provisioning_get_files \
-        "${COMFYUI_DIR}/models/diffusion_models" \
-        "${DIFFUSION_MODELS[@]}"
+    provisioning_get_hf_models "${DIFFUSION_MODELS[@]}"
         
     echo "🎨 Downloading LoRA models..."
     provisioning_get_files \
@@ -250,6 +254,71 @@ function provisioning_get_nodes() {
     [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Pack"
     [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-subpack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Subpack"
     echo "All nodes processed successfully!"
+}
+
+function provisioning_get_hf_models() {
+    # Downloads models specified in pipe-delimited format:
+    # "subdir|filename|url|min_size_bytes"
+    # Supports size-check to skip already-downloaded files and resume.
+    if [[ -z $1 ]]; then return 1; fi
+
+    local arr=("$@")
+    local failures=0
+    local count=0
+    local total=${#arr[@]}
+    echo "Downloading $total HF model(s)..."
+
+    for entry in "${arr[@]}"; do
+        ((count++))
+        IFS='|' read -r subdir name url min_size <<< "$entry"
+        local dest_dir="${COMFYUI_DIR}/models/${subdir}"
+        local dest="${dest_dir}/${name}"
+        mkdir -p "$dest_dir"
+
+        # Skip if already present and large enough
+        if [[ -f "$dest" ]]; then
+            local size
+            size=$(stat -c%s "$dest" 2>/dev/null || stat -f%z "$dest" 2>/dev/null || echo 0)
+            if [[ "$size" -ge "$min_size" ]]; then
+                echo "[$count/$total] ✅ $name already present ($size bytes), skipping"
+                continue
+            else
+                echo "[$count/$total] ⚠️ $name incomplete ($size < $min_size), re-downloading..."
+            fi
+        fi
+
+        echo "[$count/$total] 📥 Downloading $name..."
+        local max_retries=3
+        local success=false
+        for attempt in $(seq 1 $max_retries); do
+            if provisioning_download "$url" "$dest_dir"; then
+                # Verify size after download
+                if [[ -f "$dest" ]]; then
+                    local size
+                    size=$(stat -c%s "$dest" 2>/dev/null || stat -f%z "$dest" 2>/dev/null || echo 0)
+                    if [[ "$size" -ge "$min_size" ]]; then
+                        echo "  ✅ $name downloaded ($size bytes)"
+                        success=true
+                        break
+                    else
+                        echo "  ⚠️ $name size $size < $min_size (attempt $attempt/$max_retries)"
+                    fi
+                else
+                    echo "  ⚠️ $name file not found after download (attempt $attempt/$max_retries)"
+                fi
+            else
+                echo "  ⚠️ Download failed for $name (attempt $attempt/$max_retries)"
+            fi
+            [[ "$attempt" -lt "$max_retries" ]] && sleep $((attempt * 5))
+        done
+
+        if [[ "$success" != "true" ]]; then
+            echo "  ❌ FAILED: $name after $max_retries attempts"
+            failures=$((failures + 1))
+        fi
+    done
+
+    echo "HF models download finished ($failures failure(s))"
 }
 
 function provisioning_get_files() {
