@@ -32,6 +32,25 @@ Use these shorthand tags in the custom prompt field:
 [SBJ1] kisses [SBJ2] in a dimly lit bedroom, [SBJ2] whispers [D]don't stop[/D]
 ```
 
+### Action Tags (NSFW)
+
+Trigger interaction between subjects without writing a full prompt. Qwen generates the complete scene description.
+
+| Tag | Action | Example |
+|-----|--------|---------|
+| `[ACTION]` | Random NSFW interaction (Qwen chooses) | `[ACTION]` or `[ACTION] in a shower` |
+| `[KISS]` | Passionate / french kiss | `[SBJ1] [KISS] [SBJ2]` |
+| `[ORAL]` | Oral sex | `[ORAL] on the couch` |
+| `[SEX]` | Full intercourse | `[SEX] in a bedroom` |
+| `[TOUCH]` | Intimate caressing / groping | `[TOUCH]` |
+| `[GRIND]` | Grinding / tribbing / body friction | `[SBJ1] [GRIND] [SBJ2]` |
+
+**Rules:**
+- Case-insensitive (`[kiss]` = `[KISS]` = `[Kiss]`)
+- Combinable with subject tags and free text: `[SBJ1] [KISS] [SBJ2] in a candlelit room`
+- If used alone (e.g. just `[ACTION]`), Qwen generates the full scene context
+- Anatomical consistency is enforced — actions match the subjects' genders from reference images
+
 ### Audio / Video References
 
 If needed, use manual tags in the custom prompt:
