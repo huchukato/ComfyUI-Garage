@@ -17,6 +17,9 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
+    "tensorrt-cu13==10.15.1.29"
+    "tensorrt-cu13-bindings==10.15.1.29"
+    "tensorrt-cu13-libs==10.15.1.29"
     "meshlib"
     "pymeshlab"
     "opencv-python"
