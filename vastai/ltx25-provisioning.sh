@@ -8,7 +8,7 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    "--upgrade --force-reinstall --no-cache-dir https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.48-cu131-linux-20260821/llama_cpp_python-0.3.48+cu131-cp312-cp312-linux_x86_64.whl"
+    "--upgrade --force-reinstall --no-cache-dir https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.49-cu131-linux-20260831/llama_cpp_python-0.3.49+cu131-cp312-cp312-linux_x86_64.whl"
     "huggingface_hub"
     "hf-transfer"
     "sageattention"
