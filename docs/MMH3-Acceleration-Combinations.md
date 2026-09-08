@@ -15,7 +15,7 @@
 - **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top
 - **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps
 - **DiffAid + Spectrum + Sol-Attn = interference**: tested combo produced only noise/interference video — avoid stacking all three
-- **DiffAid alone**: experimental, no confirmed benefit yet. Keep disabled unless isolated A/B test shows improvement
+- **DiffAid**: tested, no speed or quality benefit — removed from deployment
 - **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks
 - **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)
 - **Sol-Attn with Native**: tau=1.0 default, safe
@@ -59,7 +59,7 @@
 | Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |
 | Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |
 | Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |
-| DiffAid | sparse block skip (node) | experimental | experimental | experimental |
+| DiffAid | sparse block skip (node) | REMOVED (no benefit) | REMOVED (no benefit) | REMOVED (no benefit) |
 | Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |
 | `--fast fp16_accumulation` | arg | ON | ON | ON |
 | `--cuda-malloc` | arg | ON | ON | ON |
