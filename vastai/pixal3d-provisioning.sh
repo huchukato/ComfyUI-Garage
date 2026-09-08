@@ -11,10 +11,17 @@ PIP_PACKAGES=(
 
 NODES=(
     "https://github.com/Comfy-Org/ComfyUI-Manager"
+    "https://github.com/rgthree/rgthree-comfy"
+    "https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+    "https://github.com/huchukato/ComfyUI-TagForge"
+    "https://github.com/huchukato/ComfyUI-HuggingFace"
 )
 
 WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pixal3d/3d_pixal3d_trellis2_image_to_model.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
 )
 
 CHECKPOINT_MODELS=(
