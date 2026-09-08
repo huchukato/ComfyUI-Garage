@@ -14,12 +14,15 @@
 
 - **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top
 - **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps
+- **DiffAid + Spectrum + Sol-Attn = interference**: tested combo produced only noise/interference video — avoid stacking all three
+- **DiffAid alone**: experimental, no confirmed benefit yet. Keep disabled unless isolated A/B test shows improvement
 - **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks
 - **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)
 - **Sol-Attn with Native**: tau=1.0 default, safe
 - **CK Attention**: always ON via arg, orthogonal to everything
 - **Spectrum**: only with 20-step native, needs enough steps to forecast
 - **Spectrum mutual exclusivity**: `selective_rollback_correction` and `offline_smoothing_replay` are mutually exclusive — keep `selective_rollback_correction: false`, `offline_smoothing_replay: true`
+- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions
 
 ## Sol-Attn tau reference
 
@@ -39,7 +42,7 @@
 | 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |
 | Native 20-step | 12 | 3 | Higher video shift for native trajectory |
 
-## Expected performance (RTX 5090, 1344x768, NVFP4+INT8)
+## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)
 
 | Workflow | Config | Estimated time / 5s video |
 |----------|--------|---------------------------|
@@ -53,11 +56,15 @@
 |-----------|-------|-------------|------------|----------------|
 | CK Attention | attention kernel (arg) | ON | ON | ON |
 | Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |
+| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |
+| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |
 | Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |
+| DiffAid | sparse block skip (node) | experimental | experimental | experimental |
 | Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |
 | `--fast fp16_accumulation` | arg | ON | ON | ON |
 | `--cuda-malloc` | arg | ON | ON | ON |
 | `--async-offload` | arg | ON | ON | ON |
+| `--use-ck-attention` | arg | ON | ON | ON |
 
 ## How to switch models in the workflow
 

@@ -26,7 +26,6 @@ NODES=(
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/yolain/ComfyUI-Easy-Use"
-    "https://github.com/ashtar1984/comfyui-find-perfect-resolution"
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/Saganaki22/ComfyUI-sol-attn"
     "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"

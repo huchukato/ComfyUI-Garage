@@ -1,497 +1,9 @@
 {
   "id": "3807ae7f-7b0a-48a8-92bd-7eac78228e45",
   "revision": 0,
-  "last_node_id": 264,
-  "last_link_id": 527,
+  "last_node_id": 272,
+  "last_link_id": 554,
   "nodes": [
-    {
-      "id": 116,
-      "type": "MarkdownNote",
-      "pos": [
-        -2747.016350460607,
-        5463.077884510248
-      ],
-      "size": [
-        461.3424794721518,
-        398.05346639868276
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: MiniMax H3",
-      "properties": {},
-      "widgets_values": [
-        "## MiniMax H3\n\n[MiniMax H3](https://www.minimax.io/blog/minimax-h3) is MiniMax's general-purpose, omni-modal generation model. It jointly understands text, image, video, and audio, and generates video with **native stereo audio**: voice, sound effects, and music are modeled jointly in a single forward pass, not layered on afterward. Output is 768p, 24fps, and up to about 15 seconds. The open weights are 768p only. 2K comes from MiniMax's hosted H3-Regenerate-2K API and is not available locally.\n\n## About this workflow\n\nThis template runs the **Image to Video** task (`MiniMaxH3ImageToVideo` node), which covers both:\n\n- **t2va** (text-to-video), when no images are connected\n- **fl2va** (first/last-frame image-to-video), when `first_frame` and/or `last_frame` are connected\n\n**Key inputs**\n\n- **first_frame / last_frame**: optional keyframes; the model generates the motion between them\n- **prompt**: describe the shots, motion, and the accompanying audio (dialogue, SFX, music) in one block\n- **width / height**: set via Resolution Selector. H3's native canvas is a 768px short edge, capped at 768x1344 pixels, rounded to a multiple of 32\n- **duration (seconds)**: converted to a valid frame `length` by the Math Expression node, snapping up to the model's 17-frame-per-block (17k+5) grid at 24fps"
-      ],
-      "widgets_values_named": {
-        "text": "## MiniMax H3\n\n[MiniMax H3](https://www.minimax.io/blog/minimax-h3) is MiniMax's general-purpose, omni-modal generation model. It jointly understands text, image, video, and audio, and generates video with **native stereo audio**: voice, sound effects, and music are modeled jointly in a single forward pass, not layered on afterward. Output is 768p, 24fps, and up to about 15 seconds. The open weights are 768p only. 2K comes from MiniMax's hosted H3-Regenerate-2K API and is not available locally.\n\n## About this workflow\n\nThis template runs the **Image to Video** task (`MiniMaxH3ImageToVideo` node), which covers both:\n\n- **t2va** (text-to-video), when no images are connected\n- **fl2va** (first/last-frame image-to-video), when `first_frame` and/or `last_frame` are connected\n\n**Key inputs**\n\n- **first_frame / last_frame**: optional keyframes; the model generates the motion between them\n- **prompt**: describe the shots, motion, and the accompanying audio (dialogue, SFX, music) in one block\n- **width / height**: set via Resolution Selector. H3's native canvas is a 768px short edge, capped at 768x1344 pixels, rounded to a multiple of 32\n- **duration (seconds)**: converted to a valid frame `length` by the Math Expression node, snapping up to the model's 17-frame-per-block (17k+5) grid at 24fps"
-      },
-      "color": "#332922",
-      "bgcolor": "#593930"
-    },
-    {
-      "id": 117,
-      "type": "MarkdownNote",
-      "pos": [
-        -2747.114708405326,
-        4889.111756431889
-      ],
-      "size": [
-        469.952857010293,
-        513.7942890234126
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Model Links",
-      "properties": {},
-      "widgets_values": [
-        "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors](https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors](https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
-      ],
-      "widgets_values_named": {
-        "text": "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors](https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors](https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 126,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        159.01492475909896,
-        4669.4782972241255
-      ],
-      "size": [
-        511.3966496168314,
-        334
-      ],
-      "flags": {},
-      "order": 22,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 412
-        },
-        {
-          "name": "audio",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": 515
-        },
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        },
-        {
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          },
-          "link": 297
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null
-        }
-      ],
-      "title": "48FPS",
-      "properties": {
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
-        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
-        "Node name for S&R": "VHS_VideoCombine",
-        "cnr_id": "comfyui-videohelpersuite"
-      },
-      "widgets_values": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "video/MiniMax_H3_48FPS",
-        "format": "video/webm",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "awam_111.webp_00002-audio.webm",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/webm",
-            "frame_rate": 48,
-            "workflow": "awam_111.webp_00002.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/awam_111.webp_00002-audio.webm"
-          }
-        }
-      },
-      "widgets_values_named": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "video/MiniMax_H3_48FPS",
-        "format": "video/webm",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "awam_111.webp_00002-audio.webm",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/webm",
-            "frame_rate": 48,
-            "workflow": "awam_111.webp_00002.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/awam_111.webp_00002-audio.webm"
-          }
-        }
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 185,
-      "type": "FindPerfectResolution",
-      "pos": [
-        -2148.39261426368,
-        4966.141797859193
-      ],
-      "size": [
-        271.712890625,
-        332
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 372
-        },
-        {
-          "name": "mask",
-          "shape": 7,
-          "type": "MASK",
-          "link": null
-        },
-        {
-          "name": "desired_width",
-          "type": "INT",
-          "widget": {
-            "name": "desired_width"
-          },
-          "link": 490
-        },
-        {
-          "name": "desired_height",
-          "type": "INT",
-          "widget": {
-            "name": "desired_height"
-          },
-          "link": 495
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": []
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": []
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            500
-          ]
-        },
-        {
-          "name": "mask_output",
-          "type": "MASK",
-          "links": null
-        },
-        {
-          "name": "resolution_info",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
-        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
-        "Node name for S&R": "FindPerfectResolution"
-      },
-      "widgets_values": [
-        0,
-        0,
-        32,
-        false,
-        "lanczos",
-        "none",
-        "#000000"
-      ],
-      "widgets_values_named": {
-        "desired_width": 0,
-        "desired_height": 0,
-        "divisible_by": 32,
-        "upscale": false,
-        "upscale_method": "lanczos",
-        "small_image_mode": "none",
-        "pad_color": "#000000"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 114,
-      "type": "LoadImage",
-      "pos": [
-        -2250.8392402497043,
-        4892.176483257309
-      ],
-      "size": [
-        482.2566821236637,
-        717.2904207205629
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            296,
-            372
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "FirstFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "awam_111.webp",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "awam_111.webp",
-        "upload": "image"
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 186,
-      "type": "FindPerfectResolution",
-      "pos": [
-        -1603.387322838625,
-        4969.161236666572
-      ],
-      "size": [
-        271.712890625,
-        332
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 376
-        },
-        {
-          "name": "mask",
-          "shape": 7,
-          "type": "MASK",
-          "link": null
-        },
-        {
-          "name": "desired_width",
-          "type": "INT",
-          "widget": {
-            "name": "desired_width"
-          },
-          "link": 491
-        },
-        {
-          "name": "desired_height",
-          "type": "INT",
-          "widget": {
-            "name": "desired_height"
-          },
-          "link": 496
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": []
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": []
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            501
-          ]
-        },
-        {
-          "name": "mask_output",
-          "type": "MASK",
-          "links": null
-        },
-        {
-          "name": "resolution_info",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "aux_id": "ashtar1984/comfyui-find-perfect-resolution",
-        "ver": "b8ee6c1872e796329bffbcbf53a5207aaf964bdb",
-        "Node name for S&R": "FindPerfectResolution"
-      },
-      "widgets_values": [
-        0,
-        0,
-        32,
-        false,
-        "lanczos",
-        "none",
-        "#000000"
-      ],
-      "widgets_values_named": {
-        "desired_width": 0,
-        "desired_height": 0,
-        "divisible_by": 32,
-        "upscale": false,
-        "upscale_method": "lanczos",
-        "small_image_mode": "none",
-        "pad_color": "#000000"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 147,
-      "type": "LoadImage",
-      "pos": [
-        -1723.511156614873,
-        4892.8086215989015
-      ],
-      "size": [
-        486.1266495255343,
-        715.9489903021231
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            376
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "LastFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "awam_112.webp",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "awam_112.webp",
-        "upload": "image"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 118,
-      "type": "MarkdownNote",
-      "pos": [
-        -1203.9776697507198,
-        5102.574122902467
-      ],
-      "size": [
-        254.23793962820582,
-        401.09532327839497
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Size Settings Reference",
-      "properties": {},
-      "widgets_values": [
-        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
-      ],
-      "widgets_values_named": {
-        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
-    },
     {
       "id": 156,
       "type": "WidgetToString",
@@ -504,7 +16,7 @@
         154
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -524,10 +36,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "cnr_id": "comfyui-kjnodes"
+        "aux_id": "kijai/ComfyUI-KJNodes"
       },
       "widgets_values": [
         114,
@@ -543,125 +55,6 @@
         "node_title": "FirstFrame",
         "allowed_float_decimals": 2
       }
-    },
-    {
-      "id": 257,
-      "type": "Reroute",
-      "pos": [
-        -818.7777355375845,
-        4963.590271624381
-      ],
-      "size": [
-        75,
-        26
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "",
-          "type": "*",
-          "link": 501
-        }
-      ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "IMAGE",
-          "links": [
-            502,
-            503
-          ]
-        }
-      ],
-      "properties": {
-        "showOutputText": false,
-        "horizontal": false
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 256,
-      "type": "Reroute",
-      "pos": [
-        -814.4268954987709,
-        4898.274553833244
-      ],
-      "size": [
-        75,
-        26
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "",
-          "type": "*",
-          "link": 500
-        }
-      ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "IMAGE",
-          "links": [
-            504,
-            505
-          ]
-        }
-      ],
-      "properties": {
-        "showOutputText": false,
-        "horizontal": false
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 231,
-      "type": "Reroute",
-      "pos": [
-        -682.2632701753002,
-        4900.913098052468
-      ],
-      "size": [
-        75,
-        26
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "",
-          "type": "*",
-          "widget": {
-            "name": "value"
-          },
-          "link": 486
-        }
-      ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "INT",
-          "links": [
-            490,
-            491,
-            492,
-            499
-          ]
-        }
-      ],
-      "properties": {
-        "showOutputText": false,
-        "horizontal": false
-      },
-      "color": "#232",
-      "bgcolor": "#353"
     },
     {
       "id": 232,
@@ -684,7 +77,7 @@
           "widget": {
             "name": "value"
           },
-          "link": 487
+          "link": 533
         }
       ],
       "outputs": [
@@ -692,8 +85,6 @@
           "name": "",
           "type": "INT",
           "links": [
-            495,
-            496,
             497,
             498
           ]
@@ -707,61 +98,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 208,
-      "type": "EmptyLatentImagePresets",
-      "pos": [
-        -1216.423492938271,
-        4901.473696706613
-      ],
-      "size": [
-        285.0787109375,
-        146
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "Latent",
-          "type": "LATENT",
-          "links": []
-        },
-        {
-          "name": "Width",
-          "type": "INT",
-          "links": [
-            486
-          ]
-        },
-        {
-          "name": "Height",
-          "type": "INT",
-          "links": [
-            487
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
-        "ver": "1.2.2",
-        "Node name for S&R": "EmptyLatentImagePresets",
-        "cnr_id": "comfyui-kjnodes"
-      },
-      "widgets_values": [
-        "1344 x 768 (1.75:1)",
-        false,
-        1
-      ],
-      "widgets_values_named": {
-        "dimensions": "1344 x 768 (1.75:1)",
-        "invert": false,
-        "batch_size": 1
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 259,
       "type": "AudioConcatenate",
       "pos": [
@@ -773,7 +109,7 @@
         82.35992067141069
       ],
       "flags": {},
-      "order": 20,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -797,10 +133,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "65b402edcbf4a2fa4e90719159e1eebf02af0f5f",
         "Node name for S&R": "AudioConcatenate",
-        "cnr_id": "comfyui-kjnodes"
+        "aux_id": "kijai/ComfyUI-KJNodes"
       },
       "widgets_values": [
         "right"
@@ -825,7 +161,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 19,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -856,10 +192,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "2f7300dc546ec2d36fa8b0feebe493d41026524c",
         "Node name for S&R": "ImageBatchMulti",
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {
@@ -890,7 +226,7 @@
         251.23139641139096
       ],
       "flags": {},
-      "order": 21,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -937,6 +273,166 @@
       "bgcolor": "#335"
     },
     {
+      "id": 231,
+      "type": "Reroute",
+      "pos": [
+        -682.2632701753002,
+        4900.913098052468
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "widget": {
+            "name": "value"
+          },
+          "link": 532
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            492,
+            499
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 257,
+      "type": "Reroute",
+      "pos": [
+        -850.7646460361044,
+        4947.739514496627
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 535
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            502,
+            503
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 118,
+      "type": "MarkdownNote",
+      "pos": [
+        -1189.437936593394,
+        5153.465688047847
+      ],
+      "size": [
+        254.23793962820582,
+        401.09532327839497
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Size Settings Reference",
+      "properties": {},
+      "widgets_values": [
+        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      ],
+      "widgets_values_named": {
+        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 135,
+      "type": "MarkdownNote",
+      "pos": [
+        -2264.331643948726,
+        5617.65778635416
+      ],
+      "size": [
+        1013.766083426452,
+        1204.0376686355276
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "USER HINTS",
+      "properties": {},
+      "widgets_values": [
+        "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n---\n\n## 🔄 Loop Mode *(FL2VA only)*\n\nWhen you load the **same image** as both first frame (`image`) and last frame (`image2`), the preset automatically generates a seamless cyclic action:\n\n- Motion starts immediately from frame 0 (no wind-up)\n- Action continues at steady rhythm for the entire duration (no early freeze)\n- Final state matches the first frame exactly\n- For repetitive actions: rhythm continues without interruption, with natural variations\n- Combine with `[STATIC_CAMERA]` for a locked-off loop\n\n**To use:** upload the same image to both `image` and `image2`, select `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`, describe the action.\n\n> ⚠️ Loop mode improves endpoint continuity but does not guarantee a pixel-perfect loop. For a perfect loop, crossfade the last 0.5s with the first 0.5s in post-production.\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
+      ],
+      "widgets_values_named": {
+        "text": "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n---\n\n## 🔄 Loop Mode *(FL2VA only)*\n\nWhen you load the **same image** as both first frame (`image`) and last frame (`image2`), the preset automatically generates a seamless cyclic action:\n\n- Motion starts immediately from frame 0 (no wind-up)\n- Action continues at steady rhythm for the entire duration (no early freeze)\n- Final state matches the first frame exactly\n- For repetitive actions: rhythm continues without interruption, with natural variations\n- Combine with `[STATIC_CAMERA]` for a locked-off loop\n\n**To use:** upload the same image to both `image` and `image2`, select `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`, describe the action.\n\n> ⚠️ Loop mode improves endpoint continuity but does not guarantee a pixel-perfect loop. For a perfect loop, crossfade the last 0.5s with the first 0.5s in post-production.\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 116,
+      "type": "MarkdownNote",
+      "pos": [
+        -2770.2979169944074,
+        5316.136112391919
+      ],
+      "size": [
+        461.3424794721518,
+        398.05346639868276
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: MiniMax H3",
+      "properties": {},
+      "widgets_values": [
+        "## MiniMax H3\n\n[MiniMax H3](https://www.minimax.io/blog/minimax-h3) is MiniMax's general-purpose, omni-modal generation model. It jointly understands text, image, video, and audio, and generates video with **native stereo audio**: voice, sound effects, and music are modeled jointly in a single forward pass, not layered on afterward. Output is 768p, 24fps, and up to about 15 seconds. The open weights are 768p only. 2K comes from MiniMax's hosted H3-Regenerate-2K API and is not available locally.\n\n## About this workflow\n\nThis template runs the **Image to Video** task (`MiniMaxH3ImageToVideo` node), which covers both:\n\n- **t2va** (text-to-video), when no images are connected\n- **fl2va** (first/last-frame image-to-video), when `first_frame` and/or `last_frame` are connected\n\n**Key inputs**\n\n- **first_frame / last_frame**: optional keyframes; the model generates the motion between them\n- **prompt**: describe the shots, motion, and the accompanying audio (dialogue, SFX, music) in one block\n- **width / height**: set via Resolution Selector. H3's native canvas is a 768px short edge, capped at 768x1344 pixels, rounded to a multiple of 32\n- **duration (seconds)**: converted to a valid frame `length` by the Math Expression node, snapping up to the model's 17-frame-per-block (17k+5) grid at 24fps"
+      ],
+      "widgets_values_named": {
+        "text": "## MiniMax H3\n\n[MiniMax H3](https://www.minimax.io/blog/minimax-h3) is MiniMax's general-purpose, omni-modal generation model. It jointly understands text, image, video, and audio, and generates video with **native stereo audio**: voice, sound effects, and music are modeled jointly in a single forward pass, not layered on afterward. Output is 768p, 24fps, and up to about 15 seconds. The open weights are 768p only. 2K comes from MiniMax's hosted H3-Regenerate-2K API and is not available locally.\n\n## About this workflow\n\nThis template runs the **Image to Video** task (`MiniMaxH3ImageToVideo` node), which covers both:\n\n- **t2va** (text-to-video), when no images are connected\n- **fl2va** (first/last-frame image-to-video), when `first_frame` and/or `last_frame` are connected\n\n**Key inputs**\n\n- **first_frame / last_frame**: optional keyframes; the model generates the motion between them\n- **prompt**: describe the shots, motion, and the accompanying audio (dialogue, SFX, music) in one block\n- **width / height**: set via Resolution Selector. H3's native canvas is a 768px short edge, capped at 768x1344 pixels, rounded to a multiple of 32\n- **duration (seconds)**: converted to a valid frame `length` by the Math Expression node, snapping up to the model's 17-frame-per-block (17k+5) grid at 24fps"
+      },
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
       "id": 153,
       "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
@@ -948,7 +444,7 @@
         198.55274872512564
       ],
       "flags": {},
-      "order": 6,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -972,72 +468,132 @@
       "bgcolor": "#533"
     },
     {
-      "id": 135,
-      "type": "MarkdownNote",
+      "id": 126,
+      "type": "VHS_VideoCombine",
       "pos": [
-        -2248.492381530175,
-        5673.732473976037
+        159.01492475909896,
+        4669.4782972241255
       ],
       "size": [
-        1013.766083426452,
-        1204.0376686355276
+        511.3966496168314,
+        334
       ],
       "flags": {},
-      "order": 7,
+      "order": 20,
       "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "USER HINTS",
-      "properties": {},
-      "widgets_values": [
-        "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n---\n\n## 🔄 Loop Mode *(FL2VA only)*\n\nWhen you load the **same image** as both first frame (`image`) and last frame (`image2`), the preset automatically generates a seamless cyclic action:\n\n- Motion starts immediately from frame 0 (no wind-up)\n- Action continues at steady rhythm for the entire duration (no early freeze)\n- Final state matches the first frame exactly\n- For repetitive actions: rhythm continues without interruption, with natural variations\n- Combine with `[STATIC_CAMERA]` for a locked-off loop\n\n**To use:** upload the same image to both `image` and `image2`, select `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`, describe the action.\n\n> ⚠️ Loop mode improves endpoint continuity but does not guarantee a pixel-perfect loop. For a perfect loop, crossfade the last 0.5s with the first 0.5s in post-production.\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 412
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 515
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 297
+        }
       ],
-      "widgets_values_named": {
-        "text": "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n---\n\n## 🔄 Loop Mode *(FL2VA only)*\n\nWhen you load the **same image** as both first frame (`image`) and last frame (`image2`), the preset automatically generates a seamless cyclic action:\n\n- Motion starts immediately from frame 0 (no wind-up)\n- Action continues at steady rhythm for the entire duration (no early freeze)\n- Final state matches the first frame exactly\n- For repetitive actions: rhythm continues without interruption, with natural variations\n- Combine with `[STATIC_CAMERA]` for a locked-off loop\n\n**To use:** upload the same image to both `image` and `image2`, select `🔄 MiniMax H3 NSFW FL2VA (5s/10s/15s)`, describe the action.\n\n> ⚠️ Loop mode improves endpoint continuity but does not guarantee a pixel-perfect loop. For a perfect loop, crossfade the last 0.5s with the first 0.5s in post-production.\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "title": "48FPS",
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
+        "Node name for S&R": "VHS_VideoCombine",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
       },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 264,
-      "type": "MarkdownNote",
-      "pos": [
-        716.1196459744593,
-        4634.069879018259
-      ],
-      "size": [
-        979.7223528102568,
-        984.1304631728626
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "CONFIGURATION",
-      "properties": {},
-      "widgets_values": [
-        "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | OFF | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Turbo LoRA + Sol** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | 6/3 | Conservative Sol-Attn, marginal gain |\n| **D — Native + Spectrum** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, Spectrum cuts ~45% |\n| **E — Native pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Quality reference, slowest |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n- **Spectrum mutual exclusivity**: `selective_rollback_correction` and `offline_smoothing_replay` are mutually exclusive — keep `selective_rollback_correction: false`, `offline_smoothing_replay: true`\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX 5090, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA pure) | ~2-3 min |\n| Native (to create) | D (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |\n| Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Fast Groups Bypasser** — toggle Spectrum and Sol-Attn groups:\n   - 10Eros → Sol-Attn **active**, Spectrum **bypassed**\n   - Turbo LoRA → both **bypassed**\n   - Native → both **active**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
-      ],
-      "widgets_values_named": {
-        "text": "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | OFF | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Turbo LoRA + Sol** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | 6/3 | Conservative Sol-Attn, marginal gain |\n| **D — Native + Spectrum** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, Spectrum cuts ~45% |\n| **E — Native pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Quality reference, slowest |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n- **Spectrum mutual exclusivity**: `selective_rollback_correction` and `offline_smoothing_replay` are mutually exclusive — keep `selective_rollback_correction: false`, `offline_smoothing_replay: true`\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX 5090, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA pure) | ~2-3 min |\n| Native (to create) | D (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |\n| Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Fast Groups Bypasser** — toggle Spectrum and Sol-Attn groups:\n   - 10Eros → Sol-Attn **active**, Spectrum **bypassed**\n   - Turbo LoRA → both **bypassed**\n   - Native → both **active**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
+      "widgets_values": {
+        "frame_rate": 48,
+        "loop_count": 0,
+        "filename_prefix": "video/MiniMax_H3_48FPS",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "awam_111.webp_00002-audio.webm",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/webm",
+            "frame_rate": 48,
+            "workflow": "awam_111.webp_00002.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/awam_111.webp_00002-audio.webm"
+          }
+        }
       },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
+      "widgets_values_named": {
+        "frame_rate": 48,
+        "loop_count": 0,
+        "filename_prefix": "video/MiniMax_H3_48FPS",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "awam_111.webp_00002-audio.webm",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/webm",
+            "frame_rate": 48,
+            "workflow": "awam_111.webp_00002.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/awam_111.webp_00002-audio.webm"
+          }
+        }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
       "id": 218,
       "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
-        -216.363289584042,
-        5537.301830411062
+        -212.75487057862725,
+        5526.20005311152
       ],
       "size": [
         326.0181640625,
-        106.21204325921644
+        130
       ],
       "flags": {},
-      "order": 9,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1047,7 +603,7 @@
           "links": null
         }
       ],
-      "title": "TURBO ON = SPECTRUM + SOL-ATTN OFF",
+      "title": "SPEED PATCH",
       "properties": {
         "matchColors": "Yellow",
         "matchTitle": "",
@@ -1061,125 +617,56 @@
       "bgcolor": "#653"
     },
     {
-      "id": 255,
-      "type": "df2383ae-63b9-41f0-825f-02e76f888ddf",
+      "id": 256,
+      "type": "Reroute",
       "pos": [
-        -895.8268254356399,
-        4615.562340537731
+        -860.0475224947135,
+        4891.404514247776
       ],
       "size": [
-        634.6130666534025,
-        405.35393393149843
+        75,
+        26
       ],
       "flags": {},
-      "order": 18,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
-          "name": "width",
-          "type": "INT",
-          "widget": {
-            "name": "width"
-          },
-          "link": 499
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "widget": {
-            "name": "height"
-          },
-          "link": 498
-        },
-        {
-          "label": "duration",
-          "name": "value_1",
-          "type": "FLOAT",
-          "widget": {
-            "name": "value_1"
-          },
-          "link": null
-        },
-        {
-          "name": "first_frame",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 503
-        },
-        {
-          "name": "last_frame",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 505
+          "name": "",
+          "type": "*",
+          "link": 534
         }
       ],
       "outputs": [
         {
-          "name": "IMAGE",
+          "name": "",
           "type": "IMAGE",
           "links": [
-            520
-          ]
-        },
-        {
-          "name": "AUDIO",
-          "type": "AUDIO",
-          "links": [
-            514
+            504,
+            505
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "previewExposures": []
+        "showOutputText": false,
+        "horizontal": false
       },
-      "widgets_values": [
-        "",
-        1344,
-        768,
-        5,
-        "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-        8,
-        "Qwen3.5-9B-ultra-uncensored-heretic",
-        "🔄 MiniMax H3 NSFW FL2VA (5s)",
-        "[STATIC_CAMERA]",
-        "euler",
-        "simple",
-        6,
-        3
-      ],
-      "widgets_values_named": {
-        "prompt": "",
-        "width": 1344,
-        "height": 768,
-        "value_1": 5,
-        "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-        "steps": 8,
-        "model_name": "Qwen3.5-9B-ultra-uncensored-heretic",
-        "preset_prompt": "🔄 MiniMax H3 NSFW FL2VA (5s)",
-        "camera_tag": "[STATIC_CAMERA]",
-        "sampler_name": "euler",
-        "scheduler": "simple",
-        "shift_video": 6,
-        "shift_audio": 3
-      },
-      "color": "#233",
-      "bgcolor": "#355"
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
       "id": 105,
       "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
       "pos": [
-        -891.3534296556975,
-        5090.754164338217
+        -893.6591308820531,
+        5166.11003813181
       ],
       "size": [
         629.5299079662248,
         399.31112286679945
       ],
       "flags": {},
-      "order": 17,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -1246,11 +733,11 @@
         1344,
         768,
         5,
-        "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
+        "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
         8,
-        "Qwen3.5-9B-ultra-uncensored-heretic",
+        "Qwen3.5-9B-Defiant-Fable-Heretic",
         "🔄 MiniMax H3 NSFW FL2VA (5s)",
-        "None",
+        "[STATIC_CAMERA]",
         "euler",
         "simple",
         6,
@@ -1261,15 +748,371 @@
         "width": 1344,
         "height": 768,
         "value_1": 5,
-        "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
+        "unet_name": "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
         "steps": 8,
-        "model_name": "Qwen3.5-9B-ultra-uncensored-heretic",
+        "model_name": "Qwen3.5-9B-Defiant-Fable-Heretic",
         "preset_prompt": "🔄 MiniMax H3 NSFW FL2VA (5s)",
-        "camera_tag": "None",
+        "camera_tag": "[STATIC_CAMERA]",
         "sampler_name": "euler",
         "scheduler": "simple",
         "shift_video": 6,
         "shift_audio": 3
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 255,
+      "type": "df2383ae-63b9-41f0-825f-02e76f888ddf",
+      "pos": [
+        -891.7133220532637,
+        4696.826178495381
+      ],
+      "size": [
+        634.6130666534025,
+        405.35393393149843
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 499
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 498
+        },
+        {
+          "label": "duration",
+          "name": "value_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "value_1"
+          },
+          "link": null
+        },
+        {
+          "name": "first_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 503
+        },
+        {
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 505
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            520
+          ]
+        },
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            514
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.1",
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "",
+        1344,
+        768,
+        5,
+        "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
+        8,
+        "Qwen3.5-9B-Defiant-Fable-Heretic",
+        "🔄 MiniMax H3 NSFW FL2VA (5s)",
+        "[STATIC_CAMERA]",
+        "euler",
+        "simple",
+        6,
+        3
+      ],
+      "widgets_values_named": {
+        "prompt": "",
+        "width": 1344,
+        "height": 768,
+        "value_1": 5,
+        "unet_name": "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
+        "steps": 8,
+        "model_name": "Qwen3.5-9B-Defiant-Fable-Heretic",
+        "preset_prompt": "🔄 MiniMax H3 NSFW FL2VA (5s)",
+        "camera_tag": "[STATIC_CAMERA]",
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "shift_video": 6,
+        "shift_audio": 3
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 265,
+      "type": "ComfyUI-PerfectVideoResolution",
+      "pos": [
+        -1197.3832965032957,
+        4702.424240928753
+      ],
+      "size": [
+        271.712890625,
+        376
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 530
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 531
+        },
+        {
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            532
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            533
+          ]
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            534
+          ]
+        },
+        {
+          "name": "IMAGE2",
+          "type": "IMAGE",
+          "links": [
+            535
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "resolution_info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-PerfectVideoResolution",
+        "ver": "51969284b70f9769fe5952496a5e97c06927db7b",
+        "Node name for S&R": "ComfyUI-PerfectVideoResolution"
+      },
+      "widgets_values": [
+        "MiniMax H3",
+        "3:4",
+        "Native — 864×1184",
+        32,
+        false,
+        "lanczos",
+        "none",
+        "#000000"
+      ],
+      "widgets_values_named": {
+        "model": "MiniMax H3",
+        "aspect_ratio": "3:4",
+        "resolution": "Native — 864×1184",
+        "divisible_by": 32,
+        "upscale": false,
+        "upscale_method": "lanczos",
+        "small_image_mode": "none",
+        "pad_color": "#000000"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 117,
+      "type": "MarkdownNote",
+      "pos": [
+        -2764.7383244633284,
+        4712.435755178822
+      ],
+      "size": [
+        469.952857010293,
+        513.7942890234126
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Model Links",
+      "properties": {},
+      "widgets_values": [
+        "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors](https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors](https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      ],
+      "widgets_values_named": {
+        "text": "## Model Links\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors](https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors](https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors)\n\n**loras (MiniMax-H3 Turbo)**\n\n- [minimax_h3_turbo_v4_step600_ema.safetensors](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/resolve/main/minimax_h3_turbo_v4_step600_ema.safetensors)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors\n│   └── 📂 loras/\n│       └── minimax_h3_turbo_v4_step600_ema.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 114,
+      "type": "LoadImage",
+      "pos": [
+        -2249.643262806932,
+        4707.904728435417
+      ],
+      "size": [
+        474.49449388257494,
+        833.0934724641438
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            296,
+            530
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "FirstFrame",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.1",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "113619_00001_.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "113619_00001_.png",
+        "upload": "image"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 147,
+      "type": "LoadImage",
+      "pos": [
+        -1725.5175823283037,
+        4706.363042325532
+      ],
+      "size": [
+        499.7117284948058,
+        838.2097028361022
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            531
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "LastFrame",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.1",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "113639_00001_.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "113639_00001_.png",
+        "upload": "image"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 264,
+      "type": "MarkdownNote",
+      "pos": [
+        716.1196459744593,
+        4634.069879018259
+      ],
+      "size": [
+        979.7223528102568,
+        984.1304631728626
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "CONFIGURATION",
+      "properties": {},
+      "widgets_values": [
+        "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | OFF | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Turbo LoRA + Sol** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | 6/3 | Conservative Sol-Attn, marginal gain |\n| **D — Native + Spectrum** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, Spectrum cuts ~45% |\n| **E — Native pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Quality reference, slowest |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps\n- **DiffAid + Spectrum + Sol-Attn = interference**: tested combo produced only noise/interference video — avoid stacking all three\n- **DiffAid alone**: experimental, no confirmed benefit yet. Keep disabled unless isolated A/B test shows improvement\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n- **Spectrum mutual exclusivity**: `selective_rollback_correction` and `offline_smoothing_replay` are mutually exclusive — keep `selective_rollback_correction: false`, `offline_smoothing_replay: true`\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA pure) | ~2-3 min |\n| Native (to create) | D (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |\n| DiffAid | sparse block skip (node) | experimental | experimental | experimental |\n| Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Fast Groups Bypasser** — toggle Spectrum and Sol-Attn groups:\n   - 10Eros → Sol-Attn **active**, Spectrum **bypassed**\n   - Turbo LoRA → both **bypassed**\n   - Native → both **active**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
+      ],
+      "widgets_values_named": {
+        "text": "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Spectrum | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | OFF | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | OFF | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Turbo LoRA + Sol** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF | ON (tau 1.5-2.0) | ON (arg) | `euler` + `simple` | 8 | 6/3 | Conservative Sol-Attn, marginal gain |\n| **D — Native + Spectrum** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, Spectrum cuts ~45% |\n| **E — Native pure** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Quality reference, slowest |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Spectrum + Turbo/10Eros = forbidden**: continuous fallbacks, slowdown, quality degradation at 8 steps\n- **DiffAid + Spectrum + Sol-Attn = interference**: tested combo produced only noise/interference video — avoid stacking all three\n- **DiffAid alone**: experimental, no confirmed benefit yet. Keep disabled unless isolated A/B test shows improvement\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum**: only with 20-step native, needs enough steps to forecast\n- **Spectrum mutual exclusivity**: `selective_rollback_correction` and `offline_smoothing_replay` are mutually exclusive — keep `selective_rollback_correction: false`, `offline_smoothing_replay: true`\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA pure) | ~2-3 min |\n| Native (to create) | D (Native + Spectrum) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Spectrum | scheduler forecasting (node) | OFF (bypass) | OFF (bypass) | ON |\n| DiffAid | sparse block skip (node) | experimental | experimental | experimental |\n| Turbo LoRA | few-step distillation (node) | OFF (fused in model) | ON lightx2v 8-step | OFF (bypass) |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Fast Groups Bypasser** — toggle Spectrum and Sol-Attn groups:\n   - 10Eros → Sol-Attn **active**, Spectrum **bypassed**\n   - Turbo LoRA → both **bypassed**\n   - Native → both **active**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -1293,22 +1136,6 @@
       "STRING"
     ],
     [
-      372,
-      114,
-      0,
-      185,
-      0,
-      "IMAGE"
-    ],
-    [
-      376,
-      147,
-      0,
-      186,
-      0,
-      "IMAGE"
-    ],
-    [
       412,
       201,
       0,
@@ -1317,59 +1144,11 @@
       "IMAGE"
     ],
     [
-      486,
-      208,
-      1,
-      231,
-      0,
-      "INT"
-    ],
-    [
-      487,
-      208,
-      2,
-      232,
-      0,
-      "INT"
-    ],
-    [
-      490,
-      231,
-      0,
-      185,
-      2,
-      "INT"
-    ],
-    [
-      491,
-      231,
-      0,
-      186,
-      2,
-      "INT"
-    ],
-    [
       492,
       231,
       0,
       105,
       0,
-      "INT"
-    ],
-    [
-      495,
-      232,
-      0,
-      185,
-      3,
-      "INT"
-    ],
-    [
-      496,
-      232,
-      0,
-      186,
-      3,
       "INT"
     ],
     [
@@ -1395,22 +1174,6 @@
       255,
       0,
       "INT"
-    ],
-    [
-      500,
-      185,
-      2,
-      256,
-      0,
-      "IMAGE"
-    ],
-    [
-      501,
-      186,
-      2,
-      257,
-      0,
-      "IMAGE"
     ],
     [
       502,
@@ -1491,6 +1254,54 @@
       201,
       0,
       "IMAGE"
+    ],
+    [
+      530,
+      114,
+      0,
+      265,
+      0,
+      "IMAGE"
+    ],
+    [
+      531,
+      147,
+      0,
+      265,
+      1,
+      "IMAGE"
+    ],
+    [
+      532,
+      265,
+      0,
+      231,
+      0,
+      "INT"
+    ],
+    [
+      533,
+      265,
+      1,
+      232,
+      0,
+      "INT"
+    ],
+    [
+      534,
+      265,
+      2,
+      256,
+      0,
+      "IMAGE"
+    ],
+    [
+      535,
+      265,
+      3,
+      257,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -1513,9 +1324,9 @@
         "id": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
         "version": 1,
         "state": {
-          "lastGroupId": 20,
-          "lastNodeId": 264,
-          "lastLinkId": 527,
+          "lastGroupId": 22,
+          "lastNodeId": 272,
+          "lastLinkId": 554,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1545,7 +1356,7 @@
             "name": "prompt",
             "type": "STRING",
             "linkIds": [
-              436
+              548
             ],
             "pos": [
               -2453.435546875,
@@ -1607,7 +1418,7 @@
             "type": "IMAGE",
             "linkIds": [
               195,
-              432
+              552
             ],
             "pos": [
               -2453.435546875,
@@ -1620,7 +1431,7 @@
             "type": "IMAGE",
             "linkIds": [
               196,
-              433
+              553
             ],
             "pos": [
               -2453.435546875,
@@ -1644,7 +1455,7 @@
             "name": "model_name",
             "type": "COMBO",
             "linkIds": [
-              437
+              549
             ],
             "pos": [
               -2453.435546875,
@@ -1656,7 +1467,7 @@
             "name": "preset_prompt",
             "type": "COMBO",
             "linkIds": [
-              438
+              550
             ],
             "pos": [
               -2453.435546875,
@@ -1668,7 +1479,7 @@
             "name": "camera_tag",
             "type": "COMBO",
             "linkIds": [
-              439
+              551
             ],
             "pos": [
               -2453.435546875,
@@ -2079,11 +1890,11 @@
               "Node name for S&R": "RandomNoise"
             },
             "widgets_values": [
-              195980803823646,
+              335112528726207,
               "randomize"
             ],
             "widgets_values_named": {
-              "noise_seed": 195980803823646,
+              "noise_seed": 335112528726207,
               "control_after_generate": "randomize"
             }
           },
@@ -2135,7 +1946,7 @@
                 "widget": {
                   "name": "prompt"
                 },
-                "link": 434
+                "link": 554
               },
               {
                 "localized_name": "width",
@@ -2200,130 +2011,6 @@
               "height": 768,
               "length": 73
             }
-          },
-          {
-            "id": 209,
-            "type": "AILab_QwenVL_Advanced",
-            "pos": [
-              -2053.662489211128,
-              3983.491429532216
-            ],
-            "size": [
-              340,
-              516
-            ],
-            "flags": {},
-            "order": 15,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 432
-              },
-              {
-                "localized_name": "image2",
-                "name": "image2",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 433
-              },
-              {
-                "localized_name": "model_name",
-                "name": "model_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model_name"
-                },
-                "link": 437
-              },
-              {
-                "localized_name": "preset_prompt",
-                "name": "preset_prompt",
-                "type": "COMBO",
-                "widget": {
-                  "name": "preset_prompt"
-                },
-                "link": 438
-              },
-              {
-                "localized_name": "camera_tag",
-                "name": "camera_tag",
-                "type": "COMBO",
-                "widget": {
-                  "name": "camera_tag"
-                },
-                "link": 439
-              },
-              {
-                "localized_name": "custom_prompt",
-                "name": "custom_prompt",
-                "type": "STRING",
-                "widget": {
-                  "name": "custom_prompt"
-                },
-                "link": 436
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "RESPONSE",
-                "name": "RESPONSE",
-                "type": "STRING",
-                "links": [
-                  434
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "ver": "9abf364fc3acd1ea93ed18fec343295050398881",
-              "Node name for S&R": "AILab_QwenVL_Advanced"
-            },
-            "widgets_values": [
-              "Qwen3.5-4B-heretic-v2",
-              "None (FP16)",
-              "auto",
-              false,
-              "auto",
-              "🖼️ Detailed Description",
-              "None",
-              "",
-              8192,
-              0.6,
-              0.9,
-              1,
-              1,
-              16,
-              false,
-              2096381808,
-              "randomize",
-              false
-            ],
-            "widgets_values_named": {
-              "model_name": "Qwen3.5-4B-heretic-v2",
-              "quantization": "None (FP16)",
-              "attention_mode": "auto",
-              "use_torch_compile": false,
-              "device": "auto",
-              "preset_prompt": "🖼️ Detailed Description",
-              "camera_tag": "None",
-              "custom_prompt": "",
-              "max_tokens": 8192,
-              "temperature": 0.6,
-              "top_p": 0.9,
-              "num_beams": 1,
-              "repetition_penalty": 1,
-              "frame_count": 16,
-              "keep_model_loaded": false,
-              "seed": 2096381808,
-              "control_after_generate": "randomize",
-              "keep_last_prompt": false
-            },
-            "color": "#28403f",
-            "bgcolor": "#374539"
           },
           {
             "id": 111,
@@ -2497,54 +2184,6 @@
             }
           },
           {
-            "id": 213,
-            "type": "LoraLoaderModelOnly",
-            "pos": [
-              -1668.002630653098,
-              4358.714082420286
-            ],
-            "size": [
-              330.6487829390876,
-              106.57732339190989
-            ],
-            "flags": {},
-            "order": 16,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 459
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "MODEL",
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": [
-                  455
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.34.2",
-              "Node name for S&R": "LoraLoaderModelOnly"
-            },
-            "widgets_values": [
-              "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
-              1
-            ],
-            "widgets_values_named": {
-              "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
-              "strength_model": 1
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
             "id": 214,
             "type": "MiniMaxH3ScheduledSolAttentionPatch",
             "pos": [
@@ -2556,7 +2195,7 @@
               402.4929101562493
             ],
             "flags": {},
-            "order": 17,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -2630,7 +2269,7 @@
               58
             ],
             "flags": {},
-            "order": 18,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -2676,7 +2315,7 @@
               106
             ],
             "flags": {},
-            "order": 19,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -2710,104 +2349,6 @@
               "enabled": true,
               "chunks": 2,
               "min_tokens": 8192
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
-            "id": 217,
-            "type": "SpectrumApplyMiniMaxH3",
-            "pos": [
-              -457.52524032689166,
-              3811.896099835568
-            ],
-            "size": [
-              330.669921875,
-              658
-            ],
-            "flags": {},
-            "order": 20,
-            "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 458
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "links": [
-                  460
-                ]
-              }
-            ],
-            "title": "Spectrum H3",
-            "properties": {
-              "aux_id": "xmarre/ComfyUI-Spectrum-MiniMax-H3",
-              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0",
-              "Node name for S&R": "SpectrumApplyMiniMaxH3",
-              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3"
-            },
-            "widgets_values": [
-              true,
-              0.5,
-              1,
-              0.1,
-              2,
-              0.75,
-              1,
-              1,
-              8,
-              false,
-              "system_ram",
-              true,
-              false,
-              false,
-              true,
-              0,
-              "system_ram",
-              "off",
-              0.65,
-              false,
-              false,
-              "coordinate_rls",
-              "hard_clip",
-              0.4,
-              "no_attenuation",
-              "balanced"
-            ],
-            "widgets_values_named": {
-              "enabled": true,
-              "blend_weight": 0.5,
-              "degree": 1,
-              "ridge_lambda": 0.1,
-              "window_size": 2,
-              "flex_window": 0.75,
-              "warmup_steps": 1,
-              "tail_actual_steps": 1,
-              "max_history": 8,
-              "debug": false,
-              "history_storage": "system_ram",
-              "bootstrap_first_forecast": true,
-              "anchor_residual_feedback": false,
-              "selective_rollback_correction": false,
-              "offline_smoothing_replay": true,
-              "audio_blend_weight": 0,
-              "offline_archive_storage": "system_ram",
-              "model_aware_mode": "off",
-              "model_aware_risk_threshold": 0.65,
-              "model_aware_trust_shrinkage": false,
-              "model_aware_replay_generic_correction": false,
-              "generic_correction_mode": "coordinate_rls",
-              "generic_correction_limiter": "hard_clip",
-              "generic_correction_limit": 0.4,
-              "generic_correction_attenuation": "no_attenuation",
-              "sa_pece_forecast_policy": "balanced"
             },
             "color": "#223",
             "bgcolor": "#335"
@@ -2991,7 +2532,7 @@
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 460
+                "link": 537
               },
               {
                 "localized_name": "shift_video",
@@ -3038,6 +2579,352 @@
               "shift_video": 12,
               "shift_audio": 3
             }
+          },
+          {
+            "id": 217,
+            "type": "SpectrumApplyMiniMaxH3",
+            "pos": [
+              -457.52524032689166,
+              3811.896099835568
+            ],
+            "size": [
+              330.669921875,
+              658
+            ],
+            "flags": {},
+            "order": 19,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 458
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "links": [
+                  536
+                ]
+              }
+            ],
+            "title": "Spectrum H3",
+            "properties": {
+              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3",
+              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0",
+              "Node name for S&R": "SpectrumApplyMiniMaxH3",
+              "aux_id": "xmarre/ComfyUI-Spectrum-MiniMax-H3"
+            },
+            "widgets_values": [
+              true,
+              0.5,
+              1,
+              0.1,
+              2,
+              0.75,
+              1,
+              1,
+              8,
+              false,
+              "system_ram",
+              true,
+              false,
+              false,
+              true,
+              0,
+              "system_ram",
+              "off",
+              0.65,
+              false,
+              false,
+              "coordinate_rls",
+              "hard_clip",
+              0.4,
+              "no_attenuation",
+              "balanced"
+            ],
+            "widgets_values_named": {
+              "enabled": true,
+              "blend_weight": 0.5,
+              "degree": 1,
+              "ridge_lambda": 0.1,
+              "window_size": 2,
+              "flex_window": 0.75,
+              "warmup_steps": 1,
+              "tail_actual_steps": 1,
+              "max_history": 8,
+              "debug": false,
+              "history_storage": "system_ram",
+              "bootstrap_first_forecast": true,
+              "anchor_residual_feedback": false,
+              "selective_rollback_correction": false,
+              "offline_smoothing_replay": true,
+              "audio_blend_weight": 0,
+              "offline_archive_storage": "system_ram",
+              "model_aware_mode": "off",
+              "model_aware_risk_threshold": 0.65,
+              "model_aware_trust_shrinkage": false,
+              "model_aware_replay_generic_correction": false,
+              "generic_correction_mode": "coordinate_rls",
+              "generic_correction_limiter": "hard_clip",
+              "generic_correction_limit": 0.4,
+              "generic_correction_attenuation": "no_attenuation",
+              "sa_pece_forecast_policy": "balanced"
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 266,
+            "type": "MiniMaxH3DiffAidSparsePatch",
+            "pos": [
+              -67.49551457421536,
+              4222.746969423995
+            ],
+            "size": [
+              325.0279296875,
+              270
+            ],
+            "flags": {},
+            "order": 20,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 536
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "links": [
+                  537
+                ]
+              },
+              {
+                "localized_name": "summary",
+                "name": "summary",
+                "type": "STRING",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "diffaid-patches",
+              "ver": "ba9d9efbcf7e64c755e068cb76547d8cc85481eb",
+              "Node name for S&R": "MiniMaxH3DiffAidSparsePatch"
+            },
+            "widgets_values": [
+              true,
+              "1,13,25,37,50",
+              0.2,
+              0,
+              1,
+              0,
+              "none",
+              0.35,
+              true
+            ],
+            "widgets_values_named": {
+              "enabled": true,
+              "block_indices": "1,13,25,37,50",
+              "strength": 0.2,
+              "sigma_start": 0,
+              "sigma_end": 1,
+              "sigma_ramp": 0,
+              "token_weight_mode": "none",
+              "token_tail": 0.35,
+              "cond_only": true
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 213,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              -1668.002630653098,
+              4358.714082420286
+            ],
+            "size": [
+              330.6487829390876,
+              106.57732339190989
+            ],
+            "flags": {},
+            "order": 15,
+            "mode": 4,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 459
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  455
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.34.2",
+              "Node name for S&R": "LoraLoaderModelOnly"
+            },
+            "widgets_values": [
+              "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+              1
+            ],
+            "widgets_values_named": {
+              "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+              "strength_model": 1
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 272,
+            "type": "AILab_QwenVL_Advanced",
+            "pos": [
+              -2055.4353323736623,
+              3960.081691477359
+            ],
+            "size": [
+              340,
+              536
+            ],
+            "flags": {},
+            "order": 21,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 552
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 553
+              },
+              {
+                "localized_name": "video",
+                "name": "video",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "model_name",
+                "name": "model_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model_name"
+                },
+                "link": 549
+              },
+              {
+                "localized_name": "preset_prompt",
+                "name": "preset_prompt",
+                "type": "COMBO",
+                "widget": {
+                  "name": "preset_prompt"
+                },
+                "link": 550
+              },
+              {
+                "localized_name": "camera_tag",
+                "name": "camera_tag",
+                "type": "COMBO",
+                "widget": {
+                  "name": "camera_tag"
+                },
+                "link": 551
+              },
+              {
+                "localized_name": "custom_prompt",
+                "name": "custom_prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "custom_prompt"
+                },
+                "link": 548
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "RESPONSE",
+                "name": "RESPONSE",
+                "type": "STRING",
+                "links": [
+                  554
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "ver": "9abf364fc3acd1ea93ed18fec343295050398881",
+              "Node name for S&R": "AILab_QwenVL_Advanced",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+            },
+            "widgets_values": [
+              "Qwen3.5-4B-heretic-v2",
+              "None (FP16)",
+              "auto",
+              false,
+              "auto",
+              "🖼️ Detailed Description",
+              "None",
+              "",
+              8192,
+              0.6,
+              0.9,
+              1,
+              1,
+              false,
+              3635138314,
+              "randomize",
+              false,
+              16
+            ],
+            "widgets_values_named": {
+              "model_name": "Qwen3.5-4B-heretic-v2",
+              "quantization": "None (FP16)",
+              "attention_mode": "auto",
+              "use_torch_compile": false,
+              "device": "auto",
+              "preset_prompt": "🖼️ Detailed Description",
+              "camera_tag": "None",
+              "custom_prompt": "",
+              "max_tokens": 8192,
+              "temperature": 0.6,
+              "top_p": 0.9,
+              "num_beams": 1,
+              "repetition_penalty": 1,
+              "keep_model_loaded": false,
+              "seed": 3635138314,
+              "control_after_generate": "randomize",
+              "keep_last_prompt": false,
+              "frame_count": 16
+            },
+            "color": "#28403f",
+            "bgcolor": "#374539"
           }
         ],
         "groups": [
@@ -3121,6 +3008,18 @@
               3741.896099835568,
               350.669921875,
               752.847033936966
+            ],
+            "color": "#b58b2a",
+            "flags": {}
+          },
+          {
+            "id": 21,
+            "title": "DIFF-AID",
+            "bounding": [
+              -77.49551457421526,
+              4152.7469694239935,
+              345.0279296875,
+              350
             ],
             "color": "#b58b2a",
             "flags": {}
@@ -3328,62 +3227,6 @@
             "type": "SAMPLER"
           },
           {
-            "id": 432,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 209,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 433,
-            "origin_id": -10,
-            "origin_slot": 6,
-            "target_id": 209,
-            "target_slot": 1,
-            "type": "IMAGE"
-          },
-          {
-            "id": 434,
-            "origin_id": 209,
-            "origin_slot": 0,
-            "target_id": 104,
-            "target_slot": 4,
-            "type": "STRING"
-          },
-          {
-            "id": 436,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 209,
-            "target_slot": 5,
-            "type": "STRING"
-          },
-          {
-            "id": 437,
-            "origin_id": -10,
-            "origin_slot": 8,
-            "target_id": 209,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 438,
-            "origin_id": -10,
-            "origin_slot": 9,
-            "target_id": 209,
-            "target_slot": 3,
-            "type": "COMBO"
-          },
-          {
-            "id": 439,
-            "origin_id": -10,
-            "origin_slot": 10,
-            "target_id": 209,
-            "target_slot": 4,
-            "type": "COMBO"
-          },
-          {
             "id": 455,
             "origin_id": 213,
             "origin_slot": 0,
@@ -3420,14 +3263,6 @@
             "origin_id": 6,
             "origin_slot": 0,
             "target_id": 213,
-            "target_slot": 0,
-            "type": "MODEL"
-          },
-          {
-            "id": 460,
-            "origin_id": 217,
-            "origin_slot": 0,
-            "target_id": 203,
             "target_slot": 0,
             "type": "MODEL"
           },
@@ -3470,17 +3305,91 @@
             "target_id": 203,
             "target_slot": 2,
             "type": "FLOAT"
+          },
+          {
+            "id": 536,
+            "origin_id": 217,
+            "origin_slot": 0,
+            "target_id": 266,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 537,
+            "origin_id": 266,
+            "origin_slot": 0,
+            "target_id": 203,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 548,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 272,
+            "target_slot": 6,
+            "type": "STRING"
+          },
+          {
+            "id": 549,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 272,
+            "target_slot": 3,
+            "type": "COMBO"
+          },
+          {
+            "id": 550,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": 272,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 551,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 272,
+            "target_slot": 5,
+            "type": "COMBO"
+          },
+          {
+            "id": 552,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 272,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 553,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 272,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 554,
+            "origin_id": 272,
+            "origin_slot": 0,
+            "target_id": 104,
+            "target_slot": 4,
+            "type": "STRING"
           }
         ],
-        "extra": {}
+        "extra": {
+          "pixaromaGroups": []
+        }
       },
       {
         "id": "8143d14a-a0ac-4f77-80ab-b72ff376a8b5",
         "version": 1,
         "state": {
-          "lastGroupId": 20,
-          "lastNodeId": 264,
-          "lastLinkId": 527,
+          "lastGroupId": 22,
+          "lastNodeId": 272,
+          "lastLinkId": 554,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3684,9 +3593,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
-              "Node name for S&R": "AutoLoadRifeTensorrtModel"
+              "Node name for S&R": "AutoLoadRifeTensorrtModel",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -3767,9 +3677,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
-              "Node name for S&R": "AutoRifeTensorrt"
+              "Node name for S&R": "AutoRifeTensorrt",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               100,
@@ -3801,7 +3712,7 @@
             ],
             "flags": {},
             "order": 2,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "model",
@@ -3833,9 +3744,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
-              "Node name for S&R": "LoadUpscalerTensorrtModel"
+              "Node name for S&R": "LoadUpscalerTensorrtModel",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -3863,7 +3775,7 @@
             ],
             "flags": {},
             "order": 3,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "images",
@@ -3907,9 +3819,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
-              "Node name for S&R": "UpscalerTensorrt"
+              "Node name for S&R": "UpscalerTensorrt",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "1080p",
@@ -4059,15 +3972,17 @@
             "type": "INT"
           }
         ],
-        "extra": {}
+        "extra": {
+          "pixaromaGroups": []
+        }
       },
       {
         "id": "df2383ae-63b9-41f0-825f-02e76f888ddf",
         "version": 1,
         "state": {
-          "lastGroupId": 20,
-          "lastNodeId": 264,
-          "lastLinkId": 527,
+          "lastGroupId": 22,
+          "lastNodeId": 272,
+          "lastLinkId": 554,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -4097,7 +4012,7 @@
             "name": "prompt",
             "type": "STRING",
             "linkIds": [
-              436
+              544
             ],
             "pos": [
               -2453.435546875,
@@ -4159,7 +4074,7 @@
             "type": "IMAGE",
             "linkIds": [
               195,
-              432
+              541
             ],
             "pos": [
               -2453.435546875,
@@ -4172,7 +4087,7 @@
             "type": "IMAGE",
             "linkIds": [
               196,
-              433
+              542
             ],
             "pos": [
               -2453.435546875,
@@ -4196,7 +4111,7 @@
             "name": "model_name",
             "type": "COMBO",
             "linkIds": [
-              437
+              543
             ],
             "pos": [
               -2453.435546875,
@@ -4208,7 +4123,7 @@
             "name": "preset_prompt",
             "type": "COMBO",
             "linkIds": [
-              438
+              545
             ],
             "pos": [
               -2453.435546875,
@@ -4220,7 +4135,7 @@
             "name": "camera_tag",
             "type": "COMBO",
             "linkIds": [
-              439
+              546
             ],
             "pos": [
               -2453.435546875,
@@ -4631,11 +4546,11 @@
               "Node name for S&R": "RandomNoise"
             },
             "widgets_values": [
-              307955485772777,
+              591929035447576,
               "randomize"
             ],
             "widgets_values_named": {
-              "noise_seed": 307955485772777,
+              "noise_seed": 591929035447576,
               "control_after_generate": "randomize"
             }
           },
@@ -4687,7 +4602,7 @@
                 "widget": {
                   "name": "prompt"
                 },
-                "link": 434
+                "link": 547
               },
               {
                 "localized_name": "width",
@@ -4754,130 +4669,6 @@
             }
           },
           {
-            "id": 244,
-            "type": "AILab_QwenVL_Advanced",
-            "pos": [
-              -2053.662489211128,
-              3983.491429532216
-            ],
-            "size": [
-              340,
-              516
-            ],
-            "flags": {},
-            "order": 10,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 432
-              },
-              {
-                "localized_name": "image2",
-                "name": "image2",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 433
-              },
-              {
-                "localized_name": "model_name",
-                "name": "model_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model_name"
-                },
-                "link": 437
-              },
-              {
-                "localized_name": "preset_prompt",
-                "name": "preset_prompt",
-                "type": "COMBO",
-                "widget": {
-                  "name": "preset_prompt"
-                },
-                "link": 438
-              },
-              {
-                "localized_name": "camera_tag",
-                "name": "camera_tag",
-                "type": "COMBO",
-                "widget": {
-                  "name": "camera_tag"
-                },
-                "link": 439
-              },
-              {
-                "localized_name": "custom_prompt",
-                "name": "custom_prompt",
-                "type": "STRING",
-                "widget": {
-                  "name": "custom_prompt"
-                },
-                "link": 436
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "RESPONSE",
-                "name": "RESPONSE",
-                "type": "STRING",
-                "links": [
-                  434
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "ver": "9abf364fc3acd1ea93ed18fec343295050398881",
-              "Node name for S&R": "AILab_QwenVL_Advanced"
-            },
-            "widgets_values": [
-              "Qwen3.5-4B-heretic-v2",
-              "None (FP16)",
-              "auto",
-              false,
-              "auto",
-              "🖼️ Detailed Description",
-              "None",
-              "",
-              8192,
-              0.6,
-              0.9,
-              1,
-              1,
-              16,
-              false,
-              1750072708,
-              "randomize",
-              false
-            ],
-            "widgets_values_named": {
-              "model_name": "Qwen3.5-4B-heretic-v2",
-              "quantization": "None (FP16)",
-              "attention_mode": "auto",
-              "use_torch_compile": false,
-              "device": "auto",
-              "preset_prompt": "🖼️ Detailed Description",
-              "camera_tag": "None",
-              "custom_prompt": "",
-              "max_tokens": 8192,
-              "temperature": 0.6,
-              "top_p": 0.9,
-              "num_beams": 1,
-              "repetition_penalty": 1,
-              "frame_count": 16,
-              "keep_model_loaded": false,
-              "seed": 1750072708,
-              "control_after_generate": "randomize",
-              "keep_last_prompt": false
-            },
-            "color": "#28403f",
-            "bgcolor": "#374539"
-          },
-          {
             "id": 245,
             "type": "PrimitiveFloat",
             "pos": [
@@ -4889,7 +4680,7 @@
               70
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -4939,7 +4730,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -5004,7 +4795,7 @@
               90
             ],
             "flags": {},
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -5060,8 +4851,8 @@
               106.57732339190989
             ],
             "flags": {},
-            "order": 14,
-            "mode": 0,
+            "order": 13,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "model",
@@ -5108,7 +4899,7 @@
               402.4929101562493
             ],
             "flags": {},
-            "order": 15,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -5182,7 +4973,7 @@
               58
             ],
             "flags": {},
-            "order": 16,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -5228,7 +5019,7 @@
               106
             ],
             "flags": {},
-            "order": 17,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -5267,104 +5058,6 @@
             "bgcolor": "#335"
           },
           {
-            "id": 252,
-            "type": "SpectrumApplyMiniMaxH3",
-            "pos": [
-              -457.52524032689166,
-              3811.896099835568
-            ],
-            "size": [
-              330.669921875,
-              658
-            ],
-            "flags": {},
-            "order": 18,
-            "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 458
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "links": [
-                  460
-                ]
-              }
-            ],
-            "title": "Spectrum H3",
-            "properties": {
-              "aux_id": "xmarre/ComfyUI-Spectrum-MiniMax-H3",
-              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0",
-              "Node name for S&R": "SpectrumApplyMiniMaxH3",
-              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3"
-            },
-            "widgets_values": [
-              true,
-              0.5,
-              1,
-              0.1,
-              2,
-              0.75,
-              1,
-              1,
-              8,
-              false,
-              "system_ram",
-              true,
-              false,
-              false,
-              true,
-              0,
-              "system_ram",
-              "off",
-              0.65,
-              false,
-              false,
-              "coordinate_rls",
-              "hard_clip",
-              0.4,
-              "no_attenuation",
-              "balanced"
-            ],
-            "widgets_values_named": {
-              "enabled": true,
-              "blend_weight": 0.5,
-              "degree": 1,
-              "ridge_lambda": 0.1,
-              "window_size": 2,
-              "flex_window": 0.75,
-              "warmup_steps": 1,
-              "tail_actual_steps": 1,
-              "max_history": 8,
-              "debug": false,
-              "history_storage": "system_ram",
-              "bootstrap_first_forecast": true,
-              "anchor_residual_feedback": false,
-              "selective_rollback_correction": false,
-              "offline_smoothing_replay": true,
-              "audio_blend_weight": 0,
-              "offline_archive_storage": "system_ram",
-              "model_aware_mode": "off",
-              "model_aware_risk_threshold": 0.65,
-              "model_aware_trust_shrinkage": false,
-              "model_aware_replay_generic_correction": false,
-              "generic_correction_mode": "coordinate_rls",
-              "generic_correction_limiter": "hard_clip",
-              "generic_correction_limit": 0.4,
-              "generic_correction_attenuation": "no_attenuation",
-              "sa_pece_forecast_policy": "balanced"
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
             "id": 253,
             "type": "KSamplerSelect",
             "pos": [
@@ -5376,7 +5069,7 @@
               90
             ],
             "flags": {},
-            "order": 19,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -5426,7 +5119,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 20,
+            "order": 19,
             "mode": 0,
             "inputs": [
               {
@@ -5544,7 +5237,7 @@
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 460
+                "link": 539
               },
               {
                 "localized_name": "shift_video",
@@ -5591,6 +5284,304 @@
               "shift_video": 12,
               "shift_audio": 3
             }
+          },
+          {
+            "id": 252,
+            "type": "SpectrumApplyMiniMaxH3",
+            "pos": [
+              -457.52524032689166,
+              3811.896099835568
+            ],
+            "size": [
+              330.669921875,
+              658
+            ],
+            "flags": {},
+            "order": 17,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 458
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "links": [
+                  538
+                ]
+              }
+            ],
+            "title": "Spectrum H3",
+            "properties": {
+              "cnr_id": "ComfyUI-Spectrum-MiniMax-H3",
+              "ver": "ce9d35e8f5f6d93495d1d9cfc12183f2bfa4afc0",
+              "Node name for S&R": "SpectrumApplyMiniMaxH3",
+              "aux_id": "xmarre/ComfyUI-Spectrum-MiniMax-H3"
+            },
+            "widgets_values": [
+              true,
+              0.5,
+              1,
+              0.1,
+              2,
+              0.75,
+              1,
+              1,
+              8,
+              false,
+              "system_ram",
+              true,
+              false,
+              false,
+              true,
+              0,
+              "system_ram",
+              "off",
+              0.65,
+              false,
+              false,
+              "coordinate_rls",
+              "hard_clip",
+              0.4,
+              "no_attenuation",
+              "balanced"
+            ],
+            "widgets_values_named": {
+              "enabled": true,
+              "blend_weight": 0.5,
+              "degree": 1,
+              "ridge_lambda": 0.1,
+              "window_size": 2,
+              "flex_window": 0.75,
+              "warmup_steps": 1,
+              "tail_actual_steps": 1,
+              "max_history": 8,
+              "debug": false,
+              "history_storage": "system_ram",
+              "bootstrap_first_forecast": true,
+              "anchor_residual_feedback": false,
+              "selective_rollback_correction": false,
+              "offline_smoothing_replay": true,
+              "audio_blend_weight": 0,
+              "offline_archive_storage": "system_ram",
+              "model_aware_mode": "off",
+              "model_aware_risk_threshold": 0.65,
+              "model_aware_trust_shrinkage": false,
+              "model_aware_replay_generic_correction": false,
+              "generic_correction_mode": "coordinate_rls",
+              "generic_correction_limiter": "hard_clip",
+              "generic_correction_limit": 0.4,
+              "generic_correction_attenuation": "no_attenuation",
+              "sa_pece_forecast_policy": "balanced"
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 267,
+            "type": "MiniMaxH3DiffAidSparsePatch",
+            "pos": [
+              -75.57366831286635,
+              4214.689931065133
+            ],
+            "size": [
+              325.0279296875,
+              270
+            ],
+            "flags": {},
+            "order": 20,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 538
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "links": [
+                  539
+                ]
+              },
+              {
+                "localized_name": "summary",
+                "name": "summary",
+                "type": "STRING",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "diffaid-patches",
+              "ver": "ba9d9efbcf7e64c755e068cb76547d8cc85481eb",
+              "Node name for S&R": "MiniMaxH3DiffAidSparsePatch"
+            },
+            "widgets_values": [
+              true,
+              "1,13,25,37,50",
+              0.2,
+              0,
+              1,
+              0,
+              "none",
+              0.35,
+              true
+            ],
+            "widgets_values_named": {
+              "enabled": true,
+              "block_indices": "1,13,25,37,50",
+              "strength": 0.2,
+              "sigma_start": 0,
+              "sigma_end": 1,
+              "sigma_ramp": 0,
+              "token_weight_mode": "none",
+              "token_tail": 0.35,
+              "cond_only": true
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 271,
+            "type": "AILab_QwenVL_Advanced",
+            "pos": [
+              -2052.8126219751025,
+              3968.034015188092
+            ],
+            "size": [
+              340,
+              536
+            ],
+            "flags": {},
+            "order": 21,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 541
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 542
+              },
+              {
+                "localized_name": "video",
+                "name": "video",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "model_name",
+                "name": "model_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model_name"
+                },
+                "link": 543
+              },
+              {
+                "localized_name": "preset_prompt",
+                "name": "preset_prompt",
+                "type": "COMBO",
+                "widget": {
+                  "name": "preset_prompt"
+                },
+                "link": 545
+              },
+              {
+                "localized_name": "camera_tag",
+                "name": "camera_tag",
+                "type": "COMBO",
+                "widget": {
+                  "name": "camera_tag"
+                },
+                "link": 546
+              },
+              {
+                "localized_name": "custom_prompt",
+                "name": "custom_prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "custom_prompt"
+                },
+                "link": 544
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "RESPONSE",
+                "name": "RESPONSE",
+                "type": "STRING",
+                "links": [
+                  547
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "ver": "9abf364fc3acd1ea93ed18fec343295050398881",
+              "Node name for S&R": "AILab_QwenVL_Advanced",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+            },
+            "widgets_values": [
+              "Qwen3.5-4B-heretic-v2",
+              "None (FP16)",
+              "auto",
+              false,
+              "auto",
+              "🖼️ Detailed Description",
+              "None",
+              "",
+              8192,
+              0.6,
+              0.9,
+              1,
+              1,
+              false,
+              3594883816,
+              "randomize",
+              false,
+              16
+            ],
+            "widgets_values_named": {
+              "model_name": "Qwen3.5-4B-heretic-v2",
+              "quantization": "None (FP16)",
+              "attention_mode": "auto",
+              "use_torch_compile": false,
+              "device": "auto",
+              "preset_prompt": "🖼️ Detailed Description",
+              "camera_tag": "None",
+              "custom_prompt": "",
+              "max_tokens": 8192,
+              "temperature": 0.6,
+              "top_p": 0.9,
+              "num_beams": 1,
+              "repetition_penalty": 1,
+              "keep_model_loaded": false,
+              "seed": 3594883816,
+              "control_after_generate": "randomize",
+              "keep_last_prompt": false,
+              "frame_count": 16
+            },
+            "color": "#28403f",
+            "bgcolor": "#374539"
           }
         ],
         "groups": [
@@ -5674,6 +5665,18 @@
               3741.896099835568,
               350.669921875,
               752.847033936966
+            ],
+            "color": "#b58b2a",
+            "flags": {}
+          },
+          {
+            "id": 22,
+            "title": "DIFF-AID",
+            "bounding": [
+              -85.57366831286625,
+              4144.689931065133,
+              345.0279296875,
+              350
             ],
             "color": "#b58b2a",
             "flags": {}
@@ -5881,62 +5884,6 @@
             "type": "SAMPLER"
           },
           {
-            "id": 432,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 244,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 433,
-            "origin_id": -10,
-            "origin_slot": 6,
-            "target_id": 244,
-            "target_slot": 1,
-            "type": "IMAGE"
-          },
-          {
-            "id": 434,
-            "origin_id": 244,
-            "origin_slot": 0,
-            "target_id": 243,
-            "target_slot": 4,
-            "type": "STRING"
-          },
-          {
-            "id": 436,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 244,
-            "target_slot": 5,
-            "type": "STRING"
-          },
-          {
-            "id": 437,
-            "origin_id": -10,
-            "origin_slot": 8,
-            "target_id": 244,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 438,
-            "origin_id": -10,
-            "origin_slot": 9,
-            "target_id": 244,
-            "target_slot": 3,
-            "type": "COMBO"
-          },
-          {
-            "id": 439,
-            "origin_id": -10,
-            "origin_slot": 10,
-            "target_id": 244,
-            "target_slot": 4,
-            "type": "COMBO"
-          },
-          {
             "id": 455,
             "origin_id": 248,
             "origin_slot": 0,
@@ -5973,14 +5920,6 @@
             "origin_id": 247,
             "origin_slot": 0,
             "target_id": 248,
-            "target_slot": 0,
-            "type": "MODEL"
-          },
-          {
-            "id": 460,
-            "origin_id": 252,
-            "origin_slot": 0,
-            "target_id": 241,
             "target_slot": 0,
             "type": "MODEL"
           },
@@ -6023,9 +5962,83 @@
             "target_id": 241,
             "target_slot": 2,
             "type": "FLOAT"
+          },
+          {
+            "id": 538,
+            "origin_id": 252,
+            "origin_slot": 0,
+            "target_id": 267,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 539,
+            "origin_id": 267,
+            "origin_slot": 0,
+            "target_id": 241,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 541,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 271,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 542,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 271,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 543,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 271,
+            "target_slot": 3,
+            "type": "COMBO"
+          },
+          {
+            "id": 544,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 271,
+            "target_slot": 6,
+            "type": "STRING"
+          },
+          {
+            "id": 545,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": 271,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 546,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 271,
+            "target_slot": 5,
+            "type": "COMBO"
+          },
+          {
+            "id": 547,
+            "origin_id": 271,
+            "origin_slot": 0,
+            "target_id": 243,
+            "target_slot": 4,
+            "type": "STRING"
           }
         ],
-        "extra": {}
+        "extra": {
+          "pixaromaGroups": []
+        }
       }
     ]
   },
@@ -6039,8 +6052,8 @@
     "ds": {
       "scale": 0.7815329983738221,
       "offset": [
-        2451.4893334422463,
-        -3883.1010663978254
+        1724.563908108012,
+        -4363.1184079140385
       ]
     }
   },

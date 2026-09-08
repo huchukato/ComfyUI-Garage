@@ -1,8 +1,8 @@
 {
   "id": "1b578592-cf47-47b6-b25b-2dc036abe2b9",
   "revision": 0,
-  "last_node_id": 108,
-  "last_link_id": 230,
+  "last_node_id": 110,
+  "last_link_id": 234,
   "nodes": [
     {
       "id": 29,
@@ -100,10 +100,10 @@
         }
       ],
       "properties": {
-        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt",
+        "cnr_id": "ComfyUI-Upscaler-Tensorrt",
         "ver": "dfc266538368e4c9a03a296917716a214517ccb5",
         "Node name for S&R": "LoadUpscalerTensorrtModel",
-        "cnr_id": "ComfyUI-Upscaler-Tensorrt"
+        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt"
       },
       "widgets_values": [
         "2xLexicaRRDBNet_Sharp",
@@ -169,11 +169,11 @@
         }
       ],
       "properties": {
-        "aux_id": "rgthree/rgthree-comfy",
+        "cnr_id": "rgthree-comfy",
         "ver": "1.0.2512112053",
         "Show Strengths": "Single Strength",
         "Match": "",
-        "cnr_id": "rgthree-comfy",
+        "aux_id": "rgthree/rgthree-comfy",
         "Node name for S&R": "Power Lora Loader (rgthree)"
       },
       "widgets_values": [
@@ -264,10 +264,10 @@
         }
       ],
       "properties": {
-        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt",
+        "cnr_id": "ComfyUI-Upscaler-Tensorrt",
         "ver": "dfc266538368e4c9a03a296917716a214517ccb5",
         "Node name for S&R": "UpscalerTensorrt",
-        "cnr_id": "ComfyUI-Upscaler-Tensorrt"
+        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt"
       },
       "widgets_values": [
         "2x",
@@ -310,7 +310,7 @@
           "widget": {
             "name": "text"
           },
-          "link": 217
+          "link": 234
         },
         {
           "name": "model",
@@ -373,61 +373,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 82,
-      "type": "WildcardProcessor",
-      "pos": [
-        -117.1594272065119,
-        -512.1098393037389
-      ],
-      "size": [
-        461.6691051136363,
-        578.5303622159093
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            171,
-            217
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-TagForge",
-        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
-        "Node name for S&R": "WildcardProcessor"
-      },
-      "widgets_values": [
-        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, __pmp/prmpt/lctns/outdoor__,  __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
-        15340742029768,
-        "randomize",
-        "score_9, score_8_up, score_7_up, cowboy shot, hospital, dawn, dappled sunlight, backlighting, colored shadow, (2girls, 1boy) ffm threesome, pov, looking at viewer, smug, penis, cum in mouth, cum swap, french kissing BREAK 1girl, light brown hair, absurdly long hair, butch cut hair, messy hair, green eyes, average body, large breasts, short, haute couture, breasts out BREAK 1girl, platinum blone hair, big hair, oseledets hair, blunt ends, hazel eyes, athletic body, large breasts, average height, sleepwear, cupless bra",
-        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, bamboo forest,  evening, stage lights, underlighting, tree shade, 1girl, lara croft, brown eyes, long brown hair stylized in a single braid, large breasts, chastity cage babydoll shorts cocktail dress, clothes down, solo, breasts squeezed together, nipple stimulation, nipple rub, moaning, mouth open, tongue out, saliva on breasts",
-        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
-        0.5,
-        17,
-        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, bamboo forest,  evening, stage lights, underlighting, tree shade, 1girl, lara croft, brown eyes, long brown hair stylized in a single braid, large breasts, chastity cage babydoll shorts cocktail dress, clothes down, solo, breasts squeezed together, nipple stimulation, nipple rub, moaning, mouth open, tongue out, saliva on breasts"
-      ],
-      "widgets_values_named": {
-        "text": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, __pmp/prmpt/lctns/outdoor__,  __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
-        "seed": 15340742029768,
-        "control_after_generate": "randomize",
-        "populate": "score_9, score_8_up, score_7_up, cowboy shot, hospital, dawn, dappled sunlight, backlighting, colored shadow, (2girls, 1boy) ffm threesome, pov, looking at viewer, smug, penis, cum in mouth, cum swap, french kissing BREAK 1girl, light brown hair, absurdly long hair, butch cut hair, messy hair, green eyes, average body, large breasts, short, haute couture, breasts out BREAK 1girl, platinum blone hair, big hair, oseledets hair, blunt ends, hazel eyes, athletic body, large breasts, average height, sleepwear, cupless bra",
-        "populated_text": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, bamboo forest,  evening, stage lights, underlighting, tree shade, 1girl, lara croft, brown eyes, long brown hair stylized in a single braid, large breasts, chastity cage babydoll shorts cocktail dress, clothes down, solo, breasts squeezed together, nipple stimulation, nipple rub, moaning, mouth open, tongue out, saliva on breasts",
-        "deduplicate": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
-        "downvote_factor": 0.5,
-        "refresh_token": 17,
-        "preview": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, bamboo forest,  evening, stage lights, underlighting, tree shade, 1girl, lara croft, brown eyes, long brown hair stylized in a single braid, large breasts, chastity cage babydoll shorts cocktail dress, clothes down, solo, breasts squeezed together, nipple stimulation, nipple rub, moaning, mouth open, tongue out, saliva on breasts"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 92,
       "type": "1670af9c-dfc1-4b35-a06d-fe7124ad9ebf",
       "pos": [
@@ -458,7 +403,7 @@
           "widget": {
             "name": "text"
           },
-          "link": 171
+          "link": 233
         }
       ],
       "outputs": [
@@ -609,9 +554,10 @@
       ],
       "title": "Before / After HiRes Fix",
       "properties": {
-        "aux_id": "rgthree/rgthree-comfy",
+        "cnr_id": "rgthree-comfy",
         "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
-        "comparer_mode": "Slide"
+        "comparer_mode": "Slide",
+        "aux_id": "rgthree/rgthree-comfy"
       },
       "widgets_values": [
         []
@@ -623,6 +569,58 @@
       },
       "color": "#233",
       "bgcolor": "#355"
+    },
+    {
+      "id": 110,
+      "type": "WildcardProcessor",
+      "pos": [
+        -117.1594272065119,
+        -512.1098393037389
+      ],
+      "size": [
+        461.6691051136363,
+        578.5303622159093
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            233,
+            234
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-TagForge",
+        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge"
+      },
+      "widgets_values": [
+        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/pose/poses_basic__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        0,
+        "randomize",
+        "",
+        "populate",
+        true,
+        0.5
+      ],
+      "widgets_values_named": {
+        "text": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/pose/poses_basic__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        "seed": 0,
+        "control_after_generate": "randomize",
+        "populated_text": "",
+        "mode": "populate",
+        "deduplicate": true,
+        "downvote_factor": 0.5
+      },
+      "color": "#323",
+      "bgcolor": "#535"
     }
   ],
   "links": [
@@ -641,14 +639,6 @@
       92,
       0,
       "CLIP"
-    ],
-    [
-      171,
-      82,
-      0,
-      92,
-      2,
-      "STRING"
     ],
     [
       172,
@@ -699,14 +689,6 @@
       "CLIP"
     ],
     [
-      217,
-      82,
-      0,
-      107,
-      1,
-      "STRING"
-    ],
-    [
       218,
       53,
       0,
@@ -753,6 +735,22 @@
       108,
       1,
       "IMAGE"
+    ],
+    [
+      233,
+      110,
+      0,
+      92,
+      2,
+      "STRING"
+    ],
+    [
+      234,
+      110,
+      0,
+      107,
+      1,
+      "STRING"
     ]
   ],
   "groups": [
@@ -776,8 +774,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 5,
-          "lastNodeId": 108,
-          "lastLinkId": 230,
+          "lastNodeId": 110,
+          "lastLinkId": 234,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1424,10 +1422,10 @@
               }
             ],
             "properties": {
-              "aux_id": "kijai/ComfyUI-KJNodes",
+              "cnr_id": "comfyui-kjnodes",
               "ver": "1.2.2",
               "Node name for S&R": "EmptyLatentImagePresets",
-              "cnr_id": "comfyui-kjnodes"
+              "aux_id": "kijai/ComfyUI-KJNodes"
             },
             "widgets_values": [
               "1344 x 768 (1.75:1)",
@@ -1699,15 +1697,17 @@
             "type": "VAE"
           }
         ],
-        "extra": {}
+        "extra": {
+          "pixaromaGroups": []
+        }
       },
       {
         "id": "10cba386-0809-47e6-b09a-58b86f8b73ed",
         "version": 1,
         "state": {
           "lastGroupId": 5,
-          "lastNodeId": 108,
-          "lastLinkId": 230,
+          "lastNodeId": 110,
+          "lastLinkId": 234,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2408,7 +2408,9 @@
             "type": "FLOAT"
           }
         ],
-        "extra": {}
+        "extra": {
+          "pixaromaGroups": []
+        }
       }
     ]
   },
@@ -2430,10 +2432,15 @@
     "ds": {
       "scale": 0.7513148009015782,
       "offset": [
-        1284.4914817233962,
-        470.17907171926777
+        1679.231766879646,
+        990.7456498442675
       ]
     }
   },
-  "version": 0.4
+  "version": 0.4,
+  "seed_widgets": {
+    "92": 2,
+    "107": 2,
+    "110": 1
+  }
 }

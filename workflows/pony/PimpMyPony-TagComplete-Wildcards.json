@@ -1,8 +1,8 @@
 {
   "id": "1b578592-cf47-47b6-b25b-2dc036abe2b9",
   "revision": 0,
-  "last_node_id": 96,
-  "last_link_id": 191,
+  "last_node_id": 97,
+  "last_link_id": 192,
   "nodes": [
     {
       "id": 53,
@@ -103,10 +103,10 @@
         }
       ],
       "properties": {
-        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt",
+        "cnr_id": "ComfyUI-Upscaler-Tensorrt",
         "ver": "dfc266538368e4c9a03a296917716a214517ccb5",
         "Node name for S&R": "LoadUpscalerTensorrtModel",
-        "cnr_id": "ComfyUI-Upscaler-Tensorrt"
+        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt"
       },
       "widgets_values": [
         "2xLexicaRRDBNet_Sharp",
@@ -118,54 +118,6 @@
         "precision": "fp16",
         "batch_size": 2
       }
-    },
-    {
-      "id": 82,
-      "type": "WildcardProcessor",
-      "pos": [
-        -117.1594272065119,
-        -512.1098393037389
-      ],
-      "size": [
-        460.0245738636363,
-        402.8049715909093
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            171
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-TagForge",
-        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
-        "Node name for S&R": "WildcardProcessor"
-      },
-      "widgets_values": [
-        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, 1boy, large penis, veiny penis, __pmp/blwjob/blwjb__, ",
-        842751342828536,
-        "randomize",
-        "score_9, score_8_up, score_7_up, cowboy shot, hospital, dawn, dappled sunlight, backlighting, colored shadow, (2girls, 1boy) ffm threesome, pov, looking at viewer, smug, penis, cum in mouth, cum swap, french kissing BREAK 1girl, light brown hair, absurdly long hair, butch cut hair, messy hair, green eyes, average body, large breasts, short, haute couture, breasts out BREAK 1girl, platinum blone hair, big hair, oseledets hair, blunt ends, hazel eyes, athletic body, large breasts, average height, sleepwear, cupless bra",
-        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
-        "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, "
-      ],
-      "widgets_values_named": {
-        "text": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, 1boy, large penis, veiny penis, __pmp/blwjob/blwjb__, ",
-        "seed": 842751342828536,
-        "control_after_generate": "randomize",
-        "populate": "score_9, score_8_up, score_7_up, cowboy shot, hospital, dawn, dappled sunlight, backlighting, colored shadow, (2girls, 1boy) ffm threesome, pov, looking at viewer, smug, penis, cum in mouth, cum swap, french kissing BREAK 1girl, light brown hair, absurdly long hair, butch cut hair, messy hair, green eyes, average body, large breasts, short, haute couture, breasts out BREAK 1girl, platinum blone hair, big hair, oseledets hair, blunt ends, hazel eyes, athletic body, large breasts, average height, sleepwear, cupless bra",
-        "populated_text": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
-        "preview": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, "
-      },
-      "color": "#323",
-      "bgcolor": "#535"
     },
     {
       "id": 29,
@@ -223,7 +175,7 @@
         130
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -276,7 +228,7 @@
           "widget": {
             "name": "text"
           },
-          "link": 171
+          "link": 192
         }
       ],
       "outputs": [
@@ -370,10 +322,10 @@
         }
       ],
       "properties": {
-        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt",
+        "cnr_id": "ComfyUI-Upscaler-Tensorrt",
         "ver": "dfc266538368e4c9a03a296917716a214517ccb5",
         "Node name for S&R": "UpscalerTensorrt",
-        "cnr_id": "ComfyUI-Upscaler-Tensorrt"
+        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt"
       },
       "widgets_values": [
         "2x",
@@ -400,7 +352,7 @@
         1009.3142630947108
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -414,6 +366,57 @@
       },
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 97,
+      "type": "WildcardProcessor",
+      "pos": [
+        -117.1594272065119,
+        -512.6942143037369
+      ],
+      "size": [
+        460.0245738636363,
+        402.8049715909093
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            192
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-TagForge",
+        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge"
+      },
+      "widgets_values": [
+        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/pose/poses_basic__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        0,
+        "randomize",
+        "",
+        "populate",
+        true,
+        0.5
+      ],
+      "widgets_values_named": {
+        "text": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/pose/poses_basic__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        "seed": 0,
+        "control_after_generate": "randomize",
+        "populated_text": "",
+        "mode": "populate",
+        "deduplicate": true,
+        "downvote_factor": 0.5
+      },
+      "color": "#323",
+      "bgcolor": "#535"
     }
   ],
   "links": [
@@ -440,14 +443,6 @@
       92,
       0,
       "CLIP"
-    ],
-    [
-      171,
-      82,
-      0,
-      92,
-      2,
-      "STRING"
     ],
     [
       172,
@@ -480,6 +475,14 @@
       92,
       1,
       "MODEL"
+    ],
+    [
+      192,
+      97,
+      0,
+      92,
+      2,
+      "STRING"
     ]
   ],
   "groups": [
@@ -503,8 +506,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 5,
-          "lastNodeId": 96,
-          "lastLinkId": 191,
+          "lastNodeId": 97,
+          "lastLinkId": 192,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1405,7 +1408,9 @@
             "type": "BOOLEAN"
           }
         ],
-        "extra": {}
+        "extra": {
+          "pixaromaGroups": []
+        }
       }
     ]
   },
@@ -1427,10 +1432,14 @@
     "ds": {
       "scale": 0.9090909090909091,
       "offset": [
-        1605.4645257097343,
-        704.5307416863418
+        1463.2551507097342,
+        821.9729291863423
       ]
     }
   },
-  "version": 0.4
+  "version": 0.4,
+  "seed_widgets": {
+    "92": 2,
+    "97": 1
+  }
 }

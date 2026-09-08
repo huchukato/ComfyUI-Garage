@@ -29,10 +29,10 @@
         }
       ],
       "properties": {
-        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt",
+        "cnr_id": "ComfyUI-Upscaler-Tensorrt",
         "ver": "dfc266538368e4c9a03a296917716a214517ccb5",
         "Node name for S&R": "LoadUpscalerTensorrtModel",
-        "cnr_id": "ComfyUI-Upscaler-Tensorrt"
+        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt"
       },
       "widgets_values": [
         "2xLexicaRRDBNet_Sharp",
@@ -217,10 +217,10 @@
         }
       ],
       "properties": {
-        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt",
+        "cnr_id": "ComfyUI-Upscaler-Tensorrt",
         "ver": "dfc266538368e4c9a03a296917716a214517ccb5",
         "Node name for S&R": "UpscalerTensorrt",
-        "cnr_id": "ComfyUI-Upscaler-Tensorrt"
+        "aux_id": "yuvraj108c/ComfyUI-Upscaler-Tensorrt"
       },
       "widgets_values": [
         "2x",
@@ -413,6 +413,85 @@
       "bgcolor": "#3f5159"
     },
     {
+      "id": 118,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        -101.35798192070318,
+        368.98328298012
+      ],
+      "size": [
+        934.6364601132815,
+        739.5063846015626
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 236
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 237
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "images",
+          "shape": 3,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "title": "Before / After Face Detailer",
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
+        "comparer_mode": "Slide",
+        "aux_id": "rgthree/rgthree-comfy"
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_phbsh_00005_.png&type=temp&subfolder=&rand=0.724753758987078"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_phbsh_00006_.png&type=temp&subfolder=&rand=0.4057812041307737"
+          }
+        ]
+      ],
+      "widgets_values_named": {
+        "rgthree_comparer": {
+          "images": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_phbsh_00005_.png&type=temp&subfolder=&rand=0.724753758987078",
+              "img": {}
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_phbsh_00006_.png&type=temp&subfolder=&rand=0.4057812041307737",
+              "img": {}
+            }
+          ]
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
       "id": 92,
       "type": "1670af9c-dfc1-4b35-a06d-fe7124ad9ebf",
       "pos": [
@@ -501,26 +580,26 @@
       },
       "widgets_values": [
         "score_9, score_8_up, score_7_up, __pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, (2girls, 1boy) __pmp/actffm/coop_fellatio__ BREAK __pmp/prmpt/char/rndmcharlb__, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__ BREAK __pmp/prmpt/char/rndmcharlb__, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__",
-        "score_6, score_5, score_4, worst quality, low quality, ugly, malformed, bad anatomy, grayscale",
-        777388054958937,
+        "score_6, score_5, score_4, worst quality, low quality, ugly, malformed, bad anatomy, grayscale, artist name, ",
+        352847914457336,
         "pimpmypony_pmpInCaseEnhanced.safetensors",
         30,
         6.0000000000000036,
-        "euler_dy",
+        "euler_ancestral",
         "karras",
-        "1216 x 832 (1.46:1)",
+        "1152 x 896 (1.286:1)",
         true
       ],
       "widgets_values_named": {
         "text": "score_9, score_8_up, score_7_up, __pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, (2girls, 1boy) __pmp/actffm/coop_fellatio__ BREAK __pmp/prmpt/char/rndmcharlb__, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__ BREAK __pmp/prmpt/char/rndmcharlb__, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__",
-        "text_1": "score_6, score_5, score_4, worst quality, low quality, ugly, malformed, bad anatomy, grayscale",
-        "seed": 777388054958937,
+        "text_1": "score_6, score_5, score_4, worst quality, low quality, ugly, malformed, bad anatomy, grayscale, artist name, ",
+        "seed": 352847914457336,
         "ckpt_name": "pimpmypony_pmpInCaseEnhanced.safetensors",
         "steps": 30,
         "cfg": 6.0000000000000036,
-        "sampler_name": "euler_dy",
+        "sampler_name": "euler_ancestral",
         "scheduler": "karras",
-        "dimensions": "1216 x 832 (1.46:1)",
+        "dimensions": "1152 x 896 (1.286:1)",
         "invert": true
       },
       "color": "#223",
@@ -551,111 +630,31 @@
         }
       ],
       "properties": {
-        "aux_id": "huchukato/ComfyUI-TagForge",
+        "cnr_id": "ComfyUI-TagForge",
         "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
-        "Node name for S&R": "WildcardProcessor"
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge"
       },
       "widgets_values": [
-        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, __pmp/prmpt/lctns/outdoor__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__ , large breasts, __pmp/prmpt/clths/styles_fashion__, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__ ",
-        703402464334472,
+        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/pose/poses_basic__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        582453995537084,
         "randomize",
-        true,
-        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, graveyard, dusk, dim lighting, underlighting, colored shadow, 1girl, aerith gainsborough, final fantasy vii, brown hair, green eyes , large breasts, ganguro, collar, nipples (visible), arm under breast, breast press, biting lip ",
+        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, windmill, dusk, dappled sunlight, backlighting, shadow, 1girl, bremerton \\(azur lane\\), azur lane, pink hair, blue eyes, large breasts, chemise, cowering, topless female, nipple stimulation, nipple pull, head back, eyes closed, moaning",
+        "populate",
         "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
-        0.5,
-        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, graveyard, dusk, dim lighting, underlighting, colored shadow, 1girl, aerith gainsborough, final fantasy vii, brown hair, green eyes , large breasts, ganguro, collar, nipples (visible), arm under breast, breast press, biting lip "
+        0.5
       ],
       "widgets_values_named": {
-        "text": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, __pmp/prmpt/lctns/outdoor__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__ , large breasts, __pmp/prmpt/clths/styles_fashion__, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__ ",
-        "seed": 703402464334472,
+        "text": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/pose/poses_basic__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        "seed": 582453995537084,
         "control_after_generate": "randomize",
-        "populate": true,
-        "populated_text": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, graveyard, dusk, dim lighting, underlighting, colored shadow, 1girl, aerith gainsborough, final fantasy vii, brown hair, green eyes , large breasts, ganguro, collar, nipples (visible), arm under breast, breast press, biting lip ",
+        "populated_text": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, windmill, dusk, dappled sunlight, backlighting, shadow, 1girl, bremerton \\(azur lane\\), azur lane, pink hair, blue eyes, large breasts, chemise, cowering, topless female, nipple stimulation, nipple pull, head back, eyes closed, moaning",
+        "mode": "populate",
         "deduplicate": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
-        "downvote_factor": 0.5,
-        "preview": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, graveyard, dusk, dim lighting, underlighting, colored shadow, 1girl, aerith gainsborough, final fantasy vii, brown hair, green eyes , large breasts, ganguro, collar, nipples (visible), arm under breast, breast press, biting lip "
+        "downvote_factor": 0.5
       },
       "color": "#323",
       "bgcolor": "#535"
-    },
-    {
-      "id": 118,
-      "type": "Image Comparer (rgthree)",
-      "pos": [
-        -101.35798192070318,
-        368.98328298012
-      ],
-      "size": [
-        934.6364601132815,
-        739.5063846015626
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "dir": 3,
-          "name": "image_a",
-          "type": "IMAGE",
-          "link": 236
-        },
-        {
-          "dir": 3,
-          "name": "image_b",
-          "type": "IMAGE",
-          "link": 237
-        }
-      ],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "images",
-          "shape": 3,
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "title": "Before / After Face Detailer",
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
-        "comparer_mode": "Slide",
-        "aux_id": "rgthree/rgthree-comfy"
-      },
-      "widgets_values": [
-        [
-          {
-            "name": "A",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_fgdgf_00001_.png&type=temp&subfolder=&rand=0.6450489903828801"
-          },
-          {
-            "name": "B",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_fgdgf_00002_.png&type=temp&subfolder=&rand=0.8598436986108287"
-          }
-        ]
-      ],
-      "widgets_values_named": {
-        "rgthree_comparer": {
-          "images": [
-            {
-              "name": "A",
-              "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_fgdgf_00001_.png&type=temp&subfolder=&rand=0.6450489903828801",
-              "img": {}
-            },
-            {
-              "name": "B",
-              "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_fgdgf_00002_.png&type=temp&subfolder=&rand=0.8598436986108287",
-              "img": {}
-            }
-          ]
-        }
-      },
-      "color": "#432",
-      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -1796,7 +1795,9 @@
             "type": "CONDITIONING"
           }
         ],
-        "extra": {}
+        "extra": {
+          "pixaromaGroups": []
+        }
       },
       {
         "id": "5036352f-f646-4632-83eb-9aa51a3eb08a",
@@ -2365,10 +2366,10 @@
               }
             ],
             "properties": {
-              "aux_id": "ltdrdata/ComfyUI-Impact-Subpack",
+              "cnr_id": "comfyui-impact-subpack",
               "ver": "1.3.5",
               "Node name for S&R": "UltralyticsDetectorProvider",
-              "cnr_id": "comfyui-impact-subpack"
+              "aux_id": "ltdrdata/ComfyUI-Impact-Subpack"
             },
             "widgets_values": [
               "bbox/face_yolov8m.pt"
@@ -2556,7 +2557,9 @@
             "type": "COMBO"
           }
         ],
-        "extra": {}
+        "extra": {
+          "pixaromaGroups": []
+        }
       }
     ]
   },
@@ -2578,8 +2581,8 @@
     "ds": {
       "scale": 0.9090909090909091,
       "offset": [
-        1352.1134424835864,
-        699.1640059795351
+        1386.2659831602452,
+        841.2415401995771
       ]
     }
   },
