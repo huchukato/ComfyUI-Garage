@@ -1,3 +1,5 @@
+![ComfyUI-Garage](https://raw.githubusercontent.com/huchukato/ComfyUI-Garage/master/img/banner-garage.jpg)
+
 # ComfyUI-Garage
 
 Workflow, provisioning e Docker image per ComfyUI su VastAI e RunPod.
