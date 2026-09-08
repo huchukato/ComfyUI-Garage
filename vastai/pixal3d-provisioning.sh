@@ -15,6 +15,7 @@ NODES=(
     "https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-TagForge"
     "https://github.com/huchukato/ComfyUI-HuggingFace"
+    "https://github.com/kijai/ComfyUI-KJNodes"
 )
 
 WORKFLOWS=(
