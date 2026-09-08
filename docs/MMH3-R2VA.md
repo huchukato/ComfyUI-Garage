@@ -64,9 +64,4 @@ If needed, use manual tags in the custom prompt:
 - **Duration**: 5s / 10s / 15s (select matching QwenVL preset)
 - **Resolution**: 768px short edge, max 1344px long edge, multiples of 32
 
-### Required Models
 
-- `minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors` (diffusion)
-- `minimax_h3_video_vae_fp16.safetensors` + `minimax_h3_audio_vae_fp32.safetensors` (VAE)
-- `qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors` (text encoder)
-- `minimax_h3_turbo_v4_step600_ema.safetensors` (Turbo LoRA)
