@@ -23,6 +23,7 @@ NODES=(
     "https://github.com/huchukato/ComfyUI-QwenVL-Mod"
     "https://github.com/Lightricks/ComfyUI-LTXVideo"
     "https://github.com/domprosys/ComfyUI-LTXVideo-Extra"
+    "https://github.com/cardenluo/ComfyUI-Apt_Preset"
     "https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-HuggingFace"
@@ -40,6 +41,7 @@ NODES=(
 
 WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/ltx/23/LTX23-I2VA-T2VA-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/ltx/23/LTX23-I2VA-AudioInput-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/ltx/23/LTX23-FL2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-TensorRT-60FPS.json"
