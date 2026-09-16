@@ -1,8 +1,8 @@
 {
   "id": "2e5fb033-7e4f-4e73-a580-590a2a38a074",
   "revision": 0,
-  "last_node_id": 208,
-  "last_link_id": 431,
+  "last_node_id": 210,
+  "last_link_id": 433,
   "nodes": [
     {
       "id": 135,
@@ -30,61 +30,6 @@
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 159,
-      "type": "WidgetToString",
-      "pos": [
-        -646.1471260744037,
-        5610.424437997696
-      ],
-      "size": [
-        294.341796875,
-        154
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "any_input",
-          "shape": 7,
-          "type": "*",
-          "link": 299
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            300,
-            355
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
-        "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
-        "Node name for S&R": "WidgetToString",
-        "cnr_id": "comfyui-kjnodes"
-      },
-      "widgets_values": [
-        114,
-        "image",
-        false,
-        "LoadImage",
-        2
-      ],
-      "widgets_values_named": {
-        "id": 114,
-        "widget_name": "image",
-        "return_all": false,
-        "node_title": "LoadImage",
-        "allowed_float_decimals": 2
-      }
     },
     {
       "id": 118,
@@ -270,7 +215,7 @@
       ],
       "size": [
         471.684350491249,
-        334
+        916.7877006186098
       ],
       "flags": {},
       "order": 14,
@@ -317,10 +262,10 @@
       ],
       "title": "48FPS",
       "properties": {
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
+        "cnr_id": "comfyui-videohelpersuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "cnr_id": "comfyui-videohelpersuite"
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -337,13 +282,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "075603_00001_.png_00002-audio.mp4",
+            "filename": "152321_00001_.png [output]_00001-audio.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 48,
-            "workflow": "075603_00001_.png_00002.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/075603_00001_.png_00002-audio.mp4"
+            "workflow": "152321_00001_.png [output]_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/152321_00001_.png [output]_00001-audio.mp4"
           }
         }
       },
@@ -362,63 +307,18 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "075603_00001_.png_00002-audio.mp4",
+            "filename": "152321_00001_.png [output]_00001-audio.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 48,
-            "workflow": "075603_00001_.png_00002.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/075603_00001_.png_00002-audio.mp4"
+            "workflow": "152321_00001_.png [output]_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/152321_00001_.png [output]_00001-audio.mp4"
           }
         }
       },
       "color": "#223",
       "bgcolor": "#335"
-    },
-    {
-      "id": 137,
-      "type": "easy showAnything",
-      "pos": [
-        -853.3084866111244,
-        5311.821443312154
-      ],
-      "size": [
-        646.6021824539848,
-        334.35740569392055
-      ],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 253
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": []
-        }
-      ],
-      "title": "QWEN GENERATED PROMPT",
-      "properties": {
-        "aux_id": "yolain/ComfyUI-Easy-Use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
-        "cnr_id": "comfyui-easy-use"
-      },
-      "widgets_values": [
-        "integrated_multimodal_description: [Shot 1] Photorealistic, cinematic, a medium close-up frames a young woman with short brown hair and heterochromatic eyes—one blue, one green—standing in a sunlit bedroom with wooden floors and large windows revealing greenery outside. She wears denim jeans and a colorful beaded necklace with a cross pendant. Her hands gently cup both her large, bare breasts, while she bites her lower lip with a playful, seductive expression. Warm sunlight streams through the window, casting soft highlights on her skin and creating gentle shadows. The camera slowly pushes in toward her face, maintaining a shallow depth of field that keeps the background slightly blurred.\n\noverall_soundscape: Soft, rhythmic breathing fills the air as her chest rises and falls with each inhale and exhale. The subtle rustle of denim fabric shifts as she moves her hands slightly, accompanied by the faint creak of floorboards underfoot. Natural room tone blends with distant birds chirping outside, but the primary focus remains on the soft, wet sounds of her skin against her palms and the low, continuous hum of her breathing.\n\nnon_diegetic_music: N/A"
-      ],
-      "widgets_values_named": {
-        "text": "integrated_multimodal_description: [Shot 1] Photorealistic, cinematic, a medium close-up frames a young woman with short brown hair and heterochromatic eyes—one blue, one green—standing in a sunlit bedroom with wooden floors and large windows revealing greenery outside. She wears denim jeans and a colorful beaded necklace with a cross pendant. Her hands gently cup both her large, bare breasts, while she bites her lower lip with a playful, seductive expression. Warm sunlight streams through the window, casting soft highlights on her skin and creating gentle shadows. The camera slowly pushes in toward her face, maintaining a shallow depth of field that keeps the background slightly blurred.\n\noverall_soundscape: Soft, rhythmic breathing fills the air as her chest rises and falls with each inhale and exhale. The subtle rustle of denim fabric shifts as she moves her hands slightly, accompanied by the faint creak of floorboards underfoot. Natural room tone blends with distant birds chirping outside, but the primary focus remains on the soft, wet sounds of her skin against her palms and the low, continuous hum of her breathing.\n\nnon_diegetic_music: N/A"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
     },
     {
       "id": 117,
@@ -486,14 +386,14 @@
         376
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
           "name": "image",
           "shape": 7,
           "type": "IMAGE",
-          "link": 415
+          "link": 432
         },
         {
           "name": "image2",
@@ -547,10 +447,10 @@
         }
       ],
       "properties": {
-        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution",
+        "cnr_id": "ComfyUI-PerfectVideoResolution",
         "ver": "51969284b70f9769fe5952496a5e97c06927db7b",
         "Node name for S&R": "ComfyUI-PerfectVideoResolution",
-        "cnr_id": "ComfyUI-PerfectVideoResolution"
+        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
         "MiniMax H3",
@@ -576,53 +476,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 114,
-      "type": "LoadImage",
-      "pos": [
-        -1668.7434686459458,
-        4780.474524997794
-      ],
-      "size": [
-        477.98084200614335,
-        807.3279897620059
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            299,
-            415
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "LoadImage",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "075603_00001_.png",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "075603_00001_.png",
-        "upload": "image"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 201,
       "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
@@ -634,7 +487,7 @@
         130
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -661,15 +514,15 @@
       "id": 204,
       "type": "MarkdownNote",
       "pos": [
-        -851.3587691023616,
-        5709.594035523242
+        -855.9896798670866,
+        5700.440920819252
       ],
       "size": [
         988.5125191873904,
         966.3235545427497
       ],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -683,6 +536,157 @@
       },
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 209,
+      "type": "LoadImageOutput",
+      "pos": [
+        -1653.03703785967,
+        4762.717141184654
+      ],
+      "size": [
+        464.05415264966484,
+        834.2137532653715
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            432,
+            433
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "LoadImage",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.36.0",
+        "Node name for S&R": "LoadImageOutput"
+      },
+      "widgets_values": [
+        "PMP/FD_2026-09-16/155021_00001_.png [output]",
+        false,
+        "refresh",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "PMP/FD_2026-09-16/155021_00001_.png [output]",
+        "Auto-refresh after generation": false,
+        "refresh": "refresh",
+        "upload": "image"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 159,
+      "type": "WidgetToString",
+      "pos": [
+        -692.3178795801571,
+        5467.797489376136
+      ],
+      "size": [
+        294.341796875,
+        154
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_input",
+          "shape": 7,
+          "type": "*",
+          "link": 433
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            300,
+            355
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
+        "Node name for S&R": "WidgetToString",
+        "aux_id": "kijai/ComfyUI-KJNodes"
+      },
+      "widgets_values": [
+        114,
+        "image",
+        false,
+        "LoadImage",
+        2
+      ],
+      "widgets_values_named": {
+        "id": 114,
+        "widget_name": "image",
+        "return_all": false,
+        "node_title": "LoadImage",
+        "allowed_float_decimals": 2
+      }
+    },
+    {
+      "id": 137,
+      "type": "easy showAnything",
+      "pos": [
+        -851.7083940125891,
+        5307.65824141797
+      ],
+      "size": [
+        646.6021824539848,
+        334.35740569392055
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "title": "QWEN GENERATED PROMPT",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+        "Node name for S&R": "easy showAnything",
+        "aux_id": "yolain/ComfyUI-Easy-Use"
+      },
+      "widgets_values": [
+        "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Photorealistic, cinematic, a medium close-up frames a young woman with long dark hair and fair skin standing in a softly lit bedroom with warm ambient lighting. She wears a black lace lingerie set. Her hands move to the front of her chest and begin playing with her nipples — her fingers gently pinch and roll each nipple, causing them to harden and become more prominent. She alternates between both nipples, her fingers moving in a slow, sensual rhythm. Her head tilts slightly back as she looks upward, her expression one of quiet pleasure. The camera slowly pushes in toward her chest, maintaining focus on the intimate action.\n\noverall_soundscape: The soft rustle of lace fabric as her hands move across her chest is accompanied by the subtle sound of her breathing becoming slightly heavier. A faint, wet sound accompanies the friction of her fingers against her sensitive nipples. Her moans are soft and rhythmic, matching the slow pace of her touch. The ambient room tone is minimal, keeping focus on the intimate sounds of the action.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Photorealistic, cinematic, a medium close-up frames a young woman with long dark hair and fair skin standing in a softly lit bedroom with warm ambient lighting. She wears a black lace lingerie set. Her hands move to the front of her chest and begin playing with her nipples — her fingers gently pinch and roll each nipple, causing them to harden and become more prominent. She alternates between both nipples, her fingers moving in a slow, sensual rhythm. Her head tilts slightly back as she looks upward, her expression one of quiet pleasure. The camera slowly pushes in toward her chest, maintaining focus on the intimate action.\n\noverall_soundscape: The soft rustle of lace fabric as her hands move across her chest is accompanied by the subtle sound of her breathing becoming slightly heavier. A faint, wet sound accompanies the friction of her fingers against her sensitive nipples. Her moans are soft and rhythmic, matching the slow pace of her touch. The ambient room tone is minimal, keeping focus on the intimate sounds of the action.\n\nnon_diegetic_music: N/A"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
     },
     {
       "id": 105,
@@ -777,7 +781,7 @@
         "previewExposures": []
       },
       "widgets_values": [
-        "",
+        "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Photorealistic, cinematic, a medium close-up frames a young woman with long dark hair and fair skin standing in a softly lit bedroom with warm ambient lighting. She wears a black lace lingerie set. Her hands move to the front of her chest and begin playing with her nipples — her fingers gently pinch and roll each nipple, causing them to harden and become more prominent. She alternates between both nipples, her fingers moving in a slow, sensual rhythm. Her head tilts slightly back as she looks upward, her expression one of quiet pleasure. The camera slowly pushes in toward her chest, maintaining focus on the intimate action.\n\noverall_soundscape: The soft rustle of lace fabric as her hands move across her chest is accompanied by the subtle sound of her breathing becoming slightly heavier. A faint, wet sound accompanies the friction of her fingers against her sensitive nipples. Her moans are soft and rhythmic, matching the slow pace of her touch. The ambient room tone is minimal, keeping focus on the intimate sounds of the action.\n\nnon_diegetic_music: N/A",
         1344,
         768,
         5,
@@ -790,10 +794,10 @@
         "simple",
         12,
         3,
-        false
+        true
       ],
       "widgets_values_named": {
-        "prompt": "",
+        "prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Photorealistic, cinematic, a medium close-up frames a young woman with long dark hair and fair skin standing in a softly lit bedroom with warm ambient lighting. She wears a black lace lingerie set. Her hands move to the front of her chest and begin playing with her nipples — her fingers gently pinch and roll each nipple, causing them to harden and become more prominent. She alternates between both nipples, her fingers moving in a slow, sensual rhythm. Her head tilts slightly back as she looks upward, her expression one of quiet pleasure. The camera slowly pushes in toward her chest, maintaining focus on the intimate action.\n\noverall_soundscape: The soft rustle of lace fabric as her hands move across her chest is accompanied by the subtle sound of her breathing becoming slightly heavier. A faint, wet sound accompanies the friction of her fingers against her sensitive nipples. Her moans are soft and rhythmic, matching the slow pace of her touch. The ambient room tone is minimal, keeping focus on the intimate sounds of the action.\n\nnon_diegetic_music: N/A",
         "width": 1344,
         "height": 768,
         "value_1": 5,
@@ -806,7 +810,7 @@
         "scheduler": "simple",
         "shift_video": 12,
         "shift_audio": 3,
-        "passthrough": false
+        "passthrough": true
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -836,14 +840,6 @@
       137,
       0,
       "*"
-    ],
-    [
-      299,
-      114,
-      0,
-      159,
-      0,
-      "IMAGE"
     ],
     [
       300,
@@ -878,14 +874,6 @@
       "IMAGE"
     ],
     [
-      415,
-      114,
-      0,
-      205,
-      0,
-      "IMAGE"
-    ],
-    [
       416,
       205,
       0,
@@ -907,6 +895,22 @@
       2,
       105,
       3,
+      "IMAGE"
+    ],
+    [
+      432,
+      209,
+      0,
+      205,
+      0,
+      "IMAGE"
+    ],
+    [
+      433,
+      209,
+      0,
+      159,
+      0,
       "IMAGE"
     ]
   ],
@@ -943,8 +947,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 17,
-          "lastNodeId": 208,
-          "lastLinkId": 431,
+          "lastNodeId": 210,
+          "lastLinkId": 433,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1753,11 +1757,11 @@
               "Node name for S&R": "RandomNoise"
             },
             "widgets_values": [
-              217432722475755,
+              445460796929903,
               "randomize"
             ],
             "widgets_values_named": {
-              "noise_seed": 217432722475755,
+              "noise_seed": 445460796929903,
               "control_after_generate": "randomize"
             }
           },
@@ -2421,10 +2425,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
+              "cnr_id": "ComfyUI-QwenVL-Mod",
               "ver": "94843a8153cce9336810388f9322ef699e2d99ec",
               "Node name for S&R": "AILab_QwenVL_Advanced",
-              "cnr_id": "ComfyUI-QwenVL-Mod"
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
             },
             "widgets_values": [
               "Qwen3.5-4B-heretic-v2",
@@ -2441,7 +2445,7 @@
               1,
               1,
               false,
-              3715699976,
+              732563290,
               "randomize",
               false,
               false,
@@ -2462,7 +2466,7 @@
               "num_beams": 1,
               "repetition_penalty": 1,
               "keep_model_loaded": false,
-              "seed": 3715699976,
+              "seed": 732563290,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
               "passthrough": false,
@@ -2909,8 +2913,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 17,
-          "lastNodeId": 208,
-          "lastLinkId": 431,
+          "lastNodeId": 210,
+          "lastLinkId": 433,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3102,10 +3106,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "cnr_id": "Auto-TensorRT-RIFE"
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -3177,10 +3181,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "cnr_id": "Auto-TensorRT-RIFE"
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               100,
@@ -3244,10 +3248,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "cnr_id": "Auto-TensorRT-Upscaler"
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -3319,10 +3323,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "cnr_id": "Auto-TensorRT-Upscaler"
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "1080p",
@@ -3478,10 +3482,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.8983451552746375,
+      "scale": 0.8166774138860342,
       "offset": [
-        2050.00939502903,
-        -4418.743683724123
+        3075.1167973247184,
+        -4339.2592362683745
       ]
     }
   },
