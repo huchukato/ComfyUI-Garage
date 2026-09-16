@@ -2,7 +2,7 @@
   "id": "2e5fb033-7e4f-4e73-a580-590a2a38a074",
   "revision": 0,
   "last_node_id": 208,
-  "last_link_id": 430,
+  "last_link_id": 431,
   "nodes": [
     {
       "id": 135,
@@ -66,10 +66,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
+        "cnr_id": "comfyui-kjnodes"
       },
       "widgets_values": [
         114,
@@ -270,7 +270,7 @@
       ],
       "size": [
         471.684350491249,
-        916.7877006186098
+        334
       ],
       "flags": {},
       "order": 14,
@@ -317,10 +317,10 @@
       ],
       "title": "48FPS",
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -406,10 +406,10 @@
       ],
       "title": "QWEN GENERATED PROMPT",
       "properties": {
-        "cnr_id": "comfyui-easy-use",
+        "aux_id": "yolain/ComfyUI-Easy-Use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
+        "cnr_id": "comfyui-easy-use"
       },
       "widgets_values": [
         "integrated_multimodal_description: [Shot 1] Photorealistic, cinematic, a medium close-up frames a young woman with short brown hair and heterochromatic eyes—one blue, one green—standing in a sunlit bedroom with wooden floors and large windows revealing greenery outside. She wears denim jeans and a colorful beaded necklace with a cross pendant. Her hands gently cup both her large, bare breasts, while she bites her lower lip with a playful, seductive expression. Warm sunlight streams through the window, casting soft highlights on her skin and creating gentle shadows. The camera slowly pushes in toward her face, maintaining a shallow depth of field that keeps the background slightly blurred.\n\noverall_soundscape: Soft, rhythmic breathing fills the air as her chest rises and falls with each inhale and exhale. The subtle rustle of denim fabric shifts as she moves her hands slightly, accompanied by the faint creak of floorboards underfoot. Natural room tone blends with distant birds chirping outside, but the primary focus remains on the soft, wet sounds of her skin against her palms and the low, continuous hum of her breathing.\n\nnon_diegetic_music: N/A"
@@ -547,9 +547,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI-PerfectVideoResolution",
+        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution",
         "ver": "51969284b70f9769fe5952496a5e97c06927db7b",
-        "Node name for S&R": "ComfyUI-PerfectVideoResolution"
+        "Node name for S&R": "ComfyUI-PerfectVideoResolution",
+        "cnr_id": "ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
         "MiniMax H3",
@@ -728,6 +729,15 @@
           "shape": 7,
           "type": "IMAGE",
           "link": 418
+        },
+        {
+          "label": "skip_autoprompt",
+          "name": "passthrough",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "passthrough"
+          },
+          "link": null
         }
       ],
       "outputs": [
@@ -767,7 +777,7 @@
         "previewExposures": []
       },
       "widgets_values": [
-        "Photorealistic, cinematic, a medium close-up shot frames a young woman with short brown hair and heterochromatic eyes (blue and green), wearing denim jeans and a colorful beaded necklace with a cross pendant. She stands in a sunlit bedroom with wooden floors and large windows showing greenery outside. Her hands gently cup both her large, bare breasts, while she bites her lower lip with a playful, seductive expression. Warm sunlight streams through the window, casting soft highlights on her skin and creating gentle shadows. The camera slowly pushes in toward her face, maintaining a shallow depth of field that keeps the background slightly blurred.\n\noverall_soundscape: Soft, rhythmic breathing, the subtle rustle of denim fabric shifting as she moves her hands, and the faint creak of floorboards underfoot. Natural room tone with distant birds chirping outside.\n\nnon_diegetic_music: N/A",
+        "",
         1344,
         768,
         5,
@@ -779,10 +789,11 @@
         "res_multistep",
         "simple",
         12,
-        3
+        3,
+        false
       ],
       "widgets_values_named": {
-        "prompt": "Photorealistic, cinematic, a medium close-up shot frames a young woman with short brown hair and heterochromatic eyes (blue and green), wearing denim jeans and a colorful beaded necklace with a cross pendant. She stands in a sunlit bedroom with wooden floors and large windows showing greenery outside. Her hands gently cup both her large, bare breasts, while she bites her lower lip with a playful, seductive expression. Warm sunlight streams through the window, casting soft highlights on her skin and creating gentle shadows. The camera slowly pushes in toward her face, maintaining a shallow depth of field that keeps the background slightly blurred.\n\noverall_soundscape: Soft, rhythmic breathing, the subtle rustle of denim fabric shifting as she moves her hands, and the faint creak of floorboards underfoot. Natural room tone with distant birds chirping outside.\n\nnon_diegetic_music: N/A",
+        "prompt": "",
         "width": 1344,
         "height": 768,
         "value_1": 5,
@@ -794,7 +805,8 @@
         "sampler_name": "res_multistep",
         "scheduler": "simple",
         "shift_video": 12,
-        "shift_audio": 3
+        "shift_audio": 3,
+        "passthrough": false
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -932,7 +944,7 @@
         "state": {
           "lastGroupId": 17,
           "lastNodeId": 208,
-          "lastLinkId": 430,
+          "lastLinkId": 431,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -943,8 +955,8 @@
           "bounding": [
             -2560,
             4720,
-            130.564453125,
-            328
+            142.130859375,
+            348
           ]
         },
         "outputNode": {
@@ -965,7 +977,7 @@
               422
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4744
             ]
           },
@@ -977,7 +989,7 @@
               200
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4764
             ]
           },
@@ -989,7 +1001,7 @@
               201
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4784
             ]
           },
@@ -1002,7 +1014,7 @@
             ],
             "label": "duration",
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4804
             ]
           },
@@ -1014,7 +1026,7 @@
               221
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4824
             ]
           },
@@ -1027,7 +1039,7 @@
               421
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4844
             ]
           },
@@ -1039,7 +1051,7 @@
               273
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4864
             ]
           },
@@ -1051,7 +1063,7 @@
               423
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4884
             ]
           },
@@ -1063,7 +1075,7 @@
               424
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4904
             ]
           },
@@ -1075,7 +1087,7 @@
               425
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4924
             ]
           },
@@ -1087,7 +1099,7 @@
               408
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4944
             ]
           },
@@ -1099,7 +1111,7 @@
               410
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4964
             ]
           },
@@ -1111,7 +1123,7 @@
               411
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               4984
             ]
           },
@@ -1123,8 +1135,21 @@
               412
             ],
             "pos": [
-              -2453.435546875,
+              -2441.869140625,
               5004
+            ]
+          },
+          {
+            "id": "0922dd0a-5ae8-448e-a86b-1d670e5e49f8",
+            "name": "passthrough",
+            "type": "BOOLEAN",
+            "linkIds": [
+              431
+            ],
+            "label": "skip_autoprompt",
+            "pos": [
+              -2441.869140625,
+              5024
             ]
           }
         ],
@@ -2311,7 +2336,7 @@
             ],
             "size": [
               340,
-              536
+              560
             ],
             "flags": {},
             "order": 20,
@@ -2373,6 +2398,15 @@
                   "name": "custom_prompt"
                 },
                 "link": 422
+              },
+              {
+                "localized_name": "passthrough",
+                "name": "passthrough",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "passthrough"
+                },
+                "link": 431
               }
             ],
             "outputs": [
@@ -2387,10 +2421,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
               "ver": "94843a8153cce9336810388f9322ef699e2d99ec",
               "Node name for S&R": "AILab_QwenVL_Advanced",
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+              "cnr_id": "ComfyUI-QwenVL-Mod"
             },
             "widgets_values": [
               "Qwen3.5-4B-heretic-v2",
@@ -2409,6 +2443,7 @@
               false,
               3715699976,
               "randomize",
+              false,
               false,
               16
             ],
@@ -2430,6 +2465,7 @@
               "seed": 3715699976,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
+              "passthrough": false,
               "frame_count": 16
             },
             "color": "#28403f",
@@ -2854,6 +2890,14 @@
             "target_id": 193,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 431,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 207,
+            "target_slot": 7,
+            "type": "BOOLEAN"
           }
         ],
         "extra": {
@@ -2866,7 +2910,7 @@
         "state": {
           "lastGroupId": 17,
           "lastNodeId": 208,
-          "lastLinkId": 430,
+          "lastLinkId": 431,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3058,10 +3102,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -3133,10 +3177,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               100,
@@ -3200,10 +3244,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -3275,10 +3319,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "1080p",
@@ -3434,10 +3478,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.9881796708021013,
+      "scale": 0.8983451552746375,
       "offset": [
-        1970.266811439916,
-        -4435.137463599042
+        2050.00939502903,
+        -4418.743683724123
       ]
     }
   },

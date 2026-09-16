@@ -2,7 +2,7 @@
   "id": "237ff12c-6141-4077-9f5e-d530111c6d41",
   "revision": 0,
   "last_node_id": 224,
-  "last_link_id": 471,
+  "last_link_id": 472,
   "nodes": [
     {
       "id": 116,
@@ -217,10 +217,10 @@
       ],
       "title": "48FPS",
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -333,10 +333,10 @@
       ],
       "title": "QWEN3VL GENERATED PROMPT",
       "properties": {
-        "cnr_id": "comfyui-easy-use",
+        "aux_id": "yolain/ComfyUI-Easy-Use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
+        "cnr_id": "comfyui-easy-use"
       },
       "widgets_values": [
         "integrated_multimodal_description: [Shot 1] Photorealistic live-action cinematic, a medium-wide shot framed from a low three-quarter angle captures Rei Hino (Sailor Mars) silhouetted against a blazing tropical sunset. She stands barefoot on warm golden sand, her long black hair flowing gently in the breeze, face turned upward with eyes closed in pure bliss. Sunbeams pierce through clouds, backlit intensely, casting volumetric light across her skin, highlighting sweat glistening on her collarbones and thighs. Her signature red sailor-style outfit is slightly disheveled; the high-low skirt rides up exposing smooth thighs, while her hands clutch the fabric of her bodice, fingers pressing firmly against her ample chest as she engages in intense self breast sucking. One hand holds the cupped breast steady while her mouth works deeply over the nipple, tongue tracing the sensitive peak with deliberate, rhythmic pressure. Saliva drips visibly down her chin and onto her shoulder, catching the golden hour glow. Her expression shifts between tight-lipped ecstasy and parted-mouth sighs, cheeks flushed crimson under the sun’s warmth. As the camera tracks smoothly leftward, maintaining her centered composition, she subtly shifts weight, hips swaying softly with each thrust of her head. A gentle sea breeze ruffles her skirt hem and lifts strands of hair around her face, blending seamlessly with the continuous lateral camera movement. Ambient waves lap rhythmically at the shore behind her, distant seagulls cry overhead, and the wind whispers through dune grass—layered beneath her audible ragged breathing, sharp intake breaths, wet suction sounds, soft lip smacks against skin, and occasional throaty moans punctuating moments of heightened sensation. Skin-on-fabric friction hums faintly as her arms adjust her grip.\n\noverall_soundscape: Warm ocean breezes rustle through coastal vegetation, mingling with the steady crash of receding waves and occasional seabird calls echoing across the horizon. Underlying these ambient layers are Rei’s own visceral responses: heavy inhalations followed by shaky exhales, rhythmic wet suction noises synced to her movements, subtle lip-smacking against skin, occasional throaty moans breaking into quiet giggles, and the faint squeak of silk shifting against her arms as she adjusts her position.\n\nnon_diegetic_music: N/A"
@@ -503,9 +503,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI-PerfectVideoResolution",
+        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution",
         "ver": "51969284b70f9769fe5952496a5e97c06927db7b",
-        "Node name for S&R": "ComfyUI-PerfectVideoResolution"
+        "Node name for S&R": "ComfyUI-PerfectVideoResolution",
+        "cnr_id": "ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
         "MiniMax H3",
@@ -552,13 +553,18 @@
           "links": [
             468
           ]
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": null
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI-TagForge",
+        "aux_id": "huchukato/ComfyUI-TagForge",
         "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
         "Node name for S&R": "WildcardProcessor",
-        "aux_id": "huchukato/ComfyUI-TagForge"
+        "cnr_id": "ComfyUI-TagForge"
       },
       "widgets_values": [
         "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
@@ -567,7 +573,8 @@
         "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
         "populate",
         true,
-        0.5
+        0.5,
+        "Pony"
       ],
       "widgets_values_named": {
         "text": "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
@@ -576,7 +583,8 @@
         "populated_text": "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
         "mode": "populate",
         "deduplicate": true,
-        "downvote_factor": 0.5
+        "downvote_factor": 0.5,
+        "base_model": "Pony"
       },
       "color": "#323",
       "bgcolor": "#535"
@@ -690,6 +698,15 @@
             "name": "value_1"
           },
           "link": null
+        },
+        {
+          "label": "skip_autoprompt",
+          "name": "passthrough",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "passthrough"
+          },
+          "link": null
         }
       ],
       "outputs": [
@@ -742,7 +759,8 @@
         "euler",
         "simple",
         6,
-        3
+        3,
+        false
       ],
       "widgets_values_named": {
         "prompt": "",
@@ -758,7 +776,8 @@
         "sampler_name": "euler",
         "scheduler": "simple",
         "shift_video": 6,
-        "shift_audio": 3
+        "shift_audio": 3,
+        "passthrough": false
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -864,7 +883,7 @@
         "state": {
           "lastGroupId": 20,
           "lastNodeId": 224,
-          "lastLinkId": 471,
+          "lastLinkId": 472,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -876,7 +895,7 @@
             -2560,
             4720,
             158.056640625,
-            328
+            348
           ]
         },
         "outputNode": {
@@ -1056,6 +1075,19 @@
             "pos": [
               -2425.943359375,
               5004
+            ]
+          },
+          {
+            "id": "18ff8428-1739-40e9-951e-415c6bc73447",
+            "name": "passthrough",
+            "type": "BOOLEAN",
+            "linkIds": [
+              472
+            ],
+            "label": "skip_autoprompt",
+            "pos": [
+              -2425.943359375,
+              5024
             ]
           }
         ],
@@ -2242,7 +2274,7 @@
             ],
             "size": [
               340,
-              478
+              496
             ],
             "flags": {},
             "order": 20,
@@ -2292,6 +2324,15 @@
                   "name": "style_tag"
                 },
                 "link": 465
+              },
+              {
+                "localized_name": "passthrough",
+                "name": "passthrough",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "passthrough"
+                },
+                "link": 472
               }
             ],
             "outputs": [
@@ -2306,10 +2347,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
               "ver": "4daa881fffefd050c6a02f3bd840e2c6c9b6fa06",
               "Node name for S&R": "AILab_QwenVL_PromptEnhancer",
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+              "cnr_id": "ComfyUI-QwenVL-Mod"
             },
             "widgets_values": [
               "qwen3-4b-Z-Image-Engineer",
@@ -2328,6 +2369,7 @@
               false,
               2648789989,
               "randomize",
+              false,
               false
             ],
             "widgets_values_named": {
@@ -2347,7 +2389,8 @@
               "keep_model_loaded": false,
               "seed": 2648789989,
               "control_after_generate": "randomize",
-              "keep_last_prompt": false
+              "keep_last_prompt": false,
+              "passthrough": false
             },
             "color": "#374445",
             "bgcolor": "#474539"
@@ -2763,6 +2806,14 @@
             "target_id": 206,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 472,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 223,
+            "target_slot": 5,
+            "type": "BOOLEAN"
           }
         ],
         "extra": {
@@ -2775,7 +2826,7 @@
         "state": {
           "lastGroupId": 20,
           "lastNodeId": 224,
-          "lastLinkId": 471,
+          "lastLinkId": 472,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2979,10 +3030,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -3063,10 +3114,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               100,
@@ -3130,10 +3181,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -3205,10 +3256,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "1080p",
@@ -3374,8 +3425,8 @@
     "ds": {
       "scale": 0.6830134553650705,
       "offset": [
-        2390.430574434062,
-        -4077.152709251361
+        2322.763013105937,
+        -3947.333102610735
       ]
     }
   },
