@@ -1,79 +1,250 @@
 {
   "id": "7f3c9a1e-2b4d-4e8f-9a1c-5d6e7f8a9b0c",
   "revision": 0,
-  "last_node_id": 3,
-  "last_link_id": 1,
+  "last_node_id": 7,
+  "last_link_id": 4,
   "nodes": [
-    {
-      "id": 1,
-      "type": "LoadImage",
-      "pos": [40, 200],
-      "size": [320, 314],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {"name": "IMAGE", "type": "IMAGE", "links": [1]},
-        {"name": "MASK", "type": "MASK", "links": null}
-      ],
-      "properties": {"Node name for S&R": "LoadImage"},
-      "widgets_values": ["example.png", "image"]
-    },
     {
       "id": 2,
       "type": "AILab_LivepeerRender",
-      "pos": [430, 120],
-      "size": [430, 430],
+      "pos": [
+        380.0617890624999,
+        35.518964843750005
+      ],
+      "size": [
+        430,
+        985.4166666666666
+      ],
       "flags": {},
-      "order": 1,
+      "order": 2,
       "mode": 0,
       "inputs": [
-        {"name": "image", "type": "IMAGE", "link": 1},
-        {"name": "end_image", "type": "IMAGE", "link": null}
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 3
+        },
+        {
+          "name": "source_video",
+          "shape": 7,
+          "type": "VIDEO",
+          "link": null
+        },
+        {
+          "name": "end_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
       ],
       "outputs": [
-        {"name": "video", "type": "VIDEO", "links": null},
-        {"name": "url", "type": "STRING", "links": null},
-        {"name": "report", "type": "STRING", "links": null}
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "url",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "report",
+          "type": "STRING",
+          "links": null
+        }
       ],
-      "properties": {"Node name for S&R": "AILab_LivepeerRender"},
+      "properties": {
+        "cnr_id": "ComfyUI-QwenVL-Mod",
+        "ver": "959c7853a3c73ada8d9ae2aaf72a46d147a811a5",
+        "Node name for S&R": "AILab_LivepeerRender"
+      },
       "widgets_values": [
-        "slow dolly-in, medium shot, the subject turns toward the camera with a soft smile, golden-hour rim light, quiet pacing",
+        "slow orbiting arc shot, medium shot, she turns toward the camera and smiles gently, soft natural lighting, calm pacing",
         "auto",
         "",
         5,
         "default",
-        "auto",
+        "16:9",
         -1,
         "fixed",
         480,
         "Livepeer/",
         "",
-        ""
-      ]
+        "",
+        0
+      ],
+      "widgets_values_named": {
+        "prompt": "slow orbiting arc shot, medium shot, she turns toward the camera and smiles gently, soft natural lighting, calm pacing",
+        "capability": "auto",
+        "custom_capability": "",
+        "duration": 5,
+        "resolution": "default",
+        "aspect_ratio": "16:9",
+        "seed": -1,
+        "control_after_generate": "fixed",
+        "timeout_s": 480,
+        "filename_prefix": "Livepeer/",
+        "api_key": "",
+        "extra_params": "",
+        "source_frame": 0
+      }
+    },
+    {
+      "id": 5,
+      "type": "LoadImageOutput",
+      "pos": [
+        -28.96650312500001,
+        46.32956015625005
+      ],
+      "size": [
+        330.948828125,
+        589.828125
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.36.0",
+        "Node name for S&R": "LoadImageOutput"
+      },
+      "widgets_values": [
+        "Livepeer_00001_.mp4 [output]",
+        false,
+        "refresh",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "Livepeer_00001_.mp4 [output]",
+        "Auto-refresh after generation": false,
+        "refresh": "refresh",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 4,
+      "type": "SaveVideo",
+      "pos": [
+        859.0924562499997,
+        20.612735546875005
+      ],
+      "size": [
+        374.265625,
+        581.4264322916667
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.36.0"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "video/ComfyUI",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
     },
     {
       "id": 3,
       "type": "MarkdownNote",
-      "pos": [40, 560],
-      "size": [820, 260],
+      "pos": [
+        876.984451171874,
+        684.2530363281243
+      ],
+      "size": [
+        820,
+        260
+      ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {},
       "widgets_values": [
         "## Livepeer Agent demo\n\n1. Load a reference image into **LoadImage** (or just describe a shot for t2v).\n2. Open the **Qwen Chat** sidebar and write in plain language, e.g.:\n   *\"a 5 second clip, slow push in, she turns to camera and smiles\"*\n3. Qwen writes the shot-native prompt into the **Livepeer Agent Render** node, sets duration/quality and queues the workflow.\n4. The render runs on the **Livepeer network** (`minimax-h3-i2v` by default) — no local GPU needed for diffusion.\n5. The clip lands in `output/Livepeer/` and previews in the node. Ask the chat to *refine* it and re-render.\n\nTips: `capability` picks the model (auto = MiniMax H3). `seed` fixes a take for A/B. `api_key` can carry a Daydream `sk_` key — empty uses the demo balance."
-      ]
+      ],
+      "widgets_values_named": {
+        "text": "## Livepeer Agent demo\n\n1. Load a reference image into **LoadImage** (or just describe a shot for t2v).\n2. Open the **Qwen Chat** sidebar and write in plain language, e.g.:\n   *\"a 5 second clip, slow push in, she turns to camera and smiles\"*\n3. Qwen writes the shot-native prompt into the **Livepeer Agent Render** node, sets duration/quality and queues the workflow.\n4. The render runs on the **Livepeer network** (`minimax-h3-i2v` by default) — no local GPU needed for diffusion.\n5. The clip lands in `output/Livepeer/` and previews in the node. Ask the chat to *refine* it and re-render.\n\nTips: `capability` picks the model (auto = MiniMax H3). `seed` fixes a take for A/B. `api_key` can carry a Daydream `sk_` key — empty uses the demo balance."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
-    [1, 1, 0, 2, 0, "IMAGE"]
+    [
+      2,
+      2,
+      0,
+      4,
+      0,
+      "VIDEO"
+    ],
+    [
+      3,
+      5,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ]
   ],
   "groups": [],
   "config": {},
-  "extra": {"ds": {"scale": 1, "offset": [0, 0]}},
+  "extra": {
+    "ds": {
+      "scale": 0.6830134553650709,
+      "offset": [
+        1473.568545312501,
+        579.789215625
+      ]
+    },
+    "frontendVersion": "1.52.7",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
   "version": 0.4
 }
