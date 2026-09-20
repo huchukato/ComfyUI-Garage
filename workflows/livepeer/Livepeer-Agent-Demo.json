@@ -22,10 +22,10 @@
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "## Livepeer Agent demo\n\n1. Pick a reference in **QwenVL Load Media** (image or video from input/output; `frame_index -1` uses the clip's last frame for chaining). Or describe a shot for t2v.\n2. Open the **Qwen Chat** sidebar and write in plain language, e.g.:\n   *\"a 5 second clip, slow push in, she turns to camera and smiles\"*\n3. Qwen writes the shot-native prompt into the **Livepeer Agent Render** node, sets duration/quality and queues the workflow.\n4. The render runs on the **Livepeer network** (`minimax-h3-i2v` by default) — no local GPU needed for diffusion.\n5. The clip lands in `output/Livepeer/` and previews in the node. Ask the chat to *refine* it and re-render.\n\nTips: `capability` picks the model (auto = MiniMax H3). `seed` fixes a take for A/B. `api_key` can carry a Daydream `sk_` key — empty uses the demo balance."
+        "## Livepeer Agent demo\n\n1. Pick a reference in **QwenVL Load Media** (image or video from input/output; `frame_index -1` uses the clip's last frame for chaining). Or describe a shot for t2v.\n2. Open the **Qwen Chat** sidebar and write in plain language, e.g.:\n   *\"a 5 second clip, slow push in, she turns to camera and smiles\"*\n3. Qwen writes the shot-native prompt into the **Livepeer Agent Render** node, sets duration/quality and queues the workflow.\n4. The render runs on the **Livepeer network** (`minimax-h3-i2v` by default) \u2014 no local GPU needed for diffusion.\n5. The clip lands in `output/Livepeer/` and previews in the node. Ask the chat to *refine* it and re-render.\n\nTips: `capability` picks the model (auto = MiniMax H3). `seed` fixes a take for A/B. `api_key` can carry a Daydream `sk_` key \u2014 empty uses the demo balance."
       ],
       "widgets_values_named": {
-        "text": "## Livepeer Agent demo\n\n1. Pick a reference in **QwenVL Load Media** (image or video from input/output; `frame_index -1` uses the clip's last frame for chaining). Or describe a shot for t2v.\n2. Open the **Qwen Chat** sidebar and write in plain language, e.g.:\n   *\"a 5 second clip, slow push in, she turns to camera and smiles\"*\n3. Qwen writes the shot-native prompt into the **Livepeer Agent Render** node, sets duration/quality and queues the workflow.\n4. The render runs on the **Livepeer network** (`minimax-h3-i2v` by default) — no local GPU needed for diffusion.\n5. The clip lands in `output/Livepeer/` and previews in the node. Ask the chat to *refine* it and re-render.\n\nTips: `capability` picks the model (auto = MiniMax H3). `seed` fixes a take for A/B. `api_key` can carry a Daydream `sk_` key — empty uses the demo balance."
+        "text": "## Livepeer Agent demo\n\n1. Pick a reference in **QwenVL Load Media** (image or video from input/output; `frame_index -1` uses the clip's last frame for chaining). Or describe a shot for t2v.\n2. Open the **Qwen Chat** sidebar and write in plain language, e.g.:\n   *\"a 5 second clip, slow push in, she turns to camera and smiles\"*\n3. Qwen writes the shot-native prompt into the **Livepeer Agent Render** node, sets duration/quality and queues the workflow.\n4. The render runs on the **Livepeer network** (`minimax-h3-i2v` by default) \u2014 no local GPU needed for diffusion.\n5. The clip lands in `output/Livepeer/` and previews in the node. Ask the chat to *refine* it and re-render.\n\nTips: `capability` picks the model (auto = MiniMax H3). `seed` fixes a take for A/B. `api_key` can carry a Daydream `sk_` key \u2014 empty uses the demo balance."
       },
       "color": "#432",
       "bgcolor": "#653"
@@ -128,92 +128,6 @@
       }
     },
     {
-      "id": 9,
-      "type": "SaveImage",
-      "pos": [
-        840.9670515624979,
-        37.58637187499971
-      ],
-      "size": [
-        422.4007812499999,
-        567.3472656249997
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 7
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.36.0",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "ComfyUI"
-      ],
-      "widgets_values_named": {
-        "filename_prefix": "ComfyUI"
-      }
-    },
-    {
-      "id": 4,
-      "type": "SaveVideo",
-      "pos": [
-        1292.1873781249994,
-        44.589298046874994
-      ],
-      "size": [
-        433.5496093750003,
-        549.9144531249998
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "video",
-          "type": "VIDEO",
-          "link": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "video",
-          "type": "VIDEO",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.36.0",
-        "Node name for S&R": "SaveVideo"
-      },
-      "widgets_values": [
-        "video/ComfyUI",
-        "auto",
-        "auto",
-        "auto"
-      ],
-      "widgets_values_named": {
-        "filename_prefix": "video/ComfyUI",
-        "format": "auto",
-        "format.codec": "auto",
-        "codec": "auto"
-      }
-    },
-    {
       "id": 10,
       "type": "QwenVL_LoadMedia",
       "pos": [
@@ -264,22 +178,6 @@
     }
   ],
   "links": [
-    [
-      2,
-      2,
-      0,
-      4,
-      0,
-      "VIDEO"
-    ],
-    [
-      7,
-      2,
-      3,
-      9,
-      0,
-      "IMAGE"
-    ],
     [
       8,
       10,
