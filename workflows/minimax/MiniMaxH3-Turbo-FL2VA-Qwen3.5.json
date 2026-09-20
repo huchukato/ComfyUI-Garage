@@ -1,8 +1,8 @@
 {
   "id": "c0033410-f90d-46e0-9e2a-7228d5a7b623",
   "revision": 0,
-  "last_node_id": 240,
-  "last_link_id": 508,
+  "last_node_id": 243,
+  "last_link_id": 518,
   "nodes": [
     {
       "id": 92,
@@ -16,7 +16,7 @@
         106
       ],
       "flags": {},
-      "order": 12,
+      "order": 14,
       "mode": 4,
       "inputs": [
         {
@@ -143,155 +143,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 153,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -193.49822477895742,
-        5213.024111264128
-      ],
-      "size": [
-        322.52068307678803,
-        198.55274872512564
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "OPTIONS",
-      "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 126,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        186.7933623556851,
-        4949.93920364917
-      ],
-      "size": [
-        511.3966496168314,
-        334
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 412
-        },
-        {
-          "name": "audio",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": 242
-        },
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        },
-        {
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          },
-          "link": 297
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null
-        }
-      ],
-      "title": "48FPS",
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
-        "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
-      },
-      "widgets_values": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "video/MiniMax_H3_48FPS",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "112334_00001_.png_00001-audio.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 48,
-            "workflow": "112334_00001_.png_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/112334_00001_.png_00001-audio.mp4"
-          }
-        }
-      },
-      "widgets_values_named": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "video/MiniMax_H3_48FPS",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "112334_00001_.png_00001-audio.mp4",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/h264-mp4",
-            "frame_rate": 48,
-            "workflow": "112334_00001_.png_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/112334_00001_.png_00001-audio.mp4"
-          }
-        }
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 118,
       "type": "MarkdownNote",
       "pos": [
@@ -303,7 +154,7 @@
         401.09532327839497
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -330,7 +181,7 @@
         479.82314240701726
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -357,7 +208,7 @@
         130
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -394,7 +245,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 9,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -436,56 +287,6 @@
       }
     },
     {
-      "id": 240,
-      "type": "LoadImageOutput",
-      "pos": [
-        -1696.280504159256,
-        4911.628409527023
-      ],
-      "size": [
-        453.75661718749996,
-        663.5996249999998
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            508
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "LastFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.36.0",
-        "Node name for S&R": "LoadImageOutput"
-      },
-      "widgets_values": [
-        "PMP_base/2026-09-16/212905_00001_.png [output]",
-        false,
-        "refresh",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "PMP_base/2026-09-16/212905_00001_.png [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 226,
       "type": "ComfyUI-PerfectVideoResolution",
       "pos": [
@@ -497,7 +298,7 @@
         376
       ],
       "flags": {},
-      "order": 10,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -600,7 +401,7 @@
         403.4854900527962
       ],
       "flags": {},
-      "order": 14,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -625,13 +426,162 @@
         "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
-        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A static, low-angle shot captures a voluptuous young woman kneeling on a stone walkway beneath a stone bridge, rain falling gently around her. She wears a white off-shoulder blouse, a short navy skirt, and a wide yellow sash with a pink flower brooch. Her brown hair is damp and tousled, her skin glistening with sweat and rain. At 0.00s, she leans back with her head thrown upward, eyes closed, hands clasped over her chest as a single drop of water runs down her right breast. Her left hand rests on her left thigh, fingers slightly curled. By 1.50s, she shifts her weight forward, her spine arching slightly as she begins to rub her right nipple with her right thumb and forefinger in a slow, circular motion. Her breathing deepens, audible in the soundscape. At 3.00s, her left hand slides down to her inner thigh, fingers spreading slightly, while her right hand continues its rhythmic stimulation. Raindrops strike her skin with soft plops, and the sound of wet fabric stretches as her skin moves. Her expression intensifies, lips parting slightly, a faint moan escaping her throat. By 4.50s, her head tilts further back, neck muscles tensing, as she increases the pressure on her nipple, her body trembling slightly with each motion. At 5.00s, she returns to the exact pose at 0.00s: head thrown back, hands clasped over her chest, rain continuing to fall, her expression serene and satisfied, the cycle complete and seamless.\n\noverall_soundscape: Soft rain patters continuously on stone and skin, layered with the wet rustle of her blouse and skirt. Her breathing starts shallow and rhythmic, deepening into audible gasps as she begins stimulation. A low, wet moan escapes at 3.20s, followed by a soft, drawn-out exhale at 4.10s as she increases pressure. Skin sounds—subtle slaps and stretches—are audible with each movement. The ambient soundscape remains consistent, with rain and fabric sounds dominating, while her vocalizations rise in intensity toward the final second before fading back into calm breathing.\n\nnon_diegetic_music: N/A"
+        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A top-down static shot captures a woman with tanned skin and red nail polish seated on a beige couch, her arms extended outward for balance. She wears a black one-shoulder crop top featuring a tropical flamingo print. Her legs are spread wide, revealing her lower body and the mechanical object inserted into her vaginal opening, which is positioned centrally beneath her pelvis. The camera remains locked-off, completely static throughout the entire clip, maintaining an unbroken overhead perspective that frames her torso, hips, and thighs in full view.\n\nAt the 0.00-second mark, the woman’s mouth is slightly open, revealing her teeth as she exhales softly. Her eyes are fixed upward, gazing directly at the mechanical object entering her body. The object itself is partially inserted, with its smooth, translucent surface catching the ambient light. Her inner thighs are relaxed but tense, framing the central action with subtle muscle definition visible along her hips and abdomen. The lighting is soft and even, casting gentle shadows across her skin that emphasize the curvature of her body and the texture of the couch beneath her.\n\nAs the clip progresses, the woman begins a slow, rhythmic thrusting motion, her pelvis moving upward and downward in a controlled, deliberate arc. Her upper body remains mostly still, anchored by her outstretched arms, but her shoulders rise and fall slightly with each thrust. The mechanical object advances deeper into her vaginal canal, its movement smooth and mechanical, contrasting with the organic rhythm of her breathing and skin. Her inner thighs press together slightly with each downward motion, creating a soft friction against the object’s surface. The sound of wet, squelching contact fills the audio space, punctuated by the faint slap of her thighs against each other and the low hum of the machine’s motor.\n\nHer facial expression shifts subtly throughout the sequence. At the midpoint of the clip, her mouth opens wider, her lips parting as she takes a sharp, wet breath in through her nose. Her eyes remain locked upward, but a faint tremor runs through her jawline, suggesting heightened arousal or sensory overload. Sweat beads form along her collarbone and the curve of her ribcage, glistening under the soft overhead light. The mechanical object continues its steady advance, now fully seated within her vaginal canal, its base resting against her pubic bone.\n\nBy the 4.00-second mark, the thrusting motion reaches its peak intensity. Her pelvis tilts forward more aggressively, pressing her lower abdomen against the object’s shaft. Her inner thighs spread wider, exposing more of her vulva and the entrance of her vaginal canal. The mechanical object’s surface catches the light as it moves, creating a shimmering effect that draws the eye to its central position. Her breathing becomes heavier, her chest rising and falling in sync with the rhythm of her thrusting. The sound of wet, squelching contact grows louder, layered with the low hum of the machine and the faint rustle of her skin against the couch fabric.\n\nAt the final moment, 5.00 seconds, the woman’s pelvis completes a downward thrust, her hips settling back into their original position. The mechanical object remains fully inserted, its base still resting against her pubic bone. Her mouth is slightly open, her lips relaxed, and her eyes still fixed upward, maintaining the same upward gaze from the opening frame. Her arms remain extended, her red nails still visible against the beige couch. The lighting and shadows have not shifted, preserving the exact composition of the first frame. The camera remains locked-off, completely static throughout the entire clip, capturing the seamless return to the starting pose with no disruption or change in framing.\n\noverall_soundscape: The audio space is dominated by the wet, squelching sounds of the mechanical object moving in and out of her vaginal canal, each thrust producing a soft, rhythmic suction noise. These are layered with the low hum of the machine’s motor and the faint rustle of her skin against the couch fabric. Her breathing is audible throughout, starting as a soft exhale and growing heavier and more irregular as the clip progresses, punctuated by sharp, wet inhales and low, guttural moans that echo the physical intensity of the motion.\n\nnon_diegetic_music: N/A"
       ],
       "widgets_values_named": {
-        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A static, low-angle shot captures a voluptuous young woman kneeling on a stone walkway beneath a stone bridge, rain falling gently around her. She wears a white off-shoulder blouse, a short navy skirt, and a wide yellow sash with a pink flower brooch. Her brown hair is damp and tousled, her skin glistening with sweat and rain. At 0.00s, she leans back with her head thrown upward, eyes closed, hands clasped over her chest as a single drop of water runs down her right breast. Her left hand rests on her left thigh, fingers slightly curled. By 1.50s, she shifts her weight forward, her spine arching slightly as she begins to rub her right nipple with her right thumb and forefinger in a slow, circular motion. Her breathing deepens, audible in the soundscape. At 3.00s, her left hand slides down to her inner thigh, fingers spreading slightly, while her right hand continues its rhythmic stimulation. Raindrops strike her skin with soft plops, and the sound of wet fabric stretches as her skin moves. Her expression intensifies, lips parting slightly, a faint moan escaping her throat. By 4.50s, her head tilts further back, neck muscles tensing, as she increases the pressure on her nipple, her body trembling slightly with each motion. At 5.00s, she returns to the exact pose at 0.00s: head thrown back, hands clasped over her chest, rain continuing to fall, her expression serene and satisfied, the cycle complete and seamless.\n\noverall_soundscape: Soft rain patters continuously on stone and skin, layered with the wet rustle of her blouse and skirt. Her breathing starts shallow and rhythmic, deepening into audible gasps as she begins stimulation. A low, wet moan escapes at 3.20s, followed by a soft, drawn-out exhale at 4.10s as she increases pressure. Skin sounds—subtle slaps and stretches—are audible with each movement. The ambient soundscape remains consistent, with rain and fabric sounds dominating, while her vocalizations rise in intensity toward the final second before fading back into calm breathing.\n\nnon_diegetic_music: N/A"
+        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A top-down static shot captures a woman with tanned skin and red nail polish seated on a beige couch, her arms extended outward for balance. She wears a black one-shoulder crop top featuring a tropical flamingo print. Her legs are spread wide, revealing her lower body and the mechanical object inserted into her vaginal opening, which is positioned centrally beneath her pelvis. The camera remains locked-off, completely static throughout the entire clip, maintaining an unbroken overhead perspective that frames her torso, hips, and thighs in full view.\n\nAt the 0.00-second mark, the woman’s mouth is slightly open, revealing her teeth as she exhales softly. Her eyes are fixed upward, gazing directly at the mechanical object entering her body. The object itself is partially inserted, with its smooth, translucent surface catching the ambient light. Her inner thighs are relaxed but tense, framing the central action with subtle muscle definition visible along her hips and abdomen. The lighting is soft and even, casting gentle shadows across her skin that emphasize the curvature of her body and the texture of the couch beneath her.\n\nAs the clip progresses, the woman begins a slow, rhythmic thrusting motion, her pelvis moving upward and downward in a controlled, deliberate arc. Her upper body remains mostly still, anchored by her outstretched arms, but her shoulders rise and fall slightly with each thrust. The mechanical object advances deeper into her vaginal canal, its movement smooth and mechanical, contrasting with the organic rhythm of her breathing and skin. Her inner thighs press together slightly with each downward motion, creating a soft friction against the object’s surface. The sound of wet, squelching contact fills the audio space, punctuated by the faint slap of her thighs against each other and the low hum of the machine’s motor.\n\nHer facial expression shifts subtly throughout the sequence. At the midpoint of the clip, her mouth opens wider, her lips parting as she takes a sharp, wet breath in through her nose. Her eyes remain locked upward, but a faint tremor runs through her jawline, suggesting heightened arousal or sensory overload. Sweat beads form along her collarbone and the curve of her ribcage, glistening under the soft overhead light. The mechanical object continues its steady advance, now fully seated within her vaginal canal, its base resting against her pubic bone.\n\nBy the 4.00-second mark, the thrusting motion reaches its peak intensity. Her pelvis tilts forward more aggressively, pressing her lower abdomen against the object’s shaft. Her inner thighs spread wider, exposing more of her vulva and the entrance of her vaginal canal. The mechanical object’s surface catches the light as it moves, creating a shimmering effect that draws the eye to its central position. Her breathing becomes heavier, her chest rising and falling in sync with the rhythm of her thrusting. The sound of wet, squelching contact grows louder, layered with the low hum of the machine and the faint rustle of her skin against the couch fabric.\n\nAt the final moment, 5.00 seconds, the woman’s pelvis completes a downward thrust, her hips settling back into their original position. The mechanical object remains fully inserted, its base still resting against her pubic bone. Her mouth is slightly open, her lips relaxed, and her eyes still fixed upward, maintaining the same upward gaze from the opening frame. Her arms remain extended, her red nails still visible against the beige couch. The lighting and shadows have not shifted, preserving the exact composition of the first frame. The camera remains locked-off, completely static throughout the entire clip, capturing the seamless return to the starting pose with no disruption or change in framing.\n\noverall_soundscape: The audio space is dominated by the wet, squelching sounds of the mechanical object moving in and out of her vaginal canal, each thrust producing a soft, rhythmic suction noise. These are layered with the low hum of the machine’s motor and the faint rustle of her skin against the couch fabric. Her breathing is audible throughout, starting as a soft exhale and growing heavier and more irregular as the clip progresses, punctuated by sharp, wet inhales and low, guttural moans that echo the physical intensity of the motion.\n\nnon_diegetic_music: N/A"
       },
       "color": "#233",
       "bgcolor": "#355"
+    },
+    {
+      "id": 153,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -193.49822477895742,
+        5213.024111264128
+      ],
+      "size": [
+        322.52068307678803,
+        198.55274872512564
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 126,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        186.7933623556851,
+        4949.93920364917
+      ],
+      "size": [
+        511.3966496168314,
+        624.4106154094677
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 412
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 297
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "title": "48FPS",
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
+        "Node name for S&R": "VHS_VideoCombine",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+      },
+      "widgets_values": {
+        "frame_rate": 48,
+        "loop_count": 0,
+        "filename_prefix": "video/MiniMax_H3_48FPS",
+        "format": "video/webm",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "S02_EP11_GymReunion_027_v01.jpg [output]_00001.webm",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/webm",
+            "frame_rate": 48,
+            "workflow": "S02_EP11_GymReunion_027_v01.jpg [output]_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_GymReunion_027_v01.jpg [output]_00001.webm"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "frame_rate": 48,
+        "loop_count": 0,
+        "filename_prefix": "video/MiniMax_H3_48FPS",
+        "format": "video/webm",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "S02_EP11_GymReunion_027_v01.jpg [output]_00001.webm",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/webm",
+            "frame_rate": 48,
+            "workflow": "S02_EP11_GymReunion_027_v01.jpg [output]_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_GymReunion_027_v01.jpg [output]_00001.webm"
+          }
+        }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
       "id": 201,
@@ -645,7 +595,7 @@
         251.23139641139096
       ],
       "flags": {},
-      "order": 13,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -673,7 +623,7 @@
         "large",
         2,
         false,
-        "2x-AnimeSharpV3",
+        "RealESRGAN_x2plus",
         2,
         "2K",
         2
@@ -683,13 +633,167 @@
         "resolution_profile": "large",
         "multiplier": 2,
         "keep_model_loaded": false,
-        "model_1": "2x-AnimeSharpV3",
+        "model_1": "RealESRGAN_x2plus",
         "batch_size": 2,
         "resize_to": "2K",
         "batch_size_1": 2
       },
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 242,
+      "type": "PixaromaMonitor",
+      "pos": [
+        -881.6901739035779,
+        4668.490972453125
+      ],
+      "size": [
+        305,
+        139
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
+        "Node name for S&R": "PixaromaMonitor"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 241,
+      "type": "PixaromaRunTimer",
+      "pos": [
+        -557.1081426535779,
+        4692.658941203125
+      ],
+      "size": [
+        307,
+        102.3125
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
+        "Node name for S&R": "PixaromaRunTimer",
+        "runTimerLastMs": 348268.40000003576
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 239,
+      "type": "LoadImageOutput",
+      "pos": [
+        -2220.4345432217547,
+        4912.394597027024
+      ],
+      "size": [
+        465.1377070312502,
+        666.9531210937503
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            506,
+            507
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "FirstFrame",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.36.0",
+        "Node name for S&R": "LoadImageOutput"
+      },
+      "widgets_values": [
+        "S02_EP11_GymReunion_027_v01.jpg [output]",
+        false,
+        "refresh",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "S02_EP11_GymReunion_027_v01.jpg [output]",
+        "Auto-refresh after generation": false,
+        "refresh": "refresh",
+        "upload": "image"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 240,
+      "type": "LoadImageOutput",
+      "pos": [
+        -1696.280504159256,
+        4911.628409527023
+      ],
+      "size": [
+        453.75661718749996,
+        663.5996249999998
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            508
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "LastFrame",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.36.0",
+        "Node name for S&R": "LoadImageOutput"
+      },
+      "widgets_values": [
+        "S02_EP11_GymReunion_027_v01.jpg [output]",
+        false,
+        "refresh",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "S02_EP11_GymReunion_027_v01.jpg [output]",
+        "Auto-refresh after generation": false,
+        "refresh": "refresh",
+        "upload": "image"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
       "id": 105,
@@ -703,7 +807,7 @@
         488.1139551136903
       ],
       "flags": {},
-      "order": 11,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -742,15 +846,6 @@
           "shape": 7,
           "type": "IMAGE",
           "link": 488
-        },
-        {
-          "label": "skip_autoprompt",
-          "name": "passthrough",
-          "type": "BOOLEAN",
-          "widget": {
-            "name": "passthrough"
-          },
-          "link": null
         }
       ],
       "outputs": [
@@ -771,9 +866,7 @@
         {
           "name": "AUDIO",
           "type": "AUDIO",
-          "links": [
-            242
-          ]
+          "links": []
         },
         {
           "label": "PROMPT",
@@ -790,90 +883,41 @@
         "previewExposures": []
       },
       "widgets_values": [
-        "crea un video di 5 secondi, la camera è statica, la ragazza si stimola un capezzolo, piove",
+        "",
         1344,
         768,
         5,
-        "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-        20,
-        "Qwen3.5-9B-Defiant-Fable-Heretic",
+        "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
+        8,
+        "euler",
+        "simple",
+        6,
+        3,
+        "GGUF llama.cpp",
+        "GGUF: Qwen3.8-9B-heretic-uncensored.Q8_0.gguf",
         "🔄 MiniMax H3 NSFW FL2VA (5s)",
         "None",
-        "res_multistep",
-        "simple",
-        12,
-        3,
         false
       ],
       "widgets_values_named": {
-        "prompt": "crea un video di 5 secondi, la camera è statica, la ragazza si stimola un capezzolo, piove",
+        "prompt": "",
         "width": 1344,
         "height": 768,
         "value_1": 5,
-        "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-        "steps": 20,
-        "model_name": "Qwen3.5-9B-Defiant-Fable-Heretic",
+        "unet_name": "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
+        "steps": 8,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "shift_video": 6,
+        "shift_audio": 3,
+        "backend": "GGUF llama.cpp",
+        "model_name": "GGUF: Qwen3.8-9B-heretic-uncensored.Q8_0.gguf",
         "preset_prompt": "🔄 MiniMax H3 NSFW FL2VA (5s)",
         "camera_tag": "None",
-        "sampler_name": "res_multistep",
-        "scheduler": "simple",
-        "shift_video": 12,
-        "shift_audio": 3,
         "passthrough": false
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 239,
-      "type": "LoadImageOutput",
-      "pos": [
-        -2220.4345432217547,
-        4912.394597027024
-      ],
-      "size": [
-        465.1377070312502,
-        666.9531210937503
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            506,
-            507
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "FirstFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.36.0",
-        "Node name for S&R": "LoadImageOutput"
-      },
-      "widgets_values": [
-        "PMP_base/2026-09-16/212905_00001_.png [output]",
-        false,
-        "refresh",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "PMP_base/2026-09-16/212905_00001_.png [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
-      },
-      "color": "#223",
-      "bgcolor": "#335"
     }
   ],
   "links": [
@@ -884,14 +928,6 @@
       92,
       0,
       "VIDEO"
-    ],
-    [
-      242,
-      105,
-      2,
-      126,
-      1,
-      "AUDIO"
     ],
     [
       253,
@@ -1023,8 +1059,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 21,
-          "lastNodeId": 240,
-          "lastLinkId": 508,
+          "lastNodeId": 243,
+          "lastLinkId": 518,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1035,8 +1071,8 @@
           "bounding": [
             -2560,
             4720,
-            142.130859375,
-            368
+            130.564453125,
+            388
           ]
         },
         "outputNode": {
@@ -1054,10 +1090,10 @@
             "name": "prompt",
             "type": "STRING",
             "linkIds": [
-              492
+              509
             ],
             "pos": [
-              -2441.869140625,
+              -2453.435546875,
               4744
             ]
           },
@@ -1069,7 +1105,7 @@
               200
             ],
             "pos": [
-              -2441.869140625,
+              -2453.435546875,
               4764
             ]
           },
@@ -1081,7 +1117,7 @@
               201
             ],
             "pos": [
-              -2441.869140625,
+              -2453.435546875,
               4784
             ]
           },
@@ -1094,7 +1130,7 @@
             ],
             "label": "duration",
             "pos": [
-              -2441.869140625,
+              -2453.435546875,
               4804
             ]
           },
@@ -1106,7 +1142,7 @@
               221
             ],
             "pos": [
-              -2441.869140625,
+              -2453.435546875,
               4824
             ]
           },
@@ -1116,10 +1152,10 @@
             "type": "IMAGE",
             "linkIds": [
               195,
-              493
+              510
             ],
             "pos": [
-              -2441.869140625,
+              -2453.435546875,
               4844
             ]
           },
@@ -1129,10 +1165,10 @@
             "type": "IMAGE",
             "linkIds": [
               196,
-              494
+              511
             ],
             "pos": [
-              -2441.869140625,
+              -2453.435546875,
               4864
             ]
           },
@@ -1144,44 +1180,8 @@
               277
             ],
             "pos": [
-              -2441.869140625,
+              -2453.435546875,
               4884
-            ]
-          },
-          {
-            "id": "4555fb06-26ed-472c-927e-55b93f0266da",
-            "name": "model_name",
-            "type": "COMBO",
-            "linkIds": [
-              495
-            ],
-            "pos": [
-              -2441.869140625,
-              4904
-            ]
-          },
-          {
-            "id": "e025e4c5-ac76-4da5-af49-b22f91eadfc1",
-            "name": "preset_prompt",
-            "type": "COMBO",
-            "linkIds": [
-              496
-            ],
-            "pos": [
-              -2441.869140625,
-              4924
-            ]
-          },
-          {
-            "id": "c370200c-4880-4769-b0d7-f7f6650ab64c",
-            "name": "camera_tag",
-            "type": "COMBO",
-            "linkIds": [
-              497
-            ],
-            "pos": [
-              -2441.869140625,
-              4944
             ]
           },
           {
@@ -1192,8 +1192,8 @@
               463
             ],
             "pos": [
-              -2441.869140625,
-              4964
+              -2453.435546875,
+              4904
             ]
           },
           {
@@ -1204,8 +1204,8 @@
               466
             ],
             "pos": [
-              -2441.869140625,
-              4984
+              -2453.435546875,
+              4924
             ]
           },
           {
@@ -1216,8 +1216,8 @@
               467
             ],
             "pos": [
-              -2441.869140625,
-              5004
+              -2453.435546875,
+              4944
             ]
           },
           {
@@ -1228,21 +1228,68 @@
               468
             ],
             "pos": [
-              -2441.869140625,
+              -2453.435546875,
+              4964
+            ]
+          },
+          {
+            "id": "4d92cefb-cc3d-4823-adf3-d86c6c2c4433",
+            "name": "backend",
+            "type": "COMBO",
+            "linkIds": [
+              512
+            ],
+            "pos": [
+              -2453.435546875,
+              4984
+            ]
+          },
+          {
+            "id": "cff1d9d9-78d9-42db-a60c-91569edd8fbb",
+            "name": "model_name",
+            "type": "COMBO",
+            "linkIds": [
+              513
+            ],
+            "pos": [
+              -2453.435546875,
+              5004
+            ]
+          },
+          {
+            "id": "6fdbf1c8-7491-406c-918e-ea44bdc3f93c",
+            "name": "preset_prompt",
+            "type": "COMBO",
+            "linkIds": [
+              514
+            ],
+            "pos": [
+              -2453.435546875,
               5024
             ]
           },
           {
-            "id": "27545da6-6a6c-4971-8e03-45b9daffedfc",
+            "id": "5e93fc28-736d-4296-ad8c-b49783687673",
+            "name": "camera_tag",
+            "type": "COMBO",
+            "linkIds": [
+              515
+            ],
+            "pos": [
+              -2453.435546875,
+              5044
+            ]
+          },
+          {
+            "id": "0cb95ef5-3a08-48bf-ab4e-c6db80ae8802",
             "name": "passthrough",
             "type": "BOOLEAN",
             "linkIds": [
-              505
+              516
             ],
-            "label": "skip_autoprompt",
             "pos": [
-              -2441.869140625,
-              5044
+              -2453.435546875,
+              5064
             ]
           }
         ],
@@ -1289,7 +1336,7 @@
             "name": "output",
             "type": "*",
             "linkIds": [
-              499
+              518
             ],
             "label": "PROMPT",
             "pos": [
@@ -1449,7 +1496,7 @@
               60
             ],
             "flags": {},
-            "order": 8,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -1512,11 +1559,11 @@
               "Node name for S&R": "RandomNoise"
             },
             "widgets_values": [
-              536466114601588,
+              695697918855519,
               "randomize"
             ],
             "widgets_values_named": {
-              "noise_seed": 536466114601588,
+              "noise_seed": 695697918855519,
               "control_after_generate": "randomize"
             }
           },
@@ -1532,7 +1579,7 @@
               550
             ],
             "flags": {},
-            "order": 11,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -1568,7 +1615,7 @@
                 "widget": {
                   "name": "prompt"
                 },
-                "link": 498
+                "link": 517
               },
               {
                 "localized_name": "larghezza",
@@ -1646,7 +1693,7 @@
               70
             ],
             "flags": {},
-            "order": 13,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -1696,7 +1743,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 12,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -1760,7 +1807,7 @@
               90
             ],
             "flags": {},
-            "order": 4,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -1816,7 +1863,7 @@
               58
             ],
             "flags": {},
-            "order": 18,
+            "order": 19,
             "mode": 0,
             "inputs": [
               {
@@ -1862,7 +1909,7 @@
               106
             ],
             "flags": {},
-            "order": 19,
+            "order": 20,
             "mode": 0,
             "inputs": [
               {
@@ -1912,7 +1959,7 @@
               90
             ],
             "flags": {},
-            "order": 14,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -1960,7 +2007,7 @@
               130
             ],
             "flags": {},
-            "order": 5,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -2026,7 +2073,7 @@
               82
             ],
             "flags": {},
-            "order": 15,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -2093,7 +2140,7 @@
               106.57732339190989
             ],
             "flags": {},
-            "order": 16,
+            "order": 17,
             "mode": 4,
             "inputs": [
               {
@@ -2141,7 +2188,7 @@
               402.4929101562493
             ],
             "flags": {},
-            "order": 17,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -2215,7 +2262,7 @@
               140
             ],
             "flags": {},
-            "order": 7,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -2286,7 +2333,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 6,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -2333,7 +2380,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 9,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -2378,7 +2425,7 @@
               150
             ],
             "flags": {},
-            "order": 10,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -2424,18 +2471,18 @@
             }
           },
           {
-            "id": 229,
-            "type": "AILab_QwenVL_Advanced",
+            "id": 243,
+            "type": "QwenVL_Unified",
             "pos": [
-              -2052.296890575463,
-              3969.4904116053835
+              -2129.9024892530133,
+              4092.768903036801
             ],
             "size": [
-              340,
-              560
+              400,
+              392
             ],
             "flags": {},
-            "order": 20,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -2443,14 +2490,14 @@
                 "name": "image",
                 "shape": 7,
                 "type": "IMAGE",
-                "link": 493
+                "link": 510
               },
               {
                 "localized_name": "image2",
                 "name": "image2",
                 "shape": 7,
                 "type": "IMAGE",
-                "link": 494
+                "link": 511
               },
               {
                 "localized_name": "video",
@@ -2460,13 +2507,22 @@
                 "link": null
               },
               {
+                "localized_name": "backend",
+                "name": "backend",
+                "type": "COMBO",
+                "widget": {
+                  "name": "backend"
+                },
+                "link": 512
+              },
+              {
                 "localized_name": "model_name",
                 "name": "model_name",
                 "type": "COMBO",
                 "widget": {
                   "name": "model_name"
                 },
-                "link": 495
+                "link": 513
               },
               {
                 "localized_name": "preset_prompt",
@@ -2475,7 +2531,7 @@
                 "widget": {
                   "name": "preset_prompt"
                 },
-                "link": 496
+                "link": 514
               },
               {
                 "localized_name": "camera_tag",
@@ -2484,7 +2540,7 @@
                 "widget": {
                   "name": "camera_tag"
                 },
-                "link": 497
+                "link": 515
               },
               {
                 "localized_name": "custom_prompt",
@@ -2493,7 +2549,7 @@
                 "widget": {
                   "name": "custom_prompt"
                 },
-                "link": 492
+                "link": 509
               },
               {
                 "localized_name": "passthrough",
@@ -2502,7 +2558,7 @@
                 "widget": {
                   "name": "passthrough"
                 },
-                "link": 505
+                "link": 516
               }
             ],
             "outputs": [
@@ -2511,61 +2567,44 @@
                 "name": "RESPONSE",
                 "type": "STRING",
                 "links": [
-                  498,
-                  499
+                  517,
+                  518
                 ]
               }
             ],
             "properties": {
               "cnr_id": "ComfyUI-QwenVL-Mod",
-              "ver": "9abf364fc3acd1ea93ed18fec343295050398881",
-              "Node name for S&R": "AILab_QwenVL_Advanced",
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+              "ver": "10fc389f110753e3bf112fe9b1ca7201719728da",
+              "Node name for S&R": "QwenVL_Unified"
             },
             "widgets_values": [
-              "Qwen3.5-4B-heretic-v2",
-              "None (FP16)",
-              "auto",
-              false,
-              "auto",
+              "GGUF llama.cpp",
+              "GGUF: Qwen3.5-9B-ultra-uncensored-heretic-v2-Q4_K_M.gguf",
               "🖼️ Detailed Description",
               "None",
               "",
               8192,
-              0.6,
-              0.9,
-              1,
-              1,
               false,
-              1458113830,
+              1,
               "randomize",
               false,
-              16,
+              false,
               16
             ],
             "widgets_values_named": {
-              "model_name": "Qwen3.5-4B-heretic-v2",
-              "quantization": "None (FP16)",
-              "attention_mode": "auto",
-              "use_torch_compile": false,
-              "device": "auto",
+              "backend": "GGUF llama.cpp",
+              "model_name": "GGUF: Qwen3.5-9B-ultra-uncensored-heretic-v2-Q4_K_M.gguf",
               "preset_prompt": "🖼️ Detailed Description",
               "camera_tag": "None",
               "custom_prompt": "",
               "max_tokens": 8192,
-              "temperature": 0.6,
-              "top_p": 0.9,
-              "num_beams": 1,
-              "repetition_penalty": 1,
               "keep_model_loaded": false,
-              "seed": 1458113830,
+              "seed": 1,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
-              "passthrough": 16,
+              "passthrough": false,
               "frame_count": 16
-            },
-            "color": "#28403f",
-            "bgcolor": "#374539"
+            }
           }
         ],
         "groups": [
@@ -2886,7 +2925,7 @@
           {
             "id": 463,
             "origin_id": -10,
-            "origin_slot": 11,
+            "origin_slot": 8,
             "target_id": 202,
             "target_slot": 0,
             "type": "COMBO"
@@ -2902,7 +2941,7 @@
           {
             "id": 466,
             "origin_id": -10,
-            "origin_slot": 12,
+            "origin_slot": 9,
             "target_id": 9,
             "target_slot": 1,
             "type": "COMBO"
@@ -2910,7 +2949,7 @@
           {
             "id": 467,
             "origin_id": -10,
-            "origin_slot": 13,
+            "origin_slot": 10,
             "target_id": 203,
             "target_slot": 1,
             "type": "FLOAT"
@@ -2918,7 +2957,7 @@
           {
             "id": 468,
             "origin_id": -10,
-            "origin_slot": 14,
+            "origin_slot": 11,
             "target_id": 203,
             "target_slot": 2,
             "type": "FLOAT"
@@ -2930,70 +2969,6 @@
             "target_id": 215,
             "target_slot": 0,
             "type": "MODEL"
-          },
-          {
-            "id": 492,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 229,
-            "target_slot": 6,
-            "type": "STRING"
-          },
-          {
-            "id": 493,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 229,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 494,
-            "origin_id": -10,
-            "origin_slot": 6,
-            "target_id": 229,
-            "target_slot": 1,
-            "type": "IMAGE"
-          },
-          {
-            "id": 495,
-            "origin_id": -10,
-            "origin_slot": 8,
-            "target_id": 229,
-            "target_slot": 3,
-            "type": "COMBO"
-          },
-          {
-            "id": 496,
-            "origin_id": -10,
-            "origin_slot": 9,
-            "target_id": 229,
-            "target_slot": 4,
-            "type": "COMBO"
-          },
-          {
-            "id": 497,
-            "origin_id": -10,
-            "origin_slot": 10,
-            "target_id": 229,
-            "target_slot": 5,
-            "type": "COMBO"
-          },
-          {
-            "id": 498,
-            "origin_id": 229,
-            "origin_slot": 0,
-            "target_id": 104,
-            "target_slot": 4,
-            "type": "STRING"
-          },
-          {
-            "id": 499,
-            "origin_id": 229,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 3,
-            "type": "STRING"
           },
           {
             "id": 502,
@@ -3012,12 +2987,84 @@
             "type": "MODEL"
           },
           {
-            "id": 505,
+            "id": 509,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 243,
+            "target_slot": 7,
+            "type": "STRING"
+          },
+          {
+            "id": 510,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 243,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 511,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 243,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 512,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": 243,
+            "target_slot": 3,
+            "type": "COMBO"
+          },
+          {
+            "id": 513,
+            "origin_id": -10,
+            "origin_slot": 13,
+            "target_id": 243,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 514,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 243,
+            "target_slot": 5,
+            "type": "COMBO"
+          },
+          {
+            "id": 515,
             "origin_id": -10,
             "origin_slot": 15,
-            "target_id": 229,
-            "target_slot": 7,
+            "target_id": 243,
+            "target_slot": 6,
+            "type": "COMBO"
+          },
+          {
+            "id": 516,
+            "origin_id": -10,
+            "origin_slot": 16,
+            "target_id": 243,
+            "target_slot": 8,
             "type": "BOOLEAN"
+          },
+          {
+            "id": 517,
+            "origin_id": 243,
+            "origin_slot": 0,
+            "target_id": 104,
+            "target_slot": 4,
+            "type": "STRING"
+          },
+          {
+            "id": 518,
+            "origin_id": 243,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 3,
+            "type": "STRING"
           }
         ],
         "extra": {
@@ -3029,8 +3076,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 21,
-          "lastNodeId": 240,
-          "lastLinkId": 508,
+          "lastNodeId": 243,
+          "lastLinkId": 518,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3353,7 +3400,7 @@
             ],
             "flags": {},
             "order": 2,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "model",
@@ -3416,7 +3463,7 @@
             ],
             "flags": {},
             "order": 3,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "images",
@@ -3627,10 +3674,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7513148009015777,
+      "scale": 0.8264462809917354,
       "offset": [
-        3244.27154251153,
-        -4199.922567978698
+        2068.316384455419,
+        -4373.2246483548615
       ]
     }
   },
