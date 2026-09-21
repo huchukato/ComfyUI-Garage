@@ -2,7 +2,7 @@
   "id": "2e5fb033-7e4f-4e73-a580-590a2a38a074",
   "revision": 0,
   "last_node_id": 211,
-  "last_link_id": 442,
+  "last_link_id": 443,
   "nodes": [
     {
       "id": 135,
@@ -266,10 +266,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
+        "cnr_id": "comfyui-kjnodes"
       },
       "widgets_values": [
         114,
@@ -317,10 +317,10 @@
       ],
       "title": "QWEN GENERATED PROMPT",
       "properties": {
-        "cnr_id": "comfyui-easy-use",
+        "aux_id": "yolain/ComfyUI-Easy-Use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
+        "cnr_id": "comfyui-easy-use"
       },
       "widgets_values": [
         "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] The scene is set in a brightly lit, modern gym with white walls, a visible red punching bag, and a water station in the background, establishing a clean, energetic atmosphere. In the foreground, a woman with a fit, athletic build stands facing away from the camera, wearing a teal and blue tropical leaf-patterned bikini bottom and a matching sports bra. Her skin is smooth and slightly glistening with sweat, catching the overhead fluorescent light which casts soft, cool shadows across her toned glutes and thighs. To her right, a muscular man in a red and black athletic tank top and dark shorts stands partially visible, his body angled slightly towards her. In the background, a man in a blue and yellow jersey stands with his back turned, while another woman with red hair and a grey top is visible further back, creating a sense of a busy, active environment. The camera begins with a low-angle, medium close-up shot focused on the woman's lower back and hips, emphasizing the curve of her glutes and the texture of the fabric. As the clip progresses, the camera executes a slow, smooth horizontal pan to the left, tracking the woman's subtle, rhythmic hip sway. Her hips move in a gentle, undulating wave, shifting from side to side with a natural, fluid grace. Her left hand rests casually on her left hip, fingers slightly curled, while her right arm hangs loosely by her side, swaying in tandem with her pelvis. The man in red remains mostly stationary, his presence anchoring the frame on the right side, his muscular arms and torso contrasting with the woman's fluid motion. The lighting remains consistent, highlighting the sheen of sweat on the woman's skin and the vibrant colors of her attire against the neutral gym backdrop. The focus remains sharp on the woman's lower back and buttocks, with the background figures remaining softly blurred. The camera movement is continuous and unhurried, revealing more of the gym environment to the left as it pans, passing a wall-mounted clock and a framed picture before settling into a wider view that captures the full extent of the woman's rhythmic movement. By the end of the clip, the camera has completed its pan, framing the woman slightly more from the side, where her hip sway continues with the same steady, hypnotic rhythm, her body tilting slightly as she shifts her weight, maintaining the dynamic energy of the scene.\n\noverall_soundscape: The soundscape is dominated by the rhythmic, wet slapping sound of skin against skin and the fabric of the shorts as her hips sway, accompanied by a steady, audible intake and exhale of breath that matches the cadence of her movement. Underlying these primary sexual sounds is a faint, ambient hum of the gym machinery and distant, muffled chatter from the background figures, which provides a subtle texture without overpowering the intimate, physical sounds of the foreground action.\n\nnon_diegetic_music: N/A"
@@ -404,10 +404,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI-PerfectVideoResolution",
+        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution",
         "ver": "51969284b70f9769fe5952496a5e97c06927db7b",
         "Node name for S&R": "ComfyUI-PerfectVideoResolution",
-        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution"
+        "cnr_id": "ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
         "MiniMax H3",
@@ -547,7 +547,7 @@
           "name": "audio",
           "shape": 7,
           "type": "AUDIO",
-          "link": null
+          "link": 443
         },
         {
           "name": "meta_batch",
@@ -579,10 +579,10 @@
       ],
       "title": "48FPS",
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -674,13 +674,13 @@
         "Node name for S&R": "LoadImageOutput"
       },
       "widgets_values": [
-        "S02_EP11_GymReunion_027_v01.jpg [output]",
+        "_output_images_will_be_put_here [output]",
         false,
         "refresh",
         "image"
       ],
       "widgets_values_named": {
-        "image": "S02_EP11_GymReunion_027_v01.jpg [output]",
+        "image": "_output_images_will_be_put_here [output]",
         "Auto-refresh after generation": false,
         "refresh": "refresh",
         "upload": "image"
@@ -753,7 +753,9 @@
         {
           "name": "AUDIO",
           "type": "AUDIO",
-          "links": []
+          "links": [
+            443
+          ]
         },
         {
           "label": "PROMPT",
@@ -895,6 +897,14 @@
       159,
       0,
       "IMAGE"
+    ],
+    [
+      443,
+      105,
+      2,
+      126,
+      1,
+      "AUDIO"
     ]
   ],
   "groups": [
@@ -931,7 +941,7 @@
         "state": {
           "lastGroupId": 17,
           "lastNodeId": 211,
-          "lastLinkId": 442,
+          "lastLinkId": 443,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2428,9 +2438,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
               "ver": "10fc389f110753e3bf112fe9b1ca7201719728da",
-              "Node name for S&R": "QwenVL_Unified"
+              "Node name for S&R": "QwenVL_Unified",
+              "cnr_id": "ComfyUI-QwenVL-Mod"
             },
             "widgets_values": [
               "GGUF llama.cpp",
@@ -2910,7 +2921,7 @@
         "state": {
           "lastGroupId": 17,
           "lastNodeId": 211,
-          "lastLinkId": 442,
+          "lastLinkId": 443,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3102,10 +3113,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -3177,10 +3188,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               100,
@@ -3244,10 +3255,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -3319,10 +3330,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "1080p",
@@ -3480,8 +3491,8 @@
     "ds": {
       "scale": 0.8983451552746377,
       "offset": [
-        2268.869246225042,
-        -4343.841137324493
+        1473.5527180454299,
+        -4383.445207977182
       ]
     }
   },
