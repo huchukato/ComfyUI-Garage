@@ -1,8 +1,8 @@
 {
   "id": "b25965af-2005-4e6d-b188-e9c5ea0224c8",
   "revision": 0,
-  "last_node_id": 251,
-  "last_link_id": 526,
+  "last_node_id": 254,
+  "last_link_id": 535,
   "nodes": [
     {
       "id": 160,
@@ -61,8 +61,8 @@
       "id": 92,
       "type": "SaveVideo",
       "pos": [
-        193.06244526651358,
-        6329.481624734408
+        757.2073154375638,
+        4898.64328843336
       ],
       "size": [
         536.7606293660929,
@@ -159,7 +159,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 526
+          "link": 535
         },
         {
           "name": "audio",
@@ -578,104 +578,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 219,
-      "type": "MarkdownNote",
-      "pos": [
-        748.6967915735988,
-        4851.214488416156
-      ],
-      "size": [
-        957.5512784799153,
-        705.8832200139814
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "CONFIGURATION",
-      "properties": {},
-      "widgets_values": [
-        "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF or tau 1.5-2.0 | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Native** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, quality reference |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum + DiffAid: REMOVED from the stack**. Spectrum's block wrapper is code-incompatible with Sol fused blocks (`unexpected keyword argument 'attention'` — confirmed crash at 20 steps); DiffAid had no confirmed benefit. Do not reinstall\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | C (Native 20-step) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Turbo LoRA | few-step distillation (LoRA) | OFF (fused in model) | ON lightx2v 8-step | OFF |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Sol-Attn node** — set tau:\n   - 10Eros → **tau 1.3→0.8** scheduled\n   - Turbo LoRA → **tau 1.5-2.0** or bypass\n   - Native → **tau 1.0**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
-      ],
-      "widgets_values_named": {
-        "text": "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF or tau 1.5-2.0 | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Native** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, quality reference |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum + DiffAid: REMOVED from the stack**. Spectrum's block wrapper is code-incompatible with Sol fused blocks (`unexpected keyword argument 'attention'` — confirmed crash at 20 steps); DiffAid had no confirmed benefit. Do not reinstall\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | C (Native 20-step) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Turbo LoRA | few-step distillation (LoRA) | OFF (fused in model) | ON lightx2v 8-step | OFF |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Sol-Attn node** — set tau:\n   - 10Eros → **tau 1.3→0.8** scheduled\n   - Turbo LoRA → **tau 1.5-2.0** or bypass\n   - Native → **tau 1.0**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 249,
-      "type": "4a199300-ffbe-4604-ae6e-7ee07430bc82",
-      "pos": [
-        -186.21544052090508,
-        4833.93289529573
-      ],
-      "size": [
-        323.2291808760094,
-        295.4889256858087
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "svr2_model",
-          "name": "model_2",
-          "type": "COMBO",
-          "widget": {
-            "name": "model_2"
-          },
-          "link": null
-        },
-        {
-          "name": "frames",
-          "type": "IMAGE",
-          "link": 525
-        }
-      ],
-      "outputs": [
-        {
-          "name": "upscaled_images",
-          "type": "IMAGE",
-          "links": [
-            526
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.34.1",
-        "previewExposures": []
-      },
-      "widgets_values": [
-        "rife425_ensemble_False_scale_1_sim",
-        "large",
-        2,
-        "RealESRGAN_x2plus",
-        2,
-        "2K",
-        2,
-        "seedvr2_ema_3b_fp16.safetensors",
-        1440,
-        33
-      ],
-      "widgets_values_named": {
-        "model": "rife425_ensemble_False_scale_1_sim",
-        "resolution_profile": "large",
-        "multiplier": 2,
-        "model_1": "RealESRGAN_x2plus",
-        "batch_size": 2,
-        "resize_to": "2K",
-        "batch_size_1": 2,
-        "model_2": "seedvr2_ema_3b_fp16.safetensors",
-        "resolution": 1440,
-        "batch_size_2": 33
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 218,
       "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
@@ -687,7 +589,7 @@
         130
       ],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -724,7 +626,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -751,7 +653,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -777,7 +679,7 @@
         173.4827929446301
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -865,7 +767,7 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            525
+            534
           ]
         },
         {
@@ -925,6 +827,104 @@
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 219,
+      "type": "MarkdownNote",
+      "pos": [
+        -181.2177845809174,
+        4050.9963374228105
+      ],
+      "size": [
+        957.5512784799153,
+        705.8832200139814
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "CONFIGURATION",
+      "properties": {},
+      "widgets_values": [
+        "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF or tau 1.5-2.0 | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Native** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, quality reference |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum + DiffAid: REMOVED from the stack**. Spectrum's block wrapper is code-incompatible with Sol fused blocks (`unexpected keyword argument 'attention'` — confirmed crash at 20 steps); DiffAid had no confirmed benefit. Do not reinstall\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | C (Native 20-step) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Turbo LoRA | few-step distillation (LoRA) | OFF (fused in model) | ON lightx2v 8-step | OFF |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Sol-Attn node** — set tau:\n   - 10Eros → **tau 1.3→0.8** scheduled\n   - Turbo LoRA → **tau 1.5-2.0** or bypass\n   - Native → **tau 1.0**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
+      ],
+      "widgets_values_named": {
+        "text": "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF or tau 1.5-2.0 | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Native** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, quality reference |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum + DiffAid: REMOVED from the stack**. Spectrum's block wrapper is code-incompatible with Sol fused blocks (`unexpected keyword argument 'attention'` — confirmed crash at 20 steps); DiffAid had no confirmed benefit. Do not reinstall\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | C (Native 20-step) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Turbo LoRA | few-step distillation (LoRA) | OFF (fused in model) | ON lightx2v 8-step | OFF |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Sol-Attn node** — set tau:\n   - 10Eros → **tau 1.3→0.8** scheduled\n   - Turbo LoRA → **tau 1.5-2.0** or bypass\n   - Native → **tau 1.0**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 254,
+      "type": "e73f8c38-64c6-4d42-9f57-bdfb1a72c110",
+      "pos": [
+        -189.33613286805155,
+        4833.947589916915
+      ],
+      "size": [
+        323.2291808760094,
+        295.4889256858087
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "svr2_model",
+          "name": "model_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "model_2"
+          },
+          "link": null
+        },
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 534
+        }
+      ],
+      "outputs": [
+        {
+          "name": "upscaled_images",
+          "type": "IMAGE",
+          "links": [
+            535
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.34.1",
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "rife425_ensemble_False_scale_1_sim",
+        "large",
+        2,
+        "RealESRGAN_x2plus",
+        2,
+        "2K",
+        2,
+        "seedvr2_ema_7b_fp16.safetensors",
+        1440,
+        33
+      ],
+      "widgets_values_named": {
+        "model": "rife425_ensemble_False_scale_1_sim",
+        "resolution_profile": "large",
+        "multiplier": 2,
+        "model_1": "RealESRGAN_x2plus",
+        "batch_size": 2,
+        "resize_to": "2K",
+        "batch_size_1": 2,
+        "model_2": "seedvr2_ema_7b_fp16.safetensors",
+        "resolution": 1440,
+        "batch_size_2": 33
+      },
+      "color": "#223",
+      "bgcolor": "#335"
     }
   ],
   "links": [
@@ -1025,16 +1025,16 @@
       "IMAGE"
     ],
     [
-      525,
+      534,
       105,
       1,
-      249,
+      254,
       1,
       "IMAGE"
     ],
     [
-      526,
-      249,
+      535,
+      254,
       0,
       126,
       0,
@@ -1046,10 +1046,10 @@
       "id": 9,
       "title": "24FPS",
       "bounding": [
-        183.0624452665134,
-        6259.481624734408,
-        557.6459614940347,
-        790.9445984600452
+        747.207315437564,
+        4828.64328843336,
+        556.1515468729339,
+        1132.2474534047678
       ],
       "color": "#a1309b",
       "flags": {}
@@ -1098,8 +1098,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 24,
-          "lastNodeId": 251,
-          "lastLinkId": 526,
+          "lastNodeId": 254,
+          "lastLinkId": 535,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3153,12 +3153,12 @@
         }
       },
       {
-        "id": "4a199300-ffbe-4604-ae6e-7ee07430bc82",
+        "id": "e73f8c38-64c6-4d42-9f57-bdfb1a72c110",
         "version": 1,
         "state": {
           "lastGroupId": 24,
-          "lastNodeId": 251,
-          "lastLinkId": 526,
+          "lastNodeId": 254,
+          "lastLinkId": 535,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3309,7 +3309,7 @@
             "name": "frames",
             "type": "IMAGE",
             "linkIds": [
-              333
+              526
             ],
             "localized_name": "frames",
             "pos": [
@@ -3324,7 +3324,7 @@
             "name": "upscaled_images",
             "type": "IMAGE",
             "linkIds": [
-              447
+              531
             ],
             "localized_name": "upscaled_images",
             "pos": [
@@ -3339,8 +3339,8 @@
             "id": 176,
             "type": "AutoLoadRifeTensorrtModel",
             "pos": [
-              -166.6448717124861,
-              4899.061524023519
+              576.2903426611417,
+              5240.422310283546
             ],
             "size": [
               322.5669921875,
@@ -3348,7 +3348,7 @@
             ],
             "flags": {},
             "order": 2,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "custom_config",
@@ -3411,8 +3411,8 @@
             "id": 186,
             "type": "LoadUpscalerTensorrtModel",
             "pos": [
-              -152.78407537199882,
-              5414.893038182822
+              593.8527440201785,
+              4863.383044904771
             ],
             "size": [
               295.4078125,
@@ -3471,179 +3471,51 @@
             "bgcolor": "#335"
           },
           {
-            "id": 185,
-            "type": "UpscalerTensorrt",
+            "id": 245,
+            "type": "SeedVR2TorchCompileSettings",
             "pos": [
-              -164.20142513085486,
-              5571.788028916906
+              -174.50690398353188,
+              4899.759172868647
             ],
             "size": [
-              311.232421875,
-              76
+              307.671484375,
+              178
             ],
             "flags": {},
-            "order": 4,
+            "order": 0,
             "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "images",
-                "name": "images",
-                "type": "IMAGE",
-                "link": 357
-              },
-              {
-                "localized_name": "upscaler_trt_model",
-                "name": "upscaler_trt_model",
-                "type": "UPSCALER_TRT_MODEL",
-                "link": 356
-              },
-              {
-                "localized_name": "resize_to",
-                "name": "resize_to",
-                "type": "COMBO",
-                "widget": {
-                  "name": "resize_to"
-                },
-                "link": 373
-              },
-              {
-                "localized_name": "batch_size",
-                "name": "batch_size",
-                "type": "INT",
-                "widget": {
-                  "name": "batch_size"
-                },
-                "link": 374
-              }
-            ],
+            "inputs": [],
             "outputs": [
               {
-                "localized_name": "upscaled_images",
-                "name": "upscaled_images",
-                "type": "IMAGE",
+                "localized_name": "TORCH_COMPILE_ARGS",
+                "name": "TORCH_COMPILE_ARGS",
+                "type": "TORCH_COMPILE_ARGS",
                 "links": [
-                  446
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
-              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
-              "Node name for S&R": "UpscalerTensorrt",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
-            },
-            "widgets_values": [
-              "1080p",
-              2,
-              2048,
-              2048
-            ],
-            "widgets_values_named": {
-              "resize_to": "1080p",
-              "batch_size": 2,
-              "resize_width": 2048,
-              "resize_height": 2048
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
-            "id": 244,
-            "type": "SeedVR2VideoUpscaler",
-            "pos": [
-              584.2754336230507,
-              5277.458164185009
-            ],
-            "size": [
-              270,
-              386
-            ],
-            "flags": {},
-            "order": 7,
-            "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "type": "IMAGE",
-                "link": 446
-              },
-              {
-                "localized_name": "dit",
-                "name": "dit",
-                "type": "SEEDVR2_DIT",
-                "link": 444
-              },
-              {
-                "localized_name": "vae",
-                "name": "vae",
-                "type": "SEEDVR2_VAE",
-                "link": 445
-              },
-              {
-                "localized_name": "resolution",
-                "name": "resolution",
-                "type": "INT",
-                "widget": {
-                  "name": "resolution"
-                },
-                "link": 451
-              },
-              {
-                "localized_name": "batch_size",
-                "name": "batch_size",
-                "type": "INT",
-                "widget": {
-                  "name": "batch_size"
-                },
-                "link": 452
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "IMMAGINE",
-                "name": "IMAGE",
-                "type": "IMAGE",
-                "links": [
-                  447
+                  453
                 ]
               }
             ],
             "properties": {
               "cnr_id": "seedvr2_videoupscaler",
               "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
-              "Node name for S&R": "SeedVR2VideoUpscaler",
+              "Node name for S&R": "SeedVR2TorchCompileSettings",
               "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
-              42,
-              "fixed",
-              1440,
-              0,
-              33,
-              true,
-              "lab",
-              3,
-              0,
-              0,
-              0,
-              "cpu",
-              true
+              "inductor",
+              "default",
+              false,
+              false,
+              64,
+              128
             ],
             "widgets_values_named": {
-              "seed": 42,
-              "control_after_generate": "fixed",
-              "resolution": 1440,
-              "max_resolution": 0,
-              "batch_size": 33,
-              "uniform_batch_size": true,
-              "color_correction": "lab",
-              "temporal_overlap": 3,
-              "prepend_frames": 0,
-              "input_noise_scale": 0,
-              "latent_noise_scale": 0,
-              "offload_device": "cpu",
-              "enable_debug": true
+              "backend": "inductor",
+              "mode": "default",
+              "fullgraph": false,
+              "dynamic": false,
+              "dynamo_cache_size_limit": 64,
+              "dynamo_recompile_limit": 128
             },
             "color": "#223",
             "bgcolor": "#335"
@@ -3652,8 +3524,8 @@
             "id": 212,
             "type": "SeedVR2LoadDiTModel",
             "pos": [
-              562.4168974552758,
-              4932.54110454686
+              163.5502843132837,
+              4896.979301124711
             ],
             "size": [
               307.6646484375,
@@ -3702,8 +3574,8 @@
               0,
               false,
               "cpu",
-              true,
-              "sageattn_3"
+              false,
+              "sageattn_2"
             ],
             "widgets_values_named": {
               "model": "seedvr2_ema_3b_fp16.safetensors",
@@ -3711,58 +3583,8 @@
               "blocks_to_swap": 0,
               "swap_io_components": false,
               "offload_device": "cpu",
-              "cache_model": true,
-              "attention_mode": "sageattn_3"
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
-            "id": 245,
-            "type": "SeedVR2TorchCompileSettings",
-            "pos": [
-              224.3597091584601,
-              4935.320976290795
-            ],
-            "size": [
-              307.671484375,
-              178
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 4,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "TORCH_COMPILE_ARGS",
-                "name": "TORCH_COMPILE_ARGS",
-                "type": "TORCH_COMPILE_ARGS",
-                "links": [
-                  453
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "seedvr2_videoupscaler",
-              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
-              "Node name for S&R": "SeedVR2TorchCompileSettings",
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
-            },
-            "widgets_values": [
-              "inductor",
-              "default",
-              false,
-              false,
-              64,
-              128
-            ],
-            "widgets_values_named": {
-              "backend": "inductor",
-              "mode": "default",
-              "fullgraph": false,
-              "dynamic": false,
-              "dynamo_cache_size_limit": 64,
-              "dynamo_recompile_limit": 128
+              "cache_model": false,
+              "attention_mode": "sageattn_2"
             },
             "color": "#223",
             "bgcolor": "#335"
@@ -3771,8 +3593,8 @@
             "id": 246,
             "type": "SeedVR2LoadVAEModel",
             "pos": [
-              229.58533603260332,
-              5335.40536966534
+              -169.28127710938867,
+              5299.843566243191
             ],
             "size": [
               312.866796875,
@@ -3817,7 +3639,7 @@
               128,
               "false",
               "cpu",
-              true
+              false
             ],
             "widgets_values_named": {
               "model": "ema_vae_fp16.safetensors",
@@ -3830,7 +3652,186 @@
               "decode_tile_overlap": 128,
               "tile_debug": "false",
               "offload_device": "cpu",
-              "cache_model": true
+              "cache_model": false
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 244,
+            "type": "SeedVR2VideoUpscaler",
+            "pos": [
+              185.4088204810585,
+              5241.89636076286
+            ],
+            "size": [
+              270,
+              386
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 4,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 526
+              },
+              {
+                "localized_name": "dit",
+                "name": "dit",
+                "type": "SEEDVR2_DIT",
+                "link": 444
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "SEEDVR2_VAE",
+                "link": 445
+              },
+              {
+                "localized_name": "resolution",
+                "name": "resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "resolution"
+                },
+                "link": 451
+              },
+              {
+                "localized_name": "batch_size",
+                "name": "batch_size",
+                "type": "INT",
+                "widget": {
+                  "name": "batch_size"
+                },
+                "link": 452
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMMAGINE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  529
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "seedvr2_videoupscaler",
+              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+              "Node name for S&R": "SeedVR2VideoUpscaler",
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+            },
+            "widgets_values": [
+              4079658315,
+              "randomize",
+              1440,
+              0,
+              33,
+              true,
+              "lab",
+              3,
+              0,
+              0,
+              0,
+              "cpu",
+              true
+            ],
+            "widgets_values_named": {
+              "seed": 4079658315,
+              "control_after_generate": "randomize",
+              "resolution": 1440,
+              "max_resolution": 0,
+              "batch_size": 33,
+              "uniform_batch_size": true,
+              "color_correction": "lab",
+              "temporal_overlap": 3,
+              "prepend_frames": 0,
+              "input_noise_scale": 0,
+              "latent_noise_scale": 0,
+              "offload_device": "cpu",
+              "enable_debug": true
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 185,
+            "type": "UpscalerTensorrt",
+            "pos": [
+              582.4353942613225,
+              5020.278035638855
+            ],
+            "size": [
+              311.232421875,
+              94
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 4,
+            "inputs": [
+              {
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE",
+                "link": 529
+              },
+              {
+                "localized_name": "upscaler_trt_model",
+                "name": "upscaler_trt_model",
+                "type": "UPSCALER_TRT_MODEL",
+                "link": 356
+              },
+              {
+                "localized_name": "resize_to",
+                "name": "resize_to",
+                "type": "COMBO",
+                "widget": {
+                  "name": "resize_to"
+                },
+                "link": 373
+              },
+              {
+                "localized_name": "batch_size",
+                "name": "batch_size",
+                "type": "INT",
+                "widget": {
+                  "name": "batch_size"
+                },
+                "link": 374
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "upscaled_images",
+                "name": "upscaled_images",
+                "type": "IMAGE",
+                "links": [
+                  446,
+                  530
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "Auto-TensorRT-Upscaler",
+              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
+              "Node name for S&R": "UpscalerTensorrt",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+            },
+            "widgets_values": [
+              "1080p",
+              2,
+              2048,
+              2048
+            ],
+            "widgets_values_named": {
+              "resize_to": "1080p",
+              "batch_size": 2,
+              "resize_width": 2048,
+              "resize_height": 2048
             },
             "color": "#223",
             "bgcolor": "#335"
@@ -3839,8 +3840,8 @@
             "id": 177,
             "type": "AutoRifeTensorrt",
             "pos": [
-              -172.40392150884986,
-              5079.685464671202
+              570.5312928647779,
+              5421.046250931228
             ],
             "size": [
               327.0858377006316,
@@ -3848,13 +3849,13 @@
             ],
             "flags": {},
             "order": 3,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "frames",
                 "name": "frames",
                 "type": "IMAGE",
-                "link": 333
+                "link": 530
               },
               {
                 "localized_name": "rife_trt_model",
@@ -3885,7 +3886,7 @@
                 "name": "IMAGE",
                 "type": "IMAGE",
                 "links": [
-                  357
+                  531
                 ]
               }
             ],
@@ -3918,8 +3919,8 @@
             "id": 7,
             "title": "FRAME INTERPOLATION",
             "bounding": [
-              -189.26506584179714,
-              4824.962680617341,
+              553.6701485318306,
+              5166.3234668773675,
               360.18135699195864,
               506.4775823828222
             ],
@@ -3930,8 +3931,8 @@
             "id": 6,
             "title": "UPSCALE",
             "bounding": [
-              -181.80512241818002,
-              5353.356864652697,
+              564.8316969739973,
+              4801.846871374646,
               353.08890270001507,
               333.11325781765845
             ],
@@ -3942,8 +3943,8 @@
             "id": 18,
             "title": "SEEDVR2.5",
             "bounding": [
-              200.3198027884534,
-              4827.336702853626,
+              -198.5468103535386,
+              4791.774899431477,
               698.3572873485625,
               885.5419207795949
             ],
@@ -3961,28 +3962,12 @@
             "type": "RIFE_TRT_MODEL"
           },
           {
-            "id": 357,
-            "origin_id": 177,
-            "origin_slot": 0,
-            "target_id": 185,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
             "id": 356,
             "origin_id": 186,
             "origin_slot": 0,
             "target_id": 185,
             "target_slot": 1,
             "type": "UPSCALER_TRT_MODEL"
-          },
-          {
-            "id": 333,
-            "origin_id": -10,
-            "origin_slot": 10,
-            "target_id": 177,
-            "target_slot": 0,
-            "type": "IMAGE"
           },
           {
             "id": 366,
@@ -4057,22 +4042,6 @@
             "type": "SEEDVR2_VAE"
           },
           {
-            "id": 446,
-            "origin_id": 185,
-            "origin_slot": 0,
-            "target_id": 244,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 447,
-            "origin_id": 244,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
             "id": 449,
             "origin_id": -10,
             "origin_slot": 7,
@@ -4103,6 +4072,38 @@
             "target_id": 212,
             "target_slot": 0,
             "type": "TORCH_COMPILE_ARGS"
+          },
+          {
+            "id": 526,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 244,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 529,
+            "origin_id": 244,
+            "origin_slot": 0,
+            "target_id": 185,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 530,
+            "origin_id": 185,
+            "origin_slot": 0,
+            "target_id": 177,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 531,
+            "origin_id": 177,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
           }
         ],
         "extra": {
@@ -4119,10 +4120,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.8534233681649834,
+      "scale": 0.5828996435796622,
       "offset": [
-        1888.439698098382,
-        -4314.211777604056
+        2728.220620916195,
+        -3892.3453484243787
       ]
     }
   },
