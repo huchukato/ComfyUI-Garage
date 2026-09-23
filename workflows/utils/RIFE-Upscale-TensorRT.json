@@ -2,7 +2,7 @@
   "id": "6b8eeb91-1560-4311-89c7-a51ec598f7f4",
   "revision": 0,
   "last_node_id": 252,
-  "last_link_id": 528,
+  "last_link_id": 531,
   "nodes": [
     {
       "id": 32,
@@ -38,10 +38,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "cnr_id": "comfyui-kjnodes"
+        "aux_id": "kijai/ComfyUI-KJNodes"
       },
       "widgets_values": [
         102,
@@ -67,7 +67,7 @@
       ],
       "size": [
         841.7293653813999,
-        810.2227680270375
+        817.5596373608
       ],
       "flags": {},
       "order": 6,
@@ -133,13 +133,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.webm",
+            "filename": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4_00002.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.webm"
+            "workflow": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4_00002.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4_00002.webm"
           }
         }
       },
@@ -158,13 +158,179 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.webm",
+            "filename": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4_00002.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.webm"
+            "workflow": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4_00002.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4_00002.webm"
+          }
+        }
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 250,
+      "type": "PixaromaMonitor",
+      "pos": [
+        -2300,
+        440
+      ],
+      "size": [
+        305,
+        139
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaMonitor"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 251,
+      "type": "PixaromaRunTimer",
+      "pos": [
+        -1960,
+        460
+      ],
+      "size": [
+        340,
+        113
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaRunTimer",
+        "runTimerLastMs": 325997.8000000119
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 31,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -2453.777795585456,
+        641.347658893692
+      ],
+      "size": [
+        852.4743575044101,
+        799.6996328596629
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            40,
+            524
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": null
+        }
+      ],
+      "title": "LoadVideo",
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "None",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "force_rate": 0,
+            "custom_width": 0,
+            "custom_height": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          }
+        }
+      },
+      "widgets_values_named": {
+        "video": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "None",
+        "choose video to upload": null,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00001_.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "force_rate": 0,
+            "custom_width": 0,
+            "custom_height": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
           }
         }
       },
@@ -183,7 +349,7 @@
         198.55274872512564
       ],
       "flags": {},
-      "order": 0,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -254,11 +420,11 @@
         "rife425_ensemble_False_scale_1_sim",
         "large",
         2,
-        "2xLexicaRRDBNet_Sharp",
+        "RealESRGAN_x2plus",
         2,
         "2K",
         2,
-        "seedvr2_ema_7b_sharp_fp16.safetensors",
+        "seedvr2_ema_7b_fp16.safetensors",
         1440,
         33
       ],
@@ -266,181 +432,16 @@
         "model": "rife425_ensemble_False_scale_1_sim",
         "resolution_profile": "large",
         "multiplier": 2,
-        "model_1": "2xLexicaRRDBNet_Sharp",
+        "model_1": "RealESRGAN_x2plus",
         "batch_size": 2,
         "resize_to": "2K",
         "batch_size_1": 2,
-        "model_2": "seedvr2_ema_7b_sharp_fp16.safetensors",
+        "model_2": "seedvr2_ema_7b_fp16.safetensors",
         "resolution": 1440,
         "batch_size_2": 33
       },
       "color": "#223",
       "bgcolor": "#335"
-    },
-    {
-      "id": 250,
-      "type": "PixaromaMonitor",
-      "pos": [
-        -2300,
-        440
-      ],
-      "size": [
-        305,
-        139
-      ],
-      "flags": {
-        "no_title": true
-      },
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaMonitor"
-      },
-      "color": "#1d1d1d",
-      "bgcolor": "#2a2a2a"
-    },
-    {
-      "id": 251,
-      "type": "PixaromaRunTimer",
-      "pos": [
-        -1960,
-        460
-      ],
-      "size": [
-        340,
-        113
-      ],
-      "flags": {
-        "no_title": true
-      },
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaRunTimer"
-      },
-      "color": "#1d1d1d",
-      "bgcolor": "#2a2a2a"
-    },
-    {
-      "id": 31,
-      "type": "VHS_LoadVideo",
-      "pos": [
-        -2453.777795585456,
-        641.347658893692
-      ],
-      "size": [
-        852.4743575044101,
-        802.985937613957
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            40,
-            524
-          ]
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "audio",
-          "type": "AUDIO",
-          "links": null
-        },
-        {
-          "name": "video_info",
-          "type": "VHS_VIDEOINFO",
-          "links": null
-        }
-      ],
-      "title": "LoadVideo",
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
-        "Node name for S&R": "VHS_LoadVideo"
-      },
-      "widgets_values": {
-        "video": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
-        "force_rate": 0,
-        "custom_width": 0,
-        "custom_height": 0,
-        "frame_load_cap": 0,
-        "skip_first_frames": 0,
-        "select_every_nth": 1,
-        "format": "None",
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
-            "type": "input",
-            "format": "video/mp4",
-            "force_rate": 0,
-            "custom_width": 0,
-            "custom_height": 0,
-            "frame_load_cap": 0,
-            "skip_first_frames": 0,
-            "select_every_nth": 1
-          }
-        }
-      },
-      "widgets_values_named": {
-        "video": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
-        "force_rate": 0,
-        "custom_width": 0,
-        "custom_height": 0,
-        "frame_load_cap": 0,
-        "skip_first_frames": 0,
-        "select_every_nth": 1,
-        "format": "None",
-        "choose video to upload": null,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
-            "type": "input",
-            "format": "video/mp4",
-            "force_rate": 0,
-            "custom_width": 0,
-            "custom_height": 0,
-            "frame_load_cap": 0,
-            "skip_first_frames": 0,
-            "select_every_nth": 1
-          }
-        }
-      },
-      "color": "#233",
-      "bgcolor": "#355"
     }
   ],
   "links": [
@@ -486,7 +487,7 @@
         "state": {
           "lastGroupId": 21,
           "lastNodeId": 252,
-          "lastLinkId": 528,
+          "lastLinkId": 531,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -652,7 +653,7 @@
             "name": "upscaled_images",
             "type": "IMAGE",
             "linkIds": [
-              528
+              531
             ],
             "localized_name": "upscaled_images",
             "pos": [
@@ -667,8 +668,8 @@
             "id": 176,
             "type": "AutoLoadRifeTensorrtModel",
             "pos": [
-              563.5125158010685,
-              4866.04392517768
+              576.2903426611417,
+              5240.422310283546
             ],
             "size": [
               322.5669921875,
@@ -739,8 +740,8 @@
             "id": 186,
             "type": "LoadUpscalerTensorrtModel",
             "pos": [
-              571.3738842333534,
-              5398.457178911698
+              593.8527440201785,
+              4863.383044904771
             ],
             "size": [
               295.4078125,
@@ -748,7 +749,7 @@
             ],
             "flags": {},
             "order": 5,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "model",
@@ -811,7 +812,7 @@
             ],
             "flags": {},
             "order": 0,
-            "mode": 0,
+            "mode": 4,
             "inputs": [],
             "outputs": [
               {
@@ -849,161 +850,6 @@
             "bgcolor": "#335"
           },
           {
-            "id": 177,
-            "type": "AutoRifeTensorrt",
-            "pos": [
-              557.7534660047047,
-              5046.667865825362
-            ],
-            "size": [
-              327.0858377006316,
-              224
-            ],
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "frames",
-                "name": "frames",
-                "type": "IMAGE",
-                "link": 527
-              },
-              {
-                "localized_name": "rife_trt_model",
-                "name": "rife_trt_model",
-                "type": "RIFE_TRT_MODEL",
-                "link": 332
-              },
-              {
-                "localized_name": "interpolation_states",
-                "name": "interpolation_states",
-                "shape": 7,
-                "type": "INTERPOLATION_STATES",
-                "link": null
-              },
-              {
-                "localized_name": "multiplier",
-                "name": "multiplier",
-                "type": "INT",
-                "widget": {
-                  "name": "multiplier"
-                },
-                "link": 368
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "IMMAGINE",
-                "name": "IMAGE",
-                "type": "IMAGE",
-                "links": [
-                  357
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
-              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
-              "Node name for S&R": "AutoRifeTensorrt",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
-            },
-            "widgets_values": [
-              100,
-              2,
-              false,
-              1,
-              ""
-            ],
-            "widgets_values_named": {
-              "clear_cache_after_n_frames": 100,
-              "multiplier": 2,
-              "keep_model_loaded": false,
-              "batch_size": 1,
-              "multiplier_list": ""
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
-            "id": 185,
-            "type": "UpscalerTensorrt",
-            "pos": [
-              559.9565344744973,
-              5555.352169645782
-            ],
-            "size": [
-              311.232421875,
-              94
-            ],
-            "flags": {},
-            "order": 4,
-            "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "images",
-                "name": "images",
-                "type": "IMAGE",
-                "link": 357
-              },
-              {
-                "localized_name": "upscaler_trt_model",
-                "name": "upscaler_trt_model",
-                "type": "UPSCALER_TRT_MODEL",
-                "link": 356
-              },
-              {
-                "localized_name": "resize_to",
-                "name": "resize_to",
-                "type": "COMBO",
-                "widget": {
-                  "name": "resize_to"
-                },
-                "link": 373
-              },
-              {
-                "localized_name": "batch_size",
-                "name": "batch_size",
-                "type": "INT",
-                "widget": {
-                  "name": "batch_size"
-                },
-                "link": 374
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "upscaled_images",
-                "name": "upscaled_images",
-                "type": "IMAGE",
-                "links": [
-                  446,
-                  528
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
-              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
-              "Node name for S&R": "UpscalerTensorrt",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
-            },
-            "widgets_values": [
-              "1080p",
-              2,
-              2048,
-              2048
-            ],
-            "widgets_values_named": {
-              "resize_to": "1080p",
-              "batch_size": 2,
-              "resize_width": 2048,
-              "resize_height": 2048
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
             "id": 212,
             "type": "SeedVR2LoadDiTModel",
             "pos": [
@@ -1016,7 +862,7 @@
             ],
             "flags": {},
             "order": 6,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "torch_compile_args",
@@ -1058,7 +904,7 @@
               false,
               "cpu",
               false,
-              "sageattn_3"
+              "sageattn_2"
             ],
             "widgets_values_named": {
               "model": "seedvr2_ema_3b_fp16.safetensors",
@@ -1067,7 +913,75 @@
               "swap_io_components": false,
               "offload_device": "cpu",
               "cache_model": false,
-              "attention_mode": "sageattn_3"
+              "attention_mode": "sageattn_2"
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 246,
+            "type": "SeedVR2LoadVAEModel",
+            "pos": [
+              -169.28127710938867,
+              5299.843566243191
+            ],
+            "size": [
+              312.866796875,
+              298
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 4,
+            "inputs": [
+              {
+                "localized_name": "torch_compile_args",
+                "name": "torch_compile_args",
+                "shape": 7,
+                "type": "TORCH_COMPILE_ARGS",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "SEEDVR2_VAE",
+                "name": "SEEDVR2_VAE",
+                "type": "SEEDVR2_VAE",
+                "links": [
+                  445
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "seedvr2_videoupscaler",
+              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+              "Node name for S&R": "SeedVR2LoadVAEModel",
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+            },
+            "widgets_values": [
+              "ema_vae_fp16.safetensors",
+              "cuda:0",
+              false,
+              1024,
+              128,
+              false,
+              1024,
+              128,
+              "false",
+              "cpu",
+              false
+            ],
+            "widgets_values_named": {
+              "model": "ema_vae_fp16.safetensors",
+              "device": "cuda:0",
+              "encode_tiled": false,
+              "encode_tile_size": 1024,
+              "encode_tile_overlap": 128,
+              "decode_tiled": false,
+              "decode_tile_size": 1024,
+              "decode_tile_overlap": 128,
+              "tile_debug": "false",
+              "offload_device": "cpu",
+              "cache_model": false
             },
             "color": "#223",
             "bgcolor": "#335"
@@ -1085,7 +999,7 @@
             ],
             "flags": {},
             "order": 7,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "image",
@@ -1130,7 +1044,7 @@
                 "name": "IMAGE",
                 "type": "IMAGE",
                 "links": [
-                  527
+                  529
                 ]
               }
             ],
@@ -1141,7 +1055,7 @@
               "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
-              991378813,
+              4079658315,
               "randomize",
               1440,
               0,
@@ -1156,7 +1070,7 @@
               true
             ],
             "widgets_values_named": {
-              "seed": 991378813,
+              "seed": 4079658315,
               "control_after_generate": "randomize",
               "resolution": 1440,
               "max_resolution": 0,
@@ -1174,69 +1088,156 @@
             "bgcolor": "#335"
           },
           {
-            "id": 246,
-            "type": "SeedVR2LoadVAEModel",
+            "id": 185,
+            "type": "UpscalerTensorrt",
             "pos": [
-              -169.28127710938867,
-              5299.843566243191
+              582.4353942613225,
+              5020.278035638855
             ],
             "size": [
-              312.866796875,
-              298
+              311.232421875,
+              94
             ],
             "flags": {},
-            "order": 1,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "torch_compile_args",
-                "name": "torch_compile_args",
-                "shape": 7,
-                "type": "TORCH_COMPILE_ARGS",
-                "link": null
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE",
+                "link": 529
+              },
+              {
+                "localized_name": "upscaler_trt_model",
+                "name": "upscaler_trt_model",
+                "type": "UPSCALER_TRT_MODEL",
+                "link": 356
+              },
+              {
+                "localized_name": "resize_to",
+                "name": "resize_to",
+                "type": "COMBO",
+                "widget": {
+                  "name": "resize_to"
+                },
+                "link": 373
+              },
+              {
+                "localized_name": "batch_size",
+                "name": "batch_size",
+                "type": "INT",
+                "widget": {
+                  "name": "batch_size"
+                },
+                "link": 374
               }
             ],
             "outputs": [
               {
-                "localized_name": "SEEDVR2_VAE",
-                "name": "SEEDVR2_VAE",
-                "type": "SEEDVR2_VAE",
+                "localized_name": "upscaled_images",
+                "name": "upscaled_images",
+                "type": "IMAGE",
                 "links": [
-                  445
+                  446,
+                  530
                 ]
               }
             ],
             "properties": {
-              "cnr_id": "seedvr2_videoupscaler",
-              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
-              "Node name for S&R": "SeedVR2LoadVAEModel",
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+              "cnr_id": "Auto-TensorRT-Upscaler",
+              "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
+              "Node name for S&R": "UpscalerTensorrt",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
-              "ema_vae_fp16.safetensors",
-              "cuda:0",
-              false,
-              1024,
-              128,
-              false,
-              1024,
-              128,
-              "false",
-              "cpu",
-              true
+              "1080p",
+              2,
+              2048,
+              2048
             ],
             "widgets_values_named": {
-              "model": "ema_vae_fp16.safetensors",
-              "device": "cuda:0",
-              "encode_tiled": false,
-              "encode_tile_size": 1024,
-              "encode_tile_overlap": 128,
-              "decode_tiled": false,
-              "decode_tile_size": 1024,
-              "decode_tile_overlap": 128,
-              "tile_debug": "false",
-              "offload_device": "cpu",
-              "cache_model": true
+              "resize_to": "1080p",
+              "batch_size": 2,
+              "resize_width": 2048,
+              "resize_height": 2048
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 177,
+            "type": "AutoRifeTensorrt",
+            "pos": [
+              570.5312928647779,
+              5421.046250931228
+            ],
+            "size": [
+              327.0858377006316,
+              224
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "frames",
+                "name": "frames",
+                "type": "IMAGE",
+                "link": 530
+              },
+              {
+                "localized_name": "rife_trt_model",
+                "name": "rife_trt_model",
+                "type": "RIFE_TRT_MODEL",
+                "link": 332
+              },
+              {
+                "localized_name": "interpolation_states",
+                "name": "interpolation_states",
+                "shape": 7,
+                "type": "INTERPOLATION_STATES",
+                "link": null
+              },
+              {
+                "localized_name": "multiplier",
+                "name": "multiplier",
+                "type": "INT",
+                "widget": {
+                  "name": "multiplier"
+                },
+                "link": 368
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMMAGINE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  531
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "Auto-TensorRT-RIFE",
+              "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
+              "Node name for S&R": "AutoRifeTensorrt",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+            },
+            "widgets_values": [
+              100,
+              2,
+              false,
+              1,
+              ""
+            ],
+            "widgets_values_named": {
+              "clear_cache_after_n_frames": 100,
+              "multiplier": 2,
+              "keep_model_loaded": false,
+              "batch_size": 1,
+              "multiplier_list": ""
             },
             "color": "#223",
             "bgcolor": "#335"
@@ -1247,8 +1248,8 @@
             "id": 7,
             "title": "FRAME INTERPOLATION",
             "bounding": [
-              540.8923216717574,
-              4791.9450817715015,
+              553.6701485318306,
+              5166.3234668773675,
               360.18135699195864,
               506.4775823828222
             ],
@@ -1259,8 +1260,8 @@
             "id": 6,
             "title": "UPSCALE",
             "bounding": [
-              542.3528371871721,
-              5336.921005381573,
+              564.8316969739973,
+              4801.846871374646,
               353.08890270001507,
               333.11325781765845
             ],
@@ -1288,14 +1289,6 @@
             "target_id": 177,
             "target_slot": 1,
             "type": "RIFE_TRT_MODEL"
-          },
-          {
-            "id": 357,
-            "origin_id": 177,
-            "origin_slot": 0,
-            "target_id": 185,
-            "target_slot": 0,
-            "type": "IMAGE"
           },
           {
             "id": 356,
@@ -1418,16 +1411,24 @@
             "type": "IMAGE"
           },
           {
-            "id": 527,
+            "id": 529,
             "origin_id": 244,
+            "origin_slot": 0,
+            "target_id": 185,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 530,
+            "origin_id": 185,
             "origin_slot": 0,
             "target_id": 177,
             "target_slot": 0,
             "type": "IMAGE"
           },
           {
-            "id": 528,
-            "origin_id": 185,
+            "id": 531,
+            "origin_id": 177,
             "origin_slot": 0,
             "target_id": -20,
             "target_slot": 0,
@@ -1449,10 +1450,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.8534497975563293,
+      "scale": 1.032674255043159,
       "offset": [
-        2901.890505169318,
-        -285.965043231508
+        2771.753285481104,
+        -409.93695669598384
       ]
     }
   },
