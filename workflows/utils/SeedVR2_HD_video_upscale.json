@@ -1,8 +1,8 @@
 {
   "id": "e2c8e6ec-9e8a-4a81-a240-7e7d2befc2bf",
   "revision": 0,
-  "last_node_id": 44,
-  "last_link_id": 52,
+  "last_node_id": 47,
+  "last_link_id": 56,
   "nodes": [
     {
       "id": 25,
@@ -29,10 +29,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "seedvr2_videoupscaler",
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
         "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
         "Node name for S&R": "SeedVR2TorchCompileSettings",
-        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+        "cnr_id": "seedvr2_videoupscaler"
       },
       "widgets_values": [
         "inductor",
@@ -65,7 +65,7 @@
         202
       ],
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -85,10 +85,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "seedvr2_videoupscaler",
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
         "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
         "Node name for S&R": "SeedVR2LoadDiTModel",
-        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+        "cnr_id": "seedvr2_videoupscaler"
       },
       "widgets_values": [
         "seedvr2_ema_3b_fp16.safetensors",
@@ -143,10 +143,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "seedvr2_videoupscaler",
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
         "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
         "Node name for S&R": "SeedVR2LoadVAEModel",
-        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+        "cnr_id": "seedvr2_videoupscaler"
       },
       "widgets_values": [
         "ema_vae_fp16.safetensors",
@@ -176,6 +176,61 @@
       },
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 40,
+      "type": "PixaromaMonitor",
+      "pos": [
+        -200,
+        -860
+      ],
+      "size": [
+        305,
+        139
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaMonitor",
+        "cnr_id": "ComfyUI-Pixaroma"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 39,
+      "type": "PixaromaRunTimer",
+      "pos": [
+        126.46630732645707,
+        -850
+      ],
+      "size": [
+        360,
+        120
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaRunTimer",
+        "cnr_id": "ComfyUI-Pixaroma",
+        "runTimerLastMs": 245665.20000001788
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
     },
     {
       "id": 28,
@@ -213,15 +268,15 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            38
+            55
           ]
         }
       ],
       "properties": {
-        "cnr_id": "seedvr2_videoupscaler",
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
         "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
         "Node name for S&R": "SeedVR2VideoUpscaler",
-        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+        "cnr_id": "seedvr2_videoupscaler"
       },
       "widgets_values": [
         42,
@@ -257,183 +312,134 @@
       "bgcolor": "#335"
     },
     {
-      "id": 40,
-      "type": "PixaromaMonitor",
+      "id": 47,
+      "type": "AutoRifeTensorrt",
       "pos": [
-        -200,
-        -860
+        544.0233786721257,
+        -405.1784670096053
       ],
       "size": [
-        305,
-        139
-      ],
-      "flags": {
-        "no_title": true
-      },
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaMonitor"
-      },
-      "color": "#1d1d1d",
-      "bgcolor": "#2a2a2a"
-    },
-    {
-      "id": 39,
-      "type": "PixaromaRunTimer",
-      "pos": [
-        126.46630732645707,
-        -850
-      ],
-      "size": [
-        360,
-        120
-      ],
-      "flags": {
-        "no_title": true
-      },
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaRunTimer",
-        "runTimerLastMs": 48359.80000001192
-      },
-      "color": "#1d1d1d",
-      "bgcolor": "#2a2a2a"
-    },
-    {
-      "id": 33,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        536.3907061474479,
-        -646.0135156589947
-      ],
-      "size": [
-        641.0949378647892,
-        705.179197494128
+        327.0858377006316,
+        224
       ],
       "flags": {},
       "order": 8,
       "mode": 0,
       "inputs": [
         {
-          "name": "images",
+          "name": "frames",
           "type": "IMAGE",
-          "link": 38
+          "link": 55
         },
         {
-          "name": "audio",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": 49
+          "name": "rife_trt_model",
+          "type": "RIFE_TRT_MODEL",
+          "link": 54
         },
         {
-          "name": "meta_batch",
+          "name": "interpolation_states",
           "shape": 7,
-          "type": "VHS_BatchManager",
+          "type": "INTERPOLATION_STATES",
           "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        },
-        {
-          "name": "frame_rate",
-          "type": "FLOAT",
-          "widget": {
-            "name": "frame_rate"
-          },
-          "link": 52
         }
       ],
       "outputs": [
         {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            56
+          ]
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4d907bee61e92c2e65af3bd6383a4e4d356126d1",
-        "Node name for S&R": "VHS_VideoCombine"
+        "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+        "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
+        "Node name for S&R": "AutoRifeTensorrt",
+        "cnr_id": "Auto-TensorRT-RIFE"
       },
-      "widgets_values": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "SeedVR2_",
-        "format": "video/webm",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "SeedVR2__00001.webm",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/webm",
-            "frame_rate": 48,
-            "workflow": "SeedVR2__00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/SeedVR2__00001.webm"
-          }
-        }
-      },
+      "widgets_values": [
+        100,
+        2,
+        false,
+        1,
+        ""
+      ],
       "widgets_values_named": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "SeedVR2_",
-        "format": "video/webm",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "SeedVR2__00001.webm",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/webm",
-            "frame_rate": 48,
-            "workflow": "SeedVR2__00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/SeedVR2__00001.webm"
-          }
-        }
+        "clear_cache_after_n_frames": 100,
+        "multiplier": 2,
+        "keep_model_loaded": false,
+        "batch_size": 1,
+        "multiplier_list": ""
       },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 46,
+      "type": "AutoLoadRifeTensorrtModel",
+      "pos": [
+        541.2889457210098,
+        -605.2250970307957
+      ],
+      "size": [
+        322.5669921875,
+        130
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "custom_config",
+          "shape": 7,
+          "type": "RIFE_RESOLUTION_CONFIG",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "rife_trt_model",
+          "type": "RIFE_TRT_MODEL",
+          "links": [
+            54
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+        "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
+        "Node name for S&R": "AutoLoadRifeTensorrtModel",
+        "cnr_id": "Auto-TensorRT-RIFE"
+      },
+      "widgets_values": [
+        "rife425_ensemble_False_scale_1_sim",
+        "fp16",
+        "large",
+        1
+      ],
+      "widgets_values_named": {
+        "model": "rife425_ensemble_False_scale_1_sim",
+        "precision": "fp16",
+        "resolution_profile": "large",
+        "batch_size": 1
+      },
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
       "id": 42,
       "type": "VHS_LoadVideo",
       "pos": [
-        -829.2903478106304,
-        -646.7202541937007
+        -825.7440348061115,
+        -641.0453120310706
       ],
       "size": [
         582.9053611852479,
-        647.7331277216492
+        647.2327674005958
       ],
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -465,29 +471,26 @@
         {
           "name": "audio",
           "type": "AUDIO",
-          "links": [
-            49
-          ]
+          "links": []
         },
         {
           "name": "video_info",
           "type": "VHS_VIDEOINFO",
-          "links": [
-            51
-          ]
+          "links": []
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4d907bee61e92c2e65af3bd6383a4e4d356126d1",
-        "Node name for S&R": "VHS_LoadVideo"
+        "Node name for S&R": "VHS_LoadVideo",
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
-        "video": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00002-audio.webm",
+        "video": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
         "force_rate": 0,
         "custom_width": 0,
         "custom_height": 0,
-        "frame_load_cap": 0,
+        "frame_load_cap": 226,
         "skip_first_frames": 0,
         "select_every_nth": 1,
         "format": "H3",
@@ -495,24 +498,24 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00002-audio.webm",
+            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
             "type": "input",
-            "format": "video/webm",
+            "format": "video/mp4",
             "force_rate": 0,
             "custom_width": 0,
             "custom_height": 0,
-            "frame_load_cap": 0,
+            "frame_load_cap": 226,
             "skip_first_frames": 0,
             "select_every_nth": 1
           }
         }
       },
       "widgets_values_named": {
-        "video": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00002-audio.webm",
+        "video": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
         "force_rate": 0,
         "custom_width": 0,
         "custom_height": 0,
-        "frame_load_cap": 0,
+        "frame_load_cap": 226,
         "skip_first_frames": 0,
         "select_every_nth": 1,
         "format": "H3",
@@ -521,13 +524,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00002-audio.webm",
+            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
             "type": "input",
-            "format": "video/webm",
+            "format": "video/mp4",
             "force_rate": 0,
             "custom_width": 0,
             "custom_height": 0,
-            "frame_load_cap": 0,
+            "frame_load_cap": 226,
             "skip_first_frames": 0,
             "select_every_nth": 1
           }
@@ -537,61 +540,109 @@
       "bgcolor": "#355"
     },
     {
-      "id": 44,
-      "type": "VHS_VideoInfoSource",
+      "id": 33,
+      "type": "VHS_VideoCombine",
       "pos": [
-        -502.79086171777004,
-        -826.8165840116135
+        926.9773295527368,
+        -643.5273104565381
       ],
       "size": [
-        252.2548828125,
-        106
+        641.0949378647892,
+        705.179197494128
       ],
       "flags": {},
-      "order": 6,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
-          "name": "video_info",
-          "type": "VHS_VIDEOINFO",
-          "link": 51
+          "name": "images",
+          "type": "IMAGE",
+          "link": 56
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
         }
       ],
       "outputs": [
         {
-          "name": "fps🟨",
-          "type": "FLOAT",
-          "links": [
-            52
-          ]
-        },
-        {
-          "name": "frame_count🟨",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "duration🟨",
-          "type": "FLOAT",
-          "links": null
-        },
-        {
-          "name": "width🟨",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "height🟨",
-          "type": "INT",
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
           "links": null
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4d907bee61e92c2e65af3bd6383a4e4d356126d1",
-        "Node name for S&R": "VHS_VideoInfoSource"
+        "Node name for S&R": "VHS_VideoCombine",
+        "cnr_id": "comfyui-videohelpersuite"
       },
-      "widgets_values": {}
+      "widgets_values": {
+        "frame_rate": 48,
+        "loop_count": 0,
+        "filename_prefix": "SeedVR2_",
+        "format": "video/webm",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "SeedVR2__00002.webm",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/webm",
+            "frame_rate": 24,
+            "workflow": "SeedVR2__00002.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/SeedVR2__00002.webm"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "frame_rate": 48,
+        "loop_count": 0,
+        "filename_prefix": "SeedVR2_",
+        "format": "video/webm",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "SeedVR2__00002.webm",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/webm",
+            "frame_rate": 24,
+            "workflow": "SeedVR2__00002.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/SeedVR2__00002.webm"
+          }
+        }
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     }
   ],
   "links": [
@@ -620,14 +671,6 @@
       "SEEDVR2_VAE"
     ],
     [
-      38,
-      28,
-      0,
-      33,
-      0,
-      "IMAGE"
-    ],
-    [
       48,
       42,
       0,
@@ -636,28 +679,28 @@
       "IMAGE"
     ],
     [
-      49,
-      42,
-      2,
-      33,
+      54,
+      46,
+      0,
+      47,
       1,
-      "AUDIO"
+      "RIFE_TRT_MODEL"
     ],
     [
-      51,
-      42,
-      3,
-      44,
+      55,
+      28,
       0,
-      "VHS_VIDEOINFO"
+      47,
+      0,
+      "IMAGE"
     ],
     [
-      52,
-      44,
+      56,
+      47,
       0,
       33,
-      4,
-      "FLOAT"
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -672,6 +715,18 @@
       ],
       "color": "#a1309b",
       "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "RIFE",
+      "bounding": [
+        531.2889457210098,
+        -675.2250970307957,
+        349.8202706517475,
+        504.04663002119054
+      ],
+      "color": "#a1309b",
+      "flags": {}
     }
   ],
   "config": {},
@@ -679,8 +734,8 @@
     "ds": {
       "scale": 0.9285612256456234,
       "offset": [
-        1244.7402662292989,
-        1015.0493116219322
+        1237.6223995583018,
+        1099.9588984347847
       ]
     },
     "frontendVersion": "1.52.7",
