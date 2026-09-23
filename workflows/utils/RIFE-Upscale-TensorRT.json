@@ -133,13 +133,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4_00001.webm",
+            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4_00001.webm"
+            "workflow": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.webm"
           }
         }
       },
@@ -158,13 +158,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4_00001.webm",
+            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4_00001.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4_00001.webm"
+            "workflow": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_ (1).mp4_00001.webm"
           }
         }
       },
@@ -231,19 +231,19 @@
         "Node name for S&R": "VHS_LoadVideo"
       },
       "widgets_values": {
-        "video": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4",
+        "video": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
         "force_rate": 0,
         "custom_width": 0,
         "custom_height": 0,
         "frame_load_cap": 0,
         "skip_first_frames": 0,
         "select_every_nth": 1,
-        "format": "H3",
+        "format": "None",
         "videopreview": {
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4",
+            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
             "type": "input",
             "format": "video/mp4",
             "force_rate": 0,
@@ -256,20 +256,20 @@
         }
       },
       "widgets_values_named": {
-        "video": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4",
+        "video": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
         "force_rate": 0,
         "custom_width": 0,
         "custom_height": 0,
         "frame_load_cap": 0,
         "skip_first_frames": 0,
         "select_every_nth": 1,
-        "format": "H3",
+        "format": "None",
         "choose video to upload": null,
         "videopreview": {
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00002_.mp4",
+            "filename": "S02_EP11_HotelCorrect_051_v01.jpg [output]_00003_.mp4",
             "type": "input",
             "format": "video/mp4",
             "force_rate": 0,
@@ -367,25 +367,25 @@
         "rife425_ensemble_False_scale_1_sim",
         "large",
         2,
-        "2x-CGIMaster-v1",
+        "2xLexicaRRDBNet_Sharp",
         2,
         "2K",
         2,
         "seedvr2_ema_7b_sharp_fp16.safetensors",
         1440,
-        33
+        41
       ],
       "widgets_values_named": {
         "model": "rife425_ensemble_False_scale_1_sim",
         "resolution_profile": "large",
         "multiplier": 2,
-        "model_1": "2x-CGIMaster-v1",
+        "model_1": "2xLexicaRRDBNet_Sharp",
         "batch_size": 2,
         "resize_to": "2K",
         "batch_size_1": 2,
         "model_2": "seedvr2_ema_7b_sharp_fp16.safetensors",
         "resolution": 1440,
-        "batch_size_2": 33
+        "batch_size_2": 41
       },
       "color": "#223",
       "bgcolor": "#335"
@@ -1020,6 +1020,75 @@
             "bgcolor": "#335"
           },
           {
+            "id": 212,
+            "type": "SeedVR2LoadDiTModel",
+            "pos": [
+              163.5502843132837,
+              4896.979301124711
+            ],
+            "size": [
+              307.6646484375,
+              202
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "torch_compile_args",
+                "name": "torch_compile_args",
+                "shape": 7,
+                "type": "TORCH_COMPILE_ARGS",
+                "link": 453
+              },
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model"
+                },
+                "link": 449
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "SEEDVR2_DIT",
+                "name": "SEEDVR2_DIT",
+                "type": "SEEDVR2_DIT",
+                "links": [
+                  444
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "seedvr2_videoupscaler",
+              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+              "Node name for S&R": "SeedVR2LoadDiTModel",
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+            },
+            "widgets_values": [
+              "seedvr2_ema_3b_fp16.safetensors",
+              "cuda:0",
+              0,
+              false,
+              "cpu",
+              true,
+              "sageattn_3"
+            ],
+            "widgets_values_named": {
+              "model": "seedvr2_ema_3b_fp16.safetensors",
+              "device": "cuda:0",
+              "blocks_to_swap": 0,
+              "swap_io_components": false,
+              "offload_device": "cpu",
+              "cache_model": true,
+              "attention_mode": "sageattn_3"
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
             "id": 244,
             "type": "SeedVR2VideoUpscaler",
             "pos": [
@@ -1088,7 +1157,7 @@
               "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
-              42,
+              991378813,
               "randomize",
               1440,
               0,
@@ -1099,11 +1168,11 @@
               0,
               0,
               0,
-              "none",
+              "cpu",
               true
             ],
             "widgets_values_named": {
-              "seed": 42,
+              "seed": 991378813,
               "control_after_generate": "randomize",
               "resolution": 1440,
               "max_resolution": 0,
@@ -1114,77 +1183,8 @@
               "prepend_frames": 0,
               "input_noise_scale": 0,
               "latent_noise_scale": 0,
-              "offload_device": "none",
+              "offload_device": "cpu",
               "enable_debug": true
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
-            "id": 212,
-            "type": "SeedVR2LoadDiTModel",
-            "pos": [
-              163.5502843132837,
-              4896.979301124711
-            ],
-            "size": [
-              307.6646484375,
-              202
-            ],
-            "flags": {},
-            "order": 6,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "torch_compile_args",
-                "name": "torch_compile_args",
-                "shape": 7,
-                "type": "TORCH_COMPILE_ARGS",
-                "link": 453
-              },
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model"
-                },
-                "link": 449
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "SEEDVR2_DIT",
-                "name": "SEEDVR2_DIT",
-                "type": "SEEDVR2_DIT",
-                "links": [
-                  444
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "seedvr2_videoupscaler",
-              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
-              "Node name for S&R": "SeedVR2LoadDiTModel",
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
-            },
-            "widgets_values": [
-              "seedvr2_ema_3b_fp16.safetensors",
-              "cuda:0",
-              0,
-              false,
-              "none",
-              true,
-              "sageattn_3"
-            ],
-            "widgets_values_named": {
-              "model": "seedvr2_ema_3b_fp16.safetensors",
-              "device": "cuda:0",
-              "blocks_to_swap": 0,
-              "swap_io_components": false,
-              "offload_device": "none",
-              "cache_model": true,
-              "attention_mode": "sageattn_3"
             },
             "color": "#223",
             "bgcolor": "#335"
@@ -1391,18 +1391,18 @@
   "config": {},
   "extra": {
     "workflowRendererVersion": "LG",
-    "ds": {
-      "scale": 0.8534497975563292,
-      "offset": [
-        3534.7416424112594,
-        -229.4989546178398
-      ]
-    },
     "frontendVersion": "1.52.7",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
-    "VHS_KeepIntermediate": true
+    "VHS_KeepIntermediate": true,
+    "ds": {
+      "scale": 0.8534497975563293,
+      "offset": [
+        2897.9085046934388,
+        -390.03714302497775
+      ]
+    }
   },
   "version": 0.4,
   "seed_widgets": {}
