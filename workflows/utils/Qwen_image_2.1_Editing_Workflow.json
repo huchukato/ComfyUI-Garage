@@ -1,22 +1,205 @@
 {
   "id": "54bb395d-3e60-4c94-b525-85523901575b",
   "revision": 0,
-  "last_node_id": 513,
-  "last_link_id": 802,
+  "last_node_id": 524,
+  "last_link_id": 817,
   "nodes": [
+    {
+      "id": 489,
+      "type": "ComfySwitchNode",
+      "pos": [
+        850.3123290519329,
+        3298.8538471364873
+      ],
+      "size": [
+        270,
+        80
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_false",
+          "shape": 7,
+          "type": "LATENT",
+          "link": 751
+        },
+        {
+          "name": "on_true",
+          "shape": 7,
+          "type": "LATENT",
+          "link": 747
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            805
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "ComfySwitchNode"
+      },
+      "widgets_values": [
+        true
+      ],
+      "widgets_values_named": {
+        "switch": true
+      }
+    },
+    {
+      "id": 479,
+      "type": "Seed (rgthree)",
+      "pos": [
+        446.3406375265213,
+        3505.6019806616205
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "SEED",
+          "shape": 3,
+          "type": "INT",
+          "links": [
+            806
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
+        "randomMax": 1125899906842624,
+        "randomMin": 0,
+        "aux_id": "rgthree/rgthree-comfy"
+      },
+      "widgets_values": [
+        -1,
+        "",
+        "",
+        "okay"
+      ],
+      "widgets_values_named": {
+        "seed": -1,
+        "🎲 Randomize Each Time": "",
+        "🎲 New Fixed Random": "",
+        "USE_LAST_SEED": "okay"
+      }
+    },
+    {
+      "id": 491,
+      "type": "TextEncodeQwenImage21",
+      "pos": [
+        421.261047845109,
+        2469.2650249945987
+      ],
+      "size": [
+        693.0697967831477,
+        756.1350993088331
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 809
+        },
+        {
+          "name": "images.image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 797
+        },
+        {
+          "name": "images.image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 807
+        },
+        {
+          "name": "images.image_5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            803
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            804
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            751
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "TextEncodeQwenImage21"
+      },
+      "widgets_values": [
+        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n",
+        "ugly, bad quality, low quality, blurry",
+        1024
+      ],
+      "widgets_values_named": {
+        "prompt": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n",
+        "negative_prompt": "ugly, bad quality, low quality, blurry",
+        "resolution": 1024
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
     {
       "id": 13,
       "type": "ResolutionSelector",
       "pos": [
-        804.0831076955096,
-        3476.113944368676
+        810.1731924271232,
+        3495.9264075203378
       ],
       "size": [
         304.5263439669561,
         150
       ],
       "flags": {},
-      "order": 0,
+      "order": 1,
       "mode": 4,
       "showAdvanced": true,
       "inputs": [],
@@ -49,59 +232,303 @@
       }
     },
     {
-      "id": 488,
-      "type": "VAEDecode",
+      "id": 515,
+      "type": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
       "pos": [
-        2006.0925272216364,
-        2462.5341589525765
+        1160.8494886460055,
+        2437.2198768265457
       ],
       "size": [
-        157.869140625,
-        63.79331758655371
+        444.04827694231903,
+        293.71771005175196
       ],
       "flags": {},
-      "order": 19,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 796
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 803
         },
         {
-          "name": "vae",
-          "type": "VAE",
-          "link": 743
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 804
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 805
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 806
         }
       ],
       "outputs": [
         {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            807
+          ]
+        },
+        {
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            790
+            808
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            809
           ]
         }
       ],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "VAEDecode"
-      }
+        "ver": "0.37.1",
+        "previewExposures": [
+          {
+            "name": "$$canvas-image-preview",
+            "sourceNodeId": "509",
+            "sourcePreviewName": "$$canvas-image-preview"
+          }
+        ]
+      },
+      "widgets_values": [
+        0,
+        "qwen_image_2.1_int8_convrot.safetensors",
+        "qwen3vl_8b_int8_convrot.safetensors",
+        "qwen_image_2.1_vae_bf16.safetensors",
+        25,
+        1,
+        "euler",
+        "simple"
+      ],
+      "widgets_values_named": {
+        "seed": 0,
+        "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+        "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
+        "steps": 25,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 512,
+      "type": "WildcardProcessor",
+      "pos": [
+        -116.3662053521111,
+        2472.700050609397
+      ],
+      "size": [
+        490,
+        390
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            799
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-TagForge",
+        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge"
+      },
+      "widgets_values": [
+        "[anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
+        670920085417183,
+        "randomize",
+        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, [anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, 1girl, wonder woman, dc comics, black hair, blue eyes, large breasts, babydoll, cleavage cutout, nipple pull, nipple tweak, head tilted back, eyes closed,",
+        "populate",
+        true,
+        0.5,
+        "Pony"
+      ],
+      "widgets_values_named": {
+        "text": "[anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
+        "seed": 670920085417183,
+        "control_after_generate": "randomize",
+        "populated_text": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, [anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, 1girl, wonder woman, dc comics, black hair, blue eyes, large breasts, babydoll, cleavage cutout, nipple pull, nipple tweak, head tilted back, eyes closed,",
+        "mode": "populate",
+        "deduplicate": true,
+        "downvote_factor": 0.5,
+        "base_model": "Pony"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 511,
+      "type": "QwenVL_Unified",
+      "pos": [
+        -116.8789848380497,
+        2912.7000506093964
+      ],
+      "size": [
+        492.35952363843035,
+        392
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 798
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "video",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "custom_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "custom_prompt"
+          },
+          "link": 799
+        }
+      ],
+      "outputs": [
+        {
+          "name": "RESPONSE",
+          "type": "STRING",
+          "links": [
+            801
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-QwenVL-Mod",
+        "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
+        "Node name for S&R": "QwenVL_Unified",
+        "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+      },
+      "widgets_values": [
+        "GGUF llama.cpp",
+        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "🎨 Pony→Natural Language",
+        "None",
+        "",
+        8192,
+        false,
+        1736001908,
+        "randomize",
+        false,
+        false,
+        16
+      ],
+      "widgets_values_named": {
+        "backend": "GGUF llama.cpp",
+        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "preset_prompt": "🎨 Pony→Natural Language",
+        "camera_tag": "None",
+        "custom_prompt": "",
+        "max_tokens": 8192,
+        "keep_model_loaded": false,
+        "seed": 1736001908,
+        "control_after_generate": "randomize",
+        "keep_last_prompt": false,
+        "passthrough": false,
+        "frame_count": 16
+      },
+      "color": "#0d9489",
+      "bgcolor": "#134e4a"
+    },
+    {
+      "id": 513,
+      "type": "PixaromaShowText",
+      "pos": [
+        -118.52967270079743,
+        3356.5371189821776
+      ],
+      "size": [
+        498.91085894188564,
+        293.86300041466257
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 801
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaShowText",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
+      },
+      "widgets_values": [
+        "A young adult woman with long red hair and striking yellow eyes is captured in a close-up, intimate shot, her eyes gently closed and lips curved in a soft, romantic smile. She wears a sleek satin outfit featuring a daring underboob cutout, which she caresses with one hand in a slow, sensual gesture. The composition focuses tightly on her upper body with a shallow depth of field, blurring the simple background to emphasize her emotional expression and the rich texture of the satin fabric. Rendered in vibrant, highly detailed cel-shaded anime art style with clean lineart, the image conveys a deeply romantic and worshipful mood through its dynamic angle and rich color palette."
+      ],
+      "widgets_values_named": {
+        "text": "A young adult woman with long red hair and striking yellow eyes is captured in a close-up, intimate shot, her eyes gently closed and lips curved in a soft, romantic smile. She wears a sleek satin outfit featuring a daring underboob cutout, which she caresses with one hand in a slow, sensual gesture. The composition focuses tightly on her upper body with a shallow depth of field, blurring the simple background to emphasize her emotional expression and the rich texture of the satin fabric. Rendered in vibrant, highly detailed cel-shaded anime art style with clean lineart, the image conveys a deeply romantic and worshipful mood through its dynamic angle and rich color palette."
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
       "id": 487,
       "type": "EmptyLatentImage",
       "pos": [
         425.16104240091096,
-        3260.717535588521
+        3268.9076495379336
       ],
       "size": [
         300,
         120
       ],
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -147,494 +574,18 @@
       }
     },
     {
-      "id": 489,
-      "type": "ComfySwitchNode",
-      "pos": [
-        850.3123290519329,
-        3298.8538471364873
-      ],
-      "size": [
-        270,
-        80
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "on_false",
-          "shape": 7,
-          "type": "LATENT",
-          "link": 751
-        },
-        {
-          "name": "on_true",
-          "shape": 7,
-          "type": "LATENT",
-          "link": 747
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "LATENT",
-          "links": [
-            794
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "ComfySwitchNode"
-      },
-      "widgets_values": [
-        true
-      ],
-      "widgets_values_named": {
-        "switch": true
-      }
-    },
-    {
-      "id": 494,
-      "type": "LoraLoader",
-      "pos": [
-        1163.1439954996763,
-        3244.566011093914
-      ],
-      "size": [
-        504.1792755186415,
-        126
-      ],
-      "flags": {},
-      "order": 13,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 762
-        },
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 758
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            760
-          ]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            759
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "LoraLoader"
-      },
-      "widgets_values": [
-        "Digital painting.safetensors",
-        1,
-        1
-      ],
-      "widgets_values_named": {
-        "lora_name": "Digital painting.safetensors",
-        "strength_model": 1,
-        "strength_clip": 1
-      }
-    },
-    {
-      "id": 490,
-      "type": "QwenImage21Cache",
-      "pos": [
-        1712.135254303958,
-        2466.045647471195
-      ],
-      "size": [
-        270,
-        90
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 760
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            791
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "QwenImage21Cache"
-      },
-      "widgets_values": [
-        "auto",
-        "default"
-      ],
-      "widgets_values_named": {
-        "device": "auto",
-        "dtype": "default"
-      }
-    },
-    {
-      "id": 509,
-      "type": "KSampler",
-      "pos": [
-        1715.0620852174623,
-        2603.7916519060614
-      ],
-      "size": [
-        450.47873800116577,
-        739.6146983032819
-      ],
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 791
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 792
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 793
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 794
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          },
-          "link": 795
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            796
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "KSampler"
-      },
-      "widgets_values": [
-        0,
-        "randomize",
-        25,
-        1,
-        "euler",
-        "simple",
-        1
-      ],
-      "widgets_values_named": {
-        "seed": 0,
-        "control_after_generate": "randomize",
-        "steps": 25,
-        "cfg": 1,
-        "sampler_name": "euler",
-        "scheduler": "simple",
-        "denoise": 1
-      }
-    },
-    {
-      "id": 498,
-      "type": "Note",
-      "pos": [
-        -1656.203333377117,
-        3071.201026612336
-      ],
-      "size": [
-        767.7579861244135,
-        789.4475369918355
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "professional character sheet",
-      "properties": {},
-      "widgets_values": [
-        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n"
-      ],
-      "widgets_values_named": {
-        "text": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 476,
-      "type": "MarkdownNote",
-      "pos": [
-        -645.4798918164643,
-        2289.598057101258
-      ],
-      "size": [
-        369.84190242115903,
-        670.7255942700258
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Model links",
-      "properties": {},
-      "widgets_values": [
-        "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_2.1_bf16.safetensors\n│   │   └── qwen_image_2.1_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   ├── qwen3vl_8b_bf16.safetensors\n│   │   └── qwen3vl_8b_int8_convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
-      ],
-      "widgets_values_named": {
-        "text": "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_2.1_bf16.safetensors\n│   │   └── qwen_image_2.1_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   ├── qwen3vl_8b_bf16.safetensors\n│   │   └── qwen3vl_8b_int8_convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
-      },
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 479,
-      "type": "Seed (rgthree)",
-      "pos": [
-        440.2505527949078,
-        3485.789517509959
-      ],
-      "size": [
-        315,
-        130
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "SEED",
-          "shape": 3,
-          "type": "INT",
-          "links": [
-            795
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
-        "randomMax": 1125899906842624,
-        "randomMin": 0
-      },
-      "widgets_values": [
-        -1,
-        "",
-        "",
-        "okay"
-      ],
-      "widgets_values_named": {
-        "seed": -1,
-        "🎲 Randomize Each Time": "",
-        "🎲 New Fixed Random": "",
-        "USE_LAST_SEED": "okay"
-      }
-    },
-    {
-      "id": 508,
-      "type": "SaveImageAdvanced",
-      "pos": [
-        2230.5654659202814,
-        2427.64406091263
-      ],
-      "size": [
-        832.7607586266863,
-        130
-      ],
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 790
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "SaveImageAdvanced"
-      },
-      "widgets_values": [
-        "Qwen_image_2.1",
-        "png",
-        "8-bit",
-        "sRGB"
-      ],
-      "widgets_values_named": {
-        "filename_prefix": "Qwen_image_2.1",
-        "format": "png",
-        "format.bit_depth": "8-bit",
-        "format.input_color_space": "sRGB"
-      }
-    },
-    {
-      "id": 512,
-      "type": "WildcardProcessor",
-      "pos": [
-        -56.92879362093845,
-        1973.079082951507
-      ],
-      "size": [
-        415.64002622112343,
-        380.94024880467214
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            799
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-TagForge",
-        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
-        "Node name for S&R": "WildcardProcessor"
-      },
-      "widgets_values": [
-        "[anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
-        454383384227498,
-        "randomize",
-        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, [anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, 1girl, ayane \\(dead or alive\\), dead or alive, purple hair, red eyes, large breasts, evening gown, one breast out, nipple stimulation, nipple tweak, naughty face, looking at viewer,",
-        "populate",
-        true,
-        0.5,
-        "Pony"
-      ],
-      "widgets_values_named": {
-        "text": "[anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
-        "seed": 454383384227498,
-        "control_after_generate": "randomize",
-        "populated_text": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, [anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, 1girl, ayane \\(dead or alive\\), dead or alive, purple hair, red eyes, large breasts, evening gown, one breast out, nipple stimulation, nipple tweak, naughty face, looking at viewer,",
-        "mode": "populate",
-        "deduplicate": true,
-        "downvote_factor": 0.5,
-        "base_model": "Pony"
-      }
-    },
-    {
-      "id": 510,
-      "type": "LoadImageOutput",
-      "pos": [
-        -35.534801270130636,
-        2449.773894465692
-      ],
-      "size": [
-        398.71624404813974,
-        590.769426793076
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            797,
-            798
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.1",
-        "Node name for S&R": "LoadImageOutput"
-      },
-      "widgets_values": [
-        "Qwen_image_2.1_00009.png [output]",
-        false,
-        "refresh",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "Qwen_image_2.1_00009.png [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
-      }
-    },
-    {
       "id": 478,
       "type": "PixaromaResolution",
       "pos": [
-        163.81054485408447,
-        3195.1885560530022
+        -396.41162454130836,
+        3222.9942554149156
       ],
       "size": [
         240,
         435
       ],
       "flags": {},
-      "order": 6,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -690,140 +641,163 @@
       "bgcolor": "#2a2a2a"
     },
     {
-      "id": 511,
-      "type": "QwenVL_Unified",
+      "id": 510,
+      "type": "LoadImageOutput",
       "pos": [
-        415.99677898276303,
-        1966.411141881394
+        -680.0009552557442,
+        2449.8114802159
       ],
       "size": [
-        400,
-        392
+        512.7675183484764,
+        679.6597260276726
       ],
       "flags": {},
-      "order": 11,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "image",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 798
-        },
-        {
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "video",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "custom_prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "custom_prompt"
-          },
-          "link": 799
-        }
-      ],
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
       "outputs": [
         {
-          "name": "RESPONSE",
-          "type": "STRING",
+          "name": "IMAGE",
+          "type": "IMAGE",
           "links": [
-            801
+            797,
+            798
           ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI-QwenVL-Mod",
-        "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
-        "Node name for S&R": "QwenVL_Unified"
+        "cnr_id": "comfy-core",
+        "ver": "0.37.1",
+        "Node name for S&R": "LoadImageOutput"
       },
       "widgets_values": [
-        "GGUF llama.cpp",
-        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "🎨 Pony→Natural Language",
-        "None",
-        "",
-        8192,
+        "Qwen_image_2.1_00007.png [output]",
         false,
-        363989797,
-        "randomize",
-        false,
-        false,
-        16
+        "refresh",
+        "image"
       ],
       "widgets_values_named": {
-        "backend": "GGUF llama.cpp",
-        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "preset_prompt": "🎨 Pony→Natural Language",
-        "camera_tag": "None",
-        "custom_prompt": "",
-        "max_tokens": 8192,
-        "keep_model_loaded": false,
-        "seed": 363989797,
-        "control_after_generate": "randomize",
-        "keep_last_prompt": false,
-        "passthrough": false,
-        "frame_count": 16
+        "image": "Qwen_image_2.1_00007.png [output]",
+        "Auto-refresh after generation": false,
+        "refresh": "refresh",
+        "upload": "image"
       },
-      "color": "#0d9489",
-      "bgcolor": "#134e4a"
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
-      "id": 513,
-      "type": "PixaromaShowText",
+      "id": 508,
+      "type": "SaveImageAdvanced",
       "pos": [
-        883.2212533397422,
-        1972.8780704591265
+        1175.981715241409,
+        2788.9732883785077
       ],
       "size": [
-        499.74013184323167,
-        385.4588770648029
+        1162.0192070494177,
+        853.4424282207347
       ],
       "flags": {},
-      "order": 14,
-      "mode": 4,
+      "order": 16,
+      "mode": 0,
       "inputs": [
         {
-          "name": "source",
-          "type": "*",
-          "link": 801
+          "name": "images",
+          "type": "IMAGE",
+          "link": 808
         }
       ],
       "outputs": [
         {
-          "name": "text",
-          "type": "STRING",
-          "links": []
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaShowText"
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "SaveImageAdvanced"
       },
       "widgets_values": [
-        "A young adult woman with long red hair and striking yellow eyes is captured in a close-up, intimate shot, her eyes gently closed and lips curved in a soft, romantic smile. She wears a sleek satin outfit featuring a daring underboob cutout, which she caresses with one hand in a slow, sensual gesture. The composition focuses tightly on her upper body with a shallow depth of field, blurring the simple background to emphasize her emotional expression and the rich texture of the satin fabric. Rendered in vibrant, highly detailed cel-shaded anime art style with clean lineart, the image conveys a deeply romantic and worshipful mood through its dynamic angle and rich color palette."
+        "Qwen_image_2.1",
+        "png",
+        "8-bit",
+        "sRGB"
       ],
       "widgets_values_named": {
-        "text": "A young adult woman with long red hair and striking yellow eyes is captured in a close-up, intimate shot, her eyes gently closed and lips curved in a soft, romantic smile. She wears a sleek satin outfit featuring a daring underboob cutout, which she caresses with one hand in a slow, sensual gesture. The composition focuses tightly on her upper body with a shallow depth of field, blurring the simple background to emphasize her emotional expression and the rich texture of the satin fabric. Rendered in vibrant, highly detailed cel-shaded anime art style with clean lineart, the image conveys a deeply romantic and worshipful mood through its dynamic angle and rich color palette."
+        "filename_prefix": "Qwen_image_2.1",
+        "format": "png",
+        "format.bit_depth": "8-bit",
+        "format.input_color_space": "sRGB"
       },
-      "color": "#1d1d1d",
-      "bgcolor": "#2a2a2a"
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 476,
+      "type": "MarkdownNote",
+      "pos": [
+        -1110,
+        2450
+      ],
+      "size": [
+        380,
+        680
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Model links",
+      "properties": {},
+      "widgets_values": [
+        "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_2.1_bf16.safetensors\n│   │   └── qwen_image_2.1_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   ├── qwen3vl_8b_bf16.safetensors\n│   │   └── qwen3vl_8b_int8_convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
+      ],
+      "widgets_values_named": {
+        "text": "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_2.1_bf16.safetensors\n│   │   └── qwen_image_2.1_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   ├── qwen3vl_8b_bf16.safetensors\n│   │   └── qwen3vl_8b_int8_convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 498,
+      "type": "Note",
+      "pos": [
+        -382.4646174768141,
+        3735.4337056104705
+      ],
+      "size": [
+        767.7579861244135,
+        789.4475369918355
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "professional character sheet",
+      "properties": {},
+      "widgets_values": [
+        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n"
+      ],
+      "widgets_values_named": {
+        "text": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 499,
       "type": "Note",
       "pos": [
-        -862.8867260905538,
-        3063.8812608147337
+        435.0751109179908,
+        3735.0535818189555
       ],
       "size": [
         945.9001326793027,
@@ -846,237 +820,146 @@
       "bgcolor": "#653"
     },
     {
-      "id": 491,
-      "type": "TextEncodeQwenImage21",
+      "id": 517,
+      "type": "PixaromaMonitor",
       "pos": [
-        421.261047845109,
-        2469.2650249945987
+        1629.4329733731124,
+        2407.839936825786
       ],
       "size": [
-        693.0697967831477,
-        756.1350993088331
+        390,
+        180
       ],
       "flags": {
-        "pinned": true
+        "no_title": true
       },
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 759
-        },
-        {
-          "name": "images.image_1",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 797
-        },
-        {
-          "name": "images.image_2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": 756
-        },
-        {
-          "name": "images.image_5",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "links": [
-            792
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "links": [
-            793
-          ]
-        },
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "links": [
-            751
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "TextEncodeQwenImage21"
-      },
-      "widgets_values": [
-        "Place the character from <image1> into an atmospheric cyberpunk night market in Neo-Tokyo. Keep the exact facial identity, hair silhouette, and outfit from <image1>, but naturally integrate the character into the new scene. Cast vibrant magenta and teal volumetric neon light across their face and clothing, with wet asphalt reflections below and crowded food stalls in the soft-focus background. cinematic depth of field, natural ambient lighting integration.",
-        "ugly, bad quality, low quality, blurry",
-        1024
-      ],
-      "widgets_values_named": {
-        "prompt": "Place the character from <image1> into an atmospheric cyberpunk night market in Neo-Tokyo. Keep the exact facial identity, hair silhouette, and outfit from <image1>, but naturally integrate the character into the new scene. Cast vibrant magenta and teal volumetric neon light across their face and clothing, with wet asphalt reflections below and crowded food stalls in the soft-focus background. cinematic depth of field, natural ambient lighting integration.",
-        "negative_prompt": "ugly, bad quality, low quality, blurry",
-        "resolution": 1024
-      }
-    },
-    {
-      "id": 496,
-      "type": "UNETLoader",
-      "pos": [
-        1162.9156849733383,
-        2514.8111668051965
-      ],
-      "size": [
-        510,
-        90
-      ],
-      "flags": {},
       "order": 8,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            762
-          ]
-        }
-      ],
+      "outputs": [],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "UNETLoader",
-        "models": [
-          {
-            "name": "qwen_image_2.1_int8_convrot.safetensors",
-            "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors",
-            "directory": "diffusion_models"
-          }
-        ]
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaMonitor",
+        "monitorState": {
+          "version": 1,
+          "layout": "bars",
+          "scale": 1.29,
+          "device": 0,
+          "show": {
+            "vram": true,
+            "ram": true,
+            "gpu": true,
+            "cpu": true,
+            "comfy": false,
+            "sysram": false,
+            "temp": true,
+            "power": true,
+            "peak": true
+          },
+          "buttons": {
+            "free": true,
+            "unload": false,
+            "reset": true,
+            "settings": true
+          },
+          "interval": 1000,
+          "fastWhileRunning": true,
+          "warn": true,
+          "pauseHidden": true,
+          "showTitle": true
+        }
       },
-      "widgets_values": [
-        "qwen_image_2.1_int8_convrot.safetensors",
-        "default"
-      ],
-      "widgets_values_named": {
-        "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
-        "weight_dtype": "default"
-      }
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
     },
     {
-      "id": 493,
-      "type": "CLIPLoader",
+      "id": 518,
+      "type": "PixaromaRunTimer",
       "pos": [
-        1152.3514287356809,
-        2703.348537632372
+        1640,
+        2610
       ],
       "size": [
-        510,
-        120
+        370,
+        123
       ],
-      "flags": {},
+      "flags": {
+        "no_title": true
+      },
       "order": 9,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            758
-          ]
-        }
-      ],
+      "outputs": [],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "CLIPLoader",
-        "models": [
-          {
-            "name": "qwen3vl_8b_int8_convrot.safetensors",
-            "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
-            "directory": "text_encoders"
-          }
-        ]
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaRunTimer"
       },
-      "widgets_values": [
-        "qwen3vl_8b_int8_convrot.safetensors",
-        "qwen_image",
-        "default"
-      ],
-      "widgets_values_named": {
-        "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
-        "type": "qwen_image",
-        "device": "default"
-      }
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
     },
     {
-      "id": 486,
-      "type": "VAELoader",
+      "id": 524,
+      "type": "PixaromaGroupSwitch",
       "pos": [
-        1157.4306513487825,
-        2914.25997981139
+        -682.128423540206,
+        3231.8783103492183
       ],
       "size": [
-        510,
-        70
+        250,
+        72
       ],
       "flags": {},
       "order": 10,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            743,
-            756
-          ]
-        }
-      ],
+      "outputs": [],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "VAELoader",
-        "models": [
-          {
-            "name": "qwen_image_2.1_vae_bf16.safetensors",
-            "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors",
-            "directory": "vae"
-          }
-        ]
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaGroupSwitch",
+        "groupSwitchState": {
+          "version": 1,
+          "action": "bypass",
+          "scope": "pick",
+          "picked": [
+            "ng:40"
+          ],
+          "sort": "position",
+          "restriction": "any"
+        },
+        "pixAccent": "#0284c7"
       },
       "widgets_values": [
-        "qwen_image_2.1_vae_bf16.safetensors"
+        {
+          "version": 1,
+          "action": "bypass",
+          "scope": "pick",
+          "picked": [
+            "ng:40"
+          ],
+          "sort": "position",
+          "restriction": "any"
+        }
       ],
       "widgets_values_named": {
-        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
-      }
+        "group_switch_ui": {
+          "version": 1,
+          "action": "bypass",
+          "scope": "pick",
+          "picked": [
+            "ng:40"
+          ],
+          "sort": "position",
+          "restriction": "any"
+        }
+      },
+      "color": "#1f9e6a",
+      "bgcolor": "#23362f"
     }
   ],
   "links": [
-    [
-      743,
-      486,
-      0,
-      488,
-      1,
-      "VAE"
-    ],
     [
       747,
       487,
@@ -1110,102 +993,6 @@
       "INT"
     ],
     [
-      756,
-      486,
-      0,
-      491,
-      3,
-      "VAE"
-    ],
-    [
-      758,
-      493,
-      0,
-      494,
-      1,
-      "CLIP"
-    ],
-    [
-      759,
-      494,
-      1,
-      491,
-      0,
-      "CLIP"
-    ],
-    [
-      760,
-      494,
-      0,
-      490,
-      0,
-      "MODEL"
-    ],
-    [
-      762,
-      496,
-      0,
-      494,
-      0,
-      "MODEL"
-    ],
-    [
-      790,
-      488,
-      0,
-      508,
-      0,
-      "IMAGE"
-    ],
-    [
-      791,
-      490,
-      0,
-      509,
-      0,
-      "MODEL"
-    ],
-    [
-      792,
-      491,
-      0,
-      509,
-      1,
-      "CONDITIONING"
-    ],
-    [
-      793,
-      491,
-      1,
-      509,
-      2,
-      "CONDITIONING"
-    ],
-    [
-      794,
-      489,
-      0,
-      509,
-      3,
-      "LATENT"
-    ],
-    [
-      795,
-      479,
-      0,
-      509,
-      4,
-      "INT"
-    ],
-    [
-      796,
-      509,
-      0,
-      488,
-      0,
-      "LATENT"
-    ],
-    [
       797,
       510,
       0,
@@ -1236,21 +1023,65 @@
       513,
       0,
       "STRING"
+    ],
+    [
+      803,
+      491,
+      0,
+      515,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      804,
+      491,
+      1,
+      515,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      805,
+      489,
+      0,
+      515,
+      2,
+      "LATENT"
+    ],
+    [
+      806,
+      479,
+      0,
+      515,
+      3,
+      "INT"
+    ],
+    [
+      807,
+      515,
+      0,
+      491,
+      3,
+      "VAE"
+    ],
+    [
+      808,
+      515,
+      1,
+      508,
+      0,
+      "IMAGE"
+    ],
+    [
+      809,
+      515,
+      2,
+      491,
+      0,
+      "CLIP"
     ]
   ],
   "groups": [
-    {
-      "id": 34,
-      "title": "Models",
-      "bounding": [
-        1148.8496715946196,
-        2391.930285611129,
-        533.2043860646536,
-        773.355600689521
-      ],
-      "color": "#3f789e",
-      "flags": {}
-    },
     {
       "id": 36,
       "title": "Conditioning",
@@ -1264,42 +1095,890 @@
       "flags": {}
     },
     {
-      "id": 35,
-      "title": "Load Lora",
-      "bounding": [
-        1153.7003983648335,
-        3176.3591661357164,
-        531.6252051934657,
-        203.12673134981242
-      ],
-      "color": "#3f789e",
-      "flags": {}
-    },
-    {
-      "id": 37,
-      "title": "Sampling",
-      "bounding": [
-        1696.2946131210858,
-        2385.515650909493,
-        480.0801402454292,
-        997.7619166875356
-      ],
-      "color": "#3f789e",
-      "flags": {}
-    },
-    {
       "id": 38,
       "title": "Seed + Resolution",
       "bounding": [
-        415.8673903416932,
-        3408.544989503956,
+        421.9574750733067,
+        3428.3574526556176,
         717.5948129612442,
         221.6218051010742
       ],
       "color": "#3f789e",
       "flags": {}
+    },
+    {
+      "id": 40,
+      "title": "QWEN PROMPTING",
+      "bounding": [
+        -128.52967270079748,
+        2402.700050609396,
+        518.9108589418856,
+        1257.7000687874438
+      ],
+      "color": "#3f789e",
+      "flags": {}
     }
   ],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
+        "version": 1,
+        "state": {
+          "lastGroupId": 40,
+          "lastNodeId": 524,
+          "lastLinkId": 817,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "SAMPLING",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            948.4883434696196,
+            2820.396609253261,
+            140.361328125,
+            268
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            2236.374753366515,
+            2830.396609253261,
+            128,
+            108
+          ]
+        },
+        "inputs": [
+          {
+            "id": "25612e2b-fc0d-4328-a346-a63c997ea92e",
+            "name": "positive",
+            "type": "CONDITIONING",
+            "linkIds": [
+              792
+            ],
+            "localized_name": "positivo",
+            "pos": [
+              1064.8496715946196,
+              2844.396609253261
+            ]
+          },
+          {
+            "id": "c167c654-2262-45dc-92b6-59f4ee7a0546",
+            "name": "negative",
+            "type": "CONDITIONING",
+            "linkIds": [
+              793
+            ],
+            "localized_name": "negativo",
+            "pos": [
+              1064.8496715946196,
+              2864.396609253261
+            ]
+          },
+          {
+            "id": "c0662896-93b5-4db2-a865-303a6275e3e0",
+            "name": "latent_image",
+            "type": "LATENT",
+            "linkIds": [
+              794
+            ],
+            "localized_name": "immagine_latent",
+            "pos": [
+              1064.8496715946196,
+              2884.396609253261
+            ]
+          },
+          {
+            "id": "6c7eda8e-4248-4117-9798-a56496311511",
+            "name": "seed",
+            "type": "INT",
+            "linkIds": [
+              795
+            ],
+            "localized_name": "seed",
+            "pos": [
+              1064.8496715946196,
+              2904.396609253261
+            ]
+          },
+          {
+            "id": "953043e1-d8f3-4f20-9a97-7947fd780efd",
+            "name": "unet_name",
+            "type": "COMBO",
+            "linkIds": [
+              810
+            ],
+            "pos": [
+              1064.8496715946196,
+              2924.396609253261
+            ]
+          },
+          {
+            "id": "b8d49b6d-af6b-48f7-863b-cd93dc5a6371",
+            "name": "clip_name",
+            "type": "COMBO",
+            "linkIds": [
+              811
+            ],
+            "pos": [
+              1064.8496715946196,
+              2944.396609253261
+            ]
+          },
+          {
+            "id": "d2bd7e9e-9595-4744-9418-203c756bcf8f",
+            "name": "vae_name",
+            "type": "COMBO",
+            "linkIds": [
+              812
+            ],
+            "pos": [
+              1064.8496715946196,
+              2964.396609253261
+            ]
+          },
+          {
+            "id": "c0b9a582-cca1-4c3e-a16c-e64b4fd062c8",
+            "name": "steps",
+            "type": "INT",
+            "linkIds": [
+              814
+            ],
+            "pos": [
+              1064.8496715946196,
+              2984.396609253261
+            ]
+          },
+          {
+            "id": "e07efd6c-fd49-459b-8407-e9a744f82e17",
+            "name": "cfg",
+            "type": "FLOAT",
+            "linkIds": [
+              815
+            ],
+            "pos": [
+              1064.8496715946196,
+              3004.396609253261
+            ]
+          },
+          {
+            "id": "35ebb95e-d3c5-4826-a7b8-c43b884b0a64",
+            "name": "sampler_name",
+            "type": "COMBO",
+            "linkIds": [
+              816
+            ],
+            "pos": [
+              1064.8496715946196,
+              3024.396609253261
+            ]
+          },
+          {
+            "id": "c4c2d2ad-7874-40cd-b303-3d623b180bce",
+            "name": "scheduler",
+            "type": "COMBO",
+            "linkIds": [
+              817
+            ],
+            "pos": [
+              1064.8496715946196,
+              3044.396609253261
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "26dd08bd-9d94-450e-87c7-372ef3496ea5",
+            "name": "VAE",
+            "type": "VAE",
+            "linkIds": [
+              756
+            ],
+            "localized_name": "VAE",
+            "pos": [
+              2260.374753366515,
+              2854.396609253261
+            ]
+          },
+          {
+            "id": "e9fd12aa-54b3-46cb-8e86-56d39d07d8e4",
+            "name": "IMAGE",
+            "type": "IMAGE",
+            "linkIds": [
+              790
+            ],
+            "localized_name": "IMMAGINE",
+            "pos": [
+              2260.374753366515,
+              2874.396609253261
+            ]
+          },
+          {
+            "id": "622a3815-c1d4-47e3-92a7-52e03955cd59",
+            "name": "CLIP",
+            "type": "CLIP",
+            "linkIds": [
+              759
+            ],
+            "localized_name": "CLIP",
+            "pos": [
+              2260.374753366515,
+              2894.396609253261
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 490,
+            "type": "QwenImage21Cache",
+            "pos": [
+              1712.135254303958,
+              2466.045647471195
+            ],
+            "size": [
+              270,
+              90
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 760
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODELLO",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  791
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.0",
+              "Node name for S&R": "QwenImage21Cache"
+            },
+            "widgets_values": [
+              "auto",
+              "default"
+            ],
+            "widgets_values_named": {
+              "device": "auto",
+              "dtype": "default"
+            }
+          },
+          {
+            "id": 488,
+            "type": "VAEDecode",
+            "pos": [
+              2006.0925272216364,
+              2462.5341589525765
+            ],
+            "size": [
+              157.869140625,
+              63.79331758655371
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "campioni",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 796
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 743
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMMAGINE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  790
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.0",
+              "Node name for S&R": "VAEDecode"
+            }
+          },
+          {
+            "id": 494,
+            "type": "LoraLoader",
+            "pos": [
+              1163.1439954996763,
+              3244.566011093914
+            ],
+            "size": [
+              504.1792755186415,
+              126
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 4,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 762
+              },
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 758
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODELLO",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  760
+                ]
+              },
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  759
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.0",
+              "Node name for S&R": "LoraLoader"
+            },
+            "widgets_values": [
+              "Digital painting.safetensors",
+              1,
+              1
+            ],
+            "widgets_values_named": {
+              "lora_name": "Digital painting.safetensors",
+              "strength_model": 1,
+              "strength_clip": 1
+            }
+          },
+          {
+            "id": 496,
+            "type": "UNETLoader",
+            "pos": [
+              1160,
+              2520
+            ],
+            "size": [
+              510,
+              90
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "unet_name",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 810
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODELLO",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  762
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.0",
+              "Node name for S&R": "UNETLoader",
+              "models": [
+                {
+                  "name": "qwen_image_2.1_int8_convrot.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors",
+                  "directory": "diffusion_models"
+                }
+              ]
+            },
+            "widgets_values": [
+              "qwen_image_2.1_int8_convrot.safetensors",
+              "default"
+            ],
+            "widgets_values_named": {
+              "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+              "weight_dtype": "default"
+            }
+          },
+          {
+            "id": 493,
+            "type": "CLIPLoader",
+            "pos": [
+              1150,
+              2700
+            ],
+            "size": [
+              510,
+              120
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_name",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 811
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  758
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.0",
+              "Node name for S&R": "CLIPLoader",
+              "models": [
+                {
+                  "name": "qwen3vl_8b_int8_convrot.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors",
+                  "directory": "text_encoders"
+                }
+              ]
+            },
+            "widgets_values": [
+              "qwen3vl_8b_int8_convrot.safetensors",
+              "qwen_image",
+              "default"
+            ],
+            "widgets_values_named": {
+              "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+              "type": "qwen_image",
+              "device": "default"
+            }
+          },
+          {
+            "id": 486,
+            "type": "VAELoader",
+            "pos": [
+              1160,
+              2910
+            ],
+            "size": [
+              510,
+              70
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "nome_vae",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 812
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  743,
+                  756
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.0",
+              "Node name for S&R": "VAELoader",
+              "models": [
+                {
+                  "name": "qwen_image_2.1_vae_bf16.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors",
+                  "directory": "vae"
+                }
+              ]
+            },
+            "widgets_values": [
+              "qwen_image_2.1_vae_bf16.safetensors"
+            ],
+            "widgets_values_named": {
+              "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+            }
+          },
+          {
+            "id": 509,
+            "type": "KSampler",
+            "pos": [
+              1715.0620852174623,
+              2603.7916519060614
+            ],
+            "size": [
+              450.47873800116577,
+              739.6146983032819
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "modello",
+                "name": "model",
+                "type": "MODEL",
+                "link": 791
+              },
+              {
+                "localized_name": "positivo",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 792
+              },
+              {
+                "localized_name": "negativo",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 793
+              },
+              {
+                "localized_name": "immagine_latent",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 794
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 795
+              },
+              {
+                "localized_name": "passaggi",
+                "name": "steps",
+                "type": "INT",
+                "widget": {
+                  "name": "steps"
+                },
+                "link": 814
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "cfg"
+                },
+                "link": 815
+              },
+              {
+                "localized_name": "nome_sampler",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sampler_name"
+                },
+                "link": 816
+              },
+              {
+                "localized_name": "scheduler",
+                "name": "scheduler",
+                "type": "COMBO",
+                "widget": {
+                  "name": "scheduler"
+                },
+                "link": 817
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  796
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.0",
+              "Node name for S&R": "KSampler"
+            },
+            "widgets_values": [
+              0,
+              "randomize",
+              25,
+              1,
+              "euler",
+              "simple",
+              1
+            ],
+            "widgets_values_named": {
+              "seed": 0,
+              "control_after_generate": "randomize",
+              "steps": 25,
+              "cfg": 1,
+              "sampler_name": "euler",
+              "scheduler": "simple",
+              "denoise": 1
+            }
+          }
+        ],
+        "groups": [
+          {
+            "id": 34,
+            "title": "Models",
+            "bounding": [
+              1148.8496715946196,
+              2391.930285611129,
+              533.2043860646536,
+              773.355600689521
+            ],
+            "color": "#3f789e",
+            "flags": {}
+          },
+          {
+            "id": 37,
+            "title": "Sampling",
+            "bounding": [
+              1696.2946131210858,
+              2385.515650909493,
+              480.0801402454292,
+              997.7619166875356
+            ],
+            "color": "#3f789e",
+            "flags": {}
+          },
+          {
+            "id": 35,
+            "title": "Load Lora",
+            "bounding": [
+              1153.7003983648335,
+              3176.3591661357164,
+              531.6252051934657,
+              203.12673134981242
+            ],
+            "color": "#3f789e",
+            "flags": {}
+          }
+        ],
+        "links": [
+          {
+            "id": 760,
+            "origin_id": 494,
+            "origin_slot": 0,
+            "target_id": 490,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 796,
+            "origin_id": 509,
+            "origin_slot": 0,
+            "target_id": 488,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 743,
+            "origin_id": 486,
+            "origin_slot": 0,
+            "target_id": 488,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 791,
+            "origin_id": 490,
+            "origin_slot": 0,
+            "target_id": 509,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 762,
+            "origin_id": 496,
+            "origin_slot": 0,
+            "target_id": 494,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 758,
+            "origin_id": 493,
+            "origin_slot": 0,
+            "target_id": 494,
+            "target_slot": 1,
+            "type": "CLIP"
+          },
+          {
+            "id": 792,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 509,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 793,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 509,
+            "target_slot": 2,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 794,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 509,
+            "target_slot": 3,
+            "type": "LATENT"
+          },
+          {
+            "id": 795,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 509,
+            "target_slot": 4,
+            "type": "INT"
+          },
+          {
+            "id": 756,
+            "origin_id": 486,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "VAE"
+          },
+          {
+            "id": 790,
+            "origin_id": 488,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 759,
+            "origin_id": 494,
+            "origin_slot": 1,
+            "target_id": -20,
+            "target_slot": 2,
+            "type": "CLIP"
+          },
+          {
+            "id": 810,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 496,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 811,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 493,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 812,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 486,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 814,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 509,
+            "target_slot": 5,
+            "type": "INT"
+          },
+          {
+            "id": 815,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 509,
+            "target_slot": 6,
+            "type": "FLOAT"
+          },
+          {
+            "id": 816,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": 509,
+            "target_slot": 7,
+            "type": "COMBO"
+          },
+          {
+            "id": 817,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 509,
+            "target_slot": 8,
+            "type": "COMBO"
+          }
+        ],
+        "extra": {
+          "pixaromaGroups": []
+        }
+      }
+    ]
+  },
   "config": {},
   "extra": {
     "frontendVersion": "1.52.7",
@@ -1308,18 +1987,18 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.8714759701863458,
+      "scale": 0.5411180124223666,
       "offset": [
-        812.9192454235177,
-        -1715.9431521255
+        2607.9959868145725,
+        -1897.0063627720913
       ]
     }
   },
   "version": 0.4,
   "seed_widgets": {
     "479": 0,
-    "509": 0,
     "511": 7,
-    "512": 1
+    "512": 1,
+    "515": 0
   }
 }
