@@ -143,7 +143,7 @@ function provisioning_start() {
 
     echo "🎨 Downloading LoRA models..."
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/lora" \
+        "${COMFYUI_DIR}/models/loras" \
         "${LORA_MODELS[@]}"
 
     echo "🎮 Downloading ControlNet models..."
