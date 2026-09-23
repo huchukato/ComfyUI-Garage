@@ -1,8 +1,8 @@
 {
   "id": "e2c8e6ec-9e8a-4a81-a240-7e7d2befc2bf",
   "revision": 0,
-  "last_node_id": 41,
-  "last_link_id": 47,
+  "last_node_id": 42,
+  "last_link_id": 49,
   "nodes": [
     {
       "id": 25,
@@ -195,7 +195,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 47
+          "link": 48
         },
         {
           "name": "dit",
@@ -310,58 +310,6 @@
       "bgcolor": "#2a2a2a"
     },
     {
-      "id": 38,
-      "type": "QwenVL_LoadMedia",
-      "pos": [
-        -709.3515479357517,
-        -640.6288411088319
-      ],
-      "size": [
-        462.3404296875,
-        599.3770387444717
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            47
-          ]
-        },
-        {
-          "name": "video",
-          "type": "VIDEO",
-          "links": null
-        },
-        {
-          "name": "path",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-QwenVL-Mod",
-        "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
-        "Node name for S&R": "QwenVL_LoadMedia"
-      },
-      "widgets_values": [
-        "S02_EP11_HotelCorrect_053_v01.jpg [output]_00002-audio.webm [input]",
-        0,
-        "image"
-      ],
-      "widgets_values_named": {
-        "media": "S02_EP11_HotelCorrect_053_v01.jpg [output]_00002-audio.webm [input]",
-        "frame_index": 0,
-        "upload": "image"
-      },
-      "color": "#475569",
-      "bgcolor": "#1e293b"
-    },
-    {
       "id": 33,
       "type": "VHS_VideoCombine",
       "pos": [
@@ -385,7 +333,7 @@
           "name": "audio",
           "shape": 7,
           "type": "AUDIO",
-          "link": null
+          "link": 49
         },
         {
           "name": "meta_batch",
@@ -464,6 +412,120 @@
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 42,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -829.2903478106304,
+        -646.7202541937007
+      ],
+      "size": [
+        582.9053611852479,
+        716.2721159884902
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            48
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            49
+          ]
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "4d907bee61e92c2e65af3bd6383a4e4d356126d1",
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "S02_EP11_HotelCorrect_043_v01.jpg_00001.webm",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "H3",
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "S02_EP11_HotelCorrect_043_v01.jpg_00001.webm",
+            "type": "input",
+            "format": "video/webm",
+            "force_rate": 0,
+            "custom_width": 0,
+            "custom_height": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          }
+        }
+      },
+      "widgets_values_named": {
+        "video": "S02_EP11_HotelCorrect_043_v01.jpg_00001.webm",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "H3",
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "S02_EP11_HotelCorrect_043_v01.jpg_00001.webm",
+            "type": "input",
+            "format": "video/webm",
+            "force_rate": 0,
+            "custom_width": 0,
+            "custom_height": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          }
+        }
+      },
+      "color": "#233",
+      "bgcolor": "#355"
     }
   ],
   "links": [
@@ -500,12 +562,20 @@
       "IMAGE"
     ],
     [
-      47,
-      38,
+      48,
+      42,
       0,
       28,
       0,
       "IMAGE"
+    ],
+    [
+      49,
+      42,
+      2,
+      33,
+      1,
+      "AUDIO"
     ]
   ],
   "groups": [
