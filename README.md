@@ -91,8 +91,8 @@ AllToolkitNodes, ControlNet, Img2Img, Inpaint, LoraTester, Outpaint, Txt2Img, Ul
 ### T2I (2)
 FluxDev1-T2I, ZImageTurbo-T2I
 
-### Utils (5)
-2in1-LoRaStack-Merge, Pony-XL-Outpaint, Qwen_image_2.1_Editing_Workflow, RIFE-Upscale-TensorRT, SeedVR2_HD_video_upscale
+### Utils (4)
+2in1-LoRaStack-Merge, Pony-XL-Outpaint, Qwen_image_2.1_Editing_Workflow, RIFE-Upscale-TensorRT
 
 ---
 
