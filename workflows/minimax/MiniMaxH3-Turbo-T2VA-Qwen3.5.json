@@ -1,8 +1,8 @@
 {
   "id": "237ff12c-6141-4077-9f5e-d530111c6d41",
   "revision": 0,
-  "last_node_id": 255,
-  "last_link_id": 540,
+  "last_node_id": 256,
+  "last_link_id": 550,
   "nodes": [
     {
       "id": 116,
@@ -182,10 +182,10 @@
       ],
       "title": "48FPS",
       "properties": {
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
+        "cnr_id": "comfyui-videohelpersuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "cnr_id": "comfyui-videohelpersuite"
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -298,10 +298,10 @@
       ],
       "title": "QWEN3VL GENERATED PROMPT",
       "properties": {
-        "aux_id": "yolain/ComfyUI-Easy-Use",
+        "cnr_id": "comfyui-easy-use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "cnr_id": "comfyui-easy-use"
+        "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
         "integrated_multimodal_description: [Shot 1] Photorealistic live-action cinematic, a medium-wide shot framed from a low three-quarter angle captures Rei Hino (Sailor Mars) silhouetted against a blazing tropical sunset. She stands barefoot on warm golden sand, her long black hair flowing gently in the breeze, face turned upward with eyes closed in pure bliss. Sunbeams pierce through clouds, backlit intensely, casting volumetric light across her skin, highlighting sweat glistening on her collarbones and thighs. Her signature red sailor-style outfit is slightly disheveled; the high-low skirt rides up exposing smooth thighs, while her hands clutch the fabric of her bodice, fingers pressing firmly against her ample chest as she engages in intense self breast sucking. One hand holds the cupped breast steady while her mouth works deeply over the nipple, tongue tracing the sensitive peak with deliberate, rhythmic pressure. Saliva drips visibly down her chin and onto her shoulder, catching the golden hour glow. Her expression shifts between tight-lipped ecstasy and parted-mouth sighs, cheeks flushed crimson under the sun’s warmth. As the camera tracks smoothly leftward, maintaining her centered composition, she subtly shifts weight, hips swaying softly with each thrust of her head. A gentle sea breeze ruffles her skirt hem and lifts strands of hair around her face, blending seamlessly with the continuous lateral camera movement. Ambient waves lap rhythmically at the shore behind her, distant seagulls cry overhead, and the wind whispers through dune grass—layered beneath her audible ragged breathing, sharp intake breaths, wet suction sounds, soft lip smacks against skin, and occasional throaty moans punctuating moments of heightened sensation. Skin-on-fabric friction hums faintly as her arms adjust her grip.\n\noverall_soundscape: Warm ocean breezes rustle through coastal vegetation, mingling with the steady crash of receding waves and occasional seabird calls echoing across the horizon. Underlying these ambient layers are Rei’s own visceral responses: heavy inhalations followed by shaky exhales, rhythmic wet suction noises synced to her movements, subtle lip-smacking against skin, occasional throaty moans breaking into quiet giggles, and the faint squeak of silk shifting against her arms as she adjusts her position.\n\nnon_diegetic_music: N/A"
@@ -410,10 +410,10 @@
         }
       ],
       "properties": {
-        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution",
+        "cnr_id": "ComfyUI-PerfectVideoResolution",
         "ver": "51969284b70f9769fe5952496a5e97c06927db7b",
         "Node name for S&R": "ComfyUI-PerfectVideoResolution",
-        "cnr_id": "ComfyUI-PerfectVideoResolution"
+        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
         "MiniMax H3",
@@ -423,7 +423,8 @@
         false,
         "lanczos",
         "none",
-        "#000000"
+        "#000000",
+        true
       ],
       "widgets_values_named": {
         "model": "MiniMax H3",
@@ -433,68 +434,11 @@
         "upscale": false,
         "upscale_method": "lanczos",
         "small_image_mode": "none",
-        "pad_color": "#000000"
+        "pad_color": "#000000",
+        "use_image_aspect": true
       },
       "color": "#223",
       "bgcolor": "#335"
-    },
-    {
-      "id": 224,
-      "type": "WildcardProcessor",
-      "pos": [
-        -855.9347545137822,
-        4283.767925127828
-      ],
-      "size": [
-        649.5965269886365,
-        496.1792294034095
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            468
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-TagForge",
-        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
-        "Node name for S&R": "WildcardProcessor",
-        "cnr_id": "ComfyUI-TagForge"
-      },
-      "widgets_values": [
-        "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
-        356397769084179,
-        "randomize",
-        "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
-        "populate",
-        true,
-        0.5,
-        "Pony"
-      ],
-      "widgets_values_named": {
-        "text": "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
-        "seed": 356397769084179,
-        "control_after_generate": "randomize",
-        "populated_text": "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
-        "mode": "populate",
-        "deduplicate": true,
-        "downvote_factor": 0.5,
-        "base_model": "Pony"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
     },
     {
       "id": 219,
@@ -508,7 +452,7 @@
         130
       ],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -532,34 +476,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 250,
-      "type": "PixaromaRunTimer",
-      "pos": [
-        -168.1875220903107,
-        4677.866410813878
-      ],
-      "size": [
-        307,
-        102.3125
-      ],
-      "flags": {
-        "no_title": true
-      },
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
-        "Node name for S&R": "PixaromaRunTimer",
-        "cnr_id": "ComfyUI-Pixaroma",
-        "runTimerLastMs": 131912.19999998808
-      },
-      "color": "#1d1d1d",
-      "bgcolor": "#2a2a2a"
-    },
-    {
       "id": 251,
       "type": "PixaromaMonitor",
       "pos": [
@@ -573,15 +489,15 @@
       "flags": {
         "no_title": true
       },
-      "order": 9,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
         "Node name for S&R": "PixaromaMonitor",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -598,7 +514,7 @@
         514.0692361570173
       ],
       "flags": {},
-      "order": 10,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -625,7 +541,7 @@
         172.30078125
       ],
       "flags": {},
-      "order": 11,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -720,6 +636,34 @@
       "bgcolor": "#335"
     },
     {
+      "id": 250,
+      "type": "PixaromaRunTimer",
+      "pos": [
+        -171.08361584031067,
+        4677.853520188875
+      ],
+      "size": [
+        307,
+        102.3125
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
+        "Node name for S&R": "PixaromaRunTimer",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "runTimerLastMs": 131912.19999998808
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
       "id": 105,
       "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
       "pos": [
@@ -728,20 +672,12 @@
       ],
       "size": [
         653.3697588082441,
-        489.3815332386903
+        532
       ],
       "flags": {},
       "order": 12,
       "mode": 0,
       "inputs": [
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 468
-        },
         {
           "name": "width",
           "type": "INT",
@@ -757,6 +693,14 @@
             "name": "height"
           },
           "link": 458
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 468
         },
         {
           "label": "duration",
@@ -814,41 +758,103 @@
         "previewExposures": []
       },
       "widgets_values": [
-        "",
         1344,
         768,
+        "",
         10,
         "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
         8,
-        "Qwen3.5-9B-Defiant-Fable-Heretic",
-        "🎬 MiniMax H3 NSFW (10s)",
-        "None",
-        "[PHOTOREALISTIC]",
         "euler",
         "simple",
         6,
         3,
+        "GGUF: tvall43-Qwen3.5-4B-heretic-v2.Q8_0.gguf",
+        "MiniMax › NSFW T2V",
+        "5s",
+        "None",
+        "None",
+        false,
         false
       ],
       "widgets_values_named": {
-        "prompt": "",
         "width": 1344,
         "height": 768,
+        "prompt": "",
         "value_1": 10,
         "unet_name": "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
         "steps": 8,
-        "model_name": "Qwen3.5-9B-Defiant-Fable-Heretic",
-        "enhancement_style": "🎬 MiniMax H3 NSFW (10s)",
-        "camera_tag": "None",
-        "style_tag": "[PHOTOREALISTIC]",
         "sampler_name": "euler",
         "scheduler": "simple",
         "shift_video": 6,
         "shift_audio": 3,
-        "passthrough": false
+        "model_name": "GGUF: tvall43-Qwen3.5-4B-heretic-v2.Q8_0.gguf",
+        "enhancement_style": "MiniMax › NSFW T2V",
+        "duration": "5s",
+        "camera_tag": "None",
+        "style_tag": "None",
+        "passthrough": false,
+        "english_output": false
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 224,
+      "type": "WildcardProcessor",
+      "pos": [
+        -855.9347545137822,
+        4285.555425127827
+      ],
+      "size": [
+        649.5965269886365,
+        496.1792294034095
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            468
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-TagForge",
+        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge"
+      },
+      "widgets_values": [
+        "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        356397769084179,
+        "randomize",
+        "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
+        "populate",
+        true,
+        0.5,
+        "None"
+      ],
+      "widgets_values_named": {
+        "text": "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        "seed": 356397769084179,
+        "control_after_generate": "randomize",
+        "populated_text": "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
+        "mode": "populate",
+        "deduplicate": true,
+        "downvote_factor": 0.5,
+        "base_model": "None"
+      },
+      "color": "#323",
+      "bgcolor": "#535"
     }
   ],
   "links": [
@@ -881,7 +887,7 @@
       221,
       0,
       105,
-      1,
+      0,
       "INT"
     ],
     [
@@ -889,7 +895,7 @@
       221,
       1,
       105,
-      2,
+      1,
       "INT"
     ],
     [
@@ -897,7 +903,7 @@
       224,
       0,
       105,
-      0,
+      2,
       "STRING"
     ],
     [
@@ -949,9 +955,9 @@
         "id": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
         "version": 1,
         "state": {
-          "lastGroupId": 23,
-          "lastNodeId": 255,
-          "lastLinkId": 540,
+          "lastGroupId": 24,
+          "lastNodeId": 256,
+          "lastLinkId": 550,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -963,7 +969,7 @@
             -2560,
             4720,
             158.056640625,
-            348
+            388
           ]
         },
         "outputNode": {
@@ -976,18 +982,6 @@
           ]
         },
         "inputs": [
-          {
-            "id": "d7302ca7-24ed-44c4-8ac9-736540dab7fb",
-            "name": "prompt",
-            "type": "STRING",
-            "linkIds": [
-              461
-            ],
-            "pos": [
-              -2425.943359375,
-              4744
-            ]
-          },
           {
             "id": "709e2d94-3172-496f-ad86-7d672f3df568",
             "name": "width",
@@ -1010,6 +1004,18 @@
             "pos": [
               -2425.943359375,
               4784
+            ]
+          },
+          {
+            "id": "d7302ca7-24ed-44c4-8ac9-736540dab7fb",
+            "name": "prompt",
+            "type": "STRING",
+            "linkIds": [
+              541
+            ],
+            "pos": [
+              -2425.943359375,
+              4744
             ]
           },
           {
@@ -1047,54 +1053,6 @@
             "pos": [
               -2425.943359375,
               4844
-            ]
-          },
-          {
-            "id": "3b12e311-2ab6-4b1e-851c-c3987bd0d0f8",
-            "name": "model_name",
-            "type": "COMBO",
-            "linkIds": [
-              462
-            ],
-            "pos": [
-              -2425.943359375,
-              4864
-            ]
-          },
-          {
-            "id": "261508bf-f14f-4069-a076-2bc3ab5b1a7a",
-            "name": "enhancement_style",
-            "type": "COMBO",
-            "linkIds": [
-              463
-            ],
-            "pos": [
-              -2425.943359375,
-              4884
-            ]
-          },
-          {
-            "id": "e74365ca-7f32-4eb7-936b-7debbff48ac7",
-            "name": "camera_tag",
-            "type": "COMBO",
-            "linkIds": [
-              464
-            ],
-            "pos": [
-              -2425.943359375,
-              4904
-            ]
-          },
-          {
-            "id": "a2c04db0-b273-43b7-8b93-7939756269d0",
-            "name": "style_tag",
-            "type": "COMBO",
-            "linkIds": [
-              465
-            ],
-            "pos": [
-              -2425.943359375,
-              4924
             ]
           },
           {
@@ -1146,16 +1104,88 @@
             ]
           },
           {
+            "id": "3b12e311-2ab6-4b1e-851c-c3987bd0d0f8",
+            "name": "model_name",
+            "type": "COMBO",
+            "linkIds": [
+              542
+            ],
+            "pos": [
+              -2425.943359375,
+              4864
+            ]
+          },
+          {
+            "id": "261508bf-f14f-4069-a076-2bc3ab5b1a7a",
+            "name": "enhancement_style",
+            "type": "COMBO",
+            "linkIds": [
+              543
+            ],
+            "pos": [
+              -2425.943359375,
+              4884
+            ]
+          },
+          {
+            "id": "3431411b-546d-424a-a7d1-a3de8520a915",
+            "name": "duration",
+            "type": "COMBO",
+            "linkIds": [
+              548
+            ],
+            "pos": [
+              -2425.943359375,
+              5064
+            ]
+          },
+          {
+            "id": "e74365ca-7f32-4eb7-936b-7debbff48ac7",
+            "name": "camera_tag",
+            "type": "COMBO",
+            "linkIds": [
+              544
+            ],
+            "pos": [
+              -2425.943359375,
+              4904
+            ]
+          },
+          {
+            "id": "a2c04db0-b273-43b7-8b93-7939756269d0",
+            "name": "style_tag",
+            "type": "COMBO",
+            "linkIds": [
+              545
+            ],
+            "pos": [
+              -2425.943359375,
+              4924
+            ]
+          },
+          {
             "id": "18ff8428-1739-40e9-951e-415c6bc73447",
             "name": "passthrough",
             "type": "BOOLEAN",
             "linkIds": [
-              472
+              547
             ],
             "label": "skip_autoprompt",
             "pos": [
               -2425.943359375,
               5024
+            ]
+          },
+          {
+            "id": "0f66f2a0-c484-473b-b67b-514c33ff1a23",
+            "name": "english_output",
+            "type": "BOOLEAN",
+            "linkIds": [
+              546
+            ],
+            "pos": [
+              -2425.943359375,
+              5044
             ]
           }
         ],
@@ -1202,7 +1232,7 @@
             "name": "output",
             "type": "*",
             "linkIds": [
-              467
+              550
             ],
             "label": "PROMPT",
             "pos": [
@@ -1420,53 +1450,6 @@
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
               "Node name for S&R": "SamplerCustomAdvanced"
-            }
-          },
-          {
-            "id": 23,
-            "type": "VAEDecodeAudio",
-            "pos": [
-              -30,
-              4970
-            ],
-            "size": [
-              230,
-              60
-            ],
-            "flags": {
-              "collapsed": false
-            },
-            "order": 10,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "campioni",
-                "name": "samples",
-                "type": "LATENT",
-                "link": 226
-              },
-              {
-                "localized_name": "vae",
-                "name": "vae",
-                "type": "VAE",
-                "link": 23
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "AUDIO",
-                "name": "AUDIO",
-                "type": "AUDIO",
-                "links": [
-                  238,
-                  240
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "VAEDecodeAudio"
             }
           },
           {
@@ -1815,7 +1798,7 @@
                 "widget": {
                   "name": "prompt"
                 },
-                "link": 466
+                "link": 549
               },
               {
                 "localized_name": "larghezza",
@@ -2116,141 +2099,11 @@
             }
           },
           {
-            "id": 223,
-            "type": "AILab_QwenVL_PromptEnhancer",
-            "pos": [
-              -2040.5457504831452,
-              4010.4494527010133
-            ],
-            "size": [
-              340,
-              496
-            ],
-            "flags": {},
-            "order": 18,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model_name",
-                "name": "model_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model_name"
-                },
-                "link": 462
-              },
-              {
-                "localized_name": "prompt_text",
-                "name": "prompt_text",
-                "type": "STRING",
-                "widget": {
-                  "name": "prompt_text"
-                },
-                "link": 461
-              },
-              {
-                "localized_name": "enhancement_style",
-                "name": "enhancement_style",
-                "type": "COMBO",
-                "widget": {
-                  "name": "enhancement_style"
-                },
-                "link": 463
-              },
-              {
-                "localized_name": "camera_tag",
-                "name": "camera_tag",
-                "type": "COMBO",
-                "widget": {
-                  "name": "camera_tag"
-                },
-                "link": 464
-              },
-              {
-                "localized_name": "style_tag",
-                "name": "style_tag",
-                "type": "COMBO",
-                "widget": {
-                  "name": "style_tag"
-                },
-                "link": 465
-              },
-              {
-                "localized_name": "passthrough",
-                "name": "passthrough",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "passthrough"
-                },
-                "link": 472
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "ENHANCED_OUTPUT",
-                "name": "ENHANCED_OUTPUT",
-                "type": "STRING",
-                "links": [
-                  466,
-                  467
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "ver": "4daa881fffefd050c6a02f3bd840e2c6c9b6fa06",
-              "Node name for S&R": "AILab_QwenVL_PromptEnhancer",
-              "cnr_id": "ComfyUI-QwenVL-Mod"
-            },
-            "widgets_values": [
-              "qwen3-4b-Z-Image-Engineer",
-              "None (FP16)",
-              "auto",
-              false,
-              "auto",
-              "",
-              "📝 Enhance",
-              "None",
-              "None",
-              8192,
-              0.7,
-              0.9,
-              1.1,
-              false,
-              2648789989,
-              "randomize",
-              false,
-              false
-            ],
-            "widgets_values_named": {
-              "model_name": "qwen3-4b-Z-Image-Engineer",
-              "quantization": "None (FP16)",
-              "attention_mode": "auto",
-              "use_torch_compile": false,
-              "device": "auto",
-              "prompt_text": "",
-              "enhancement_style": "📝 Enhance",
-              "camera_tag": "None",
-              "style_tag": "None",
-              "max_tokens": 8192,
-              "temperature": 0.7,
-              "top_p": 0.9,
-              "repetition_penalty": 1.1,
-              "keep_model_loaded": false,
-              "seed": 2648789989,
-              "control_after_generate": "randomize",
-              "keep_last_prompt": false,
-              "passthrough": false
-            },
-            "color": "#374445",
-            "bgcolor": "#474539"
-          },
-          {
             "id": 214,
             "type": "LoraLoaderModelOnly",
             "pos": [
-              -1639.3703896316993,
-              4358.872347542135
+              -1523.456063195234,
+              4360.659089193182
             ],
             "size": [
               330.6487829390876,
@@ -2297,15 +2150,15 @@
             "id": 255,
             "type": "BlockSparseAttention",
             "pos": [
-              -1215.8205808329058,
-              4223.4171571864135
+              -1099.9062543964405,
+              4225.203898837461
             ],
             "size": [
               278.4,
               250
             ],
             "flags": {},
-            "order": 17,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -2354,6 +2207,204 @@
             },
             "color": "#223",
             "bgcolor": "#335"
+          },
+          {
+            "id": 23,
+            "type": "VAEDecodeAudio",
+            "pos": [
+              -26.637481374777074,
+              5035.3559958141905
+            ],
+            "size": [
+              230,
+              60
+            ],
+            "flags": {
+              "collapsed": false
+            },
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "campioni",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 226
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 23
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "AUDIO",
+                "name": "AUDIO",
+                "type": "AUDIO",
+                "links": [
+                  238,
+                  240
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.30.1",
+              "Node name for S&R": "VAEDecodeAudio"
+            }
+          },
+          {
+            "id": 256,
+            "type": "QwenVL_Unified_PromptEnhancer",
+            "pos": [
+              -2026.6961170353716,
+              3957.395259118591
+            ],
+            "size": [
+              431.874609375,
+              544
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model_name",
+                "name": "model_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model_name"
+                },
+                "link": 542
+              },
+              {
+                "localized_name": "prompt_text",
+                "name": "prompt_text",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt_text"
+                },
+                "link": 541
+              },
+              {
+                "localized_name": "enhancement_style",
+                "name": "enhancement_style",
+                "type": "COMBO",
+                "widget": {
+                  "name": "enhancement_style"
+                },
+                "link": 543
+              },
+              {
+                "localized_name": "camera_tag",
+                "name": "camera_tag",
+                "type": "COMBO",
+                "widget": {
+                  "name": "camera_tag"
+                },
+                "link": 544
+              },
+              {
+                "localized_name": "style_tag",
+                "name": "style_tag",
+                "type": "COMBO",
+                "widget": {
+                  "name": "style_tag"
+                },
+                "link": 545
+              },
+              {
+                "localized_name": "english_output",
+                "name": "english_output",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "english_output"
+                },
+                "link": 546
+              },
+              {
+                "localized_name": "passthrough",
+                "name": "passthrough",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "passthrough"
+                },
+                "link": 547
+              },
+              {
+                "localized_name": "duration",
+                "name": "duration",
+                "type": "COMBO",
+                "widget": {
+                  "name": "duration"
+                },
+                "link": 548
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "ENHANCED_OUTPUT",
+                "name": "ENHANCED_OUTPUT",
+                "type": "STRING",
+                "links": [
+                  549,
+                  550
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "ver": "4d88faa7cb9666a5978e0dd8fd3c73d0fb6e0a17",
+              "Node name for S&R": "QwenVL_Unified_PromptEnhancer"
+            },
+            "widgets_values": [
+              "GGUF: tvall43-Qwen3.5-4B-heretic-v2.Q4_K_M.gguf",
+              "",
+              "Enhance",
+              "None",
+              "None",
+              8192,
+              0.7,
+              0.9,
+              1.1,
+              false,
+              "auto",
+              "None (FP16)",
+              "auto",
+              false,
+              false,
+              1,
+              "randomize",
+              false,
+              false,
+              "5s"
+            ],
+            "widgets_values_named": {
+              "model_name": "GGUF: tvall43-Qwen3.5-4B-heretic-v2.Q4_K_M.gguf",
+              "prompt_text": "",
+              "enhancement_style": "Enhance",
+              "camera_tag": "None",
+              "style_tag": "None",
+              "max_tokens": 8192,
+              "temperature": 0.7,
+              "top_p": 0.9,
+              "repetition_penalty": 1.1,
+              "english_output": false,
+              "device": "auto",
+              "quantization": "None (FP16)",
+              "attention_mode": "auto",
+              "use_torch_compile": false,
+              "keep_model_loaded": false,
+              "seed": 1,
+              "control_after_generate": "randomize",
+              "keep_last_prompt": false,
+              "passthrough": false,
+              "duration": "5s"
+            },
+            "color": "#d97706",
+            "bgcolor": "#451a03"
           }
         ],
         "groups": [
@@ -2409,8 +2460,8 @@
             "id": 17,
             "title": "TURBO LORA",
             "bounding": [
-              -1662.5681889205703,
-              4276.226571412123,
+              -1546.653862484105,
+              4278.01331306317,
               372.9209596048004,
               216.78178062247116
             ],
@@ -2421,10 +2472,22 @@
             "id": 23,
             "title": "BLOCKSPARSE ATTN",
             "bounding": [
-              -1238.1617636143642,
-              4145.019000189006,
+              -1122.247437177899,
+              4146.805741840053,
               329.11316764962044,
               352.2657506863061
+            ],
+            "color": "#b58b2a",
+            "flags": {}
+          },
+          {
+            "id": 24,
+            "title": "ENABLE AUDIO",
+            "bounding": [
+              -36.63748137477705,
+              4965.3559958141905,
+              250,
+              140
             ],
             "color": "#b58b2a",
             "flags": {}
@@ -2522,7 +2585,7 @@
           {
             "id": 200,
             "origin_id": -10,
-            "origin_slot": 1,
+            "origin_slot": 0,
             "target_id": 104,
             "target_slot": 5,
             "type": "INT"
@@ -2530,7 +2593,7 @@
           {
             "id": 201,
             "origin_id": -10,
-            "origin_slot": 2,
+            "origin_slot": 1,
             "target_id": 104,
             "target_slot": 6,
             "type": "INT"
@@ -2650,7 +2713,7 @@
           {
             "id": 453,
             "origin_id": -10,
-            "origin_slot": 10,
+            "origin_slot": 6,
             "target_id": 155,
             "target_slot": 0,
             "type": "COMBO"
@@ -2658,7 +2721,7 @@
           {
             "id": 454,
             "origin_id": -10,
-            "origin_slot": 11,
+            "origin_slot": 7,
             "target_id": 9,
             "target_slot": 1,
             "type": "COMBO"
@@ -2666,7 +2729,7 @@
           {
             "id": 455,
             "origin_id": -10,
-            "origin_slot": 12,
+            "origin_slot": 8,
             "target_id": 206,
             "target_slot": 1,
             "type": "FLOAT"
@@ -2674,74 +2737,10 @@
           {
             "id": 456,
             "origin_id": -10,
-            "origin_slot": 13,
+            "origin_slot": 9,
             "target_id": 206,
             "target_slot": 2,
             "type": "FLOAT"
-          },
-          {
-            "id": 461,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 223,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 462,
-            "origin_id": -10,
-            "origin_slot": 6,
-            "target_id": 223,
-            "target_slot": 0,
-            "type": "COMBO"
-          },
-          {
-            "id": 463,
-            "origin_id": -10,
-            "origin_slot": 7,
-            "target_id": 223,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 464,
-            "origin_id": -10,
-            "origin_slot": 8,
-            "target_id": 223,
-            "target_slot": 3,
-            "type": "COMBO"
-          },
-          {
-            "id": 465,
-            "origin_id": -10,
-            "origin_slot": 9,
-            "target_id": 223,
-            "target_slot": 4,
-            "type": "COMBO"
-          },
-          {
-            "id": 466,
-            "origin_id": 223,
-            "origin_slot": 0,
-            "target_id": 104,
-            "target_slot": 4,
-            "type": "STRING"
-          },
-          {
-            "id": 467,
-            "origin_id": 223,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 3,
-            "type": "STRING"
-          },
-          {
-            "id": 472,
-            "origin_id": -10,
-            "origin_slot": 14,
-            "target_id": 223,
-            "target_slot": 5,
-            "type": "BOOLEAN"
           },
           {
             "id": 539,
@@ -2758,6 +2757,86 @@
             "target_id": 206,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 541,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 256,
+            "target_slot": 1,
+            "type": "STRING"
+          },
+          {
+            "id": 542,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 256,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 543,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": 256,
+            "target_slot": 2,
+            "type": "COMBO"
+          },
+          {
+            "id": 544,
+            "origin_id": -10,
+            "origin_slot": 13,
+            "target_id": 256,
+            "target_slot": 3,
+            "type": "COMBO"
+          },
+          {
+            "id": 545,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 256,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 546,
+            "origin_id": -10,
+            "origin_slot": 16,
+            "target_id": 256,
+            "target_slot": 5,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 547,
+            "origin_id": -10,
+            "origin_slot": 15,
+            "target_id": 256,
+            "target_slot": 6,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 548,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": 256,
+            "target_slot": 7,
+            "type": "COMBO"
+          },
+          {
+            "id": 549,
+            "origin_id": 256,
+            "origin_slot": 0,
+            "target_id": 104,
+            "target_slot": 4,
+            "type": "STRING"
+          },
+          {
+            "id": 550,
+            "origin_id": 256,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 3,
+            "type": "STRING"
           }
         ],
         "extra": {
@@ -2768,9 +2847,9 @@
         "id": "4a8752cf-f0e5-4557-ab92-f5c007663737",
         "version": 1,
         "state": {
-          "lastGroupId": 23,
-          "lastNodeId": 255,
-          "lastLinkId": 540,
+          "lastGroupId": 24,
+          "lastNodeId": 256,
+          "lastLinkId": 550,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2999,10 +3078,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "cnr_id": "Auto-TensorRT-RIFE"
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -3064,10 +3143,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "cnr_id": "Auto-TensorRT-Upscaler"
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -3108,10 +3187,10 @@
               }
             ],
             "properties": {
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "cnr_id": "seedvr2_videoupscaler",
               "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
               "Node name for S&R": "SeedVR2TorchCompileSettings",
-              "cnr_id": "seedvr2_videoupscaler"
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
               "inductor",
@@ -3175,10 +3254,10 @@
               }
             ],
             "properties": {
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "cnr_id": "seedvr2_videoupscaler",
               "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
               "Node name for S&R": "SeedVR2LoadDiTModel",
-              "cnr_id": "seedvr2_videoupscaler"
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
               "seedvr2_ema_3b_fp16.safetensors",
@@ -3235,10 +3314,10 @@
               }
             ],
             "properties": {
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "cnr_id": "seedvr2_videoupscaler",
               "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
               "Node name for S&R": "SeedVR2LoadVAEModel",
-              "cnr_id": "seedvr2_videoupscaler"
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
               "ema_vae_fp16.safetensors",
@@ -3332,10 +3411,10 @@
               }
             ],
             "properties": {
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "cnr_id": "seedvr2_videoupscaler",
               "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
               "Node name for S&R": "SeedVR2VideoUpscaler",
-              "cnr_id": "seedvr2_videoupscaler"
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
               4079658315,
@@ -3428,10 +3507,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "cnr_id": "Auto-TensorRT-Upscaler"
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "1080p",
@@ -3503,10 +3582,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "cnr_id": "Auto-TensorRT-RIFE"
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               100,
@@ -3732,10 +3811,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.6830134553650705,
+      "scale": 0.6209213230591552,
       "offset": [
-        1745.9819619340612,
-        -4156.247590501362
+        2658.5631594496854,
+        -3947.8091966576085
       ]
     }
   },
