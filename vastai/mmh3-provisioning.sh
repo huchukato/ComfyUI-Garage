@@ -83,8 +83,8 @@ MINIMAX_MODELS=(
     # ── lightx2v Turbo LoRA 8-step 768p (Apache-2.0, trained at 1344×768) — no custom node needed ──
     "loras|minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
     "loras|minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
-    # ── 10Eros-Max TURBO Hybrid Beta3 INT8 ConvRot skip edges (cicalooo, 22.5GB) — TURBO fuso, native ComfyUI, blocchi 0/1/48/49 in BF16 ──
-    "diffusion_models|10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors|https://huggingface.co/cicalooo/10Eros-Max-h3-int8-convrot/resolve/main/10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors|22500000000"
+    # ── 10Eros-Max TURBO Hybrid Beta5 INT8 (TenStrip, 21GB) — beta3/beta4 erano versioni corrotte, beta5 è quella funzionale ──
+    "diffusion_models|10Eros_Max_h3_TURBO-hybrid_beta5_int8.safetensors|https://huggingface.co/TenStrip/10Eros-Max/resolve/main/10Eros_Max_h3_TURBO-hybrid_beta5_int8.safetensors|20000000000"
     # ── Pony LoRA: cut3ch4rXLP (from huchukato/garage on HF) ──
     "loras|cut3ch4rXLP.safetensors|https://huggingface.co/huchukato/garage/resolve/main/loras/pony/cut3ch4rXLP.safetensors|228000000"
 )
