@@ -1,8 +1,8 @@
 {
   "id": "54bb395d-3e60-4c94-b525-85523901575b",
   "revision": 0,
-  "last_node_id": 524,
-  "last_link_id": 817,
+  "last_node_id": 531,
+  "last_link_id": 826,
   "nodes": [
     {
       "id": 489,
@@ -16,7 +16,7 @@
         80
       ],
       "flags": {},
-      "order": 14,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -54,140 +54,6 @@
       }
     },
     {
-      "id": 479,
-      "type": "Seed (rgthree)",
-      "pos": [
-        446.3406375265213,
-        3505.6019806616205
-      ],
-      "size": [
-        315,
-        130
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "SEED",
-          "shape": 3,
-          "type": "INT",
-          "links": [
-            806
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
-        "randomMax": 1125899906842624,
-        "randomMin": 0,
-        "aux_id": "rgthree/rgthree-comfy"
-      },
-      "widgets_values": [
-        -1,
-        "",
-        "",
-        "okay"
-      ],
-      "widgets_values_named": {
-        "seed": -1,
-        "🎲 Randomize Each Time": "",
-        "🎲 New Fixed Random": "",
-        "USE_LAST_SEED": "okay"
-      }
-    },
-    {
-      "id": 491,
-      "type": "TextEncodeQwenImage21",
-      "pos": [
-        421.261047845109,
-        2469.2650249945987
-      ],
-      "size": [
-        693.0697967831477,
-        756.1350993088331
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 809
-        },
-        {
-          "name": "images.image_1",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 797
-        },
-        {
-          "name": "images.image_2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": 807
-        },
-        {
-          "name": "images.image_5",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "links": [
-            803
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "links": [
-            804
-          ]
-        },
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "links": [
-            751
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "TextEncodeQwenImage21"
-      },
-      "widgets_values": [
-        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n",
-        "ugly, bad quality, low quality, blurry",
-        1024
-      ],
-      "widgets_values_named": {
-        "prompt": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n",
-        "negative_prompt": "ugly, bad quality, low quality, blurry",
-        "resolution": 1024
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 13,
       "type": "ResolutionSelector",
       "pos": [
@@ -199,7 +65,7 @@
         150
       ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 4,
       "showAdvanced": true,
       "inputs": [],
@@ -232,291 +98,6 @@
       }
     },
     {
-      "id": 515,
-      "type": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
-      "pos": [
-        1160.8494886460055,
-        2437.2198768265457
-      ],
-      "size": [
-        444.04827694231903,
-        293.71771005175196
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 803
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 804
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 805
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          },
-          "link": 806
-        }
-      ],
-      "outputs": [
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            807
-          ]
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            808
-          ]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            809
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.1",
-        "previewExposures": [
-          {
-            "name": "$$canvas-image-preview",
-            "sourceNodeId": "509",
-            "sourcePreviewName": "$$canvas-image-preview"
-          }
-        ]
-      },
-      "widgets_values": [
-        0,
-        "qwen_image_2.1_int8_convrot.safetensors",
-        "qwen3vl_8b_int8_convrot.safetensors",
-        "qwen_image_2.1_vae_bf16.safetensors",
-        25,
-        1,
-        "euler",
-        "simple"
-      ],
-      "widgets_values_named": {
-        "seed": 0,
-        "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
-        "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
-        "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
-        "steps": 25,
-        "cfg": 1,
-        "sampler_name": "euler",
-        "scheduler": "simple"
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 512,
-      "type": "WildcardProcessor",
-      "pos": [
-        -116.3662053521111,
-        2472.700050609397
-      ],
-      "size": [
-        490,
-        390
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            799
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-TagForge",
-        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
-        "Node name for S&R": "WildcardProcessor",
-        "aux_id": "huchukato/ComfyUI-TagForge"
-      },
-      "widgets_values": [
-        "[anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
-        670920085417183,
-        "randomize",
-        "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, [anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, 1girl, wonder woman, dc comics, black hair, blue eyes, large breasts, babydoll, cleavage cutout, nipple pull, nipple tweak, head tilted back, eyes closed,",
-        "populate",
-        true,
-        0.5,
-        "Pony"
-      ],
-      "widgets_values_named": {
-        "text": "[anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
-        "seed": 670920085417183,
-        "control_after_generate": "randomize",
-        "populated_text": "score_9, score_8_up, score_7_up, depth of field, dynamic pose, dynamic angle, [anime] anime artwork, studio anime key visual, cel-shaded, vibrant, highly detailed, emotional composition, clean lineart, simple background, 1girl, wonder woman, dc comics, black hair, blue eyes, large breasts, babydoll, cleavage cutout, nipple pull, nipple tweak, head tilted back, eyes closed,",
-        "mode": "populate",
-        "deduplicate": true,
-        "downvote_factor": 0.5,
-        "base_model": "Pony"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 511,
-      "type": "QwenVL_Unified",
-      "pos": [
-        -116.8789848380497,
-        2912.7000506093964
-      ],
-      "size": [
-        492.35952363843035,
-        392
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 798
-        },
-        {
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "video",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "custom_prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "custom_prompt"
-          },
-          "link": 799
-        }
-      ],
-      "outputs": [
-        {
-          "name": "RESPONSE",
-          "type": "STRING",
-          "links": [
-            801
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-QwenVL-Mod",
-        "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
-        "Node name for S&R": "QwenVL_Unified",
-        "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
-      },
-      "widgets_values": [
-        "GGUF llama.cpp",
-        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "🎨 Pony→Natural Language",
-        "None",
-        "",
-        8192,
-        false,
-        1736001908,
-        "randomize",
-        false,
-        false,
-        16
-      ],
-      "widgets_values_named": {
-        "backend": "GGUF llama.cpp",
-        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "preset_prompt": "🎨 Pony→Natural Language",
-        "camera_tag": "None",
-        "custom_prompt": "",
-        "max_tokens": 8192,
-        "keep_model_loaded": false,
-        "seed": 1736001908,
-        "control_after_generate": "randomize",
-        "keep_last_prompt": false,
-        "passthrough": false,
-        "frame_count": 16
-      },
-      "color": "#0d9489",
-      "bgcolor": "#134e4a"
-    },
-    {
-      "id": 513,
-      "type": "PixaromaShowText",
-      "pos": [
-        -118.52967270079743,
-        3356.5371189821776
-      ],
-      "size": [
-        498.91085894188564,
-        293.86300041466257
-      ],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "source",
-          "type": "*",
-          "link": 801
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": []
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaShowText",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
-      },
-      "widgets_values": [
-        "A young adult woman with long red hair and striking yellow eyes is captured in a close-up, intimate shot, her eyes gently closed and lips curved in a soft, romantic smile. She wears a sleek satin outfit featuring a daring underboob cutout, which she caresses with one hand in a slow, sensual gesture. The composition focuses tightly on her upper body with a shallow depth of field, blurring the simple background to emphasize her emotional expression and the rich texture of the satin fabric. Rendered in vibrant, highly detailed cel-shaded anime art style with clean lineart, the image conveys a deeply romantic and worshipful mood through its dynamic angle and rich color palette."
-      ],
-      "widgets_values_named": {
-        "text": "A young adult woman with long red hair and striking yellow eyes is captured in a close-up, intimate shot, her eyes gently closed and lips curved in a soft, romantic smile. She wears a sleek satin outfit featuring a daring underboob cutout, which she caresses with one hand in a slow, sensual gesture. The composition focuses tightly on her upper body with a shallow depth of field, blurring the simple background to emphasize her emotional expression and the rich texture of the satin fabric. Rendered in vibrant, highly detailed cel-shaded anime art style with clean lineart, the image conveys a deeply romantic and worshipful mood through its dynamic angle and rich color palette."
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 487,
       "type": "EmptyLatentImage",
       "pos": [
@@ -528,7 +109,7 @@
         120
       ],
       "flags": {},
-      "order": 11,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -574,252 +155,6 @@
       }
     },
     {
-      "id": 478,
-      "type": "PixaromaResolution",
-      "pos": [
-        -396.41162454130836,
-        3222.9942554149156
-      ],
-      "size": [
-        240,
-        435
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            752
-          ]
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            753
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
-        "Node name for S&R": "PixaromaResolution",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "resolutionState": "{\"mode\":\"preset\",\"ratio\":\"3:2\",\"w\":1344,\"h\":896,\"custom_w\":1024,\"custom_h\":1024,\"custom_ratio_w\":4,\"custom_ratio_h\":3,\"snap\":16}"
-      },
-      "widgets_values": [
-        {
-          "mode": "preset",
-          "ratio": "3:2",
-          "w": 1344,
-          "h": 896,
-          "custom_w": 1024,
-          "custom_h": 1024,
-          "custom_ratio_w": 4,
-          "custom_ratio_h": 3,
-          "snap": 16
-        }
-      ],
-      "widgets_values_named": {
-        "resolution_ui": {
-          "mode": "preset",
-          "ratio": "3:2",
-          "w": 1344,
-          "h": 896,
-          "custom_w": 1024,
-          "custom_h": 1024,
-          "custom_ratio_w": 4,
-          "custom_ratio_h": 3,
-          "snap": 16
-        }
-      },
-      "color": "#1d1d1d",
-      "bgcolor": "#2a2a2a"
-    },
-    {
-      "id": 510,
-      "type": "LoadImageOutput",
-      "pos": [
-        -680.0009552557442,
-        2449.8114802159
-      ],
-      "size": [
-        512.7675183484764,
-        679.6597260276726
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            797,
-            798
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.1",
-        "Node name for S&R": "LoadImageOutput"
-      },
-      "widgets_values": [
-        "Qwen_image_2.1_00007.png [output]",
-        false,
-        "refresh",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "Qwen_image_2.1_00007.png [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 508,
-      "type": "SaveImageAdvanced",
-      "pos": [
-        1175.981715241409,
-        2788.9732883785077
-      ],
-      "size": [
-        1162.0192070494177,
-        853.4424282207347
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 808
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "SaveImageAdvanced"
-      },
-      "widgets_values": [
-        "Qwen_image_2.1",
-        "png",
-        "8-bit",
-        "sRGB"
-      ],
-      "widgets_values_named": {
-        "filename_prefix": "Qwen_image_2.1",
-        "format": "png",
-        "format.bit_depth": "8-bit",
-        "format.input_color_space": "sRGB"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 476,
-      "type": "MarkdownNote",
-      "pos": [
-        -1110,
-        2450
-      ],
-      "size": [
-        380,
-        680
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Model links",
-      "properties": {},
-      "widgets_values": [
-        "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_2.1_bf16.safetensors\n│   │   └── qwen_image_2.1_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   ├── qwen3vl_8b_bf16.safetensors\n│   │   └── qwen3vl_8b_int8_convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
-      ],
-      "widgets_values_named": {
-        "text": "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_2.1_bf16.safetensors\n│   │   └── qwen_image_2.1_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   ├── qwen3vl_8b_bf16.safetensors\n│   │   └── qwen3vl_8b_int8_convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 498,
-      "type": "Note",
-      "pos": [
-        -382.4646174768141,
-        3735.4337056104705
-      ],
-      "size": [
-        767.7579861244135,
-        789.4475369918355
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "professional character sheet",
-      "properties": {},
-      "widgets_values": [
-        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n"
-      ],
-      "widgets_values_named": {
-        "text": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 499,
-      "type": "Note",
-      "pos": [
-        435.0751109179908,
-        3735.0535818189555
-      ],
-      "size": [
-        945.9001326793027,
-        784.2226080715036
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Prompts",
-      "properties": {},
-      "widgets_values": [
-        "# 1. Character sheet (front, side, back, portrait from one reference)\nFull turnaround model sheet of the character in <image1>. Display four distinct full-body and bust views lined up against a neutral light-gray background: (1) full-body front view in neutral A-pose, (2) full-body 90-degree side profile, (3) full-body back view, and (4) close-up headshot/portrait with a neutral expression. Maintain 100% fidelity to the character's facial structure, bone proportions, skin tone, hair color/texture, and costume details from <image1>. Clean studio lighting, high consistency, concept art turnaround, 8k resolution.\n\n# 2. Reference → new scene (same character in a completely different environment)\nPlace the character from <image1> into an atmospheric cyberpunk night market in Neo-Tokyo. Keep the exact facial identity, hair silhouette, and outfit from <image1>, but naturally integrate the character into the new scene. Cast vibrant magenta and teal volumetric neon light across their face and clothing, with wet asphalt reflections below and crowded food stalls in the soft-focus background. cinematic depth of field, natural ambient lighting integration.\n\n# 3. Face swap (transfer face identity between two images)\nSwap the face in <image2> with the exact facial identity of the subject in <image1>. Preserve the face structure, eyes, nose, lips, micro-textures, and unique features from <image1>, but adapt them seamlessly to the head tilt, neck connection, skin color temperature, shadow falls, and directional lighting of <image2>. Keep the hair, ears, body, and background of <image2> completely unchanged. Seamless edge blending, no seam artifacts.\n\n# 4. Full head swap (transfer face + hair)\nReplace the entire head and hair of the subject in <image2> with the head, facial identity, facial hair, and hairstyle of the person in <image1>. Retain the exact skull geometry, hairline, and facial expression from <image1>. Blend smoothly at the neckline and collar of <image2>, recalculating ambient occlusion and specular highlights so the hair and skin match the directional lighting and environmental reflections of <image2>.\n\n# 5. Outfit replacement (change clothes while preserving everything else)\nKeep the person's face, hair, body posture, and background in <image1> completely identical, but replace their clothes with the exact oufit in <image2>, Tailor the outfit from <image2> naturally to their posture, with physically accurate drape, realistic creases at the elbows, and natural collar contact along the neckline.\n\n\n# 6. Multi-reference composition (combine 5–10 references into one scene)\nCompose a cohesive cinematic scene combining elements from the references: \nperson from <image1> and <image2>, standing together in <image3>. \nrealistic, organically captured photograph.\n\n\n# 7. Pose transfer (copy pose while preserving the character)\nRegenerate the character from <image1> performing the exact dynamic action pose of the person in <image2>. Maintain every detail of the character's facial likeness, proportions, hair, and current wardrobe from <image1>. Reorient the limbs, torso twist, weight distribution, and hand gestures to mirror <image2> identically, updating fabric folds and wrinkles according to the dynamic movement.\n\n# 8. Expression transfer (change facial expression)\nModify the facial expression of the character in <image1> to match the joyful, wide-laughing expression seen in <image2>. Preserve eye shape, facial geometry, age, skin micro-details, and identity from <image1>. Adjust the mouth, smile lines, squinting eyes, and cheek elevation to reflect authentic happiness, ensuring natural dental anatomy and realistic muscle deformation.\n\n\n# 10. Background replacement (change environment only)\ncompletely replace the background in <image1> with <image2> while fully Preserving the subject, pose, facial likeness, and clothing down to the hair strands.\n\n# 11. Time/weather change (day/night, rain, snow, etc.)\nTransform the sunny daytime scene in <image1> into a heavy midnight rainstorm. Keep the overall architectural geometry and composition of <image1> intact. Replace the sky with dark storm clouds, wet all exposed surfaces with glossy water sheets and puddles, add falling raindrops motion-blurred by the camera shutter, and illuminate the scene with street lamps reflecting in the flooded pavement.\n\n# 12. Multi-edit challenge (perform several edits in one image/prompt)\nPerform three simultaneous edits on <image1>: (1) Change the subject's current jacket into a distressed brown leather bomber jacket with a shearling collar; (2) Change the daylight scene to golden-hour sunset, casting long warm shadows; (3) Add modern aviator sunglasses with realistic sunset reflections to the subject's face. Keep facial identity, hair, pose, and background architecture completely intact.\n\n# 13. Object removal (remove an object and reconstruct the background)\nRemove the red parked car and the fire hydrant from the foreground street in <image1>. Inpaint the vacated area with seamless, photorealistic cobblestone pavement and continuation of the sidewalk curb. Maintain original texture continuity, shadow gradients, surface stains, and perspective vanishing lines. No blur, clone stamps, or artifacts.\n\n# 14. Object insertion (add a new object naturally)\nInsert an authentic vintage Polaroid camera resting naturally on the wooden coffee table in <image1>, placed slightly to the right of the coffee mug. Match the existing scene's focal length, depth of field, surface contact shadows, warm tungsten lighting, and slight film grain. The camera should look as though it was physically present during the original capture.\n\n# 15. Text editing (change existing text while preserving design)\nIn <image1>, edit the headline text that reads \"SUMMER FESTIVAL\" to read \"WINTER SOLSTICE\". Replicate the exact typography, custom geometric font, 3D beveling, drop shadow, metallic gold foil texture, and perspective angle of the original lettering. Keep the surrounding graphic elements, background art, and secondary text completely untouched.\n\n# 16. Novel-view generation (front view → side/back view)\nBased on the frontal portrait of the character in <image1>, generate a photorealistic three-quarter rear camera angle (viewed from behind and over the left shoulder, looking slightly back). Extrapolate the unseen back of the hairstyle, rear jacket collar, ear contour, and jawline silhouette while strictly preserving the facial profile and styling established in <image1>.\n\n# 17. Anime → realistic (convert style while preserving identity)\nTransform the anime character illustration in <image1> into a photorealistic, real-life human photograph. Translate 2D stylized facial features into anatomically correct human bone structure, genuine human eyes with iris depth, natural skin pores, realistic lips, and individual hair strands. Preserve the character's eye color, hair color/style, clothing design, and recognizable essence from <image1>. RAW photo, 85mm portrait lens, f/1.8.\n\n# 18. Realistic → anime/manhwa (stylize while preserving identity)\nConvert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art.\n"
-      ],
-      "widgets_values_named": {
-        "text": "# 1. Character sheet (front, side, back, portrait from one reference)\nFull turnaround model sheet of the character in <image1>. Display four distinct full-body and bust views lined up against a neutral light-gray background: (1) full-body front view in neutral A-pose, (2) full-body 90-degree side profile, (3) full-body back view, and (4) close-up headshot/portrait with a neutral expression. Maintain 100% fidelity to the character's facial structure, bone proportions, skin tone, hair color/texture, and costume details from <image1>. Clean studio lighting, high consistency, concept art turnaround, 8k resolution.\n\n# 2. Reference → new scene (same character in a completely different environment)\nPlace the character from <image1> into an atmospheric cyberpunk night market in Neo-Tokyo. Keep the exact facial identity, hair silhouette, and outfit from <image1>, but naturally integrate the character into the new scene. Cast vibrant magenta and teal volumetric neon light across their face and clothing, with wet asphalt reflections below and crowded food stalls in the soft-focus background. cinematic depth of field, natural ambient lighting integration.\n\n# 3. Face swap (transfer face identity between two images)\nSwap the face in <image2> with the exact facial identity of the subject in <image1>. Preserve the face structure, eyes, nose, lips, micro-textures, and unique features from <image1>, but adapt them seamlessly to the head tilt, neck connection, skin color temperature, shadow falls, and directional lighting of <image2>. Keep the hair, ears, body, and background of <image2> completely unchanged. Seamless edge blending, no seam artifacts.\n\n# 4. Full head swap (transfer face + hair)\nReplace the entire head and hair of the subject in <image2> with the head, facial identity, facial hair, and hairstyle of the person in <image1>. Retain the exact skull geometry, hairline, and facial expression from <image1>. Blend smoothly at the neckline and collar of <image2>, recalculating ambient occlusion and specular highlights so the hair and skin match the directional lighting and environmental reflections of <image2>.\n\n# 5. Outfit replacement (change clothes while preserving everything else)\nKeep the person's face, hair, body posture, and background in <image1> completely identical, but replace their clothes with the exact oufit in <image2>, Tailor the outfit from <image2> naturally to their posture, with physically accurate drape, realistic creases at the elbows, and natural collar contact along the neckline.\n\n\n# 6. Multi-reference composition (combine 5–10 references into one scene)\nCompose a cohesive cinematic scene combining elements from the references: \nperson from <image1> and <image2>, standing together in <image3>. \nrealistic, organically captured photograph.\n\n\n# 7. Pose transfer (copy pose while preserving the character)\nRegenerate the character from <image1> performing the exact dynamic action pose of the person in <image2>. Maintain every detail of the character's facial likeness, proportions, hair, and current wardrobe from <image1>. Reorient the limbs, torso twist, weight distribution, and hand gestures to mirror <image2> identically, updating fabric folds and wrinkles according to the dynamic movement.\n\n# 8. Expression transfer (change facial expression)\nModify the facial expression of the character in <image1> to match the joyful, wide-laughing expression seen in <image2>. Preserve eye shape, facial geometry, age, skin micro-details, and identity from <image1>. Adjust the mouth, smile lines, squinting eyes, and cheek elevation to reflect authentic happiness, ensuring natural dental anatomy and realistic muscle deformation.\n\n\n# 10. Background replacement (change environment only)\ncompletely replace the background in <image1> with <image2> while fully Preserving the subject, pose, facial likeness, and clothing down to the hair strands.\n\n# 11. Time/weather change (day/night, rain, snow, etc.)\nTransform the sunny daytime scene in <image1> into a heavy midnight rainstorm. Keep the overall architectural geometry and composition of <image1> intact. Replace the sky with dark storm clouds, wet all exposed surfaces with glossy water sheets and puddles, add falling raindrops motion-blurred by the camera shutter, and illuminate the scene with street lamps reflecting in the flooded pavement.\n\n# 12. Multi-edit challenge (perform several edits in one image/prompt)\nPerform three simultaneous edits on <image1>: (1) Change the subject's current jacket into a distressed brown leather bomber jacket with a shearling collar; (2) Change the daylight scene to golden-hour sunset, casting long warm shadows; (3) Add modern aviator sunglasses with realistic sunset reflections to the subject's face. Keep facial identity, hair, pose, and background architecture completely intact.\n\n# 13. Object removal (remove an object and reconstruct the background)\nRemove the red parked car and the fire hydrant from the foreground street in <image1>. Inpaint the vacated area with seamless, photorealistic cobblestone pavement and continuation of the sidewalk curb. Maintain original texture continuity, shadow gradients, surface stains, and perspective vanishing lines. No blur, clone stamps, or artifacts.\n\n# 14. Object insertion (add a new object naturally)\nInsert an authentic vintage Polaroid camera resting naturally on the wooden coffee table in <image1>, placed slightly to the right of the coffee mug. Match the existing scene's focal length, depth of field, surface contact shadows, warm tungsten lighting, and slight film grain. The camera should look as though it was physically present during the original capture.\n\n# 15. Text editing (change existing text while preserving design)\nIn <image1>, edit the headline text that reads \"SUMMER FESTIVAL\" to read \"WINTER SOLSTICE\". Replicate the exact typography, custom geometric font, 3D beveling, drop shadow, metallic gold foil texture, and perspective angle of the original lettering. Keep the surrounding graphic elements, background art, and secondary text completely untouched.\n\n# 16. Novel-view generation (front view → side/back view)\nBased on the frontal portrait of the character in <image1>, generate a photorealistic three-quarter rear camera angle (viewed from behind and over the left shoulder, looking slightly back). Extrapolate the unseen back of the hairstyle, rear jacket collar, ear contour, and jawline silhouette while strictly preserving the facial profile and styling established in <image1>.\n\n# 17. Anime → realistic (convert style while preserving identity)\nTransform the anime character illustration in <image1> into a photorealistic, real-life human photograph. Translate 2D stylized facial features into anatomically correct human bone structure, genuine human eyes with iris depth, natural skin pores, realistic lips, and individual hair strands. Preserve the character's eye color, hair color/style, clothing design, and recognizable essence from <image1>. RAW photo, 85mm portrait lens, f/1.8.\n\n# 18. Realistic → anime/manhwa (stylize while preserving identity)\nConvert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art.\n"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 517,
       "type": "PixaromaMonitor",
       "pos": [
@@ -833,7 +168,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 8,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -887,31 +222,683 @@
       "flags": {
         "no_title": true
       },
-      "order": 9,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
         "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaRunTimer"
+        "Node name for S&R": "PixaromaRunTimer",
+        "runTimerLastMs": 13194.899999976158
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
     },
     {
+      "id": 515,
+      "type": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
+      "pos": [
+        1168.5609032230086,
+        2436.3816795899093
+      ],
+      "size": [
+        444.04827694231903,
+        293.71771005175196
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 803
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 804
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 805
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 806
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            807
+          ]
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            824
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            809
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.1",
+        "previewExposures": [
+          {
+            "name": "$$canvas-image-preview",
+            "sourceNodeId": "509",
+            "sourcePreviewName": "$$canvas-image-preview"
+          }
+        ]
+      },
+      "widgets_values": [
+        0,
+        "qwen_image_2.1_int8_convrot.safetensors",
+        "qwen3vl_8b_int8_convrot.safetensors",
+        "qwen_image_2.1_vae_bf16.safetensors",
+        25,
+        1,
+        "euler",
+        "simple"
+      ],
+      "widgets_values_named": {
+        "seed": 0,
+        "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+        "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
+        "steps": 25,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 476,
+      "type": "MarkdownNote",
+      "pos": [
+        2077.316047849104,
+        2826.0314635773207
+      ],
+      "size": [
+        399.1589301215272,
+        812.7351358122141
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Model links",
+      "properties": {},
+      "widgets_values": [
+        "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_2.1_bf16.safetensors\n│   │   └── qwen_image_2.1_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   ├── qwen3vl_8b_bf16.safetensors\n│   │   └── qwen3vl_8b_int8_convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
+      ],
+      "widgets_values_named": {
+        "text": "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   ├── qwen_image_2.1_bf16.safetensors\n│   │   └── qwen_image_2.1_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   ├── qwen3vl_8b_bf16.safetensors\n│   │   └── qwen3vl_8b_int8_convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 513,
+      "type": "PixaromaShowText",
+      "pos": [
+        -118.52967270079743,
+        3356.5371189821776
+      ],
+      "size": [
+        498.91085894188564,
+        293.86300041466257
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 822
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            823
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaShowText",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
+      },
+      "widgets_values": [
+        "A photorealistic high-end photograph of Harley Quinn from DC Comics, a young adult woman with vibrant blonde hair cascading in loose waves around her shoulders and piercing blue eyes that lock onto the viewer with an intensely sensual gaze. She wears her signature fishnet stockings that gleam subtly under soft directional daylight, paired with a revealing outfit that leaves her upper body exposed in a breast-out pose. Her large breasts are prominently displayed, one hand resting gently near her breast in a sensual gesture that draws attention to her curvaceous figure. She stands before a reflective mirror that captures her image with accurate reflections and subtle depth of field that blurs the background slightly. The lighting is warm and cinematic, casting soft shadows that accentuate the realistic texture of her skin and the detailed fabric of her attire. Her expression is confident and alluring, with a slight smirk that conveys playful confidence. The mirror's frame is visible in the periphery, adding depth to the composition. Every detail is rendered with anatomical naturalism, from the way her hair falls to the realistic contours of her body. The color grading is balanced and cinematic, enhancing the overall photorealistic quality without oversaturation."
+      ],
+      "widgets_values_named": {
+        "text": "A photorealistic high-end photograph of Harley Quinn from DC Comics, a young adult woman with vibrant blonde hair cascading in loose waves around her shoulders and piercing blue eyes that lock onto the viewer with an intensely sensual gaze. She wears her signature fishnet stockings that gleam subtly under soft directional daylight, paired with a revealing outfit that leaves her upper body exposed in a breast-out pose. Her large breasts are prominently displayed, one hand resting gently near her breast in a sensual gesture that draws attention to her curvaceous figure. She stands before a reflective mirror that captures her image with accurate reflections and subtle depth of field that blurs the background slightly. The lighting is warm and cinematic, casting soft shadows that accentuate the realistic texture of her skin and the detailed fabric of her attire. Her expression is confident and alluring, with a slight smirk that conveys playful confidence. The mirror's frame is visible in the periphery, adding depth to the composition. Every detail is rendered with anatomical naturalism, from the way her hair falls to the realistic contours of her body. The color grading is balanced and cinematic, enhancing the overall photorealistic quality without oversaturation."
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 526,
+      "type": "PixaromaSaveImage",
+      "pos": [
+        1188.4323391954208,
+        2790.266125480421
+      ],
+      "size": [
+        834.8440829394103,
+        860.4170071061853
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 824
+        },
+        {
+          "name": "name",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaSaveImage",
+        "saveImageState": "{\"version\":1,\"folder\":\"\",\"pattern\":\"Qwen21_%date:yyyy-MM-dd%_%counter%%\",\"format\":\"jpg\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":true,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":false,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}",
+        "pixAccent": "#0d9488",
+        "pixSiLastRun": {
+          "ok": true,
+          "sum": "saved 1 image",
+          "folder": "/workspace/runpod-slim/ComfyUI/output",
+          "entries": [
+            {
+              "filename": "Qwen21_2026-09-24_016%.jpg",
+              "subfolder": "",
+              "type": "output",
+              "token": "",
+              "path": "",
+              "bust": "1790227411209"
+            }
+          ],
+          "n": 1,
+          "w": 768,
+          "h": 1152
+        }
+      },
+      "widgets_values": [
+        ""
+      ],
+      "widgets_values_named": {
+        "pixaroma_save_image": ""
+      },
+      "color": "#2f7fc0",
+      "bgcolor": "#26323b"
+    },
+    {
+      "id": 512,
+      "type": "WildcardProcessor",
+      "pos": [
+        -116.3662053521111,
+        2472.700050609397
+      ],
+      "size": [
+        490,
+        390
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            820
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-TagForge",
+        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge",
+        "tagforge_reproduce_seed": 543274943133878,
+        "tagforge_wildcard_mode": "populate"
+      },
+      "widgets_values": [
+        "__qwen21/styles__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
+        177653453688249,
+        "randomize",
+        "[photorealistic] Render the scene as a convincing high-end photograph with anatomically natural subjects, realistic skin and fabric texture, soft directional daylight, accurate reflections, subtle depth of field, and balanced cinematic color grading., 1girl, harley quinn, dc comics, blonde hair, blue eyes, large breasts, fishnets, breast out, hand near breast, sensual gaze, looking at viewer, mirror,",
+        "populate",
+        true,
+        0.5,
+        "None"
+      ],
+      "widgets_values_named": {
+        "text": "__qwen21/styles__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
+        "seed": 177653453688249,
+        "control_after_generate": "randomize",
+        "populated_text": "[photorealistic] Render the scene as a convincing high-end photograph with anatomically natural subjects, realistic skin and fabric texture, soft directional daylight, accurate reflections, subtle depth of field, and balanced cinematic color grading., 1girl, harley quinn, dc comics, blonde hair, blue eyes, large breasts, fishnets, breast out, hand near breast, sensual gaze, looking at viewer, mirror,",
+        "mode": "populate",
+        "deduplicate": true,
+        "downvote_factor": 0.5,
+        "base_model": "None"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 479,
+      "type": "Seed (rgthree)",
+      "pos": [
+        446.3406375265213,
+        3505.6019806616205
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "SEED",
+          "shape": 3,
+          "type": "INT",
+          "links": [
+            806
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
+        "randomMax": 1125899906842624,
+        "randomMin": 0,
+        "aux_id": "rgthree/rgthree-comfy"
+      },
+      "widgets_values": [
+        -1,
+        "",
+        "",
+        "okay"
+      ],
+      "widgets_values_named": {
+        "seed": -1,
+        "🎲 Randomize Each Time": "",
+        "🎲 New Fixed Random": "",
+        "USE_LAST_SEED": "okay"
+      }
+    },
+    {
+      "id": 525,
+      "type": "QwenVL_Unified",
+      "pos": [
+        -115.30120180439258,
+        2913.28275457069
+      ],
+      "size": [
+        492.35952363843035,
+        392
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 818
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 825
+        },
+        {
+          "name": "video",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 820
+        }
+      ],
+      "outputs": [
+        {
+          "name": "RESPONSE",
+          "type": "STRING",
+          "links": [
+            822
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-QwenVL-Mod",
+        "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
+        "Node name for S&R": "QwenVL_Unified",
+        "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+      },
+      "widgets_values": [
+        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "IMG › Pony→Natural",
+        "None",
+        "",
+        8192,
+        false,
+        1340649970,
+        "randomize",
+        false,
+        false,
+        16,
+        "5s"
+      ],
+      "widgets_values_named": {
+        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "preset_prompt": "IMG › Pony→Natural",
+        "camera_tag": "None",
+        "prompt": "",
+        "max_tokens": 8192,
+        "keep_model_loaded": false,
+        "seed": 1340649970,
+        "control_after_generate": "randomize",
+        "keep_last_prompt": false,
+        "passthrough": false,
+        "frame_count": 16,
+        "duration": "5s"
+      },
+      "color": "#0d9489",
+      "bgcolor": "#134e4a"
+    },
+    {
+      "id": 510,
+      "type": "LoadImageOutput",
+      "pos": [
+        -1248.7517185021716,
+        2482.2050306786887
+      ],
+      "size": [
+        512.7675183484764,
+        679.6597260276726
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            797,
+            818
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.1",
+        "Node name for S&R": "LoadImageOutput"
+      },
+      "widgets_values": [
+        "Qwen21_2026-09-24_002.jpg [output]",
+        false,
+        "refresh",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "Qwen21_2026-09-24_002.jpg [output]",
+        "Auto-refresh after generation": false,
+        "refresh": "refresh",
+        "upload": "image"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 531,
+      "type": "LoadImageOutput",
+      "pos": [
+        -690,
+        2480
+      ],
+      "size": [
+        512.7675183484764,
+        679.6597260276726
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            825,
+            826
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.1",
+        "Node name for S&R": "LoadImageOutput"
+      },
+      "widgets_values": [
+        "Qwen21_2026-09-24_002.jpg [output]",
+        false,
+        "refresh",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "Qwen21_2026-09-24_002.jpg [output]",
+        "Auto-refresh after generation": false,
+        "refresh": "refresh",
+        "upload": "image"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 491,
+      "type": "TextEncodeQwenImage21",
+      "pos": [
+        421.261047845109,
+        2469.2650249945987
+      ],
+      "size": [
+        693.0697967831477,
+        756.1350993088331
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 809
+        },
+        {
+          "name": "images.image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 797
+        },
+        {
+          "name": "images.image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 826
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 807
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 823
+        },
+        {
+          "name": "images.image_5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            803
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            804
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            751
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "TextEncodeQwenImage21"
+      },
+      "widgets_values": [
+        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n",
+        "ugly, bad quality, low quality, blurry",
+        1024
+      ],
+      "widgets_values_named": {
+        "prompt": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n\n* Preserve the character’s exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n\n1. Front view\n2. Side/profile view\n3. Back view\n\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\n\nInclude three facial expression close-ups:\n\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.\n",
+        "negative_prompt": "ugly, bad quality, low quality, blurry",
+        "resolution": 1024
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 527,
+      "type": "PixaromaNote",
+      "pos": [
+        -1247.2830879257474,
+        3240.9079132517722
+      ],
+      "size": [
+        1078.6374741996542,
+        1028.7898627914033
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Wildcard Guide",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaNote"
+      },
+      "widgets_values": [
+        "{\"version\":1,\"content\":\"<h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/turnaround__</code></td><td>1</td><td>Character turnaround sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new scene (cyberpunk night market)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Replaces background of image1 with image2</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image2 ← identity from image1</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image2 ← head from image1</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Three edits at once (outfit + light + accessory)</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Day → midnight rainstorm, keeps geometry</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes object + photorealistic inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts object matching light/DoF/grain</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Edits text in image preserving typography</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>New camera angle of the same subject</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = identity source, image2 = photo to modify).</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":400,\"height\":200}",
+        ""
+      ],
+      "widgets_values_named": {
+        "note_json": "{\"version\":1,\"content\":\"<h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/turnaround__</code></td><td>1</td><td>Character turnaround sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new scene (cyberpunk night market)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Replaces background of image1 with image2</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image2 ← identity from image1</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image2 ← head from image1</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Three edits at once (outfit + light + accessory)</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Day → midnight rainstorm, keeps geometry</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes object + photorealistic inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts object matching light/DoF/grain</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Edits text in image preserving typography</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>New camera angle of the same subject</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = identity source, image2 = photo to modify).</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":400,\"height\":200}",
+        "note_dom": ""
+      },
+      "color": "#4e4e51",
+      "bgcolor": "#363636"
+    },
+    {
       "id": 524,
       "type": "PixaromaGroupSwitch",
       "pos": [
-        -682.128423540206,
-        3231.8783103492183
+        -124.54441584967091,
+        3729.3621068629054
       ],
       "size": [
         250,
-        72
+        134
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -924,7 +911,9 @@
           "action": "bypass",
           "scope": "pick",
           "picked": [
-            "ng:40"
+            "ng:40",
+            "ng:41",
+            "ng:42"
           ],
           "sort": "position",
           "restriction": "any"
@@ -937,7 +926,9 @@
           "action": "bypass",
           "scope": "pick",
           "picked": [
-            "ng:40"
+            "ng:40",
+            "ng:41",
+            "ng:42"
           ],
           "sort": "position",
           "restriction": "any"
@@ -949,7 +940,9 @@
           "action": "bypass",
           "scope": "pick",
           "picked": [
-            "ng:40"
+            "ng:40",
+            "ng:41",
+            "ng:42"
           ],
           "sort": "position",
           "restriction": "any"
@@ -957,6 +950,137 @@
       },
       "color": "#1f9e6a",
       "bgcolor": "#23362f"
+    },
+    {
+      "id": 478,
+      "type": "PixaromaResolution",
+      "pos": [
+        157.68108457463802,
+        3723.4705935639645
+      ],
+      "size": [
+        240,
+        435
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            752
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            753
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
+        "Node name for S&R": "PixaromaResolution",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "resolutionState": "{\"mode\":\"preset\",\"ratio\":\"2:3\",\"w\":768,\"h\":1152,\"custom_w\":1024,\"custom_h\":1024,\"custom_ratio_w\":4,\"custom_ratio_h\":3,\"snap\":16}"
+      },
+      "widgets_values": [
+        {
+          "mode": "preset",
+          "ratio": "2:3",
+          "w": 768,
+          "h": 1152,
+          "custom_w": 1024,
+          "custom_h": 1024,
+          "custom_ratio_w": 4,
+          "custom_ratio_h": 3,
+          "snap": 16
+        }
+      ],
+      "widgets_values_named": {
+        "resolution_ui": {
+          "mode": "preset",
+          "ratio": "2:3",
+          "w": 768,
+          "h": 1152,
+          "custom_w": 1024,
+          "custom_h": 1024,
+          "custom_ratio_w": 4,
+          "custom_ratio_h": 3,
+          "snap": 16
+        }
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 530,
+      "type": "PixaromaLabel",
+      "pos": [
+        -1256.9911350971533,
+        2332.0726785917336
+      ],
+      "size": [
+        393,
+        40
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaLabel"
+      },
+      "widgets_values": [
+        "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+      ],
+      "widgets_values_named": {
+        "label_json": "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+      },
+      "color": "rgba(0,0,0,0)",
+      "bgcolor": "rgba(0,0,0,0)"
+    },
+    {
+      "id": 528,
+      "type": "PixaromaLabel",
+      "pos": [
+        -1254.5186357362359,
+        2227.638293590729
+      ],
+      "size": [
+        486,
+        74
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaLabel"
+      },
+      "widgets_values": [
+        "{\"text\":\"QwenImageEdit21\",\"fontSize\":54,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#ff8c42\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
+      ],
+      "widgets_values_named": {
+        "label_json": "{\"text\":\"QwenImageEdit21\",\"fontSize\":54,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#ff8c42\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
+      },
+      "color": "rgba(0,0,0,0)",
+      "bgcolor": "rgba(0,0,0,0)"
     }
   ],
   "links": [
@@ -1001,30 +1125,6 @@
       "IMAGE"
     ],
     [
-      798,
-      510,
-      0,
-      511,
-      0,
-      "IMAGE"
-    ],
-    [
-      799,
-      512,
-      0,
-      511,
-      3,
-      "STRING"
-    ],
-    [
-      801,
-      511,
-      0,
-      513,
-      0,
-      "STRING"
-    ],
-    [
       803,
       491,
       0,
@@ -1065,20 +1165,68 @@
       "VAE"
     ],
     [
-      808,
-      515,
-      1,
-      508,
-      0,
-      "IMAGE"
-    ],
-    [
       809,
       515,
       2,
       491,
       0,
       "CLIP"
+    ],
+    [
+      818,
+      510,
+      0,
+      525,
+      0,
+      "IMAGE"
+    ],
+    [
+      820,
+      512,
+      0,
+      525,
+      3,
+      "STRING"
+    ],
+    [
+      822,
+      525,
+      0,
+      513,
+      0,
+      "STRING"
+    ],
+    [
+      823,
+      513,
+      0,
+      491,
+      4,
+      "STRING"
+    ],
+    [
+      824,
+      515,
+      1,
+      526,
+      0,
+      "IMAGE"
+    ],
+    [
+      825,
+      531,
+      0,
+      525,
+      1,
+      "IMAGE"
+    ],
+    [
+      826,
+      531,
+      0,
+      491,
+      2,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -1117,6 +1265,30 @@
       ],
       "color": "#3f789e",
       "flags": {}
+    },
+    {
+      "id": 41,
+      "title": "IMAGE",
+      "bounding": [
+        -1258.7517185021716,
+        2412.2050306786887,
+        532.7675183484764,
+        759.6597260276726
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 42,
+      "title": "IMAGE2",
+      "bounding": [
+        -700,
+        2410,
+        532.7675183484764,
+        759.6597260276726
+      ],
+      "color": "#88A",
+      "flags": {}
     }
   ],
   "definitions": {
@@ -1125,9 +1297,9 @@
         "id": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
         "version": 1,
         "state": {
-          "lastGroupId": 40,
-          "lastNodeId": 524,
-          "lastLinkId": 817,
+          "lastGroupId": 42,
+          "lastNodeId": 531,
+          "lastLinkId": 826,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1987,18 +2159,18 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.5411180124223666,
+      "scale": 0.5952298136646033,
       "offset": [
-        2607.9959868145725,
-        -1897.0063627720913
+        3158.060476770698,
+        -1459.2592352053894
       ]
     }
   },
   "version": 0.4,
   "seed_widgets": {
     "479": 0,
-    "511": 7,
     "512": 1,
-    "515": 0
+    "515": 0,
+    "525": 6
   }
 }
