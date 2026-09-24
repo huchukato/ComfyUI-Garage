@@ -87,8 +87,6 @@ MINIMAX_MODELS=(
     "loras|lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|https://huggingface.co/TenStrip/MinimaxH3-Turbo_Shenanigans/resolve/main/lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|4300000000"
     # ── 10Eros-Max Hybrid Beta5 INT8 NON-turbo (TenStrip, 21GB) — turbo via LoRA esterno regolabile (no color shift baked-in) ──
     "diffusion_models|10Eros_Max_h3_hybrid_beta5_int8.safetensors|https://huggingface.co/TenStrip/10Eros-Max/resolve/main/10Eros_Max_h3_hybrid_beta5_int8.safetensors|20000000000"
-    # ── Pony LoRA: cut3ch4rXLP (from huchukato/garage on HF) ──
-    "loras|cut3ch4rXLP.safetensors|https://huggingface.co/huchukato/garage/resolve/main/loras/pony/cut3ch4rXLP.safetensors|228000000"
 )
 
 
