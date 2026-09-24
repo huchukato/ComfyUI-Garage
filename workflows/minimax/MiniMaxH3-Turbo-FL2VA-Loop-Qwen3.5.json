@@ -1,8 +1,8 @@
 {
   "id": "3807ae7f-7b0a-48a8-92bd-7eac78228e45",
   "revision": 0,
-  "last_node_id": 286,
-  "last_link_id": 592,
+  "last_node_id": 288,
+  "last_link_id": 610,
   "nodes": [
     {
       "id": 156,
@@ -36,10 +36,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
         "Node name for S&R": "WidgetToString",
-        "cnr_id": "comfyui-kjnodes"
+        "aux_id": "kijai/ComfyUI-KJNodes"
       },
       "widgets_values": [
         114,
@@ -133,10 +133,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "65b402edcbf4a2fa4e90719159e1eebf02af0f5f",
         "Node name for S&R": "AudioConcatenate",
-        "cnr_id": "comfyui-kjnodes"
+        "aux_id": "kijai/ComfyUI-KJNodes"
       },
       "widgets_values": [
         "right"
@@ -363,10 +363,10 @@
       ],
       "title": "48FPS",
       "properties": {
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
+        "cnr_id": "comfyui-videohelpersuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "cnr_id": "comfyui-videohelpersuite"
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -534,10 +534,10 @@
         }
       ],
       "properties": {
-        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution",
+        "cnr_id": "ComfyUI-PerfectVideoResolution",
         "ver": "51969284b70f9769fe5952496a5e97c06927db7b",
         "Node name for S&R": "ComfyUI-PerfectVideoResolution",
-        "cnr_id": "ComfyUI-PerfectVideoResolution"
+        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
         "MiniMax H3",
@@ -547,7 +547,8 @@
         false,
         "lanczos",
         "none",
-        "#000000"
+        "#000000",
+        true
       ],
       "widgets_values_named": {
         "model": "MiniMax H3",
@@ -557,7 +558,8 @@
         "upscale": false,
         "upscale_method": "lanczos",
         "small_image_mode": "none",
-        "pad_color": "#000000"
+        "pad_color": "#000000",
+        "use_image_aspect": true
       },
       "color": "#223",
       "bgcolor": "#335"
@@ -728,10 +730,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
         "Node name for S&R": "PixaromaMonitor",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -755,10 +757,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
         "Node name for S&R": "PixaromaRunTimer",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "runTimerLastMs": 131912.19999998808
       },
       "color": "#1d1d1d",
@@ -798,41 +800,6 @@
       },
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 153,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -223.41338592137373,
-        5347.675045012175
-      ],
-      "size": [
-        322.52068307678803,
-        198.55274872512564
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "OPTIONS",
-      "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
     },
     {
       "id": 262,
@@ -879,10 +846,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
-        "ver": "2f7300dc546ec2d36fa8b0feebe493d41026524c",
         "cnr_id": "comfyui-kjnodes",
+        "ver": "2f7300dc546ec2d36fa8b0feebe493d41026524c",
         "Node name for S&R": "ImageBatchMulti",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {
@@ -973,117 +940,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 105,
-      "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
-      "pos": [
-        -890.7286923979899,
-        5208.807571466202
-      ],
-      "size": [
-        629.5299079662248,
-        444
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "widget": {
-            "name": "width"
-          },
-          "link": 492
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "widget": {
-            "name": "height"
-          },
-          "link": 497
-        },
-        {
-          "label": "duration",
-          "name": "value_1",
-          "type": "FLOAT",
-          "widget": {
-            "name": "value_1"
-          },
-          "link": null
-        },
-        {
-          "name": "first_frame",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 504
-        },
-        {
-          "name": "last_frame",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 502
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            519
-          ]
-        },
-        {
-          "name": "AUDIO",
-          "type": "AUDIO",
-          "links": [
-            513
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "previewExposures": []
-      },
-      "widgets_values": [
-        "",
-        1344,
-        768,
-        5,
-        "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
-        8,
-        "euler",
-        "simple",
-        6,
-        3,
-        "GGUF llama.cpp",
-        "GGUF: Qwen3.8-9B-heretic-uncensored.Q8_0.gguf",
-        "🔄 MiniMax H3 NSFW FL2VA (5s)",
-        "None",
-        false
-      ],
-      "widgets_values_named": {
-        "prompt": "",
-        "width": 1344,
-        "height": 768,
-        "value_1": 5,
-        "unet_name": "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
-        "steps": 8,
-        "sampler_name": "euler",
-        "scheduler": "simple",
-        "shift_video": 6,
-        "shift_audio": 3,
-        "backend": "GGUF llama.cpp",
-        "model_name": "GGUF: Qwen3.8-9B-heretic-uncensored.Q8_0.gguf",
-        "preset_prompt": "🔄 MiniMax H3 NSFW FL2VA (5s)",
-        "camera_tag": "None",
-        "passthrough": false
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 255,
       "type": "df2383ae-63b9-41f0-825f-02e76f888ddf",
       "pos": [
@@ -1160,39 +1016,185 @@
       "widgets_values": [
         "",
         1344,
-        768,
+        "",
         5,
-        "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
-        8,
-        "euler",
+        "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
+        20,
+        "res_multistep",
         "simple",
-        6,
+        12,
         3,
-        "GGUF llama.cpp",
-        "GGUF: Qwen3.8-9B-heretic-uncensored.Q8_0.gguf",
-        "🔄 MiniMax H3 NSFW FL2VA (5s)",
+        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "MiniMax › NSFW FL2VA",
+        "5s",
         "None",
         false
       ],
       "widgets_values_named": {
+        "width": "",
+        "height": 1344,
         "prompt": "",
-        "width": 1344,
-        "height": 768,
         "value_1": 5,
-        "unet_name": "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
-        "steps": 8,
-        "sampler_name": "euler",
+        "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
+        "steps": 20,
+        "sampler_name": "res_multistep",
         "scheduler": "simple",
-        "shift_video": 6,
+        "shift_video": 12,
         "shift_audio": 3,
-        "backend": "GGUF llama.cpp",
-        "model_name": "GGUF: Qwen3.8-9B-heretic-uncensored.Q8_0.gguf",
-        "preset_prompt": "🔄 MiniMax H3 NSFW FL2VA (5s)",
+        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "preset_prompt": "MiniMax › NSFW FL2VA",
+        "duration": "5s",
         "camera_tag": "None",
         "passthrough": false
       },
       "color": "#233",
       "bgcolor": "#355"
+    },
+    {
+      "id": 105,
+      "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
+      "pos": [
+        -890.7286923979899,
+        5208.807571466202
+      ],
+      "size": [
+        629.5299079662248,
+        444
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 492
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 497
+        },
+        {
+          "label": "duration",
+          "name": "value_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "value_1"
+          },
+          "link": null
+        },
+        {
+          "name": "first_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 504
+        },
+        {
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 502
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            519
+          ]
+        },
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            513
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.1",
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "",
+        1344,
+        "",
+        5,
+        "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
+        20,
+        "res_multistep",
+        "simple",
+        12,
+        3,
+        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "MiniMax › NSFW FL2VA",
+        "5s",
+        "None",
+        false
+      ],
+      "widgets_values_named": {
+        "width": "",
+        "height": 1344,
+        "prompt": "",
+        "value_1": 5,
+        "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
+        "steps": 20,
+        "sampler_name": "res_multistep",
+        "scheduler": "simple",
+        "shift_video": 12,
+        "shift_audio": 3,
+        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "preset_prompt": "MiniMax › NSFW FL2VA",
+        "duration": "5s",
+        "camera_tag": "None",
+        "passthrough": false
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 153,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -218.46517834978468,
+        5332.905395139402
+      ],
+      "size": [
+        322.52068307678803,
+        198.55274872512564
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -1402,8 +1404,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 286,
-          "lastLinkId": 592,
+          "lastNodeId": 288,
+          "lastLinkId": 610,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1429,18 +1431,6 @@
         },
         "inputs": [
           {
-            "id": "d7302ca7-24ed-44c4-8ac9-736540dab7fb",
-            "name": "prompt",
-            "type": "STRING",
-            "linkIds": [
-              570
-            ],
-            "pos": [
-              -2453.435546875,
-              4744
-            ]
-          },
-          {
             "id": "709e2d94-3172-496f-ad86-7d672f3df568",
             "name": "width",
             "type": "INT",
@@ -1462,6 +1452,18 @@
             "pos": [
               -2453.435546875,
               4784
+            ]
+          },
+          {
+            "id": "d7302ca7-24ed-44c4-8ac9-736540dab7fb",
+            "name": "prompt",
+            "type": "STRING",
+            "linkIds": [
+              607
+            ],
+            "pos": [
+              -2453.435546875,
+              4744
             ]
           },
           {
@@ -1487,32 +1489,6 @@
             "pos": [
               -2453.435546875,
               4824
-            ]
-          },
-          {
-            "id": "d6eaa195-2266-4016-b7ed-b2d17a3e53c2",
-            "name": "first_frame",
-            "type": "IMAGE",
-            "linkIds": [
-              195,
-              571
-            ],
-            "pos": [
-              -2453.435546875,
-              4844
-            ]
-          },
-          {
-            "id": "03b95567-f496-4279-9d38-989dd34fa882",
-            "name": "last_frame",
-            "type": "IMAGE",
-            "linkIds": [
-              196,
-              572
-            ],
-            "pos": [
-              -2453.435546875,
-              4864
             ]
           },
           {
@@ -1576,11 +1552,11 @@
             ]
           },
           {
-            "id": "e3b3ca30-ef75-4185-b54c-a1306bd18ab6",
-            "name": "backend",
+            "id": "a293cfa6-7e0b-4afd-9764-21f1f4b4dda2",
+            "name": "model_name",
             "type": "COMBO",
             "linkIds": [
-              573
+              604
             ],
             "pos": [
               -2453.435546875,
@@ -1588,11 +1564,11 @@
             ]
           },
           {
-            "id": "a293cfa6-7e0b-4afd-9764-21f1f4b4dda2",
-            "name": "model_name",
+            "id": "912c9a0c-e91c-4113-9d67-dc428d09c9cf",
+            "name": "preset_prompt",
             "type": "COMBO",
             "linkIds": [
-              574
+              605
             ],
             "pos": [
               -2453.435546875,
@@ -1600,15 +1576,15 @@
             ]
           },
           {
-            "id": "912c9a0c-e91c-4113-9d67-dc428d09c9cf",
-            "name": "preset_prompt",
+            "id": "a88f26db-4274-47e9-b327-8df45a83d3fc",
+            "name": "duration",
             "type": "COMBO",
             "linkIds": [
-              575
+              609
             ],
             "pos": [
               -2453.435546875,
-              5024
+              5064
             ]
           },
           {
@@ -1616,11 +1592,11 @@
             "name": "camera_tag",
             "type": "COMBO",
             "linkIds": [
-              576
+              606
             ],
             "pos": [
               -2453.435546875,
-              5044
+              5024
             ]
           },
           {
@@ -1628,11 +1604,37 @@
             "name": "passthrough",
             "type": "BOOLEAN",
             "linkIds": [
-              577
+              608
             ],
             "pos": [
               -2453.435546875,
-              5064
+              5044
+            ]
+          },
+          {
+            "id": "d6eaa195-2266-4016-b7ed-b2d17a3e53c2",
+            "name": "first_frame",
+            "type": "IMAGE",
+            "linkIds": [
+              195,
+              602
+            ],
+            "pos": [
+              -2453.435546875,
+              4844
+            ]
+          },
+          {
+            "id": "03b95567-f496-4279-9d38-989dd34fa882",
+            "name": "last_frame",
+            "type": "IMAGE",
+            "linkIds": [
+              196,
+              603
+            ],
+            "pos": [
+              -2453.435546875,
+              4864
             ]
           }
         ],
@@ -1769,7 +1771,7 @@
               140
             ],
             "flags": {},
-            "order": 7,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -1840,7 +1842,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 9,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -1928,7 +1930,7 @@
               60
             ],
             "flags": {},
-            "order": 8,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -2011,7 +2013,7 @@
               550
             ],
             "flags": {},
-            "order": 10,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -2047,7 +2049,7 @@
                 "widget": {
                   "name": "prompt"
                 },
-                "link": 578
+                "link": 601
               },
               {
                 "localized_name": "larghezza",
@@ -2125,7 +2127,7 @@
               70
             ],
             "flags": {},
-            "order": 12,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -2175,7 +2177,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 11,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -2239,7 +2241,7 @@
               90
             ],
             "flags": {},
-            "order": 4,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -2295,7 +2297,7 @@
               90
             ],
             "flags": {},
-            "order": 13,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -2345,7 +2347,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 6,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -2389,7 +2391,7 @@
               130
             ],
             "flags": {},
-            "order": 5,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -2455,7 +2457,7 @@
               82
             ],
             "flags": {},
-            "order": 14,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -2511,156 +2513,18 @@
             }
           },
           {
-            "id": 276,
-            "type": "QwenVL_Unified",
-            "pos": [
-              -2118.440266743993,
-              4097.098639644788
-            ],
-            "size": [
-              400,
-              392
-            ],
-            "flags": {},
-            "order": 16,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 571
-              },
-              {
-                "localized_name": "image2",
-                "name": "image2",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 572
-              },
-              {
-                "localized_name": "video",
-                "name": "video",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": null
-              },
-              {
-                "localized_name": "backend",
-                "name": "backend",
-                "type": "COMBO",
-                "widget": {
-                  "name": "backend"
-                },
-                "link": 573
-              },
-              {
-                "localized_name": "model_name",
-                "name": "model_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model_name"
-                },
-                "link": 574
-              },
-              {
-                "localized_name": "preset_prompt",
-                "name": "preset_prompt",
-                "type": "COMBO",
-                "widget": {
-                  "name": "preset_prompt"
-                },
-                "link": 575
-              },
-              {
-                "localized_name": "camera_tag",
-                "name": "camera_tag",
-                "type": "COMBO",
-                "widget": {
-                  "name": "camera_tag"
-                },
-                "link": 576
-              },
-              {
-                "localized_name": "custom_prompt",
-                "name": "custom_prompt",
-                "type": "STRING",
-                "widget": {
-                  "name": "custom_prompt"
-                },
-                "link": 570
-              },
-              {
-                "localized_name": "passthrough",
-                "name": "passthrough",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "passthrough"
-                },
-                "link": 577
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "RESPONSE",
-                "name": "RESPONSE",
-                "type": "STRING",
-                "links": [
-                  578
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "ver": "10fc389f110753e3bf112fe9b1ca7201719728da",
-              "Node name for S&R": "QwenVL_Unified",
-              "cnr_id": "ComfyUI-QwenVL-Mod"
-            },
-            "widgets_values": [
-              "GGUF llama.cpp",
-              "GGUF: Qwen3.5-9B-ultra-uncensored-heretic-v2-Q4_K_M.gguf",
-              "🖼️ Detailed Description",
-              "None",
-              "",
-              8192,
-              false,
-              1,
-              "randomize",
-              false,
-              false,
-              16
-            ],
-            "widgets_values_named": {
-              "backend": "GGUF llama.cpp",
-              "model_name": "GGUF: Qwen3.5-9B-ultra-uncensored-heretic-v2-Q4_K_M.gguf",
-              "preset_prompt": "🖼️ Detailed Description",
-              "camera_tag": "None",
-              "custom_prompt": "",
-              "max_tokens": 8192,
-              "keep_model_loaded": false,
-              "seed": 1,
-              "control_after_generate": "randomize",
-              "keep_last_prompt": false,
-              "passthrough": false,
-              "frame_count": 16
-            },
-            "color": "#0d9489",
-            "bgcolor": "#134e4a"
-          },
-          {
             "id": 213,
             "type": "LoraLoaderModelOnly",
             "pos": [
-              -1668.002630653098,
-              4358.714082420286
+              -1569.6870870477298,
+              4367.705557369511
             ],
             "size": [
               330.6487829390876,
               106.57732339190989
             ],
             "flags": {},
-            "order": 15,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -2700,8 +2564,8 @@
             "id": 286,
             "type": "BlockSparseAttention",
             "pos": [
-              -1240.658179464868,
-              4216.502212764512
+              -1142.3426358594993,
+              4225.493687713736
             ],
             "size": [
               278.4,
@@ -2757,6 +2621,145 @@
             },
             "color": "#223",
             "bgcolor": "#335"
+          },
+          {
+            "id": 288,
+            "type": "QwenVL_Unified",
+            "pos": [
+              -2033.6817004429229,
+              4118.883855098795
+            ],
+            "size": [
+              400,
+              392
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 602
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 603
+              },
+              {
+                "localized_name": "video",
+                "name": "video",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "model_name",
+                "name": "model_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model_name"
+                },
+                "link": 604
+              },
+              {
+                "localized_name": "preset_prompt",
+                "name": "preset_prompt",
+                "type": "COMBO",
+                "widget": {
+                  "name": "preset_prompt"
+                },
+                "link": 605
+              },
+              {
+                "localized_name": "camera_tag",
+                "name": "camera_tag",
+                "type": "COMBO",
+                "widget": {
+                  "name": "camera_tag"
+                },
+                "link": 606
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 607
+              },
+              {
+                "localized_name": "passthrough",
+                "name": "passthrough",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "passthrough"
+                },
+                "link": 608
+              },
+              {
+                "localized_name": "duration",
+                "name": "duration",
+                "shape": 7,
+                "type": "COMBO",
+                "widget": {
+                  "name": "duration"
+                },
+                "link": 609
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "RESPONSE",
+                "name": "RESPONSE",
+                "type": "STRING",
+                "links": [
+                  601
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "ver": "10fc389f110753e3bf112fe9b1ca7201719728da",
+              "Node name for S&R": "QwenVL_Unified",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+            },
+            "widgets_values": [
+              "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q4_K_M.gguf",
+              "IMG › Detailed",
+              "None",
+              "",
+              8192,
+              false,
+              1,
+              "randomize",
+              false,
+              false,
+              16,
+              "5s"
+            ],
+            "widgets_values_named": {
+              "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q4_K_M.gguf",
+              "preset_prompt": "IMG › Detailed",
+              "camera_tag": "None",
+              "prompt": "",
+              "max_tokens": 8192,
+              "keep_model_loaded": false,
+              "seed": 1,
+              "control_after_generate": "randomize",
+              "keep_last_prompt": false,
+              "passthrough": false,
+              "frame_count": 16,
+              "duration": "5s"
+            },
+            "color": "#0d9489",
+            "bgcolor": "#134e4a"
           }
         ],
         "groups": [
@@ -2812,8 +2815,8 @@
             "id": 18,
             "title": "TURBO LORA",
             "bounding": [
-              -1691.200429941969,
-              4276.0683062902735,
+              -1592.8848863366009,
+              4285.059781239498,
               372.9209596048004,
               216.78178062247116
             ],
@@ -2824,8 +2827,8 @@
             "id": 23,
             "title": "BLOCKSPARSE ATTN",
             "bounding": [
-              -1262.999362246326,
-              4138.104055767104,
+              -1164.6838186409575,
+              4147.0955307163285,
               329.11316764962044,
               352.2657506863061
             ],
@@ -2909,7 +2912,7 @@
           {
             "id": 195,
             "origin_id": -10,
-            "origin_slot": 5,
+            "origin_slot": 15,
             "target_id": 104,
             "target_slot": 2,
             "type": "IMAGE"
@@ -2917,7 +2920,7 @@
           {
             "id": 196,
             "origin_id": -10,
-            "origin_slot": 6,
+            "origin_slot": 16,
             "target_id": 104,
             "target_slot": 3,
             "type": "IMAGE"
@@ -2933,7 +2936,7 @@
           {
             "id": 200,
             "origin_id": -10,
-            "origin_slot": 1,
+            "origin_slot": 0,
             "target_id": 104,
             "target_slot": 5,
             "type": "INT"
@@ -2941,7 +2944,7 @@
           {
             "id": 201,
             "origin_id": -10,
-            "origin_slot": 2,
+            "origin_slot": 1,
             "target_id": 104,
             "target_slot": 6,
             "type": "INT"
@@ -2997,7 +3000,7 @@
           {
             "id": 277,
             "origin_id": -10,
-            "origin_slot": 7,
+            "origin_slot": 5,
             "target_id": 9,
             "target_slot": 2,
             "type": "INT"
@@ -3045,7 +3048,7 @@
           {
             "id": 463,
             "origin_id": -10,
-            "origin_slot": 8,
+            "origin_slot": 6,
             "target_id": 202,
             "target_slot": 0,
             "type": "COMBO"
@@ -3061,7 +3064,7 @@
           {
             "id": 525,
             "origin_id": -10,
-            "origin_slot": 9,
+            "origin_slot": 7,
             "target_id": 9,
             "target_slot": 1,
             "type": "COMBO"
@@ -3069,7 +3072,7 @@
           {
             "id": 526,
             "origin_id": -10,
-            "origin_slot": 10,
+            "origin_slot": 8,
             "target_id": 203,
             "target_slot": 1,
             "type": "FLOAT"
@@ -3077,82 +3080,10 @@
           {
             "id": 527,
             "origin_id": -10,
-            "origin_slot": 11,
+            "origin_slot": 9,
             "target_id": 203,
             "target_slot": 2,
             "type": "FLOAT"
-          },
-          {
-            "id": 570,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 276,
-            "target_slot": 7,
-            "type": "STRING"
-          },
-          {
-            "id": 571,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 276,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 572,
-            "origin_id": -10,
-            "origin_slot": 6,
-            "target_id": 276,
-            "target_slot": 1,
-            "type": "IMAGE"
-          },
-          {
-            "id": 573,
-            "origin_id": -10,
-            "origin_slot": 12,
-            "target_id": 276,
-            "target_slot": 3,
-            "type": "COMBO"
-          },
-          {
-            "id": 574,
-            "origin_id": -10,
-            "origin_slot": 13,
-            "target_id": 276,
-            "target_slot": 4,
-            "type": "COMBO"
-          },
-          {
-            "id": 575,
-            "origin_id": -10,
-            "origin_slot": 14,
-            "target_id": 276,
-            "target_slot": 5,
-            "type": "COMBO"
-          },
-          {
-            "id": 576,
-            "origin_id": -10,
-            "origin_slot": 15,
-            "target_id": 276,
-            "target_slot": 6,
-            "type": "COMBO"
-          },
-          {
-            "id": 577,
-            "origin_id": -10,
-            "origin_slot": 16,
-            "target_id": 276,
-            "target_slot": 8,
-            "type": "BOOLEAN"
-          },
-          {
-            "id": 578,
-            "origin_id": 276,
-            "origin_slot": 0,
-            "target_id": 104,
-            "target_slot": 4,
-            "type": "STRING"
           },
           {
             "id": 591,
@@ -3169,6 +3100,78 @@
             "target_id": 203,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 601,
+            "origin_id": 288,
+            "origin_slot": 0,
+            "target_id": 104,
+            "target_slot": 4,
+            "type": "STRING"
+          },
+          {
+            "id": 602,
+            "origin_id": -10,
+            "origin_slot": 15,
+            "target_id": 288,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 603,
+            "origin_id": -10,
+            "origin_slot": 16,
+            "target_id": 288,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 604,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 288,
+            "target_slot": 3,
+            "type": "COMBO"
+          },
+          {
+            "id": 605,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": 288,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 606,
+            "origin_id": -10,
+            "origin_slot": 13,
+            "target_id": 288,
+            "target_slot": 5,
+            "type": "COMBO"
+          },
+          {
+            "id": 607,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 288,
+            "target_slot": 6,
+            "type": "STRING"
+          },
+          {
+            "id": 608,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 288,
+            "target_slot": 7,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 609,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": 288,
+            "target_slot": 8,
+            "type": "COMBO"
           }
         ],
         "extra": {
@@ -3180,8 +3183,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 286,
-          "lastLinkId": 592,
+          "lastNodeId": 288,
+          "lastLinkId": 610,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3207,18 +3210,6 @@
         },
         "inputs": [
           {
-            "id": "d7302ca7-24ed-44c4-8ac9-736540dab7fb",
-            "name": "prompt",
-            "type": "STRING",
-            "linkIds": [
-              561
-            ],
-            "pos": [
-              -2453.435546875,
-              4744
-            ]
-          },
-          {
             "id": "709e2d94-3172-496f-ad86-7d672f3df568",
             "name": "width",
             "type": "INT",
@@ -3227,7 +3218,7 @@
             ],
             "pos": [
               -2453.435546875,
-              4764
+              4744
             ]
           },
           {
@@ -3236,6 +3227,18 @@
             "type": "INT",
             "linkIds": [
               201
+            ],
+            "pos": [
+              -2453.435546875,
+              4764
+            ]
+          },
+          {
+            "id": "d7302ca7-24ed-44c4-8ac9-736540dab7fb",
+            "name": "prompt",
+            "type": "STRING",
+            "linkIds": [
+              610
             ],
             "pos": [
               -2453.435546875,
@@ -3268,32 +3271,6 @@
             ]
           },
           {
-            "id": "d6eaa195-2266-4016-b7ed-b2d17a3e53c2",
-            "name": "first_frame",
-            "type": "IMAGE",
-            "linkIds": [
-              195,
-              562
-            ],
-            "pos": [
-              -2453.435546875,
-              4844
-            ]
-          },
-          {
-            "id": "03b95567-f496-4279-9d38-989dd34fa882",
-            "name": "last_frame",
-            "type": "IMAGE",
-            "linkIds": [
-              196,
-              563
-            ],
-            "pos": [
-              -2453.435546875,
-              4864
-            ]
-          },
-          {
             "id": "80bcb0d0-c19a-4bb7-a89d-5a7e0090203b",
             "name": "steps",
             "type": "INT",
@@ -3302,7 +3279,7 @@
             ],
             "pos": [
               -2453.435546875,
-              4884
+              4844
             ]
           },
           {
@@ -3314,7 +3291,7 @@
             ],
             "pos": [
               -2453.435546875,
-              4904
+              4864
             ]
           },
           {
@@ -3326,7 +3303,7 @@
             ],
             "pos": [
               -2453.435546875,
-              4924
+              4884
             ]
           },
           {
@@ -3338,7 +3315,7 @@
             ],
             "pos": [
               -2453.435546875,
-              4944
+              4904
             ]
           },
           {
@@ -3350,19 +3327,7 @@
             ],
             "pos": [
               -2453.435546875,
-              4964
-            ]
-          },
-          {
-            "id": "7b9c866b-a8af-417d-a9b9-ec1191a05418",
-            "name": "backend",
-            "type": "COMBO",
-            "linkIds": [
-              564
-            ],
-            "pos": [
-              -2453.435546875,
-              4984
+              4924
             ]
           },
           {
@@ -3370,11 +3335,11 @@
             "name": "model_name",
             "type": "COMBO",
             "linkIds": [
-              565
+              596
             ],
             "pos": [
               -2453.435546875,
-              5004
+              4944
             ]
           },
           {
@@ -3382,11 +3347,23 @@
             "name": "preset_prompt",
             "type": "COMBO",
             "linkIds": [
-              566
+              597
             ],
             "pos": [
               -2453.435546875,
-              5024
+              4964
+            ]
+          },
+          {
+            "id": "3449a67a-5560-48f7-a236-2118d8729a59",
+            "name": "duration",
+            "type": "COMBO",
+            "linkIds": [
+              600
+            ],
+            "pos": [
+              -2453.435546875,
+              4984
             ]
           },
           {
@@ -3394,11 +3371,11 @@
             "name": "camera_tag",
             "type": "COMBO",
             "linkIds": [
-              567
+              598
             ],
             "pos": [
               -2453.435546875,
-              5044
+              5004
             ]
           },
           {
@@ -3406,7 +3383,33 @@
             "name": "passthrough",
             "type": "BOOLEAN",
             "linkIds": [
-              568
+              599
+            ],
+            "pos": [
+              -2453.435546875,
+              5024
+            ]
+          },
+          {
+            "id": "d6eaa195-2266-4016-b7ed-b2d17a3e53c2",
+            "name": "first_frame",
+            "type": "IMAGE",
+            "linkIds": [
+              195,
+              593
+            ],
+            "pos": [
+              -2453.435546875,
+              5044
+            ]
+          },
+          {
+            "id": "03b95567-f496-4279-9d38-989dd34fa882",
+            "name": "last_frame",
+            "type": "IMAGE",
+            "linkIds": [
+              196,
+              594
             ],
             "pos": [
               -2453.435546875,
@@ -3547,7 +3550,7 @@
               140
             ],
             "flags": {},
-            "order": 4,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -3618,7 +3621,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 5,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -3706,7 +3709,7 @@
               60
             ],
             "flags": {},
-            "order": 6,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -3789,7 +3792,7 @@
               550
             ],
             "flags": {},
-            "order": 9,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -3825,7 +3828,7 @@
                 "widget": {
                   "name": "prompt"
                 },
-                "link": 569
+                "link": 595
               },
               {
                 "localized_name": "larghezza",
@@ -3903,7 +3906,7 @@
               70
             ],
             "flags": {},
-            "order": 10,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -3953,7 +3956,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 11,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -4017,7 +4020,7 @@
               90
             ],
             "flags": {},
-            "order": 12,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -4062,54 +4065,6 @@
             }
           },
           {
-            "id": 248,
-            "type": "LoraLoaderModelOnly",
-            "pos": [
-              -1668.002630653098,
-              4358.714082420286
-            ],
-            "size": [
-              330.6487829390876,
-              106.57732339190989
-            ],
-            "flags": {},
-            "order": 13,
-            "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 459
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "MODELLO",
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": [
-                  585
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.34.2",
-              "Node name for S&R": "LoraLoaderModelOnly"
-            },
-            "widgets_values": [
-              "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
-              1
-            ],
-            "widgets_values_named": {
-              "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
-              "strength_model": 1
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
             "id": 253,
             "type": "KSamplerSelect",
             "pos": [
@@ -4121,7 +4076,7 @@
               90
             ],
             "flags": {},
-            "order": 14,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -4171,7 +4126,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 15,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -4216,7 +4171,7 @@
               130
             ],
             "flags": {},
-            "order": 8,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -4282,7 +4237,7 @@
               82
             ],
             "flags": {},
-            "order": 7,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -4338,149 +4293,11 @@
             }
           },
           {
-            "id": 275,
-            "type": "QwenVL_Unified",
-            "pos": [
-              -2126.390056407328,
-              4102.419661370441
-            ],
-            "size": [
-              400,
-              392
-            ],
-            "flags": {},
-            "order": 16,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 562
-              },
-              {
-                "localized_name": "image2",
-                "name": "image2",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": 563
-              },
-              {
-                "localized_name": "video",
-                "name": "video",
-                "shape": 7,
-                "type": "IMAGE",
-                "link": null
-              },
-              {
-                "localized_name": "backend",
-                "name": "backend",
-                "type": "COMBO",
-                "widget": {
-                  "name": "backend"
-                },
-                "link": 564
-              },
-              {
-                "localized_name": "model_name",
-                "name": "model_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model_name"
-                },
-                "link": 565
-              },
-              {
-                "localized_name": "preset_prompt",
-                "name": "preset_prompt",
-                "type": "COMBO",
-                "widget": {
-                  "name": "preset_prompt"
-                },
-                "link": 566
-              },
-              {
-                "localized_name": "camera_tag",
-                "name": "camera_tag",
-                "type": "COMBO",
-                "widget": {
-                  "name": "camera_tag"
-                },
-                "link": 567
-              },
-              {
-                "localized_name": "custom_prompt",
-                "name": "custom_prompt",
-                "type": "STRING",
-                "widget": {
-                  "name": "custom_prompt"
-                },
-                "link": 561
-              },
-              {
-                "localized_name": "passthrough",
-                "name": "passthrough",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "passthrough"
-                },
-                "link": 568
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "RESPONSE",
-                "name": "RESPONSE",
-                "type": "STRING",
-                "links": [
-                  569
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
-              "ver": "10fc389f110753e3bf112fe9b1ca7201719728da",
-              "Node name for S&R": "QwenVL_Unified",
-              "cnr_id": "ComfyUI-QwenVL-Mod"
-            },
-            "widgets_values": [
-              "GGUF llama.cpp",
-              "GGUF: Qwen3.5-9B-ultra-uncensored-heretic-v2-Q4_K_M.gguf",
-              "🖼️ Detailed Description",
-              "None",
-              "",
-              8192,
-              false,
-              1,
-              "randomize",
-              false,
-              false,
-              16
-            ],
-            "widgets_values_named": {
-              "backend": "GGUF llama.cpp",
-              "model_name": "GGUF: Qwen3.5-9B-ultra-uncensored-heretic-v2-Q4_K_M.gguf",
-              "preset_prompt": "🖼️ Detailed Description",
-              "camera_tag": "None",
-              "custom_prompt": "",
-              "max_tokens": 8192,
-              "keep_model_loaded": false,
-              "seed": 1,
-              "control_after_generate": "randomize",
-              "keep_last_prompt": false,
-              "passthrough": false,
-              "frame_count": 16
-            },
-            "color": "#0d9489",
-            "bgcolor": "#134e4a"
-          },
-          {
             "id": 285,
             "type": "BlockSparseAttention",
             "pos": [
-              -1264.3220183910576,
-              4213.967100605635
+              -1173.520435980126,
+              4219.546437272691
             ],
             "size": [
               278.4,
@@ -4533,6 +4350,193 @@
               "extra_tokens": 256,
               "sink_conditioning": "exact_kv_and_rows",
               "verbose": false
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 287,
+            "type": "QwenVL_Unified",
+            "pos": [
+              -2035.588473996399,
+              4107.998998037497
+            ],
+            "size": [
+              400,
+              392
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 593
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 594
+              },
+              {
+                "localized_name": "video",
+                "name": "video",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "model_name",
+                "name": "model_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model_name"
+                },
+                "link": 596
+              },
+              {
+                "localized_name": "preset_prompt",
+                "name": "preset_prompt",
+                "type": "COMBO",
+                "widget": {
+                  "name": "preset_prompt"
+                },
+                "link": 597
+              },
+              {
+                "localized_name": "camera_tag",
+                "name": "camera_tag",
+                "type": "COMBO",
+                "widget": {
+                  "name": "camera_tag"
+                },
+                "link": 598
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 610
+              },
+              {
+                "localized_name": "passthrough",
+                "name": "passthrough",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "passthrough"
+                },
+                "link": 599
+              },
+              {
+                "localized_name": "duration",
+                "name": "duration",
+                "shape": 7,
+                "type": "COMBO",
+                "widget": {
+                  "name": "duration"
+                },
+                "link": 600
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "RESPONSE",
+                "name": "RESPONSE",
+                "type": "STRING",
+                "links": [
+                  595
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "ver": "10fc389f110753e3bf112fe9b1ca7201719728da",
+              "Node name for S&R": "QwenVL_Unified",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+            },
+            "widgets_values": [
+              "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q4_K_M.gguf",
+              "MiniMax › NSFW FL2VA",
+              "None",
+              "",
+              8192,
+              false,
+              1,
+              "randomize",
+              false,
+              false,
+              16,
+              "5s"
+            ],
+            "widgets_values_named": {
+              "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q4_K_M.gguf",
+              "preset_prompt": "MiniMax › NSFW FL2VA",
+              "camera_tag": "None",
+              "prompt": "",
+              "max_tokens": 8192,
+              "keep_model_loaded": false,
+              "seed": 1,
+              "control_after_generate": "randomize",
+              "keep_last_prompt": false,
+              "passthrough": false,
+              "frame_count": 16,
+              "duration": "5s"
+            },
+            "color": "#0d9489",
+            "bgcolor": "#134e4a"
+          },
+          {
+            "id": 248,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              -1577.2010482421665,
+              4364.293419087342
+            ],
+            "size": [
+              330.6487829390876,
+              106.57732339190989
+            ],
+            "flags": {},
+            "order": 14,
+            "mode": 4,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 459
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODELLO",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  585
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.34.2",
+              "Node name for S&R": "LoraLoaderModelOnly"
+            },
+            "widgets_values": [
+              "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+              1
+            ],
+            "widgets_values_named": {
+              "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+              "strength_model": 1
             },
             "color": "#223",
             "bgcolor": "#335"
@@ -4591,8 +4595,8 @@
             "id": 18,
             "title": "TURBO LORA",
             "bounding": [
-              -1691.200429941969,
-              4276.0683062902735,
+              -1600.3988475310375,
+              4281.6476429573295,
               372.9209596048004,
               216.78178062247116
             ],
@@ -4603,8 +4607,8 @@
             "id": 19,
             "title": "BLOCKSPARSE ATTN",
             "bounding": [
-              -1286.6632011725155,
-              4135.5689436082275,
+              -1195.861618761584,
+              4141.1482802752835,
               329.11316764962044,
               352.2657506863061
             ],
@@ -4688,7 +4692,7 @@
           {
             "id": 195,
             "origin_id": -10,
-            "origin_slot": 5,
+            "origin_slot": 15,
             "target_id": 243,
             "target_slot": 2,
             "type": "IMAGE"
@@ -4696,7 +4700,7 @@
           {
             "id": 196,
             "origin_id": -10,
-            "origin_slot": 6,
+            "origin_slot": 16,
             "target_id": 243,
             "target_slot": 3,
             "type": "IMAGE"
@@ -4712,7 +4716,7 @@
           {
             "id": 200,
             "origin_id": -10,
-            "origin_slot": 1,
+            "origin_slot": 0,
             "target_id": 243,
             "target_slot": 5,
             "type": "INT"
@@ -4720,7 +4724,7 @@
           {
             "id": 201,
             "origin_id": -10,
-            "origin_slot": 2,
+            "origin_slot": 1,
             "target_id": 243,
             "target_slot": 6,
             "type": "INT"
@@ -4776,7 +4780,7 @@
           {
             "id": 277,
             "origin_id": -10,
-            "origin_slot": 7,
+            "origin_slot": 5,
             "target_id": 242,
             "target_slot": 2,
             "type": "INT"
@@ -4824,7 +4828,7 @@
           {
             "id": 463,
             "origin_id": -10,
-            "origin_slot": 8,
+            "origin_slot": 6,
             "target_id": 253,
             "target_slot": 0,
             "type": "COMBO"
@@ -4840,7 +4844,7 @@
           {
             "id": 522,
             "origin_id": -10,
-            "origin_slot": 9,
+            "origin_slot": 7,
             "target_id": 242,
             "target_slot": 1,
             "type": "COMBO"
@@ -4848,7 +4852,7 @@
           {
             "id": 523,
             "origin_id": -10,
-            "origin_slot": 10,
+            "origin_slot": 8,
             "target_id": 241,
             "target_slot": 1,
             "type": "FLOAT"
@@ -4856,82 +4860,10 @@
           {
             "id": 524,
             "origin_id": -10,
-            "origin_slot": 11,
+            "origin_slot": 9,
             "target_id": 241,
             "target_slot": 2,
             "type": "FLOAT"
-          },
-          {
-            "id": 561,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 275,
-            "target_slot": 7,
-            "type": "STRING"
-          },
-          {
-            "id": 562,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 275,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 563,
-            "origin_id": -10,
-            "origin_slot": 6,
-            "target_id": 275,
-            "target_slot": 1,
-            "type": "IMAGE"
-          },
-          {
-            "id": 564,
-            "origin_id": -10,
-            "origin_slot": 12,
-            "target_id": 275,
-            "target_slot": 3,
-            "type": "COMBO"
-          },
-          {
-            "id": 565,
-            "origin_id": -10,
-            "origin_slot": 13,
-            "target_id": 275,
-            "target_slot": 4,
-            "type": "COMBO"
-          },
-          {
-            "id": 566,
-            "origin_id": -10,
-            "origin_slot": 14,
-            "target_id": 275,
-            "target_slot": 5,
-            "type": "COMBO"
-          },
-          {
-            "id": 567,
-            "origin_id": -10,
-            "origin_slot": 15,
-            "target_id": 275,
-            "target_slot": 6,
-            "type": "COMBO"
-          },
-          {
-            "id": 568,
-            "origin_id": -10,
-            "origin_slot": 16,
-            "target_id": 275,
-            "target_slot": 8,
-            "type": "BOOLEAN"
-          },
-          {
-            "id": 569,
-            "origin_id": 275,
-            "origin_slot": 0,
-            "target_id": 243,
-            "target_slot": 4,
-            "type": "STRING"
           },
           {
             "id": 585,
@@ -4948,6 +4880,78 @@
             "target_id": 241,
             "target_slot": 0,
             "type": "MODEL"
+          },
+          {
+            "id": 593,
+            "origin_id": -10,
+            "origin_slot": 15,
+            "target_id": 287,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 594,
+            "origin_id": -10,
+            "origin_slot": 16,
+            "target_id": 287,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 595,
+            "origin_id": 287,
+            "origin_slot": 0,
+            "target_id": 243,
+            "target_slot": 4,
+            "type": "STRING"
+          },
+          {
+            "id": 596,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 287,
+            "target_slot": 3,
+            "type": "COMBO"
+          },
+          {
+            "id": 597,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": 287,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 598,
+            "origin_id": -10,
+            "origin_slot": 13,
+            "target_id": 287,
+            "target_slot": 5,
+            "type": "COMBO"
+          },
+          {
+            "id": 599,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 287,
+            "target_slot": 7,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 600,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": 287,
+            "target_slot": 8,
+            "type": "COMBO"
+          },
+          {
+            "id": 610,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 287,
+            "target_slot": 6,
+            "type": "STRING"
           }
         ],
         "extra": {
@@ -4959,8 +4963,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 286,
-          "lastLinkId": 592,
+          "lastNodeId": 288,
+          "lastLinkId": 610,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -5189,10 +5193,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "cnr_id": "Auto-TensorRT-RIFE"
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -5254,10 +5258,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "cnr_id": "Auto-TensorRT-Upscaler"
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -5298,10 +5302,10 @@
               }
             ],
             "properties": {
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "cnr_id": "seedvr2_videoupscaler",
               "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
               "Node name for S&R": "SeedVR2TorchCompileSettings",
-              "cnr_id": "seedvr2_videoupscaler"
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
               "inductor",
@@ -5365,10 +5369,10 @@
               }
             ],
             "properties": {
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "cnr_id": "seedvr2_videoupscaler",
               "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
               "Node name for S&R": "SeedVR2LoadDiTModel",
-              "cnr_id": "seedvr2_videoupscaler"
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
               "seedvr2_ema_3b_fp16.safetensors",
@@ -5425,10 +5429,10 @@
               }
             ],
             "properties": {
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "cnr_id": "seedvr2_videoupscaler",
               "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
               "Node name for S&R": "SeedVR2LoadVAEModel",
-              "cnr_id": "seedvr2_videoupscaler"
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
               "ema_vae_fp16.safetensors",
@@ -5522,10 +5526,10 @@
               }
             ],
             "properties": {
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "cnr_id": "seedvr2_videoupscaler",
               "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
               "Node name for S&R": "SeedVR2VideoUpscaler",
-              "cnr_id": "seedvr2_videoupscaler"
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
               4079658315,
@@ -5618,10 +5622,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "cnr_id": "Auto-TensorRT-Upscaler"
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "1080p",
@@ -5693,10 +5697,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "cnr_id": "Auto-TensorRT-RIFE"
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               100,
@@ -5922,10 +5926,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7104845439762019,
+      "scale": 0.6458950399783653,
       "offset": [
-        2436.1090764046075,
-        -4230.260257434637
+        2406.047114927082,
+        -4292.416670185817
       ]
     }
   },
