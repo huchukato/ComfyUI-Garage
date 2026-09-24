@@ -58,6 +58,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-Upscale-TensorRT.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/QwenImageEdit21-Wildcards-Qwen3.5.json"
 )
 
 CHECKPOINT_MODELS=(
