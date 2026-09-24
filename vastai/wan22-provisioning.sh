@@ -37,6 +37,7 @@ NODES=(
     "https://github.com/huchukato/ComfyUI-Selectors"
     "https://github.com/city96/ComfyUI-GGUF"
     "https://github.com/kijai/ComfyUI-KJNodes"
+    "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
     "https://github.com/kijai/ComfyUI-MMAudio"
     "https://github.com/GACLove/ComfyUI-VFI"
     "https://github.com/stduhpf/ComfyUI-WanMoeKSampler"
@@ -57,6 +58,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/Pony-XL-Outpaint.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-Upscale-TensorRT.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/QwenImageEdit21-Wildcards-Qwen3.5.json"
 )
