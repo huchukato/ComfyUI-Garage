@@ -121,18 +121,17 @@ function provisioning_start() {
 
     echo "✅ Workflows downloaded to: $WF_BASE"
 
-    # ── Download PMP wildcards from Garage (single zip, ~120KB) ──
-    echo "🎲 Downloading PMP wildcards zip from Garage..."
+    # ── Download PMP wildcards from Garage (yaml files) ──
+    echo "🔄 Downloading PMP wildcards from Garage..."
     WILDCARD_DIR="${COMFYUI_DIR}/custom_nodes/ComfyUI-TagForge/wildcards"
-    WILDCARD_ZIP_URL="https://github.com/huchukato/ComfyUI-Garage/raw/master/wildcards/pmp-wildcards.zip"
-    mkdir -p "$WILDCARD_DIR"
-    if wget -q --tries=3 --timeout=30 "$WILDCARD_ZIP_URL" -O "$WILDCARD_DIR/pmp-wildcards.zip"; then
-        unzip -oq "$WILDCARD_DIR/pmp-wildcards.zip" -d "$WILDCARD_DIR"
-        rm -f "$WILDCARD_DIR/pmp-wildcards.zip"
-        echo "✅ PMP wildcards extracted to $WILDCARD_DIR/pmp"
-    else
-        echo "❌ PMP wildcards zip download failed"
-    fi
+    WILDCARD_BASE="https://github.com/huchukato/ComfyUI-Garage/raw/master/wildcards"
+    WILDCARD_FILES="pmp/act.yaml pmp/actff.yaml pmp/actffm.yaml pmp/actmmf.yaml pmp/actsolo.yaml pmp/blwjob.yaml pmp/prmpt.yaml pmp/qwen21.yaml pmp/prmpt/acc.yaml pmp/prmpt/char.yaml pmp/prmpt/clths.yaml pmp/prmpt/exprss.yaml pmp/prmpt/hair.yaml pmp/prmpt/imgcmp.yaml pmp/prmpt/lctns.yaml pmp/prmpt/light.yaml pmp/prmpt/pose.yaml pmp/prmpt/styles.yaml"
+    for wf in $WILDCARD_FILES; do
+        mkdir -p "$WILDCARD_DIR/$(dirname "$wf")"
+        wget -q --tries=3 --timeout=30 "$WILDCARD_BASE/$wf" -O "$WILDCARD_DIR/$wf" || echo "⚠️ wildcard $wf download failed"
+    done
+    find "$WILDCARD_DIR/pmp" -name "*.txt" -delete 2>/dev/null
+    echo "✅ PMP wildcards updated in $WILDCARD_DIR/pmp"
 
     echo "🎯 Downloading checkpoint models..."
     provisioning_get_files \
