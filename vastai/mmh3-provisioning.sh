@@ -34,6 +34,7 @@ NODES=(
     "https://github.com/ltdrdata/comfyui-impact-pack"
     "https://github.com/ltdrdata/comfyui-impact-subpack"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
+    "https://github.com/huchukato/ComfyUI-Gallery"
 )
 
 WORKFLOWS=(
@@ -87,6 +88,13 @@ MINIMAX_MODELS=(
     "loras|lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|https://huggingface.co/TenStrip/MinimaxH3-Turbo_Shenanigans/resolve/main/lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|4300000000"
     # ── 10Eros-Max Hybrid Beta5 INT8 NON-turbo (TenStrip, 21GB) — turbo via LoRA esterno regolabile (no color shift baked-in) ──
     "diffusion_models|10Eros_Max_h3_hybrid_beta5_int8.safetensors|https://huggingface.co/TenStrip/10Eros-Max/resolve/main/10Eros_Max_h3_hybrid_beta5_int8.safetensors|20000000000"
+    # ── Qwen Image 2.1 UC (uncensored abenzerps, int8_convrot) — saved under the stock name the workflow expects ──
+    "diffusion_models|qwen_image_2.1_int8_convrot.safetensors|https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF/resolve/main/qwen-image-2.1-UC-int8_convrot.safetensors|7200000000"
+    # ── Heretic (uncensored) Qwen3-VL-8B encoder, int8 convrot — saved under the stock name the workflow expects ──
+    "text_encoders|qwen3vl_8b_int8_convrot.safetensors|https://huggingface.co/craftingmod/Qwen3-VL-8B-Heretic-INT8/resolve/main/qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors|10900000000"
+    "vae|qwen_image_2.1_vae_bf16.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors|670000000"
+    # ── Elusarca detail-enhancer LoRA (Qwen 2.1, ~80MB) ──
+    "loras|elusarcas-qwen2-1-detailer-v1.safetensors|https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors|79000000"
 )
 
 
