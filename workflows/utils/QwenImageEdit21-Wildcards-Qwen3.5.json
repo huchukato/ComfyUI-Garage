@@ -109,7 +109,7 @@
         120
       ],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -230,7 +230,7 @@
         "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaRunTimer",
-        "runTimerLastMs": 13194.899999976158
+        "runTimerLastMs": 11819.099999964237
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -359,51 +359,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 513,
-      "type": "PixaromaShowText",
-      "pos": [
-        -118.52967270079743,
-        3356.5371189821776
-      ],
-      "size": [
-        498.91085894188564,
-        293.86300041466257
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "source",
-          "type": "*",
-          "link": 822
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            823
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaShowText",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
-      },
-      "widgets_values": [
-        "A photorealistic high-end photograph of Harley Quinn from DC Comics, a young adult woman with vibrant blonde hair cascading in loose waves around her shoulders and piercing blue eyes that lock onto the viewer with an intensely sensual gaze. She wears her signature fishnet stockings that gleam subtly under soft directional daylight, paired with a revealing outfit that leaves her upper body exposed in a breast-out pose. Her large breasts are prominently displayed, one hand resting gently near her breast in a sensual gesture that draws attention to her curvaceous figure. She stands before a reflective mirror that captures her image with accurate reflections and subtle depth of field that blurs the background slightly. The lighting is warm and cinematic, casting soft shadows that accentuate the realistic texture of her skin and the detailed fabric of her attire. Her expression is confident and alluring, with a slight smirk that conveys playful confidence. The mirror's frame is visible in the periphery, adding depth to the composition. Every detail is rendered with anatomical naturalism, from the way her hair falls to the realistic contours of her body. The color grading is balanced and cinematic, enhancing the overall photorealistic quality without oversaturation."
-      ],
-      "widgets_values_named": {
-        "text": "A photorealistic high-end photograph of Harley Quinn from DC Comics, a young adult woman with vibrant blonde hair cascading in loose waves around her shoulders and piercing blue eyes that lock onto the viewer with an intensely sensual gaze. She wears her signature fishnet stockings that gleam subtly under soft directional daylight, paired with a revealing outfit that leaves her upper body exposed in a breast-out pose. Her large breasts are prominently displayed, one hand resting gently near her breast in a sensual gesture that draws attention to her curvaceous figure. She stands before a reflective mirror that captures her image with accurate reflections and subtle depth of field that blurs the background slightly. The lighting is warm and cinematic, casting soft shadows that accentuate the realistic texture of her skin and the detailed fabric of her attire. Her expression is confident and alluring, with a slight smirk that conveys playful confidence. The mirror's frame is visible in the periphery, adding depth to the composition. Every detail is rendered with anatomical naturalism, from the way her hair falls to the realistic contours of her body. The color grading is balanced and cinematic, enhancing the overall photorealistic quality without oversaturation."
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 526,
       "type": "PixaromaSaveImage",
       "pos": [
@@ -443,12 +398,12 @@
           "folder": "/workspace/runpod-slim/ComfyUI/output",
           "entries": [
             {
-              "filename": "Qwen21_2026-09-24_016%.jpg",
+              "filename": "Qwen21_2026-09-25_010%.jpg",
               "subfolder": "",
               "type": "output",
               "token": "",
               "path": "",
-              "bust": "1790227411209"
+              "bust": "1790296433076"
             }
           ],
           "n": 1,
@@ -466,66 +421,6 @@
       "bgcolor": "#26323b"
     },
     {
-      "id": 512,
-      "type": "WildcardProcessor",
-      "pos": [
-        -116.3662053521111,
-        2472.700050609397
-      ],
-      "size": [
-        490,
-        390
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            820
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-TagForge",
-        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
-        "Node name for S&R": "WildcardProcessor",
-        "aux_id": "huchukato/ComfyUI-TagForge",
-        "tagforge_reproduce_seed": 543274943133878,
-        "tagforge_wildcard_mode": "populate"
-      },
-      "widgets_values": [
-        "__qwen21/styles__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
-        177653453688249,
-        "randomize",
-        "[photorealistic] Render the scene as a convincing high-end photograph with anatomically natural subjects, realistic skin and fabric texture, soft directional daylight, accurate reflections, subtle depth of field, and balanced cinematic color grading., 1girl, harley quinn, dc comics, blonde hair, blue eyes, large breasts, fishnets, breast out, hand near breast, sensual gaze, looking at viewer, mirror,",
-        "populate",
-        true,
-        0.5,
-        "None"
-      ],
-      "widgets_values_named": {
-        "text": "__qwen21/styles__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__, ",
-        "seed": 177653453688249,
-        "control_after_generate": "randomize",
-        "populated_text": "[photorealistic] Render the scene as a convincing high-end photograph with anatomically natural subjects, realistic skin and fabric texture, soft directional daylight, accurate reflections, subtle depth of field, and balanced cinematic color grading., 1girl, harley quinn, dc comics, blonde hair, blue eyes, large breasts, fishnets, breast out, hand near breast, sensual gaze, looking at viewer, mirror,",
-        "mode": "populate",
-        "deduplicate": true,
-        "downvote_factor": 0.5,
-        "base_model": "None"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 479,
       "type": "Seed (rgthree)",
       "pos": [
@@ -537,7 +432,7 @@
         130
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -572,144 +467,6 @@
       }
     },
     {
-      "id": 525,
-      "type": "QwenVL_Unified",
-      "pos": [
-        -115.30120180439258,
-        2913.28275457069
-      ],
-      "size": [
-        492.35952363843035,
-        392
-      ],
-      "flags": {},
-      "order": 13,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "image",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 818
-        },
-        {
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 825
-        },
-        {
-          "name": "video",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 820
-        }
-      ],
-      "outputs": [
-        {
-          "name": "RESPONSE",
-          "type": "STRING",
-          "links": [
-            822
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-QwenVL-Mod",
-        "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
-        "Node name for S&R": "QwenVL_Unified",
-        "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
-      },
-      "widgets_values": [
-        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "IMG › Pony→Natural",
-        "None",
-        "",
-        8192,
-        false,
-        1340649970,
-        "randomize",
-        false,
-        false,
-        16,
-        "5s"
-      ],
-      "widgets_values_named": {
-        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "preset_prompt": "IMG › Pony→Natural",
-        "camera_tag": "None",
-        "prompt": "",
-        "max_tokens": 8192,
-        "keep_model_loaded": false,
-        "seed": 1340649970,
-        "control_after_generate": "randomize",
-        "keep_last_prompt": false,
-        "passthrough": false,
-        "frame_count": 16,
-        "duration": "5s"
-      },
-      "color": "#0d9489",
-      "bgcolor": "#134e4a"
-    },
-    {
-      "id": 510,
-      "type": "LoadImageOutput",
-      "pos": [
-        -1248.7517185021716,
-        2482.2050306786887
-      ],
-      "size": [
-        512.7675183484764,
-        679.6597260276726
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            797,
-            818
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.1",
-        "Node name for S&R": "LoadImageOutput"
-      },
-      "widgets_values": [
-        "Qwen21_2026-09-24_002.jpg [output]",
-        false,
-        "refresh",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "Qwen21_2026-09-24_002.jpg [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 531,
       "type": "LoadImageOutput",
       "pos": [
@@ -721,8 +478,8 @@
         679.6597260276726
       ],
       "flags": {},
-      "order": 7,
-      "mode": 4,
+      "order": 5,
+      "mode": 0,
       "inputs": [],
       "outputs": [
         {
@@ -745,13 +502,13 @@
         "Node name for S&R": "LoadImageOutput"
       },
       "widgets_values": [
-        "Qwen21_2026-09-24_002.jpg [output]",
+        "PMP/FD_2026-09-25/023303_00001_.png [output]",
         false,
         "refresh",
         "image"
       ],
       "widgets_values_named": {
-        "image": "Qwen21_2026-09-24_002.jpg [output]",
+        "image": "PMP/FD_2026-09-25/023303_00001_.png [output]",
         "Auto-refresh after generation": false,
         "refresh": "refresh",
         "upload": "image"
@@ -790,6 +547,12 @@
           "shape": 7,
           "type": "IMAGE",
           "link": 826
+        },
+        {
+          "name": "images.image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
         },
         {
           "name": "vae",
@@ -865,7 +628,7 @@
         1028.7898627914033
       ],
       "flags": {},
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -876,7 +639,7 @@
         "Node name for S&R": "PixaromaNote"
       },
       "widgets_values": [
-        "{\"version\": 1, \"content\": \"<h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/turnaround__</code></td><td>1</td><td>Character turnaround sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new scene (cyberpunk night market)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Replaces background of image1 with image2</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image2 ← identity from image1</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image2 ← head from image1</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Three edits at once (outfit + light + accessory)</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Day → midnight rainstorm, keeps geometry</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes object + photorealistic inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts object matching light/DoF/grain</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Edits text in image preserving typography</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>New camera angle of the same subject</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>⚠️ Important: QwenVL bypass</h3><p>\\\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\\\n\\\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = identity source, image2 = photo to modify).</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\", \"buttonColor\": \"#f66744\", \"lineColor\": \"#f66744\", \"width\": 400, \"height\": 200}",
+        "{\"version\": 1, \"content\": \"<h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/turnaround__</code></td><td>1</td><td>Character turnaround sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new scene (cyberpunk night market)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Replaces background of image1 with image2</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image2 ← identity from image1</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image2 ← head from image1</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Three edits at once (outfit + light + accessory)</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Day → midnight rainstorm, keeps geometry</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes object + photorealistic inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts object matching light/DoF/grain</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Edits text in image preserving typography</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>New camera angle of the same subject</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>⚠️ Important: QwenVL bypass</h3><p>\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = identity source, image2 = photo to modify).</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\", \"buttonColor\": \"#f66744\", \"lineColor\": \"#f66744\", \"width\": 400, \"height\": 200}",
         ""
       ],
       "widgets_values_named": {
@@ -887,11 +650,75 @@
       "bgcolor": "#363636"
     },
     {
+      "id": 530,
+      "type": "PixaromaLabel",
+      "pos": [
+        -1256.9911350971533,
+        2332.0726785917336
+      ],
+      "size": [
+        393,
+        40
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaLabel"
+      },
+      "widgets_values": [
+        "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+      ],
+      "widgets_values_named": {
+        "label_json": "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+      },
+      "color": "rgba(0,0,0,0)",
+      "bgcolor": "rgba(0,0,0,0)"
+    },
+    {
+      "id": 528,
+      "type": "PixaromaLabel",
+      "pos": [
+        -1254.5186357362359,
+        2227.638293590729
+      ],
+      "size": [
+        486,
+        74
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaLabel"
+      },
+      "widgets_values": [
+        "{\"text\":\"QwenImageEdit21\",\"fontSize\":54,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#ff8c42\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
+      ],
+      "widgets_values_named": {
+        "label_json": "{\"text\":\"QwenImageEdit21\",\"fontSize\":54,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#ff8c42\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
+      },
+      "color": "rgba(0,0,0,0)",
+      "bgcolor": "rgba(0,0,0,0)"
+    },
+    {
       "id": 524,
       "type": "PixaromaGroupSwitch",
       "pos": [
-        -124.54441584967091,
-        3729.3621068629054
+        -125.23348793676081,
+        3756.8856147986685
       ],
       "size": [
         250,
@@ -955,8 +782,8 @@
       "id": 478,
       "type": "PixaromaResolution",
       "pos": [
-        157.68108457463802,
-        3723.4705935639645
+        156.99201248754812,
+        3750.9941014997275
       ],
       "size": [
         240,
@@ -1019,68 +846,247 @@
       "bgcolor": "#2a2a2a"
     },
     {
-      "id": 530,
-      "type": "PixaromaLabel",
+      "id": 513,
+      "type": "PixaromaShowText",
       "pos": [
-        -1256.9911350971533,
-        2332.0726785917336
+        -120.60345155337274,
+        3425.365576595502
       ],
       "size": [
-        393,
-        40
+        507.1009728912968,
+        265.433854878725
       ],
-      "flags": {
-        "no_title": true
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 822
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            823
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaShowText",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
+      "widgets_values": [
+        "Replace the entire head and hair of the subject in <image2> with the head, facial identity, facial hair, and hairstyle of the person in <image1>. Retain the exact skull geometry, hairline, and facial expression from <image1>. Blend smoothly at the neckline and collar of <image2>, recalculating ambient occlusion and specular highlights so the hair and skin match the directional lighting and environmental reflections of <image2>."
+      ],
+      "widgets_values_named": {
+        "text": "Replace the entire head and hair of the subject in <image2> with the head, facial identity, facial hair, and hairstyle of the person in <image1>. Retain the exact skull geometry, hairline, and facial expression from <image1>. Blend smoothly at the neckline and collar of <image2>, recalculating ambient occlusion and specular highlights so the hair and skin match the directional lighting and environmental reflections of <image2>."
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 510,
+      "type": "LoadImageOutput",
+      "pos": [
+        -1248.7517185021716,
+        2482.2050306786887
+      ],
+      "size": [
+        512.7675183484764,
+        679.6597260276726
+      ],
+      "flags": {},
       "order": 11,
       "mode": 0,
       "inputs": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            797,
+            818
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaLabel"
+        "cnr_id": "comfy-core",
+        "ver": "0.37.1",
+        "Node name for S&R": "LoadImageOutput"
       },
       "widgets_values": [
-        "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+        "PMP/FD_2026-09-25/023318_00001_.png [output]",
+        false,
+        "refresh",
+        "image"
       ],
       "widgets_values_named": {
-        "label_json": "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+        "image": "PMP/FD_2026-09-25/023318_00001_.png [output]",
+        "Auto-refresh after generation": false,
+        "refresh": "refresh",
+        "upload": "image"
       },
-      "color": "rgba(0,0,0,0)",
-      "bgcolor": "rgba(0,0,0,0)"
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
-      "id": 528,
-      "type": "PixaromaLabel",
+      "id": 525,
+      "type": "QwenVL_Unified",
       "pos": [
-        -1254.5186357362359,
-        2227.638293590729
+        -110,
+        2960
       ],
       "size": [
-        486,
-        74
+        492.35952363843035,
+        392
       ],
-      "flags": {
-        "no_title": true
+      "flags": {},
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 818
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 825
+        },
+        {
+          "name": "video",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 820
+        }
+      ],
+      "outputs": [
+        {
+          "name": "RESPONSE",
+          "type": "STRING",
+          "links": [
+            822
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-QwenVL-Mod",
+        "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
+        "Node name for S&R": "QwenVL_Unified",
+        "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
       },
+      "widgets_values": [
+        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "IMG › Pony→Natural",
+        "None",
+        "",
+        8192,
+        false,
+        3771417020,
+        "randomize",
+        false,
+        false,
+        16,
+        "5s"
+      ],
+      "widgets_values_named": {
+        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "preset_prompt": "IMG › Pony→Natural",
+        "camera_tag": "None",
+        "prompt": "",
+        "max_tokens": 8192,
+        "keep_model_loaded": false,
+        "seed": 3771417020,
+        "control_after_generate": "randomize",
+        "keep_last_prompt": false,
+        "passthrough": false,
+        "frame_count": 16,
+        "duration": "5s"
+      },
+      "color": "#0d9489",
+      "bgcolor": "#134e4a"
+    },
+    {
+      "id": 512,
+      "type": "WildcardProcessor",
+      "pos": [
+        -117.5455908516988,
+        2447.192600070959
+      ],
+      "size": [
+        490,
+        390
+      ],
+      "flags": {},
       "order": 12,
       "mode": 0,
       "inputs": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            820
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": null
+        }
+      ],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaLabel"
+        "cnr_id": "ComfyUI-TagForge",
+        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge",
+        "tagforge_reproduce_seed": 543274943133878,
+        "tagforge_wildcard_mode": "populate"
       },
       "widgets_values": [
-        "{\"text\":\"QwenImageEdit21\",\"fontSize\":54,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#ff8c42\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
+        "__qwen21/headswap__",
+        557085104026650,
+        "randomize",
+        "Replace the entire head and hair of the subject in <image2> with the head, facial identity, facial hair, and hairstyle of the person in <image1>. Retain the exact skull geometry, hairline, and facial expression from <image1>. Blend smoothly at the neckline and collar of <image2>, recalculating ambient occlusion and specular highlights so the hair and skin match the directional lighting and environmental reflections of <image2>.",
+        "populate",
+        true,
+        0.5,
+        "None"
       ],
       "widgets_values_named": {
-        "label_json": "{\"text\":\"QwenImageEdit21\",\"fontSize\":54,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#ff8c42\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
+        "text": "__qwen21/headswap__",
+        "seed": 557085104026650,
+        "control_after_generate": "randomize",
+        "populated_text": "Replace the entire head and hair of the subject in <image2> with the head, facial identity, facial hair, and hairstyle of the person in <image1>. Retain the exact skull geometry, hairline, and facial expression from <image1>. Blend smoothly at the neckline and collar of <image2>, recalculating ambient occlusion and specular highlights so the hair and skin match the directional lighting and environmental reflections of <image2>.",
+        "mode": "populate",
+        "deduplicate": true,
+        "downvote_factor": 0.5,
+        "base_model": "None"
       },
-      "color": "rgba(0,0,0,0)",
-      "bgcolor": "rgba(0,0,0,0)"
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     }
   ],
   "links": [
@@ -1161,7 +1167,7 @@
       515,
       0,
       491,
-      3,
+      4,
       "VAE"
     ],
     [
@@ -1201,7 +1207,7 @@
       513,
       0,
       491,
-      4,
+      5,
       "STRING"
     ],
     [
@@ -1258,10 +1264,10 @@
       "id": 40,
       "title": "QWEN PROMPTING",
       "bounding": [
-        -128.52967270079748,
-        2402.700050609396,
-        518.9108589418856,
-        1257.7000687874438
+        -130,
+        2880,
+        512.9202139859683,
+        492.41613059992005
       ],
       "color": "#3f789e",
       "flags": {}
@@ -2159,10 +2165,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.5952298136646033,
+      "scale": 0.7202280745341708,
       "offset": [
-        3158.060476770698,
-        -1459.2592352053894
+        1960.3973725551853,
+        -2084.174744394393
       ]
     }
   },
