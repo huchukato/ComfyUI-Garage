@@ -328,6 +328,25 @@ function provisioning_download() {
     fi
 }
 
+# Polls the temp dir size while hf/hf_transfer downloads (hf_transfer emits no
+# parseable progress), printing a bar + % + MB every 20s.
+function monitor_progress() {
+    local watch_dir="$1" expected="$2" name="$3"
+    local cur pct filled pad bar exp_mb
+    exp_mb=$(( expected / 1048576 ))
+    while :; do
+        cur=$(du -sb "$watch_dir" 2>/dev/null | awk '{print $1}')
+        cur=${cur:-0}
+        pct=$(( cur * 100 / expected ))
+        [ "$pct" -gt 100 ] && pct=100
+        filled=$(( pct / 5 ))
+        printf -v bar '%*s' "$filled" ''; bar=${bar// /#}
+        printf -v pad '%*s' "$((20 - filled))" ''; pad=${pad// /-}
+        echo "   ⏳ $name [${bar}${pad}] ${pct}% ($((cur / 1048576))/${exp_mb} MB)"
+        sleep 20
+    done
+}
+
 function download_minimax_models() {
     local base_dir="${COMFYUI_DIR}/models"
     mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,loras}
@@ -361,7 +380,11 @@ function download_minimax_models() {
         local resume_flag=""
         [ "$hf_cmd" = "huggingface-cli" ] && resume_flag="--resume-download"
 
+        monitor_progress "$tmp_dir" "$min_size" "$name" &
+        local mon_pid=$!
+
         if $hf_cmd download "$repo_id" "$repo_path" --local-dir "$tmp_dir" $resume_flag; then
+            kill "$mon_pid" 2>/dev/null; wait "$mon_pid" 2>/dev/null
             local downloaded_path="$tmp_dir/$repo_path"
             if [ -f "$downloaded_path" ] || [ -L "$downloaded_path" ]; then
                 mv -f "$downloaded_path" "$dest"
@@ -374,6 +397,7 @@ function download_minimax_models() {
                 rm -rf "$tmp_dir"
             fi
         else
+            kill "$mon_pid" 2>/dev/null; wait "$mon_pid" 2>/dev/null
             echo "❌ $hf_cmd failed for $name"
             rm -rf "$tmp_dir"
         fi
