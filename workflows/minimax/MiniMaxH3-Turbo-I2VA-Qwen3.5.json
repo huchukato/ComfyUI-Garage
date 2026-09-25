@@ -1,8 +1,8 @@
 {
   "id": "2e5fb033-7e4f-4e73-a580-590a2a38a074",
   "revision": 0,
-  "last_node_id": 255,
-  "last_link_id": 547,
+  "last_node_id": 257,
+  "last_link_id": 551,
   "nodes": [
     {
       "id": 135,
@@ -140,61 +140,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 159,
-      "type": "WidgetToString",
-      "pos": [
-        -692.3178795801571,
-        5467.797489376136
-      ],
-      "size": [
-        294.341796875,
-        154
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "any_input",
-          "shape": 7,
-          "type": "*",
-          "link": 433
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            300,
-            355
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
-        "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
-      },
-      "widgets_values": [
-        114,
-        "image",
-        false,
-        "LoadImage",
-        2
-      ],
-      "widgets_values_named": {
-        "id": 114,
-        "widget_name": "image",
-        "return_all": false,
-        "node_title": "LoadImage",
-        "allowed_float_decimals": 2
-      }
-    },
-    {
       "id": 205,
       "type": "ComfyUI-PerfectVideoResolution",
       "pos": [
@@ -206,14 +151,14 @@
         376
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
           "name": "image",
           "shape": 7,
           "type": "IMAGE",
-          "link": 432
+          "link": 549
         },
         {
           "name": "image2",
@@ -306,7 +251,7 @@
       ],
       "size": [
         471.684350491249,
-        602.0724471513275
+        334
       ],
       "flags": {},
       "order": 16,
@@ -341,7 +286,7 @@
           "widget": {
             "name": "filename_prefix"
           },
-          "link": 300
+          "link": 550
         }
       ],
       "outputs": [
@@ -467,51 +412,6 @@
       "bgcolor": "#2a2a2a"
     },
     {
-      "id": 137,
-      "type": "easy showAnything",
-      "pos": [
-        -851.7083940125891,
-        5307.65824141797
-      ],
-      "size": [
-        646.6021824539848,
-        334.35740569392055
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 253
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": []
-        }
-      ],
-      "title": "QWEN GENERATED PROMPT",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
-      },
-      "widgets_values": [
-        "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] 3D CG, cinematic lighting, a medium close-up captures a passionate kiss between a woman with shoulder-length platinum blonde hair wearing a grey tank top and a man in a maroon hoodie. Her left hand rests on the back of his head while her right hand cups his jaw, fingers interlaced. He returns the embrace with both arms wrapped around her waist, pulling her closer. Their lips are fully pressed together, eyes gently closed, conveying intense intimacy. Warm ambient light from a nearby window casts soft highlights across their skin, emphasizing the texture of her blonde hair and the fabric of their clothing. At 00:01.500, the camera slowly dollies in, tightening the frame on their faces to emphasize the intensity of their embrace. At 00:03.200, the camera cuts to a tighter close-up of their mouths as the kiss deepens, tongues meeting in a slow, deliberate exchange. Her nails, painted with a pale polish, are clearly visible against his skin. At 00:04.800, the camera pulls back slightly to show the full embrace once more, capturing the subtle shift in their posture as they move together.\n\noverall_soundscape: Her breathing is shallow and rhythmic, syncing with his as they kiss. Soft, wet sounds of lips pressing together and tongues brushing are audible beneath the gentle hum of the room’s ambient warmth. A low, steady moan escapes her throat when he deepens the kiss, followed by a soft gasp when her fingers tighten on his jaw. The fabric of their clothing rustles faintly as they shift their bodies.\n\nnon_diegetic_music: N/A"
-      ],
-      "widgets_values_named": {
-        "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] 3D CG, cinematic lighting, a medium close-up captures a passionate kiss between a woman with shoulder-length platinum blonde hair wearing a grey tank top and a man in a maroon hoodie. Her left hand rests on the back of his head while her right hand cups his jaw, fingers interlaced. He returns the embrace with both arms wrapped around her waist, pulling her closer. Their lips are fully pressed together, eyes gently closed, conveying intense intimacy. Warm ambient light from a nearby window casts soft highlights across their skin, emphasizing the texture of her blonde hair and the fabric of their clothing. At 00:01.500, the camera slowly dollies in, tightening the frame on their faces to emphasize the intensity of their embrace. At 00:03.200, the camera cuts to a tighter close-up of their mouths as the kiss deepens, tongues meeting in a slow, deliberate exchange. Her nails, painted with a pale polish, are clearly visible against his skin. At 00:04.800, the camera pulls back slightly to show the full embrace once more, capturing the subtle shift in their posture as they move together.\n\noverall_soundscape: Her breathing is shallow and rhythmic, syncing with his as they kiss. Soft, wet sounds of lips pressing together and tongues brushing are audible beneath the gentle hum of the room’s ambient warmth. A low, steady moan escapes her throat when he deepens the kiss, followed by a soft gasp when her fingers tighten on his jaw. The fabric of their clothing rustles faintly as they shift their bodies.\n\nnon_diegetic_music: N/A"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 92,
       "type": "SaveVideo",
       "pos": [
@@ -537,7 +437,7 @@
           "widget": {
             "name": "filename_prefix"
           },
-          "link": 355
+          "link": 551
         }
       ],
       "outputs": [
@@ -567,57 +467,6 @@
       },
       "color": "#223",
       "bgcolor": "#335"
-    },
-    {
-      "id": 209,
-      "type": "LoadImageOutput",
-      "pos": [
-        -1653.03703785967,
-        4762.717141184654
-      ],
-      "size": [
-        464.05415264966484,
-        834.2137532653715
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            432,
-            433
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "LoadImage",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.36.0",
-        "Node name for S&R": "LoadImageOutput"
-      },
-      "widgets_values": [
-        "_output_images_will_be_put_here [output]",
-        false,
-        "refresh",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "_output_images_will_be_put_here [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
     },
     {
       "id": 105,
@@ -740,41 +589,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 154,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -187.33570580810547,
-        5125.803111949718
-      ],
-      "size": [
-        329.58411611598865,
-        240.071161494664
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "OPTIONS",
-      "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 253,
       "type": "a871f085-9fd7-426a-8dde-585b34727ef4",
       "pos": [
@@ -857,7 +671,7 @@
         130
       ],
       "flags": {},
-      "order": 9,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -879,6 +693,195 @@
       },
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 257,
+      "type": "PixaromaImageInfo",
+      "pos": [
+        -1528.9674623774315,
+        5181.881633475499
+      ],
+      "size": [
+        216,
+        106
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "link": 548
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            549
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [
+            550,
+            551
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaImageInfo"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 256,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -1659.8680516129434,
+        4774.161726816519
+      ],
+      "size": [
+        477.7430809756752,
+        817.7439354611388
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": [
+            548
+          ]
+        }
+      ],
+      "title": "Load Image",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImageMini"
+      },
+      "widgets_values": [
+        "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#1f9e6a",
+      "bgcolor": "#23362f"
+    },
+    {
+      "id": 137,
+      "type": "easy showAnything",
+      "pos": [
+        -856.5939888446223,
+        5298.374361724369
+      ],
+      "size": [
+        646.6021824539848,
+        334.35740569392055
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "title": "QWEN GENERATED PROMPT",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+        "Node name for S&R": "easy showAnything",
+        "aux_id": "yolain/ComfyUI-Easy-Use"
+      },
+      "widgets_values": [
+        "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] 3D CG, cinematic lighting, a medium close-up captures a passionate kiss between a woman with shoulder-length platinum blonde hair wearing a grey tank top and a man in a maroon hoodie. Her left hand rests on the back of his head while her right hand cups his jaw, fingers interlaced. He returns the embrace with both arms wrapped around her waist, pulling her closer. Their lips are fully pressed together, eyes gently closed, conveying intense intimacy. Warm ambient light from a nearby window casts soft highlights across their skin, emphasizing the texture of her blonde hair and the fabric of their clothing. At 00:01.500, the camera slowly dollies in, tightening the frame on their faces to emphasize the intensity of their embrace. At 00:03.200, the camera cuts to a tighter close-up of their mouths as the kiss deepens, tongues meeting in a slow, deliberate exchange. Her nails, painted with a pale polish, are clearly visible against his skin. At 00:04.800, the camera pulls back slightly to show the full embrace once more, capturing the subtle shift in their posture as they move together.\n\noverall_soundscape: Her breathing is shallow and rhythmic, syncing with his as they kiss. Soft, wet sounds of lips pressing together and tongues brushing are audible beneath the gentle hum of the room’s ambient warmth. A low, steady moan escapes her throat when he deepens the kiss, followed by a soft gasp when her fingers tighten on his jaw. The fabric of their clothing rustles faintly as they shift their bodies.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] 3D CG, cinematic lighting, a medium close-up captures a passionate kiss between a woman with shoulder-length platinum blonde hair wearing a grey tank top and a man in a maroon hoodie. Her left hand rests on the back of his head while her right hand cups his jaw, fingers interlaced. He returns the embrace with both arms wrapped around her waist, pulling her closer. Their lips are fully pressed together, eyes gently closed, conveying intense intimacy. Warm ambient light from a nearby window casts soft highlights across their skin, emphasizing the texture of her blonde hair and the fabric of their clothing. At 00:01.500, the camera slowly dollies in, tightening the frame on their faces to emphasize the intensity of their embrace. At 00:03.200, the camera cuts to a tighter close-up of their mouths as the kiss deepens, tongues meeting in a slow, deliberate exchange. Her nails, painted with a pale polish, are clearly visible against his skin. At 00:04.800, the camera pulls back slightly to show the full embrace once more, capturing the subtle shift in their posture as they move together.\n\noverall_soundscape: Her breathing is shallow and rhythmic, syncing with his as they kiss. Soft, wet sounds of lips pressing together and tongues brushing are audible beneath the gentle hum of the room’s ambient warmth. A low, steady moan escapes her throat when he deepens the kiss, followed by a soft gasp when her fingers tighten on his jaw. The fabric of their clothing rustles faintly as they shift their bodies.\n\nnon_diegetic_music: N/A"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 154,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -187.33570580810547,
+        5125.803111949718
+      ],
+      "size": [
+        329.58411611598865,
+        240.071161494664
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -897,22 +900,6 @@
       137,
       0,
       "*"
-    ],
-    [
-      300,
-      159,
-      0,
-      126,
-      4,
-      "STRING"
-    ],
-    [
-      355,
-      159,
-      0,
-      92,
-      1,
-      "STRING"
     ],
     [
       416,
@@ -939,22 +926,6 @@
       "IMAGE"
     ],
     [
-      432,
-      209,
-      0,
-      205,
-      0,
-      "IMAGE"
-    ],
-    [
-      433,
-      209,
-      0,
-      159,
-      0,
-      "IMAGE"
-    ],
-    [
       443,
       105,
       2,
@@ -977,6 +948,38 @@
       126,
       0,
       "IMAGE"
+    ],
+    [
+      548,
+      256,
+      1,
+      257,
+      0,
+      "PIX_IMAGE_INFO"
+    ],
+    [
+      549,
+      257,
+      0,
+      205,
+      0,
+      "IMAGE"
+    ],
+    [
+      550,
+      257,
+      4,
+      126,
+      4,
+      "STRING"
+    ],
+    [
+      551,
+      257,
+      4,
+      92,
+      1,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1012,8 +1015,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 255,
-          "lastLinkId": 547,
+          "lastNodeId": 257,
+          "lastLinkId": 551,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1301,7 +1304,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -1439,7 +1442,7 @@
               140
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -1552,7 +1555,7 @@
               150
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -1611,7 +1614,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -1675,7 +1678,7 @@
               70
             ],
             "flags": {},
-            "order": 14,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -1723,7 +1726,7 @@
               60
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -1806,7 +1809,7 @@
               550
             ],
             "flags": {},
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -1920,7 +1923,7 @@
               90
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -1976,7 +1979,7 @@
               90
             ],
             "flags": {},
-            "order": 15,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -2023,7 +2026,7 @@
               130
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -2089,7 +2092,7 @@
               82
             ],
             "flags": {},
-            "order": 16,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -2154,7 +2157,7 @@
               106.57732339190989
             ],
             "flags": {},
-            "order": 17,
+            "order": 16,
             "mode": 4,
             "inputs": [
               {
@@ -2202,7 +2205,7 @@
               250
             ],
             "flags": {},
-            "order": 18,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -2264,7 +2267,7 @@
               392
             ],
             "flags": {},
-            "order": 4,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -2406,7 +2409,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -2881,8 +2884,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 255,
-          "lastLinkId": 547,
+          "lastNodeId": 257,
+          "lastLinkId": 551,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3432,7 +3435,7 @@
             ],
             "flags": {},
             "order": 4,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "images",
@@ -3587,7 +3590,7 @@
             ],
             "flags": {},
             "order": 5,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "model",
@@ -3844,10 +3847,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.6252437226211635,
+      "scale": 0.6877680948832801,
       "offset": [
-        2381.4741568426834,
-        -3995.715286827374
+        2566.193335779094,
+        -4286.855869483064
       ]
     }
   },

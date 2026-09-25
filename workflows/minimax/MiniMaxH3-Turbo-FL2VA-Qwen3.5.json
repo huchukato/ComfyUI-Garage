@@ -1,8 +1,8 @@
 {
   "id": "c0033410-f90d-46e0-9e2a-7228d5a7b623",
   "revision": 0,
-  "last_node_id": 260,
-  "last_link_id": 549,
+  "last_node_id": 264,
+  "last_link_id": 555,
   "nodes": [
     {
       "id": 92,
@@ -30,7 +30,7 @@
           "widget": {
             "name": "filename_prefix"
           },
-          "link": 308
+          "link": 555
         }
       ],
       "outputs": [
@@ -143,133 +143,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 118,
-      "type": "MarkdownNote",
-      "pos": [
-        -1174.4844253292777,
-        5323.311525896344
-      ],
-      "size": [
-        254.23793962820582,
-        401.09532327839497
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Size Settings Reference",
-      "properties": {},
-      "widgets_values": [
-        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
-      ],
-      "widgets_values_named": {
-        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 156,
-      "type": "WidgetToString",
-      "pos": [
-        -677.9705073378924,
-        5485.275843716909
-      ],
-      "size": [
-        294.341796875,
-        154
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "any_input",
-          "shape": 7,
-          "type": "*",
-          "link": 506
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            297,
-            308
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
-        "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
-      },
-      "widgets_values": [
-        114,
-        "image",
-        false,
-        "FirstFrame",
-        2
-      ],
-      "widgets_values_named": {
-        "id": 114,
-        "widget_name": "image",
-        "return_all": false,
-        "node_title": "FirstFrame",
-        "allowed_float_decimals": 2
-      }
-    },
-    {
-      "id": 137,
-      "type": "easy showAnything",
-      "pos": [
-        -879.4267643524979,
-        5436.886099104391
-      ],
-      "size": [
-        640.569002614706,
-        403.4854900527962
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 253
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": []
-        }
-      ],
-      "title": "QWEN3VL GENERATED PROMPT",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
-      },
-      "widgets_values": [
-        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A cinematic, close-up loop captures a blonde woman with dark eye makeup and glossy red lips, kneeling on a patterned rug beside a wooden bed with a yellow-green quilt. Her bare shoulders glisten under warm, directional lighting that casts soft shadows across her skin, highlighting the subtle sheen of arousal. She wears thin, colorful bracelets on her right wrist, which grip the base of a fully erect penis held upright by an unseen partner clad in a deep burgundy shirt. Her head tilts slightly upward, eyes locked on the shaft with a focused, intimate gaze, while her fingers trace along the glans in a slow, rhythmic caress. The camera begins with a tight over-the-shoulder framing, emphasizing the angle between her hands and the erect member. Over the first two seconds, her right hand slides downward in a smooth, circular motion, her nails grazing the skin with deliberate pressure, while her left hand stabilizes the base. Her breath hitches audibly as her index finger gently traces the underside of the shaft, following its natural curve. By the midpoint, her torso shifts subtly forward, pressing her bare chest closer to the partner’s leg, creating a shallow, continuous grind that deepens the contact. Her eyes flutter briefly, lashes catching the warm light, before returning to the shaft with renewed intensity. The camera executes a slow, fluid circular orbit around the couple’s joined forms, maintaining the same distance but shifting the angle to highlight the interplay of skin tones and fabric textures. Her head tilts further back as her fingers wrap around the shaft, applying a firm, rhythmic pressure that matches the steady cadence of her breathing. The burgundy fabric of the partner’s shirt remains static, its folds absorbing and reflecting the ambient light in a way that anchors the scene’s intimacy. By the final second, her movement becomes slightly more urgent, her fingers tightening as she traces the underside of the glans in a final, lingering caress. Her lips part slightly, a soft exhale escaping as her gaze remains fixed on the shaft, completing the cycle with the same pose, framing, and expression as the opening frame. The camera returns to its initial position, the motion seamless and unbroken, creating a natural, organic loop that flows continuously without reset.\n\noverall_soundscape: Her breathing is steady but slightly elevated, punctuated by soft, rhythmic inhales and audible exhales that sync with her hand movements. The sound of skin on skin is prominent, a subtle, wet friction as her fingers glide along the shaft, mixed with the faint, muffled sound of fabric shifting as her body presses closer. A low, continuous hum of arousal underlies the scene, with her lips occasionally parting to release a soft, involuntary gasp as her fingers trace the glans. The ambient room tone is minimal, allowing the intimate sounds of her touch and breath to dominate the audio landscape.\n\nnon_diegetic_music: N/A"
-      ],
-      "widgets_values_named": {
-        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A cinematic, close-up loop captures a blonde woman with dark eye makeup and glossy red lips, kneeling on a patterned rug beside a wooden bed with a yellow-green quilt. Her bare shoulders glisten under warm, directional lighting that casts soft shadows across her skin, highlighting the subtle sheen of arousal. She wears thin, colorful bracelets on her right wrist, which grip the base of a fully erect penis held upright by an unseen partner clad in a deep burgundy shirt. Her head tilts slightly upward, eyes locked on the shaft with a focused, intimate gaze, while her fingers trace along the glans in a slow, rhythmic caress. The camera begins with a tight over-the-shoulder framing, emphasizing the angle between her hands and the erect member. Over the first two seconds, her right hand slides downward in a smooth, circular motion, her nails grazing the skin with deliberate pressure, while her left hand stabilizes the base. Her breath hitches audibly as her index finger gently traces the underside of the shaft, following its natural curve. By the midpoint, her torso shifts subtly forward, pressing her bare chest closer to the partner’s leg, creating a shallow, continuous grind that deepens the contact. Her eyes flutter briefly, lashes catching the warm light, before returning to the shaft with renewed intensity. The camera executes a slow, fluid circular orbit around the couple’s joined forms, maintaining the same distance but shifting the angle to highlight the interplay of skin tones and fabric textures. Her head tilts further back as her fingers wrap around the shaft, applying a firm, rhythmic pressure that matches the steady cadence of her breathing. The burgundy fabric of the partner’s shirt remains static, its folds absorbing and reflecting the ambient light in a way that anchors the scene’s intimacy. By the final second, her movement becomes slightly more urgent, her fingers tightening as she traces the underside of the glans in a final, lingering caress. Her lips part slightly, a soft exhale escaping as her gaze remains fixed on the shaft, completing the cycle with the same pose, framing, and expression as the opening frame. The camera returns to its initial position, the motion seamless and unbroken, creating a natural, organic loop that flows continuously without reset.\n\noverall_soundscape: Her breathing is steady but slightly elevated, punctuated by soft, rhythmic inhales and audible exhales that sync with her hand movements. The sound of skin on skin is prominent, a subtle, wet friction as her fingers glide along the shaft, mixed with the faint, muffled sound of fabric shifting as her body presses closer. A low, continuous hum of arousal underlies the scene, with her lips occasionally parting to release a soft, involuntary gasp as her fingers trace the glans. The ambient room tone is minimal, allowing the intimate sounds of her touch and breath to dominate the audio landscape.\n\nnon_diegetic_music: N/A"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 126,
       "type": "VHS_VideoCombine",
       "pos": [
@@ -278,7 +151,7 @@
       ],
       "size": [
         511.3966496168314,
-        624.4106154094677
+        979.7956923644974
       ],
       "flags": {},
       "order": 18,
@@ -313,7 +186,7 @@
           "widget": {
             "name": "filename_prefix"
           },
-          "link": 297
+          "link": 551
         }
       ],
       "outputs": [
@@ -345,13 +218,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_063_v01.jpg [output]_00004.webm",
+            "filename": "162549_00001__00001-audio.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "S02_EP11_HotelCorrect_063_v01.jpg [output]_00004.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_063_v01.jpg [output]_00004.webm"
+            "workflow": "162549_00001__00001.png",
+            "fullpath": "/workspace/ComfyUI/output/162549_00001__00001-audio.webm"
           }
         }
       },
@@ -370,13 +243,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_HotelCorrect_063_v01.jpg [output]_00004.webm",
+            "filename": "162549_00001__00001-audio.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 48,
-            "workflow": "S02_EP11_HotelCorrect_063_v01.jpg [output]_00004.png",
-            "fullpath": "/workspace/runpod-slim/ComfyUI/output/S02_EP11_HotelCorrect_063_v01.jpg [output]_00004.webm"
+            "workflow": "162549_00001__00001.png",
+            "fullpath": "/workspace/ComfyUI/output/162549_00001__00001-audio.webm"
           }
         }
       },
@@ -397,7 +270,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -424,7 +297,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -433,7 +306,7 @@
         "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
         "Node name for S&R": "PixaromaRunTimer",
         "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "runTimerLastMs": 142258.19999998808
+        "runTimerLastMs": 154636.40000003576
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -447,7 +320,7 @@
       ],
       "size": [
         271.712890625,
-        376
+        400
       ],
       "flags": {},
       "order": 13,
@@ -457,13 +330,13 @@
           "name": "image",
           "shape": 7,
           "type": "IMAGE",
-          "link": 507
+          "link": 553
         },
         {
           "name": "image2",
           "shape": 7,
           "type": "IMAGE",
-          "link": 508
+          "link": 554
         },
         {
           "name": "mask",
@@ -520,8 +393,8 @@
       },
       "widgets_values": [
         "MiniMax H3",
-        "16:9",
-        "Native — 1344×768",
+        "3:4",
+        "Native — 864×1184",
         32,
         false,
         "lanczos",
@@ -531,8 +404,8 @@
       ],
       "widgets_values_named": {
         "model": "MiniMax H3",
-        "aspect_ratio": "16:9",
-        "resolution": "Native — 1344×768",
+        "aspect_ratio": "3:4",
+        "resolution": "Native — 864×1184",
         "divisible_by": 32,
         "upscale": false,
         "upscale_method": "lanczos",
@@ -555,7 +428,7 @@
         103
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -597,142 +470,6 @@
       "bgcolor": "#3f3731"
     },
     {
-      "id": 153,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -185.27658415395746,
-        5425.451298764128
-      ],
-      "size": [
-        318.9070112017879,
-        145.52071747512582
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "OPTIONS",
-      "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 239,
-      "type": "LoadImageOutput",
-      "pos": [
-        -2220.4345432217547,
-        4912.394597027024
-      ],
-      "size": [
-        465.1377070312502,
-        666.9531210937503
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            506,
-            507
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "FirstFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.36.0",
-        "Node name for S&R": "LoadImageOutput"
-      },
-      "widgets_values": [
-        "S02_EP11_HotelCorrect_063_v01.jpg [output]",
-        false,
-        "refresh",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "S02_EP11_HotelCorrect_063_v01.jpg [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 240,
-      "type": "LoadImageOutput",
-      "pos": [
-        -1696.280504159256,
-        4911.628409527023
-      ],
-      "size": [
-        453.75661718749996,
-        663.5996249999998
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            508
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "LastFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.36.0",
-        "Node name for S&R": "LoadImageOutput"
-      },
-      "widgets_values": [
-        "S02_EP11_HotelCorrect_063_v01.jpg [output]",
-        false,
-        "refresh",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "S02_EP11_HotelCorrect_063_v01.jpg [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 219,
       "type": "MarkdownNote",
       "pos": [
@@ -744,7 +481,7 @@
         479.82314240701726
       ],
       "flags": {},
-      "order": 10,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -829,6 +566,305 @@
       },
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 218,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -196.47401808469698,
+        5636.555432969927
+      ],
+      "size": [
+        326.0181640625,
+        130
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "SPEED PATCH",
+      "properties": {
+        "matchColors": "Yellow",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 153,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -185.27658415395746,
+        5425.451298764128
+      ],
+      "size": [
+        318.9070112017879,
+        145.52071747512582
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 137,
+      "type": "easy showAnything",
+      "pos": [
+        -870.7836776337482,
+        5446.023859260636
+      ],
+      "size": [
+        640.569002614706,
+        403.4854900527962
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "title": "QWEN3VL GENERATED PROMPT",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+        "Node name for S&R": "easy showAnything",
+        "aux_id": "yolain/ComfyUI-Easy-Use"
+      },
+      "widgets_values": [
+        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A 2D anime-style woman with long pink hair kneels in a sunlit café, wearing a tight black latex jumpsuit and black lace-up boots. The environment features a wooden counter, hanging pendant lights, and warm afternoon light streaming through a window with visible dust motes dancing in the air. At 0.00s, she is positioned on her knees, left knee bent forward, right knee slightly behind, her right hand raised to her lips with index finger extended inside her mouth, while her left arm rests naturally along the counter. Her head is tilted slightly upward, eyes half-lidded, gazing toward the window. As the clip progresses, the camera executes a smooth [TRACKING_LEFT] lateral movement, gliding leftward while maintaining her centered in the frame. Her pose shifts subtly: she lowers her right hand from her lips, letting it drape along the counter, while her left hand lifts slightly and taps the wood twice in a nervous, playful gesture. Her spine straightens marginally, hips shifting forward, accentuating the sheen of the latex against her thighs. Breathing is steady but audible, chest rising and falling with soft, rhythmic motion. Her expression evolves from contemplative to slightly coy as she glances sideways, her lashes fluttering once in response to the sunlight. The light intensifies across the scene, casting deeper shadows under her chin and along the folds of her jumpsuit, while highlights catch the moisture on her lips and the gloss of the latex. By 5.00s, she returns to a pose mirroring the first frame: right hand back to her lips, left hand resting on the counter, knees in identical position, head tilted upward with eyes half-lidded. The camera completes its leftward glide, now framing her against a slightly different background angle, but she occupies the same spatial center, expression and pose reconstituted with near-perfect fidelity.\n\noverall_soundscape: The scene is filled with the ambient hum of a café — distant chatter, clinking cups, and the soft hiss of a steam machine — layered underneath is the woman’s steady, sensual breathing, audible and rhythmic. Her lips press against her index finger with a soft, wet suction sound, followed by the faint rustle of latex shifting as she moves her hips and arms. The wooden counter creaks slightly under her left hand as she taps it twice. Her breathing deepens and quickens subtly, with a low, involuntary gasp escaping as sunlight glints across her chest.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A 2D anime-style woman with long pink hair kneels in a sunlit café, wearing a tight black latex jumpsuit and black lace-up boots. The environment features a wooden counter, hanging pendant lights, and warm afternoon light streaming through a window with visible dust motes dancing in the air. At 0.00s, she is positioned on her knees, left knee bent forward, right knee slightly behind, her right hand raised to her lips with index finger extended inside her mouth, while her left arm rests naturally along the counter. Her head is tilted slightly upward, eyes half-lidded, gazing toward the window. As the clip progresses, the camera executes a smooth [TRACKING_LEFT] lateral movement, gliding leftward while maintaining her centered in the frame. Her pose shifts subtly: she lowers her right hand from her lips, letting it drape along the counter, while her left hand lifts slightly and taps the wood twice in a nervous, playful gesture. Her spine straightens marginally, hips shifting forward, accentuating the sheen of the latex against her thighs. Breathing is steady but audible, chest rising and falling with soft, rhythmic motion. Her expression evolves from contemplative to slightly coy as she glances sideways, her lashes fluttering once in response to the sunlight. The light intensifies across the scene, casting deeper shadows under her chin and along the folds of her jumpsuit, while highlights catch the moisture on her lips and the gloss of the latex. By 5.00s, she returns to a pose mirroring the first frame: right hand back to her lips, left hand resting on the counter, knees in identical position, head tilted upward with eyes half-lidded. The camera completes its leftward glide, now framing her against a slightly different background angle, but she occupies the same spatial center, expression and pose reconstituted with near-perfect fidelity.\n\noverall_soundscape: The scene is filled with the ambient hum of a café — distant chatter, clinking cups, and the soft hiss of a steam machine — layered underneath is the woman’s steady, sensual breathing, audible and rhythmic. Her lips press against her index finger with a soft, wet suction sound, followed by the faint rustle of latex shifting as she moves her hips and arms. The wooden counter creaks slightly under her left hand as she taps it twice. Her breathing deepens and quickens subtly, with a low, involuntary gasp escaping as sunlight glints across her chest.\n\nnon_diegetic_music: N/A"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 262,
+      "type": "PixaromaImageInfo",
+      "pos": [
+        -2180.495877730989,
+        5419.049483215587
+      ],
+      "size": [
+        216,
+        106
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "link": 550
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            553
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [
+            551,
+            555
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaImageInfo"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 261,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -2221.252473931508,
+        4905.525757771869
+      ],
+      "size": [
+        460,
+        690
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": [
+            550
+          ]
+        }
+      ],
+      "title": "First Frame",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImageMini"
+      },
+      "widgets_values": [
+        "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#1f9e6a",
+      "bgcolor": "#23362f"
+    },
+    {
+      "id": 263,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -1720.6151236190053,
+        4908.367562498418
+      ],
+      "size": [
+        490,
+        690
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            554
+          ]
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": []
+        }
+      ],
+      "title": "Last Frame",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImageMini"
+      },
+      "widgets_values": [
+        "Qwen21_2026-09-25_001%.jpg [output]",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "Qwen21_2026-09-25_001%.jpg [output]",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#1f85a8",
+      "bgcolor": "#233338"
+    },
+    {
+      "id": 118,
+      "type": "MarkdownNote",
+      "pos": [
+        -1176.4488319699024,
+        5345.823386833849
+      ],
+      "size": [
+        254.23793962820582,
+        401.09532327839497
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Size Settings Reference",
+      "properties": {},
+      "widgets_values": [
+        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      ],
+      "widgets_values_named": {
+        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 105,
@@ -922,7 +958,7 @@
       "widgets_values": [
         "",
         1344,
-        "finger caressing, handjob. no penis in mouth, loop",
+        "",
         5,
         "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         8,
@@ -939,7 +975,7 @@
       "widgets_values_named": {
         "width": "",
         "height": 1344,
-        "prompt": "finger caressing, handjob. no penis in mouth, loop",
+        "prompt": "",
         "value_1": 5,
         "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         "steps": 8,
@@ -955,41 +991,6 @@
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 218,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -196.47401808469698,
-        5636.555432969927
-      ],
-      "size": [
-        326.0181640625,
-        130
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "SPEED PATCH",
-      "properties": {
-        "matchColors": "Yellow",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -1008,22 +1009,6 @@
       137,
       0,
       "*"
-    ],
-    [
-      297,
-      156,
-      0,
-      126,
-      4,
-      "STRING"
-    ],
-    [
-      308,
-      156,
-      0,
-      92,
-      1,
-      "STRING"
     ],
     [
       485,
@@ -1058,30 +1043,6 @@
       "IMAGE"
     ],
     [
-      506,
-      239,
-      0,
-      156,
-      0,
-      "IMAGE"
-    ],
-    [
-      507,
-      239,
-      0,
-      226,
-      0,
-      "IMAGE"
-    ],
-    [
-      508,
-      240,
-      0,
-      226,
-      1,
-      "IMAGE"
-    ],
-    [
       532,
       105,
       1,
@@ -1104,6 +1065,46 @@
       126,
       1,
       "AUDIO"
+    ],
+    [
+      550,
+      261,
+      1,
+      262,
+      0,
+      "PIX_IMAGE_INFO"
+    ],
+    [
+      551,
+      262,
+      4,
+      126,
+      4,
+      "STRING"
+    ],
+    [
+      553,
+      262,
+      0,
+      226,
+      0,
+      "IMAGE"
+    ],
+    [
+      554,
+      263,
+      0,
+      226,
+      1,
+      "IMAGE"
+    ],
+    [
+      555,
+      262,
+      4,
+      92,
+      1,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1139,8 +1140,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 260,
-          "lastLinkId": 549,
+          "lastNodeId": 264,
+          "lastLinkId": 555,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1639,11 +1640,11 @@
               "Node name for S&R": "RandomNoise"
             },
             "widgets_values": [
-              179233781616693,
+              290465505461296,
               "randomize"
             ],
             "widgets_values_named": {
-              "noise_seed": 179233781616693,
+              "noise_seed": 290465505461296,
               "control_after_generate": "randomize"
             }
           },
@@ -2511,7 +2512,7 @@
               "",
               8192,
               false,
-              4217881012,
+              2977736736,
               "randomize",
               false,
               false,
@@ -2525,7 +2526,7 @@
               "prompt": "",
               "max_tokens": 8192,
               "keep_model_loaded": false,
-              "seed": 4217881012,
+              "seed": 2977736736,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
               "passthrough": false,
@@ -3048,8 +3049,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 260,
-          "lastLinkId": 549,
+          "lastNodeId": 264,
+          "lastLinkId": 555,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3311,7 +3312,7 @@
             ],
             "flags": {},
             "order": 5,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "model",
@@ -3617,7 +3618,7 @@
               "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
-              216127427,
+              3618165352,
               "randomize",
               1440,
               0,
@@ -3632,7 +3633,7 @@
               true
             ],
             "widgets_values_named": {
-              "seed": 216127427,
+              "seed": 3618165352,
               "control_after_generate": "randomize",
               "resolution": 1440,
               "max_resolution": 0,
@@ -3662,7 +3663,7 @@
             ],
             "flags": {},
             "order": 4,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "images",
@@ -4011,10 +4012,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.826446280991736,
+      "scale": 0.7513148009015777,
       "offset": [
-        1770.8047220565209,
-        -4633.487449217156
+        2903.057307345447,
+        -4502.790784608927
       ]
     }
   },

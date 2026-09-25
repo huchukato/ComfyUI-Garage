@@ -1,8 +1,8 @@
 {
   "id": "b25965af-2005-4e6d-b188-e9c5ea0224c8",
   "revision": 0,
-  "last_node_id": 258,
-  "last_link_id": 555,
+  "last_node_id": 261,
+  "last_link_id": 562,
   "nodes": [
     {
       "id": 92,
@@ -30,7 +30,7 @@
           "widget": {
             "name": "filename_prefix"
           },
-          "link": 334
+          "link": 562
         }
       ],
       "outputs": [
@@ -132,7 +132,7 @@
           "widget": {
             "name": "filename_prefix"
           },
-          "link": 313
+          "link": 561
         }
       ],
       "outputs": [
@@ -401,109 +401,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 160,
-      "type": "WidgetToString",
-      "pos": [
-        -691.9570583267479,
-        5678.6979946407455
-      ],
-      "size": [
-        294.341796875,
-        154
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "any_input",
-          "shape": 7,
-          "type": "*",
-          "link": 541
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            313,
-            334
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "6ab7e8130e449ed2c0037589bcf84146ceb7fc9c",
-        "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
-      },
-      "widgets_values": [
-        256,
-        "image",
-        false,
-        "REFIMAGE1",
-        2
-      ],
-      "widgets_values_named": {
-        "id": 256,
-        "widget_name": "image",
-        "return_all": false,
-        "node_title": "REFIMAGE1",
-        "allowed_float_decimals": 2
-      }
-    },
-    {
-      "id": 257,
-      "type": "LoadImageOutput",
-      "pos": [
-        -1636.2818276110327,
-        4863.758518187134
-      ],
-      "size": [
-        419.67544763820104,
-        644.2364885753386
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            545
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "REFIMAGE2",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.1",
-        "Node name for S&R": "LoadImageOutput"
-      },
-      "widgets_values": [
-        "_output_images_will_be_put_here [output]",
-        false,
-        "refresh",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "_output_images_will_be_put_here [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 254,
       "type": "e73f8c38-64c6-4d42-9f57-bdfb1a72c110",
       "pos": [
@@ -586,7 +483,7 @@
         130
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -610,55 +507,175 @@
       "bgcolor": "#653"
     },
     {
-      "id": 256,
-      "type": "LoadImageOutput",
+      "id": 105,
+      "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
       "pos": [
-        -2108.3904633238094,
-        4864.325004235771
+        -864.7982620932786,
+        4837.094942032178
       ],
       "size": [
-        401.4675298805565,
-        648.7678708227168
+        643.7447588082441,
+        488.1139551136903
       ],
       "flags": {},
-      "order": 10,
+      "order": 13,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 474
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 475
+        },
+        {
+          "label": "duration",
+          "name": "value_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "value_1"
+          },
+          "link": null
+        },
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 559
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 560
+        }
+      ],
       "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            194
+          ]
+        },
         {
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            541,
-            544
+            534
           ]
         },
         {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            242
+          ]
+        },
+        {
+          "label": "PROMPT",
+          "name": "output",
+          "type": "*",
+          "links": [
+            253
+          ]
         }
       ],
-      "title": "REFIMAGE1",
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.37.1",
-        "Node name for S&R": "LoadImageOutput"
+        "ver": "0.30.1",
+        "previewExposures": []
       },
       "widgets_values": [
-        "_output_images_will_be_put_here [output]",
-        false,
-        "refresh",
-        "image"
+        "[SBJ1] apre il vestito di [SBJ2] e le afferra entrambi i seni. [KISS]",
+        1344,
+        "",
+        5,
+        "minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors",
+        20,
+        "res_multistep",
+        "simple",
+        12,
+        3,
+        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "MiniMax › NSFW R2VA",
+        "5s",
+        "None",
+        false
       ],
       "widgets_values_named": {
-        "image": "_output_images_will_be_put_here [output]",
-        "Auto-refresh after generation": false,
-        "refresh": "refresh",
-        "upload": "image"
+        "width": "[SBJ1] apre il vestito di [SBJ2] e le afferra entrambi i seni. [KISS]",
+        "height": 1344,
+        "prompt": "",
+        "value_1": 5,
+        "unet_name": "minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors",
+        "steps": 20,
+        "sampler_name": "res_multistep",
+        "scheduler": "simple",
+        "shift_video": 12,
+        "shift_audio": 3,
+        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "preset_prompt": "MiniMax › NSFW R2VA",
+        "duration": "5s",
+        "camera_tag": "None",
+        "passthrough": false
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 137,
+      "type": "easy showAnything",
+      "pos": [
+        -871.3768381744962,
+        5385.146616037077
+      ],
+      "size": [
+        655.5054816914162,
+        617.148754310283
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "title": "QWEN GENERATED PROMPT",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+        "Node name for S&R": "easy showAnything",
+        "aux_id": "yolain/ComfyUI-Easy-Use"
+      },
+      "widgets_values": [
+        "subject_definitions:\n<Subject 1> is a woman with short silver hair, a black blindfold over her eyes, a black high-collared blouse with puffed sleeves, and a white bodysuit with lace trim (from <Picture 1>).\n<Picture 1> is a character sheet showing <Subject 1> from multiple angles, emphasizing her exposed cleavage, slim waist, and high-heeled boots.\n\n<Subject 2> is a woman with long flowing lavender hair, teal eyes, and a form-fitting black latex catsuit with a front zipper (from <Picture 2>).\n<Picture 2> is a character sheet showing <Subject 2> from multiple angles, emphasizing her curvaceous silhouette and glossy latex material.\n\nsummary:\nA dynamic 5-second clip where <Subject 1> opens <Subject 2>'s latex outfit, gripping both breasts firmly as they engage in an intimate kiss.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - short silver hair, blindfold, black blouse, white bodysuit, high-heeled boots.\n<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - long lavender hair, teal eyes, black latex catsuit, high-heeled boots.\n\ndetailed_description:\nThe target video uses a cinematic anime style with rich lighting and fluid motion.\n[Shot 1] At 00:00.000, <Subject 1> (short silver hair, blindfold, black blouse, white bodysuit) stands before <Subject 2> (long lavender hair, teal eyes, black latex catsuit). <Subject 1> reaches out and unzips the front of <Subject 2>'s catsuit, pulling the fabric apart to reveal the cleft between her breasts. With deliberate intensity, <Subject 1> presses both hands against <Subject 2>'s cleavage, gripping her breasts firmly.\n[Shot 2] At 00:03.000, <Subject 2> leans forward, her lips meeting <Subject 1>'s in a deep, passionate kiss. <Subject 1> maintains her grip on <Subject 2>'s breasts as they sway slightly together, the latex material shimmering under the light.\n\noverall_soundscape:\nSoft ambient room tone with the subtle rustle of latex fabric, a sharp zipper sound, and gentle breathing.\n\nnon_diegetic_music:\nN/A"
+      ],
+      "widgets_values_named": {
+        "text": "subject_definitions:\n<Subject 1> is a woman with short silver hair, a black blindfold over her eyes, a black high-collared blouse with puffed sleeves, and a white bodysuit with lace trim (from <Picture 1>).\n<Picture 1> is a character sheet showing <Subject 1> from multiple angles, emphasizing her exposed cleavage, slim waist, and high-heeled boots.\n\n<Subject 2> is a woman with long flowing lavender hair, teal eyes, and a form-fitting black latex catsuit with a front zipper (from <Picture 2>).\n<Picture 2> is a character sheet showing <Subject 2> from multiple angles, emphasizing her curvaceous silhouette and glossy latex material.\n\nsummary:\nA dynamic 5-second clip where <Subject 1> opens <Subject 2>'s latex outfit, gripping both breasts firmly as they engage in an intimate kiss.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - short silver hair, blindfold, black blouse, white bodysuit, high-heeled boots.\n<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - long lavender hair, teal eyes, black latex catsuit, high-heeled boots.\n\ndetailed_description:\nThe target video uses a cinematic anime style with rich lighting and fluid motion.\n[Shot 1] At 00:00.000, <Subject 1> (short silver hair, blindfold, black blouse, white bodysuit) stands before <Subject 2> (long lavender hair, teal eyes, black latex catsuit). <Subject 1> reaches out and unzips the front of <Subject 2>'s catsuit, pulling the fabric apart to reveal the cleft between her breasts. With deliberate intensity, <Subject 1> presses both hands against <Subject 2>'s cleavage, gripping her breasts firmly.\n[Shot 2] At 00:03.000, <Subject 2> leans forward, her lips meeting <Subject 1>'s in a deep, passionate kiss. <Subject 1> maintains her grip on <Subject 2>'s breasts as they sway slightly together, the latex material shimmering under the light.\n\noverall_soundscape:\nSoft ambient room tone with the subtle rustle of latex fabric, a sharp zipper sound, and gentle breathing.\n\nnon_diegetic_music:\nN/A"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
     },
     {
       "id": 220,
@@ -672,7 +689,7 @@
         400
       ],
       "flags": {},
-      "order": 11,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -762,175 +779,161 @@
       "bgcolor": "#335"
     },
     {
-      "id": 137,
-      "type": "easy showAnything",
+      "id": 261,
+      "type": "PixaromaImageInfo",
       "pos": [
-        -863.7842554755567,
-        5378.732192722448
+        -2027.6740489836764,
+        5110.28280916424
       ],
       "size": [
-        655.5054816914162,
-        617.148754310283
+        216,
+        106
       ],
       "flags": {},
-      "order": 16,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 253
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "link": 556
         }
       ],
       "outputs": [
         {
-          "name": "output",
-          "type": "*",
-          "links": []
-        }
-      ],
-      "title": "QWEN GENERATED PROMPT",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
-      },
-      "widgets_values": [
-        "subject_definitions:\n<Subject 1> is a woman with short silver hair, a black blindfold over her eyes, a black high-collared blouse with puffed sleeves, and a white bodysuit with lace trim (from <Picture 1>).\n<Picture 1> is a character sheet showing <Subject 1> from multiple angles, emphasizing her exposed cleavage, slim waist, and high-heeled boots.\n\n<Subject 2> is a woman with long flowing lavender hair, teal eyes, and a form-fitting black latex catsuit with a front zipper (from <Picture 2>).\n<Picture 2> is a character sheet showing <Subject 2> from multiple angles, emphasizing her curvaceous silhouette and glossy latex material.\n\nsummary:\nA dynamic 5-second clip where <Subject 1> opens <Subject 2>'s latex outfit, gripping both breasts firmly as they engage in an intimate kiss.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - short silver hair, blindfold, black blouse, white bodysuit, high-heeled boots.\n<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - long lavender hair, teal eyes, black latex catsuit, high-heeled boots.\n\ndetailed_description:\nThe target video uses a cinematic anime style with rich lighting and fluid motion.\n[Shot 1] At 00:00.000, <Subject 1> (short silver hair, blindfold, black blouse, white bodysuit) stands before <Subject 2> (long lavender hair, teal eyes, black latex catsuit). <Subject 1> reaches out and unzips the front of <Subject 2>'s catsuit, pulling the fabric apart to reveal the cleft between her breasts. With deliberate intensity, <Subject 1> presses both hands against <Subject 2>'s cleavage, gripping her breasts firmly.\n[Shot 2] At 00:03.000, <Subject 2> leans forward, her lips meeting <Subject 1>'s in a deep, passionate kiss. <Subject 1> maintains her grip on <Subject 2>'s breasts as they sway slightly together, the latex material shimmering under the light.\n\noverall_soundscape:\nSoft ambient room tone with the subtle rustle of latex fabric, a sharp zipper sound, and gentle breathing.\n\nnon_diegetic_music:\nN/A"
-      ],
-      "widgets_values_named": {
-        "text": "subject_definitions:\n<Subject 1> is a woman with short silver hair, a black blindfold over her eyes, a black high-collared blouse with puffed sleeves, and a white bodysuit with lace trim (from <Picture 1>).\n<Picture 1> is a character sheet showing <Subject 1> from multiple angles, emphasizing her exposed cleavage, slim waist, and high-heeled boots.\n\n<Subject 2> is a woman with long flowing lavender hair, teal eyes, and a form-fitting black latex catsuit with a front zipper (from <Picture 2>).\n<Picture 2> is a character sheet showing <Subject 2> from multiple angles, emphasizing her curvaceous silhouette and glossy latex material.\n\nsummary:\nA dynamic 5-second clip where <Subject 1> opens <Subject 2>'s latex outfit, gripping both breasts firmly as they engage in an intimate kiss.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - short silver hair, blindfold, black blouse, white bodysuit, high-heeled boots.\n<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - long lavender hair, teal eyes, black latex catsuit, high-heeled boots.\n\ndetailed_description:\nThe target video uses a cinematic anime style with rich lighting and fluid motion.\n[Shot 1] At 00:00.000, <Subject 1> (short silver hair, blindfold, black blouse, white bodysuit) stands before <Subject 2> (long lavender hair, teal eyes, black latex catsuit). <Subject 1> reaches out and unzips the front of <Subject 2>'s catsuit, pulling the fabric apart to reveal the cleft between her breasts. With deliberate intensity, <Subject 1> presses both hands against <Subject 2>'s cleavage, gripping her breasts firmly.\n[Shot 2] At 00:03.000, <Subject 2> leans forward, her lips meeting <Subject 1>'s in a deep, passionate kiss. <Subject 1> maintains her grip on <Subject 2>'s breasts as they sway slightly together, the latex material shimmering under the light.\n\noverall_soundscape:\nSoft ambient room tone with the subtle rustle of latex fabric, a sharp zipper sound, and gentle breathing.\n\nnon_diegetic_music:\nN/A"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 105,
-      "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
-      "pos": [
-        -864.7982620932786,
-        4837.094942032178
-      ],
-      "size": [
-        643.7447588082441,
-        488.1139551136903
-      ],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            559
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
         {
           "name": "width",
           "type": "INT",
-          "widget": {
-            "name": "width"
-          },
-          "link": 474
+          "links": null
         },
         {
           "name": "height",
           "type": "INT",
-          "widget": {
-            "name": "height"
-          },
-          "link": 475
+          "links": null
         },
         {
-          "label": "duration",
-          "name": "value_1",
-          "type": "FLOAT",
-          "widget": {
-            "name": "value_1"
-          },
-          "link": null
-        },
-        {
-          "name": "image",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 544
-        },
-        {
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 545
-        }
-      ],
-      "outputs": [
-        {
-          "name": "VIDEO",
-          "type": "VIDEO",
+          "name": "filename",
+          "type": "STRING",
           "links": [
-            194
-          ]
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            534
-          ]
-        },
-        {
-          "name": "AUDIO",
-          "type": "AUDIO",
-          "links": [
-            242
-          ]
-        },
-        {
-          "label": "PROMPT",
-          "name": "output",
-          "type": "*",
-          "links": [
-            253
+            561,
+            562
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "previewExposures": []
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaImageInfo"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 260,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -1643.3224483578144,
+        4870.781409538704
+      ],
+      "size": [
+        438.9535258450669,
+        645.4478021846253
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            560
+          ]
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": []
+        }
+      ],
+      "title": "Reference 2",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImageMini"
       },
       "widgets_values": [
-        "[SBJ1] apre il vestito di [SBJ2] e le afferra entrambi i seni. [KISS]",
-        1344,
-        "",
-        5,
-        "minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors",
-        20,
-        "res_multistep",
-        "simple",
-        12,
-        3,
-        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "MiniMax › NSFW R2VA",
-        "5s",
-        "None",
-        false
+        "Qwen21_2026-09-25_001%.jpg [output]",
+        "image",
+        ""
       ],
       "widgets_values_named": {
-        "width": "[SBJ1] apre il vestito di [SBJ2] e le afferra entrambi i seni. [KISS]",
-        "height": 1344,
-        "prompt": "",
-        "value_1": 5,
-        "unet_name": "minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors",
-        "steps": 20,
-        "sampler_name": "res_multistep",
-        "scheduler": "simple",
-        "shift_video": 12,
-        "shift_audio": 3,
-        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "preset_prompt": "MiniMax › NSFW R2VA",
-        "duration": "5s",
-        "camera_tag": "None",
-        "passthrough": false
+        "image": "Qwen21_2026-09-25_001%.jpg [output]",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
       },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
+      "color": "#1f85a8",
+      "bgcolor": "#233338"
+    },
+    {
+      "id": 259,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -2109.2152879739283,
+        4869.890392332563
+      ],
+      "size": [
+        391.3531840580274,
+        639.9648296652977
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": [
+            556
+          ]
+        }
+      ],
+      "title": "Reference 1",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImageMini"
+      },
+      "widgets_values": [
+        "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#1f9e6a",
+      "bgcolor": "#23362f"
     }
   ],
   "links": [
@@ -957,22 +960,6 @@
       137,
       0,
       "*"
-    ],
-    [
-      313,
-      160,
-      0,
-      126,
-      4,
-      "STRING"
-    ],
-    [
-      334,
-      160,
-      0,
-      92,
-      1,
-      "STRING"
     ],
     [
       474,
@@ -1007,28 +994,44 @@
       "IMAGE"
     ],
     [
-      541,
-      256,
+      556,
+      259,
+      1,
+      261,
       0,
-      160,
-      0,
-      "IMAGE"
+      "PIX_IMAGE_INFO"
     ],
     [
-      544,
-      256,
+      559,
+      261,
       0,
       105,
       3,
       "IMAGE"
     ],
     [
-      545,
-      257,
+      560,
+      260,
       0,
       105,
       4,
       "IMAGE"
+    ],
+    [
+      561,
+      261,
+      4,
+      126,
+      4,
+      "STRING"
+    ],
+    [
+      562,
+      261,
+      4,
+      92,
+      1,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1088,8 +1091,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 26,
-          "lastNodeId": 258,
-          "lastLinkId": 555,
+          "lastNodeId": 261,
+          "lastLinkId": 562,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1390,7 +1393,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -1435,7 +1438,7 @@
               140
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -1504,7 +1507,7 @@
               150
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -1561,7 +1564,7 @@
               70
             ],
             "flags": {},
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -1609,7 +1612,7 @@
               60
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -1692,7 +1695,7 @@
               90
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -1748,7 +1751,7 @@
               61.260156249999454
             ],
             "flags": {},
-            "order": 14,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -1795,7 +1798,7 @@
               130
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -1861,7 +1864,7 @@
               82
             ],
             "flags": {},
-            "order": 15,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -1928,7 +1931,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -2130,7 +2133,7 @@
               364
             ],
             "flags": {},
-            "order": 17,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -2286,7 +2289,7 @@
               106.57732339190989
             ],
             "flags": {},
-            "order": 16,
+            "order": 15,
             "mode": 4,
             "inputs": [
               {
@@ -2334,7 +2337,7 @@
               250
             ],
             "flags": {},
-            "order": 18,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -2398,7 +2401,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -2443,7 +2446,7 @@
               392
             ],
             "flags": {},
-            "order": 4,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -3037,8 +3040,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 26,
-          "lastNodeId": 258,
-          "lastLinkId": 555,
+          "lastNodeId": 261,
+          "lastLinkId": 562,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -4000,10 +4003,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7758394256045306,
+      "scale": 0.7053085687313914,
       "offset": [
-        2531.853122091128,
-        -4264.7172809956965
+        3229.517337546694,
+        -3952.2105396742195
       ]
     }
   },
