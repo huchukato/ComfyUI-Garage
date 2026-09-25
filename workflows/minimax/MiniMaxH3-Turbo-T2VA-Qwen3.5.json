@@ -32,33 +32,6 @@
       "bgcolor": "#593930"
     },
     {
-      "id": 135,
-      "type": "MarkdownNote",
-      "pos": [
-        -858.3221624300501,
-        5794.209851040576
-      ],
-      "size": [
-        868.1931779744757,
-        981.5786108902821
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "USER HINTS",
-      "properties": {},
-      "widgets_values": [
-        "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
-      ],
-      "widgets_values_named": {
-        "text": "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 117,
       "type": "MarkdownNote",
       "pos": [
@@ -70,7 +43,7 @@
         513.7942890234126
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -252,7 +225,7 @@
         532.6856681414565
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -263,51 +236,6 @@
       ],
       "widgets_values_named": {
         "text": "## 🎲 Wildcards (T2VA Workflow)\n\nThe T2VA Turbo workflow includes a **WildcardProcessor** node that injects randomized prompt fragments from the **MadBe's Prompt Engine** (`__pmp/prmpt/*`) wildcard library. Each generation picks a random entry from each wildcard file, so the same seed produces different results across runs unless you pin the seed.\n\n### Wildcards Used in the T2VA Workflow\n\n| Wildcard | Category | What it randomizes |\n|---|---|---|\n| `__pmp/prmpt/styles/vidstyle__` | Video style | Cinematic / anime / vintage film / 3D CG / claymation / watercolor / fantasy etc. |\n| `__pmp/prmpt/imgcmp/shots__` | Camera shot | Close-up / wide / medium / dolly / crane / orbit / handheld etc. |\n| `__pmp/prmpt/lctns/rndmlctns__` | Location | Random setting (bedroom / beach / studio / alley / forest / rooftop etc.) |\n| `__pmp/prmpt/light/rndmlight__` | Lighting | Key light direction, color temperature, soft/hard, ambient mood |\n| `__pmp/prmpt/char/favchar__` | Character | Random character archetype (age, body type, hair, ethnicity) |\n| `__pmp/prmpt/clths/rndmclth__` | Clothing | Random outfit / garment description |\n| `__pmp/prmpt/clths/nudty_brsts__` | NSFW | Breast / nudity descriptors (NSFW preset) |\n| `__pmp/actsolo/brstplng__` | NSFW action | Solo breast-play action verbs (NSFW preset) |\n\n### How It Works\n\n1. The **WildcardProcessor** node sits before the Qwen3-VL prompt enhancer\n2. At queue time, each `__wildcard__` token is replaced with a random line from the corresponding `.txt` file inside `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/pmp/prmpt/`\n3. The expanded text is passed to Qwen3-VL, which converts it into the official MiniMax H3 prompt format\n4. **Different seed = different wildcard picks** — use a fixed seed if you want reproducible results\n\n### Customizing Wildcards\n\n- **Edit existing**: open the `.txt` files under `ComfyUI/custom_nodes/ComfyUI-Wildcards/wildcards/pmp/prmpt/` and add/remove lines (one entry per line)\n- **Add your own**: create a new `.txt` file, e.g. `pmp/prmpt/mytags.txt`, then reference it as `__pmp/prmpt/mytags__`\n- **Remove a wildcard**: delete the `__...__` token from the WildcardProcessor `text` field in the workflow\n- **Disable randomization**: replace the `__wildcard__` token with a fixed string\n\n### Required Custom Node\n\n- **ComfyUI-TagForge** (includes the `WildcardProcessor` node and the `__pmp/prmpt/*` wildcard set) — [huchukato/ComfyUI-TagForge](https://github.com/huchukato/ComfyUI-TagForge)\n\n> The wildcard files ship with the custom node. If a wildcard resolves to empty, the custom node is missing or the wildcard folder is not installed.\n"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 137,
-      "type": "easy showAnything",
-      "pos": [
-        -856.1781450430237,
-        5402.11021783787
-      ],
-      "size": [
-        656.8253750145943,
-        330.12154760866815
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 253
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": []
-        }
-      ],
-      "title": "QWEN3VL GENERATED PROMPT",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
-      },
-      "widgets_values": [
-        "integrated_multimodal_description: [Shot 1] Photorealistic live-action cinematic, a medium-wide shot framed from a low three-quarter angle captures Rei Hino (Sailor Mars) silhouetted against a blazing tropical sunset. She stands barefoot on warm golden sand, her long black hair flowing gently in the breeze, face turned upward with eyes closed in pure bliss. Sunbeams pierce through clouds, backlit intensely, casting volumetric light across her skin, highlighting sweat glistening on her collarbones and thighs. Her signature red sailor-style outfit is slightly disheveled; the high-low skirt rides up exposing smooth thighs, while her hands clutch the fabric of her bodice, fingers pressing firmly against her ample chest as she engages in intense self breast sucking. One hand holds the cupped breast steady while her mouth works deeply over the nipple, tongue tracing the sensitive peak with deliberate, rhythmic pressure. Saliva drips visibly down her chin and onto her shoulder, catching the golden hour glow. Her expression shifts between tight-lipped ecstasy and parted-mouth sighs, cheeks flushed crimson under the sun’s warmth. As the camera tracks smoothly leftward, maintaining her centered composition, she subtly shifts weight, hips swaying softly with each thrust of her head. A gentle sea breeze ruffles her skirt hem and lifts strands of hair around her face, blending seamlessly with the continuous lateral camera movement. Ambient waves lap rhythmically at the shore behind her, distant seagulls cry overhead, and the wind whispers through dune grass—layered beneath her audible ragged breathing, sharp intake breaths, wet suction sounds, soft lip smacks against skin, and occasional throaty moans punctuating moments of heightened sensation. Skin-on-fabric friction hums faintly as her arms adjust her grip.\n\noverall_soundscape: Warm ocean breezes rustle through coastal vegetation, mingling with the steady crash of receding waves and occasional seabird calls echoing across the horizon. Underlying these ambient layers are Rei’s own visceral responses: heavy inhalations followed by shaky exhales, rhythmic wet suction noises synced to her movements, subtle lip-smacking against skin, occasional throaty moans breaking into quiet giggles, and the faint squeak of silk shifting against her arms as she adjusts her position.\n\nnon_diegetic_music: N/A"
-      ],
-      "widgets_values_named": {
-        "text": "integrated_multimodal_description: [Shot 1] Photorealistic live-action cinematic, a medium-wide shot framed from a low three-quarter angle captures Rei Hino (Sailor Mars) silhouetted against a blazing tropical sunset. She stands barefoot on warm golden sand, her long black hair flowing gently in the breeze, face turned upward with eyes closed in pure bliss. Sunbeams pierce through clouds, backlit intensely, casting volumetric light across her skin, highlighting sweat glistening on her collarbones and thighs. Her signature red sailor-style outfit is slightly disheveled; the high-low skirt rides up exposing smooth thighs, while her hands clutch the fabric of her bodice, fingers pressing firmly against her ample chest as she engages in intense self breast sucking. One hand holds the cupped breast steady while her mouth works deeply over the nipple, tongue tracing the sensitive peak with deliberate, rhythmic pressure. Saliva drips visibly down her chin and onto her shoulder, catching the golden hour glow. Her expression shifts between tight-lipped ecstasy and parted-mouth sighs, cheeks flushed crimson under the sun’s warmth. As the camera tracks smoothly leftward, maintaining her centered composition, she subtly shifts weight, hips swaying softly with each thrust of her head. A gentle sea breeze ruffles her skirt hem and lifts strands of hair around her face, blending seamlessly with the continuous lateral camera movement. Ambient waves lap rhythmically at the shore behind her, distant seagulls cry overhead, and the wind whispers through dune grass—layered beneath her audible ragged breathing, sharp intake breaths, wet suction sounds, soft lip smacks against skin, and occasional throaty moans punctuating moments of heightened sensation. Skin-on-fabric friction hums faintly as her arms adjust her grip.\n\noverall_soundscape: Warm ocean breezes rustle through coastal vegetation, mingling with the steady crash of receding waves and occasional seabird calls echoing across the horizon. Underlying these ambient layers are Rei’s own visceral responses: heavy inhalations followed by shaky exhales, rhythmic wet suction noises synced to her movements, subtle lip-smacking against skin, occasional throaty moans breaking into quiet giggles, and the faint squeak of silk shifting against her arms as she adjusts her position.\n\nnon_diegetic_music: N/A"
       },
       "color": "#233",
       "bgcolor": "#355"
@@ -324,7 +252,7 @@
         409.31356242391485
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -351,7 +279,7 @@
         376
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -452,7 +380,7 @@
         130
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -489,7 +417,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -514,7 +442,7 @@
         514.0692361570173
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -541,7 +469,7 @@
         172.30078125
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -649,7 +577,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -662,6 +590,64 @@
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 224,
+      "type": "WildcardProcessor",
+      "pos": [
+        -855.9347545137822,
+        4285.555425127827
+      ],
+      "size": [
+        649.5965269886365,
+        496.1792294034095
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            468
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-TagForge",
+        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge"
+      },
+      "widgets_values": [
+        "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        356397769084179,
+        "randomize",
+        "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
+        "populate",
+        true,
+        0.5,
+        "None"
+      ],
+      "widgets_values_named": {
+        "text": "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        "seed": 356397769084179,
+        "control_after_generate": "randomize",
+        "populated_text": "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
+        "mode": "populate",
+        "deduplicate": true,
+        "downvote_factor": 0.5,
+        "base_model": "None"
+      },
+      "color": "#323",
+      "bgcolor": "#535"
     },
     {
       "id": 105,
@@ -762,12 +748,12 @@
         768,
         "",
         10,
-        "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
+        "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         8,
         "euler",
         "simple",
         6,
-        3,
+        3.0040625,
         "GGUF: tvall43-Qwen3.5-4B-heretic-v2.Q8_0.gguf",
         "MiniMax › NSFW T2V",
         "5s",
@@ -781,12 +767,12 @@
         "height": 768,
         "prompt": "",
         "value_1": 10,
-        "unet_name": "10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges.safetensors",
+        "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
         "steps": 8,
         "sampler_name": "euler",
         "scheduler": "simple",
         "shift_video": 6,
-        "shift_audio": 3,
+        "shift_audio": 3.0040625,
         "model_name": "GGUF: tvall43-Qwen3.5-4B-heretic-v2.Q8_0.gguf",
         "enhancement_style": "MiniMax › NSFW T2V",
         "duration": "5s",
@@ -799,62 +785,76 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 224,
-      "type": "WildcardProcessor",
+      "id": 137,
+      "type": "easy showAnything",
       "pos": [
-        -855.9347545137822,
-        4285.555425127827
+        -856.1781450430237,
+        5442.3500912753825
       ],
       "size": [
-        649.5965269886365,
-        496.1792294034095
+        656.8253750145943,
+        330.12154760866815
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "title": "QWEN3VL GENERATED PROMPT",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+        "Node name for S&R": "easy showAnything",
+        "aux_id": "yolain/ComfyUI-Easy-Use"
+      },
+      "widgets_values": [
+        "integrated_multimodal_description: [Shot 1] Photorealistic live-action cinematic, a medium-wide shot framed from a low three-quarter angle captures Rei Hino (Sailor Mars) silhouetted against a blazing tropical sunset. She stands barefoot on warm golden sand, her long black hair flowing gently in the breeze, face turned upward with eyes closed in pure bliss. Sunbeams pierce through clouds, backlit intensely, casting volumetric light across her skin, highlighting sweat glistening on her collarbones and thighs. Her signature red sailor-style outfit is slightly disheveled; the high-low skirt rides up exposing smooth thighs, while her hands clutch the fabric of her bodice, fingers pressing firmly against her ample chest as she engages in intense self breast sucking. One hand holds the cupped breast steady while her mouth works deeply over the nipple, tongue tracing the sensitive peak with deliberate, rhythmic pressure. Saliva drips visibly down her chin and onto her shoulder, catching the golden hour glow. Her expression shifts between tight-lipped ecstasy and parted-mouth sighs, cheeks flushed crimson under the sun’s warmth. As the camera tracks smoothly leftward, maintaining her centered composition, she subtly shifts weight, hips swaying softly with each thrust of her head. A gentle sea breeze ruffles her skirt hem and lifts strands of hair around her face, blending seamlessly with the continuous lateral camera movement. Ambient waves lap rhythmically at the shore behind her, distant seagulls cry overhead, and the wind whispers through dune grass—layered beneath her audible ragged breathing, sharp intake breaths, wet suction sounds, soft lip smacks against skin, and occasional throaty moans punctuating moments of heightened sensation. Skin-on-fabric friction hums faintly as her arms adjust her grip.\n\noverall_soundscape: Warm ocean breezes rustle through coastal vegetation, mingling with the steady crash of receding waves and occasional seabird calls echoing across the horizon. Underlying these ambient layers are Rei’s own visceral responses: heavy inhalations followed by shaky exhales, rhythmic wet suction noises synced to her movements, subtle lip-smacking against skin, occasional throaty moans breaking into quiet giggles, and the faint squeak of silk shifting against her arms as she adjusts her position.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "text": "integrated_multimodal_description: [Shot 1] Photorealistic live-action cinematic, a medium-wide shot framed from a low three-quarter angle captures Rei Hino (Sailor Mars) silhouetted against a blazing tropical sunset. She stands barefoot on warm golden sand, her long black hair flowing gently in the breeze, face turned upward with eyes closed in pure bliss. Sunbeams pierce through clouds, backlit intensely, casting volumetric light across her skin, highlighting sweat glistening on her collarbones and thighs. Her signature red sailor-style outfit is slightly disheveled; the high-low skirt rides up exposing smooth thighs, while her hands clutch the fabric of her bodice, fingers pressing firmly against her ample chest as she engages in intense self breast sucking. One hand holds the cupped breast steady while her mouth works deeply over the nipple, tongue tracing the sensitive peak with deliberate, rhythmic pressure. Saliva drips visibly down her chin and onto her shoulder, catching the golden hour glow. Her expression shifts between tight-lipped ecstasy and parted-mouth sighs, cheeks flushed crimson under the sun’s warmth. As the camera tracks smoothly leftward, maintaining her centered composition, she subtly shifts weight, hips swaying softly with each thrust of her head. A gentle sea breeze ruffles her skirt hem and lifts strands of hair around her face, blending seamlessly with the continuous lateral camera movement. Ambient waves lap rhythmically at the shore behind her, distant seagulls cry overhead, and the wind whispers through dune grass—layered beneath her audible ragged breathing, sharp intake breaths, wet suction sounds, soft lip smacks against skin, and occasional throaty moans punctuating moments of heightened sensation. Skin-on-fabric friction hums faintly as her arms adjust her grip.\n\noverall_soundscape: Warm ocean breezes rustle through coastal vegetation, mingling with the steady crash of receding waves and occasional seabird calls echoing across the horizon. Underlying these ambient layers are Rei’s own visceral responses: heavy inhalations followed by shaky exhales, rhythmic wet suction noises synced to her movements, subtle lip-smacking against skin, occasional throaty moans breaking into quiet giggles, and the faint squeak of silk shifting against her arms as she adjusts her position.\n\nnon_diegetic_music: N/A"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 135,
+      "type": "MarkdownNote",
+      "pos": [
+        -857.5386401644251,
+        5834.129452603082
+      ],
+      "size": [
+        868.1931779744757,
+        981.5786108902821
       ],
       "flags": {},
       "order": 11,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            468
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-TagForge",
-        "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
-        "Node name for S&R": "WildcardProcessor",
-        "aux_id": "huchukato/ComfyUI-TagForge"
-      },
+      "outputs": [],
+      "title": "USER HINTS",
+      "properties": {},
       "widgets_values": [
-        "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
-        356397769084179,
-        "randomize",
-        "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
-        "populate",
-        true,
-        0.5,
-        "None"
+        "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
       ],
       "widgets_values_named": {
-        "text": "__pmp/prmpt/imgcmp/shots__, __pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
-        "seed": 356397769084179,
-        "control_after_generate": "randomize",
-        "populated_text": "profile, island, sunset, sunbeam, backlighting, shade, 1girl, rei hino \\(sailor mars\\), sailor moon, black hair, purple eyes, large breasts, high-low skirt, covering breasts, self breast sucking, tongue on nipple, saliva drip, eyes closed, pleasure expression",
-        "mode": "populate",
-        "deduplicate": true,
-        "downvote_factor": 0.5,
-        "base_model": "None"
+        "text": "# 🎬 MiniMax H3 — User Hints\n\n> 💡 You can write your prompt in **any language**. Qwen3-VL analyzes it, translates it, and converts it into the official MiniMax H3 prompt format.\n\n---\n\n## 🗂️ Choose the right workflow\n\n| Workflow | Mode | Required inputs |\n|---|---|---|\n| `MiniMaxH3-Turbo-T2VA-Qwen3.5.json` | 📝 **T2VA** | text only |\n| `MiniMaxH3-Turbo-I2VA-Qwen3.5.json` | 🖼️ **I2VA** | text + first-frame image |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | 🔄 **FL2VA** | text + first-frame + last-frame image |\n| `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` | 🎞️ **R2VA / Reference** | text + reference image/video/audio for style, character, motion, or camera |\n\n> 🧩 **L2VA** (last frame only) is handled by the I2VA preset when you connect only the last frame.\n\n---\n\n## ✍️ What to write in the prompt\n\nDescribe the scene naturally. Be clear about the concepts below — the model handles the rest.\n\n### 🎨 1. Visual style *(required — put it first)*\n\n- `photorealistic` 📷 · `cinematic` 🎥 · `live-action` 🎬\n- `anime` 🌸 · `cartoon` 🖍️ · `3D CG` 🧊 · `claymation` 🏺\n- `vintage film` 📼 · `watercolor` 🎨 · `fantasy` ✨ · `artistic portrait` 🖼️\n\n> Example: *\"A photorealistic cinematic scene in a bedroom with warm light...\"*\n\n### 👥 2. Subjects\n\n- Number, gender, apparent age, physical appearance, hair, makeup, clothing (or nudity)\n- Initial position, gaze, expression\n\n### 🏃 3. Action / motion\n\n- What happens and in what order\n- Speed: slow 🐢 · rhythmic 🎵 · accelerating 🚀 · pause ⏸️\n- Interaction between characters: contact, gestures, movements\n\n### 📷 4. Camera\n\n- **Shot type**: `close-up` 🔍 · `medium shot` 🎥 · `wide shot` 🌅 · `POV` 👁️\n- **Motion**: `static shot` · `push in` / `pull out` · `pan left/right` · `tilt up/down` · `tracking shot` · `arc shot` · `zoom in/out`\n- **Speed & amplitude**: slow/fast, small amplitude/large amplitude\n\n> Example: *\"The camera starts with a static medium-wide shot, then slowly pushes in toward the face.\"*\n\n### 🌆 5. Environment & lighting\n\n- 📍 Location: bedroom, bathroom, couch, outdoor, night, neon, natural\n- 💡 Light: warm, cold, pink/red neon, windows, shadows\n- 🎨 Dominant color and atmosphere\n\n---\n\n## 🎧 6. Audio *(very important)*\n\nMiniMax H3 generates **native audio**. Explicitly state what you want to hear.\n\n### 🔊 Diegetic sounds *(present in the scene)*\n\nAlways described in the prompt. Be concrete:\n\n| Category | Examples |\n|---|---|\n| 🫁 Breathing | soft, heavy, gasping, rhythmic |\n| 😏 Vocal | moans, sighs, gasps, whimpers, whispers |\n| 💓 Body | heartbeat, skin-to-skin contact, body fluids |\n| 🛏️ Movement | fabric, bedding, sheets rustling |\n| 💋 Contact | kisses, licks, slaps, impacts |\n| 🌧️ Ambient | water, rain, distant traffic, room tone, wind |\n\n> Example: *\"Heavy breathing, soft moans, and the sound of sheets rustling.\"*\n\n### 🎵 Non-diegetic music *(background score)*\n\nBy default the preset outputs **`N/A`** — no background music is generated. 🚫🎵\n\nTo add music, you must **explicitly request it** and describe:\n\n- 🎼 **Genre**: R&B, ambient, synthwave, jazz, deep house, orchestral, lo-fi...\n- 🎸 **Instrumentation**: piano, strings, bass, synths, guitar, drums\n- ⏱️ **Tempo**: slow, moderate, fast\n- 📈 **Rhythm & dynamics**: when it enters, builds, fades\n\n> Examples:\n> - *\"Add a slow R&B background track with deep bass and atmospheric synths.\"*\n> - *\"Soft piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.\"*\n> - *\"No music, only realistic sounds from the scene.\"* ← this is the **default** behavior\n\n> 💡 **Tip**: For NSFW scenes, diegetic sounds alone usually feel more realistic. Add music only when it clearly supports the mood.\n\n---\n\n## ⏱️ 7. Duration\n\nPick the matching QwenVL-Mod preset:\n\n| Preset | Duration |\n|---|---|\n| 🎬 MiniMax H3 NSFW (5s) | 5 seconds |\n| 🎬 MiniMax H3 NSFW (10s) | 10 seconds |\n| 🎬 MiniMax H3 NSFW (15s) | 15 seconds |\n\n> MiniMax H3 supports clips from **4 to 15 seconds**.\n\n---\n\n## 📐 Recommended resolution\n\nMiniMax H3 is trained with the **short edge at 768 px** and the long edge **capped at 1344 px**, in multiples of 32.\n\n| Resolution | Orientation |\n|---|---|\n| `768x1344` | 📱 portrait |\n| `896x1152` | 📱 portrait |\n| `960x1280` | 📱 portrait |\n| `1024x1024` | ⬛ square |\n\n> ⚠️ **Avoid generating directly at 1080p.** Generate at native resolution, then use the bundled TensorRT upscale/interpolation nodes.\n\n---\n\n## 📝 Example prompt\n\n> *\"A photorealistic cinematic scene in a bedroom with warm lamplight. A young dark-haired woman lies on the bed wearing only white sheets. A man approaches slowly; the camera does a gentle push in from wide shot to close-up. He kisses her neck, she closes her eyes and sighs. Audio: heavy breathing, whispers, sheets rustling. No background music. Intimate, realistic style, warm light.\"*\n\n---\n\n\n---\n\n## 🎥 Camera Control Tags *(optional)*\n\nAdd these tags anywhere in your prompt — Qwen3-VL detects them and overrides the default camera behavior:\n\n| Tag | Effect |\n|---|---|\n| `[STATIC_CAMERA]` or `[LOCKED_OFF]` | Camera completely static — no zoom, pan, orbit, or any motion |\n| `[SLOW_ZOOM_IN]` | Slow continuous push-in only |\n| `[SLOW_ZOOM_OUT]` | Slow continuous pull-back only |\n| `[ORBIT]` | Smooth 360-degree orbit around the subject |\n| `[HANDHELD]` | Subtle handheld sway with natural micro-movements |\n\nIf no tag is provided, Qwen3-VL chooses a natural camera movement automatically.\n\n**Example:** `[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily`\n\n\n## 🚫 What NOT to do\n\n- ❌ Do not request minors, non-consent, or illegal acts — the preset refuses automatically\n- ❌ Do not add lighting or effects inconsistent with the described environment\n- ❌ Do not request durations longer than 15 seconds\n- ❌ Do not request 1080p native generation — use the recommended resolutions and upscale after\n"
       },
-      "color": "#323",
-      "bgcolor": "#535"
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     }
   ],
   "links": [
@@ -991,7 +991,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4764
+              4744
             ]
           },
           {
@@ -1003,7 +1003,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4784
+              4764
             ]
           },
           {
@@ -1015,7 +1015,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4744
+              4784
             ]
           },
           {
@@ -1064,7 +1064,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4944
+              4864
             ]
           },
           {
@@ -1076,7 +1076,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4964
+              4884
             ]
           },
           {
@@ -1088,7 +1088,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4984
+              4904
             ]
           },
           {
@@ -1100,7 +1100,7 @@
             ],
             "pos": [
               -2425.943359375,
-              5004
+              4924
             ]
           },
           {
@@ -1112,7 +1112,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4864
+              4944
             ]
           },
           {
@@ -1124,7 +1124,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4884
+              4964
             ]
           },
           {
@@ -1136,7 +1136,7 @@
             ],
             "pos": [
               -2425.943359375,
-              5064
+              4984
             ]
           },
           {
@@ -1148,7 +1148,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4904
+              5004
             ]
           },
           {
@@ -1160,7 +1160,7 @@
             ],
             "pos": [
               -2425.943359375,
-              4924
+              5024
             ]
           },
           {
@@ -1173,7 +1173,7 @@
             "label": "skip_autoprompt",
             "pos": [
               -2425.943359375,
-              5024
+              5044
             ]
           },
           {
@@ -1185,7 +1185,7 @@
             ],
             "pos": [
               -2425.943359375,
-              5044
+              5064
             ]
           }
         ],
@@ -1257,7 +1257,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -1395,7 +1395,7 @@
               140
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -1508,7 +1508,7 @@
               150
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -1567,7 +1567,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -1631,7 +1631,7 @@
               70
             ],
             "flags": {},
-            "order": 14,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -1679,7 +1679,7 @@
               60
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -1762,7 +1762,7 @@
               550
             ],
             "flags": {},
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -1876,7 +1876,7 @@
               90
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -1932,7 +1932,7 @@
               61.260156249999454
             ],
             "flags": {},
-            "order": 15,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -1979,7 +1979,7 @@
               130
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -2045,7 +2045,7 @@
               82
             ],
             "flags": {},
-            "order": 16,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -2110,7 +2110,7 @@
               106.57732339190989
             ],
             "flags": {},
-            "order": 17,
+            "order": 16,
             "mode": 4,
             "inputs": [
               {
@@ -2158,7 +2158,7 @@
               250
             ],
             "flags": {},
-            "order": 18,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -2222,7 +2222,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -2267,7 +2267,7 @@
               544
             ],
             "flags": {},
-            "order": 4,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -3811,10 +3811,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.6209213230591552,
+      "scale": 0.7513148009015777,
       "offset": [
-        2658.5631594496854,
-        -3947.8091966576085
+        2566.3093717934353,
+        -4083.4171408763577
       ]
     }
   },

@@ -1,61 +1,9 @@
 {
   "id": "3807ae7f-7b0a-48a8-92bd-7eac78228e45",
   "revision": 0,
-  "last_node_id": 288,
-  "last_link_id": 610,
+  "last_node_id": 291,
+  "last_link_id": 614,
   "nodes": [
-    {
-      "id": 156,
-      "type": "WidgetToString",
-      "pos": [
-        -710.2238239636141,
-        5223.565645074509
-      ],
-      "size": [
-        294.341796875,
-        154
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "any_input",
-          "shape": 7,
-          "type": "*",
-          "link": 296
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            297
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "c2a47f161bdcecc1e6baf3412f1d116febc26ce3",
-        "Node name for S&R": "WidgetToString",
-        "aux_id": "kijai/ComfyUI-KJNodes"
-      },
-      "widgets_values": [
-        114,
-        "image",
-        false,
-        "FirstFrame",
-        2
-      ],
-      "widgets_values_named": {
-        "id": 114,
-        "widget_name": "image",
-        "return_all": false,
-        "node_title": "FirstFrame",
-        "allowed_float_decimals": 2
-      }
-    },
     {
       "id": 232,
       "type": "Reroute",
@@ -351,7 +299,7 @@
           "widget": {
             "name": "filename_prefix"
           },
-          "link": 297
+          "link": 614
         }
       ],
       "outputs": [
@@ -478,13 +426,13 @@
           "name": "image",
           "shape": 7,
           "type": "IMAGE",
-          "link": 530
+          "link": 612
         },
         {
           "name": "image2",
           "shape": 7,
           "type": "IMAGE",
-          "link": 531
+          "link": 613
         },
         {
           "name": "mask",
@@ -592,99 +540,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 114,
-      "type": "LoadImage",
-      "pos": [
-        -2249.643262806932,
-        4707.904728435417
-      ],
-      "size": [
-        474.49449388257494,
-        833.0934724641438
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            296,
-            530
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "FirstFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "113619_00001_.png",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "113619_00001_.png",
-        "upload": "image"
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 147,
-      "type": "LoadImage",
-      "pos": [
-        -1725.5175823283037,
-        4706.363042325532
-      ],
-      "size": [
-        499.7117284948058,
-        838.2097028361022
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            531
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "title": "LastFrame",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "113639_00001_.png",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "113639_00001_.png",
-        "upload": "image"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 264,
       "type": "MarkdownNote",
       "pos": [
@@ -696,7 +551,7 @@
         984.1304631728626
       ],
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -725,7 +580,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -752,7 +607,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -778,7 +633,7 @@
         144.28829278878038
       ],
       "flags": {},
-      "order": 9,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -940,11 +795,46 @@
       "bgcolor": "#335"
     },
     {
+      "id": 153,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -218.46517834978468,
+        5332.905395139402
+      ],
+      "size": [
+        322.52068307678803,
+        198.55274872512564
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
       "id": 255,
       "type": "df2383ae-63b9-41f0-825f-02e76f888ddf",
       "pos": [
-        -891.7133220532637,
-        4697.969764245259
+        -897.869991874003,
+        4701.882696832711
       ],
       "size": [
         634.6130666534025,
@@ -1054,8 +944,8 @@
       "id": 105,
       "type": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
       "pos": [
-        -890.7286923979899,
-        5208.807571466202
+        -897.2179917277084,
+        5198.901259907889
       ],
       "size": [
         629.5299079662248,
@@ -1162,15 +1052,123 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 153,
-      "type": "Fast Groups Bypasser (rgthree)",
+      "id": 291,
+      "type": "PixaromaImageInfo",
       "pos": [
-        -218.46517834978468,
-        5332.905395139402
+        -2132.6178330761936,
+        5071.80082007284
       ],
       "size": [
-        322.52068307678803,
-        198.55274872512564
+        216,
+        106
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "link": 611
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            612
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [
+            614
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaImageInfo"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 289,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -2256.998855858203,
+        4722.428003775416
+      ],
+      "size": [
+        480.88308535462943,
+        831.1740114199574
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": [
+            611
+          ]
+        }
+      ],
+      "title": "First Frame",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImageMini"
+      },
+      "widgets_values": [
+        "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#1f9e6a",
+      "bgcolor": "#23362f"
+    },
+    {
+      "id": 290,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -1747.7736164047878,
+        4724.622692911769
+      ],
+      "size": [
+        517.5780101989894,
+        820.9350703526579
       ],
       "flags": {},
       "order": 10,
@@ -1178,42 +1176,39 @@
       "inputs": [],
       "outputs": [
         {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            613
+          ]
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": []
         }
       ],
-      "title": "OPTIONS",
+      "title": "Last Frame",
       "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImageMini"
       },
-      "color": "#322",
-      "bgcolor": "#533"
+      "widgets_values": [
+        "Qwen21_2026-09-25_001%.jpg [output]",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "Qwen21_2026-09-25_001%.jpg [output]",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#1f85a8",
+      "bgcolor": "#233338"
     }
   ],
   "links": [
-    [
-      296,
-      114,
-      0,
-      156,
-      0,
-      "IMAGE"
-    ],
-    [
-      297,
-      156,
-      0,
-      126,
-      4,
-      "STRING"
-    ],
     [
       492,
       231,
@@ -1319,22 +1314,6 @@
       "IMAGE"
     ],
     [
-      530,
-      114,
-      0,
-      265,
-      0,
-      "IMAGE"
-    ],
-    [
-      531,
-      147,
-      0,
-      265,
-      1,
-      "IMAGE"
-    ],
-    [
       532,
       265,
       0,
@@ -1381,6 +1360,38 @@
       126,
       0,
       "IMAGE"
+    ],
+    [
+      611,
+      289,
+      1,
+      291,
+      0,
+      "PIX_IMAGE_INFO"
+    ],
+    [
+      612,
+      291,
+      0,
+      265,
+      0,
+      "IMAGE"
+    ],
+    [
+      613,
+      290,
+      0,
+      265,
+      1,
+      "IMAGE"
+    ],
+    [
+      614,
+      291,
+      4,
+      126,
+      4,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1404,8 +1415,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 288,
-          "lastLinkId": 610,
+          "lastNodeId": 291,
+          "lastLinkId": 614,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1771,7 +1782,7 @@
               140
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -1842,7 +1853,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -1930,7 +1941,7 @@
               60
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -2013,7 +2024,7 @@
               550
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -2127,7 +2138,7 @@
               70
             ],
             "flags": {},
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -2177,7 +2188,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -2241,7 +2252,7 @@
               90
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -2297,7 +2308,7 @@
               90
             ],
             "flags": {},
-            "order": 14,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -2347,7 +2358,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -2391,7 +2402,7 @@
               130
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -2457,7 +2468,7 @@
               82
             ],
             "flags": {},
-            "order": 15,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -2524,7 +2535,7 @@
               106.57732339190989
             ],
             "flags": {},
-            "order": 16,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -2572,7 +2583,7 @@
               250
             ],
             "flags": {},
-            "order": 17,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -2634,7 +2645,7 @@
               392
             ],
             "flags": {},
-            "order": 4,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -3183,8 +3194,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 288,
-          "lastLinkId": 610,
+          "lastNodeId": 291,
+          "lastLinkId": 614,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3550,7 +3561,7 @@
               140
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -3621,7 +3632,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -3709,7 +3720,7 @@
               60
             ],
             "flags": {},
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -3792,7 +3803,7 @@
               550
             ],
             "flags": {},
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -3906,7 +3917,7 @@
               70
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -3956,7 +3967,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -4020,7 +4031,7 @@
               90
             ],
             "flags": {},
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -4076,7 +4087,7 @@
               90
             ],
             "flags": {},
-            "order": 15,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -4126,7 +4137,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 16,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -4171,7 +4182,7 @@
               130
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -4237,7 +4248,7 @@
               82
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -4304,7 +4315,7 @@
               250
             ],
             "flags": {},
-            "order": 17,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -4366,7 +4377,7 @@
               392
             ],
             "flags": {},
-            "order": 4,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -4505,7 +4516,7 @@
               106.57732339190989
             ],
             "flags": {},
-            "order": 14,
+            "order": 13,
             "mode": 4,
             "inputs": [
               {
@@ -4963,8 +4974,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 23,
-          "lastNodeId": 288,
-          "lastLinkId": 610,
+          "lastNodeId": 291,
+          "lastLinkId": 614,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -5928,8 +5939,8 @@
     "ds": {
       "scale": 0.6458950399783653,
       "offset": [
-        2406.047114927082,
-        -4292.416670185817
+        3558.33621212301,
+        -3906.0886628390494
       ]
     }
   },

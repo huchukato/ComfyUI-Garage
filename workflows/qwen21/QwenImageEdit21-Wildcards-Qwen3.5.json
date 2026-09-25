@@ -1,7 +1,7 @@
 {
   "id": "54bb395d-3e60-4c94-b525-85523901575b",
   "revision": 0,
-  "last_node_id": 540,
+  "last_node_id": 541,
   "last_link_id": 837,
   "nodes": [
     {
@@ -106,33 +106,6 @@
       }
     },
     {
-      "id": 527,
-      "type": "MarkdownNote",
-      "pos": [
-        -1247.2830879257474,
-        3240.9079132517722
-      ],
-      "size": [
-        1078.6374741996542,
-        1028.7898627914033
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Wildcard Guide",
-      "properties": {},
-      "widgets_values": [
-        "\n## Qwen Image Edit 2.1 — Wildcard Guide\n\nWildcards expand into detailed editing prompts. Type `__qwen21/<name>__` for a specific edit, or `__qwen21/*__` for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.\n\n`<image1>`, `<image2>`, `<image3>` inside a wildcard refer to the reference images connected to the node, in order.\n\n### Available edits\n\n| Wildcard | Imgs | What it does |\n|---|---|---|\n| `__qwen21/sheet__` | 1 | Quick character sheet: front, side, back + headshot |\n| `__qwen21/prosheet__` | 2 | Pro reference sheet, image2 as extra ref |\n| `__qwen21/newscene__` | 1 | Subject into a new random scene (location wildcard) |\n| `__qwen21/background__` | 2 | Subject of image1 onto background of image2 |\n| `__qwen21/enhance__` | 1 | Detail enhance, restore, creative upscale (pairs with detailer LoRA) |\n| `__qwen21/faceswap__` | 2 | Face of image2 ← identity from image1 |\n| `__qwen21/headswap__` | 2 | Head+hair of image2 ← head from image1 |\n| `__qwen21/eyeswap__` | 2 | Eyes of image2 ← eyes from image1 |\n| `__qwen21/hairswap__` | 2 | Hair of image2 ← hair from image1 |\n| `__qwen21/outfit__` | 2 | Dresses subject of image1 with outfit from image2 |\n| `__qwen21/pose__` | 2 | Subject of image1 into pose from image2 |\n| `__qwen21/expression__` | 2 | Expression of image2 onto image1 |\n| `__qwen21/multiref__` | 3 | Scene combining image1 + image2 inside image3 |\n| `__qwen21/multiedit__` | 1 | Applies every edit you describe at once |\n| `__qwen21/timeweather__` | 1 | Change time/weather to what you describe |\n| `__qwen21/removeobject__` | 1 | Removes the object you name + inpaint |\n| `__qwen21/insertobject__` | 1 | Inserts the object you describe |\n| `__qwen21/textedit__` | 1 | Replaces visible text with yours |\n| `__qwen21/novelview__` | 1 | Camera angle you describe |\n| `__qwen21/anime2real__` | 1 | Anime → photorealistic human |\n| `__qwen21/real2anime__` | 1 | Photo → manhwa/webtoon illustration |\n\n### ⚠️ Important: QwenVL bypass\n\nThe `__qwen21/*__` editing wildcards are already complete edit instructions (they contain `<image1>`/`<image2>` bindings). The **QwenVL Unified** node is **bypassed** in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When **generating** images instead of editing, un-bypass it with **Ctrl+B**: the LLM then expands your text and content wildcards (`__pmp/...__`) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set `passthrough = true`) whenever an edit wildcard is in the prompt.\n\n### Tips\n\n- **Mind the image count** — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = identity source, image2 = photo to modify).\n- **Edits that need a target** — for `removeobject`, `insertobject`, `textedit`, `novelview`, `timeweather` and `multiedit`, describe what to change in your own words next to the wildcard: `a red parked car, __qwen21/removeobject__`.\n- **Combine with text** — `__qwen21/background__, dramatic mood` works fine.\n- **Add your own** — drop a `.txt` in `ComfyUI/models/wildcards/`, one prompt per line → becomes `__filename__`. YAML supports nested keys like `__name/subkey__`.\n- **Random pick** — `__qwen21/*__` chooses a random edit, fun for batch runs.\n"
-      ],
-      "widgets_values_named": {
-        "text": "\n## Qwen Image Edit 2.1 — Wildcard Guide\n\nWildcards expand into detailed editing prompts. Type `__qwen21/<name>__` for a specific edit, or `__qwen21/*__` for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.\n\n`<image1>`, `<image2>`, `<image3>` inside a wildcard refer to the reference images connected to the node, in order.\n\n### Available edits\n\n| Wildcard | Imgs | What it does |\n|---|---|---|\n| `__qwen21/sheet__` | 1 | Quick character sheet: front, side, back + headshot |\n| `__qwen21/prosheet__` | 2 | Pro reference sheet, image2 as extra ref |\n| `__qwen21/newscene__` | 1 | Subject into a new random scene (location wildcard) |\n| `__qwen21/background__` | 2 | Subject of image1 onto background of image2 |\n| `__qwen21/enhance__` | 1 | Detail enhance, restore, creative upscale (pairs with detailer LoRA) |\n| `__qwen21/faceswap__` | 2 | Face of image2 ← identity from image1 |\n| `__qwen21/headswap__` | 2 | Head+hair of image2 ← head from image1 |\n| `__qwen21/eyeswap__` | 2 | Eyes of image2 ← eyes from image1 |\n| `__qwen21/hairswap__` | 2 | Hair of image2 ← hair from image1 |\n| `__qwen21/outfit__` | 2 | Dresses subject of image1 with outfit from image2 |\n| `__qwen21/pose__` | 2 | Subject of image1 into pose from image2 |\n| `__qwen21/expression__` | 2 | Expression of image2 onto image1 |\n| `__qwen21/multiref__` | 3 | Scene combining image1 + image2 inside image3 |\n| `__qwen21/multiedit__` | 1 | Applies every edit you describe at once |\n| `__qwen21/timeweather__` | 1 | Change time/weather to what you describe |\n| `__qwen21/removeobject__` | 1 | Removes the object you name + inpaint |\n| `__qwen21/insertobject__` | 1 | Inserts the object you describe |\n| `__qwen21/textedit__` | 1 | Replaces visible text with yours |\n| `__qwen21/novelview__` | 1 | Camera angle you describe |\n| `__qwen21/anime2real__` | 1 | Anime → photorealistic human |\n| `__qwen21/real2anime__` | 1 | Photo → manhwa/webtoon illustration |\n\n### ⚠️ Important: QwenVL bypass\n\nThe `__qwen21/*__` editing wildcards are already complete edit instructions (they contain `<image1>`/`<image2>` bindings). The **QwenVL Unified** node is **bypassed** in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When **generating** images instead of editing, un-bypass it with **Ctrl+B**: the LLM then expands your text and content wildcards (`__pmp/...__`) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set `passthrough = true`) whenever an edit wildcard is in the prompt.\n\n### Tips\n\n- **Mind the image count** — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = identity source, image2 = photo to modify).\n- **Edits that need a target** — for `removeobject`, `insertobject`, `textedit`, `novelview`, `timeweather` and `multiedit`, describe what to change in your own words next to the wildcard: `a red parked car, __qwen21/removeobject__`.\n- **Combine with text** — `__qwen21/background__, dramatic mood` works fine.\n- **Add your own** — drop a `.txt` in `ComfyUI/models/wildcards/`, one prompt per line → becomes `__filename__`. YAML supports nested keys like `__name/subkey__`.\n- **Random pick** — `__qwen21/*__` chooses a random edit, fun for batch runs.\n"
-      },
-      "color": "#4e4e51",
-      "bgcolor": "#363636"
-    },
-    {
       "id": 530,
       "type": "PixaromaLabel",
       "pos": [
@@ -146,15 +119,15 @@
       "flags": {
         "no_title": true
       },
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaLabel",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
@@ -179,15 +152,15 @@
       "flags": {
         "no_title": true
       },
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaLabel",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"QwenImageEdit21\",\"fontSize\":54,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#ff8c42\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
@@ -212,16 +185,16 @@
       "flags": {
         "no_title": true
       },
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaRunTimer",
-        "cnr_id": "ComfyUI-Pixaroma",
-        "runTimerLastMs": 9863
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "runTimerLastMs": 131733.10000002384
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -240,15 +213,15 @@
       "flags": {
         "no_title": true
       },
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaMonitor",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "monitorState": {
           "version": 1,
           "layout": "bars",
@@ -293,7 +266,7 @@
         818.0217170647898
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -337,24 +310,24 @@
       ],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaSaveImage",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "saveImageState": "{\"version\":1,\"folder\":\"\",\"pattern\":\"Qwen21_%date:yyyy-MM-dd%_%counter%%\",\"format\":\"jpg\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":true,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":true,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}",
         "pixAccent": "#0d9488",
         "pixSiLastRun": {
           "ok": true,
           "sum": "saved 1 image",
-          "folder": "/workspace/runpod-slim/ComfyUI/output",
+          "folder": "/workspace/ComfyUI/output",
           "entries": [
             {
-              "filename": "Qwen21_2026-09-25_013%.jpg",
+              "filename": "Qwen21_2026-09-25_001%.jpg",
               "subfolder": "",
               "type": "output",
               "token": "",
               "path": "",
-              "bust": "1790327557845"
+              "bust": "1790346428041"
             }
           ],
           "n": 1,
@@ -383,7 +356,7 @@
         435
       ],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -403,10 +376,10 @@
         }
       ],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
         "Node name for S&R": "PixaromaResolution",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "resolutionState": "{\"mode\":\"preset\",\"ratio\":\"2:3\",\"w\":768,\"h\":1152,\"custom_w\":1024,\"custom_h\":1024,\"custom_ratio_w\":4,\"custom_ratio_h\":3,\"snap\":16}"
       },
       "widgets_values": [
@@ -468,22 +441,18 @@
       ],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
         "Node name for S&R": "PixaromaCompare",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "compareState": {
           "mode": 0,
           "showWhich": 0,
           "opacity": 0.5,
           "images": [
+            null,
             {
-              "filename": "pixaroma_compare_pixcmp_tklxw_00001_.png",
-              "subfolder": "",
-              "type": "temp"
-            },
-            {
-              "filename": "pixaroma_compare_pixcmp_tklxw_00002_.png",
+              "filename": "pixaroma_compare_pixcmp_rndsz_00001_.png",
               "subfolder": "",
               "type": "temp"
             }
@@ -505,15 +474,15 @@
         165
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaGroupSwitch",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "groupSwitchState": {
           "version": 1,
           "action": "bypass",
@@ -576,15 +545,15 @@
       "flags": {
         "no_title": true
       },
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
         "Node name for S&R": "PixaromaLabel",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"Label Pixaroma\",\"fontSize\":18,\"fontFamily\":\"Arial\"}"
@@ -647,10 +616,10 @@
         }
       ],
       "properties": {
-        "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
+        "cnr_id": "ComfyUI-QwenVL-Mod",
         "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
         "Node name for S&R": "QwenVL_Unified",
-        "cnr_id": "ComfyUI-QwenVL-Mod"
+        "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
       },
       "widgets_values": [
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
@@ -659,7 +628,7 @@
         "",
         8192,
         false,
-        585942597,
+        1142410466,
         "randomize",
         false,
         false,
@@ -673,7 +642,7 @@
         "prompt": "",
         "max_tokens": 8192,
         "keep_model_loaded": false,
-        "seed": 585942597,
+        "seed": 1142410466,
         "control_after_generate": "randomize",
         "keep_last_prompt": false,
         "passthrough": false,
@@ -682,107 +651,6 @@
       },
       "color": "#0d9489",
       "bgcolor": "#134e4a"
-    },
-    {
-      "id": 515,
-      "type": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
-      "pos": [
-        1168.5609032230086,
-        2436.3816795899093
-      ],
-      "size": [
-        444.04827694231903,
-        314
-      ],
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 803
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 804
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 805
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          },
-          "link": 806
-        }
-      ],
-      "outputs": [
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            807
-          ]
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            824,
-            832
-          ]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            809
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.1",
-        "previewExposures": [
-          {
-            "name": "$$canvas-image-preview",
-            "sourceNodeId": "509",
-            "sourcePreviewName": "$$canvas-image-preview"
-          }
-        ]
-      },
-      "widgets_values": [
-        0,
-        "qwen-image-2.1-UC-int8_convrot.safetensors",
-        "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
-        "qwen_image_2.1_vae_bf16.safetensors",
-        25,
-        1,
-        "euler",
-        "simple",
-        "elusarcas-qwen2-1-detailer-v1.safetensors",
-        1
-      ],
-      "widgets_values_named": {
-        "seed": 0,
-        "unet_name": "qwen-image-2.1-UC-int8_convrot.safetensors",
-        "clip_name": "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
-        "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
-        "steps": 25,
-        "cfg": 1,
-        "sampler_name": "euler",
-        "scheduler": "simple",
-        "lora_name": "elusarcas-qwen2-1-detailer-v1.safetensors",
-        "strength_model": 1
-      },
-      "color": "#223",
-      "bgcolor": "#335"
     },
     {
       "id": 479,
@@ -796,7 +664,7 @@
         130
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -811,11 +679,11 @@
         }
       ],
       "properties": {
-        "aux_id": "rgthree/rgthree-comfy",
+        "cnr_id": "rgthree-comfy",
         "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
         "randomMax": 1125899906842624,
         "randomMin": 0,
-        "cnr_id": "rgthree-comfy"
+        "aux_id": "rgthree/rgthree-comfy"
       },
       "widgets_values": [
         -1,
@@ -829,41 +697,6 @@
         "🎲 New Fixed Random": "",
         "USE_LAST_SEED": "okay"
       }
-    },
-    {
-      "id": 536,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -126.07069804793385,
-        3984.543035121041
-      ],
-      "size": [
-        254.98957092507058,
-        105.40393101316386
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "LoRA Enhance",
-      "properties": {
-        "matchColors": "yellow",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "position",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 513,
@@ -896,16 +729,16 @@
         }
       ],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaShowText",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
-        "Keep the person's face, hair, body posture, and background in <image1> completely identical, but replace their clothes with the exact outfit in <image2>. Tailor the outfit from <image2> naturally to their posture, with physically accurate drape, realistic creases at the elbows, and natural collar contact along the neckline."
+        "Convert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art."
       ],
       "widgets_values_named": {
-        "text": "Keep the person's face, hair, body posture, and background in <image1> completely identical, but replace their clothes with the exact outfit in <image2>. Tailor the outfit from <image2> naturally to their posture, with physically accurate drape, realistic creases at the elbows, and natural collar contact along the neckline."
+        "text": "Convert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art."
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -1054,66 +887,6 @@
       }
     },
     {
-      "id": 512,
-      "type": "WildcardProcessor",
-      "pos": [
-        -117.5455908516988,
-        2447.192600070959
-      ],
-      "size": [
-        490,
-        390
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            820
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "aux_id": "huchukato/ComfyUI-TagForge",
-        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
-        "Node name for S&R": "WildcardProcessor",
-        "cnr_id": "ComfyUI-TagForge",
-        "tagforge_reproduce_seed": 543274943133878,
-        "tagforge_wildcard_mode": "populate"
-      },
-      "widgets_values": [
-        "__qwen21/outfit__",
-        975961956269786,
-        "randomize",
-        "Keep the person's face, hair, body posture, and background in <image1> completely identical, but replace their clothes with the exact outfit in <image2>. Tailor the outfit from <image2> naturally to their posture, with physically accurate drape, realistic creases at the elbows, and natural collar contact along the neckline.",
-        "populate",
-        true,
-        0.5,
-        "None"
-      ],
-      "widgets_values_named": {
-        "text": "__qwen21/outfit__",
-        "seed": 975961956269786,
-        "control_after_generate": "randomize",
-        "populated_text": "Keep the person's face, hair, body posture, and background in <image1> completely identical, but replace their clothes with the exact outfit in <image2>. Tailor the outfit from <image2> naturally to their posture, with physically accurate drape, realistic creases at the elbows, and natural collar contact along the neckline.",
-        "mode": "populate",
-        "deduplicate": true,
-        "downvote_factor": 0.5,
-        "base_model": "None"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
       "id": 539,
       "type": "PixaromaLoadImage",
       "pos": [
@@ -1125,7 +898,7 @@
         649.4168863822638
       ],
       "flags": {},
-      "order": 13,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1170,18 +943,18 @@
       ],
       "title": "Load Image 1",
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
         "Node name for S&R": "PixaromaLoadImage",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
-        "PMP/FD_2026-09-25/110708_00001_.png [output]",
+        "PMP/FD_2026-09-25/162549_00001_.png [output]",
         "image",
         ""
       ],
       "widgets_values_named": {
-        "image": "PMP/FD_2026-09-25/110708_00001_.png [output]",
+        "image": "PMP/FD_2026-09-25/162549_00001_.png [output]",
         "upload": "image",
         "pixaroma_load_image_ui": ""
       },
@@ -1200,8 +973,8 @@
         646.4736044953993
       ],
       "flags": {},
-      "order": 14,
-      "mode": 0,
+      "order": 11,
+      "mode": 4,
       "inputs": [],
       "outputs": [
         {
@@ -1245,10 +1018,10 @@
       ],
       "title": "Load Image 2",
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
         "Node name for S&R": "PixaromaLoadImage",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "loadImagePixState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1152,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":true}"
       },
       "widgets_values": [
@@ -1263,6 +1036,235 @@
       },
       "color": "#2f7fc0",
       "bgcolor": "#26323b"
+    },
+    {
+      "id": 515,
+      "type": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
+      "pos": [
+        1168.5609032230086,
+        2436.3816795899093
+      ],
+      "size": [
+        444.04827694231903,
+        314
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 803
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 804
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 805
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 806
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            807
+          ]
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            824,
+            832
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            809
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.1",
+        "previewExposures": [
+          {
+            "name": "$$canvas-image-preview",
+            "sourceNodeId": "509",
+            "sourcePreviewName": "$$canvas-image-preview"
+          }
+        ]
+      },
+      "widgets_values": [
+        0,
+        "qwen-image-2.1-UC-int8_convrot.safetensors",
+        "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
+        "qwen_image_2.1_vae_bf16.safetensors",
+        25,
+        1,
+        "euler",
+        "simple",
+        "elusarcas-qwen2-1-detailer-v1.safetensors",
+        0.7
+      ],
+      "widgets_values_named": {
+        "seed": 0,
+        "unet_name": "qwen-image-2.1-UC-int8_convrot.safetensors",
+        "clip_name": "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
+        "steps": 25,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "lora_name": "elusarcas-qwen2-1-detailer-v1.safetensors",
+        "strength_model": 0.7
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 512,
+      "type": "WildcardProcessor",
+      "pos": [
+        -117.5455908516988,
+        2447.192600070959
+      ],
+      "size": [
+        490,
+        390
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            820
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-TagForge",
+        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge",
+        "tagforge_reproduce_seed": 543274943133878,
+        "tagforge_wildcard_mode": "populate"
+      },
+      "widgets_values": [
+        "__qwen21/real2anime__",
+        42729190482970,
+        "randomize",
+        "Convert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art.",
+        "populate",
+        true,
+        0.5,
+        "None"
+      ],
+      "widgets_values_named": {
+        "text": "__qwen21/real2anime__",
+        "seed": 42729190482970,
+        "control_after_generate": "randomize",
+        "populated_text": "Convert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art.",
+        "mode": "populate",
+        "deduplicate": true,
+        "downvote_factor": 0.5,
+        "base_model": "None"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 541,
+      "type": "PixaromaNote",
+      "pos": [
+        -1256.0812370530618,
+        3230.6592907178238
+      ],
+      "size": [
+        1088.702195579944,
+        953.5405976794505
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Wildcard Guide",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaNote"
+      },
+      "widgets_values": [
+        "{\"version\":1,\"content\":\"<p><br></p><h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/sheet__</code></td><td>1</td><td>Quick character sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new random scene (location wildcard)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Subject of image1 onto background of image2</td></tr>\\n    <tr><td><code>__qwen21/enhance__</code></td><td>1</td><td>Detail enhance, restore, creative upscale (pairs with detailer LoRA)</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image2 ← identity from image1</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image2 ← head from image1</td></tr>\\n    <tr><td><code>__qwen21/eyeswap__</code></td><td>2</td><td>Eyes of image2 ← eyes from image1</td></tr>\\n    <tr><td><code>__qwen21/hairswap__</code></td><td>2</td><td>Hair of image2 ← hair from image1</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Applies every edit you describe at once</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Change time/weather to what you describe</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes the object you name + inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts the object you describe</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Replaces visible text with yours</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>Camera angle you describe</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>⚠️ Important: QwenVL bypass</h3><p>\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = identity source, image2 = photo to modify).</li>\\n  <li><b>Edits that need a target</b> — for <code>removeobject</code>, <code>insertobject</code>, <code>textedit</code>, <code>novelview</code>, <code>timeweather</code> and <code>multiedit</code>, describe what to change in your own words next to the wildcard: <code>a red parked car, __qwen21/removeobject__</code>.</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":400,\"height\":200}",
+        ""
+      ],
+      "widgets_values_named": {
+        "note_json": "{\"version\":1,\"content\":\"<p><br></p><h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/sheet__</code></td><td>1</td><td>Quick character sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new random scene (location wildcard)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Subject of image1 onto background of image2</td></tr>\\n    <tr><td><code>__qwen21/enhance__</code></td><td>1</td><td>Detail enhance, restore, creative upscale (pairs with detailer LoRA)</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image2 ← identity from image1</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image2 ← head from image1</td></tr>\\n    <tr><td><code>__qwen21/eyeswap__</code></td><td>2</td><td>Eyes of image2 ← eyes from image1</td></tr>\\n    <tr><td><code>__qwen21/hairswap__</code></td><td>2</td><td>Hair of image2 ← hair from image1</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Applies every edit you describe at once</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Change time/weather to what you describe</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes the object you name + inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts the object you describe</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Replaces visible text with yours</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>Camera angle you describe</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>⚠️ Important: QwenVL bypass</h3><p>\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = identity source, image2 = photo to modify).</li>\\n  <li><b>Edits that need a target</b> — for <code>removeobject</code>, <code>insertobject</code>, <code>textedit</code>, <code>novelview</code>, <code>timeweather</code> and <code>multiedit</code>, describe what to change in your own words next to the wildcard: <code>a red parked car, __qwen21/removeobject__</code>.</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":400,\"height\":200}",
+        "note_dom": ""
+      },
+      "color": "#cf772a",
+      "bgcolor": "#0f0f0f"
+    },
+    {
+      "id": 536,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -126.07069804793385,
+        3984.543035121041
+      ],
+      "size": [
+        254.98957092507058,
+        105.40393101316386
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "LoRA Enhance",
+      "properties": {
+        "matchColors": "yellow",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -1500,7 +1502,7 @@
         "version": 1,
         "state": {
           "lastGroupId": 45,
-          "lastNodeId": 540,
+          "lastNodeId": 541,
           "lastLinkId": 837,
           "lastRerouteId": 0
         },
@@ -2486,10 +2488,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7922508819875899,
+      "scale": 0.5411180124223685,
       "offset": [
-        1543.5221828317306,
-        -1930.0044464553077
+        2225.2682422377884,
+        -2048.650949009281
       ]
     }
   },
