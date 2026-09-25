@@ -51,7 +51,8 @@ ComfyUI-Garage/
 │   ├── pony/               PimpMyPony (3 WF)
 │   ├── umeairt/            UmeAiRT Toolkit SDXL (9 WF)
 │   ├── t2i/                Text-to-Image (2 WF)
-│   └── utils/              Utility (2 WF)
+│   ├── qwen21/             Qwen Image Edit 2.1 (1 WF)
+│   └── utils/              Utility (3 WF)
 └── img/                    Banner per README
 ```
 
@@ -91,8 +92,11 @@ AllToolkitNodes, ControlNet, Img2Img, Inpaint, LoraTester, Outpaint, Txt2Img, Ul
 ### T2I (2)
 FluxDev1-T2I, ZImageTurbo-T2I
 
-### Utils (4)
-2in1-LoRaStack-Merge, Pony-XL-Outpaint, QwenImageEdit21-Wildcards-Qwen3.5, RIFE-Upscale-TensorRT
+### Utils (3)
+2in1-LoRaStack-Merge, Pony-XL-Outpaint, RIFE-Upscale-TensorRT
+
+### Qwen21 (1)
+QwenImageEdit21-Wildcards-Qwen3.5
 
 ---
 
