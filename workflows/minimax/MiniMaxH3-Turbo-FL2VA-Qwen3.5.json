@@ -1,15 +1,15 @@
 {
   "id": "c0033410-f90d-46e0-9e2a-7228d5a7b623",
   "revision": 0,
-  "last_node_id": 264,
-  "last_link_id": 555,
+  "last_node_id": 268,
+  "last_link_id": 560,
   "nodes": [
     {
       "id": 92,
       "type": "SaveVideo",
       "pos": [
-        754.981309598324,
-        4952.041664744982
+        755.5902836920743,
+        4947.169871994988
       ],
       "size": [
         517.3420753932783,
@@ -143,120 +143,6 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 126,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        186.29234673068507,
-        4943.983734899168
-      ],
-      "size": [
-        511.3966496168314,
-        979.7956923644974
-      ],
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 533
-        },
-        {
-          "name": "audio",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": 549
-        },
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        },
-        {
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          },
-          "link": 551
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null
-        }
-      ],
-      "title": "48FPS",
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
-        "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
-      },
-      "widgets_values": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "video/MiniMax_H3_48FPS",
-        "format": "video/webm",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "162549_00001__00001-audio.webm",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/webm",
-            "frame_rate": 48,
-            "workflow": "162549_00001__00001.png",
-            "fullpath": "/workspace/ComfyUI/output/162549_00001__00001-audio.webm"
-          }
-        }
-      },
-      "widgets_values_named": {
-        "frame_rate": 48,
-        "loop_count": 0,
-        "filename_prefix": "video/MiniMax_H3_48FPS",
-        "format": "video/webm",
-        "pix_fmt": "yuv420p",
-        "crf": 20,
-        "save_metadata": false,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": true,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "162549_00001__00001-audio.webm",
-            "subfolder": "",
-            "type": "output",
-            "format": "video/webm",
-            "frame_rate": 48,
-            "workflow": "162549_00001__00001.png",
-            "fullpath": "/workspace/ComfyUI/output/162549_00001__00001-audio.webm"
-          }
-        }
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 242,
       "type": "PixaromaMonitor",
       "pos": [
@@ -306,10 +192,246 @@
         "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
         "Node name for S&R": "PixaromaRunTimer",
         "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "runTimerLastMs": 154636.40000003576
+        "runTimerLastMs": 236365.10000002384
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 256,
+      "type": "PixaromaGroupSwitch",
+      "pos": [
+        -185.8447317565058,
+        5250.376442098363
+      ],
+      "size": [
+        308.21406249999995,
+        134
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "FPS",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaGroupSwitch",
+        "groupSwitchState": {
+          "version": 1,
+          "action": "bypass",
+          "scope": "all",
+          "picked": [],
+          "sort": "position",
+          "restriction": "any"
+        }
+      },
+      "widgets_values": [
+        {
+          "version": 1,
+          "action": "bypass",
+          "scope": "all",
+          "picked": [],
+          "sort": "position",
+          "restriction": "any"
+        }
+      ],
+      "widgets_values_named": {
+        "group_switch_ui": {
+          "version": 1,
+          "action": "bypass",
+          "scope": "all",
+          "picked": [],
+          "sort": "position",
+          "restriction": "any"
+        }
+      },
+      "color": "#d5a57b",
+      "bgcolor": "#3f3731"
+    },
+    {
+      "id": 219,
+      "type": "MarkdownNote",
+      "pos": [
+        -194.2512103492257,
+        4350.863455470832
+      ],
+      "size": [
+        896.4175289762429,
+        479.82314240701726
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "CONFIGURATION",
+      "properties": {},
+      "widgets_values": [
+        "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF or tau 1.5-2.0 | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Native** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, quality reference |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum + DiffAid: REMOVED from the stack**. Spectrum's block wrapper is code-incompatible with Sol fused blocks (`unexpected keyword argument 'attention'` — confirmed crash at 20 steps); DiffAid had no confirmed benefit. Do not reinstall\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | C (Native 20-step) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Turbo LoRA | few-step distillation (LoRA) | OFF (fused in model) | ON lightx2v 8-step | OFF |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Sol-Attn node** — set tau:\n   - 10Eros → **tau 1.3→0.8** scheduled\n   - Turbo LoRA → **tau 1.5-2.0** or bypass\n   - Native → **tau 1.0**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
+      ],
+      "widgets_values_named": {
+        "text": "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF or tau 1.5-2.0 | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Native** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, quality reference |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum + DiffAid: REMOVED from the stack**. Spectrum's block wrapper is code-incompatible with Sol fused blocks (`unexpected keyword argument 'attention'` — confirmed crash at 20 steps); DiffAid had no confirmed benefit. Do not reinstall\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | C (Native 20-step) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Turbo LoRA | few-step distillation (LoRA) | OFF (fused in model) | ON lightx2v 8-step | OFF |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Sol-Attn node** — set tau:\n   - 10Eros → **tau 1.3→0.8** scheduled\n   - Turbo LoRA → **tau 1.5-2.0** or bypass\n   - Native → **tau 1.0**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 137,
+      "type": "easy showAnything",
+      "pos": [
+        -870.7836776337482,
+        5446.023859260636
+      ],
+      "size": [
+        640.569002614706,
+        403.4854900527962
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "title": "QWEN3VL GENERATED PROMPT",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+        "Node name for S&R": "easy showAnything",
+        "aux_id": "yolain/ComfyUI-Easy-Use"
+      },
+      "widgets_values": [
+        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] The scene opens with a blonde woman in a black floral swimsuit reclining on a light gray couch in a softly lit living room. She is partially nude with her legs spread wide, exposing her pussy to the camera. A muscular man in a red t-shirt kneels behind her, his white penis already inserted deep inside her tight vaginal canal. Her expression is one of scared anticipation, eyes wide and mouth slightly agape as she braces for impact. The camera remains locked-off, completely static throughout the entire clip. At 0.00 seconds, the man’s hips begin to press forward with increasing force. His body leans in closer, his red fabric stretching taut across his back and shoulders as he drives deeper. The woman’s thighs clamp down instinctively, her fingers digging into the couch cushions beneath her. Her head tilts back slightly, her breath hitching in ragged gasps. At 1.5 seconds, the thrusting motion intensifies, each forward drive pushing her pelvis back against him. Her eyes flutter shut as pleasure and fear mix, a soft moan escaping her lips. Sweat glistens on her collarbone and the man’s chest as friction builds between them. By 3.0 seconds, the rhythm quickens, his hips snapping forward with controlled power while her legs wrap tighter around his waist. Her toes curl, knuckles whitening as she grips the couch frame. The man’s hand reaches forward, his fingers brushing her inner thigh, adding pressure and heat to the moment. At 4.0 seconds, the thrusts become more urgent, each one driving him deeper until he’s almost fully seated inside her. Her breath comes in short, sharp pants, her body trembling with the intensity of the penetration. The lighting catches the sheen of moisture on her inner thighs and the curve of her buttocks as they press against his. At the final moment, 5.00 seconds, the man’s hips halt mid-thrust, his body pressed flush against hers, his penis buried to the hilt inside her wet pussy. Her eyes snap open, pupils dilated, face flushed with a mix of terror and overwhelming pleasure. The scene holds this peak position with no further movement, her legs still locked around him, the man’s chest resting against her back, the moment suspended in a tableau of intense physical intimacy.\n\noverall_soundscape: The audio begins with the soft, ambient hum of a quiet living room—distant traffic muffled by windows, the faint rustle of fabric as the woman shifts on the couch. As the man begins to thrust, the room tone fades into the foreground: heavy, wet slapping of skin against skin, the squelch of vaginal fluids, and the deep, rhythmic breathing of both participants. The woman’s inhales grow shallow and panicked, interspersed with involuntary gasps and low, trembling moans that rise in pitch with each thrust. The man’s breathing is controlled but labored, punctuated by guttural grunts and sharp exhales. At 3.0 seconds, the sounds intensify—the friction increases, producing louder wet noises and the occasional soft thud of bodies colliding. Her legs tighten around him, creating a muffled, cloying sound as her thighs grind against his lower back. By 4.5 seconds, her vocalizations become more frantic—a mix of high-pitched cries and broken whispers—as the penetration reaches its climax. The final second holds the sound of her ragged, almost silent panting and the faint, continuous wetness of their joined bodies, emphasizing the stillness of the moment.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] The scene opens with a blonde woman in a black floral swimsuit reclining on a light gray couch in a softly lit living room. She is partially nude with her legs spread wide, exposing her pussy to the camera. A muscular man in a red t-shirt kneels behind her, his white penis already inserted deep inside her tight vaginal canal. Her expression is one of scared anticipation, eyes wide and mouth slightly agape as she braces for impact. The camera remains locked-off, completely static throughout the entire clip. At 0.00 seconds, the man’s hips begin to press forward with increasing force. His body leans in closer, his red fabric stretching taut across his back and shoulders as he drives deeper. The woman’s thighs clamp down instinctively, her fingers digging into the couch cushions beneath her. Her head tilts back slightly, her breath hitching in ragged gasps. At 1.5 seconds, the thrusting motion intensifies, each forward drive pushing her pelvis back against him. Her eyes flutter shut as pleasure and fear mix, a soft moan escaping her lips. Sweat glistens on her collarbone and the man’s chest as friction builds between them. By 3.0 seconds, the rhythm quickens, his hips snapping forward with controlled power while her legs wrap tighter around his waist. Her toes curl, knuckles whitening as she grips the couch frame. The man’s hand reaches forward, his fingers brushing her inner thigh, adding pressure and heat to the moment. At 4.0 seconds, the thrusts become more urgent, each one driving him deeper until he’s almost fully seated inside her. Her breath comes in short, sharp pants, her body trembling with the intensity of the penetration. The lighting catches the sheen of moisture on her inner thighs and the curve of her buttocks as they press against his. At the final moment, 5.00 seconds, the man’s hips halt mid-thrust, his body pressed flush against hers, his penis buried to the hilt inside her wet pussy. Her eyes snap open, pupils dilated, face flushed with a mix of terror and overwhelming pleasure. The scene holds this peak position with no further movement, her legs still locked around him, the man’s chest resting against her back, the moment suspended in a tableau of intense physical intimacy.\n\noverall_soundscape: The audio begins with the soft, ambient hum of a quiet living room—distant traffic muffled by windows, the faint rustle of fabric as the woman shifts on the couch. As the man begins to thrust, the room tone fades into the foreground: heavy, wet slapping of skin against skin, the squelch of vaginal fluids, and the deep, rhythmic breathing of both participants. The woman’s inhales grow shallow and panicked, interspersed with involuntary gasps and low, trembling moans that rise in pitch with each thrust. The man’s breathing is controlled but labored, punctuated by guttural grunts and sharp exhales. At 3.0 seconds, the sounds intensify—the friction increases, producing louder wet noises and the occasional soft thud of bodies colliding. Her legs tighten around him, creating a muffled, cloying sound as her thighs grind against his lower back. By 4.5 seconds, her vocalizations become more frantic—a mix of high-pitched cries and broken whispers—as the penetration reaches its climax. The final second holds the sound of her ragged, almost silent panting and the faint, continuous wetness of their joined bodies, emphasizing the stillness of the moment.\n\nnon_diegetic_music: N/A"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 118,
+      "type": "MarkdownNote",
+      "pos": [
+        -1176.4488319699024,
+        5345.823386833849
+      ],
+      "size": [
+        254.23793962820582,
+        401.09532327839497
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Size Settings Reference",
+      "properties": {},
+      "widgets_values": [
+        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      ],
+      "widgets_values_named": {
+        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 153,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -185.27658415395746,
+        5425.451298764128
+      ],
+      "size": [
+        318.9070112017879,
+        145.52071747512582
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 263,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -1720.6151236190053,
+        4908.367562498418
+      ],
+      "size": [
+        490,
+        690
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            554
+          ]
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": []
+        }
+      ],
+      "title": "Last Frame",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImageMini",
+        "loadImagePixState": "{\"allow_upscale\":false}"
+      },
+      "widgets_values": [
+        "131_2.jpg",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "131_2.jpg",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#1f85a8",
+      "bgcolor": "#233338"
     },
     {
       "id": 226,
@@ -393,8 +515,8 @@
       },
       "widgets_values": [
         "MiniMax H3",
-        "3:4",
-        "Native — 864×1184",
+        "16:9",
+        "Native — 1344×768",
         32,
         false,
         "lanczos",
@@ -404,8 +526,8 @@
       ],
       "widgets_values_named": {
         "model": "MiniMax H3",
-        "aspect_ratio": "3:4",
-        "resolution": "Native — 864×1184",
+        "aspect_ratio": "16:9",
+        "resolution": "Native — 1344×768",
         "divisible_by": 32,
         "upscale": false,
         "upscale_method": "lanczos",
@@ -415,272 +537,6 @@
       },
       "color": "#223",
       "bgcolor": "#335"
-    },
-    {
-      "id": 256,
-      "type": "PixaromaGroupSwitch",
-      "pos": [
-        -185.8447317565058,
-        5250.376442098363
-      ],
-      "size": [
-        308.21406249999995,
-        103
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "FPS",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaGroupSwitch",
-        "groupSwitchState": {
-          "version": 1,
-          "action": "bypass",
-          "scope": "all",
-          "picked": [],
-          "sort": "position",
-          "restriction": "any"
-        }
-      },
-      "widgets_values": [
-        {
-          "version": 1,
-          "action": "bypass",
-          "scope": "all",
-          "picked": [],
-          "sort": "position",
-          "restriction": "any"
-        }
-      ],
-      "widgets_values_named": {
-        "group_switch_ui": {
-          "version": 1,
-          "action": "bypass",
-          "scope": "all",
-          "picked": [],
-          "sort": "position",
-          "restriction": "any"
-        }
-      },
-      "color": "#d5a57b",
-      "bgcolor": "#3f3731"
-    },
-    {
-      "id": 219,
-      "type": "MarkdownNote",
-      "pos": [
-        -194.2512103492257,
-        4350.863455470832
-      ],
-      "size": [
-        896.4175289762429,
-        479.82314240701726
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "CONFIGURATION",
-      "properties": {},
-      "widgets_values": [
-        "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF or tau 1.5-2.0 | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Native** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, quality reference |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum + DiffAid: REMOVED from the stack**. Spectrum's block wrapper is code-incompatible with Sol fused blocks (`unexpected keyword argument 'attention'` — confirmed crash at 20 steps); DiffAid had no confirmed benefit. Do not reinstall\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | C (Native 20-step) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Turbo LoRA | few-step distillation (LoRA) | OFF (fused in model) | ON lightx2v 8-step | OFF |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Sol-Attn node** — set tau:\n   - 10Eros → **tau 1.3→0.8** scheduled\n   - Turbo LoRA → **tau 1.5-2.0** or bypass\n   - Native → **tau 1.0**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
-      ],
-      "widgets_values_named": {
-        "text": "# MiniMax H3 Acceleration Combinations\n\n## Configurations\n\n| Config | Model | Turbo LoRA | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |\n|--------|-------|-----------|----------|--------------|---------|-------|-------------|-------|\n| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |\n| **B — Turbo LoRA** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF or tau 1.5-2.0 | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |\n| **C — Native** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, quality reference |\n\n## Rules\n\n- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top\n- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks\n- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)\n- **Sol-Attn with Native**: tau=1.0 default, safe\n- **CK Attention**: always ON via arg, orthogonal to everything\n- **Spectrum + DiffAid: REMOVED from the stack**. Spectrum's block wrapper is code-incompatible with Sol fused blocks (`unexpected keyword argument 'attention'` — confirmed crash at 20 steps); DiffAid had no confirmed benefit. Do not reinstall\n- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions\n\n## Sol-Attn tau reference\n\n| Tau | Behavior | Use case |\n|-----|----------|----------|\n| 1.0 | ~30% blocks approximated | Native 20-step |\n| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |\n| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |\n| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |\n| OFF | no approximation | Debug or comparison |\n\n## Shift reference\n\n| Mode | Video shift | Audio shift | Notes |\n|------|------------|------------|-------|\n| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |\n| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |\n| Native 20-step | 12 | 3 | Higher video shift for native trajectory |\n\n## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)\n\n| Workflow | Config | Estimated time / 5s video |\n|----------|--------|---------------------------|\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA) | ~2-3 min |\n| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | C (Native 20-step) | ~5-7 min |\n\n## Stack summary\n\n| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |\n|-----------|-------|-------------|------------|----------------|\n| CK Attention | attention kernel (arg) | ON | ON | ON |\n| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |\n| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |\n| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |\n| Turbo LoRA | few-step distillation (LoRA) | OFF (fused in model) | ON lightx2v 8-step | OFF |\n| `--fast fp16_accumulation` | arg | ON | ON | ON |\n| `--cuda-malloc` | arg | ON | ON | ON |\n| `--async-offload` | arg | ON | ON | ON |\n| `--use-ck-attention` | arg | ON | ON | ON |\n\n## How to switch models in the workflow\n\n1. **LoadDiffusionModel** — swap the `.safetensors` file\n2. **LoraLoaderBypassModelOnly** — toggle bypass:\n   - 10Eros / Native → **bypassed** (LoRA off)\n   - Turbo LoRA → **active** (strength 1.0)\n3. **Sol-Attn node** — set tau:\n   - 10Eros → **tau 1.3→0.8** scheduled\n   - Turbo LoRA → **tau 1.5-2.0** or bypass\n   - Native → **tau 1.0**\n4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)\n5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)\n6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native\n"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 253,
-      "type": "a49be471-076f-401b-90a2-9178647f415b",
-      "pos": [
-        -190.2215016428764,
-        4896.374765542394
-      ],
-      "size": [
-        323.2291808760094,
-        295.4889256858087
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "svr2_model",
-          "name": "model_2",
-          "type": "COMBO",
-          "widget": {
-            "name": "model_2"
-          },
-          "link": null
-        },
-        {
-          "name": "frames",
-          "type": "IMAGE",
-          "link": 532
-        }
-      ],
-      "outputs": [
-        {
-          "name": "upscaled_images",
-          "type": "IMAGE",
-          "links": [
-            533
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.34.1",
-        "previewExposures": []
-      },
-      "widgets_values": [
-        "rife425_ensemble_False_scale_1_sim",
-        "large",
-        2,
-        "2xLexicaRRDBNet",
-        2,
-        "2K",
-        2,
-        "seedvr2_ema_7b_fp16.safetensors",
-        1440,
-        33
-      ],
-      "widgets_values_named": {
-        "model": "rife425_ensemble_False_scale_1_sim",
-        "resolution_profile": "large",
-        "multiplier": 2,
-        "model_1": "2xLexicaRRDBNet",
-        "batch_size": 2,
-        "resize_to": "2K",
-        "batch_size_1": 2,
-        "model_2": "seedvr2_ema_7b_fp16.safetensors",
-        "resolution": 1440,
-        "batch_size_2": 33
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 218,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -196.47401808469698,
-        5636.555432969927
-      ],
-      "size": [
-        326.0181640625,
-        130
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "SPEED PATCH",
-      "properties": {
-        "matchColors": "Yellow",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 153,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -185.27658415395746,
-        5425.451298764128
-      ],
-      "size": [
-        318.9070112017879,
-        145.52071747512582
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "OPTIONS",
-      "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 137,
-      "type": "easy showAnything",
-      "pos": [
-        -870.7836776337482,
-        5446.023859260636
-      ],
-      "size": [
-        640.569002614706,
-        403.4854900527962
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "anything",
-          "shape": 7,
-          "type": "*",
-          "link": 253
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": []
-        }
-      ],
-      "title": "QWEN3VL GENERATED PROMPT",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
-      },
-      "widgets_values": [
-        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A 2D anime-style woman with long pink hair kneels in a sunlit café, wearing a tight black latex jumpsuit and black lace-up boots. The environment features a wooden counter, hanging pendant lights, and warm afternoon light streaming through a window with visible dust motes dancing in the air. At 0.00s, she is positioned on her knees, left knee bent forward, right knee slightly behind, her right hand raised to her lips with index finger extended inside her mouth, while her left arm rests naturally along the counter. Her head is tilted slightly upward, eyes half-lidded, gazing toward the window. As the clip progresses, the camera executes a smooth [TRACKING_LEFT] lateral movement, gliding leftward while maintaining her centered in the frame. Her pose shifts subtly: she lowers her right hand from her lips, letting it drape along the counter, while her left hand lifts slightly and taps the wood twice in a nervous, playful gesture. Her spine straightens marginally, hips shifting forward, accentuating the sheen of the latex against her thighs. Breathing is steady but audible, chest rising and falling with soft, rhythmic motion. Her expression evolves from contemplative to slightly coy as she glances sideways, her lashes fluttering once in response to the sunlight. The light intensifies across the scene, casting deeper shadows under her chin and along the folds of her jumpsuit, while highlights catch the moisture on her lips and the gloss of the latex. By 5.00s, she returns to a pose mirroring the first frame: right hand back to her lips, left hand resting on the counter, knees in identical position, head tilted upward with eyes half-lidded. The camera completes its leftward glide, now framing her against a slightly different background angle, but she occupies the same spatial center, expression and pose reconstituted with near-perfect fidelity.\n\noverall_soundscape: The scene is filled with the ambient hum of a café — distant chatter, clinking cups, and the soft hiss of a steam machine — layered underneath is the woman’s steady, sensual breathing, audible and rhythmic. Her lips press against her index finger with a soft, wet suction sound, followed by the faint rustle of latex shifting as she moves her hips and arms. The wooden counter creaks slightly under her left hand as she taps it twice. Her breathing deepens and quickens subtly, with a low, involuntary gasp escaping as sunlight glints across her chest.\n\nnon_diegetic_music: N/A"
-      ],
-      "widgets_values_named": {
-        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A 2D anime-style woman with long pink hair kneels in a sunlit café, wearing a tight black latex jumpsuit and black lace-up boots. The environment features a wooden counter, hanging pendant lights, and warm afternoon light streaming through a window with visible dust motes dancing in the air. At 0.00s, she is positioned on her knees, left knee bent forward, right knee slightly behind, her right hand raised to her lips with index finger extended inside her mouth, while her left arm rests naturally along the counter. Her head is tilted slightly upward, eyes half-lidded, gazing toward the window. As the clip progresses, the camera executes a smooth [TRACKING_LEFT] lateral movement, gliding leftward while maintaining her centered in the frame. Her pose shifts subtly: she lowers her right hand from her lips, letting it drape along the counter, while her left hand lifts slightly and taps the wood twice in a nervous, playful gesture. Her spine straightens marginally, hips shifting forward, accentuating the sheen of the latex against her thighs. Breathing is steady but audible, chest rising and falling with soft, rhythmic motion. Her expression evolves from contemplative to slightly coy as she glances sideways, her lashes fluttering once in response to the sunlight. The light intensifies across the scene, casting deeper shadows under her chin and along the folds of her jumpsuit, while highlights catch the moisture on her lips and the gloss of the latex. By 5.00s, she returns to a pose mirroring the first frame: right hand back to her lips, left hand resting on the counter, knees in identical position, head tilted upward with eyes half-lidded. The camera completes its leftward glide, now framing her against a slightly different background angle, but she occupies the same spatial center, expression and pose reconstituted with near-perfect fidelity.\n\noverall_soundscape: The scene is filled with the ambient hum of a café — distant chatter, clinking cups, and the soft hiss of a steam machine — layered underneath is the woman’s steady, sensual breathing, audible and rhythmic. Her lips press against her index finger with a soft, wet suction sound, followed by the faint rustle of latex shifting as she moves her hips and arms. The wooden counter creaks slightly under her left hand as she taps it twice. Her breathing deepens and quickens subtly, with a low, involuntary gasp escaping as sunlight glints across her chest.\n\nnon_diegetic_music: N/A"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
     },
     {
       "id": 262,
@@ -731,7 +587,8 @@
           "type": "STRING",
           "links": [
             551,
-            555
+            555,
+            556
           ]
         }
       ],
@@ -747,15 +604,15 @@
       "id": 261,
       "type": "PixaromaLoadImageMini",
       "pos": [
-        -2221.252473931508,
-        4905.525757771869
+        -2218.1251954159075,
+        4900.940815974991
       ],
       "size": [
         460,
         690
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -776,15 +633,16 @@
       "properties": {
         "cnr_id": "ComfyUI-Pixaroma",
         "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaLoadImageMini"
+        "Node name for S&R": "PixaromaLoadImageMini",
+        "loadImagePixState": "{\"allow_upscale\":false}"
       },
       "widgets_values": [
-        "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "131_2.jpg",
         "image",
         ""
       ],
       "widgets_values_named": {
-        "image": "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "image": "131_2.jpg",
         "upload": "image",
         "pixaroma_load_image_mini_ui": ""
       },
@@ -792,76 +650,36 @@
       "bgcolor": "#23362f"
     },
     {
-      "id": 263,
-      "type": "PixaromaLoadImageMini",
+      "id": 218,
+      "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
-        -1720.6151236190053,
-        4908.367562498418
+        -196.47401808469698,
+        5636.555432969927
       ],
       "size": [
-        490,
-        690
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            554
-          ]
-        },
-        {
-          "name": "image_info",
-          "type": "PIX_IMAGE_INFO",
-          "links": []
-        }
-      ],
-      "title": "Last Frame",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaLoadImageMini"
-      },
-      "widgets_values": [
-        "Qwen21_2026-09-25_001%.jpg [output]",
-        "image",
-        ""
-      ],
-      "widgets_values_named": {
-        "image": "Qwen21_2026-09-25_001%.jpg [output]",
-        "upload": "image",
-        "pixaroma_load_image_mini_ui": ""
-      },
-      "color": "#1f85a8",
-      "bgcolor": "#233338"
-    },
-    {
-      "id": 118,
-      "type": "MarkdownNote",
-      "pos": [
-        -1176.4488319699024,
-        5345.823386833849
-      ],
-      "size": [
-        254.23793962820582,
-        401.09532327839497
+        326.0181640625,
+        130
       ],
       "flags": {},
       "order": 11,
       "mode": 0,
       "inputs": [],
-      "outputs": [],
-      "title": "Note: Size Settings Reference",
-      "properties": {},
-      "widgets_values": [
-        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
       ],
-      "widgets_values_named": {
-        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      "title": "SPEED PATCH",
+      "properties": {
+        "matchColors": "Yellow",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
       },
       "color": "#432",
       "bgcolor": "#653"
@@ -958,39 +776,281 @@
       "widgets_values": [
         "",
         1344,
-        "",
+        "__pmp/act/miss__",
         5,
-        "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-        8,
-        "euler",
+        "10Eros_Max_h3_hybrid_beta5_int8.safetensors",
+        20,
+        "res_multistep",
         "simple",
-        6,
+        12,
         3,
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
         "MiniMax › NSFW FL2VA",
         "5s",
-        "None",
+        "[LOCKED_OFF]",
         false
       ],
       "widgets_values_named": {
         "width": "",
         "height": 1344,
-        "prompt": "",
+        "prompt": "__pmp/act/miss__",
         "value_1": 5,
-        "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-        "steps": 8,
-        "sampler_name": "euler",
+        "unet_name": "10Eros_Max_h3_hybrid_beta5_int8.safetensors",
+        "steps": 20,
+        "sampler_name": "res_multistep",
         "scheduler": "simple",
-        "shift_video": 6,
+        "shift_video": 12,
         "shift_audio": 3,
         "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
         "preset_prompt": "MiniMax › NSFW FL2VA",
         "duration": "5s",
-        "camera_tag": "None",
+        "camera_tag": "[LOCKED_OFF]",
         "passthrough": false
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
+    },
+    {
+      "id": 253,
+      "type": "a49be471-076f-401b-90a2-9178647f415b",
+      "pos": [
+        -199.8078297678766,
+        4887.750937417394
+      ],
+      "size": [
+        323.2291808760094,
+        295.4889256858087
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "svr2_model",
+          "name": "model_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "model_2"
+          },
+          "link": null
+        },
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 532
+        }
+      ],
+      "outputs": [
+        {
+          "name": "upscaled_images",
+          "type": "IMAGE",
+          "links": [
+            533,
+            560
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.34.1",
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "rife425_ensemble_False_scale_1_sim",
+        "large",
+        2,
+        "2xLexicaRRDBNet",
+        2,
+        "2K",
+        2,
+        "seedvr2_ema_7b_fp16.safetensors",
+        1440,
+        33
+      ],
+      "widgets_values_named": {
+        "model": "rife425_ensemble_False_scale_1_sim",
+        "resolution_profile": "large",
+        "multiplier": 2,
+        "model_1": "2xLexicaRRDBNet",
+        "batch_size": 2,
+        "resize_to": "2K",
+        "batch_size_1": 2,
+        "model_2": "seedvr2_ema_7b_fp16.safetensors",
+        "resolution": 1440,
+        "batch_size_2": 33
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 266,
+      "type": "SaveWEBM",
+      "pos": [
+        1318.238665450509,
+        4959.89309121322
+      ],
+      "size": [
+        517.6675740507808,
+        972.0266905742183
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 560
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 556
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.4",
+        "Node name for S&R": "SaveWEBM"
+      },
+      "widgets_values": [
+        "ComfyUI",
+        "vp9",
+        48,
+        32
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "ComfyUI",
+        "codec": "vp9",
+        "fps": 48,
+        "crf": 32
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 126,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        192.11617485568502,
+        4947.969281774167
+      ],
+      "size": [
+        511.3966496168314,
+        624.4106154094677
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 533
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 549
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 551
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "title": "48FPS",
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
+        "Node name for S&R": "VHS_VideoCombine",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+      },
+      "widgets_values": {
+        "frame_rate": 48,
+        "loop_count": 0,
+        "filename_prefix": "video/MiniMax_H3_48FPS",
+        "format": "video/webm",
+        "pix_fmt": "yuv420p",
+        "crf": 32,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "131_2_00006-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 48,
+            "workflow": "131_2_00006.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/131_2_00006-audio.mp4"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "frame_rate": 48,
+        "loop_count": 0,
+        "filename_prefix": "video/MiniMax_H3_48FPS",
+        "format": "video/webm",
+        "pix_fmt": "yuv420p",
+        "crf": 32,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "131_2_00006-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 48,
+            "workflow": "131_2_00006.png",
+            "fullpath": "/workspace/runpod-slim/ComfyUI/output/131_2_00006-audio.mp4"
+          }
+        }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
     }
   ],
   "links": [
@@ -1105,6 +1165,22 @@
       92,
       1,
       "STRING"
+    ],
+    [
+      556,
+      262,
+      4,
+      266,
+      1,
+      "STRING"
+    ],
+    [
+      560,
+      253,
+      0,
+      266,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -1112,8 +1188,8 @@
       "id": 9,
       "title": "24FPS",
       "bounding": [
-        744.981309598324,
-        4882.041664744982,
+        745.5902836920743,
+        4877.169871994988,
         539.5547030455247,
         1066.2056821192382
       ],
@@ -1131,6 +1207,18 @@
       ],
       "color": "#b06634",
       "flags": {}
+    },
+    {
+      "id": 24,
+      "title": "WEBM NO AUDIO",
+      "bounding": [
+        1311.9117316809893,
+        4878.857388724948,
+        539.5547030455247,
+        1066.2056821192382
+      ],
+      "color": "#b06634",
+      "flags": {}
     }
   ],
   "definitions": {
@@ -1139,9 +1227,9 @@
         "id": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
         "version": 1,
         "state": {
-          "lastGroupId": 23,
-          "lastNodeId": 264,
-          "lastLinkId": 555,
+          "lastGroupId": 24,
+          "lastNodeId": 268,
+          "lastLinkId": 560,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1640,11 +1728,11 @@
               "Node name for S&R": "RandomNoise"
             },
             "widgets_values": [
-              290465505461296,
+              131658101727503,
               "randomize"
             ],
             "widgets_values_named": {
-              "noise_seed": 290465505461296,
+              "noise_seed": 131658101727503,
               "control_after_generate": "randomize"
             }
           },
@@ -2299,7 +2387,7 @@
             ],
             "flags": {},
             "order": 16,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "model",
@@ -2324,11 +2412,11 @@
               "Node name for S&R": "LoraLoaderModelOnly"
             },
             "widgets_values": [
-              "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+              "lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors",
               1
             ],
             "widgets_values_named": {
-              "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+              "lora_name": "lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors",
               "strength_model": 1
             },
             "color": "#223",
@@ -2373,7 +2461,7 @@
             },
             "widgets_values": [
               "sol-attn",
-              1.3,
+              1,
               0.2,
               1,
               "",
@@ -2384,7 +2472,7 @@
             ],
             "widgets_values_named": {
               "selection": "sol-attn",
-              "selection.tau": 1.3,
+              "selection.tau": 1,
               "start_percent": 0.2,
               "end_percent": 1,
               "dense_blocks": "",
@@ -2512,7 +2600,7 @@
               "",
               8192,
               false,
-              2977736736,
+              1935103688,
               "randomize",
               false,
               false,
@@ -2526,7 +2614,7 @@
               "prompt": "",
               "max_tokens": 8192,
               "keep_model_loaded": false,
-              "seed": 2977736736,
+              "seed": 1935103688,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
               "passthrough": false,
@@ -3048,9 +3136,9 @@
         "id": "a49be471-076f-401b-90a2-9178647f415b",
         "version": 1,
         "state": {
-          "lastGroupId": 23,
-          "lastNodeId": 264,
-          "lastLinkId": 555,
+          "lastGroupId": 24,
+          "lastNodeId": 268,
+          "lastLinkId": 560,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3312,7 +3400,7 @@
             ],
             "flags": {},
             "order": 5,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "model",
@@ -3618,7 +3706,7 @@
               "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
-              3618165352,
+              546569453,
               "randomize",
               1440,
               0,
@@ -3633,7 +3721,7 @@
               true
             ],
             "widgets_values_named": {
-              "seed": 3618165352,
+              "seed": 546569453,
               "control_after_generate": "randomize",
               "resolution": 1440,
               "max_resolution": 0,
@@ -3659,11 +3747,11 @@
             ],
             "size": [
               311.232421875,
-              76
+              94
             ],
             "flags": {},
             "order": 4,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "images",
@@ -4012,10 +4100,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7513148009015777,
+      "scale": 0.8264462809917359,
       "offset": [
-        2903.057307345447,
-        -4502.790784608927
+        1299.6799519127599,
+        -4552.493919974951
       ]
     }
   },
