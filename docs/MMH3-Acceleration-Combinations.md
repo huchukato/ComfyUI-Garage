@@ -1,73 +1,32 @@
-# MiniMax H3 Acceleration Combinations
+# MiniMax H3 — Accelerazione: preset e parametri
 
-## Configurations
+## Catena modello (ordine corretto nel subgraph)
 
-| Config | Model | Turbo LoRA | Sol-Attn | CK Attention | Sampler | Steps | Shift (V/A) | Notes |
-|--------|-------|-----------|----------|--------------|---------|-------|-------------|-------|
-| **A — 10Eros TURBO** | `10Eros_Max_h3_TURBO-hybrid_beta3_int8_convrot_skip_edges` | OFF (fused) | ON (tau 1.3→0.8) | ON (arg) | `euler` + `simple` | 8 | 6/3 | TURBO fused in checkpoint, Sol-Attn verified working |
-| **B — Turbo LoRA** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | ON (strength 1.0) | OFF or tau 1.5-2.0 | ON (arg) | `euler` + `simple` | 8 | 6/3 | lightx2v 8-step 768p, max speed |
-| **C — Native** | `minimax_h3_fl2va_pruned_nvfp4_convrot_int8` | OFF | ON (tau 1.0) | ON (arg) | `res_multistep` + `simple` | 20 | 12/3 | Max quality, quality reference |
+`Load Diffusion Model (INT8)` → `LoraLoader` → `ModelAttentionBackend` (comfy kitchen attention) → `BlockSparseAttention` (sol-attn, tau) → `MiniMaxH3SigmaShift` (shift V/A) → `BasicGuider` (CFG 1.0) → `SamplerCustomAdvanced`
 
-## Rules
+## Tabella preset (definitiva)
 
-- **10Eros + Turbo LoRA = forbidden**: TURBO is already fused in the 10Eros checkpoint — do NOT stack the lightx2v LoRA on top
-- **Sol-Attn with Turbo LoRA**: high tau (1.5-2.0) or OFF. tau=1.0 on 8 steps causes fallbacks
-- **Sol-Attn with 10Eros**: tau 1.3→0.8 scheduled — verified working well (community tested)
-- **Sol-Attn with Native**: tau=1.0 default, safe
-- **CK Attention**: always ON via arg, orthogonal to everything
-- **Spectrum + DiffAid: REMOVED from the stack**. Spectrum's block wrapper is code-incompatible with Sol fused blocks (`unexpected keyword argument 'attention'` — confirmed crash at 20 steps); DiffAid had no confirmed benefit. Do not reinstall
-- **Test one patch at a time**: never enable multiple new acceleration patches simultaneously — isolate each to identify regressions
+| Preset | Steps | CFG | Shift V | Shift A | Tau | LoRA (strength 1.0) |
+|--------|-------|-----|---------|---------|-----|---------------------|
+| Native Base (FL2VA) | 28–32 | 1.0 | 6.0 | 3.0 | 1.00 | nessuno (bypass) |
+| Native Turbo (FL2VA) | 8 | 1.0 | 12.0 | 4.0 | 1.30 | minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16 |
+| R2VA Native | 25–30 | 1.0 | 4.0 | 3.0 | 1.00 | minimax_h3_ref_lora_rank_256_bf16 (obbligatorio) |
+| R2VA Turbo | 6–8 | 1.0 | 6.0 | 4.0 | 1.30 | minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16 |
+| 10Eros Max Beta5 | 30–40 | 1.0 | 6.0 | 3.0 | 0.85–1.00 | nessuno (bypass) |
+| 10Eros Turbo | 8 | 1.0 | 12.0 | 4.0 | 1.30 | lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned |
 
-## Sol-Attn tau reference
+## Modelli (INT8 puro — no NVFP4)
 
-| Tau | Behavior | Use case |
-|-----|----------|----------|
-| 1.0 | ~30% blocks approximated | Native 20-step |
-| 1.3→0.8 (scheduled) | tau schedule, linear curve | 10Eros TURBO 8-step |
-| 1.5 | ~20% blocks approximated | Turbo LoRA 8-step (conservative) |
-| 2.0 | ~10% blocks approximated | Turbo LoRA, max safety |
-| OFF | no approximation | Debug or comparison |
+- DiT: `minimax_h3_fl2va_pruned_int8_convrot.safetensors` / `minimax_h3_ref2va_pruned_int8_convrot.safetensors` (Comfy-Org)
+- 10Eros: `10Eros_Max_h3_hybrid_beta5_int8.safetensors` (TenStrip)
+- Text encoder: `qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors` (ethanfel Heretic, uncensored) — CLIPLoader type `minimax`
 
-## Shift reference
+## Args di avvio ComfyUI
 
-| Mode | Video shift | Audio shift | Notes |
-|------|------------|------------|-------|
-| Turbo LoRA 768p | 6 | 3 | LightX2V Studio recommended, unlocks motion |
-| 10Eros TURBO | 6 | 3 | Same as Turbo LoRA |
-| Native 20-step | 12 | 3 | Higher video shift for native trajectory |
+`--highvram --fast-disk --disable-auto-launch --fast fp16_accumulation --cuda-malloc --enable-triton-backend --force-fp16`
 
-## Expected performance (RTX PRO 6000 Blackwell, 1344x768, NVFP4+INT8)
+## Note
 
-| Workflow | Config | Estimated time / 5s video |
-|----------|--------|---------------------------|
-| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | A (10Eros TURBO) | ~2-3 min |
-| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | B (Turbo LoRA) | ~2-3 min |
-| `MiniMaxH3-Turbo-FL2VA-Qwen3.5.json` | C (Native 20-step) | ~5-7 min |
-
-## Stack summary
-
-| Component | Level | 10Eros TURBO | Turbo LoRA | Native 20-step |
-|-----------|-------|-------------|------------|----------------|
-| CK Attention | attention kernel (arg) | ON | ON | ON |
-| Sol-Attn | sparse attention (node) | ON tau 1.3→0.8 | OFF or tau 1.5+ | ON tau 1.0 |
-| Sol-Fusion | fused norm/RoPE (node) | ON (50 blocks) | ON (50 blocks) | ON (50 blocks) |
-| Sol-FFN | chunked MLP (node) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) | ON (52 MLPs, 2 chunks) |
-| Turbo LoRA | few-step distillation (LoRA) | OFF (fused in model) | ON lightx2v 8-step | OFF |
-| `--fast fp16_accumulation` | arg | ON | ON | ON |
-| `--cuda-malloc` | arg | ON | ON | ON |
-| `--async-offload` | arg | ON | ON | ON |
-| `--use-ck-attention` | arg | ON | ON | ON |
-
-## How to switch models in the workflow
-
-1. **LoadDiffusionModel** — swap the `.safetensors` file
-2. **LoraLoaderBypassModelOnly** — toggle bypass:
-   - 10Eros / Native → **bypassed** (LoRA off)
-   - Turbo LoRA → **active** (strength 1.0)
-3. **Sol-Attn node** — set tau:
-   - 10Eros → **tau 1.3→0.8** scheduled
-   - Turbo LoRA → **tau 1.5-2.0** or bypass
-   - Native → **tau 1.0**
-4. **KSamplerSelect** — change sampler (`euler` for Turbo/10Eros, `res_multistep` for Native)
-5. **MiniMaxH3SigmaShift** — change shift (6/3 for Turbo/10Eros, 12/3 for Native)
-6. **Sampler steps** — 8 for Turbo/10Eros, 20 for Native
+- NVFP4: rimossi — perdita di qualità rilevante; accelerazione via LoRA turbo + sol-attn + triton backend.
+- `ModelAttentionBackend` va inserito a mano tra LoraLoader e BlockSparseAttention se manca nel workflow.
+- 10Eros Beta5 è il checkpoint NON-turbo: per la modalità turbo applicare il LoRA `lightx2v_hybrid` esterno (strength 1.0).
