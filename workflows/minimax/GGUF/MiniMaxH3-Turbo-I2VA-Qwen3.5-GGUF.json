@@ -1,8 +1,8 @@
 {
-  "id": "2e5fb033-7e4f-4e73-a580-590a2a38a074",
+  "id": "6c1f7a63-3b98-427d-a4c4-3a4d2099e39b",
   "revision": 0,
-  "last_node_id": 260,
-  "last_link_id": 555,
+  "last_node_id": 269,
+  "last_link_id": 562,
   "nodes": [
     {
       "id": 135,
@@ -254,13 +254,13 @@
         606.1053431378566
       ],
       "flags": {},
-      "order": 18,
+      "order": 17,
       "mode": 4,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 555
+          "link": 561
         },
         {
           "name": "audio",
@@ -406,7 +406,7 @@
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaRunTimer",
         "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "runTimerLastMs": 203875.5
+        "runTimerLastMs": 44271.19999999553
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -579,76 +579,6 @@
       "bgcolor": "#23362f"
     },
     {
-      "id": 201,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -174.10450227376046,
-        5493.38461048903
-      ],
-      "size": [
-        326.0181640625,
-        130
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "SPEED PATCH",
-      "properties": {
-        "matchColors": "Yellow",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 154,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -175.95461596435544,
-        5306.013233043481
-      ],
-      "size": [
-        331.37264736598866,
-        125.75073961966427
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "OPTIONS",
-      "properties": {
-        "matchColors": "Purple",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "alphanumeric",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 258,
       "type": "SaveWEBM",
       "pos": [
@@ -660,13 +590,13 @@
         985.2223077617182
       ],
       "flags": {},
-      "order": 17,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 554
+          "link": 562
         },
         {
           "name": "filename_prefix",
@@ -716,7 +646,7 @@
         134
       ],
       "flags": {},
-      "order": 10,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -794,13 +724,155 @@
         "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
-        "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] At 00:00.000, live-action, cinematic, a medium close-up frame captures a young couple locked in a passionate French kiss in a dimly lit bedroom at night. The woman has long, dark, wavy hair cascading over her shoulders, wears a delicate gold chain necklace, and a thin-strapped brown camisole that reveals her cleavage. The man is shirtless, his short brown hair glistening under the soft blue ambient light, his chest and shoulders defined. Her lips are full and parted, his lips pressing deeply against hers, tongues entwined in a slow, sensual exchange. Her left hand grips the back of his neck, fingers pressing into his skin, while his arms encircle her waist tightly, pulling her flush against his body. The background is softly blurred: a white wardrobe with paneled doors stands to the left, a bed with dark bedding and a white pillow appears behind them, and a small potted plant glows faintly green in the shadows. The lighting is cool blue-toned, casting subtle shadows across their faces and highlighting the moisture on their skin. The camera executes a slow, continuous dolly-in, moving forward at a steady pace, tightening the frame on their faces and lips.\n\noverall_soundscape: Deep, rhythmic breathing fills the air as her inhales hitch slightly against his lips. Wet, slick sounds of their mouths pressing together and tongues sliding are prominent. A soft, rhythmic thud of his heart against her chest is audible. Occasional low moans escape her throat as she leans into him, followed by a sharp intake of breath when he pulls slightly away before pressing back in.\n\nnon_diegetic_music: N/A"
+        "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] 3D CG, cinematic, a medium close-up captures a shirtless young man with short brown hair and a woman with long, voluminous black curly hair sharing a passionate French kiss. The woman wears a simple dark camisole, revealing her collarbones and a gold chain necklace. The man’s muscular chest is fully visible, and his right arm wraps around her back while his left hand grips her shoulder. Her left arm encircles his neck, fingers tangling in his hair. Their lips are pressed tightly together, tongues interlacing, eyes closed in intense focus. The room is dimly lit with cool blue ambient light, casting soft shadows across their skin. In the background, a white wardrobe and blurred bed frame are visible. The camera slowly dollies forward with a shallow depth of field, keeping the couple sharply in focus while the background remains softly out of focus.\noverall_soundscape: Heavy, synchronized breathing fills the air as their chests rise and fall in unison. Wet, slick sounds of lips and tongues pressing and sliding against each other dominate the audio. A low, rhythmic thud of skin against skin accompanies every movement of their bodies as they press closer.\nnon_diegetic_music: N/A"
       ],
       "widgets_values_named": {
-        "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] At 00:00.000, live-action, cinematic, a medium close-up frame captures a young couple locked in a passionate French kiss in a dimly lit bedroom at night. The woman has long, dark, wavy hair cascading over her shoulders, wears a delicate gold chain necklace, and a thin-strapped brown camisole that reveals her cleavage. The man is shirtless, his short brown hair glistening under the soft blue ambient light, his chest and shoulders defined. Her lips are full and parted, his lips pressing deeply against hers, tongues entwined in a slow, sensual exchange. Her left hand grips the back of his neck, fingers pressing into his skin, while his arms encircle her waist tightly, pulling her flush against his body. The background is softly blurred: a white wardrobe with paneled doors stands to the left, a bed with dark bedding and a white pillow appears behind them, and a small potted plant glows faintly green in the shadows. The lighting is cool blue-toned, casting subtle shadows across their faces and highlighting the moisture on their skin. The camera executes a slow, continuous dolly-in, moving forward at a steady pace, tightening the frame on their faces and lips.\n\noverall_soundscape: Deep, rhythmic breathing fills the air as her inhales hitch slightly against his lips. Wet, slick sounds of their mouths pressing together and tongues sliding are prominent. A soft, rhythmic thud of his heart against her chest is audible. Occasional low moans escape her throat as she leans into him, followed by a sharp intake of breath when he pulls slightly away before pressing back in.\n\nnon_diegetic_music: N/A"
+        "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] 3D CG, cinematic, a medium close-up captures a shirtless young man with short brown hair and a woman with long, voluminous black curly hair sharing a passionate French kiss. The woman wears a simple dark camisole, revealing her collarbones and a gold chain necklace. The man’s muscular chest is fully visible, and his right arm wraps around her back while his left hand grips her shoulder. Her left arm encircles his neck, fingers tangling in his hair. Their lips are pressed tightly together, tongues interlacing, eyes closed in intense focus. The room is dimly lit with cool blue ambient light, casting soft shadows across their skin. In the background, a white wardrobe and blurred bed frame are visible. The camera slowly dollies forward with a shallow depth of field, keeping the couple sharply in focus while the background remains softly out of focus.\noverall_soundscape: Heavy, synchronized breathing fills the air as their chests rise and fall in unison. Wet, slick sounds of lips and tongues pressing and sliding against each other dominate the audio. A low, rhythmic thud of skin against skin accompanies every movement of their bodies as they press closer.\nnon_diegetic_music: N/A"
       },
       "color": "#233",
       "bgcolor": "#355"
+    },
+    {
+      "id": 201,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -174.10450227376046,
+        5493.38461048903
+      ],
+      "size": [
+        326.0181640625,
+        130
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "SPEED PATCH",
+      "properties": {
+        "matchColors": "Yellow",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 154,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -175.95461596435544,
+        5306.013233043481
+      ],
+      "size": [
+        331.37264736598866,
+        125.75073961966427
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "OPTIONS",
+      "properties": {
+        "matchColors": "Purple",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "alphanumeric",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 253,
+      "type": "a871f085-9fd7-426a-8dde-585b34727ef4",
+      "pos": [
+        -176.60428234345179,
+        4769.8234747781535
+      ],
+      "size": [
+        323.2291808760094,
+        295.4889256858087
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "svr2_model",
+          "name": "model_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "model_2"
+          },
+          "link": null
+        },
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 532
+        }
+      ],
+      "outputs": [
+        {
+          "name": "upscaled_images",
+          "type": "IMAGE",
+          "links": [
+            561,
+            562
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.34.1",
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "rife425_ensemble_False_scale_1_sim",
+        "large",
+        2,
+        "2xLexicaRRDBNet",
+        2,
+        "2K",
+        2,
+        "seedvr2_ema_7b_fp16.safetensors",
+        1440,
+        33
+      ],
+      "widgets_values_named": {
+        "model": "rife425_ensemble_False_scale_1_sim",
+        "resolution_profile": "large",
+        "multiplier": 2,
+        "model_1": "2xLexicaRRDBNet",
+        "batch_size": 2,
+        "resize_to": "2K",
+        "batch_size_1": 2,
+        "model_2": "seedvr2_ema_7b_fp16.safetensors",
+        "resolution": 1440,
+        "batch_size_2": 33
+      },
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
       "id": 105,
@@ -890,13 +962,13 @@
         1344,
         "i due si baciano appassionatamente, french kiss",
         5,
-        "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
+        "minimax_h3_fl2va_turbo_Q4_K_M.gguf",
         8,
         "euler",
         "simple",
         6,
         3,
-        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q4_K_M.gguf",
         "MiniMax › NSFW",
         "5s",
         "None",
@@ -907,13 +979,13 @@
         "height": 1344,
         "prompt": "i due si baciano appassionatamente, french kiss",
         "value_1": 5,
-        "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
+        "unet_name": "minimax_h3_fl2va_turbo_Q4_K_M.gguf",
         "steps": 8,
         "sampler_name": "euler",
         "scheduler": "simple",
         "shift_video": 6,
         "shift_audio": 3,
-        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
+        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q4_K_M.gguf",
         "preset_prompt": "MiniMax › NSFW",
         "duration": "5s",
         "camera_tag": "None",
@@ -921,78 +993,6 @@
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 253,
-      "type": "a871f085-9fd7-426a-8dde-585b34727ef4",
-      "pos": [
-        -182.87342296845202,
-        4766.244177903174
-      ],
-      "size": [
-        323.2291808760094,
-        295.4889256858087
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "svr2_model",
-          "name": "model_2",
-          "type": "COMBO",
-          "widget": {
-            "name": "model_2"
-          },
-          "link": null
-        },
-        {
-          "name": "frames",
-          "type": "IMAGE",
-          "link": 532
-        }
-      ],
-      "outputs": [
-        {
-          "name": "upscaled_images",
-          "type": "IMAGE",
-          "links": [
-            554,
-            555
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.34.1",
-        "previewExposures": []
-      },
-      "widgets_values": [
-        "rife425_ensemble_False_scale_1_sim",
-        "large",
-        2,
-        "2xLexicaRRDBNet",
-        2,
-        "2K",
-        2,
-        "seedvr2_ema_7b_fp16.safetensors",
-        1440,
-        33
-      ],
-      "widgets_values_named": {
-        "model": "rife425_ensemble_False_scale_1_sim",
-        "resolution_profile": "large",
-        "multiplier": 2,
-        "model_1": "2xLexicaRRDBNet",
-        "batch_size": 2,
-        "resize_to": "2K",
-        "batch_size_1": 2,
-        "model_2": "seedvr2_ema_7b_fp16.safetensors",
-        "resolution": 1440,
-        "batch_size_2": 33
-      },
-      "color": "#223",
-      "bgcolor": "#335"
     }
   ],
   "links": [
@@ -1093,18 +1093,18 @@
       "STRING"
     ],
     [
-      554,
+      561,
       253,
       0,
-      258,
+      126,
       0,
       "IMAGE"
     ],
     [
-      555,
+      562,
       253,
       0,
-      126,
+      258,
       0,
       "IMAGE"
     ]
@@ -1154,8 +1154,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 24,
-          "lastNodeId": 260,
-          "lastLinkId": 555,
+          "lastNodeId": 269,
+          "lastLinkId": 562,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1234,7 +1234,7 @@
             "name": "unet_name",
             "type": "COMBO",
             "linkIds": [
-              221
+              560
             ],
             "pos": [
               -2453.435546875,
@@ -1443,7 +1443,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -1522,54 +1522,6 @@
             }
           },
           {
-            "id": 13,
-            "type": "CLIPLoader",
-            "pos": [
-              -2020,
-              4830
-            ],
-            "size": [
-              640,
-              120
-            ],
-            "flags": {},
-            "order": 1,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "CLIP",
-                "name": "CLIP",
-                "type": "CLIP",
-                "links": [
-                  189
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "CLIPLoader",
-              "models": [
-                {
-                  "name": "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
-                  "url": "https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
-                  "directory": "text_encoders"
-                }
-              ]
-            },
-            "widgets_values": [
-              "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
-              "minimax",
-              "default"
-            ],
-            "widgets_values_named": {
-              "clip_name": "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
-              "type": "minimax",
-              "device": "default"
-            }
-          },
-          {
             "id": 14,
             "type": "SamplerCustomAdvanced",
             "pos": [
@@ -1581,7 +1533,7 @@
               140
             ],
             "flags": {},
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -1650,7 +1602,7 @@
               70
             ],
             "flags": {},
-            "order": 2,
+            "order": 1,
             "mode": 0,
             "inputs": [],
             "outputs": [
@@ -1694,7 +1646,7 @@
               150
             ],
             "flags": {},
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -1753,7 +1705,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -1817,7 +1769,7 @@
               70
             ],
             "flags": {},
-            "order": 13,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -1865,7 +1817,7 @@
               60
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -1898,45 +1850,6 @@
             }
           },
           {
-            "id": 15,
-            "type": "RandomNoise",
-            "pos": [
-              -766.1984030769025,
-              4761.5459780935025
-            ],
-            "size": [
-              360,
-              90
-            ],
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "RUMORE",
-                "name": "NOISE",
-                "type": "NOISE",
-                "links": [
-                  40
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "RandomNoise"
-            },
-            "widgets_values": [
-              221684711712968,
-              "randomize"
-            ],
-            "widgets_values_named": {
-              "noise_seed": 221684711712968,
-              "control_after_generate": "randomize"
-            }
-          },
-          {
             "id": 104,
             "type": "MiniMaxH3ImageToVideo",
             "pos": [
@@ -1948,14 +1861,14 @@
               550
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
                 "localized_name": "clip",
                 "name": "clip",
                 "type": "CLIP",
-                "link": 189
+                "link": 559
               },
               {
                 "localized_name": "vae",
@@ -2051,62 +1964,6 @@
             }
           },
           {
-            "id": 6,
-            "type": "UNETLoader",
-            "pos": [
-              -2009.4264914772739,
-              4663.31498579544
-            ],
-            "size": [
-              640,
-              90
-            ],
-            "flags": {},
-            "order": 4,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "unet_name",
-                "name": "unet_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "unet_name"
-                },
-                "link": 221
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "MODELLO",
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": [
-                  406
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "UNETLoader",
-              "models": [
-                {
-                  "name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-                  "url": "https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-                  "directory": "diffusion_models"
-                }
-              ]
-            },
-            "widgets_values": [
-              "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-              "default"
-            ],
-            "widgets_values_named": {
-              "unet_name": "minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors",
-              "weight_dtype": "default"
-            }
-          },
-          {
             "id": 192,
             "type": "KSamplerSelect",
             "pos": [
@@ -2118,7 +1975,7 @@
               90
             ],
             "flags": {},
-            "order": 14,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -2165,7 +2022,7 @@
               130
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -2231,7 +2088,7 @@
               82
             ],
             "flags": {},
-            "order": 15,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -2296,14 +2153,14 @@
               106.57732339190989
             ],
             "flags": {},
-            "order": 16,
-            "mode": 0,
+            "order": 15,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 406
+                "link": 554
               }
             ],
             "outputs": [
@@ -2344,7 +2201,7 @@
               250
             ],
             "flags": {},
-            "order": 17,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -2406,7 +2263,7 @@
               392
             ],
             "flags": {},
-            "order": 18,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -2510,7 +2367,7 @@
               "",
               8192,
               false,
-              3544860425,
+              3025679548,
               "randomize",
               false,
               false,
@@ -2524,7 +2381,7 @@
               "prompt": "",
               "max_tokens": 8192,
               "keep_model_loaded": false,
-              "seed": 3544860425,
+              "seed": 3025679548,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
               "passthrough": false,
@@ -2548,7 +2405,7 @@
             "flags": {
               "collapsed": false
             },
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -2579,6 +2436,133 @@
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
               "Node name for S&R": "VAEDecodeAudio"
+            }
+          },
+          {
+            "id": 269,
+            "type": "CCTechClipProjLoader",
+            "pos": [
+              -1992.823631850788,
+              4811.007236141815
+            ],
+            "size": [
+              566.8361809771374,
+              142.7493219949938
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  559
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfyui-gguf-loader",
+              "ver": "1.5.33",
+              "Node name for S&R": "CCTechClipProjLoader"
+            },
+            "widgets_values": [
+              "qwen3vl_8b_fp8_scaled.safetensors",
+              "auto",
+              "mmh3-8b-ClipProj-v3-mlp.safetensors"
+            ],
+            "widgets_values_named": {
+              "clip_name": "qwen3vl_8b_fp8_scaled.safetensors",
+              "type": "auto",
+              "projection": "mmh3-8b-ClipProj-v3-mlp.safetensors"
+            }
+          },
+          {
+            "id": 263,
+            "type": "UnetLoaderGGUF",
+            "pos": [
+              -2005.1598095497818,
+              4646.453191196118
+            ],
+            "size": [
+              584.8346920260055,
+              104.07062363486966
+            ],
+            "flags": {},
+            "order": 18,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "unet_name",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 560
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODELLO",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  554
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfyui-gguf",
+              "ver": "1.1.10",
+              "Node name for S&R": "UnetLoaderGGUF"
+            },
+            "widgets_values": [
+              "minimax_h3_fl2va_turbo_Q6_K.gguf"
+            ],
+            "widgets_values_named": {
+              "unet_name": "minimax_h3_fl2va_turbo_Q6_K.gguf"
+            }
+          },
+          {
+            "id": 15,
+            "type": "RandomNoise",
+            "pos": [
+              -766.1984030769025,
+              4761.5459780935025
+            ],
+            "size": [
+              360,
+              90
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "RUMORE",
+                "name": "NOISE",
+                "type": "NOISE",
+                "links": [
+                  40
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.30.1",
+              "Node name for S&R": "RandomNoise"
+            },
+            "widgets_values": [
+              42,
+              "fixed"
+            ],
+            "widgets_values_named": {
+              "noise_seed": 42,
+              "control_after_generate": "fixed"
             }
           }
         ],
@@ -2726,14 +2710,6 @@
             "type": "CONDITIONING"
           },
           {
-            "id": 189,
-            "origin_id": 13,
-            "origin_slot": 0,
-            "target_id": 104,
-            "target_slot": 0,
-            "type": "CLIP"
-          },
-          {
             "id": 190,
             "origin_id": 11,
             "origin_slot": 0,
@@ -2796,14 +2772,6 @@
             "target_id": 111,
             "target_slot": 0,
             "type": "FLOAT"
-          },
-          {
-            "id": 221,
-            "origin_id": -10,
-            "origin_slot": 4,
-            "target_id": 6,
-            "target_slot": 0,
-            "type": "COMBO"
           },
           {
             "id": 225,
@@ -2882,14 +2850,6 @@
             "origin_id": 193,
             "origin_slot": 0,
             "target_id": 9,
-            "target_slot": 0,
-            "type": "MODEL"
-          },
-          {
-            "id": 406,
-            "origin_id": 6,
-            "origin_slot": 0,
-            "target_id": 196,
             "target_slot": 0,
             "type": "MODEL"
           },
@@ -3012,6 +2972,30 @@
             "target_id": -20,
             "target_slot": 3,
             "type": "STRING"
+          },
+          {
+            "id": 554,
+            "origin_id": 263,
+            "origin_slot": 0,
+            "target_id": 196,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 559,
+            "origin_id": 269,
+            "origin_slot": 0,
+            "target_id": 104,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 560,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 263,
+            "target_slot": 0,
+            "type": "COMBO"
           }
         ],
         "extra": {
@@ -3023,8 +3007,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 24,
-          "lastNodeId": 260,
-          "lastLinkId": 555,
+          "lastNodeId": 269,
+          "lastLinkId": 562,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3529,7 +3513,7 @@
               "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
             },
             "widgets_values": [
-              4123517082,
+              890599345,
               "randomize",
               1440,
               0,
@@ -3544,7 +3528,7 @@
               true
             ],
             "widgets_values_named": {
-              "seed": 4123517082,
+              "seed": 890599345,
               "control_after_generate": "randomize",
               "resolution": 1440,
               "max_resolution": 0,
@@ -3574,7 +3558,7 @@
             ],
             "flags": {},
             "order": 4,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "images",
@@ -3729,7 +3713,7 @@
             ],
             "flags": {},
             "order": 5,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "model",
@@ -3986,10 +3970,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.832887731777179,
+      "scale": 0.9090909090909091,
       "offset": [
-        1668.6878899992482,
-        -4150.092393570967
+        1885.8580450151044,
+        -4421.438029822375
       ]
     }
   },

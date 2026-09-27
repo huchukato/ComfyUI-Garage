@@ -30,7 +30,7 @@ NODES=(
     "https://github.com/pixaroma/ComfyUI-Pixaroma"
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
     "https://github.com/kijai/ComfyUI-KJNodes"
-    "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
+    "https://github.com/ChrisColeTech/ComfyUI-GGUF-Loader"
     "https://github.com/ltdrdata/comfyui-impact-pack"
     "https://github.com/ltdrdata/comfyui-impact-subpack"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
@@ -81,7 +81,7 @@ MINIMAX_MODELS=(
     # ── NVFP4+INT8 ConvRot hybrid (rockerBOO/lilcheaty) — default, best speed/quality on Blackwell ──
     "diffusion_models|minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors|https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_fl2va_pruned_nvfp4_convrot_int8.safetensors|20070947267"
     "diffusion_models|minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors|https://huggingface.co/lilcheaty/MiniMax-H3-NVFP4/resolve/main/minimax_h3_ref2va_pruned_nvfp4_convrot_int8.safetensors|20070947267"
-    "text_encoders|qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|15000000000"
+    "text_encoders|qwen3vl_32b_h3_ultra_uncensored_heretic_generation_tail_50_63_bf16.safetensors|https://huggingface.co/ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot/resolve/main/qwen3vl_32b_h3_ultra_uncensored_heretic_generation_tail_50_63_bf16.safetensors|15200000000"
     # ── lightx2v Turbo LoRA 8-step 768p (Apache-2.0, trained at 1344×768) — no custom node needed ──
     "loras|minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
     "loras|minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
@@ -350,7 +350,7 @@ function monitor_progress() {
 
 function download_minimax_models() {
     local base_dir="${COMFYUI_DIR}/models"
-    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,loras}
+    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,clip_projections,loras}
 
     local hf_cmd="hf"
     command -v hf >/dev/null 2>&1 || hf_cmd="huggingface-cli"
