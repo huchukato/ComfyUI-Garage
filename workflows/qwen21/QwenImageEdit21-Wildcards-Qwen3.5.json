@@ -194,7 +194,7 @@
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaRunTimer",
         "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "runTimerLastMs": 131733.10000002384
+        "runTimerLastMs": 34168.60000000149
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -319,15 +319,15 @@
         "pixSiLastRun": {
           "ok": true,
           "sum": "saved 1 image",
-          "folder": "/workspace/ComfyUI/output",
+          "folder": "/workspace/runpod-slim/ComfyUI/output",
           "entries": [
             {
-              "filename": "Qwen21_2026-09-25_001%.jpg",
+              "filename": "Qwen21_2026-10-01_001%.jpg",
               "subfolder": "",
               "type": "output",
               "token": "",
               "path": "",
-              "bust": "1790346428041"
+              "bust": "1790891320426"
             }
           ],
           "n": 1,
@@ -577,7 +577,7 @@
       ],
       "flags": {},
       "order": 16,
-      "mode": 4,
+      "mode": 0,
       "inputs": [
         {
           "name": "image",
@@ -623,12 +623,12 @@
       },
       "widgets_values": [
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "IMG › Detailed",
+        "IMG › Qwen Edit",
         "None",
         "",
         8192,
         false,
-        1142410466,
+        2208586920,
         "randomize",
         false,
         false,
@@ -637,12 +637,12 @@
       ],
       "widgets_values_named": {
         "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
-        "preset_prompt": "IMG › Detailed",
+        "preset_prompt": "IMG › Qwen Edit",
         "camera_tag": "None",
         "prompt": "",
         "max_tokens": 8192,
         "keep_model_loaded": false,
-        "seed": 1142410466,
+        "seed": 2208586920,
         "control_after_generate": "randomize",
         "keep_last_prompt": false,
         "passthrough": false,
@@ -735,10 +735,10 @@
         "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
-        "Convert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art."
+        "Generate a professional character reference sheet based strictly on <image1> and <image2>. Preserve the exact same woman’s face, facial structure, dark brown wet ponytail with a blue scrunchie, tan skin tone, glossy wet skin texture, and her teal zip-front athletic shorts with black straps. Create three full-body turnaround views at the top: front, side/profile, and back—same neutral standing pose, arms slightly away from the torso, identical outfit and proportions, no pose or color drift. On the bottom, add three expression close-ups: open mouth, smiling with teeth visible, and surprised expression. On the right, include one large, highly detailed shoulder-up portrait with the same face and identity, using <image2> to enhance facial accuracy and capture any missing details. Ensure all panels are clearly separated with consistent spacing, no overlaps or bleeding, full-body and facial details fully visible, and absolute character consistency across the entire sheet."
       ],
       "widgets_values_named": {
-        "text": "Convert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art."
+        "text": "Generate a professional character reference sheet based strictly on <image1> and <image2>. Preserve the exact same woman’s face, facial structure, dark brown wet ponytail with a blue scrunchie, tan skin tone, glossy wet skin texture, and her teal zip-front athletic shorts with black straps. Create three full-body turnaround views at the top: front, side/profile, and back—same neutral standing pose, arms slightly away from the torso, identical outfit and proportions, no pose or color drift. On the bottom, add three expression close-ups: open mouth, smiling with teeth visible, and surprised expression. On the right, include one large, highly detailed shoulder-up portrait with the same face and identity, using <image2> to enhance facial accuracy and capture any missing details. Ensure all panels are clearly separated with consistent spacing, no overlaps or bleeding, full-body and facial details fully visible, and absolute character consistency across the entire sheet."
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -777,6 +777,12 @@
         },
         {
           "name": "images.image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "images.image_4",
           "shape": 7,
           "type": "IMAGE",
           "link": null
@@ -949,12 +955,12 @@
         "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
-        "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "PMP/FD_2026-10-01/234729_00001_.png [output]",
         "image",
         ""
       ],
       "widgets_values_named": {
-        "image": "PMP/FD_2026-09-25/162549_00001_.png [output]",
+        "image": "PMP/FD_2026-10-01/234729_00001_.png [output]",
         "upload": "image",
         "pixaroma_load_image_ui": ""
       },
@@ -1176,20 +1182,20 @@
         "tagforge_wildcard_mode": "populate"
       },
       "widgets_values": [
-        "__qwen21/real2anime__",
-        42729190482970,
+        "__qwen21/prosheet__",
+        440606820354802,
         "randomize",
-        "Convert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art.",
+        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.",
         "populate",
         true,
         0.5,
         "None"
       ],
       "widgets_values_named": {
-        "text": "__qwen21/real2anime__",
-        "seed": 42729190482970,
+        "text": "__qwen21/prosheet__",
+        "seed": 440606820354802,
         "control_after_generate": "randomize",
-        "populated_text": "Convert the photographic portrait in <image1> into a premium Korean manhwa/webtoon illustration style. Preserve the recognizable facial proportions, hairstyle, gaze direction, and expression of <image1>. Render with crisp cel-shaded line art, soft gradient skin rendering, expressive stylized eyes with detailed specular highlights, and vibrant digital painting aesthetics typical of high-end manhwa cover art.",
+        "populated_text": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.",
         "mode": "populate",
         "deduplicate": true,
         "downvote_factor": 0.5,
@@ -1333,30 +1339,6 @@
       "INT"
     ],
     [
-      807,
-      515,
-      0,
-      491,
-      4,
-      "VAE"
-    ],
-    [
-      809,
-      515,
-      2,
-      491,
-      0,
-      "CLIP"
-    ],
-    [
-      820,
-      512,
-      0,
-      525,
-      3,
-      "STRING"
-    ],
-    [
       822,
       525,
       0,
@@ -1381,14 +1363,6 @@
       "IMAGE"
     ],
     [
-      833,
-      513,
-      0,
-      491,
-      5,
-      "STRING"
-    ],
-    [
       834,
       539,
       0,
@@ -1405,6 +1379,22 @@
       "IMAGE"
     ],
     [
+      820,
+      512,
+      0,
+      525,
+      3,
+      "STRING"
+    ],
+    [
+      809,
+      515,
+      2,
+      491,
+      0,
+      "CLIP"
+    ],
+    [
       836,
       539,
       0,
@@ -1419,6 +1409,22 @@
       491,
       2,
       "IMAGE"
+    ],
+    [
+      807,
+      515,
+      0,
+      491,
+      5,
+      "VAE"
+    ],
+    [
+      833,
+      513,
+      0,
+      491,
+      6,
+      "STRING"
     ]
   ],
   "groups": [
@@ -2184,7 +2190,7 @@
             ],
             "flags": {},
             "order": 7,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "model",
@@ -2482,18 +2488,33 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.52.7",
+    "frontendVersion": "1.53.6",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.5411180124223685,
+      "scale": 0.7202280745341726,
       "offset": [
-        2225.2682422377884,
-        -2048.650949009281
+        1120.261374557965,
+        -2033.3166811225767
       ]
     }
+  },
+  "extensions": {
+    "seed_widgets": {
+      "479": 0,
+      "512": 1,
+      "515": 0,
+      "525": 6
+    },
+    "models": [
+      {
+        "name": "elusarcas-qwen2-1-detailer-v1.safetensors",
+        "url": "https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors",
+        "directory": "loras"
+      }
+    ]
   },
   "version": 0.4,
   "seed_widgets": {
