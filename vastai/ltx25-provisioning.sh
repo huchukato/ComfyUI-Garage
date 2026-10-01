@@ -38,7 +38,6 @@ NODES=(
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
     "https://github.com/kijai/ComfyUI-KJNodes"
-    "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
 )
 
 WORKFLOWS=(

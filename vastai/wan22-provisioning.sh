@@ -37,7 +37,6 @@ NODES=(
     "https://github.com/huchukato/ComfyUI-Selectors"
     "https://github.com/city96/ComfyUI-GGUF"
     "https://github.com/kijai/ComfyUI-KJNodes"
-    "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
     "https://github.com/kijai/ComfyUI-MMAudio"
     "https://github.com/GACLove/ComfyUI-VFI"
     "https://github.com/stduhpf/ComfyUI-WanMoeKSampler"
