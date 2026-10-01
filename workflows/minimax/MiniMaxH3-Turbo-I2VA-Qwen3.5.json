@@ -1,8 +1,8 @@
 {
   "id": "2e5fb033-7e4f-4e73-a580-590a2a38a074",
   "revision": 0,
-  "last_node_id": 260,
-  "last_link_id": 555,
+  "last_node_id": 261,
+  "last_link_id": 558,
   "nodes": [
     {
       "id": 135,
@@ -134,7 +134,7 @@
         "# MiniMax H3 — Accelerazione: preset e parametri\n\n## Catena modello (ordine corretto nel subgraph)\n\n`Load Diffusion Model (INT8)` → `LoraLoader` → `ModelAttentionBackend` (comfy kitchen attention) → `BlockSparseAttention` (sol-attn, tau) → `MiniMaxH3SigmaShift` (shift V/A) → `BasicGuider` (CFG 1.0) → `SamplerCustomAdvanced`\n\n## Tabella preset (definitiva)\n\n| Preset | Steps | CFG | Shift V | Shift A | Tau | LoRA (strength 1.0) |\n|--------|-------|-----|---------|---------|-----|---------------------|\n| Native Base (FL2VA) | 28–32 | 1.0 | 6.0 | 3.0 | 1.00 | nessuno (bypass) |\n| Native Turbo (FL2VA) | 8 | 1.0 | 12.0 | 4.0 | 1.30 | minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16 |\n| R2VA Native | 25–30 | 1.0 | 4.0 | 3.0 | 1.00 | minimax_h3_ref_lora_rank_256_bf16 (obbligatorio) |\n| R2VA Turbo | 6–8 | 1.0 | 6.0 | 4.0 | 1.30 | minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16 |\n| 10Eros Max Beta5 | 30–40 | 1.0 | 6.0 | 3.0 | 0.85–1.00 | nessuno (bypass) |\n| 10Eros Turbo | 8 | 1.0 | 12.0 | 4.0 | 1.30 | lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned |\n\n## Modelli (INT8 puro — no NVFP4)\n\n- DiT: `minimax_h3_fl2va_pruned_int8_convrot.safetensors` / `minimax_h3_ref2va_pruned_int8_convrot.safetensors` (Comfy-Org)\n- 10Eros: `10Eros_Max_h3_hybrid_beta5_int8.safetensors` (TenStrip)\n- Text encoder: `qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors` (ethanfel Heretic, uncensored) — CLIPLoader type `minimax`\n\n## Args di avvio ComfyUI\n\n`--highvram --fast-disk --disable-auto-launch --fast fp16_accumulation --cuda-malloc --enable-triton-backend --force-fp16`\n\n## Note\n\n- NVFP4: rimossi — perdita di qualità rilevante; accelerazione via LoRA turbo + sol-attn + triton backend.\n- `ModelAttentionBackend` va inserito a mano tra LoraLoader e BlockSparseAttention se manca nel workflow.\n- 10Eros Beta5 è il checkpoint NON-turbo: per la modalità turbo applicare il LoRA `lightx2v_hybrid` esterno (strength 1.0)."
       ],
       "widgets_values_named": {
-        "text": "# MiniMax H3 — Accelerazione: preset e parametri\n\n## Catena modello (ordine corretto nel subgraph)\n\n`Load Diffusion Model (INT8)` → `LoraLoader` → `ModelAttentionBackend` (comfy kitchen attention) → `BlockSparseAttention` (sol-attn, tau) → `MiniMaxH3SigmaShift` (shift V/A) → `BasicGuider` (CFG 1.0) → `SamplerCustomAdvanced`\n\n## Tabella preset (definitiva)\n\n| Preset | Steps | CFG | Shift V | Shift A | Tau | LoRA (strength 1.0) |\n|--------|-------|-----|---------|---------|-----|---------------------|\n| Native Base (FL2VA) | 28–32 | 1.0 | 6.0 | 3.0 | 1.00 | nessuno (bypass) |\n| Native Turbo (FL2VA) | 8 | 1.0 | 12.0 | 4.0 | 1.30 | minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16 |\n| R2VA Native | 25–30 | 1.0 | 4.0 | 3.0 | 1.00 | minimax_h3_ref_lora_rank_256_bf16 (obbligatorio) |\n| R2VA Turbo | 6–8 | 1.0 | 6.0 | 4.0 | 1.30 | minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16 |\n| 10Eros Max Beta5 | 30–40 | 1.0 | 6.0 | 3.0 | 0.85–1.00 | nessuno (bypass) |\n| 10Eros Turbo | 8 | 1.0 | 12.0 | 4.0 | 1.30 | lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned |\n\n## Modelli (INT8 puro — no NVFP4)\n\n- DiT: `minimax_h3_fl2va_pruned_int8_convrot.safetensors` / `minimax_h3_ref2va_pruned_int8_convrot.safetensors` (Comfy-Org)\n- 10Eros: `10Eros_Max_h3_hybrid_beta5_int8.safetensors` (TenStrip)\n- Text encoder: `qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors` (ethanfel Heretic, uncensored) — CLIPLoader type `minimax`\n\n## Args di avvio ComfyUI\n\n`--highvram --fast-disk --disable-auto-launch --fast fp16_accumulation --cuda-malloc --enable-triton-backend --force-fp16`\n\n## Note\n\n- NVFP4: rimossi — perdita di qualità rilevante; accelerazione via LoRA turbo + sol-attn + triton backend.\n- `ModelAttentionBackend` va inserito a mano tra LoraLoader e BlockSparseAttention se manca nel workflow.\n- 10Eros Beta5 è il checkpoint NON-turbo: per la modalità turbo applicare il LoRA `lightx2v_hybrid` esterno (strength 1.0).\n"
+        "text": "# MiniMax H3 — Accelerazione: preset e parametri\n\n## Catena modello (ordine corretto nel subgraph)\n\n`Load Diffusion Model (INT8)` → `LoraLoader` → `ModelAttentionBackend` (comfy kitchen attention) → `BlockSparseAttention` (sol-attn, tau) → `MiniMaxH3SigmaShift` (shift V/A) → `BasicGuider` (CFG 1.0) → `SamplerCustomAdvanced`\n\n## Tabella preset (definitiva)\n\n| Preset | Steps | CFG | Shift V | Shift A | Tau | LoRA (strength 1.0) |\n|--------|-------|-----|---------|---------|-----|---------------------|\n| Native Base (FL2VA) | 28–32 | 1.0 | 6.0 | 3.0 | 1.00 | nessuno (bypass) |\n| Native Turbo (FL2VA) | 8 | 1.0 | 12.0 | 4.0 | 1.30 | minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16 |\n| R2VA Native | 25–30 | 1.0 | 4.0 | 3.0 | 1.00 | minimax_h3_ref_lora_rank_256_bf16 (obbligatorio) |\n| R2VA Turbo | 6–8 | 1.0 | 6.0 | 4.0 | 1.30 | minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16 |\n| 10Eros Max Beta5 | 30–40 | 1.0 | 6.0 | 3.0 | 0.85–1.00 | nessuno (bypass) |\n| 10Eros Turbo | 8 | 1.0 | 12.0 | 4.0 | 1.30 | lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned |\n\n## Modelli (INT8 puro — no NVFP4)\n\n- DiT: `minimax_h3_fl2va_pruned_int8_convrot.safetensors` / `minimax_h3_ref2va_pruned_int8_convrot.safetensors` (Comfy-Org)\n- 10Eros: `10Eros_Max_h3_hybrid_beta5_int8.safetensors` (TenStrip)\n- Text encoder: `qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors` (ethanfel Heretic, uncensored) — CLIPLoader type `minimax`\n\n## Args di avvio ComfyUI\n\n`--highvram --fast-disk --disable-auto-launch --fast fp16_accumulation --cuda-malloc --enable-triton-backend --force-fp16`\n\n## Note\n\n- NVFP4: rimossi — perdita di qualità rilevante; accelerazione via LoRA turbo + sol-attn + triton backend.\n- `ModelAttentionBackend` va inserito a mano tra LoraLoader e BlockSparseAttention se manca nel workflow.\n- 10Eros Beta5 è il checkpoint NON-turbo: per la modalità turbo applicare il LoRA `lightx2v_hybrid` esterno (strength 1.0)."
       },
       "color": "#432",
       "bgcolor": "#653"
@@ -212,9 +212,9 @@
         }
       ],
       "properties": {
+        "Node name for S&R": "ComfyUI-PerfectVideoResolution",
         "cnr_id": "ComfyUI-PerfectVideoResolution",
         "ver": "51969284b70f9769fe5952496a5e97c06927db7b",
-        "Node name for S&R": "ComfyUI-PerfectVideoResolution",
         "aux_id": "huchukato/ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
@@ -251,11 +251,11 @@
       ],
       "size": [
         471.684350491249,
-        606.1053431378566
+        334
       ],
       "flags": {},
       "order": 18,
-      "mode": 4,
+      "mode": 0,
       "inputs": [
         {
           "name": "images",
@@ -375,9 +375,9 @@
       "inputs": [],
       "outputs": [],
       "properties": {
+        "Node name for S&R": "PixaromaMonitor",
         "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaMonitor",
         "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "color": "#1d1d1d",
@@ -402,9 +402,9 @@
       "inputs": [],
       "outputs": [],
       "properties": {
+        "Node name for S&R": "PixaromaRunTimer",
         "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaRunTimer",
         "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "runTimerLastMs": 203875.5
       },
@@ -449,9 +449,9 @@
       ],
       "title": "Save Video at 24 FPS",
       "properties": {
+        "Node name for S&R": "SaveVideo",
         "cnr_id": "comfy-core",
-        "ver": "0.30.1",
-        "Node name for S&R": "SaveVideo"
+        "ver": "0.30.1"
       },
       "widgets_values": [
         "video/MiniMax_H3_24FPS",
@@ -523,9 +523,9 @@
         }
       ],
       "properties": {
+        "Node name for S&R": "PixaromaImageInfo",
         "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaImageInfo"
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb"
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -561,9 +561,9 @@
       ],
       "title": "Load Image",
       "properties": {
+        "Node name for S&R": "PixaromaLoadImageMini",
         "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaLoadImageMini"
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb"
       },
       "widgets_values": [
         "S02_EP11_ThatNightHomeLucia_252_v01.jpg",
@@ -661,7 +661,7 @@
       ],
       "flags": {},
       "order": 17,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "images",
@@ -685,9 +685,9 @@
         }
       ],
       "properties": {
+        "Node name for S&R": "SaveWEBM",
         "cnr_id": "comfy-core",
-        "ver": "0.37.4",
-        "Node name for S&R": "SaveWEBM"
+        "ver": "0.37.4"
       },
       "widgets_values": [
         "ComfyUI",
@@ -722,9 +722,9 @@
       "outputs": [],
       "title": "FPS",
       "properties": {
+        "Node name for S&R": "PixaromaGroupSwitch",
         "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaGroupSwitch",
         "groupSwitchState": {
           "version": 1,
           "action": "bypass",
@@ -788,9 +788,9 @@
       ],
       "title": "QWEN GENERATED PROMPT",
       "properties": {
+        "Node name for S&R": "easy showAnything",
         "cnr_id": "comfyui-easy-use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "Node name for S&R": "easy showAnything",
         "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
@@ -888,14 +888,14 @@
       "widgets_values": [
         "passion, kiss, french kiss",
         1344,
-        "i due si baciano appassionatamente, french kiss",
+        "",
         5,
         "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
         8,
         "euler",
         "simple",
-        12.0,
-        4.0,
+        12,
+        4,
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
         "MiniMax › NSFW",
         "5s",
@@ -905,14 +905,14 @@
       "widgets_values_named": {
         "width": "passion, kiss, french kiss",
         "height": 1344,
-        "prompt": "i due si baciano appassionatamente, french kiss",
+        "prompt": "",
         "value_1": 5,
         "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
         "steps": 8,
         "sampler_name": "euler",
         "scheduler": "simple",
-        "shift_video": 6,
-        "shift_audio": 3,
+        "shift_video": 12,
+        "shift_audio": 4,
         "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
         "preset_prompt": "MiniMax › NSFW",
         "duration": "5s",
@@ -938,12 +938,38 @@
       "mode": 0,
       "inputs": [
         {
-          "label": "svr2_model",
-          "name": "model_2",
+          "name": "model",
           "type": "COMBO",
-          "widget": {
-            "name": "model_2"
-          },
+          "link": null
+        },
+        {
+          "name": "resolution_profile",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "multiplier",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "model_1",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "resize_to",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "batch_size_1",
+          "type": "INT",
           "link": null
         },
         {
@@ -967,43 +993,11 @@
         "ver": "0.34.1",
         "previewExposures": []
       },
-      "widgets_values": [
-        "rife425_ensemble_False_scale_1_sim",
-        "large",
-        2,
-        "2xLexicaRRDBNet",
-        2,
-        "2K",
-        2,
-        "seedvr2_ema_7b_fp16.safetensors",
-        1440,
-        33
-      ],
-      "widgets_values_named": {
-        "model": "rife425_ensemble_False_scale_1_sim",
-        "resolution_profile": "large",
-        "multiplier": 2,
-        "model_1": "2xLexicaRRDBNet",
-        "batch_size": 2,
-        "resize_to": "2K",
-        "batch_size_1": 2,
-        "model_2": "seedvr2_ema_7b_fp16.safetensors",
-        "resolution": 1440,
-        "batch_size_2": 33
-      },
       "color": "#223",
       "bgcolor": "#335"
     }
   ],
   "links": [
-    [
-      194,
-      105,
-      0,
-      92,
-      0,
-      "VIDEO"
-    ],
     [
       253,
       105,
@@ -1029,28 +1023,12 @@
       "INT"
     ],
     [
-      418,
-      205,
-      2,
-      105,
-      3,
-      "IMAGE"
-    ],
-    [
       443,
       105,
       2,
       126,
       1,
       "AUDIO"
-    ],
-    [
-      532,
-      105,
-      1,
-      253,
-      1,
-      "IMAGE"
     ],
     [
       548,
@@ -1067,22 +1045,6 @@
       205,
       0,
       "IMAGE"
-    ],
-    [
-      550,
-      257,
-      4,
-      126,
-      4,
-      "STRING"
-    ],
-    [
-      551,
-      257,
-      4,
-      92,
-      1,
-      "STRING"
     ],
     [
       553,
@@ -1107,6 +1069,46 @@
       126,
       0,
       "IMAGE"
+    ],
+    [
+      550,
+      257,
+      4,
+      126,
+      4,
+      "STRING"
+    ],
+    [
+      418,
+      205,
+      2,
+      105,
+      3,
+      "IMAGE"
+    ],
+    [
+      532,
+      105,
+      1,
+      253,
+      7,
+      "IMAGE"
+    ],
+    [
+      194,
+      105,
+      0,
+      92,
+      0,
+      "VIDEO"
+    ],
+    [
+      551,
+      257,
+      4,
+      92,
+      1,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1153,9 +1155,9 @@
         "id": "4c314f31-ecda-4b08-ae98-faaba1bf613f",
         "version": 1,
         "state": {
-          "lastGroupId": 24,
-          "lastNodeId": 260,
-          "lastLinkId": 555,
+          "lastGroupId": 25,
+          "lastNodeId": 261,
+          "lastLinkId": 558,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1471,9 +1473,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "VAEDecode",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "VAEDecode"
+              "ver": "0.30.1"
             }
           },
           {
@@ -1503,9 +1505,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "VAELoader",
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
-              "Node name for S&R": "VAELoader",
               "models": [
                 {
                   "name": "minimax_h3_video_vae_fp16.safetensors",
@@ -1547,9 +1549,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "CLIPLoader",
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
-              "Node name for S&R": "CLIPLoader",
               "models": [
                 {
                   "name": "qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
@@ -1633,9 +1635,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "SamplerCustomAdvanced",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "SamplerCustomAdvanced"
+              "ver": "0.30.1"
             }
           },
           {
@@ -1664,9 +1666,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "VAELoader",
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
-              "Node name for S&R": "VAELoader",
               "models": [
                 {
                   "name": "minimax_h3_audio_vae_fp32.safetensors",
@@ -1722,9 +1724,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "CreateVideo",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "CreateVideo"
+              "ver": "0.30.1"
             },
             "widgets_values": [
               24,
@@ -1794,9 +1796,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "ComfyMathExpression",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "ComfyMathExpression"
+              "ver": "0.30.1"
             },
             "widgets_values": [
               "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17"
@@ -1842,9 +1844,9 @@
             ],
             "title": "Float (duration)",
             "properties": {
+              "Node name for S&R": "PrimitiveFloat",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "PrimitiveFloat"
+              "ver": "0.30.1"
             },
             "widgets_values": [
               2
@@ -1892,9 +1894,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "BasicGuider",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "BasicGuider"
+              "ver": "0.30.1"
             }
           },
           {
@@ -1923,9 +1925,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "RandomNoise",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "RandomNoise"
+              "ver": "0.30.1"
             },
             "widgets_values": [
               221684711712968,
@@ -2033,9 +2035,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "MiniMaxH3ImageToVideo",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "MiniMaxH3ImageToVideo"
+              "ver": "0.30.1"
             },
             "widgets_values": [
               "",
@@ -2086,9 +2088,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "UNETLoader",
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
-              "Node name for S&R": "UNETLoader",
               "models": [
                 {
                   "name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
@@ -2142,9 +2144,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "KSamplerSelect",
               "cnr_id": "comfy-core",
-              "ver": "0.33.0",
-              "Node name for S&R": "KSamplerSelect"
+              "ver": "0.33.0"
             },
             "widgets_values": [
               "euler"
@@ -2204,9 +2206,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "BasicScheduler",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "BasicScheduler"
+              "ver": "0.30.1"
             },
             "widgets_values": [
               "simple",
@@ -2215,7 +2217,7 @@
             ],
             "widgets_values_named": {
               "scheduler": "simple",
-              "steps": 20,
+              "steps": 8,
               "denoise": 1
             }
           },
@@ -2271,17 +2273,17 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "MiniMaxH3SigmaShift",
               "cnr_id": "comfy-core",
-              "ver": "0.34.2",
-              "Node name for S&R": "MiniMaxH3SigmaShift"
+              "ver": "0.34.2"
             },
             "widgets_values": [
-              12.0,
-              4.0
+              12,
+              4
             ],
             "widgets_values_named": {
               "shift_video": 12,
-              "shift_audio": 3
+              "shift_audio": 4
             }
           },
           {
@@ -2312,14 +2314,14 @@
                 "name": "MODEL",
                 "type": "MODEL",
                 "links": [
-                  537
+                  556
                 ]
               }
             ],
             "properties": {
+              "Node name for S&R": "LoraLoaderModelOnly",
               "cnr_id": "comfy-core",
-              "ver": "0.34.2",
-              "Node name for S&R": "LoraLoaderModelOnly"
+              "ver": "0.34.2"
             },
             "widgets_values": [
               "minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
@@ -2336,8 +2338,8 @@
             "id": 254,
             "type": "BlockSparseAttention",
             "pos": [
-              -1173.1714602652867,
-              4221.93190982089
+              -793.4434263923392,
+              4214.484992376245
             ],
             "size": [
               278.4,
@@ -2351,7 +2353,7 @@
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 537
+                "link": 557
               }
             ],
             "outputs": [
@@ -2365,9 +2367,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "BlockSparseAttention",
               "cnr_id": "comfy-core",
-              "ver": "0.37.1",
-              "Node name for S&R": "BlockSparseAttention"
+              "ver": "0.37.1"
             },
             "widgets_values": [
               "sol-attn",
@@ -2498,9 +2500,9 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "QwenVL_Unified",
               "cnr_id": "ComfyUI-QwenVL-Mod",
               "ver": "10fc389f110753e3bf112fe9b1ca7201719728da",
-              "Node name for S&R": "QwenVL_Unified",
               "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
             },
             "widgets_values": [
@@ -2576,10 +2578,56 @@
               }
             ],
             "properties": {
+              "Node name for S&R": "VAEDecodeAudio",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1",
-              "Node name for S&R": "VAEDecodeAudio"
+              "ver": "0.30.1"
             }
+          },
+          {
+            "id": 261,
+            "type": "ModelAttentionBackend",
+            "pos": [
+              -1179.7222307264349,
+              4420.5398322109195
+            ],
+            "size": [
+              326.9693359375,
+              58
+            ],
+            "flags": {},
+            "order": 19,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 556
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "links": [
+                  557
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ModelAttentionBackend",
+              "cnr_id": "comfy-core",
+              "ver": "0.38.1"
+            },
+            "widgets_values": [
+              "comfy kitchen attention"
+            ],
+            "widgets_values_named": {
+              "attention": "comfy kitchen attention"
+            },
+            "color": "#223",
+            "bgcolor": "#335"
           }
         ],
         "groups": [
@@ -2647,8 +2695,8 @@
             "id": 22,
             "title": "BLOCKSPARSE ATTN",
             "bounding": [
-              -1195.5126430467449,
-              4143.533752823482,
+              -815.7846091737974,
+              4136.086835378837,
               329.11316764962044,
               352.2657506863061
             ],
@@ -2663,6 +2711,18 @@
               4937.538031309082,
               250,
               140
+            ],
+            "color": "#b58b2a",
+            "flags": {}
+          },
+          {
+            "id": 25,
+            "title": "KITCHEN ATTENTION",
+            "bounding": [
+              -1189.722230726435,
+              4350.5398322109195,
+              346.9693359375,
+              138
             ],
             "color": "#b58b2a",
             "flags": {}
@@ -2780,14 +2840,6 @@
             "target_id": 104,
             "target_slot": 6,
             "type": "INT"
-          },
-          {
-            "id": 205,
-            "origin_id": 111,
-            "origin_slot": 0,
-            "target_id": 107,
-            "target_slot": 0,
-            "type": "FLOAT"
           },
           {
             "id": 206,
@@ -2926,14 +2978,6 @@
             "type": "FLOAT"
           },
           {
-            "id": 537,
-            "origin_id": 196,
-            "origin_slot": 0,
-            "target_id": 254,
-            "target_slot": 0,
-            "type": "MODEL"
-          },
-          {
             "id": 538,
             "origin_id": 254,
             "origin_slot": 0,
@@ -2982,22 +3026,6 @@
             "type": "COMBO"
           },
           {
-            "id": 544,
-            "origin_id": -10,
-            "origin_slot": 12,
-            "target_id": 255,
-            "target_slot": 8,
-            "type": "COMBO"
-          },
-          {
-            "id": 545,
-            "origin_id": -10,
-            "origin_slot": 14,
-            "target_id": 255,
-            "target_slot": 7,
-            "type": "BOOLEAN"
-          },
-          {
             "id": 546,
             "origin_id": 255,
             "origin_slot": 0,
@@ -3012,6 +3040,46 @@
             "target_id": -20,
             "target_slot": 3,
             "type": "STRING"
+          },
+          {
+            "id": 556,
+            "origin_id": 196,
+            "origin_slot": 0,
+            "target_id": 261,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 545,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 255,
+            "target_slot": 7,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 544,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": 255,
+            "target_slot": 8,
+            "type": "COMBO"
+          },
+          {
+            "id": 205,
+            "origin_id": 111,
+            "origin_slot": 0,
+            "target_id": 107,
+            "target_slot": 0,
+            "type": "FLOAT"
+          },
+          {
+            "id": 557,
+            "origin_id": 261,
+            "origin_slot": 0,
+            "target_id": 254,
+            "target_slot": 0,
+            "type": "MODEL"
           }
         ],
         "extra": {
@@ -3022,9 +3090,9 @@
         "id": "a871f085-9fd7-426a-8dde-585b34727ef4",
         "version": 1,
         "state": {
-          "lastGroupId": 24,
-          "lastNodeId": 260,
-          "lastLinkId": 555,
+          "lastGroupId": 25,
+          "lastNodeId": 261,
+          "lastLinkId": 558,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3036,7 +3104,7 @@
             -377.26506584179714,
             5221.716401543848,
             145.951171875,
-            268
+            208
           ]
         },
         "outputNode": {
@@ -3134,53 +3202,16 @@
             ]
           },
           {
-            "id": "2491f854-a7ec-48b8-b2d0-2440eb938334",
-            "name": "model_2",
-            "type": "COMBO",
-            "linkIds": [
-              449
-            ],
-            "label": "svr2_model",
-            "pos": [
-              -255.31389396679714,
-              5385.716401543848
-            ]
-          },
-          {
-            "id": "b7c32902-bd79-45ab-afce-a929a0981c73",
-            "name": "resolution",
-            "type": "INT",
-            "linkIds": [
-              451
-            ],
-            "pos": [
-              -255.31389396679714,
-              5405.716401543848
-            ]
-          },
-          {
-            "id": "8e9b6356-3ccd-4284-bc5b-882e4f621878",
-            "name": "batch_size_2",
-            "type": "INT",
-            "linkIds": [
-              452
-            ],
-            "pos": [
-              -255.31389396679714,
-              5425.716401543848
-            ]
-          },
-          {
             "id": "a3870639-799c-47a9-bbbf-f3e8894db35b",
             "name": "frames",
             "type": "IMAGE",
             "linkIds": [
-              526
+              558
             ],
             "localized_name": "frames",
             "pos": [
               -255.31389396679714,
-              5445.716401543848
+              5385.716401543848
             ]
           }
         ],
@@ -3205,8 +3236,8 @@
             "id": 176,
             "type": "AutoLoadRifeTensorrtModel",
             "pos": [
-              576.2903426611417,
-              5240.422310283546
+              272.0774838859128,
+              5181.091766292804
             ],
             "size": [
               322.5669921875,
@@ -3274,299 +3305,11 @@
             "bgcolor": "#335"
           },
           {
-            "id": 245,
-            "type": "SeedVR2TorchCompileSettings",
-            "pos": [
-              -174.50690398353188,
-              4899.759172868647
-            ],
-            "size": [
-              307.671484375,
-              178
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 4,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "TORCH_COMPILE_ARGS",
-                "name": "TORCH_COMPILE_ARGS",
-                "type": "TORCH_COMPILE_ARGS",
-                "links": [
-                  453
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "seedvr2_videoupscaler",
-              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
-              "Node name for S&R": "SeedVR2TorchCompileSettings",
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
-            },
-            "widgets_values": [
-              "inductor",
-              "default",
-              false,
-              false,
-              64,
-              128
-            ],
-            "widgets_values_named": {
-              "backend": "inductor",
-              "mode": "default",
-              "fullgraph": false,
-              "dynamic": false,
-              "dynamo_cache_size_limit": 64,
-              "dynamo_recompile_limit": 128
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
-            "id": 212,
-            "type": "SeedVR2LoadDiTModel",
-            "pos": [
-              163.5502843132837,
-              4896.979301124711
-            ],
-            "size": [
-              307.6646484375,
-              202
-            ],
-            "flags": {},
-            "order": 6,
-            "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "torch_compile_args",
-                "name": "torch_compile_args",
-                "shape": 7,
-                "type": "TORCH_COMPILE_ARGS",
-                "link": 453
-              },
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model"
-                },
-                "link": 449
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "SEEDVR2_DIT",
-                "name": "SEEDVR2_DIT",
-                "type": "SEEDVR2_DIT",
-                "links": [
-                  444
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "seedvr2_videoupscaler",
-              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
-              "Node name for S&R": "SeedVR2LoadDiTModel",
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
-            },
-            "widgets_values": [
-              "seedvr2_ema_3b_fp16.safetensors",
-              "cuda:0",
-              0,
-              false,
-              "cpu",
-              false,
-              "sageattn_2"
-            ],
-            "widgets_values_named": {
-              "model": "seedvr2_ema_3b_fp16.safetensors",
-              "device": "cuda:0",
-              "blocks_to_swap": 0,
-              "swap_io_components": false,
-              "offload_device": "cpu",
-              "cache_model": false,
-              "attention_mode": "sageattn_2"
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
-            "id": 246,
-            "type": "SeedVR2LoadVAEModel",
-            "pos": [
-              -169.28127710938867,
-              5299.843566243191
-            ],
-            "size": [
-              312.866796875,
-              298
-            ],
-            "flags": {},
-            "order": 1,
-            "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "torch_compile_args",
-                "name": "torch_compile_args",
-                "shape": 7,
-                "type": "TORCH_COMPILE_ARGS",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "SEEDVR2_VAE",
-                "name": "SEEDVR2_VAE",
-                "type": "SEEDVR2_VAE",
-                "links": [
-                  445
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "seedvr2_videoupscaler",
-              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
-              "Node name for S&R": "SeedVR2LoadVAEModel",
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
-            },
-            "widgets_values": [
-              "ema_vae_fp16.safetensors",
-              "cuda:0",
-              false,
-              1024,
-              128,
-              false,
-              1024,
-              128,
-              "false",
-              "cpu",
-              false
-            ],
-            "widgets_values_named": {
-              "model": "ema_vae_fp16.safetensors",
-              "device": "cuda:0",
-              "encode_tiled": false,
-              "encode_tile_size": 1024,
-              "encode_tile_overlap": 128,
-              "decode_tiled": false,
-              "decode_tile_size": 1024,
-              "decode_tile_overlap": 128,
-              "tile_debug": "false",
-              "offload_device": "cpu",
-              "cache_model": false
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
-            "id": 244,
-            "type": "SeedVR2VideoUpscaler",
-            "pos": [
-              185.4088204810585,
-              5241.89636076286
-            ],
-            "size": [
-              270,
-              386
-            ],
-            "flags": {},
-            "order": 7,
-            "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "type": "IMAGE",
-                "link": 526
-              },
-              {
-                "localized_name": "dit",
-                "name": "dit",
-                "type": "SEEDVR2_DIT",
-                "link": 444
-              },
-              {
-                "localized_name": "vae",
-                "name": "vae",
-                "type": "SEEDVR2_VAE",
-                "link": 445
-              },
-              {
-                "localized_name": "resolution",
-                "name": "resolution",
-                "type": "INT",
-                "widget": {
-                  "name": "resolution"
-                },
-                "link": 451
-              },
-              {
-                "localized_name": "batch_size",
-                "name": "batch_size",
-                "type": "INT",
-                "widget": {
-                  "name": "batch_size"
-                },
-                "link": 452
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "IMMAGINE",
-                "name": "IMAGE",
-                "type": "IMAGE",
-                "links": [
-                  529
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "seedvr2_videoupscaler",
-              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
-              "Node name for S&R": "SeedVR2VideoUpscaler",
-              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
-            },
-            "widgets_values": [
-              4123517082,
-              "randomize",
-              1440,
-              0,
-              33,
-              true,
-              "lab",
-              3,
-              0,
-              0,
-              0,
-              "cpu",
-              true
-            ],
-            "widgets_values_named": {
-              "seed": 4123517082,
-              "control_after_generate": "randomize",
-              "resolution": 1440,
-              "max_resolution": 0,
-              "batch_size": 33,
-              "uniform_batch_size": true,
-              "color_correction": "lab",
-              "temporal_overlap": 3,
-              "prepend_frames": 0,
-              "input_noise_scale": 0,
-              "latent_noise_scale": 0,
-              "offload_device": "cpu",
-              "enable_debug": true
-            },
-            "color": "#223",
-            "bgcolor": "#335"
-          },
-          {
             "id": 185,
             "type": "UpscalerTensorrt",
             "pos": [
-              582.4353942613225,
-              5020.278035638855
+              -162.34773621584665,
+              5409.581911426366
             ],
             "size": [
               311.232421875,
@@ -3574,7 +3317,7 @@
             ],
             "flags": {},
             "order": 4,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "images",
@@ -3613,7 +3356,6 @@
                 "name": "upscaled_images",
                 "type": "IMAGE",
                 "links": [
-                  446,
                   530
                 ]
               }
@@ -3643,8 +3385,8 @@
             "id": 177,
             "type": "AutoRifeTensorrt",
             "pos": [
-              570.5312928647779,
-              5421.046250931228
+              266.318434089549,
+              5361.715706940487
             ],
             "size": [
               327.0858377006316,
@@ -3720,8 +3462,8 @@
             "id": 186,
             "type": "LoadUpscalerTensorrtModel",
             "pos": [
-              586.5510414514146,
-              4867.127048429969
+              -158.23208902575456,
+              5256.43092421748
             ],
             "size": [
               295.4078125,
@@ -3729,7 +3471,7 @@
             ],
             "flags": {},
             "order": 5,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "model",
@@ -3785,8 +3527,8 @@
             "id": 7,
             "title": "FRAME INTERPOLATION",
             "bounding": [
-              553.6701485318306,
-              5166.3234668773675,
+              249.45728975660194,
+              5106.992922886626,
               360.18135699195864,
               506.4775823828222
             ],
@@ -3797,22 +3539,10 @@
             "id": 6,
             "title": "UPSCALE",
             "bounding": [
-              564.8316969739973,
-              4801.846871374646,
+              -179.9514335031718,
+              5191.150747162157,
               353.08890270001507,
               333.11325781765845
-            ],
-            "color": "#a1309b",
-            "flags": {}
-          },
-          {
-            "id": 18,
-            "title": "SEEDVR2.5",
-            "bounding": [
-              -198.5468103535386,
-              4791.774899431477,
-              698.3572873485625,
-              885.5419207795949
             ],
             "color": "#a1309b",
             "flags": {}
@@ -3844,36 +3574,12 @@
             "type": "COMBO"
           },
           {
-            "id": 367,
-            "origin_id": -10,
-            "origin_slot": 1,
-            "target_id": 176,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 368,
-            "origin_id": -10,
-            "origin_slot": 2,
-            "target_id": 177,
-            "target_slot": 3,
-            "type": "INT"
-          },
-          {
             "id": 371,
             "origin_id": -10,
             "origin_slot": 3,
             "target_id": 186,
             "target_slot": 0,
             "type": "COMBO"
-          },
-          {
-            "id": 372,
-            "origin_id": -10,
-            "origin_slot": 4,
-            "target_id": 186,
-            "target_slot": 1,
-            "type": "INT"
           },
           {
             "id": 373,
@@ -3892,70 +3598,6 @@
             "type": "INT"
           },
           {
-            "id": 444,
-            "origin_id": 212,
-            "origin_slot": 0,
-            "target_id": 244,
-            "target_slot": 1,
-            "type": "SEEDVR2_DIT"
-          },
-          {
-            "id": 445,
-            "origin_id": 246,
-            "origin_slot": 0,
-            "target_id": 244,
-            "target_slot": 2,
-            "type": "SEEDVR2_VAE"
-          },
-          {
-            "id": 449,
-            "origin_id": -10,
-            "origin_slot": 7,
-            "target_id": 212,
-            "target_slot": 1,
-            "type": "COMBO"
-          },
-          {
-            "id": 451,
-            "origin_id": -10,
-            "origin_slot": 8,
-            "target_id": 244,
-            "target_slot": 3,
-            "type": "INT"
-          },
-          {
-            "id": 452,
-            "origin_id": -10,
-            "origin_slot": 9,
-            "target_id": 244,
-            "target_slot": 4,
-            "type": "INT"
-          },
-          {
-            "id": 453,
-            "origin_id": 245,
-            "origin_slot": 0,
-            "target_id": 212,
-            "target_slot": 0,
-            "type": "TORCH_COMPILE_ARGS"
-          },
-          {
-            "id": 526,
-            "origin_id": -10,
-            "origin_slot": 10,
-            "target_id": 244,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 529,
-            "origin_id": 244,
-            "origin_slot": 0,
-            "target_id": 185,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
             "id": 530,
             "origin_id": 185,
             "origin_slot": 0,
@@ -3970,6 +3612,38 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "IMAGE"
+          },
+          {
+            "id": 367,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 176,
+            "target_slot": 2,
+            "type": "COMBO"
+          },
+          {
+            "id": 368,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 177,
+            "target_slot": 3,
+            "type": "INT"
+          },
+          {
+            "id": 372,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 186,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 558,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 185,
+            "target_slot": 0,
+            "type": "IMAGE"
           }
         ],
         "extra": {
@@ -3980,19 +3654,22 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.52.7",
+    "frontendVersion": "1.53.6",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.832887731777179,
+      "scale": 0.5171577523748246,
       "offset": [
-        1668.6878899992482,
-        -4150.092393570967
+        1113.3017535903878,
+        -4184.1300946334195
       ]
     }
   },
-  "version": 0.4,
-  "seed_widgets": {}
+  "extensions": {
+    "models": [],
+    "seed_widgets": {}
+  },
+  "version": 0.4
 }
