@@ -42,9 +42,9 @@
       ],
       "title": "Save Video at 24 FPS",
       "properties": {
-        "Node name for S&R": "SaveVideo",
         "cnr_id": "comfy-core",
-        "ver": "0.30.1"
+        "ver": "0.30.1",
+        "Node name for S&R": "SaveVideo"
       },
       "widgets_values": [
         "video/MiniMax_H3_24FPS",
@@ -161,10 +161,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "Node name for S&R": "PixaromaMonitor",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
+        "Node name for S&R": "PixaromaMonitor",
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -188,11 +188,11 @@
       "inputs": [],
       "outputs": [],
       "properties": {
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
         "Node name for S&R": "PixaromaRunTimer",
         "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "runTimerLastMs": 236365.10000002384
+        "runTimerLastMs": 262782
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -201,11 +201,11 @@
       "id": 256,
       "type": "PixaromaGroupSwitch",
       "pos": [
-        -185.8447317565058,
-        5250.376442098363
+        -200.82316105338074,
+        5171.269288973366
       ],
       "size": [
-        308.21406249999995,
+        336.88411445312477,
         134
       ],
       "flags": {},
@@ -215,9 +215,10 @@
       "outputs": [],
       "title": "FPS",
       "properties": {
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaGroupSwitch",
         "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "groupSwitchState": {
           "version": 1,
           "action": "bypass",
@@ -308,16 +309,16 @@
       ],
       "title": "QWEN3VL GENERATED PROMPT",
       "properties": {
-        "Node name for S&R": "easy showAnything",
-        "cnr_id": "comfyui-easy-use",
+        "aux_id": "yolain/ComfyUI-Easy-Use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
+        "Node name for S&R": "easy showAnything",
+        "cnr_id": "comfyui-easy-use"
       },
       "widgets_values": [
-        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] The scene opens with a blonde woman in a black floral swimsuit reclining on a light gray couch in a softly lit living room. She is partially nude with her legs spread wide, exposing her pussy to the camera. A muscular man in a red t-shirt kneels behind her, his white penis already inserted deep inside her tight vaginal canal. Her expression is one of scared anticipation, eyes wide and mouth slightly agape as she braces for impact. The camera remains locked-off, completely static throughout the entire clip. At 0.00 seconds, the man’s hips begin to press forward with increasing force. His body leans in closer, his red fabric stretching taut across his back and shoulders as he drives deeper. The woman’s thighs clamp down instinctively, her fingers digging into the couch cushions beneath her. Her head tilts back slightly, her breath hitching in ragged gasps. At 1.5 seconds, the thrusting motion intensifies, each forward drive pushing her pelvis back against him. Her eyes flutter shut as pleasure and fear mix, a soft moan escaping her lips. Sweat glistens on her collarbone and the man’s chest as friction builds between them. By 3.0 seconds, the rhythm quickens, his hips snapping forward with controlled power while her legs wrap tighter around his waist. Her toes curl, knuckles whitening as she grips the couch frame. The man’s hand reaches forward, his fingers brushing her inner thigh, adding pressure and heat to the moment. At 4.0 seconds, the thrusts become more urgent, each one driving him deeper until he’s almost fully seated inside her. Her breath comes in short, sharp pants, her body trembling with the intensity of the penetration. The lighting catches the sheen of moisture on her inner thighs and the curve of her buttocks as they press against his. At the final moment, 5.00 seconds, the man’s hips halt mid-thrust, his body pressed flush against hers, his penis buried to the hilt inside her wet pussy. Her eyes snap open, pupils dilated, face flushed with a mix of terror and overwhelming pleasure. The scene holds this peak position with no further movement, her legs still locked around him, the man’s chest resting against her back, the moment suspended in a tableau of intense physical intimacy.\n\noverall_soundscape: The audio begins with the soft, ambient hum of a quiet living room—distant traffic muffled by windows, the faint rustle of fabric as the woman shifts on the couch. As the man begins to thrust, the room tone fades into the foreground: heavy, wet slapping of skin against skin, the squelch of vaginal fluids, and the deep, rhythmic breathing of both participants. The woman’s inhales grow shallow and panicked, interspersed with involuntary gasps and low, trembling moans that rise in pitch with each thrust. The man’s breathing is controlled but labored, punctuated by guttural grunts and sharp exhales. At 3.0 seconds, the sounds intensify—the friction increases, producing louder wet noises and the occasional soft thud of bodies colliding. Her legs tighten around him, creating a muffled, cloying sound as her thighs grind against his lower back. By 4.5 seconds, her vocalizations become more frantic—a mix of high-pitched cries and broken whispers—as the penetration reaches its climax. The final second holds the sound of her ragged, almost silent panting and the faint, continuous wetness of their joined bodies, emphasizing the stillness of the moment.\n\nnon_diegetic_music: N/A"
+        "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A dimly lit bedroom at night, bathed in cool blue moonlight filtering through unseen windows. A shirtless young man with short brown hair embraces a young woman with long, dark curly hair. She wears a delicate brown spaghetti-strap top and a thin gold chain necklace around her neck. At the start, they are locked in a passionate kiss, her left hand resting gently on his bare shoulder while his arms encircle her waist. As the scene unfolds over five seconds, the kiss deepens and intensifies. Her left hand slides from his shoulder up along his neck, her fingers gently grasping his jawline. Simultaneously, his right hand moves from her hip to wrap securely around the back of her neck, his fingers interlacing with hers at the nape of her neck. Her head tilts slightly back in surrender, eyelids fluttering closed as she leans fully into him. His gaze remains fixed on her lips, eyes half-lidded with desire. The camera executes a slow, smooth push-in, moving steadily closer to their faces, compressing the background while maintaining sharp focus on their interlocked hands and the intimate geometry of their embrace. The blue light casts soft shadows across their skin, highlighting the subtle rise and fall of their chests with each shared breath. By the final moment, they remain locked in this deepened embrace, hands now firmly clasped behind her neck, the camera having closed in to frame them in an intimate medium close-up.\n\noverall_soundscape: The room hums with the low, steady thrum of a refrigerator and distant traffic outside. Her breathing quickens noticeably, becoming shallow and rhythmic, syncing with his deeper inhales. Their lips press together with audible, soft wetness, the sound of skin on skin punctuated by the faint rustle of her top straps shifting against her shoulders. His hand gripping the back of her neck creates a subtle, muffled sound of fabric stretching. Their hearts beat in a synchronized, thunderous rhythm that seems to amplify in the quiet room.\n\nnon_diegetic_music: N/A"
       ],
       "widgets_values_named": {
-        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] The scene opens with a blonde woman in a black floral swimsuit reclining on a light gray couch in a softly lit living room. She is partially nude with her legs spread wide, exposing her pussy to the camera. A muscular man in a red t-shirt kneels behind her, his white penis already inserted deep inside her tight vaginal canal. Her expression is one of scared anticipation, eyes wide and mouth slightly agape as she braces for impact. The camera remains locked-off, completely static throughout the entire clip. At 0.00 seconds, the man’s hips begin to press forward with increasing force. His body leans in closer, his red fabric stretching taut across his back and shoulders as he drives deeper. The woman’s thighs clamp down instinctively, her fingers digging into the couch cushions beneath her. Her head tilts back slightly, her breath hitching in ragged gasps. At 1.5 seconds, the thrusting motion intensifies, each forward drive pushing her pelvis back against him. Her eyes flutter shut as pleasure and fear mix, a soft moan escaping her lips. Sweat glistens on her collarbone and the man’s chest as friction builds between them. By 3.0 seconds, the rhythm quickens, his hips snapping forward with controlled power while her legs wrap tighter around his waist. Her toes curl, knuckles whitening as she grips the couch frame. The man’s hand reaches forward, his fingers brushing her inner thigh, adding pressure and heat to the moment. At 4.0 seconds, the thrusts become more urgent, each one driving him deeper until he’s almost fully seated inside her. Her breath comes in short, sharp pants, her body trembling with the intensity of the penetration. The lighting catches the sheen of moisture on her inner thighs and the curve of her buttocks as they press against his. At the final moment, 5.00 seconds, the man’s hips halt mid-thrust, his body pressed flush against hers, his penis buried to the hilt inside her wet pussy. Her eyes snap open, pupils dilated, face flushed with a mix of terror and overwhelming pleasure. The scene holds this peak position with no further movement, her legs still locked around him, the man’s chest resting against her back, the moment suspended in a tableau of intense physical intimacy.\n\noverall_soundscape: The audio begins with the soft, ambient hum of a quiet living room—distant traffic muffled by windows, the faint rustle of fabric as the woman shifts on the couch. As the man begins to thrust, the room tone fades into the foreground: heavy, wet slapping of skin against skin, the squelch of vaginal fluids, and the deep, rhythmic breathing of both participants. The woman’s inhales grow shallow and panicked, interspersed with involuntary gasps and low, trembling moans that rise in pitch with each thrust. The man’s breathing is controlled but labored, punctuated by guttural grunts and sharp exhales. At 3.0 seconds, the sounds intensify—the friction increases, producing louder wet noises and the occasional soft thud of bodies colliding. Her legs tighten around him, creating a muffled, cloying sound as her thighs grind against his lower back. By 4.5 seconds, her vocalizations become more frantic—a mix of high-pitched cries and broken whispers—as the penetration reaches its climax. The final second holds the sound of her ragged, almost silent panting and the faint, continuous wetness of their joined bodies, emphasizing the stillness of the moment.\n\nnon_diegetic_music: N/A"
+        "text": "How the reference pictures align with the target video — Picture 1 (from [Shot 1]) aligns with the 0.00-second mark of the target video; Picture 2 (from [Shot 1]) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] A dimly lit bedroom at night, bathed in cool blue moonlight filtering through unseen windows. A shirtless young man with short brown hair embraces a young woman with long, dark curly hair. She wears a delicate brown spaghetti-strap top and a thin gold chain necklace around her neck. At the start, they are locked in a passionate kiss, her left hand resting gently on his bare shoulder while his arms encircle her waist. As the scene unfolds over five seconds, the kiss deepens and intensifies. Her left hand slides from his shoulder up along his neck, her fingers gently grasping his jawline. Simultaneously, his right hand moves from her hip to wrap securely around the back of her neck, his fingers interlacing with hers at the nape of her neck. Her head tilts slightly back in surrender, eyelids fluttering closed as she leans fully into him. His gaze remains fixed on her lips, eyes half-lidded with desire. The camera executes a slow, smooth push-in, moving steadily closer to their faces, compressing the background while maintaining sharp focus on their interlocked hands and the intimate geometry of their embrace. The blue light casts soft shadows across their skin, highlighting the subtle rise and fall of their chests with each shared breath. By the final moment, they remain locked in this deepened embrace, hands now firmly clasped behind her neck, the camera having closed in to frame them in an intimate medium close-up.\n\noverall_soundscape: The room hums with the low, steady thrum of a refrigerator and distant traffic outside. Her breathing quickens noticeably, becoming shallow and rhythmic, syncing with his deeper inhales. Their lips press together with audible, soft wetness, the sound of skin on skin punctuated by the faint rustle of her top straps shifting against her shoulders. His hand gripping the back of her neck creates a subtle, muffled sound of fabric stretching. Their hearts beat in a synchronized, thunderous rhythm that seems to amplify in the quiet room.\n\nnon_diegetic_music: N/A"
       },
       "color": "#233",
       "bgcolor": "#355"
@@ -353,12 +354,12 @@
       "id": 153,
       "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
-        -185.27658415395746,
-        5425.451298764128
+        -196.63739704458234,
+        5369.411519467252
       ],
       "size": [
-        318.9070112017879,
-        145.52071747512582
+        334.9549197955379,
+        111.03429950637656
       ],
       "flags": {},
       "order": 8,
@@ -415,18 +416,19 @@
       ],
       "title": "Last Frame",
       "properties": {
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
         "Node name for S&R": "PixaromaLoadImageMini",
         "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
         "loadImagePixState": "{\"allow_upscale\":false}"
       },
       "widgets_values": [
-        "131_2.jpg",
+        "S02_EP11_ThatNightHomeLucia_253_v01.jpg",
         "image",
         ""
       ],
       "widgets_values_named": {
-        "image": "131_2.jpg",
+        "image": "S02_EP11_ThatNightHomeLucia_253_v01.jpg",
         "upload": "image",
         "pixaroma_load_image_mini_ui": ""
       },
@@ -508,10 +510,10 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "ComfyUI-PerfectVideoResolution",
-        "cnr_id": "ComfyUI-PerfectVideoResolution",
+        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution",
         "ver": "51969284b70f9769fe5952496a5e97c06927db7b",
-        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution"
+        "Node name for S&R": "ComfyUI-PerfectVideoResolution",
+        "cnr_id": "ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
         "MiniMax H3",
@@ -593,9 +595,10 @@
         }
       ],
       "properties": {
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
         "Node name for S&R": "PixaromaImageInfo",
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb"
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -631,18 +634,19 @@
       ],
       "title": "First Frame",
       "properties": {
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
         "Node name for S&R": "PixaromaLoadImageMini",
         "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
         "loadImagePixState": "{\"allow_upscale\":false}"
       },
       "widgets_values": [
-        "131_2.jpg",
+        "S02_EP11_ThatNightHomeLucia_252_v01.jpg",
         "image",
         ""
       ],
       "widgets_values_named": {
-        "image": "131_2.jpg",
+        "image": "S02_EP11_ThatNightHomeLucia_252_v01.jpg",
         "upload": "image",
         "pixaroma_load_image_mini_ui": ""
       },
@@ -653,12 +657,12 @@
       "id": 218,
       "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
-        -196.47401808469698,
-        5636.555432969927
+        -193.50006495969697,
+        5548.3033739855555
       ],
       "size": [
-        326.0181640625,
-        130
+        331.96607031249994,
+        130.59479062500031
       ],
       "flags": {},
       "order": 11,
@@ -776,35 +780,35 @@
       "widgets_values": [
         "",
         1344,
-        "",
+        "kissing",
         5,
-        "10Eros_Max_h3_hybrid_beta5_int8.safetensors",
-        8,
+        "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        20,
         "res_multistep",
         "simple",
         12,
-        4,
+        3,
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
         "MiniMax › NSFW FL2VA",
         "5s",
-        "[LOCKED_OFF]",
+        "None",
         false
       ],
       "widgets_values_named": {
         "width": "",
         "height": 1344,
-        "prompt": "",
+        "prompt": "kissing",
         "value_1": 5,
-        "unet_name": "10Eros_Max_h3_hybrid_beta5_int8.safetensors",
-        "steps": 8,
+        "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        "steps": 20,
         "sampler_name": "res_multistep",
         "scheduler": "simple",
         "shift_video": 12,
-        "shift_audio": 4,
+        "shift_audio": 3,
         "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q8_0.gguf",
         "preset_prompt": "MiniMax › NSFW FL2VA",
         "duration": "5s",
-        "camera_tag": "[LOCKED_OFF]",
+        "camera_tag": "None",
         "passthrough": false
       },
       "color": "#2a363b",
@@ -818,48 +822,13 @@
         4887.750937417394
       ],
       "size": [
-        323.2291808760094,
-        295.4889256858087
+        327.9875058760092,
+        220.77407256080824
       ],
       "flags": {},
       "order": 16,
       "mode": 0,
       "inputs": [
-        {
-          "name": "model",
-          "type": "COMBO",
-          "link": null
-        },
-        {
-          "name": "resolution_profile",
-          "type": "COMBO",
-          "link": null
-        },
-        {
-          "name": "multiplier",
-          "type": "INT",
-          "link": null
-        },
-        {
-          "name": "model_1",
-          "type": "COMBO",
-          "link": null
-        },
-        {
-          "name": "batch_size",
-          "type": "INT",
-          "link": null
-        },
-        {
-          "name": "resize_to",
-          "type": "COMBO",
-          "link": null
-        },
-        {
-          "name": "batch_size_1",
-          "type": "INT",
-          "link": null
-        },
         {
           "name": "frames",
           "type": "IMAGE",
@@ -880,6 +849,24 @@
         "cnr_id": "comfy-core",
         "ver": "0.34.1",
         "previewExposures": []
+      },
+      "widgets_values": [
+        "rife425_ensemble_False_scale_1_sim",
+        "large",
+        2,
+        "2xLexicaRRDBNet",
+        2,
+        "2K",
+        2
+      ],
+      "widgets_values_named": {
+        "model": "rife425_ensemble_False_scale_1_sim",
+        "resolution_profile": "large",
+        "multiplier": 2,
+        "model_1": "2xLexicaRRDBNet",
+        "batch_size": 2,
+        "resize_to": "2K",
+        "batch_size_1": 2
       },
       "color": "#223",
       "bgcolor": "#335"
@@ -921,9 +908,9 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "SaveWEBM",
         "cnr_id": "comfy-core",
-        "ver": "0.37.4"
+        "ver": "0.37.4",
+        "Node name for S&R": "SaveWEBM"
       },
       "widgets_values": [
         "ComfyUI",
@@ -996,10 +983,10 @@
       ],
       "title": "48FPS",
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
         "frame_rate": 48,
@@ -1137,12 +1124,12 @@
       "IMAGE"
     ],
     [
-      551,
-      262,
-      4,
-      126,
-      4,
-      "STRING"
+      532,
+      105,
+      1,
+      253,
+      0,
+      "IMAGE"
     ],
     [
       194,
@@ -1177,12 +1164,12 @@
       "IMAGE"
     ],
     [
-      532,
-      105,
-      1,
-      253,
-      7,
-      "IMAGE"
+      551,
+      262,
+      4,
+      126,
+      4,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1545,9 +1532,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "VAELoader",
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
+              "Node name for S&R": "VAELoader",
               "models": [
                 {
                   "name": "minimax_h3_video_vae_fp16.safetensors",
@@ -1589,9 +1576,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "CLIPLoader",
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
+              "Node name for S&R": "CLIPLoader",
               "models": [
                 {
                   "name": "qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
@@ -1637,9 +1624,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "VAELoader",
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
+              "Node name for S&R": "VAELoader",
               "models": [
                 {
                   "name": "minimax_h3_audio_vae_fp32.safetensors",
@@ -1694,9 +1681,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "BasicGuider",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "BasicGuider"
             }
           },
           {
@@ -1725,16 +1712,16 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "RandomNoise",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "RandomNoise"
             },
             "widgets_values": [
-              131658101727503,
+              924829705493509,
               "randomize"
             ],
             "widgets_values_named": {
-              "noise_seed": 131658101727503,
+              "noise_seed": 924829705493509,
               "control_after_generate": "randomize"
             }
           },
@@ -1835,9 +1822,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "MiniMaxH3ImageToVideo",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "MiniMaxH3ImageToVideo"
             },
             "widgets_values": [
               "",
@@ -1889,9 +1876,9 @@
             ],
             "title": "Float (duration)",
             "properties": {
-              "Node name for S&R": "PrimitiveFloat",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "PrimitiveFloat"
             },
             "widgets_values": [
               2
@@ -1955,9 +1942,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "ComfyMathExpression",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "ComfyMathExpression"
             },
             "widgets_values": [
               "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17"
@@ -2002,9 +1989,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "UNETLoader",
               "cnr_id": "comfy-core",
               "ver": "0.30.1",
+              "Node name for S&R": "UNETLoader",
               "models": [
                 {
                   "name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
@@ -2058,9 +2045,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "KSamplerSelect",
               "cnr_id": "comfy-core",
-              "ver": "0.33.0"
+              "ver": "0.33.0",
+              "Node name for S&R": "KSamplerSelect"
             },
             "widgets_values": [
               "euler"
@@ -2120,9 +2107,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "BasicScheduler",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "BasicScheduler"
             },
             "widgets_values": [
               "simple",
@@ -2187,9 +2174,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "MiniMaxH3SigmaShift",
               "cnr_id": "comfy-core",
-              "ver": "0.34.2"
+              "ver": "0.34.2",
+              "Node name for S&R": "MiniMaxH3SigmaShift"
             },
             "widgets_values": [
               12,
@@ -2264,9 +2251,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "SamplerCustomAdvanced",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "SamplerCustomAdvanced"
             }
           },
           {
@@ -2311,9 +2298,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "VAEDecode",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "VAEDecode"
             }
           },
           {
@@ -2356,9 +2343,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "CreateVideo",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "CreateVideo"
             },
             "widgets_values": [
               24,
@@ -2406,9 +2393,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "LoraLoaderModelOnly",
               "cnr_id": "comfy-core",
-              "ver": "0.34.2"
+              "ver": "0.34.2",
+              "Node name for S&R": "LoraLoaderModelOnly"
             },
             "widgets_values": [
               "lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors",
@@ -2454,13 +2441,13 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "BlockSparseAttention",
               "cnr_id": "comfy-core",
-              "ver": "0.37.1"
+              "ver": "0.37.1",
+              "Node name for S&R": "BlockSparseAttention"
             },
             "widgets_values": [
               "sol-attn",
-              1.3,
+              1,
               0.2,
               1,
               "",
@@ -2471,7 +2458,7 @@
             ],
             "widgets_values_named": {
               "selection": "sol-attn",
-              "selection.tau": 1.3,
+              "selection.tau": 1,
               "start_percent": 0.2,
               "end_percent": 1,
               "dense_blocks": "",
@@ -2587,10 +2574,10 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "QwenVL_Unified",
-              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
               "ver": "10fc389f110753e3bf112fe9b1ca7201719728da",
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
+              "Node name for S&R": "QwenVL_Unified",
+              "cnr_id": "ComfyUI-QwenVL-Mod"
             },
             "widgets_values": [
               "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q4_K_M.gguf",
@@ -2599,7 +2586,7 @@
               "",
               8192,
               false,
-              1935103688,
+              2957886626,
               "randomize",
               false,
               false,
@@ -2613,7 +2600,7 @@
               "prompt": "",
               "max_tokens": 8192,
               "keep_model_loaded": false,
-              "seed": 1935103688,
+              "seed": 2957886626,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
               "passthrough": false,
@@ -2665,9 +2652,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "VAEDecodeAudio",
               "cnr_id": "comfy-core",
-              "ver": "0.30.1"
+              "ver": "0.30.1",
+              "Node name for S&R": "VAEDecodeAudio"
             }
           },
           {
@@ -2703,9 +2690,9 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "ModelAttentionBackend",
               "cnr_id": "comfy-core",
-              "ver": "0.38.1"
+              "ver": "0.38.1",
+              "Node name for S&R": "ModelAttentionBackend"
             },
             "widgets_values": [
               "comfy kitchen attention"
@@ -3347,7 +3334,7 @@
               130
             ],
             "flags": {},
-            "order": 2,
+            "order": 0,
             "mode": 0,
             "inputs": [
               {
@@ -3387,10 +3374,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -3419,7 +3406,7 @@
               106
             ],
             "flags": {},
-            "order": 5,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
@@ -3452,10 +3439,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "2xLexicaRRDBNet_Sharp",
@@ -3482,14 +3469,14 @@
               76
             ],
             "flags": {},
-            "order": 4,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
                 "localized_name": "images",
                 "name": "images",
                 "type": "IMAGE",
-                "link": 529
+                "link": 563
               },
               {
                 "localized_name": "upscaler_trt_model",
@@ -3527,10 +3514,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "1080p",
@@ -3559,7 +3546,7 @@
               224
             ],
             "flags": {},
-            "order": 3,
+            "order": 1,
             "mode": 0,
             "inputs": [
               {
@@ -3602,10 +3589,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               100,
@@ -3717,6 +3704,14 @@
             "type": "IMAGE"
           },
           {
+            "id": 563,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 185,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
             "id": 367,
             "origin_id": -10,
             "origin_slot": 1,
@@ -3739,14 +3734,6 @@
             "target_id": 177,
             "target_slot": 3,
             "type": "INT"
-          },
-          {
-            "id": 563,
-            "origin_id": -10,
-            "origin_slot": 7,
-            "target_id": 185,
-            "target_slot": 0,
-            "type": "IMAGE"
           }
         ],
         "extra": {
@@ -3763,10 +3750,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.5131581182307067,
+      "scale": 0.6830134553650712,
       "offset": [
-        1670.2793369541691,
-        -4102.516564682366
+        2534.5329784717524,
+        -4356.926246303049
       ]
     }
   },
@@ -3774,5 +3761,6 @@
     "models": [],
     "seed_widgets": {}
   },
-  "version": 0.4
+  "version": 0.4,
+  "seed_widgets": {}
 }
