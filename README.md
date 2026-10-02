@@ -74,8 +74,8 @@ T2V, I2V, I2V-20s, FL2V, SVI-20s, Story I2V/SVI/T2V-I2V — tutti con Qwen3.5 Au
 ### Pixal3D / Trellis 2 (1)
 Image-to-3D Model con PBR textures (base color, metallic, roughness, AO, normal)
 
-### MiniMax H3 Turbo (5)
-FL2VA, FL2VA-Loop, I2VA, R2VA, T2VA — tutti con Qwen3.5 AutoPrompt
+### MiniMax H3 Turbo (4)
+FL2VA, I2VA, R2VA, T2VA — tutti con Qwen3.5 AutoPrompt
 
 ### LTX Video (6)
 - **2.3/** — FL2VA, I2VA-T2VA, I2VA-AudioInput
