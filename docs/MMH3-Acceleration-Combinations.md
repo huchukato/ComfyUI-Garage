@@ -19,7 +19,7 @@
 
 - DiT: `minimax_h3_fl2va_pruned_int8_convrot.safetensors` / `minimax_h3_ref2va_pruned_int8_convrot.safetensors` (Comfy-Org)
 - 10Eros: `10Eros_Max_h3_hybrid_beta5_int8.safetensors` (TenStrip)
-- Text encoder: `qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors` (ethanfel Heretic, uncensored) — CLIPLoader type `minimax`
+- Text encoder: `qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors` (Momoking Heretic NVFP4, uncensored) — CLIPLoader type `minimax`
 
 ## Args di avvio ComfyUI
 
