@@ -80,13 +80,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_ThatNightLucia_308_v01_00002-audio.webm",
+            "filename": "S02_EP11_ThatNightLucia_308_v01_00003-audio.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 50,
-            "workflow": "S02_EP11_ThatNightLucia_308_v01_00002.png",
-            "fullpath": "/workspace/ComfyUI/output/S02_EP11_ThatNightLucia_308_v01_00002-audio.webm"
+            "workflow": "S02_EP11_ThatNightLucia_308_v01_00003.png",
+            "fullpath": "/workspace/ComfyUI/output/S02_EP11_ThatNightLucia_308_v01_00003-audio.webm"
           }
         }
       },
@@ -105,13 +105,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "S02_EP11_ThatNightLucia_308_v01_00002-audio.webm",
+            "filename": "S02_EP11_ThatNightLucia_308_v01_00003-audio.webm",
             "subfolder": "",
             "type": "output",
             "format": "video/webm",
             "frame_rate": 50,
-            "workflow": "S02_EP11_ThatNightLucia_308_v01_00002.png",
-            "fullpath": "/workspace/ComfyUI/output/S02_EP11_ThatNightLucia_308_v01_00002-audio.webm"
+            "workflow": "S02_EP11_ThatNightLucia_308_v01_00003.png",
+            "fullpath": "/workspace/ComfyUI/output/S02_EP11_ThatNightLucia_308_v01_00003-audio.webm"
           }
         }
       },
@@ -357,8 +357,8 @@
         6403.618181271527
       ],
       "size": [
-        329.9461333093675,
-        251.23139641139096
+        332.3741684656177,
+        223.76912297389026
       ],
       "flags": {},
       "order": 11,
@@ -388,7 +388,6 @@
         "rife425_ensemble_False_scale_1_sim",
         "large",
         2,
-        false,
         "2xLexicaRRDBNet",
         2,
         "2K",
@@ -398,7 +397,6 @@
         "model": "rife425_ensemble_False_scale_1_sim",
         "resolution_profile": "large",
         "multiplier": 2,
-        "keep_model_loaded": false,
         "model_1": "2xLexicaRRDBNet",
         "batch_size": 2,
         "resize_to": "2K",
@@ -646,9 +644,9 @@
         "",
         false,
         5,
-        50,
+        25,
         "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
-        "ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors",
+        "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
         "LTX › NSFW I2V",
         "5s",
@@ -662,9 +660,9 @@
         "value_6": "",
         "value_1": false,
         "value_2": 5,
-        "value_5": 50,
+        "value_5": 25,
         "unet_name": "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
-        "model_name": "ltx-2.5-latent-temporal-upscaler-x2-bf16-1.0.safetensors",
+        "model_name": "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
         "model_name_1": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
         "preset_prompt": "LTX › NSFW I2V",
         "duration": "5s",
@@ -800,7 +798,7 @@
         "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "54da99b8925a0d478c327cca012bea5ce49a71ab",
         "Node name for S&R": "PixaromaRunTimer",
-        "runTimerLastMs": 188366.90000000596
+        "runTimerLastMs": 160590.29999998212
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -864,14 +862,6 @@
       "STRING"
     ],
     [
-      813,
-      398,
-      2,
-      418,
-      0,
-      "IMAGE"
-    ],
-    [
       816,
       419,
       2,
@@ -894,6 +884,14 @@
       75,
       1,
       "STRING"
+    ],
+    [
+      813,
+      398,
+      2,
+      418,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -5099,8 +5097,8 @@
           "bounding": [
             -377.26506584179714,
             5221.716401543848,
-            161.015625,
-            228
+            145.951171875,
+            208
           ]
         },
         "outputNode": {
@@ -5121,7 +5119,7 @@
               366
             ],
             "pos": [
-              -240.24944084179714,
+              -255.31389396679714,
               5245.716401543848
             ]
           },
@@ -5133,7 +5131,7 @@
               367
             ],
             "pos": [
-              -240.24944084179714,
+              -255.31389396679714,
               5265.716401543848
             ]
           },
@@ -5145,20 +5143,8 @@
               368
             ],
             "pos": [
-              -240.24944084179714,
+              -255.31389396679714,
               5285.716401543848
-            ]
-          },
-          {
-            "id": "a2338898-b1e2-4a3a-ad62-c2810ac97ff2",
-            "name": "keep_model_loaded",
-            "type": "BOOLEAN",
-            "linkIds": [
-              369
-            ],
-            "pos": [
-              -240.24944084179714,
-              5305.716401543848
             ]
           },
           {
@@ -5170,8 +5156,8 @@
             ],
             "localized_name": "frames",
             "pos": [
-              -240.24944084179714,
-              5325.716401543848
+              -255.31389396679714,
+              5305.716401543848
             ]
           },
           {
@@ -5182,8 +5168,8 @@
               371
             ],
             "pos": [
-              -240.24944084179714,
-              5345.716401543848
+              -255.31389396679714,
+              5325.716401543848
             ]
           },
           {
@@ -5194,8 +5180,8 @@
               372
             ],
             "pos": [
-              -240.24944084179714,
-              5365.716401543848
+              -255.31389396679714,
+              5345.716401543848
             ]
           },
           {
@@ -5206,8 +5192,8 @@
               373
             ],
             "pos": [
-              -240.24944084179714,
-              5385.716401543848
+              -255.31389396679714,
+              5365.716401543848
             ]
           },
           {
@@ -5218,8 +5204,8 @@
               374
             ],
             "pos": [
-              -240.24944084179714,
-              5405.716401543848
+              -255.31389396679714,
+              5385.716401543848
             ]
           }
         ],
@@ -5253,7 +5239,7 @@
             ],
             "flags": {},
             "order": 0,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "custom_config",
@@ -5325,7 +5311,7 @@
             ],
             "flags": {},
             "order": 1,
-            "mode": 4,
+            "mode": 0,
             "inputs": [
               {
                 "localized_name": "frames",
@@ -5354,15 +5340,6 @@
                   "name": "multiplier"
                 },
                 "link": 368
-              },
-              {
-                "localized_name": "keep_model_loaded",
-                "name": "keep_model_loaded",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "keep_model_loaded"
-                },
-                "link": 369
               }
             ],
             "outputs": [
@@ -5470,7 +5447,7 @@
             ],
             "size": [
               311.232421875,
-              76
+              94
             ],
             "flags": {},
             "order": 3,
@@ -5591,14 +5568,6 @@
             "type": "UPSCALER_TRT_MODEL"
           },
           {
-            "id": 333,
-            "origin_id": -10,
-            "origin_slot": 4,
-            "target_id": 177,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
             "id": 358,
             "origin_id": 200,
             "origin_slot": 0,
@@ -5613,30 +5582,6 @@
             "target_id": 176,
             "target_slot": 1,
             "type": "COMBO"
-          },
-          {
-            "id": 371,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 199,
-            "target_slot": 0,
-            "type": "COMBO"
-          },
-          {
-            "id": 373,
-            "origin_id": -10,
-            "origin_slot": 7,
-            "target_id": 200,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 374,
-            "origin_id": -10,
-            "origin_slot": 8,
-            "target_id": 200,
-            "target_slot": 3,
-            "type": "INT"
           },
           {
             "id": 367,
@@ -5655,19 +5600,43 @@
             "type": "INT"
           },
           {
-            "id": 369,
+            "id": 333,
             "origin_id": -10,
             "origin_slot": 3,
             "target_id": 177,
-            "target_slot": 4,
-            "type": "BOOLEAN"
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 371,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 199,
+            "target_slot": 0,
+            "type": "COMBO"
           },
           {
             "id": 372,
             "origin_id": -10,
-            "origin_slot": 6,
+            "origin_slot": 5,
             "target_id": 199,
             "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 373,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 200,
+            "target_slot": 2,
+            "type": "COMBO"
+          },
+          {
+            "id": 374,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 200,
+            "target_slot": 3,
             "type": "INT"
           }
         ],
