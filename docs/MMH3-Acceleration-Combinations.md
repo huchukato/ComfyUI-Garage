@@ -23,7 +23,7 @@
 
 ## Args di avvio ComfyUI
 
-`--highvram --fast-disk --disable-auto-launch --fast fp16_accumulation --cuda-malloc --enable-triton-backend --force-fp16`
+`--highvram --disable-auto-launch --fast fp16_accumulation --enable-triton-backend --force-fp16`
 
 ## Note
 
