@@ -77,11 +77,11 @@ Image-to-3D Model con PBR textures (base color, metallic, roughness, AO, normal)
 ### MiniMax H3 Turbo (4)
 FL2VA, I2VA, R2VA, T2VA — tutti con Qwen3.5 AutoPrompt
 
-### LTX Video (6)
+### LTX Video (5)
 - **2.3/** — FL2VA, I2VA-T2VA, I2VA-AudioInput
-- **2.5/** — FL2VA, I2VA-T2VA, I2VA-AudioInput
+- **2.5/** — FL2VA, I2VA-T2VA — con LoRA **10Eros v1.5** sopra il distilled int8
 
-> Il workflow **I2VA-AudioInput** carica una canzone (`LoadAudio`), la codifica tramite `AD_LTX_audio_input` e usa l’audio come conditioning per LTX. L’audio finale è quello originale: il modello genera il video sincronizzato al brano, ma non riproduce la canzone esatta.
+> Il workflow **I2VA-AudioInput** (solo 2.3) carica una canzone (`LoadAudio`), la codifica tramite `AD_LTX_audio_input` e usa l’audio come conditioning per LTX. L’audio finale è quello originale: il modello genera il video sincronizzato al brano, ma non riproduce la canzone esatta.
 
 ### Pony (3)
 PimpMyPony TagComplete + Wildcards, HiresFix, FaceDet
