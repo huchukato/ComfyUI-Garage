@@ -42,6 +42,7 @@ NODES=(
     "https://github.com/stduhpf/ComfyUI-WanMoeKSampler"
     "https://github.com/melMass/comfy_mtb"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
+    "https://github.com/pixaroma/ComfyUI-Pixaroma"
 )
 
 WORKFLOWS=(

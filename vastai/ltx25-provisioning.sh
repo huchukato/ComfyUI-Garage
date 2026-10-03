@@ -37,6 +37,7 @@ NODES=(
     "https://github.com/ashtar1984/comfyui-find-perfect-resolution"
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
+    "https://github.com/pixaroma/ComfyUI-Pixaroma"
     "https://github.com/kijai/ComfyUI-KJNodes"
 )
 
