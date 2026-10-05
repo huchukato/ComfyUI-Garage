@@ -13,6 +13,9 @@ PIP_PACKAGES=(
     "tensorrt-cu13==10.15.1.29"
     "tensorrt-cu13-bindings==10.15.1.29"
     "tensorrt-cu13-libs==10.15.1.29"
+    "scenedetect"
+    "opencv-python-headless"
+    "imageio-ffmpeg"
 )
 
 NODES=(
@@ -35,6 +38,7 @@ NODES=(
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
     "https://github.com/huchukato/ComfyUI-Gallery"
     "https://github.com/shootthesound/ComfyUI-Fizgig-H3-Still"
+    "https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director"
 )
 
 WORKFLOWS=(
