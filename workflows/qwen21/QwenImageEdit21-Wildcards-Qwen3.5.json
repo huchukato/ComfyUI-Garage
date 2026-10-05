@@ -1,66 +1,394 @@
 {
   "id": "54bb395d-3e60-4c94-b525-85523901575b",
   "revision": 0,
-  "last_node_id": 541,
-  "last_link_id": 837,
+  "last_node_id": 557,
+  "last_link_id": 872,
   "nodes": [
     {
-      "id": 13,
-      "type": "ResolutionSelector",
+      "id": 526,
+      "type": "PixaromaSaveImage",
       "pos": [
-        810.1731924271232,
-        3495.9264075203378
+        1266.2655255620607,
+        2441.18216375775
       ],
       "size": [
-        304.5263439669561,
-        150
+        773.8538147698418,
+        846.1197473934344
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 824
+        },
+        {
+          "name": "name",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaSaveImage",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "saveImageState": "{\"version\":1,\"folder\":\"\",\"pattern\":\"Qwen21_%date:yyyy-MM-dd%_%counter%%\",\"format\":\"jpg\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":true,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":true,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}",
+        "pixAccent": "#0d9488",
+        "pixSiLastRun": {
+          "ok": true,
+          "sum": "saved 1 image",
+          "folder": "/workspace/runpod-slim/ComfyUI/output",
+          "entries": [
+            {
+              "filename": "Qwen21_2026-10-05_002%.jpg",
+              "subfolder": "",
+              "type": "output",
+              "token": "",
+              "path": "",
+              "bust": "1791174645701"
+            }
+          ],
+          "n": 1,
+          "w": 768,
+          "h": 1152
+        }
+      },
+      "widgets_values": [
+        ""
+      ],
+      "widgets_values_named": {
+        "pixaroma_save_image": ""
+      },
+      "color": "#2f7fc0",
+      "bgcolor": "#26323b"
+    },
+    {
+      "id": 478,
+      "type": "PixaromaResolution",
+      "pos": [
+        403.39685413978816,
+        2494.119317401231
+      ],
+      "size": [
+        240,
+        435
       ],
       "flags": {},
       "order": 0,
-      "mode": 4,
-      "showAdvanced": true,
+      "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "width",
           "type": "INT",
-          "links": []
+          "links": [
+            861
+          ]
         },
         {
           "name": "height",
           "type": "INT",
+          "links": [
+            862
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
+        "Node name for S&R": "PixaromaResolution",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "resolutionState": "{\"mode\":\"preset\",\"ratio\":\"2:3\",\"w\":768,\"h\":1152,\"custom_w\":1024,\"custom_h\":1024,\"custom_ratio_w\":4,\"custom_ratio_h\":3,\"snap\":16}"
+      },
+      "widgets_values": [
+        {
+          "mode": "preset",
+          "ratio": "2:3",
+          "w": 768,
+          "h": 1152,
+          "custom_w": 1024,
+          "custom_h": 1024,
+          "custom_ratio_w": 4,
+          "custom_ratio_h": 3,
+          "snap": 16
+        }
+      ],
+      "widgets_values_named": {
+        "resolution_ui": {
+          "mode": "preset",
+          "ratio": "2:3",
+          "w": 768,
+          "h": 1152,
+          "custom_w": 1024,
+          "custom_h": 1024,
+          "custom_ratio_w": 4,
+          "custom_ratio_h": 3,
+          "snap": 16
+        }
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 479,
+      "type": "Seed (rgthree)",
+      "pos": [
+        408.36833047837035,
+        2985.7614225902103
+      ],
+      "size": [
+        241.73761706091864,
+        134.80533545188246
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "SEED",
+          "shape": 3,
+          "type": "INT",
+          "links": [
+            806
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
+        "randomMax": 1125899906842624,
+        "randomMin": 0,
+        "aux_id": "rgthree/rgthree-comfy"
+      },
+      "widgets_values": [
+        -1,
+        "",
+        "",
+        "okay"
+      ],
+      "widgets_values_named": {
+        "seed": -1,
+        "🎲 Randomize Each Time": "",
+        "🎲 New Fixed Random": "",
+        "USE_LAST_SEED": "okay"
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 513,
+      "type": "PixaromaShowText",
+      "pos": [
+        736.5669218910795,
+        3026.4474128787638
+      ],
+      "size": [
+        500.1663475180835,
+        266.3661812167952
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 864
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
           "links": []
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "ResolutionSelector"
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaShowText",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
-        "16:9 (Widescreen)",
-        1,
-        32
+        "Replace the facial identity in <image1> with that of <image2>, reconstructing eyes, eyebrows, nose, lips, skin texture, and bone structure inside the existing hairline to match the new identity while preserving the original head tilt and neck connection. Retain the exact hairstyle, hairline, hair color, volume, and silhouette of <image1>; do not import any hair from <image2>. Keep the wet skin sheen, directional lighting, shadow fall, color grading, camera framing, background architecture, clothing, and pose of <image1> completely unchanged. Adapt the new facial features to the warm, sunlit color temperature and soft highlights of <image1>, ensuring seamless integration with no pasted edges or seam artifacts at the jaw or hairline."
       ],
       "widgets_values_named": {
-        "aspect_ratio": "16:9 (Widescreen)",
-        "megapixels": 1,
-        "multiple": 32
-      }
+        "text": "Replace the facial identity in <image1> with that of <image2>, reconstructing eyes, eyebrows, nose, lips, skin texture, and bone structure inside the existing hairline to match the new identity while preserving the original head tilt and neck connection. Retain the exact hairstyle, hairline, hair color, volume, and silhouette of <image1>; do not import any hair from <image2>. Keep the wet skin sheen, directional lighting, shadow fall, color grading, camera framing, background architecture, clothing, and pose of <image1> completely unchanged. Adapt the new facial features to the warm, sunlit color temperature and soft highlights of <image1>, ensuring seamless integration with no pasted edges or seam artifacts at the jaw or hairline."
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
-      "id": 487,
-      "type": "EmptyLatentImage",
+      "id": 539,
+      "type": "PixaromaLoadImage",
       "pos": [
-        425.16104240091096,
-        3268.9076495379336
+        -1229.8397233020364,
+        2497.488384778726
       ],
       "size": [
-        300,
-        120
+        483.4418000957579,
+        649.4168863822638
       ],
       "flags": {},
-      "order": 15,
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            866,
+            871
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "original_width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "original_height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Load Image 1",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImage",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "loadImagePixState": "{\"allow_upscale\":false}"
+      },
+      "widgets_values": [
+        "ANI-MP-INC_00002_.png",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "ANI-MP-INC_00002_.png",
+        "upload": "image",
+        "pixaroma_load_image_ui": ""
+      },
+      "color": "#1f9e6a",
+      "bgcolor": "#23362f"
+    },
+    {
+      "id": 540,
+      "type": "PixaromaLoadImage",
+      "pos": [
+        -677.0680606303991,
+        2493.8956569468064
+      ],
+      "size": [
+        479.9558857057714,
+        646.4736044953993
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            867
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "original_width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "original_height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Load Image 2",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaLoadImage",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "loadImagePixState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1152,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":false}"
+      },
+      "widgets_values": [
+        "ANI-MP-INC_00014_.png",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "ANI-MP-INC_00014_.png",
+        "upload": "image",
+        "pixaroma_load_image_ui": ""
+      },
+      "color": "#2f7fc0",
+      "bgcolor": "#26323b"
+    },
+    {
+      "id": 515,
+      "type": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
+      "pos": [
+        738.7008185038673,
+        2441.9532259275147
+      ],
+      "size": [
+        496.48392383712485,
+        522
+      ],
+      "flags": {},
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -69,7 +397,7 @@
           "widget": {
             "name": "width"
           },
-          "link": 752
+          "link": 861
         },
         {
           "name": "height",
@@ -77,73 +405,205 @@
           "widget": {
             "name": "height"
           },
-          "link": 753
+          "link": 862
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 806
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 865
+        },
+        {
+          "name": "images.image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 866
+        },
+        {
+          "name": "images.image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 867
         }
       ],
       "outputs": [
         {
-          "name": "LATENT",
-          "type": "LATENT",
+          "name": "IMAGE",
+          "type": "IMAGE",
           "links": [
-            747
+            824,
+            872
+          ]
+        },
+        {
+          "name": "RESPONSE",
+          "type": "STRING",
+          "links": [
+            864
           ]
         }
       ],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "EmptyLatentImage"
+        "ver": "0.37.1",
+        "previewExposures": [
+          {
+            "name": "$$canvas-image-preview",
+            "sourceNodeId": "509",
+            "sourcePreviewName": "$$canvas-image-preview"
+          }
+        ]
       },
       "widgets_values": [
         1024,
         1024,
-        1
+        0,
+        "",
+        "ugly, bad quality, low quality, blurry",
+        1,
+        25,
+        "euler",
+        "simple",
+        "qwen-image-2.1-UC-int8_convrot.safetensors",
+        "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
+        "qwen_image_2.1_vae_bf16.safetensors",
+        "elusarcas-qwen2-1-detailer-v1.safetensors",
+        0.7,
+        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
+        "IMG › Qwen Edit",
+        false
       ],
       "widgets_values_named": {
         "width": 1024,
         "height": 1024,
-        "batch_size": 1
-      }
+        "seed": 0,
+        "prompt": "",
+        "negative_prompt": "ugly, bad quality, low quality, blurry",
+        "cfg": 1,
+        "steps": 25,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "unet_name": "qwen-image-2.1-UC-int8_convrot.safetensors",
+        "clip_name": "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
+        "lora_name": "elusarcas-qwen2-1-detailer-v1.safetensors",
+        "strength_model": 0.7,
+        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
+        "preset_prompt": "IMG › Qwen Edit",
+        "passthrough": false
+      },
+      "color": "#233",
+      "bgcolor": "#355"
     },
     {
-      "id": 530,
-      "type": "PixaromaLabel",
+      "id": 512,
+      "type": "WildcardProcessor",
       "pos": [
-        -1256.9911350971533,
-        2332.0726785917336
+        -139.0670444879816,
+        2436.980399385613
       ],
       "size": [
-        393,
-        40
+        497.4357956033082,
+        725.7551879054481
       ],
-      "flags": {
-        "no_title": true
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "processed_text",
+          "type": "STRING",
+          "links": [
+            865
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-TagForge",
+        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
+        "Node name for S&R": "WildcardProcessor",
+        "aux_id": "huchukato/ComfyUI-TagForge",
+        "tagforge_reproduce_seed": 543274943133878,
+        "tagforge_wildcard_mode": "populate"
       },
-      "order": 1,
+      "widgets_values": [
+        "__qwen21/faceswap__",
+        120590739565301,
+        "randomize",
+        "Re-render the face of the person in <image1> with the facial identity of the person in <image2>, as a photorealistic in-place edit — do not paste or overlay pixels. Rebuild the features inside the hairline (eyes, eyebrows, nose, lips, skin texture, facial bone structure) using the identity of <image2>, adapted to the head tilt, neck connection, skin color temperature, directional lighting and shadow fall of <image1>. The hair is NOT part of the swap: keep the exact hairstyle, hairline, hair color, volume, and silhouette of <image1>, and do not reproduce the hair of <image2> at all. Keep the ears, head silhouette, body, clothing, background, framing and photographic style of <image1> completely unchanged. The result must read as the same photograph of <image1> with a different identity — fully relit and integrated, no pasted edges, no seam artifacts at the jaw or hairline.",
+        "populate",
+        true,
+        0.5,
+        "None"
+      ],
+      "widgets_values_named": {
+        "text": "__qwen21/faceswap__",
+        "seed": 120590739565301,
+        "control_after_generate": "randomize",
+        "populated_text": "Re-render the face of the person in <image1> with the facial identity of the person in <image2>, as a photorealistic in-place edit — do not paste or overlay pixels. Rebuild the features inside the hairline (eyes, eyebrows, nose, lips, skin texture, facial bone structure) using the identity of <image2>, adapted to the head tilt, neck connection, skin color temperature, directional lighting and shadow fall of <image1>. The hair is NOT part of the swap: keep the exact hairstyle, hairline, hair color, volume, and silhouette of <image1>, and do not reproduce the hair of <image2> at all. Keep the ears, head silhouette, body, clothing, background, framing and photographic style of <image1> completely unchanged. The result must read as the same photograph of <image1> with a different identity — fully relit and integrated, no pasted edges, no seam artifacts at the jaw or hairline.",
+        "mode": "populate",
+        "deduplicate": true,
+        "downvote_factor": 0.5,
+        "base_model": "None"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 541,
+      "type": "PixaromaNote",
+      "pos": [
+        -1256.0812370530618,
+        3230.6592907178238
+      ],
+      "size": [
+        1088.702195579944,
+        953.5405976794505
+      ],
+      "flags": {},
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
+      "title": "Wildcard Guide",
       "properties": {
         "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaLabel",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
+        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
+        "Node name for S&R": "PixaromaNote"
       },
       "widgets_values": [
-        "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+        "{\"version\":1,\"content\":\"<p><br></p><h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/sheet__</code></td><td>1</td><td>Quick character sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new random scene (location wildcard)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Subject of image1 onto background of image2</td></tr>\\n    <tr><td><code>__qwen21/enhance__</code></td><td>1</td><td>Detail enhance, restore, creative upscale (pairs with detailer LoRA)</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image1 ← identity from image2</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image1 ← head from image2</td></tr>\\n    <tr><td><code>__qwen21/eyeswap__</code></td><td>2</td><td>Eyes of image1 ← eyes from image2</td></tr>\\n    <tr><td><code>__qwen21/makeupswap__</code></td><td>2</td><td>Makeup, contacts &amp; lipstick of image2 onto image1 — identity kept</td></tr>\\n    <tr><td><code>__qwen21/hairswap__</code></td><td>2</td><td>Hair of image1 ← hair from image2</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Applies every edit you describe at once</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Change time/weather to what you describe</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes the object you name + inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts the object you describe</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Replaces visible text with yours</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>Camera angle you describe</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>⚠️ Important: QwenVL bypass</h3><p>\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = photo to modify, image2 = identity donor).</li>\\n  <li><b>Edits that need a target</b> — for <code>removeobject</code>, <code>insertobject</code>, <code>textedit</code>, <code>novelview</code>, <code>timeweather</code> and <code>multiedit</code>, describe what to change in your own words next to the wildcard: <code>a red parked car, __qwen21/removeobject__</code>.</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":400,\"height\":200}",
+        ""
       ],
       "widgets_values_named": {
-        "label_json": "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+        "note_json": "{\"version\":1,\"content\":\"<p><br></p><h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/sheet__</code></td><td>1</td><td>Quick character sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new random scene (location wildcard)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Subject of image1 onto background of image2</td></tr>\\n    <tr><td><code>__qwen21/enhance__</code></td><td>1</td><td>Detail enhance, restore, creative upscale (pairs with detailer LoRA)</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image1 ← identity from image2</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image1 ← head from image2</td></tr>\\n    <tr><td><code>__qwen21/eyeswap__</code></td><td>2</td><td>Eyes of image1 ← eyes from image2</td></tr>\\n    <tr><td><code>__qwen21/makeupswap__</code></td><td>2</td><td>Makeup, contacts &amp; lipstick of image2 onto image1 — identity kept</td></tr>\\n    <tr><td><code>__qwen21/hairswap__</code></td><td>2</td><td>Hair of image1 ← hair from image2</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Applies every edit you describe at once</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Change time/weather to what you describe</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes the object you name + inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts the object you describe</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Replaces visible text with yours</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>Camera angle you describe</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>⚠️ Important: QwenVL bypass</h3><p>\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = photo to modify, image2 = identity donor).</li>\\n  <li><b>Edits that need a target</b> — for <code>removeobject</code>, <code>insertobject</code>, <code>textedit</code>, <code>novelview</code>, <code>timeweather</code> and <code>multiedit</code>, describe what to change in your own words next to the wildcard: <code>a red parked car, __qwen21/removeobject__</code>.</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":400,\"height\":200}",
+        "note_dom": ""
       },
-      "color": "rgba(0,0,0,0)",
-      "bgcolor": "rgba(0,0,0,0)"
+      "color": "#cf772a",
+      "bgcolor": "#0f0f0f"
     },
     {
-      "id": 528,
+      "id": 548,
       "type": "PixaromaLabel",
       "pos": [
-        -1254.5186357362359,
-        2227.638293590729
+        -1247.9471004442098,
+        2217.178104709207
       ],
       "size": [
         486,
@@ -152,7 +612,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 2,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -172,39 +632,44 @@
       "bgcolor": "rgba(0,0,0,0)"
     },
     {
-      "id": 518,
-      "type": "PixaromaRunTimer",
+      "id": 549,
+      "type": "PixaromaLabel",
       "pos": [
-        1645.0765169107926,
-        2610
+        -1250.4195998051273,
+        2321.612489710212
       ],
       "size": [
-        370,
-        123
+        393,
+        40
       ],
       "flags": {
         "no_title": true
       },
-      "order": 3,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
         "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaRunTimer",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "runTimerLastMs": 34168.60000000149
+        "Node name for S&R": "PixaromaLabel",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
-      "color": "#1d1d1d",
-      "bgcolor": "#2a2a2a"
+      "widgets_values": [
+        "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+      ],
+      "widgets_values_named": {
+        "label_json": "{\"text\":\"The Only Workflow You Will Need\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+      },
+      "color": "rgba(0,0,0,0)",
+      "bgcolor": "rgba(0,0,0,0)"
     },
     {
-      "id": 517,
+      "id": 550,
       "type": "PixaromaMonitor",
       "pos": [
-        1634.509490283905,
-        2407.839936825786
+        -127.44030256213965,
+        2192.1979443772752
       ],
       "size": [
         390,
@@ -213,7 +678,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 4,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -255,18 +720,46 @@
       "bgcolor": "#2a2a2a"
     },
     {
-      "id": 476,
-      "type": "MarkdownNote",
+      "id": 551,
+      "type": "PixaromaRunTimer",
       "pos": [
-        1974.7467395055974,
-        2817.485598998393
+        312.3236665748431,
+        2237.353000303421
       ],
       "size": [
-        408.2474584948768,
-        818.0217170647898
+        370,
+        123
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaRunTimer",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "runTimerLastMs": 38829.40000003576
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 552,
+      "type": "MarkdownNote",
+      "pos": [
+        2079.252746868326,
+        2456.2684639045337
+      ],
+      "size": [
+        402.1789598073924,
+        853.7856702287368
       ],
       "flags": {},
-      "order": 5,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -282,221 +775,37 @@
       "bgcolor": "#533"
     },
     {
-      "id": 526,
-      "type": "PixaromaSaveImage",
-      "pos": [
-        1177.4392991103462,
-        2811.1574934344335
-      ],
-      "size": [
-        771.320979943624,
-        831.5811670183607
-      ],
-      "flags": {},
-      "order": 21,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 824
-        },
-        {
-          "name": "name",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaSaveImage",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "saveImageState": "{\"version\":1,\"folder\":\"\",\"pattern\":\"Qwen21_%date:yyyy-MM-dd%_%counter%%\",\"format\":\"jpg\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":true,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":true,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}",
-        "pixAccent": "#0d9488",
-        "pixSiLastRun": {
-          "ok": true,
-          "sum": "saved 1 image",
-          "folder": "/workspace/runpod-slim/ComfyUI/output",
-          "entries": [
-            {
-              "filename": "Qwen21_2026-10-01_001%.jpg",
-              "subfolder": "",
-              "type": "output",
-              "token": "",
-              "path": "",
-              "bust": "1790891320426"
-            }
-          ],
-          "n": 1,
-          "w": 896,
-          "h": 1152
-        }
-      },
-      "widgets_values": [
-        ""
-      ],
-      "widgets_values_named": {
-        "pixaroma_save_image": ""
-      },
-      "color": "#2f7fc0",
-      "bgcolor": "#26323b"
-    },
-    {
-      "id": 478,
-      "type": "PixaromaResolution",
-      "pos": [
-        156.99201248754812,
-        3750.9941014997275
-      ],
-      "size": [
-        240,
-        435
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            752
-          ]
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            753
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
-        "Node name for S&R": "PixaromaResolution",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "resolutionState": "{\"mode\":\"preset\",\"ratio\":\"2:3\",\"w\":768,\"h\":1152,\"custom_w\":1024,\"custom_h\":1024,\"custom_ratio_w\":4,\"custom_ratio_h\":3,\"snap\":16}"
-      },
-      "widgets_values": [
-        {
-          "mode": "preset",
-          "ratio": "2:3",
-          "w": 768,
-          "h": 1152,
-          "custom_w": 1024,
-          "custom_h": 1024,
-          "custom_ratio_w": 4,
-          "custom_ratio_h": 3,
-          "snap": 16
-        }
-      ],
-      "widgets_values_named": {
-        "resolution_ui": {
-          "mode": "preset",
-          "ratio": "2:3",
-          "w": 768,
-          "h": 1152,
-          "custom_w": 1024,
-          "custom_h": 1024,
-          "custom_ratio_w": 4,
-          "custom_ratio_h": 3,
-          "snap": 16
-        }
-      },
-      "color": "#1d1d1d",
-      "bgcolor": "#2a2a2a"
-    },
-    {
-      "id": 533,
-      "type": "PixaromaCompare",
-      "pos": [
-        1179.113067736062,
-        3738.2064506683287
-      ],
-      "size": [
-        763.1918119226357,
-        866.910003653998
-      ],
-      "flags": {},
-      "order": 22,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "image1",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "image2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 832
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaCompare",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "compareState": {
-          "mode": 0,
-          "showWhich": 0,
-          "opacity": 0.5,
-          "images": [
-            null,
-            {
-              "filename": "pixaroma_compare_pixcmp_rndsz_00001_.png",
-              "subfolder": "",
-              "type": "temp"
-            }
-          ]
-        }
-      },
-      "color": "#1f9285",
-      "bgcolor": "#233533"
-    },
-    {
-      "id": 524,
+      "id": 556,
       "type": "PixaromaGroupSwitch",
       "pos": [
-        -125.23348793676081,
-        3756.8856147986685
+        -131.42895901239766,
+        3229.398226301749
       ],
       "size": [
         250,
-        165
+        134
       ],
       "flags": {},
-      "order": 7,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
         "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "ver": "19834fb532529c5d85cda0fc8da18cdd59fcd930",
         "Node name for S&R": "PixaromaGroupSwitch",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "groupSwitchState": {
           "version": 1,
           "action": "bypass",
           "scope": "pick",
           "picked": [
-            "ng:40",
             "ng:41",
             "ng:42",
-            "ng:43"
+            "ng:47"
           ],
           "sort": "position",
           "restriction": "any"
-        },
-        "pixAccent": "#0284c7"
+        }
       },
       "widgets_values": [
         {
@@ -504,10 +813,9 @@
           "action": "bypass",
           "scope": "pick",
           "picked": [
-            "ng:40",
             "ng:41",
             "ng:42",
-            "ng:43"
+            "ng:47"
           ],
           "sort": "position",
           "restriction": "any"
@@ -519,947 +827,163 @@
           "action": "bypass",
           "scope": "pick",
           "picked": [
-            "ng:40",
             "ng:41",
             "ng:42",
-            "ng:43"
+            "ng:47"
           ],
           "sort": "position",
           "restriction": "any"
         }
       },
-      "color": "#1f9e6a",
-      "bgcolor": "#23362f"
+      "color": "#cf772a",
+      "bgcolor": "#3e3025"
     },
     {
-      "id": 534,
-      "type": "PixaromaLabel",
+      "id": 557,
+      "type": "PixaromaCompare",
       "pos": [
-        1314.6219994320052,
-        2605.480634023158
+        741.9127035932413,
+        3385.6600532160355
       ],
       "size": [
-        146,
-        38
-      ],
-      "flags": {
-        "no_title": true
-      },
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaLabel",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
-      },
-      "widgets_values": [
-        "{\"text\":\"Label Pixaroma\",\"fontSize\":18,\"fontFamily\":\"Arial\"}"
-      ],
-      "widgets_values_named": {
-        "label_json": "{\"text\":\"Label Pixaroma\",\"fontSize\":18,\"fontFamily\":\"Arial\"}"
-      },
-      "color": "rgba(0,0,0,0)",
-      "bgcolor": "rgba(0,0,0,0)"
-    },
-    {
-      "id": 525,
-      "type": "QwenVL_Unified",
-      "pos": [
-        -110,
-        2960
-      ],
-      "size": [
-        492.35952363843035,
-        392
+        1288.1755507033008,
+        665.4739482244945
       ],
       "flags": {},
-      "order": 16,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
-          "name": "image",
+          "name": "image1",
           "shape": 7,
           "type": "IMAGE",
-          "link": 834
+          "link": 871
         },
         {
           "name": "image2",
           "shape": 7,
           "type": "IMAGE",
-          "link": 835
-        },
-        {
-          "name": "video",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 820
+          "link": 872
         }
       ],
-      "outputs": [
-        {
-          "name": "RESPONSE",
-          "type": "STRING",
-          "links": [
-            822
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-QwenVL-Mod",
-        "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
-        "Node name for S&R": "QwenVL_Unified",
-        "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
-      },
-      "widgets_values": [
-        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-        "IMG › Qwen Edit",
-        "None",
-        "",
-        8192,
-        false,
-        2208586920,
-        "randomize",
-        false,
-        false,
-        16,
-        "5s"
-      ],
-      "widgets_values_named": {
-        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-        "preset_prompt": "IMG › Qwen Edit",
-        "camera_tag": "None",
-        "prompt": "",
-        "max_tokens": 8192,
-        "keep_model_loaded": false,
-        "seed": 2208586920,
-        "control_after_generate": "randomize",
-        "keep_last_prompt": false,
-        "passthrough": false,
-        "frame_count": 16,
-        "duration": "5s"
-      },
-      "color": "#0d9489",
-      "bgcolor": "#134e4a"
-    },
-    {
-      "id": 479,
-      "type": "Seed (rgthree)",
-      "pos": [
-        446.3406375265213,
-        3505.6019806616205
-      ],
-      "size": [
-        315,
-        130
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "SEED",
-          "shape": 3,
-          "type": "INT",
-          "links": [
-            806
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
-        "randomMax": 1125899906842624,
-        "randomMin": 0,
-        "aux_id": "rgthree/rgthree-comfy"
-      },
-      "widgets_values": [
-        -1,
-        "",
-        "",
-        "okay"
-      ],
-      "widgets_values_named": {
-        "seed": -1,
-        "🎲 Randomize Each Time": "",
-        "🎲 New Fixed Random": "",
-        "USE_LAST_SEED": "okay"
-      }
-    },
-    {
-      "id": 513,
-      "type": "PixaromaShowText",
-      "pos": [
-        -120.60345155337274,
-        3425.365576595502
-      ],
-      "size": [
-        507.1009728912968,
-        265.433854878725
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "source",
-          "type": "*",
-          "link": 822
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            833
-          ]
-        }
-      ],
+      "outputs": [],
       "properties": {
         "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
-        "Node name for S&R": "PixaromaShowText",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
-      },
-      "widgets_values": [
-        "Generate a professional character reference sheet based strictly on <image1> and <image2>. Preserve the exact same woman’s face, facial structure, dark brown wet ponytail with a blue scrunchie, tan skin tone, glossy wet skin texture, and her teal zip-front athletic shorts with black straps. Create three full-body turnaround views at the top: front, side/profile, and back—same neutral standing pose, arms slightly away from the torso, identical outfit and proportions, no pose or color drift. On the bottom, add three expression close-ups: open mouth, smiling with teeth visible, and surprised expression. On the right, include one large, highly detailed shoulder-up portrait with the same face and identity, using <image2> to enhance facial accuracy and capture any missing details. Ensure all panels are clearly separated with consistent spacing, no overlaps or bleeding, full-body and facial details fully visible, and absolute character consistency across the entire sheet."
-      ],
-      "widgets_values_named": {
-        "text": "Generate a professional character reference sheet based strictly on <image1> and <image2>. Preserve the exact same woman’s face, facial structure, dark brown wet ponytail with a blue scrunchie, tan skin tone, glossy wet skin texture, and her teal zip-front athletic shorts with black straps. Create three full-body turnaround views at the top: front, side/profile, and back—same neutral standing pose, arms slightly away from the torso, identical outfit and proportions, no pose or color drift. On the bottom, add three expression close-ups: open mouth, smiling with teeth visible, and surprised expression. On the right, include one large, highly detailed shoulder-up portrait with the same face and identity, using <image2> to enhance facial accuracy and capture any missing details. Ensure all panels are clearly separated with consistent spacing, no overlaps or bleeding, full-body and facial details fully visible, and absolute character consistency across the entire sheet."
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 491,
-      "type": "TextEncodeQwenImage21",
-      "pos": [
-        426.05714968037387,
-        2468.201488393896
-      ],
-      "size": [
-        701.7278811803419,
-        760.643242147109
-      ],
-      "flags": {},
-      "order": 19,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 809
-        },
-        {
-          "name": "images.image_1",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 836
-        },
-        {
-          "name": "images.image_2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 837
-        },
-        {
-          "name": "images.image_3",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "images.image_4",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": 807
-        },
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 833
-        }
-      ],
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "links": [
-            803
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "links": [
-            804
-          ]
-        },
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "links": [
-            751
+        "ver": "19834fb532529c5d85cda0fc8da18cdd59fcd930",
+        "Node name for S&R": "PixaromaCompare",
+        "compareState": {
+          "mode": 0,
+          "showWhich": 0,
+          "opacity": 0.5,
+          "images": [
+            {
+              "filename": "pixaroma_compare_pixcmp_ioaaa_00001_.png",
+              "subfolder": "",
+              "type": "temp"
+            },
+            {
+              "filename": "pixaroma_compare_pixcmp_ioaaa_00002_.png",
+              "subfolder": "",
+              "type": "temp"
+            }
           ]
         }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "TextEncodeQwenImage21"
-      },
-      "widgets_values": [
-        "Regenerate the character from <image1> performing the exact dynamic action pose of the person in <image2>. Maintain every detail of the character's facial likeness, proportions, hair, and current wardrobe from <image1>. Reorient the limbs, torso twist, weight distribution, and hand gestures to mirror <image2> identically, updating fabric folds and wrinkles according to the dynamic movement.",
-        "ugly, bad quality, low quality, blurry",
-        1024
-      ],
-      "widgets_values_named": {
-        "prompt": "Regenerate the character from <image1> performing the exact dynamic action pose of the person in <image2>. Maintain every detail of the character's facial likeness, proportions, hair, and current wardrobe from <image1>. Reorient the limbs, torso twist, weight distribution, and hand gestures to mirror <image2> identically, updating fabric folds and wrinkles according to the dynamic movement.",
-        "negative_prompt": "ugly, bad quality, low quality, blurry",
-        "resolution": 1024
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 489,
-      "type": "ComfySwitchNode",
-      "pos": [
-        812.3173413726764,
-        3284.4565769543624
-      ],
-      "size": [
-        270,
-        80
-      ],
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "on_false",
-          "shape": 7,
-          "type": "LATENT",
-          "link": 751
-        },
-        {
-          "name": "on_true",
-          "shape": 7,
-          "type": "LATENT",
-          "link": 747
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "LATENT",
-          "links": [
-            805
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "ComfySwitchNode"
-      },
-      "widgets_values": [
-        false
-      ],
-      "widgets_values_named": {
-        "switch": false
-      }
-    },
-    {
-      "id": 539,
-      "type": "PixaromaLoadImage",
-      "pos": [
-        -1229.8397233020364,
-        2497.488384778726
-      ],
-      "size": [
-        483.4418000957579,
-        649.4168863822638
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            834,
-            836
-          ]
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "filename",
-          "type": "STRING",
-          "links": null
-        },
-        {
-          "name": "original_width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "original_height",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "title": "Load Image 1",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaLoadImage",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
-      },
-      "widgets_values": [
-        "PMP/FD_2026-10-01/234729_00001_.png [output]",
-        "image",
-        ""
-      ],
-      "widgets_values_named": {
-        "image": "PMP/FD_2026-10-01/234729_00001_.png [output]",
-        "upload": "image",
-        "pixaroma_load_image_ui": ""
       },
       "color": "#1f9e6a",
       "bgcolor": "#23362f"
-    },
-    {
-      "id": 540,
-      "type": "PixaromaLoadImage",
-      "pos": [
-        -677.0680606303991,
-        2493.8956569468064
-      ],
-      "size": [
-        479.9558857057714,
-        646.4736044953993
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            835,
-            837
-          ]
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "filename",
-          "type": "STRING",
-          "links": null
-        },
-        {
-          "name": "original_width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "original_height",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "title": "Load Image 2",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaLoadImage",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "loadImagePixState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1152,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":true}"
-      },
-      "widgets_values": [
-        "PMP/FD_2026-09-25/110704_00002_.png [output]",
-        "image",
-        ""
-      ],
-      "widgets_values_named": {
-        "image": "PMP/FD_2026-09-25/110704_00002_.png [output]",
-        "upload": "image",
-        "pixaroma_load_image_ui": ""
-      },
-      "color": "#2f7fc0",
-      "bgcolor": "#26323b"
-    },
-    {
-      "id": 515,
-      "type": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
-      "pos": [
-        1168.5609032230086,
-        2436.3816795899093
-      ],
-      "size": [
-        444.04827694231903,
-        314
-      ],
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 803
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 804
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 805
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "widget": {
-            "name": "seed"
-          },
-          "link": 806
-        }
-      ],
-      "outputs": [
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            807
-          ]
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            824,
-            832
-          ]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            809
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.1",
-        "previewExposures": [
-          {
-            "name": "$$canvas-image-preview",
-            "sourceNodeId": "509",
-            "sourcePreviewName": "$$canvas-image-preview"
-          }
-        ]
-      },
-      "widgets_values": [
-        0,
-        "qwen-image-2.1-UC-int8_convrot.safetensors",
-        "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
-        "qwen_image_2.1_vae_bf16.safetensors",
-        25,
-        1,
-        "euler",
-        "simple",
-        "elusarcas-qwen2-1-detailer-v1.safetensors",
-        0.7
-      ],
-      "widgets_values_named": {
-        "seed": 0,
-        "unet_name": "qwen-image-2.1-UC-int8_convrot.safetensors",
-        "clip_name": "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
-        "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
-        "steps": 25,
-        "cfg": 1,
-        "sampler_name": "euler",
-        "scheduler": "simple",
-        "lora_name": "elusarcas-qwen2-1-detailer-v1.safetensors",
-        "strength_model": 0.7
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 512,
-      "type": "WildcardProcessor",
-      "pos": [
-        -117.5455908516988,
-        2447.192600070959
-      ],
-      "size": [
-        490,
-        390
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "processed_text",
-          "type": "STRING",
-          "links": [
-            820
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-TagForge",
-        "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
-        "Node name for S&R": "WildcardProcessor",
-        "aux_id": "huchukato/ComfyUI-TagForge",
-        "tagforge_reproduce_seed": 543274943133878,
-        "tagforge_wildcard_mode": "populate"
-      },
-      "widgets_values": [
-        "__qwen21/prosheet__",
-        440606820354802,
-        "randomize",
-        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.",
-        "populate",
-        true,
-        0.5,
-        "None"
-      ],
-      "widgets_values_named": {
-        "text": "__qwen21/prosheet__",
-        "seed": 440606820354802,
-        "control_after_generate": "randomize",
-        "populated_text": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.",
-        "mode": "populate",
-        "deduplicate": true,
-        "downvote_factor": 0.5,
-        "base_model": "None"
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 541,
-      "type": "PixaromaNote",
-      "pos": [
-        -1256.0812370530618,
-        3230.6592907178238
-      ],
-      "size": [
-        1088.702195579944,
-        953.5405976794505
-      ],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Wildcard Guide",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaNote"
-      },
-      "widgets_values": [
-        "{\"version\":1,\"content\":\"<p><br></p><h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/sheet__</code></td><td>1</td><td>Quick character sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new random scene (location wildcard)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Subject of image1 onto background of image2</td></tr>\\n    <tr><td><code>__qwen21/enhance__</code></td><td>1</td><td>Detail enhance, restore, creative upscale (pairs with detailer LoRA)</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image1 ← identity from image2</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image1 ← head from image2</td></tr>\\n    <tr><td><code>__qwen21/eyeswap__</code></td><td>2</td><td>Eyes of image1 ← eyes from image2</td></tr>\\n    <tr><td><code>__qwen21/makeupswap__</code></td><td>2</td><td>Makeup, contacts &amp; lipstick of image2 onto image1 — identity kept</td></tr>\\n    <tr><td><code>__qwen21/hairswap__</code></td><td>2</td><td>Hair of image1 ← hair from image2</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Applies every edit you describe at once</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Change time/weather to what you describe</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes the object you name + inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts the object you describe</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Replaces visible text with yours</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>Camera angle you describe</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>⚠️ Important: QwenVL bypass</h3><p>\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = photo to modify, image2 = identity donor).</li>\\n  <li><b>Edits that need a target</b> — for <code>removeobject</code>, <code>insertobject</code>, <code>textedit</code>, <code>novelview</code>, <code>timeweather</code> and <code>multiedit</code>, describe what to change in your own words next to the wildcard: <code>a red parked car, __qwen21/removeobject__</code>.</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":400,\"height\":200}",
-        ""
-      ],
-      "widgets_values_named": {
-        "note_json": "{\"version\":1,\"content\":\"<p><br></p><h2>Qwen Image Edit 2.1 — Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text — the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/sheet__</code></td><td>1</td><td>Quick character sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>2</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new random scene (location wildcard)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Subject of image1 onto background of image2</td></tr>\\n    <tr><td><code>__qwen21/enhance__</code></td><td>1</td><td>Detail enhance, restore, creative upscale (pairs with detailer LoRA)</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image1 ← identity from image2</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image1 ← head from image2</td></tr>\\n    <tr><td><code>__qwen21/eyeswap__</code></td><td>2</td><td>Eyes of image1 ← eyes from image2</td></tr>\\n    <tr><td><code>__qwen21/makeupswap__</code></td><td>2</td><td>Makeup, contacts &amp; lipstick of image2 onto image1 — identity kept</td></tr>\\n    <tr><td><code>__qwen21/hairswap__</code></td><td>2</td><td>Hair of image1 ← hair from image2</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Applies every edit you describe at once</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Change time/weather to what you describe</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes the object you name + inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts the object you describe</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Replaces visible text with yours</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>Camera angle you describe</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime → photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo → manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>⚠️ Important: QwenVL bypass</h3><p>\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched — if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony→Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> — edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = photo to modify, image2 = identity donor).</li>\\n  <li><b>Edits that need a target</b> — for <code>removeobject</code>, <code>insertobject</code>, <code>textedit</code>, <code>novelview</code>, <code>timeweather</code> and <code>multiedit</code>, describe what to change in your own words next to the wildcard: <code>a red parked car, __qwen21/removeobject__</code>.</li>\\n  <li><b>Combine with text</b> — <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> — drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line → becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> — <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":400,\"height\":200}",
-        "note_dom": ""
-      },
-      "color": "#cf772a",
-      "bgcolor": "#0f0f0f"
-    },
-    {
-      "id": 536,
-      "type": "Fast Groups Bypasser (rgthree)",
-      "pos": [
-        -126.07069804793385,
-        3984.543035121041
-      ],
-      "size": [
-        254.98957092507058,
-        105.40393101316386
-      ],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "title": "LoRA Enhance",
-      "properties": {
-        "matchColors": "yellow",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "position",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default"
-      },
-      "color": "#432",
-      "bgcolor": "#653"
     }
   ],
   "links": [
     [
-      747,
-      487,
+      824,
+      515,
       0,
-      489,
+      526,
+      0,
+      "IMAGE"
+    ],
+    [
+      864,
+      515,
       1,
-      "LATENT"
-    ],
-    [
-      751,
-      491,
-      2,
-      489,
+      513,
       0,
-      "LATENT"
+      "STRING"
     ],
     [
-      752,
+      861,
       478,
       0,
-      487,
+      515,
       0,
       "INT"
     ],
     [
-      753,
+      862,
       478,
       1,
-      487,
+      515,
       1,
       "INT"
-    ],
-    [
-      803,
-      491,
-      0,
-      515,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      804,
-      491,
-      1,
-      515,
-      1,
-      "CONDITIONING"
-    ],
-    [
-      805,
-      489,
-      0,
-      515,
-      2,
-      "LATENT"
     ],
     [
       806,
       479,
       0,
       515,
-      3,
+      2,
       "INT"
     ],
     [
-      822,
-      525,
-      0,
-      513,
-      0,
-      "STRING"
-    ],
-    [
-      824,
-      515,
-      1,
-      526,
-      0,
-      "IMAGE"
-    ],
-    [
-      832,
-      515,
-      1,
-      533,
-      1,
-      "IMAGE"
-    ],
-    [
-      834,
-      539,
-      0,
-      525,
-      0,
-      "IMAGE"
-    ],
-    [
-      835,
-      540,
-      0,
-      525,
-      1,
-      "IMAGE"
-    ],
-    [
-      820,
+      865,
       512,
       0,
-      525,
+      515,
       3,
       "STRING"
     ],
     [
-      809,
-      515,
-      2,
-      491,
-      0,
-      "CLIP"
-    ],
-    [
-      836,
+      866,
       539,
       0,
-      491,
-      1,
+      515,
+      4,
       "IMAGE"
     ],
     [
-      837,
+      867,
       540,
       0,
-      491,
-      2,
+      515,
+      5,
       "IMAGE"
     ],
     [
-      807,
-      515,
+      871,
+      539,
       0,
-      491,
-      5,
-      "VAE"
+      557,
+      0,
+      "IMAGE"
     ],
     [
-      833,
-      513,
+      872,
+      515,
       0,
-      491,
-      6,
-      "STRING"
+      557,
+      1,
+      "IMAGE"
     ]
   ],
   "groups": [
     {
-      "id": 36,
-      "title": "Conditioning",
-      "bounding": [
-        411.88689962246696,
-        2398.9558379034,
-        720.8632467260464,
-        997.6974283919053
-      ],
-      "color": "#3f789e",
-      "flags": {}
-    },
-    {
       "id": 38,
       "title": "Seed + Resolution",
       "bounding": [
-        421.9574750733067,
-        3428.3574526556176,
-        717.5948129612442,
-        221.6218051010742
-      ],
-      "color": "#3f789e",
-      "flags": {}
-    },
-    {
-      "id": 40,
-      "title": "QWEN PROMPTING",
-      "bounding": [
-        -130,
-        2880,
-        512.9202139859683,
-        492.41613059992005
+        380.11614819231033,
+        2409.6795870339524,
+        322.89759537594625,
+        751.7411265795677
       ],
       "color": "#3f789e",
       "flags": {}
@@ -1489,13 +1013,13 @@
       "flags": {}
     },
     {
-      "id": 43,
-      "title": "IMAGE COMPARE",
+      "id": 47,
+      "title": "COMPARE",
       "bounding": [
-        1169.113067736062,
-        3668.2064506683287,
-        783.1918119226357,
-        946.9100036539976
+        731.9127035932413,
+        3315.6600532160355,
+        1308.1755507033008,
+        745.4739482244945
       ],
       "color": "#3f789e",
       "flags": {}
@@ -1507,9 +1031,9 @@
         "id": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
         "version": 1,
         "state": {
-          "lastGroupId": 45,
-          "lastNodeId": 541,
-          "lastLinkId": 837,
+          "lastGroupId": 47,
+          "lastNodeId": 557,
+          "lastLinkId": 872,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1518,59 +1042,44 @@
         "inputNode": {
           "id": -10,
           "bounding": [
-            948.4883434696196,
-            2820.396609253261,
-            140.361328125,
-            308
+            441.48940474273377,
+            2729.9095028686634,
+            143.044921875,
+            428
           ]
         },
         "outputNode": {
           "id": -20,
           "bounding": [
-            2236.374753366515,
-            2830.396609253261,
+            3297.5043051211783,
+            2826.6587881051405,
             128,
-            108
+            88
           ]
         },
         "inputs": [
           {
-            "id": "25612e2b-fc0d-4328-a346-a63c997ea92e",
-            "name": "positive",
-            "type": "CONDITIONING",
+            "id": "5d058f92-0286-4728-aa89-4405c6acae4d",
+            "name": "width",
+            "type": "INT",
             "linkIds": [
-              792
+              852
             ],
-            "localized_name": "positivo",
             "pos": [
-              1064.8496715946196,
-              2844.396609253261
+              560.5343266177338,
+              2753.9095028686634
             ]
           },
           {
-            "id": "c167c654-2262-45dc-92b6-59f4ee7a0546",
-            "name": "negative",
-            "type": "CONDITIONING",
+            "id": "e8e6de52-9227-4cdd-8bd2-f9d38f3afe76",
+            "name": "height",
+            "type": "INT",
             "linkIds": [
-              793
+              853
             ],
-            "localized_name": "negativo",
             "pos": [
-              1064.8496715946196,
-              2864.396609253261
-            ]
-          },
-          {
-            "id": "c0662896-93b5-4db2-a865-303a6275e3e0",
-            "name": "latent_image",
-            "type": "LATENT",
-            "linkIds": [
-              794
-            ],
-            "localized_name": "immagine_latent",
-            "pos": [
-              1064.8496715946196,
-              2884.396609253261
+              560.5343266177338,
+              2773.9095028686634
             ]
           },
           {
@@ -1582,56 +1091,32 @@
             ],
             "localized_name": "seed",
             "pos": [
-              1064.8496715946196,
-              2904.396609253261
+              560.5343266177338,
+              2793.9095028686634
             ]
           },
           {
-            "id": "953043e1-d8f3-4f20-9a97-7947fd780efd",
-            "name": "unet_name",
-            "type": "COMBO",
+            "id": "84cae72e-afef-4614-87b1-b633ef54b5dd",
+            "name": "prompt",
+            "type": "STRING",
             "linkIds": [
-              810
+              858
             ],
             "pos": [
-              1064.8496715946196,
-              2924.396609253261
+              560.5343266177338,
+              2813.9095028686634
             ]
           },
           {
-            "id": "b8d49b6d-af6b-48f7-863b-cd93dc5a6371",
-            "name": "clip_name",
-            "type": "COMBO",
+            "id": "cf685235-b3d4-4727-8d73-307511f9a4a7",
+            "name": "negative_prompt",
+            "type": "STRING",
             "linkIds": [
-              811
+              868
             ],
             "pos": [
-              1064.8496715946196,
-              2944.396609253261
-            ]
-          },
-          {
-            "id": "d2bd7e9e-9595-4744-9418-203c756bcf8f",
-            "name": "vae_name",
-            "type": "COMBO",
-            "linkIds": [
-              812
-            ],
-            "pos": [
-              1064.8496715946196,
-              2964.396609253261
-            ]
-          },
-          {
-            "id": "c0b9a582-cca1-4c3e-a16c-e64b4fd062c8",
-            "name": "steps",
-            "type": "INT",
-            "linkIds": [
-              814
-            ],
-            "pos": [
-              1064.8496715946196,
-              2984.396609253261
+              560.5343266177338,
+              3113.9095028686634
             ]
           },
           {
@@ -1642,8 +1127,20 @@
               815
             ],
             "pos": [
-              1064.8496715946196,
-              3004.396609253261
+              560.5343266177338,
+              2833.9095028686634
+            ]
+          },
+          {
+            "id": "c0b9a582-cca1-4c3e-a16c-e64b4fd062c8",
+            "name": "steps",
+            "type": "INT",
+            "linkIds": [
+              814
+            ],
+            "pos": [
+              560.5343266177338,
+              2853.9095028686634
             ]
           },
           {
@@ -1654,8 +1151,8 @@
               816
             ],
             "pos": [
-              1064.8496715946196,
-              3024.396609253261
+              560.5343266177338,
+              2873.9095028686634
             ]
           },
           {
@@ -1666,49 +1163,134 @@
               817
             ],
             "pos": [
-              1064.8496715946196,
-              3044.396609253261
+              560.5343266177338,
+              2893.9095028686634
             ]
           },
           {
-            "id": "80bddb1f-8adb-420f-a9a4-938218ece2d3",
+            "id": "953043e1-d8f3-4f20-9a97-7947fd780efd",
+            "name": "unet_name",
+            "type": "COMBO",
+            "linkIds": [
+              810
+            ],
+            "pos": [
+              560.5343266177338,
+              2913.9095028686634
+            ]
+          },
+          {
+            "id": "b8d49b6d-af6b-48f7-863b-cd93dc5a6371",
+            "name": "clip_name",
+            "type": "COMBO",
+            "linkIds": [
+              811
+            ],
+            "pos": [
+              560.5343266177338,
+              2933.9095028686634
+            ]
+          },
+          {
+            "id": "d2bd7e9e-9595-4744-9418-203c756bcf8f",
+            "name": "vae_name",
+            "type": "COMBO",
+            "linkIds": [
+              812
+            ],
+            "pos": [
+              560.5343266177338,
+              2953.9095028686634
+            ]
+          },
+          {
+            "id": "75896942-dea2-4d04-a141-4cc5957b6a1c",
             "name": "lora_name",
             "type": "COMBO",
             "linkIds": [
-              829
+              844
             ],
             "pos": [
-              1064.8496715946196,
-              3064.396609253261
+              560.5343266177338,
+              2973.9095028686634
             ]
           },
           {
-            "id": "7f63731b-ca20-40fd-8aad-dc00e17fda06",
+            "id": "6b582b87-4dcb-4a75-8f92-03a6d6850708",
             "name": "strength_model",
             "type": "FLOAT",
             "linkIds": [
-              830
+              845
             ],
             "pos": [
-              1064.8496715946196,
-              3084.396609253261
+              560.5343266177338,
+              2993.9095028686634
+            ]
+          },
+          {
+            "id": "7e1d4f84-620a-415a-92ce-d6765d7daa5e",
+            "name": "model_name",
+            "type": "COMBO",
+            "linkIds": [
+              856
+            ],
+            "pos": [
+              560.5343266177338,
+              3013.9095028686634
+            ]
+          },
+          {
+            "id": "4cfe3eec-58ac-4f37-9b44-aa3e793afba0",
+            "name": "preset_prompt",
+            "type": "COMBO",
+            "linkIds": [
+              857
+            ],
+            "pos": [
+              560.5343266177338,
+              3033.9095028686634
+            ]
+          },
+          {
+            "id": "ace8a220-fe79-4d75-bba4-a0b690ef6531",
+            "name": "passthrough",
+            "type": "BOOLEAN",
+            "linkIds": [
+              859
+            ],
+            "pos": [
+              560.5343266177338,
+              3053.9095028686634
+            ]
+          },
+          {
+            "id": "11383625-4ea8-468d-a542-fdd7a797e6db",
+            "name": "images.image_1",
+            "type": "IMAGE",
+            "linkIds": [
+              847,
+              854
+            ],
+            "pos": [
+              560.5343266177338,
+              3073.9095028686634
+            ]
+          },
+          {
+            "id": "597dfaa2-729b-496c-a90f-c8a9837d6b65",
+            "name": "images.image_2",
+            "type": "IMAGE",
+            "linkIds": [
+              848,
+              855
+            ],
+            "pos": [
+              560.5343266177338,
+              3093.9095028686634
             ]
           }
         ],
         "outputs": [
-          {
-            "id": "26dd08bd-9d94-450e-87c7-372ef3496ea5",
-            "name": "VAE",
-            "type": "VAE",
-            "linkIds": [
-              756
-            ],
-            "localized_name": "VAE",
-            "pos": [
-              2260.374753366515,
-              2854.396609253261
-            ]
-          },
           {
             "id": "e9fd12aa-54b3-46cb-8e86-56d39d07d8e4",
             "name": "IMAGE",
@@ -1718,21 +1300,20 @@
             ],
             "localized_name": "IMMAGINE",
             "pos": [
-              2260.374753366515,
-              2874.396609253261
+              3321.5043051211783,
+              2850.6587881051405
             ]
           },
           {
-            "id": "622a3815-c1d4-47e3-92a7-52e03955cd59",
-            "name": "CLIP",
-            "type": "CLIP",
+            "id": "d2cd3a74-f8d0-460c-8be3-47d01759f747",
+            "name": "RESPONSE",
+            "type": "STRING",
             "linkIds": [
-              759
+              863
             ],
-            "localized_name": "CLIP",
             "pos": [
-              2260.374753366515,
-              2894.396609253261
+              3321.5043051211783,
+              2870.6587881051405
             ]
           }
         ],
@@ -1742,8 +1323,8 @@
             "id": 490,
             "type": "QwenImage21Cache",
             "pos": [
-              1712.135254303958,
-              2466.045647471195
+              2484.7170886168774,
+              2463.9654210172444
             ],
             "size": [
               270,
@@ -1757,7 +1338,7 @@
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 828
+                "link": 840
               }
             ],
             "outputs": [
@@ -1788,8 +1369,8 @@
             "id": 488,
             "type": "VAEDecode",
             "pos": [
-              2006.0925272216364,
-              2462.5341589525765
+              2778.6743615345554,
+              2460.453932498626
             ],
             "size": [
               157.869140625,
@@ -1829,78 +1410,18 @@
             }
           },
           {
-            "id": 494,
-            "type": "LoraLoader",
-            "pos": [
-              1163.1439954996763,
-              3244.566011093914
-            ],
-            "size": [
-              504.1792755186415,
-              126
-            ],
-            "flags": {},
-            "order": 4,
-            "mode": 4,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 762
-              },
-              {
-                "localized_name": "clip",
-                "name": "clip",
-                "type": "CLIP",
-                "link": 758
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "MODELLO",
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": []
-              },
-              {
-                "localized_name": "CLIP",
-                "name": "CLIP",
-                "type": "CLIP",
-                "links": [
-                  759
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.37.0",
-              "Node name for S&R": "LoraLoader"
-            },
-            "widgets_values": [
-              "Digital painting.safetensors",
-              1,
-              1
-            ],
-            "widgets_values_named": {
-              "lora_name": "Digital painting.safetensors",
-              "strength_model": 1,
-              "strength_clip": 1
-            }
-          },
-          {
             "id": 509,
             "type": "KSampler",
             "pos": [
-              1715.0620852174623,
-              2603.7916519060614
+              2494.148057651543,
+              2614.280603762222
             ],
             "size": [
-              450.47873800116577,
-              739.6146983032819
+              432.86542219453213,
+              331.5170800873758
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -1913,19 +1434,19 @@
                 "localized_name": "positivo",
                 "name": "positive",
                 "type": "CONDITIONING",
-                "link": 792
+                "link": 850
               },
               {
                 "localized_name": "negativo",
                 "name": "negative",
                 "type": "CONDITIONING",
-                "link": 793
+                "link": 851
               },
               {
                 "localized_name": "immagine_latent",
                 "name": "latent_image",
                 "type": "LATENT",
-                "link": 794
+                "link": 842
               },
               {
                 "localized_name": "seed",
@@ -2011,8 +1532,8 @@
             "id": 486,
             "type": "VAELoader",
             "pos": [
-              1163.8433440349338,
-              3054.7522127835127
+              1165.874171971504,
+              2789.0540539902604
             ],
             "size": [
               510,
@@ -2039,7 +1560,7 @@
                 "type": "VAE",
                 "links": [
                   743,
-                  756
+                  849
                 ]
               }
             ],
@@ -2066,8 +1587,8 @@
             "id": 493,
             "type": "CLIPLoader",
             "pos": [
-              1162.4042691599573,
-              2867.2679407134865
+              1171.246603770265,
+              2608.913694836804
             ],
             "size": [
               510,
@@ -2093,7 +1614,7 @@
                 "name": "CLIP",
                 "type": "CLIP",
                 "links": [
-                  758
+                  846
                 ]
               }
             ],
@@ -2132,7 +1653,7 @@
               90
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -2151,8 +1672,8 @@
                 "name": "MODEL",
                 "type": "MODEL",
                 "links": [
-                  762,
-                  827
+                  840,
+                  841
                 ]
               }
             ],
@@ -2178,25 +1699,202 @@
             }
           },
           {
-            "id": 532,
-            "type": "LoraLoaderModelOnly",
+            "id": 543,
+            "type": "EmptyLatentImage",
             "pos": [
-              1171.2858778394518,
-              2667.5843377585484
+              1166.7448963987586,
+              3239.35834406749
             ],
             "size": [
-              505.69348531825995,
-              105.56728665197897
+              300,
+              120
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "larghezza",
+                "name": "width",
+                "type": "INT",
+                "widget": {
+                  "name": "width"
+                },
+                "link": 852
+              },
+              {
+                "localized_name": "altezza",
+                "name": "height",
+                "type": "INT",
+                "widget": {
+                  "name": "height"
+                },
+                "link": 853
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  842
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.0",
+              "Node name for S&R": "EmptyLatentImage"
+            },
+            "widgets_values": [
+              1024,
+              1024,
+              1
+            ],
+            "widgets_values_named": {
+              "width": 1024,
+              "height": 1024,
+              "batch_size": 1
+            }
+          },
+          {
+            "id": 545,
+            "type": "TextEncodeQwenImage21",
+            "pos": [
+              1722.5445833110618,
+              2462.7521027006583
+            ],
+            "size": [
+              698.7475039653211,
+              716.6620955099766
             ],
             "flags": {},
             "order": 7,
             "mode": 0,
             "inputs": [
               {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 846
+              },
+              {
+                "localized_name": "image_1",
+                "name": "images.image_1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 847
+              },
+              {
+                "localized_name": "image_2",
+                "name": "images.image_2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 848
+              },
+              {
+                "localized_name": "image_3",
+                "name": "images.image_3",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "image_4",
+                "name": "images.image_4",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "shape": 7,
+                "type": "VAE",
+                "link": 849
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 843
+              },
+              {
+                "localized_name": "negative_prompt",
+                "name": "negative_prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "negative_prompt"
+                },
+                "link": 868
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "links": [
+                  850
+                ]
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "links": [
+                  851
+                ]
+              },
+              {
+                "localized_name": "latent",
+                "name": "latent",
+                "type": "LATENT",
+                "links": []
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.0",
+              "Node name for S&R": "TextEncodeQwenImage21"
+            },
+            "widgets_values": [
+              "Regenerate the character from <image1> performing the exact dynamic action pose of the person in <image2>. Maintain every detail of the character's facial likeness, proportions, hair, and current wardrobe from <image1>. Reorient the limbs, torso twist, weight distribution, and hand gestures to mirror <image2> identically, updating fabric folds and wrinkles according to the dynamic movement.",
+              "ugly, bad quality, low quality, blurry",
+              1024
+            ],
+            "widgets_values_named": {
+              "prompt": "Regenerate the character from <image1> performing the exact dynamic action pose of the person in <image2>. Maintain every detail of the character's facial likeness, proportions, hair, and current wardrobe from <image1>. Reorient the limbs, torso twist, weight distribution, and hand gestures to mirror <image2> identically, updating fabric folds and wrinkles according to the dynamic movement.",
+              "negative_prompt": "ugly, bad quality, low quality, blurry",
+              "resolution": 1024
+            },
+            "color": "#233",
+            "bgcolor": "#355"
+          },
+          {
+            "id": 546,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              1167.4590898031834,
+              3036.4660280993985
+            ],
+            "size": [
+              501.3058132512201,
+              106.52910823927914
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 827
+                "link": 841
               },
               {
                 "localized_name": "lora_name",
@@ -2205,7 +1903,7 @@
                 "widget": {
                   "name": "lora_name"
                 },
-                "link": 829
+                "link": 844
               },
               {
                 "localized_name": "strength_model",
@@ -2214,7 +1912,7 @@
                 "widget": {
                   "name": "strength_model"
                 },
-                "link": 830
+                "link": 845
               }
             ],
             "outputs": [
@@ -2222,14 +1920,12 @@
                 "localized_name": "MODELLO",
                 "name": "MODEL",
                 "type": "MODEL",
-                "links": [
-                  828
-                ]
+                "links": null
               }
             ],
             "properties": {
               "cnr_id": "comfy-core",
-              "ver": "0.37.2",
+              "ver": "0.38.2",
               "Node name for S&R": "LoraLoaderModelOnly"
             },
             "widgets_values": [
@@ -2239,9 +1935,128 @@
             "widgets_values_named": {
               "lora_name": "elusarcas-qwen2-1-detailer-v1.safetensors",
               "strength_model": 1
+            }
+          },
+          {
+            "id": 547,
+            "type": "QwenVL_Unified",
+            "pos": [
+              625.4743640612018,
+              2445.3473584118437
+            ],
+            "size": [
+              492.35952363843035,
+              392
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 854
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 855
+              },
+              {
+                "localized_name": "video",
+                "name": "video",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "model_name",
+                "name": "model_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model_name"
+                },
+                "link": 856
+              },
+              {
+                "localized_name": "preset_prompt",
+                "name": "preset_prompt",
+                "type": "COMBO",
+                "widget": {
+                  "name": "preset_prompt"
+                },
+                "link": 857
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 858
+              },
+              {
+                "localized_name": "passthrough",
+                "name": "passthrough",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "passthrough"
+                },
+                "link": 859
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "RESPONSE",
+                "name": "RESPONSE",
+                "type": "STRING",
+                "links": [
+                  843,
+                  863
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "ver": "8deb5d8b379c17000a25d289d76ad68daef2b198",
+              "Node name for S&R": "QwenVL_Unified",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
             },
-            "color": "#323",
-            "bgcolor": "#535"
+            "widgets_values": [
+              "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
+              "IMG › Qwen Edit",
+              "None",
+              "",
+              8192,
+              false,
+              3515058211,
+              "randomize",
+              false,
+              false,
+              16,
+              "5s"
+            ],
+            "widgets_values_named": {
+              "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
+              "preset_prompt": "IMG › Qwen Edit",
+              "camera_tag": "None",
+              "prompt": "",
+              "max_tokens": 8192,
+              "keep_model_loaded": false,
+              "seed": 3515058211,
+              "control_after_generate": "randomize",
+              "keep_last_prompt": false,
+              "passthrough": false,
+              "frame_count": 16,
+              "duration": "5s"
+            },
+            "color": "#0d9489",
+            "bgcolor": "#134e4a"
           }
         ],
         "groups": [
@@ -2251,8 +2066,8 @@
             "bounding": [
               1148.8496715946196,
               2391.930285611129,
-              533.2043860646536,
-              773.355600689521
+              537.1891997996538,
+              520.5120338623487
             ],
             "color": "#3f789e",
             "flags": {}
@@ -2261,10 +2076,10 @@
             "id": 37,
             "title": "Sampling",
             "bounding": [
-              1696.2946131210858,
-              2385.515650909493,
-              480.0801402454292,
-              997.7619166875356
+              2468.8764474340055,
+              2383.4354244555425,
+              497.46841836179465,
+              812.8303338041092
             ],
             "color": "#3f789e",
             "flags": {}
@@ -2273,24 +2088,24 @@
             "id": 35,
             "title": "Load Lora",
             "bounding": [
-              1153.7003983648335,
-              3176.3591661357164,
-              531.6252051934657,
-              203.12673134981242
+              1153.0252852940278,
+              2950.920799003937,
+              534.0292663724329,
+              211.38726119991634
             ],
             "color": "#3f789e",
             "flags": {}
           },
           {
-            "id": 45,
-            "title": "ENHANCER",
+            "id": 46,
+            "title": "ENCODE",
             "bounding": [
-              1161.2858778394518,
-              2597.5843377585484,
-              525.69348531826,
-              185.56728665197897
+              1712.5445833110618,
+              2392.7521027006583,
+              721.7278811803417,
+              806.234430432622
             ],
-            "color": "#b58b2a",
+            "color": "#3f789e",
             "flags": {}
           }
         ],
@@ -2320,121 +2135,145 @@
             "type": "MODEL"
           },
           {
-            "id": 762,
+            "id": 840,
             "origin_id": 496,
             "origin_slot": 0,
-            "target_id": 494,
+            "target_id": 490,
             "target_slot": 0,
             "type": "MODEL"
           },
           {
-            "id": 758,
-            "origin_id": 493,
+            "id": 841,
+            "origin_id": 496,
             "origin_slot": 0,
-            "target_id": 494,
-            "target_slot": 1,
-            "type": "CLIP"
+            "target_id": 546,
+            "target_slot": 0,
+            "type": "MODEL"
           },
           {
-            "id": 792,
-            "origin_id": -10,
+            "id": 842,
+            "origin_id": 543,
             "origin_slot": 0,
-            "target_id": 509,
-            "target_slot": 1,
-            "type": "CONDITIONING"
-          },
-          {
-            "id": 793,
-            "origin_id": -10,
-            "origin_slot": 1,
-            "target_id": 509,
-            "target_slot": 2,
-            "type": "CONDITIONING"
-          },
-          {
-            "id": 794,
-            "origin_id": -10,
-            "origin_slot": 2,
             "target_id": 509,
             "target_slot": 3,
             "type": "LATENT"
           },
           {
-            "id": 795,
-            "origin_id": -10,
-            "origin_slot": 3,
+            "id": 850,
+            "origin_id": 545,
+            "origin_slot": 0,
             "target_id": 509,
-            "target_slot": 4,
-            "type": "INT"
+            "target_slot": 1,
+            "type": "CONDITIONING"
           },
           {
-            "id": 756,
-            "origin_id": 486,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 0,
-            "type": "VAE"
+            "id": 851,
+            "origin_id": 545,
+            "origin_slot": 1,
+            "target_id": 509,
+            "target_slot": 2,
+            "type": "CONDITIONING"
           },
           {
             "id": 790,
             "origin_id": 488,
             "origin_slot": 0,
             "target_id": -20,
-            "target_slot": 1,
+            "target_slot": 0,
             "type": "IMAGE"
           },
           {
-            "id": 759,
-            "origin_id": 494,
-            "origin_slot": 1,
+            "id": 863,
+            "origin_id": 547,
+            "origin_slot": 0,
             "target_id": -20,
-            "target_slot": 2,
+            "target_slot": 1,
+            "type": "STRING"
+          },
+          {
+            "id": 846,
+            "origin_id": 493,
+            "origin_slot": 0,
+            "target_id": 545,
+            "target_slot": 0,
             "type": "CLIP"
           },
           {
-            "id": 810,
+            "id": 849,
+            "origin_id": 486,
+            "origin_slot": 0,
+            "target_id": 545,
+            "target_slot": 5,
+            "type": "VAE"
+          },
+          {
+            "id": 843,
+            "origin_id": 547,
+            "origin_slot": 0,
+            "target_id": 545,
+            "target_slot": 6,
+            "type": "STRING"
+          },
+          {
+            "id": 852,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 543,
+            "target_slot": 0,
+            "type": "INT"
+          },
+          {
+            "id": 853,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 543,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 795,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 509,
+            "target_slot": 4,
+            "type": "INT"
+          },
+          {
+            "id": 858,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 547,
+            "target_slot": 5,
+            "type": "STRING"
+          },
+          {
+            "id": 868,
             "origin_id": -10,
             "origin_slot": 4,
-            "target_id": 496,
-            "target_slot": 0,
-            "type": "COMBO"
-          },
-          {
-            "id": 811,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 493,
-            "target_slot": 0,
-            "type": "COMBO"
-          },
-          {
-            "id": 812,
-            "origin_id": -10,
-            "origin_slot": 6,
-            "target_id": 486,
-            "target_slot": 0,
-            "type": "COMBO"
-          },
-          {
-            "id": 814,
-            "origin_id": -10,
-            "origin_slot": 7,
-            "target_id": 509,
-            "target_slot": 5,
-            "type": "INT"
+            "target_id": 545,
+            "target_slot": 7,
+            "type": "STRING"
           },
           {
             "id": 815,
             "origin_id": -10,
-            "origin_slot": 8,
+            "origin_slot": 5,
             "target_id": 509,
             "target_slot": 6,
             "type": "FLOAT"
           },
           {
+            "id": 814,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 509,
+            "target_slot": 5,
+            "type": "INT"
+          },
+          {
             "id": 816,
             "origin_id": -10,
-            "origin_slot": 9,
+            "origin_slot": 7,
             "target_id": 509,
             "target_slot": 7,
             "type": "COMBO"
@@ -2442,42 +2281,106 @@
           {
             "id": 817,
             "origin_id": -10,
-            "origin_slot": 10,
+            "origin_slot": 8,
             "target_id": 509,
             "target_slot": 8,
             "type": "COMBO"
           },
           {
-            "id": 827,
-            "origin_id": 496,
-            "origin_slot": 0,
-            "target_id": 532,
+            "id": 810,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": 496,
             "target_slot": 0,
-            "type": "MODEL"
+            "type": "COMBO"
           },
           {
-            "id": 828,
-            "origin_id": 532,
-            "origin_slot": 0,
-            "target_id": 490,
+            "id": 811,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 493,
             "target_slot": 0,
-            "type": "MODEL"
+            "type": "COMBO"
           },
           {
-            "id": 829,
+            "id": 812,
             "origin_id": -10,
             "origin_slot": 11,
-            "target_id": 532,
+            "target_id": 486,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 844,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": 546,
             "target_slot": 1,
             "type": "COMBO"
           },
           {
-            "id": 830,
+            "id": 845,
             "origin_id": -10,
-            "origin_slot": 12,
-            "target_id": 532,
+            "origin_slot": 13,
+            "target_id": 546,
             "target_slot": 2,
             "type": "FLOAT"
+          },
+          {
+            "id": 856,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": 547,
+            "target_slot": 3,
+            "type": "COMBO"
+          },
+          {
+            "id": 857,
+            "origin_id": -10,
+            "origin_slot": 15,
+            "target_id": 547,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 859,
+            "origin_id": -10,
+            "origin_slot": 16,
+            "target_id": 547,
+            "target_slot": 6,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 847,
+            "origin_id": -10,
+            "origin_slot": 17,
+            "target_id": 545,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 854,
+            "origin_id": -10,
+            "origin_slot": 17,
+            "target_id": 547,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 848,
+            "origin_id": -10,
+            "origin_slot": 18,
+            "target_id": 545,
+            "target_slot": 2,
+            "type": "IMAGE"
+          },
+          {
+            "id": 855,
+            "origin_id": -10,
+            "origin_slot": 18,
+            "target_id": 547,
+            "target_slot": 1,
+            "type": "IMAGE"
           }
         ],
         "extra": {
@@ -2494,10 +2397,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7202280745341726,
+      "scale": 0.5952298136646054,
       "offset": [
-        1120.261374557965,
-        -2033.3166811225767
+        1881.2052067198988,
+        -1846.2194136779106
       ]
     }
   },
@@ -2516,11 +2419,5 @@
       }
     ]
   },
-  "version": 0.4,
-  "seed_widgets": {
-    "479": 0,
-    "512": 1,
-    "515": 0,
-    "525": 6
-  }
+  "version": 0.4
 }

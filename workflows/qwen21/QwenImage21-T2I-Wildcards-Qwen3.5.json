@@ -2,7 +2,7 @@
   "id": "b018abaf-0bbf-4a71-8c05-d1170d3783d2",
   "revision": 0,
   "last_node_id": 545,
-  "last_link_id": 848,
+  "last_link_id": 849,
   "nodes": [
     {
       "id": 530,
@@ -23,10 +23,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaLabel",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"Qwen Image 2.1 Image Generation\",\"fontSize\":20,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#d2a283\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
@@ -56,10 +56,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaLabel",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"QwenImage21\",\"fontSize\":54,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#ff8c42\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
@@ -89,11 +89,11 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaRunTimer",
-        "cnr_id": "ComfyUI-Pixaroma",
-        "runTimerLastMs": 34168.60000000149
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "runTimerLastMs": 182159.79999995232
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -117,10 +117,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaMonitor",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "monitorState": {
           "version": 1,
           "layout": "bars",
@@ -209,10 +209,10 @@
       ],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaSaveImage",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "saveImageState": "{\"version\":1,\"folder\":\"\",\"pattern\":\"Qwen21_%date:yyyy-MM-dd%_%counter%%\",\"format\":\"jpg\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":true,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":true,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}",
         "pixAccent": "#0d9488",
         "pixSiLastRun": {
@@ -221,16 +221,16 @@
           "folder": "/workspace/runpod-slim/ComfyUI/output",
           "entries": [
             {
-              "filename": "Qwen21_2026-10-01_001%.jpg",
+              "filename": "Qwen21_2026-10-05_001%.jpg",
               "subfolder": "",
               "type": "output",
               "token": "",
               "path": "",
-              "bust": "1790891320426"
+              "bust": "1791173181617"
             }
           ],
           "n": 1,
-          "w": 896,
+          "w": 768,
           "h": 1152
         }
       },
@@ -275,10 +275,10 @@
         }
       ],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
         "Node name for S&R": "PixaromaResolution",
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "resolutionState": "{\"mode\":\"preset\",\"ratio\":\"2:3\",\"w\":768,\"h\":1152,\"custom_w\":1024,\"custom_h\":1024,\"custom_ratio_w\":4,\"custom_ratio_h\":3,\"snap\":16}"
       },
       "widgets_values": [
@@ -337,11 +337,11 @@
         }
       ],
       "properties": {
-        "aux_id": "rgthree/rgthree-comfy",
+        "cnr_id": "rgthree-comfy",
         "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
         "randomMax": 1125899906842624,
         "randomMin": 0,
-        "cnr_id": "rgthree-comfy"
+        "aux_id": "rgthree/rgthree-comfy"
       },
       "widgets_values": [
         -1,
@@ -388,16 +388,16 @@
       ],
       "title": "QWEN ENHANCED PROMPT",
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaShowText",
-        "cnr_id": "ComfyUI-Pixaroma"
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
-        "Generate a professional character reference sheet based strictly on <image1> and <image2>. Preserve the exact same woman’s face, facial structure, dark brown wet ponytail with a blue scrunchie, tan skin tone, glossy wet skin texture, and her teal zip-front athletic shorts with black straps. Create three full-body turnaround views at the top: front, side/profile, and back—same neutral standing pose, arms slightly away from the torso, identical outfit and proportions, no pose or color drift. On the bottom, add three expression close-ups: open mouth, smiling with teeth visible, and surprised expression. On the right, include one large, highly detailed shoulder-up portrait with the same face and identity, using <image2> to enhance facial accuracy and capture any missing details. Ensure all panels are clearly separated with consistent spacing, no overlaps or bleeding, full-body and facial details fully visible, and absolute character consistency across the entire sheet."
+        "A vibrant 2D anime cel-shaded illustration of Rikku from Final Fantasy X, lying down on a cozy stage under studio twilight lighting. Her blonde hair and green eyes are highlighted by dramatic sidelighting that casts soft window shadows across the scene. She wears tight trousers with her blouse slightly askew, revealing her large breasts and a teasing nipple slip that exposes one visible nipple as she playfully grabs at her own breast. Rikku's face is flushed with a deep blush while she bites her lip in anticipation, capturing an intimate moment of self-pleasure under the warm glow of stage lights. The composition emphasizes her curvaceous figure against the backdrop of cozy theatrical ambiance, rendered in rich anime colors and clean lineart typical of high-quality 2D animation."
       ],
       "widgets_values_named": {
-        "text": "Generate a professional character reference sheet based strictly on <image1> and <image2>. Preserve the exact same woman’s face, facial structure, dark brown wet ponytail with a blue scrunchie, tan skin tone, glossy wet skin texture, and her teal zip-front athletic shorts with black straps. Create three full-body turnaround views at the top: front, side/profile, and back—same neutral standing pose, arms slightly away from the torso, identical outfit and proportions, no pose or color drift. On the bottom, add three expression close-ups: open mouth, smiling with teeth visible, and surprised expression. On the right, include one large, highly detailed shoulder-up portrait with the same face and identity, using <image2> to enhance facial accuracy and capture any missing details. Ensure all panels are clearly separated with consistent spacing, no overlaps or bleeding, full-body and facial details fully visible, and absolute character consistency across the entire sheet."
+        "text": "A vibrant 2D anime cel-shaded illustration of Rikku from Final Fantasy X, lying down on a cozy stage under studio twilight lighting. Her blonde hair and green eyes are highlighted by dramatic sidelighting that casts soft window shadows across the scene. She wears tight trousers with her blouse slightly askew, revealing her large breasts and a teasing nipple slip that exposes one visible nipple as she playfully grabs at her own breast. Rikku's face is flushed with a deep blush while she bites her lip in anticipation, capturing an intimate moment of self-pleasure under the warm glow of stage lights. The composition emphasizes her curvaceous figure against the backdrop of cozy theatrical ambiance, rendered in rich anime colors and clean lineart typical of high-quality 2D animation."
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -434,28 +434,28 @@
         }
       ],
       "properties": {
-        "aux_id": "huchukato/ComfyUI-TagForge",
+        "cnr_id": "ComfyUI-TagForge",
         "ver": "7e4465489d176225f35882399dafe6ead5b21cd8",
         "Node name for S&R": "WildcardProcessor",
-        "cnr_id": "ComfyUI-TagForge",
+        "aux_id": "huchukato/ComfyUI-TagForge",
         "tagforge_reproduce_seed": 543274943133878,
         "tagforge_wildcard_mode": "populate"
       },
       "widgets_values": [
-        "__qwen21/prosheet__",
-        440606820354802,
+        "__pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/pose/poses_basic__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        1035925666020603,
         "randomize",
-        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.",
+        "studio, twilight, stage lights, sidelighting, window shadow, 1girl, rikku \\(final fantasy x\\), final fantasy, blonde hair, green eyes, large breasts, trousers, lying, nipple slip, grabbing own breast, nipple visible, blushing, biting lip, cozy",
         "populate",
         true,
         0.5,
         "None"
       ],
       "widgets_values_named": {
-        "text": "__qwen21/prosheet__",
-        "seed": 440606820354802,
+        "text": "__pmp/prmpt/lctns/rndmlctns__, __pmp/prmpt/light/rndmlight__, __pmp/prmpt/char/favchar__, large breasts, __pmp/prmpt/clths/rndmclth__, __pmp/prmpt/pose/poses_basic__, __pmp/prmpt/clths/nudty_brsts__, __pmp/actsolo/brstplng__",
+        "seed": 1035925666020603,
         "control_after_generate": "randomize",
-        "populated_text": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.",
+        "populated_text": "studio, twilight, stage lights, sidelighting, window shadow, 1girl, rikku \\(final fantasy x\\), final fantasy, blonde hair, green eyes, large breasts, trousers, lying, nipple slip, grabbing own breast, nipple visible, blushing, biting lip, cozy",
         "mode": "populate",
         "deduplicate": true,
         "downvote_factor": 0.5,
@@ -604,7 +604,7 @@
         "default",
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
         "Pony→Natural",
-        "None",
+        "[ANIME]",
         false
       ],
       "widgets_values_named": {
@@ -624,7 +624,7 @@
         "dtype_1": "default",
         "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
         "enhancement_style": "Pony→Natural",
-        "style_tag": "None",
+        "style_tag": "[ANIME]",
         "passthrough": false
       },
       "color": "#233",
@@ -711,7 +711,7 @@
         "state": {
           "lastGroupId": 55,
           "lastNodeId": 545,
-          "lastLinkId": 848,
+          "lastLinkId": 849,
           "lastRerouteId": 9
         },
         "revision": 0,
@@ -1051,8 +1051,8 @@
             "id": 452,
             "type": "TextEncodeQwenImage21",
             "pos": [
-              392.3584003034599,
-              393.71492711794895
+              482.167295469558,
+              420.18325470562263
             ],
             "size": [
               530,
@@ -1080,7 +1080,7 @@
                 "name": "vae",
                 "shape": 7,
                 "type": "VAE",
-                "link": null
+                "link": 849
               },
               {
                 "localized_name": "prompt",
@@ -1230,7 +1230,8 @@
                 "name": "VAE",
                 "type": "VAE",
                 "links": [
-                  649
+                  649,
+                  849
                 ]
               }
             ],
@@ -1361,8 +1362,8 @@
             "id": 458,
             "type": "KSampler",
             "pos": [
-              1180,
-              640
+              1196.929169189422,
+              645.5581403631495
             ],
             "size": [
               270,
@@ -1613,9 +1614,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
+              "cnr_id": "ComfyUI-QwenVL-Mod",
               "ver": "15e910cf87e90be5161077c53b1cbd3adfd6e511",
-              "Node name for S&R": "QwenVL_Unified_PromptEnhancer"
+              "Node name for S&R": "QwenVL_Unified_PromptEnhancer",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
             },
             "widgets_values": [
               "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
@@ -1633,7 +1635,7 @@
               "auto",
               false,
               false,
-              1,
+              4172162974,
               "randomize",
               false,
               false,
@@ -1655,7 +1657,7 @@
               "attention_mode": "auto",
               "use_torch_compile": false,
               "keep_model_loaded": false,
-              "seed": 1,
+              "seed": 4172162974,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
               "passthrough": false,
@@ -1959,6 +1961,14 @@
             "target_id": 484,
             "target_slot": 4,
             "type": "BOOLEAN"
+          },
+          {
+            "id": 849,
+            "origin_id": 454,
+            "origin_slot": 0,
+            "target_id": 452,
+            "target_slot": 2,
+            "type": "VAE"
           }
         ],
         "extra": {
@@ -1975,10 +1985,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7922508819875899,
+      "scale": 0.9586235672049839,
       "offset": [
-        2066.6529682232103,
-        -2208.1908195127403
+        1666.349201314093,
+        -2184.05652134771
       ]
     }
   },
@@ -1989,13 +1999,7 @@
       "515": 0,
       "525": 6
     },
-    "models": [
-      {
-        "name": "elusarcas-qwen2-1-detailer-v1.safetensors",
-        "url": "https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors",
-        "directory": "loras"
-      }
-    ]
+    "models": []
   },
   "version": 0.4
 }
