@@ -37,7 +37,6 @@ NODES=(
     "https://github.com/ltdrdata/comfyui-impact-subpack"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
     "https://github.com/huchukato/ComfyUI-Gallery"
-    "https://github.com/shootthesound/ComfyUI-Fizgig-H3-Still"
     "https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director"
 )
 
