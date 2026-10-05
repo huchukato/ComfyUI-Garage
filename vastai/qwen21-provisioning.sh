@@ -74,6 +74,9 @@ QWEN21_MODELS=(
     "vae|qwen_image_2.1_vae_bf16.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors|670000000"
     # ── Elusarca detail-enhancer LoRA (Qwen 2.1, ~80MB) ──
     "loras|elusarcas-qwen2-1-detailer-v1.safetensors|https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors|79000000"
+    # ── QwenVL-Mod enhancer LLM: Defiant-Fable NEO-MAX Q6_K + mmproj ──
+    "LLM/GGUF|Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf|https://huggingface.co/DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF/resolve/main/Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf|8500000000"
+    "LLM/GGUF|mmproj-BF16.gguf|https://huggingface.co/DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF/resolve/main/mmproj-BF16.gguf|900000000"
 )
 
 
@@ -328,7 +331,7 @@ function monitor_progress() {
 
 function download_qwen21_models() {
     local base_dir="${COMFYUI_DIR}/models"
-    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,clip_projections,loras}
+    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,clip_projections,loras,LLM/GGUF}
 
     local hf_cmd="hf"
     command -v hf >/dev/null 2>&1 || hf_cmd="huggingface-cli"
