@@ -30,8 +30,6 @@ NODES=(
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/ChrisColeTech/ComfyUI-GGUF-Loader"
-    "https://github.com/ltdrdata/comfyui-impact-pack"
-    "https://github.com/ltdrdata/comfyui-impact-subpack"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
     "https://github.com/huchukato/ComfyUI-Gallery"
 )
@@ -245,9 +243,6 @@ function provisioning_get_nodes() {
         fi
 
     done
-    COMFYUI_PATH="${COMFYUI_DIR}" COMFYUI_MODEL_PATH="${COMFYUI_DIR}/models" python "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack/install.py"
-    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Pack"
-    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-subpack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Subpack"
     echo "All nodes processed successfully!"
 }
 
