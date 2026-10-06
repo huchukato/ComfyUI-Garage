@@ -29,6 +29,7 @@ NODES=(
     "https://github.com/pixaroma/ComfyUI-Pixaroma"
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
     "https://github.com/kijai/ComfyUI-KJNodes"
+    "https://github.com/Songssx/ComfyUI-MiniMaxH3-TimelineDirector"
     "https://github.com/ChrisColeTech/ComfyUI-GGUF-Loader"
     "https://github.com/ltdrdata/comfyui-impact-pack"
     "https://github.com/ltdrdata/comfyui-impact-subpack"
