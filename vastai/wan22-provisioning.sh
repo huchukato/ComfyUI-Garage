@@ -24,8 +24,6 @@ NODES=(
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler"
     "https://github.com/ltdrdata/was-node-suite-comfyui"
-    "https://github.com/ltdrdata/comfyui-impact-pack"
-    "https://github.com/ltdrdata/comfyui-impact-subpack"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/yolain/ComfyUI-Easy-Use"
@@ -254,9 +252,6 @@ function provisioning_get_nodes() {
         fi
         
     done
-    COMFYUI_PATH="${COMFYUI_DIR}" COMFYUI_MODEL_PATH="${COMFYUI_DIR}/models" python "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack/install.py"
-    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-pack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Pack"
-    [[ -d "${COMFYUI_DIR}/custom_nodes/comfyui-impact-subpack" ]] && rm -rf "${COMFYUI_DIR}/custom_nodes/ComfyUI-Impact-Subpack"
     echo "All nodes processed successfully!"
 }
 
