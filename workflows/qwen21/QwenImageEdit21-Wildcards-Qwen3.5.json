@@ -1,22 +1,22 @@
 {
   "id": "54bb395d-3e60-4c94-b525-85523901575b",
   "revision": 0,
-  "last_node_id": 557,
-  "last_link_id": 872,
+  "last_node_id": 569,
+  "last_link_id": 895,
   "nodes": [
     {
       "id": 526,
       "type": "PixaromaSaveImage",
       "pos": [
-        1266.2655255620607,
-        2441.18216375775
+        1181.4308615862521,
+        2448.225243785176
       ],
       "size": [
-        773.8538147698418,
-        846.1197473934344
+        773.1635346926168,
+        835.9224280707917
       ],
       "flags": {},
-      "order": 13,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -28,7 +28,7 @@
           "name": "name",
           "shape": 7,
           "type": "STRING",
-          "link": null
+          "link": 889
         }
       ],
       "outputs": [],
@@ -45,17 +45,17 @@
           "folder": "/workspace/runpod-slim/ComfyUI/output",
           "entries": [
             {
-              "filename": "Qwen21_2026-10-05_002%.jpg",
+              "filename": "Qwen21_2026-10-06_004%.jpg",
               "subfolder": "",
               "type": "output",
               "token": "",
               "path": "",
-              "bust": "1791174645701"
+              "bust": "1791257391417"
             }
           ],
           "n": 1,
-          "w": 768,
-          "h": 1152
+          "w": 832,
+          "h": 1248
         }
       },
       "widgets_values": [
@@ -68,133 +68,18 @@
       "bgcolor": "#26323b"
     },
     {
-      "id": 478,
-      "type": "PixaromaResolution",
-      "pos": [
-        403.39685413978816,
-        2494.119317401231
-      ],
-      "size": [
-        240,
-        435
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            861
-          ]
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            862
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
-        "Node name for S&R": "PixaromaResolution",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "resolutionState": "{\"mode\":\"preset\",\"ratio\":\"2:3\",\"w\":768,\"h\":1152,\"custom_w\":1024,\"custom_h\":1024,\"custom_ratio_w\":4,\"custom_ratio_h\":3,\"snap\":16}"
-      },
-      "widgets_values": [
-        {
-          "mode": "preset",
-          "ratio": "2:3",
-          "w": 768,
-          "h": 1152,
-          "custom_w": 1024,
-          "custom_h": 1024,
-          "custom_ratio_w": 4,
-          "custom_ratio_h": 3,
-          "snap": 16
-        }
-      ],
-      "widgets_values_named": {
-        "resolution_ui": {
-          "mode": "preset",
-          "ratio": "2:3",
-          "w": 768,
-          "h": 1152,
-          "custom_w": 1024,
-          "custom_h": 1024,
-          "custom_ratio_w": 4,
-          "custom_ratio_h": 3,
-          "snap": 16
-        }
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 479,
-      "type": "Seed (rgthree)",
-      "pos": [
-        408.36833047837035,
-        2985.7614225902103
-      ],
-      "size": [
-        241.73761706091864,
-        134.80533545188246
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "SEED",
-          "shape": 3,
-          "type": "INT",
-          "links": [
-            806
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
-        "randomMax": 1125899906842624,
-        "randomMin": 0,
-        "aux_id": "rgthree/rgthree-comfy"
-      },
-      "widgets_values": [
-        -1,
-        "",
-        "",
-        "okay"
-      ],
-      "widgets_values_named": {
-        "seed": -1,
-        "\ud83c\udfb2 Randomize Each Time": "",
-        "\ud83c\udfb2 New Fixed Random": "",
-        "USE_LAST_SEED": "okay"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 513,
       "type": "PixaromaShowText",
       "pos": [
-        736.5669218910795,
-        3026.4474128787638
+        648.610000102852,
+        3032.420756009371
       ],
       "size": [
         500.1663475180835,
         266.3661812167952
       ],
       "flags": {},
-      "order": 15,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -217,178 +102,27 @@
         "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
-        "Replace the facial identity in <image1> with that of <image2>, reconstructing eyes, eyebrows, nose, lips, skin texture, and bone structure inside the existing hairline to match the new identity while preserving the original head tilt and neck connection. Retain the exact hairstyle, hairline, hair color, volume, and silhouette of <image1>; do not import any hair from <image2>. Keep the wet skin sheen, directional lighting, shadow fall, color grading, camera framing, background architecture, clothing, and pose of <image1> completely unchanged. Adapt the new facial features to the warm, sunlit color temperature and soft highlights of <image1>, ensuring seamless integration with no pasted edges or seam artifacts at the jaw or hairline."
+        "Replace the entire head and hair of the person in <image1> with the head, facial identity, facial hair, and hairstyle of the person in <image2>, re-rendered photorealistically in place — not a composited cutout. Retain the exact skull geometry, hairline, and facial expression from <image2>, adapted to the pose, framing and lighting of <image1>. Blend at the neckline and collar of <image1>, recalculating ambient occlusion and specular highlights so the new head matches the directional lighting and environmental reflections of <image1>. Keep the body, clothing and background of <image1> completely unchanged — the result must look like a single photograph."
       ],
       "widgets_values_named": {
-        "text": "Replace the facial identity in <image1> with that of <image2>, reconstructing eyes, eyebrows, nose, lips, skin texture, and bone structure inside the existing hairline to match the new identity while preserving the original head tilt and neck connection. Retain the exact hairstyle, hairline, hair color, volume, and silhouette of <image1>; do not import any hair from <image2>. Keep the wet skin sheen, directional lighting, shadow fall, color grading, camera framing, background architecture, clothing, and pose of <image1> completely unchanged. Adapt the new facial features to the warm, sunlit color temperature and soft highlights of <image1>, ensuring seamless integration with no pasted edges or seam artifacts at the jaw or hairline."
+        "text": "Replace the entire head and hair of the person in <image1> with the head, facial identity, facial hair, and hairstyle of the person in <image2>, re-rendered photorealistically in place — not a composited cutout. Retain the exact skull geometry, hairline, and facial expression from <image2>, adapted to the pose, framing and lighting of <image1>. Blend at the neckline and collar of <image1>, recalculating ambient occlusion and specular highlights so the new head matches the directional lighting and environmental reflections of <image1>. Keep the body, clothing and background of <image1> completely unchanged — the result must look like a single photograph."
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
-      "id": 539,
-      "type": "PixaromaLoadImage",
-      "pos": [
-        -1229.8397233020364,
-        2497.488384778726
-      ],
-      "size": [
-        483.4418000957579,
-        649.4168863822638
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            866,
-            871
-          ]
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "filename",
-          "type": "STRING",
-          "links": null
-        },
-        {
-          "name": "original_width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "original_height",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "title": "Load Image 1",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaLoadImage",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "loadImagePixState": "{\"allow_upscale\":false}"
-      },
-      "widgets_values": [
-        "ANI-MP-INC_00002_.png",
-        "image",
-        ""
-      ],
-      "widgets_values_named": {
-        "image": "ANI-MP-INC_00002_.png",
-        "upload": "image",
-        "pixaroma_load_image_ui": ""
-      },
-      "color": "#1f9e6a",
-      "bgcolor": "#23362f"
-    },
-    {
-      "id": 540,
-      "type": "PixaromaLoadImage",
-      "pos": [
-        -677.0680606303991,
-        2493.8956569468064
-      ],
-      "size": [
-        479.9558857057714,
-        646.4736044953993
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            867
-          ]
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "filename",
-          "type": "STRING",
-          "links": null
-        },
-        {
-          "name": "original_width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "original_height",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "title": "Load Image 2",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "384d296da4a3805865c39e60b0700c2d0eb674fb",
-        "Node name for S&R": "PixaromaLoadImage",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "loadImagePixState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1152,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":false}"
-      },
-      "widgets_values": [
-        "ANI-MP-INC_00014_.png",
-        "image",
-        ""
-      ],
-      "widgets_values_named": {
-        "image": "ANI-MP-INC_00014_.png",
-        "upload": "image",
-        "pixaroma_load_image_ui": ""
-      },
-      "color": "#2f7fc0",
-      "bgcolor": "#26323b"
-    },
-    {
       "id": 515,
       "type": "b43f498b-bbc0-405a-9fe3-239c8f18e9f1",
       "pos": [
-        738.7008185038673,
-        2441.9532259275147
+        649.2154194017843,
+        2446.483525109667
       ],
       "size": [
         496.48392383712485,
-        522
+        546
       ],
       "flags": {},
-      "order": 12,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -397,7 +131,7 @@
           "widget": {
             "name": "width"
           },
-          "link": 861
+          "link": 878
         },
         {
           "name": "height",
@@ -405,7 +139,7 @@
           "widget": {
             "name": "height"
           },
-          "link": 862
+          "link": 879
         },
         {
           "name": "seed",
@@ -413,7 +147,15 @@
           "widget": {
             "name": "seed"
           },
-          "link": 806
+          "link": 880
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": 892
         },
         {
           "name": "prompt",
@@ -424,16 +166,25 @@
           "link": 865
         },
         {
+          "label": "skip_autoprompt",
+          "name": "passthrough",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "passthrough"
+          },
+          "link": null
+        },
+        {
           "name": "images.image_1",
           "shape": 7,
           "type": "IMAGE",
-          "link": 866
+          "link": 886
         },
         {
           "name": "images.image_2",
           "shape": 7,
           "type": "IMAGE",
-          "link": 867
+          "link": 887
         }
       ],
       "outputs": [
@@ -442,7 +193,7 @@
           "type": "IMAGE",
           "links": [
             824,
-            872
+            894
           ]
         },
         {
@@ -468,6 +219,7 @@
         1024,
         1024,
         0,
+        1024,
         "",
         "ugly, bad quality, low quality, blurry",
         1,
@@ -480,13 +232,14 @@
         "elusarcas-qwen2-1-detailer-v1.safetensors",
         0.7,
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-        "IMG \u203a Qwen Edit",
-        false
+        "IMG › Qwen Edit",
+        true
       ],
       "widgets_values_named": {
         "width": 1024,
         "height": 1024,
         "seed": 0,
+        "resolution": 1024,
         "prompt": "",
         "negative_prompt": "ugly, bad quality, low quality, blurry",
         "cfg": 1,
@@ -499,8 +252,8 @@
         "lora_name": "elusarcas-qwen2-1-detailer-v1.safetensors",
         "strength_model": 0.7,
         "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-        "preset_prompt": "IMG \u203a Qwen Edit",
-        "passthrough": false
+        "preset_prompt": "IMG › Qwen Edit",
+        "passthrough": true
       },
       "color": "#233",
       "bgcolor": "#355"
@@ -517,7 +270,7 @@
         725.7551879054481
       ],
       "flags": {},
-      "order": 4,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -543,20 +296,20 @@
         "tagforge_wildcard_mode": "populate"
       },
       "widgets_values": [
-        "__qwen21/faceswap__",
-        120590739565301,
+        "__qwen21/headswap__",
+        175040467273976,
         "randomize",
-        "Re-render the face of the person in <image1> with the facial identity of the person in <image2>, as a photorealistic in-place edit \u2014 do not paste or overlay pixels. Rebuild the features inside the hairline (eyes, eyebrows, nose, lips, skin texture, facial bone structure) using the identity of <image2>, adapted to the head tilt, neck connection, skin color temperature, directional lighting and shadow fall of <image1>. The hair is NOT part of the swap: keep the exact hairstyle, hairline, hair color, volume, and silhouette of <image1>, and do not reproduce the hair of <image2> at all. Keep the ears, head silhouette, body, clothing, background, framing and photographic style of <image1> completely unchanged. The result must read as the same photograph of <image1> with a different identity \u2014 fully relit and integrated, no pasted edges, no seam artifacts at the jaw or hairline.",
+        "Replace the entire head and hair of the person in <image1> with the head, facial identity, facial hair, and hairstyle of the person in <image2>, re-rendered photorealistically in place — not a composited cutout. Retain the exact skull geometry, hairline, and facial expression from <image2>, adapted to the pose, framing and lighting of <image1>. Blend at the neckline and collar of <image1>, recalculating ambient occlusion and specular highlights so the new head matches the directional lighting and environmental reflections of <image1>. Keep the body, clothing and background of <image1> completely unchanged — the result must look like a single photograph.",
         "populate",
         true,
         0.5,
         "None"
       ],
       "widgets_values_named": {
-        "text": "__qwen21/faceswap__",
-        "seed": 120590739565301,
+        "text": "__qwen21/headswap__",
+        "seed": 175040467273976,
         "control_after_generate": "randomize",
-        "populated_text": "Re-render the face of the person in <image1> with the facial identity of the person in <image2>, as a photorealistic in-place edit \u2014 do not paste or overlay pixels. Rebuild the features inside the hairline (eyes, eyebrows, nose, lips, skin texture, facial bone structure) using the identity of <image2>, adapted to the head tilt, neck connection, skin color temperature, directional lighting and shadow fall of <image1>. The hair is NOT part of the swap: keep the exact hairstyle, hairline, hair color, volume, and silhouette of <image1>, and do not reproduce the hair of <image2> at all. Keep the ears, head silhouette, body, clothing, background, framing and photographic style of <image1> completely unchanged. The result must read as the same photograph of <image1> with a different identity \u2014 fully relit and integrated, no pasted edges, no seam artifacts at the jaw or hairline.",
+        "populated_text": "Replace the entire head and hair of the person in <image1> with the head, facial identity, facial hair, and hairstyle of the person in <image2>, re-rendered photorealistically in place — not a composited cutout. Retain the exact skull geometry, hairline, and facial expression from <image2>, adapted to the pose, framing and lighting of <image1>. Blend at the neckline and collar of <image1>, recalculating ambient occlusion and specular highlights so the new head matches the directional lighting and environmental reflections of <image1>. Keep the body, clothing and background of <image1> completely unchanged — the result must look like a single photograph.",
         "mode": "populate",
         "deduplicate": true,
         "downvote_factor": 0.5,
@@ -577,7 +330,7 @@
         953.5405976794505
       ],
       "flags": {},
-      "order": 5,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -592,7 +345,7 @@
         ""
       ],
       "widgets_values_named": {
-        "note_json": "{\"version\":1,\"content\":\"<p><br></p><h2>Qwen Image Edit 2.1 \u2014 Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text \u2014 the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/sheet__</code></td><td>1</td><td>Quick character sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>1</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new random scene (location wildcard)</td></tr>\\n    <tr><td><code>__qwen21/background__</code></td><td>2</td><td>Subject of image1 onto background of image2</td></tr>\\n    <tr><td><code>__qwen21/enhance__</code></td><td>1</td><td>Detail enhance, restore, creative upscale (pairs with detailer LoRA)</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image1 \u2190 identity from image2</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image1 \u2190 head from image2</td></tr>\\n    <tr><td><code>__qwen21/eyeswap__</code></td><td>2</td><td>Eyes of image1 \u2190 eyes from image2</td></tr>\\n    <tr><td><code>__qwen21/makeupswap__</code></td><td>2</td><td>Makeup, contacts &amp; lipstick of image2 onto image1 \u2014 identity kept</td></tr>\\n    <tr><td><code>__qwen21/hairswap__</code></td><td>2</td><td>Hair of image1 \u2190 hair from image2</td></tr>\\n    <tr><td><code>__qwen21/outfit__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/pose__</code></td><td>2</td><td>Subject of image1 into pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expression__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Applies every edit you describe at once</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Change time/weather to what you describe</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes the object you name + inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts the object you describe</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Replaces visible text with yours</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>Camera angle you describe</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime \u2192 photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo \u2192 manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>\u26a0\ufe0f Important: QwenVL bypass</h3><p>\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched \u2014 if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony\u2192Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> \u2014 edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = photo to modify, image2 = identity donor).</li>\\n  <li><b>Edits that need a target</b> \u2014 for <code>removeobject</code>, <code>insertobject</code>, <code>textedit</code>, <code>novelview</code>, <code>timeweather</code> and <code>multiedit</code>, describe what to change in your own words next to the wildcard: <code>a red parked car, __qwen21/removeobject__</code>.</li>\\n  <li><b>Combine with text</b> \u2014 <code>__qwen21/background__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> \u2014 drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line \u2192 becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> \u2014 <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":400,\"height\":200}",
+        "note_json": "{\"version\": 1, \"content\": \"<p><br></p><h2>Qwen Image Edit 2.1 \\u2014 Wildcard Guide</h2><p>\\n</p><p>Wildcards expand into detailed editing prompts. Type <code>__qwen21/&lt;name&gt;__</code> for a specific edit, or <code>__qwen21/*__</code> for a random one. You can mix wildcards with your own text \\u2014 the wildcard is replaced inline before the prompt is sent.</p><p>\\n</p><p><code>&lt;image1&gt;</code>, <code>&lt;image2&gt;</code>, <code>&lt;image3&gt;</code> inside a wildcard refer to the reference images connected to the node, in order.</p><p>\\n\\n</p><h3>Available edits</h3><p>\\n</p><table class=\\\"pix-note-grid\\\">\\n  <thead>\\n    <tr><th>Wildcard</th><th>Imgs</th><th>What it does</th></tr>\\n  </thead>\\n  <tbody>\\n    <tr><td><code>__qwen21/sheet__</code></td><td>1</td><td>Quick character sheet: front, side, back + headshot</td></tr>\\n    <tr><td><code>__qwen21/prosheet__</code></td><td>1</td><td>Pro reference sheet, image2 as extra ref</td></tr>\\n    <tr><td><code>__qwen21/newscene__</code></td><td>1</td><td>Subject into a new random scene (location wildcard)</td></tr>\\n    <tr><td><code>__qwen21/backgroundswap__</code></td><td>2</td><td>Subject of image1 onto background of image2</td></tr>\\n    <tr><td><code>__qwen21/enhance__</code></td><td>1</td><td>Detail enhance, restore, creative upscale (pairs with detailer LoRA)</td></tr>\\n    <tr><td><code>__qwen21/faceswap__</code></td><td>2</td><td>Face of image1 \\u2190 identity from image2</td></tr>\\n    <tr><td><code>__qwen21/headswap__</code></td><td>2</td><td>Head+hair of image1 \\u2190 head from image2</td></tr>\\n    <tr><td><code>__qwen21/eyeswap__</code></td><td>2</td><td>Eyes of image1 \\u2190 eyes from image2</td></tr>\\n    <tr><td><code>__qwen21/makeupswap__</code></td><td>2</td><td>Makeup, contacts &amp; lipstick of image2 onto image1 \\u2014 identity kept</td></tr>\\n    <tr><td><code>__qwen21/hairswap__</code></td><td>2</td><td>Hair of image1 \\u2190 hair from image2</td></tr>\\n    <tr><td><code>__qwen21/outfitswap__</code></td><td>2</td><td>Dresses subject of image1 with outfit from image2</td></tr>\\n    <tr><td><code>__qwen21/poseswap__</code></td><td>2</td><td>Subject of image1 into body pose from image2</td></tr>\\n    <tr><td><code>__qwen21/expressionswap__</code></td><td>2</td><td>Expression of image2 onto image1</td></tr>\\n    <tr><td><code>__qwen21/multiref__</code></td><td>3</td><td>Scene combining image1 + image2 inside image3</td></tr>\\n    <tr><td><code>__qwen21/multiedit__</code></td><td>1</td><td>Applies every edit you describe at once</td></tr>\\n    <tr><td><code>__qwen21/timeweather__</code></td><td>1</td><td>Change time/weather to what you describe</td></tr>\\n    <tr><td><code>__qwen21/removeobject__</code></td><td>1</td><td>Removes the object you name + inpaint</td></tr>\\n    <tr><td><code>__qwen21/insertobject__</code></td><td>1</td><td>Inserts the object you describe</td></tr>\\n    <tr><td><code>__qwen21/textedit__</code></td><td>1</td><td>Replaces visible text with yours</td></tr>\\n    <tr><td><code>__qwen21/novelview__</code></td><td>1</td><td>Camera angle you describe</td></tr>\\n    <tr><td><code>__qwen21/anime2real__</code></td><td>1</td><td>Anime \\u2192 photorealistic human</td></tr>\\n    <tr><td><code>__qwen21/real2anime__</code></td><td>1</td><td>Photo \\u2192 manhwa/webtoon illustration</td></tr>\\n  </tbody>\\n</table><p>\\n\\n</p><h3>\\u26a0\\ufe0f Important: QwenVL bypass</h3><p>\\n</p><p>The <code>__qwen21/*__</code> editing wildcards are already complete edit instructions (they contain <code>&lt;image1&gt;</code>/<code>&lt;image2&gt;</code> bindings). The <b>QwenVL Unified</b> node is <b>bypassed</b> in this workflow so the expanded text reaches the encoder untouched \\u2014 if the LLM rewrote it, the image bindings would break and the edit would fail. When <b>generating</b> images instead of editing, un-bypass it with <b>Ctrl+B</b>: the LLM then expands your text and content wildcards (<code>__pmp/...__</code>) into a full prompt via the selected preset (e.g. Pony\\u2192Natural). Keep it bypassed (or set <b>passthrough = true</b>) whenever an edit wildcard is in the prompt.</p><p>\\n\\n</p><h3>Tips</h3><p>\\n</p><ul>\\n  <li><b>Mind the image count</b> \\u2014 edits marked 2 or 3 need that many references, in the right order (e.g. faceswap: image1 = photo to modify, image2 = identity donor).</li>\\n  <li><b>Edits that need a target</b> \\u2014 for <code>removeobject</code>, <code>insertobject</code>, <code>textedit</code>, <code>novelview</code>, <code>timeweather</code> and <code>multiedit</code>, describe what to change in your own words next to the wildcard: <code>a red parked car, __qwen21/removeobject__</code>.</li>\\n  <li><b>Combine with text</b> \\u2014 <code>__qwen21/backgroundswap__, dramatic mood</code> works fine.</li>\\n  <li><b>Add your own</b> \\u2014 drop a <code>.txt</code> in <code>ComfyUI/models/wildcards/</code>, one prompt per line \\u2192 becomes <code>__filename__</code>. YAML supports nested keys like <code>__name/subkey__</code>.</li>\\n  <li><b>Random pick</b> \\u2014 <code>__qwen21/*__</code> chooses a random edit, fun for batch runs.</li>\\n</ul>\", \"buttonColor\": \"#f66744\", \"lineColor\": \"#f66744\", \"width\": 400, \"height\": 200}",
         "note_dom": ""
       },
       "color": "#cf772a",
@@ -612,7 +365,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 6,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -645,7 +398,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 7,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -678,7 +431,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 8,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -733,7 +486,7 @@
       "flags": {
         "no_title": true
       },
-      "order": 9,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -742,7 +495,7 @@
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaRunTimer",
         "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "runTimerLastMs": 38829.40000003576
+        "runTimerLastMs": 7194.800000011921
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -751,25 +504,25 @@
       "id": 552,
       "type": "MarkdownNote",
       "pos": [
-        2079.252746868326,
-        2456.2684639045337
+        1981.6946567332411,
+        2439.3924607178337
       ],
       "size": [
-        402.1789598073924,
-        853.7856702287368
+        398.6020539526812,
+        839.1642831384247
       ],
       "flags": {},
-      "order": 10,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "title": "Note: Model links",
       "properties": {},
       "widgets_values": [
-        "\n## Model Storage Location\n\n```\n\ud83d\udcc2 ComfyUI/\n\u251c\u2500\u2500 \ud83d\udcc2 models/\n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 diffusion_models/\n\u2502   \u2502   \u2514\u2500\u2500 qwen-image-2.1-UC-int8_convrot.safetensors\n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 loras/\n\u2502   \u2502   \u251c\u2500\u2500 elusarcas-qwen2-1-detailer-v1.safetensors  \n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 text_encoders/\n\u2502   \u2502   \u2514\u2500\u2500 qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors\n\u2502   \u2514\u2500\u2500 \ud83d\udcc2 vae/\n\u2502       \u2514\u2500\u2500 qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen-image-2.1-UC-int8_convrot.safetensors](https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF/resolve/main/qwen-image-2.1-UC-int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**lora**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/blob/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors](https://huggingface.co/craftingmod/Qwen3-VL-8B-Heretic-INT8/resolve/main/qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
+        "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   └── qwen-image-2.1-UC-int8_convrot.safetensors\n│   ├── 📂 loras/\n│   │   ├── elusarcas-qwen2-1-detailer-v1.safetensors  \n│   ├── 📂 text_encoders/\n│   │   └── qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen-image-2.1-UC-int8_convrot.safetensors](https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF/resolve/main/qwen-image-2.1-UC-int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**lora**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/blob/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors](https://huggingface.co/craftingmod/Qwen3-VL-8B-Heretic-INT8/resolve/main/qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
       ],
       "widgets_values_named": {
-        "text": "\n## Model Storage Location\n\n```\n\ud83d\udcc2 ComfyUI/\n\u251c\u2500\u2500 \ud83d\udcc2 models/\n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 diffusion_models/\n\u2502   \u2502   \u2514\u2500\u2500 qwen-image-2.1-UC-int8_convrot.safetensors\n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 loras/\n\u2502   \u2502   \u251c\u2500\u2500 elusarcas-qwen2-1-detailer-v1.safetensors  \n\u2502   \u251c\u2500\u2500 \ud83d\udcc2 text_encoders/\n\u2502   \u2502   \u2514\u2500\u2500 qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors\n\u2502   \u2514\u2500\u2500 \ud83d\udcc2 vae/\n\u2502       \u2514\u2500\u2500 qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen-image-2.1-UC-int8_convrot.safetensors](https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF/resolve/main/qwen-image-2.1-UC-int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**lora**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/blob/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors](https://huggingface.co/craftingmod/Qwen3-VL-8B-Heretic-INT8/resolve/main/qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
+        "text": "\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   └── qwen-image-2.1-UC-int8_convrot.safetensors\n│   ├── 📂 loras/\n│   │   ├── elusarcas-qwen2-1-detailer-v1.safetensors  \n│   ├── 📂 text_encoders/\n│   │   └── qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors\n│   └── 📂 vae/\n│       └── qwen_image_2.1_vae_bf16.safetensors\n```\n\nGuide: [Subgraph](https://docs.comfy.org/interface/features/subgraph)\n\n## Input Assets\n\n- [portrait_model_denim.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/portrait_model_denim.png)\n- [clothing_light_blue_denim_shirt.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/clothing_light_blue_denim_shirt.png)\n\n\n## Model Links\n\n- [Hugging Face:Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)\n\n- [ModelScope:Comfy-Org/Qwen-Image-2.1](https://modelscope.cn/models/Comfy-Org/Qwen-Image-2.1)\n\n**diffusion_models**\n\n- [qwen_image_2.1_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_bf16.safetensors)\n- [qwen-image-2.1-UC-int8_convrot.safetensors](https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF/resolve/main/qwen-image-2.1-UC-int8_convrot.safetensors)\n\n## FOR GGUF\n- [Hugging Face:Abiray/Qwen-Image-2.1-GGUF](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF)\n\n**diffusion_models (GGUF quants)**\n\n- [qwen_image_2.1_Q8_0.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q8_0.gguf)\n- [qwen_image_2.1_Q6_K.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q6_K.gguf)\n- [qwen_image_2.1_Q5_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q5_K_M.gguf)\n- [qwen_image_2.1_Q4_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_M.gguf)\n- [qwen_image_2.1_Q4_K_S.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q4_K_S.gguf)\n- [qwen_image_2.1_Q3_K_M.gguf](https://huggingface.co/Abiray/Qwen-Image-2.1-GGUF/resolve/main/qwen_image_2.1_Q3_K_M.gguf)\n\n**lora**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/blob/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n\n\n**text_encoders**\n\n- [qwen3vl_8b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_bf16.safetensors)\n- [qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors](https://huggingface.co/craftingmod/Qwen3-VL-8B-Heretic-INT8/resolve/main/qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors) \n\n**vae**\n\n- [qwen_image_2.1_vae_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors)\n"
       },
       "color": "#322",
       "bgcolor": "#533"
@@ -778,15 +531,15 @@
       "id": 556,
       "type": "PixaromaGroupSwitch",
       "pos": [
-        -131.42895901239766,
-        3229.398226301749
+        -139.0489338908559,
+        3228.8155223404565
       ],
       "size": [
         250,
         134
       ],
       "flags": {},
-      "order": 11,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -842,28 +595,28 @@
       "id": 557,
       "type": "PixaromaCompare",
       "pos": [
-        741.9127035932413,
-        3385.6600532160355
+        658.7339542876236,
+        3386.3727449840803
       ],
       "size": [
         1288.1755507033008,
         665.4739482244945
       ],
       "flags": {},
-      "order": 14,
-      "mode": 0,
+      "order": 16,
+      "mode": 4,
       "inputs": [
         {
           "name": "image1",
           "shape": 7,
           "type": "IMAGE",
-          "link": 871
+          "link": 895
         },
         {
           "name": "image2",
           "shape": 7,
           "type": "IMAGE",
-          "link": 872
+          "link": 894
         }
       ],
       "outputs": [],
@@ -877,12 +630,12 @@
           "opacity": 0.5,
           "images": [
             {
-              "filename": "pixaroma_compare_pixcmp_ioaaa_00001_.png",
+              "filename": "pixaroma_compare_pixcmp_ybnpy_00002_.png",
               "subfolder": "",
               "type": "temp"
             },
             {
-              "filename": "pixaroma_compare_pixcmp_ioaaa_00002_.png",
+              "filename": "pixaroma_compare_pixcmp_ybnpy_00003_.png",
               "subfolder": "",
               "type": "temp"
             }
@@ -891,6 +644,438 @@
       },
       "color": "#1f9e6a",
       "bgcolor": "#23362f"
+    },
+    {
+      "id": 560,
+      "type": "PixaromaSeed",
+      "pos": [
+        384.1432509162648,
+        3063.823110553774
+      ],
+      "size": [
+        243.30419673486745,
+        86
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            880
+          ]
+        }
+      ],
+      "title": "3. Seed Random/Fixed?",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaSeed",
+        "seedState": "{\"seed\":4110397380042141,\"mode\":\"random\",\"compact\":true,\"digits\":16}"
+      },
+      "widgets_values": [
+        {
+          "seed": 4110397380042141,
+          "mode": "random",
+          "compact": true,
+          "digits": 16
+        }
+      ],
+      "widgets_values_named": {
+        "seed_ui": {
+          "seed": 4110397380042141,
+          "mode": "random",
+          "compact": true,
+          "digits": 16
+        }
+      },
+      "color": "#14436c",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 561,
+      "type": "PixaromaSizes",
+      "pos": [
+        382.04940662466316,
+        2557.4196486134665
+      ],
+      "size": [
+        240,
+        444
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            878
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            879
+          ]
+        }
+      ],
+      "title": "1. Pick Orientation and Size",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaSizes",
+        "sizesState": "{\"version\":1,\"sizes\":[[1024,1024],[1152,864],[1248,832],[1376,768],[1920,1088],[1536,1536],[2560,1440],[2048,2048],[2400,1792],[2528,1696],[2752,1536]],\"selected\":2,\"orientation\":\"portrait\",\"snap\":32,\"accent\":null,\"collapsed\":false,\"starred\":[\"2048x2048\",\"1792x2400\",\"1696x2528\",\"1536x2752\"],\"w\":832,\"h\":1248}"
+      },
+      "widgets_values": [
+        {
+          "version": 1,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              1152,
+              864
+            ],
+            [
+              1248,
+              832
+            ],
+            [
+              1376,
+              768
+            ],
+            [
+              1920,
+              1088
+            ],
+            [
+              1536,
+              1536
+            ],
+            [
+              2560,
+              1440
+            ],
+            [
+              2048,
+              2048
+            ],
+            [
+              2400,
+              1792
+            ],
+            [
+              2528,
+              1696
+            ],
+            [
+              2752,
+              1536
+            ]
+          ],
+          "selected": 2,
+          "orientation": "portrait",
+          "snap": 32,
+          "accent": null,
+          "collapsed": false,
+          "starred": [
+            "2048x2048",
+            "1792x2400",
+            "1696x2528",
+            "1536x2752"
+          ],
+          "w": 832,
+          "h": 1248
+        }
+      ],
+      "widgets_values_named": {
+        "sizes_ui": {
+          "version": 1,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              1152,
+              864
+            ],
+            [
+              1248,
+              832
+            ],
+            [
+              1376,
+              768
+            ],
+            [
+              1920,
+              1088
+            ],
+            [
+              1536,
+              1536
+            ],
+            [
+              2560,
+              1440
+            ],
+            [
+              2048,
+              2048
+            ],
+            [
+              2400,
+              1792
+            ],
+            [
+              2528,
+              1696
+            ],
+            [
+              2752,
+              1536
+            ]
+          ],
+          "selected": 2,
+          "orientation": "portrait",
+          "snap": 32,
+          "accent": null,
+          "collapsed": false,
+          "starred": [
+            "2048x2048",
+            "1792x2400",
+            "1696x2528",
+            "1536x2752"
+          ],
+          "w": 832,
+          "h": 1248
+        }
+      },
+      "color": "#2f7fc0",
+      "bgcolor": "#26323b"
+    },
+    {
+      "id": 565,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -1235.6726783737054,
+        2500.215070195425
+      ],
+      "size": [
+        471.05284557127425,
+        648.2509808084656
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            886,
+            895
+          ]
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": [
+            888
+          ]
+        }
+      ],
+      "title": "1. Load Image",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaLoadImageMini"
+      },
+      "widgets_values": [
+        "F2K_00021_.png",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "F2K_00021_.png",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#14436c",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 566,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        -678.4530058867351,
+        2497.2934373568787
+      ],
+      "size": [
+        479.2642201470642,
+        639.0958947556692
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            887
+          ]
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": []
+        }
+      ],
+      "title": "2. Load Image",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaLoadImageMini"
+      },
+      "widgets_values": [
+        "SeedVR2_50516_.jpg",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "SeedVR2_50516_.jpg",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#14436c",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 567,
+      "type": "PixaromaImageInfo",
+      "pos": [
+        389.89818225852076,
+        3212.159934952208
+      ],
+      "size": [
+        228.27219365866517,
+        106
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "link": 888
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [
+            889
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "dfd97a970f89d065bffd7157c77b2cb7fc59c33a",
+        "Node name for S&R": "PixaromaImageInfo"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 568,
+      "type": "PixaromaDropdown",
+      "pos": [
+        380.0051580164608,
+        2440.241024662405
+      ],
+      "size": [
+        250,
+        50
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "​",
+          "name": "value",
+          "type": "INT",
+          "links": [
+            892
+          ]
+        }
+      ],
+      "title": "Resolution",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "dfd97a970f89d065bffd7157c77b2cb7fc59c33a",
+        "Node name for S&R": "PixaromaDropdown",
+        "dropdownState": {
+          "version": 1,
+          "type": "int",
+          "index": 0,
+          "mode": "fixed",
+          "options": [
+            {
+              "name": "1024 - 1MP",
+              "value": "1024"
+            },
+            {
+              "name": "1536 - 2.4MP",
+              "value": "1536"
+            },
+            {
+              "name": "2048 - 4MP",
+              "value": "2048"
+            }
+          ]
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "color": "#2f7fc0",
+      "bgcolor": "#26323b"
     }
   ],
   "links": [
@@ -911,27 +1096,51 @@
       "STRING"
     ],
     [
-      861,
-      478,
+      888,
+      565,
+      1,
+      567,
+      0,
+      "PIX_IMAGE_INFO"
+    ],
+    [
+      889,
+      567,
+      4,
+      526,
+      1,
+      "STRING"
+    ],
+    [
+      878,
+      561,
       0,
       515,
       0,
       "INT"
     ],
     [
-      862,
-      478,
+      879,
+      561,
       1,
       515,
       1,
       "INT"
     ],
     [
-      806,
-      479,
+      880,
+      560,
       0,
       515,
       2,
+      "INT"
+    ],
+    [
+      892,
+      568,
+      0,
+      515,
+      3,
       "INT"
     ],
     [
@@ -939,55 +1148,43 @@
       512,
       0,
       515,
-      3,
+      4,
       "STRING"
     ],
     [
-      866,
-      539,
+      886,
+      565,
       0,
       515,
-      4,
+      6,
       "IMAGE"
     ],
     [
-      867,
-      540,
+      887,
+      566,
       0,
       515,
-      5,
+      7,
       "IMAGE"
     ],
     [
-      871,
-      539,
-      0,
-      557,
-      0,
-      "IMAGE"
-    ],
-    [
-      872,
+      894,
       515,
       0,
       557,
       1,
       "IMAGE"
+    ],
+    [
+      895,
+      565,
+      0,
+      557,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
-    {
-      "id": 38,
-      "title": "Seed + Resolution",
-      "bounding": [
-        380.11614819231033,
-        2409.6795870339524,
-        322.89759537594625,
-        751.7411265795677
-      ],
-      "color": "#3f789e",
-      "flags": {}
-    },
     {
       "id": 41,
       "title": "IMAGE",
@@ -997,7 +1194,7 @@
         532.7675183484764,
         759.6597260276726
       ],
-      "color": "#3f789e",
+      "color": "#88A",
       "flags": {}
     },
     {
@@ -1016,8 +1213,8 @@
       "id": 47,
       "title": "COMPARE",
       "bounding": [
-        731.9127035932413,
-        3315.6600532160355,
+        648.7339542876236,
+        3316.3727449840803,
         1308.1755507033008,
         745.4739482244945
       ],
@@ -1032,8 +1229,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 47,
-          "lastNodeId": 557,
-          "lastLinkId": 872,
+          "lastNodeId": 569,
+          "lastLinkId": 895,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1045,7 +1242,7 @@
             441.48940474273377,
             2729.9095028686634,
             143.044921875,
-            428
+            448
           ]
         },
         "outputNode": {
@@ -1096,6 +1293,18 @@
             ]
           },
           {
+            "id": "5323881e-00d8-48e2-bd65-7449adf69a3e",
+            "name": "resolution",
+            "type": "INT",
+            "linkIds": [
+              891
+            ],
+            "pos": [
+              560.5343266177338,
+              2813.9095028686634
+            ]
+          },
+          {
             "id": "84cae72e-afef-4614-87b1-b633ef54b5dd",
             "name": "prompt",
             "type": "STRING",
@@ -1104,7 +1313,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2813.9095028686634
+              2833.9095028686634
             ]
           },
           {
@@ -1116,7 +1325,7 @@
             ],
             "pos": [
               560.5343266177338,
-              3113.9095028686634
+              2853.9095028686634
             ]
           },
           {
@@ -1128,7 +1337,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2833.9095028686634
+              2873.9095028686634
             ]
           },
           {
@@ -1140,7 +1349,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2853.9095028686634
+              2893.9095028686634
             ]
           },
           {
@@ -1152,7 +1361,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2873.9095028686634
+              2913.9095028686634
             ]
           },
           {
@@ -1164,7 +1373,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2893.9095028686634
+              2933.9095028686634
             ]
           },
           {
@@ -1176,7 +1385,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2913.9095028686634
+              2953.9095028686634
             ]
           },
           {
@@ -1188,7 +1397,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2933.9095028686634
+              2973.9095028686634
             ]
           },
           {
@@ -1200,7 +1409,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2953.9095028686634
+              2993.9095028686634
             ]
           },
           {
@@ -1212,7 +1421,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2973.9095028686634
+              3013.9095028686634
             ]
           },
           {
@@ -1224,7 +1433,7 @@
             ],
             "pos": [
               560.5343266177338,
-              2993.9095028686634
+              3033.9095028686634
             ]
           },
           {
@@ -1236,7 +1445,7 @@
             ],
             "pos": [
               560.5343266177338,
-              3013.9095028686634
+              3053.9095028686634
             ]
           },
           {
@@ -1248,7 +1457,7 @@
             ],
             "pos": [
               560.5343266177338,
-              3033.9095028686634
+              3073.9095028686634
             ]
           },
           {
@@ -1258,9 +1467,10 @@
             "linkIds": [
               859
             ],
+            "label": "skip_autoprompt",
             "pos": [
               560.5343266177338,
-              3053.9095028686634
+              3093.9095028686634
             ]
           },
           {
@@ -1273,7 +1483,7 @@
             ],
             "pos": [
               560.5343266177338,
-              3073.9095028686634
+              3113.9095028686634
             ]
           },
           {
@@ -1286,7 +1496,7 @@
             ],
             "pos": [
               560.5343266177338,
-              3093.9095028686634
+              3133.9095028686634
             ]
           }
         ],
@@ -1323,8 +1533,8 @@
             "id": 490,
             "type": "QwenImage21Cache",
             "pos": [
-              2484.7170886168774,
-              2463.9654210172444
+              2497.034510491878,
+              2474.4016710172396
             ],
             "size": [
               270,
@@ -1335,10 +1545,10 @@
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "model",
+                "localized_name": "modello",
                 "name": "model",
                 "type": "MODEL",
-                "link": 840
+                "link": 882
               }
             ],
             "outputs": [
@@ -1347,7 +1557,7 @@
                 "name": "MODEL",
                 "type": "MODEL",
                 "links": [
-                  791
+                  883
                 ]
               }
             ],
@@ -1369,8 +1579,8 @@
             "id": 488,
             "type": "VAEDecode",
             "pos": [
-              2778.6743615345554,
-              2460.453932498626
+              2801.8014318470505,
+              2478.273073123623
             ],
             "size": [
               157.869140625,
@@ -1413,8 +1623,8 @@
             "id": 509,
             "type": "KSampler",
             "pos": [
-              2494.148057651543,
-              2614.280603762222
+              2505.8652060890427,
+              2823.757127199721
             ],
             "size": [
               432.86542219453213,
@@ -1428,7 +1638,7 @@
                 "localized_name": "modello",
                 "name": "model",
                 "type": "MODEL",
-                "link": 791
+                "link": 884
               },
               {
                 "localized_name": "positivo",
@@ -1672,8 +1882,7 @@
                 "name": "MODEL",
                 "type": "MODEL",
                 "links": [
-                  840,
-                  841
+                  876
                 ]
               }
             ],
@@ -1702,8 +1911,8 @@
             "id": 543,
             "type": "EmptyLatentImage",
             "pos": [
-              1166.7448963987586,
-              3239.35834406749
+              744.5350588987584,
+              3228.6749893799897
             ],
             "size": [
               300,
@@ -1808,6 +2017,13 @@
                 "link": null
               },
               {
+                "localized_name": "image_5",
+                "name": "images.image_5",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
                 "localized_name": "vae",
                 "name": "vae",
                 "shape": 7,
@@ -1831,6 +2047,15 @@
                   "name": "negative_prompt"
                 },
                 "link": 868
+              },
+              {
+                "localized_name": "resolution",
+                "name": "resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "resolution"
+                },
+                "link": 891
               }
             ],
             "outputs": [
@@ -1879,8 +2104,8 @@
             "id": 546,
             "type": "LoraLoaderModelOnly",
             "pos": [
-              1167.4590898031834,
-              3036.4660280993985
+              1174.317331990685,
+              3036.759074974402
             ],
             "size": [
               501.3058132512201,
@@ -1894,7 +2119,7 @@
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 841
+                "link": 876
               },
               {
                 "localized_name": "lora_name",
@@ -1920,7 +2145,9 @@
                 "localized_name": "MODELLO",
                 "name": "MODEL",
                 "type": "MODEL",
-                "links": null
+                "links": [
+                  882
+                ]
               }
             ],
             "properties": {
@@ -2029,12 +2256,12 @@
             },
             "widgets_values": [
               "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-              "IMG \u203a Qwen Edit",
+              "IMG › Qwen Edit",
               "None",
               "",
               8192,
               false,
-              3515058211,
+              1762208886,
               "randomize",
               false,
               false,
@@ -2043,12 +2270,12 @@
             ],
             "widgets_values_named": {
               "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-              "preset_prompt": "IMG \u203a Qwen Edit",
+              "preset_prompt": "IMG › Qwen Edit",
               "camera_tag": "None",
               "prompt": "",
               "max_tokens": 8192,
               "keep_model_loaded": false,
-              "seed": 3515058211,
+              "seed": 1762208886,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
               "passthrough": false,
@@ -2057,6 +2284,53 @@
             },
             "color": "#0d9489",
             "bgcolor": "#134e4a"
+          },
+          {
+            "id": 559,
+            "type": "ModelAttentionBackend",
+            "pos": [
+              2507.503869616117,
+              2638.1530368222757
+            ],
+            "size": [
+              300,
+              58
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 883
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "slot_index": 0,
+                "links": [
+                  884
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.37.2",
+              "Node name for S&R": "ModelAttentionBackend"
+            },
+            "widgets_values": [
+              "comfy kitchen attention"
+            ],
+            "widgets_values_named": {
+              "attention": "comfy kitchen attention"
+            },
+            "color": "#25494f",
+            "bgcolor": "#2a2a2a"
           }
         ],
         "groups": [
@@ -2127,30 +2401,6 @@
             "type": "VAE"
           },
           {
-            "id": 791,
-            "origin_id": 490,
-            "origin_slot": 0,
-            "target_id": 509,
-            "target_slot": 0,
-            "type": "MODEL"
-          },
-          {
-            "id": 840,
-            "origin_id": 496,
-            "origin_slot": 0,
-            "target_id": 490,
-            "target_slot": 0,
-            "type": "MODEL"
-          },
-          {
-            "id": 841,
-            "origin_id": 496,
-            "origin_slot": 0,
-            "target_id": 546,
-            "target_slot": 0,
-            "type": "MODEL"
-          },
-          {
             "id": 842,
             "origin_id": 543,
             "origin_slot": 0,
@@ -2191,6 +2441,38 @@
             "type": "STRING"
           },
           {
+            "id": 876,
+            "origin_id": 496,
+            "origin_slot": 0,
+            "target_id": 546,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 882,
+            "origin_id": 546,
+            "origin_slot": 0,
+            "target_id": 490,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 883,
+            "origin_id": 490,
+            "origin_slot": 0,
+            "target_id": 559,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 884,
+            "origin_id": 559,
+            "origin_slot": 0,
+            "target_id": 509,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
             "id": 846,
             "origin_id": 493,
             "origin_slot": 0,
@@ -2203,7 +2485,7 @@
             "origin_id": 486,
             "origin_slot": 0,
             "target_id": 545,
-            "target_slot": 5,
+            "target_slot": 6,
             "type": "VAE"
           },
           {
@@ -2211,7 +2493,7 @@
             "origin_id": 547,
             "origin_slot": 0,
             "target_id": 545,
-            "target_slot": 6,
+            "target_slot": 7,
             "type": "STRING"
           },
           {
@@ -2239,9 +2521,17 @@
             "type": "INT"
           },
           {
-            "id": 858,
+            "id": 891,
             "origin_id": -10,
             "origin_slot": 3,
+            "target_id": 545,
+            "target_slot": 9,
+            "type": "INT"
+          },
+          {
+            "id": 858,
+            "origin_id": -10,
+            "origin_slot": 4,
             "target_id": 547,
             "target_slot": 5,
             "type": "STRING"
@@ -2249,15 +2539,15 @@
           {
             "id": 868,
             "origin_id": -10,
-            "origin_slot": 4,
+            "origin_slot": 5,
             "target_id": 545,
-            "target_slot": 7,
+            "target_slot": 8,
             "type": "STRING"
           },
           {
             "id": 815,
             "origin_id": -10,
-            "origin_slot": 5,
+            "origin_slot": 6,
             "target_id": 509,
             "target_slot": 6,
             "type": "FLOAT"
@@ -2265,7 +2555,7 @@
           {
             "id": 814,
             "origin_id": -10,
-            "origin_slot": 6,
+            "origin_slot": 7,
             "target_id": 509,
             "target_slot": 5,
             "type": "INT"
@@ -2273,7 +2563,7 @@
           {
             "id": 816,
             "origin_id": -10,
-            "origin_slot": 7,
+            "origin_slot": 8,
             "target_id": 509,
             "target_slot": 7,
             "type": "COMBO"
@@ -2281,7 +2571,7 @@
           {
             "id": 817,
             "origin_id": -10,
-            "origin_slot": 8,
+            "origin_slot": 9,
             "target_id": 509,
             "target_slot": 8,
             "type": "COMBO"
@@ -2289,7 +2579,7 @@
           {
             "id": 810,
             "origin_id": -10,
-            "origin_slot": 9,
+            "origin_slot": 10,
             "target_id": 496,
             "target_slot": 0,
             "type": "COMBO"
@@ -2297,7 +2587,7 @@
           {
             "id": 811,
             "origin_id": -10,
-            "origin_slot": 10,
+            "origin_slot": 11,
             "target_id": 493,
             "target_slot": 0,
             "type": "COMBO"
@@ -2305,7 +2595,7 @@
           {
             "id": 812,
             "origin_id": -10,
-            "origin_slot": 11,
+            "origin_slot": 12,
             "target_id": 486,
             "target_slot": 0,
             "type": "COMBO"
@@ -2313,7 +2603,7 @@
           {
             "id": 844,
             "origin_id": -10,
-            "origin_slot": 12,
+            "origin_slot": 13,
             "target_id": 546,
             "target_slot": 1,
             "type": "COMBO"
@@ -2321,7 +2611,7 @@
           {
             "id": 845,
             "origin_id": -10,
-            "origin_slot": 13,
+            "origin_slot": 14,
             "target_id": 546,
             "target_slot": 2,
             "type": "FLOAT"
@@ -2329,7 +2619,7 @@
           {
             "id": 856,
             "origin_id": -10,
-            "origin_slot": 14,
+            "origin_slot": 15,
             "target_id": 547,
             "target_slot": 3,
             "type": "COMBO"
@@ -2337,7 +2627,7 @@
           {
             "id": 857,
             "origin_id": -10,
-            "origin_slot": 15,
+            "origin_slot": 16,
             "target_id": 547,
             "target_slot": 4,
             "type": "COMBO"
@@ -2345,7 +2635,7 @@
           {
             "id": 859,
             "origin_id": -10,
-            "origin_slot": 16,
+            "origin_slot": 17,
             "target_id": 547,
             "target_slot": 6,
             "type": "BOOLEAN"
@@ -2353,7 +2643,7 @@
           {
             "id": 847,
             "origin_id": -10,
-            "origin_slot": 17,
+            "origin_slot": 18,
             "target_id": 545,
             "target_slot": 1,
             "type": "IMAGE"
@@ -2361,7 +2651,7 @@
           {
             "id": 854,
             "origin_id": -10,
-            "origin_slot": 17,
+            "origin_slot": 18,
             "target_id": 547,
             "target_slot": 0,
             "type": "IMAGE"
@@ -2369,7 +2659,7 @@
           {
             "id": 848,
             "origin_id": -10,
-            "origin_slot": 18,
+            "origin_slot": 19,
             "target_id": 545,
             "target_slot": 2,
             "type": "IMAGE"
@@ -2377,7 +2667,7 @@
           {
             "id": 855,
             "origin_id": -10,
-            "origin_slot": 18,
+            "origin_slot": 19,
             "target_id": 547,
             "target_slot": 1,
             "type": "IMAGE"
@@ -2391,16 +2681,16 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.53.6",
+    "frontendVersion": "1.53.10",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.5952298136646054,
+      "scale": 0.7202280745341726,
       "offset": [
-        1881.2052067198988,
-        -1846.2194136779106
+        1655.7756662139536,
+        -2123.4633701903936
       ]
     }
   },

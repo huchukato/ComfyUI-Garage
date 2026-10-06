@@ -1,8 +1,8 @@
 {
   "id": "b018abaf-0bbf-4a71-8c05-d1170d3783d2",
   "revision": 0,
-  "last_node_id": 545,
-  "last_link_id": 849,
+  "last_node_id": 548,
+  "last_link_id": 854,
   "nodes": [
     {
       "id": 530,
@@ -74,8 +74,8 @@
       "id": 518,
       "type": "PixaromaRunTimer",
       "pos": [
-        413.2735350323676,
-        2251.2736652749127
+        -259.3013064456666,
+        2252.329052169844
       ],
       "size": [
         370,
@@ -102,8 +102,8 @@
       "id": 517,
       "type": "PixaromaMonitor",
       "pos": [
-        -39.31814150268562,
-        2202.47807961734
+        -678.752204538741,
+        2201.39824360515
       ],
       "size": [
         390,
@@ -192,7 +192,7 @@
         821.640809967741
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -244,121 +244,6 @@
       "bgcolor": "#26323b"
     },
     {
-      "id": 478,
-      "type": "PixaromaResolution",
-      "pos": [
-        -697.4031392121407,
-        2517.365485116179
-      ],
-      "size": [
-        240,
-        435
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            843
-          ]
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            844
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "a63a793842dfd59013d0df0e749ffd4441678307",
-        "Node name for S&R": "PixaromaResolution",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "resolutionState": "{\"mode\":\"preset\",\"ratio\":\"2:3\",\"w\":768,\"h\":1152,\"custom_w\":1024,\"custom_h\":1024,\"custom_ratio_w\":4,\"custom_ratio_h\":3,\"snap\":16}"
-      },
-      "widgets_values": [
-        {
-          "mode": "preset",
-          "ratio": "2:3",
-          "w": 768,
-          "h": 1152,
-          "custom_w": 1024,
-          "custom_h": 1024,
-          "custom_ratio_w": 4,
-          "custom_ratio_h": 3,
-          "snap": 16
-        }
-      ],
-      "widgets_values_named": {
-        "resolution_ui": {
-          "mode": "preset",
-          "ratio": "2:3",
-          "w": 768,
-          "h": 1152,
-          "custom_w": 1024,
-          "custom_h": 1024,
-          "custom_ratio_w": 4,
-          "custom_ratio_h": 3,
-          "snap": 16
-        }
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 479,
-      "type": "Seed (rgthree)",
-      "pos": [
-        -690.6497541599198,
-        3015.245256917269
-      ],
-      "size": [
-        233.79841005843446,
-        133.40702523830396
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "SEED",
-          "shape": 3,
-          "type": "INT",
-          "links": [
-            845
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "2c5342a8cb0eaecaabf61435a5f37dd594c510ba",
-        "randomMax": 1125899906842624,
-        "randomMin": 0,
-        "aux_id": "rgthree/rgthree-comfy"
-      },
-      "widgets_values": [
-        -1,
-        "",
-        "",
-        "okay"
-      ],
-      "widgets_values_named": {
-        "seed": -1,
-        "🎲 Randomize Each Time": "",
-        "🎲 New Fixed Random": "",
-        "USE_LAST_SEED": "okay"
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 513,
       "type": "PixaromaShowText",
       "pos": [
@@ -370,7 +255,7 @@
         710.9941358374426
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -414,7 +299,7 @@
         720.9005467337638
       ],
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -476,7 +361,7 @@
         719.7086779593656
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -485,7 +370,7 @@
           "widget": {
             "name": "width"
           },
-          "link": 843
+          "link": 852
         },
         {
           "name": "height",
@@ -493,7 +378,7 @@
           "widget": {
             "name": "height"
           },
-          "link": 844
+          "link": 853
         },
         {
           "name": "seed",
@@ -501,7 +386,15 @@
           "widget": {
             "name": "seed"
           },
-          "link": 845
+          "link": 854
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": 851
         },
         {
           "label": "positive_prompt",
@@ -591,6 +484,7 @@
         1024,
         1024,
         447606998181262,
+        1024,
         "",
         "",
         1,
@@ -611,6 +505,7 @@
         "width": 1024,
         "height": 1024,
         "seed": 447606998181262,
+        "resolution": 1024,
         "prompt": "",
         "negative_prompt": "",
         "cfg": 1,
@@ -629,6 +524,281 @@
       },
       "color": "#233",
       "bgcolor": "#355"
+    },
+    {
+      "id": 546,
+      "type": "PixaromaDropdown",
+      "pos": [
+        -699.5577576171619,
+        2459.5002763660386
+      ],
+      "size": [
+        250,
+        50
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "​",
+          "name": "value",
+          "type": "INT",
+          "links": [
+            851
+          ]
+        }
+      ],
+      "title": "Resolution",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "dfd97a970f89d065bffd7157c77b2cb7fc59c33a",
+        "Node name for S&R": "PixaromaDropdown",
+        "dropdownState": {
+          "version": 1,
+          "type": "int",
+          "index": 0,
+          "mode": "fixed",
+          "options": [
+            {
+              "name": "1024 - 1MP",
+              "value": "1024"
+            },
+            {
+              "name": "1536 - 2.4MP",
+              "value": "1536"
+            },
+            {
+              "name": "2048 - 4MP",
+              "value": "2048"
+            }
+          ]
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "color": "#2f7fc0",
+      "bgcolor": "#26323b"
+    },
+    {
+      "id": 547,
+      "type": "PixaromaSizes",
+      "pos": [
+        -699.5577576171619,
+        2579.5002763660386
+      ],
+      "size": [
+        240,
+        444
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            852
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            853
+          ]
+        }
+      ],
+      "title": "1. Pick Orientation and Size",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaSizes",
+        "sizesState": "{\"version\":1,\"sizes\":[[1024,1024],[1152,864],[1248,832],[1376,768],[1920,1088],[1536,1536],[2560,1440],[2048,2048],[2400,1792],[2528,1696],[2752,1536]],\"selected\":2,\"orientation\":\"portrait\",\"snap\":32,\"accent\":null,\"collapsed\":false,\"starred\":[\"2048x2048\",\"1792x2400\",\"1696x2528\",\"1536x2752\"],\"w\":832,\"h\":1248}"
+      },
+      "widgets_values": [
+        {
+          "version": 1,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              1152,
+              864
+            ],
+            [
+              1248,
+              832
+            ],
+            [
+              1376,
+              768
+            ],
+            [
+              1920,
+              1088
+            ],
+            [
+              1536,
+              1536
+            ],
+            [
+              2560,
+              1440
+            ],
+            [
+              2048,
+              2048
+            ],
+            [
+              2400,
+              1792
+            ],
+            [
+              2528,
+              1696
+            ],
+            [
+              2752,
+              1536
+            ]
+          ],
+          "selected": 2,
+          "orientation": "portrait",
+          "snap": 32,
+          "accent": null,
+          "collapsed": false,
+          "starred": [
+            "2048x2048",
+            "1792x2400",
+            "1696x2528",
+            "1536x2752"
+          ],
+          "w": 832,
+          "h": 1248
+        }
+      ],
+      "widgets_values_named": {
+        "sizes_ui": {
+          "version": 1,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              1152,
+              864
+            ],
+            [
+              1248,
+              832
+            ],
+            [
+              1376,
+              768
+            ],
+            [
+              1920,
+              1088
+            ],
+            [
+              1536,
+              1536
+            ],
+            [
+              2560,
+              1440
+            ],
+            [
+              2048,
+              2048
+            ],
+            [
+              2400,
+              1792
+            ],
+            [
+              2528,
+              1696
+            ],
+            [
+              2752,
+              1536
+            ]
+          ],
+          "selected": 2,
+          "orientation": "portrait",
+          "snap": 32,
+          "accent": null,
+          "collapsed": false,
+          "starred": [
+            "2048x2048",
+            "1792x2400",
+            "1696x2528",
+            "1536x2752"
+          ],
+          "w": 832,
+          "h": 1248
+        }
+      },
+      "color": "#2f7fc0",
+      "bgcolor": "#26323b"
+    },
+    {
+      "id": 548,
+      "type": "PixaromaSeed",
+      "pos": [
+        -699.5577576171619,
+        3079.5002763660386
+      ],
+      "size": [
+        243.30419673486745,
+        86
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            854
+          ]
+        }
+      ],
+      "title": "3. Seed Random/Fixed?",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
+        "Node name for S&R": "PixaromaSeed",
+        "seedState": "{\"seed\":4110397380042141,\"mode\":\"random\",\"compact\":true,\"digits\":16}"
+      },
+      "widgets_values": [
+        {
+          "seed": 4110397380042141,
+          "mode": "random",
+          "compact": true,
+          "digits": 16
+        }
+      ],
+      "widgets_values_named": {
+        "seed_ui": {
+          "seed": 4110397380042141,
+          "mode": "random",
+          "compact": true,
+          "digits": 16
+        }
+      },
+      "color": "#14436c",
+      "bgcolor": "#2a2a2a"
     }
   ],
   "links": [
@@ -639,30 +809,6 @@
       526,
       0,
       "IMAGE"
-    ],
-    [
-      843,
-      478,
-      0,
-      544,
-      0,
-      "INT"
-    ],
-    [
-      844,
-      478,
-      1,
-      544,
-      1,
-      "INT"
-    ],
-    [
-      845,
-      479,
-      0,
-      544,
-      2,
-      "INT"
     ],
     [
       846,
@@ -677,7 +823,7 @@
       512,
       0,
       544,
-      3,
+      4,
       "STRING"
     ],
     [
@@ -685,24 +831,43 @@
       512,
       1,
       544,
-      4,
+      5,
       "STRING"
+    ],
+    [
+      851,
+      546,
+      0,
+      544,
+      3,
+      "INT"
+    ],
+    [
+      852,
+      547,
+      0,
+      544,
+      0,
+      "INT"
+    ],
+    [
+      853,
+      547,
+      1,
+      544,
+      1,
+      "INT"
+    ],
+    [
+      854,
+      548,
+      0,
+      544,
+      2,
+      "INT"
     ]
   ],
-  "groups": [
-    {
-      "id": 38,
-      "title": "Seed + Resolution",
-      "bounding": [
-        -719.4290145906652,
-        2425.973155199658,
-        290.5205014109034,
-        745.1568407572377
-      ],
-      "color": "#3f789e",
-      "flags": {}
-    }
-  ],
+  "groups": [],
   "definitions": {
     "subgraphs": [
       {
@@ -710,8 +875,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 55,
-          "lastNodeId": 545,
-          "lastLinkId": 849,
+          "lastNodeId": 548,
+          "lastLinkId": 854,
           "lastRerouteId": 9
         },
         "revision": 0,
@@ -723,7 +888,7 @@
             -660,
             610,
             158.056640625,
-            408
+            428
           ]
         },
         "outputNode": {
@@ -772,6 +937,18 @@
             "pos": [
               -525.943359375,
               674
+            ]
+          },
+          {
+            "id": "a5beb80c-03b6-49e9-a5c7-af31b696731b",
+            "name": "resolution",
+            "type": "INT",
+            "linkIds": [
+              850
+            ],
+            "pos": [
+              -525.943359375,
+              994
             ]
           },
           {
@@ -1099,6 +1276,15 @@
                   "name": "negative_prompt"
                 },
                 "link": 657
+              },
+              {
+                "localized_name": "resolution",
+                "name": "resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "resolution"
+                },
+                "link": 850
               }
             ],
             "outputs": [
@@ -1493,13 +1679,13 @@
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "model",
+                "localized_name": "modello",
                 "name": "model",
                 "type": "MODEL",
                 "link": 701
               },
               {
-                "localized_name": "device",
+                "localized_name": "dispositivo",
                 "name": "device",
                 "type": "COMBO",
                 "widget": {
@@ -1819,6 +2005,14 @@
             "type": "STRING"
           },
           {
+            "id": 849,
+            "origin_id": 454,
+            "origin_slot": 0,
+            "target_id": 452,
+            "target_slot": 2,
+            "type": "VAE"
+          },
+          {
             "id": 660,
             "origin_id": -10,
             "origin_slot": 0,
@@ -1843,9 +2037,17 @@
             "type": "INT"
           },
           {
-            "id": 716,
+            "id": 850,
             "origin_id": -10,
             "origin_slot": 3,
+            "target_id": 452,
+            "target_slot": 5,
+            "type": "INT"
+          },
+          {
+            "id": 716,
+            "origin_id": -10,
+            "origin_slot": 4,
             "target_id": 484,
             "target_slot": 1,
             "type": "STRING"
@@ -1853,7 +2055,7 @@
           {
             "id": 657,
             "origin_id": -10,
-            "origin_slot": 4,
+            "origin_slot": 5,
             "target_id": 452,
             "target_slot": 4,
             "type": "STRING"
@@ -1861,7 +2063,7 @@
           {
             "id": 658,
             "origin_id": -10,
-            "origin_slot": 5,
+            "origin_slot": 6,
             "target_id": 458,
             "target_slot": 6,
             "type": "FLOAT"
@@ -1869,7 +2071,7 @@
           {
             "id": 659,
             "origin_id": -10,
-            "origin_slot": 6,
+            "origin_slot": 7,
             "target_id": 458,
             "target_slot": 5,
             "type": "INT"
@@ -1877,7 +2079,7 @@
           {
             "id": 662,
             "origin_id": -10,
-            "origin_slot": 7,
+            "origin_slot": 8,
             "target_id": 458,
             "target_slot": 7,
             "type": "COMBO"
@@ -1885,7 +2087,7 @@
           {
             "id": 668,
             "origin_id": -10,
-            "origin_slot": 8,
+            "origin_slot": 9,
             "target_id": 458,
             "target_slot": 8,
             "type": "COMBO"
@@ -1893,7 +2095,7 @@
           {
             "id": 663,
             "origin_id": -10,
-            "origin_slot": 9,
+            "origin_slot": 10,
             "target_id": 451,
             "target_slot": 0,
             "type": "COMBO"
@@ -1901,7 +2103,7 @@
           {
             "id": 664,
             "origin_id": -10,
-            "origin_slot": 10,
+            "origin_slot": 11,
             "target_id": 453,
             "target_slot": 0,
             "type": "COMBO"
@@ -1909,7 +2111,7 @@
           {
             "id": 665,
             "origin_id": -10,
-            "origin_slot": 11,
+            "origin_slot": 12,
             "target_id": 454,
             "target_slot": 0,
             "type": "COMBO"
@@ -1917,7 +2119,7 @@
           {
             "id": 703,
             "origin_id": -10,
-            "origin_slot": 12,
+            "origin_slot": 13,
             "target_id": 480,
             "target_slot": 1,
             "type": "COMBO"
@@ -1925,7 +2127,7 @@
           {
             "id": 704,
             "origin_id": -10,
-            "origin_slot": 13,
+            "origin_slot": 14,
             "target_id": 480,
             "target_slot": 2,
             "type": "COMBO"
@@ -1933,7 +2135,7 @@
           {
             "id": 719,
             "origin_id": -10,
-            "origin_slot": 14,
+            "origin_slot": 15,
             "target_id": 484,
             "target_slot": 0,
             "type": "COMBO"
@@ -1941,7 +2143,7 @@
           {
             "id": 717,
             "origin_id": -10,
-            "origin_slot": 15,
+            "origin_slot": 16,
             "target_id": 484,
             "target_slot": 2,
             "type": "COMBO"
@@ -1949,7 +2151,7 @@
           {
             "id": 718,
             "origin_id": -10,
-            "origin_slot": 16,
+            "origin_slot": 17,
             "target_id": 484,
             "target_slot": 3,
             "type": "COMBO"
@@ -1957,18 +2159,10 @@
           {
             "id": 720,
             "origin_id": -10,
-            "origin_slot": 17,
+            "origin_slot": 18,
             "target_id": 484,
             "target_slot": 4,
             "type": "BOOLEAN"
-          },
-          {
-            "id": 849,
-            "origin_id": 454,
-            "origin_slot": 0,
-            "target_id": 452,
-            "target_slot": 2,
-            "type": "VAE"
           }
         ],
         "extra": {
@@ -1979,16 +2173,16 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.53.6",
+    "frontendVersion": "1.53.10",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.9586235672049839,
+      "scale": 0.8714759701863489,
       "offset": [
-        1666.349201314093,
-        -2184.05652134771
+        1829.950061954578,
+        -2034.674859818663
       ]
     }
   },
