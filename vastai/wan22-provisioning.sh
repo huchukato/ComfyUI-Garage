@@ -41,6 +41,8 @@ NODES=(
     "https://github.com/melMass/comfy_mtb"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
     "https://github.com/pixaroma/ComfyUI-Pixaroma"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
 )
 
 WORKFLOWS=(

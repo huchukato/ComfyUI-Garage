@@ -27,9 +27,9 @@ NODES=(
     "https://github.com/yolain/ComfyUI-Easy-Use"
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/pixaroma/ComfyUI-Pixaroma"
-    "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
     "https://github.com/kijai/ComfyUI-KJNodes"
-    "https://github.com/ChrisColeTech/ComfyUI-GGUF-Loader"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
     "https://github.com/huchukato/ComfyUI-Gallery"
 )
@@ -39,6 +39,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-FL2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-T2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-R2VA-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Singularity-R2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/Pony-XL-Outpaint.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-Upscale-TensorRT.json"
@@ -72,16 +73,21 @@ CONTROLNET_MODELS=(
 MINIMAX_MODELS=(
     "vae|minimax_h3_video_vae_fp16.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors|5200000000"
     "vae|minimax_h3_audio_vae_fp32.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors|600000000"
+    # ── Tiny H3 VAE for fast previews (Kijai TAE) → models/vae_approx ──
+    "vae_approx|taeh3.safetensors|https://huggingface.co/Kijai/MiniMax-H3-TAE/resolve/main/vae_approx/taeh3.safetensors|10000000"
     # ── Pure INT8 ConvRot DiT (Comfy-Org official) — better quality than NVFP4 hybrid ──
     "diffusion_models|minimax_h3_fl2va_pruned_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors|20000000000"
-    "diffusion_models|minimax_h3_ref2va_pruned_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors|20000000000"
+    # ── Singularity fusion (T2V/I2V/R2V/V2V in un unet solo) — sostituisce ref2va nativo ──
+    "diffusion_models|Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors|https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity/resolve/main/Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors|20000000000"
     # ── Full H3 conditioning TE: Ultra Heretic INT8 ConvRot (uncensored, ethanfel) ──
     "text_encoders|qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|15000000000"
     # ── lightx2v Turbo LoRA 8-step 768p (Apache-2.0, trained at 1344×768) — no custom node needed ──
     "loras|minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
     "loras|minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
-    # ── Kijai reference LoRA rank 256 — required for R2VA Native preset ──
-    "loras|minimax_h3_ref_lora_rank_256_bf16.safetensors|https://huggingface.co/Kijai/MiniMax-H3-experimental/resolve/main/loras/minimax_h3_ref_lora_rank_256_bf16.safetensors|2500000000"
+    # ── fal Realism People LoRA (trigger: r34l1sm) ──
+    "loras|h3-realism-people-t2v-i2v-r2v.safetensors|https://huggingface.co/fal/MiniMax-H3-Realism-People-LoRA/resolve/main/h3-realism-people-t2v-i2v-r2v.safetensors|100000000"
+    # ── akatz Character-Swap LoRA — ref2v character swap ──
+    "loras|h3_character_swap_pro4500_1000.safetensors|https://huggingface.co/akatz-ai/MiniMax-H3-Character-Swap-LoRA/resolve/main/h3_character_swap_pro4500_1000.safetensors|500000000"
     # ── TenStrip combined turbo LoRA (4.4GB) — the exact delta fused into the TURBO checkpoint; use with 10Eros non-turbo ──
     "loras|lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|https://huggingface.co/TenStrip/MinimaxH3-Turbo_Shenanigans/resolve/main/lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|4300000000"
     # ── 10Eros-Max Hybrid Beta5 INT8 NON-turbo (TenStrip, 21GB) — turbo via LoRA esterno regolabile (no color shift baked-in) ──
@@ -337,7 +343,7 @@ function monitor_progress() {
 
 function download_minimax_models() {
     local base_dir="${COMFYUI_DIR}/models"
-    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,clip_projections,loras}
+    mkdir -p "$base_dir"/{vae,vae_approx,diffusion_models,text_encoders,clip_projections,loras}
 
     local hf_cmd="hf"
     command -v hf >/dev/null 2>&1 || hf_cmd="huggingface-cli"

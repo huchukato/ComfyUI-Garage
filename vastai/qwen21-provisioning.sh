@@ -29,6 +29,9 @@ NODES=(
     "https://github.com/ChrisColeTech/ComfyUI-GGUF-Loader"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
     "https://github.com/huchukato/ComfyUI-Gallery"
+    "https://github.com/yolain/ComfyUI-Easy-Use"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
 )
 
 WORKFLOWS=(
