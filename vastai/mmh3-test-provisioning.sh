@@ -26,6 +26,7 @@ NODES=(
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/yolain/ComfyUI-Easy-Use"
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/pixaroma/ComfyUI-Pixaroma"
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
