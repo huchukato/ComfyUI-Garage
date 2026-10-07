@@ -86,8 +86,6 @@ MINIMAX_MODELS=(
     "loras|h3-realism-people-t2v-i2v-r2v.safetensors|https://huggingface.co/fal/MiniMax-H3-Realism-People-LoRA/resolve/main/h3-realism-people-t2v-i2v-r2v.safetensors|100000000"
     # ── ref2v Turbo 4-step (Comfy-Org official) — the LoRA Singularity recommends ──
     "loras|minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors|1900000000"
-    # ── Kijai reference LoRA rank 256 — required for R2VA Native preset ──
-    "loras|minimax_h3_ref_lora_rank_256_bf16.safetensors|https://huggingface.co/Kijai/MiniMax-H3-experimental/resolve/main/loras/minimax_h3_ref_lora_rank_256_bf16.safetensors|2500000000"
 )
 
 
