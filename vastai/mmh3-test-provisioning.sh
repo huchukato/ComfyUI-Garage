@@ -75,7 +75,7 @@ MINIMAX_MODELS=(
     "vae|minimax_h3_video_vae_fp16.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors|5200000000"
     "vae|minimax_h3_audio_vae_fp32.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors|600000000"
     # ── Tiny H3 VAE for fast previews (Kijai TAE) ──
-    "vae|taeh3.safetensors|https://huggingface.co/Kijai/MiniMax-H3-TAE/resolve/main/vae_approx/taeh3.safetensors|10000000"
+    "vae_approx|taeh3.safetensors|https://huggingface.co/Kijai/MiniMax-H3-TAE/resolve/main/vae_approx/taeh3.safetensors|10000000"
     # ── Singularity pruned INT8 (WarmBloodAban) — fusion T2V/I2V/Ref2V/V2V ──
     "diffusion_models|Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors|https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity/resolve/main/Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors|20000000000"
     # ── Full H3 conditioning TE: Ultra Heretic NVFP4 (uncensored, ethanfel) ──
@@ -339,7 +339,7 @@ function monitor_progress() {
 
 function download_minimax_models() {
     local base_dir="${COMFYUI_DIR}/models"
-    mkdir -p "$base_dir"/{vae,diffusion_models,text_encoders,clip_projections,loras}
+    mkdir -p "$base_dir"/{vae,vae_approx,diffusion_models,text_encoders,clip_projections,loras}
 
     local hf_cmd="hf"
     command -v hf >/dev/null 2>&1 || hf_cmd="huggingface-cli"
