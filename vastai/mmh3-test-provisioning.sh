@@ -80,8 +80,8 @@ MINIMAX_MODELS=(
     "diffusion_models|Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors|https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity/resolve/main/Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors|20000000000"
     # ── Full H3 conditioning TE: Ultra Heretic NVFP4 (uncensored, ethanfel) ──
     "text_encoders|qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|15000000000"
-    # ── Official alibaba-pai 8-step Acc LoRA for Ref2VA (rank 64, BF16) — the turbo used in Singularity test wf ──
-    "loras|MiniMax-H3-Ref2VA-Acc-8Step.safetensors|https://huggingface.co/alibaba-pai/MiniMax-H3-Acc-LoRAs/resolve/main/MiniMax-H3-Ref2VA-Acc-8Step.safetensors|1300000000"
+    # ── akatz Character-Swap LoRA — ref2v character swap ──
+    "loras|h3_character_swap_pro4500_1000.safetensors|https://huggingface.co/akatz-ai/MiniMax-H3-Character-Swap-LoRA/resolve/main/h3_character_swap_pro4500_1000.safetensors|500000000"
     # ── fal Realism People LoRA (rank 32, trigger word: r34l1sm) ──
     "loras|h3-realism-people-t2v-i2v-r2v.safetensors|https://huggingface.co/fal/MiniMax-H3-Realism-People-LoRA/resolve/main/h3-realism-people-t2v-i2v-r2v.safetensors|100000000"
     # ── ref2v Turbo 4-step (Comfy-Org official) — the LoRA Singularity recommends ──
