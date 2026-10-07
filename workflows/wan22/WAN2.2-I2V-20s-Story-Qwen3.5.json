@@ -6291,7 +6291,7 @@
         "large",
         3,
         false,
-        "RealESRGAN_x2plus",
+        "2xLexicaRRDBNet",
         2,
         "2x",
         2
@@ -6301,7 +6301,7 @@
         "resolution_profile": "large",
         "multiplier": 3,
         "keep_model_loaded": false,
-        "model_1": "RealESRGAN_x2plus",
+        "model_1": "2xLexicaRRDBNet",
         "batch_size": 2,
         "resize_to": "2x",
         "batch_size_1": 2
@@ -16476,12 +16476,12 @@
               "Node name for S&R": "LoadUpscalerTensorrtModel"
             },
             "widgets_values": [
-              "2xLexicaRRDBNet_Sharp",
+              "2xLexicaRRDBNet",
               "fp16",
               2
             ],
             "widgets_values_named": {
-              "model": "2xLexicaRRDBNet_Sharp",
+              "model": "2xLexicaRRDBNet",
               "precision": "fp16",
               "batch_size": 2
             },

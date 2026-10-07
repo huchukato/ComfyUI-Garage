@@ -40,9 +40,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-Upscale-TensorRT.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/qwen21/QwenImageEdit21-Wildcards-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/qwen21/QwenImage21-T2I-Wildcards-Qwen3.5.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-Wildcards-HiResFix-FaceDet.json"
 )
 
 CHECKPOINT_MODELS=(
@@ -58,6 +56,9 @@ VAE_MODELS=(
 )
 
 ESRGAN_MODELS=(
+    "https://huggingface.co/huchukato/garage/resolve/main/upscale_models/4xUltrasharp_4xUltrasharpV10.pth"
+    "https://huggingface.co/huchukato/garage/resolve/main/upscale_models/4x-AnimeSharp.pth"
+    "https://huggingface.co/huchukato/garage/resolve/main/upscale_models/RealESRGAN_x4plus.pth"
 )
 
 TEXT_ENCODERS=(
@@ -68,8 +69,8 @@ CONTROLNET_MODELS=(
 
 # Qwen Image Edit 2.1 models via hf/huggingface-cli (format: subdir|name|url|min_size_bytes)
 QWEN21_MODELS=(
-    # ── Qwen Image 2.1 UC (uncensored abenzerps, int8_convrot) — saved under the stock name the workflow expects ──
-    "diffusion_models|qwen-image-2.1-UC-int8_convrot.safetensors|https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF/resolve/main/qwen-image-2.1-UC-int8_convrot.safetensors|7200000000"
+    # ── Qwen Image 2.1 official Comfy-Org int8_convrot — stock name the workflows expect ──
+    "diffusion_models|qwen_image_2.1_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors|7200000000"
     # ── Heretic (uncensored) Qwen3-VL-8B encoder, int8 convrot — saved under the stock name the workflow expects ──
     "text_encoders|qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors|https://huggingface.co/craftingmod/Qwen3-VL-8B-Heretic-INT8/resolve/main/qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors|10900000000"
     "vae|qwen_image_2.1_vae_bf16.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors|670000000"

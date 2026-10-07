@@ -43,9 +43,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/2in1-LoRaStack-Merge.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/Pony-XL-Outpaint.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-Upscale-TensorRT.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-Wildcards-HiresFix.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-TagComplete-FaceDet.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-Wildcards-HiResFix-FaceDet.json"
 )
 
 CHECKPOINT_MODELS=(
@@ -74,7 +72,7 @@ MINIMAX_MODELS=(
     "vae|minimax_h3_video_vae_fp16.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors|5200000000"
     "vae|minimax_h3_audio_vae_fp32.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors|600000000"
     # ── Tiny H3 VAE for fast previews (Kijai TAE) → models/vae_approx ──
-    "vae_approx|taeh3.safetensors|https://huggingface.co/Kijai/MiniMax-H3-TAE/resolve/main/vae_approx/taeh3.safetensors|10000000"
+    "vae_approx|taeh3.safetensors|https://huggingface.co/Kijai/MiniMax-H3-TAE/resolve/main/vae_approx/taeh3.safetensors|9000000"
     # ── Pure INT8 ConvRot DiT (Comfy-Org official) — better quality than NVFP4 hybrid ──
     "diffusion_models|minimax_h3_fl2va_pruned_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors|20000000000"
     # ── Singularity fusion (T2V/I2V/R2V/V2V in un unet solo) — sostituisce ref2va nativo ──
@@ -83,7 +81,7 @@ MINIMAX_MODELS=(
     "text_encoders|qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|15000000000"
     # ── lightx2v Turbo LoRA 8-step 768p (Apache-2.0, trained at 1344×768) — no custom node needed ──
     "loras|minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
-    "loras|minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
+    "loras|minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors|1950000000"
     # ── fal Realism People LoRA (trigger: r34l1sm) ──
     "loras|h3-realism-people-t2v-i2v-r2v.safetensors|https://huggingface.co/fal/MiniMax-H3-Realism-People-LoRA/resolve/main/h3-realism-people-t2v-i2v-r2v.safetensors|100000000"
     # ── akatz Character-Swap LoRA — ref2v character swap ──
@@ -92,15 +90,18 @@ MINIMAX_MODELS=(
     "loras|lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|https://huggingface.co/TenStrip/MinimaxH3-Turbo_Shenanigans/resolve/main/lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|4300000000"
     # ── 10Eros-Max Hybrid Beta5 INT8 NON-turbo (TenStrip, 21GB) — turbo via LoRA esterno regolabile (no color shift baked-in) ──
     "diffusion_models|10Eros_Max_h3_hybrid_beta5_int8.safetensors|https://huggingface.co/TenStrip/10Eros-Max/resolve/main/10Eros_Max_h3_hybrid_beta5_int8.safetensors|20000000000"
+    # ── Prebuilt TensorRT engines (RTX PRO 6000, TRT 10.15.1.29) — skips ~1min compile at first use ──
+    "tensorrt/rife|rife425_ensemble_False_scale_1_sim_fp16_large_1x3x720x720_1x3x1440x1440_1x3x1920x1920_10.15.1.29.trt|https://huggingface.co/huchukato/garage/resolve/main/tensorrt/rife/rife425_ensemble_False_scale_1_sim_fp16_large_1x3x720x720_1x3x1440x1440_1x3x1920x1920_10.15.1.29.trt|40000000"
+    "tensorrt/upscaler|2xLexicaRRDBNet_fp16_1x3x256x256_2x3x512x512_2x3x2048x2048_10.15.1.29.trt|https://huggingface.co/huchukato/garage/resolve/main/tensorrt/upscaler/2xLexicaRRDBNet_fp16_1x3x256x256_2x3x512x512_2x3x2048x2048_10.15.1.29.trt|30000000"
 )
 
 
 YOLO_MODELS=(
-    "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8m.pt"
+    "https://huggingface.co/huchukato/garage/resolve/main/ultralytics/bbox/face_yolov8m.pt"
 )
 
 SAM_MODELS=(
-    "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth"
+    "https://huggingface.co/huchukato/garage/resolve/main/sams/sam_vit_b_01ec64.pth"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -367,7 +368,7 @@ function download_minimax_models() {
         repo_path=$(echo "$url" | sed -E 's#https?://[^/]+/[^/]+/[^/]+/resolve/main/(.+)#\1#')
         tmp_dir="$base_dir/.tmp_download_${name//\//_}"
         rm -rf "$tmp_dir"
-        mkdir -p "$tmp_dir"
+        mkdir -p "$tmp_dir" "$(dirname "$dest")"
 
         export HF_HUB_ENABLE_HF_TRANSFER=1
         export HF_XET_HIGH_PERFORMANCE=1
