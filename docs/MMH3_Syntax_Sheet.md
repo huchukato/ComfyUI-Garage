@@ -35,10 +35,25 @@ Lingue lip-sync supportate: English, Italian, French, German, Spanish, Portugues
 
 ## Camera
 
-| MMH3 nativo | Sintassi comoda |
+Nessun tag `[...]` richiesto: la camera si scrive in testo libero o con wildcards `__mmh3/camera/<move>__` (iniettabili inline, una per shot). Vocabolario nativo H3 che Qwen riconosce perfettamente:
+
+| Movimento | Frase nativa |
 |---|---|
-| `The camera stays completely static` | `[STATIC_CAMERA]` o `[LOCKED_OFF]` — unici tag camera reali |
-| camera scelta dal modello | nessun tag — testo libero ("la camera si allontana", "orbita intorno", "slow push in") |
+| fermo | `static shot`, `locked off` |
+| avanti/indietro | `push in`, `pull out` |
+| focale | `zoom in`, `zoom out` |
+| rotazione orizz./vert. | `pan left/right`, `tilt up/down` |
+| traslazione orizz./vert. | `truck left/right`, `pedestal up/down` |
+| intorno al soggetto | `arc shot`, `orbit` |
+| segue il soggetto | `tracking shot` |
+| shake | `shake slightly`, `shake strongly` |
+| soggettiva | `POV` |
+| rotazione sull'asse | `roll clockwise/counterclockwise`, `barrel roll` |
+| extra (spec §9) | `swoop`, `whip-pan`, `dive` |
+
+Modificatori opzionali: `with small/large amplitude`, `at slow/fast speed`.
+
+Wildcards: `__mmh3/camera__` (random) o `__mmh3/camera/truck__`, `__mmh3/camera/arc__`, ecc. — il dropdown camera globale è stato rimosso dai form (un tag solo non copre un video multi-shot).
 
 ## Audio / musica
 
