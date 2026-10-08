@@ -37,9 +37,8 @@ Lingue lip-sync supportate: English, Italian, French, German, Spanish, Portugues
 
 | MMH3 nativo | Sintassi comoda |
 |---|---|
-| `The camera performs a ... shot` | `[STATIC_CAMERA]` / `[LOCKED_OFF]` |
-| idem | `[SLOW_ZOOM_IN]` `[SLOW_ZOOM_OUT]` `[ORBIT]` `[HANDHELD]` |
-| camera scelta dal modello | nessun tag — testo libero ("the camera pushes in slowly") |
+| `The camera stays completely static` | `[STATIC_CAMERA]` o `[LOCKED_OFF]` — unici tag camera reali |
+| camera scelta dal modello | nessun tag — testo libero ("la camera si allontana", "orbita intorno", "slow push in") |
 
 ## Audio / musica
 
