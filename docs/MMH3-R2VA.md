@@ -8,54 +8,35 @@ The workflow loads **2 images** (reference sheet / character sheet). Qwen3-VL an
 
 | Slot | Node | Description |
 |------|------|-------------|
-| 1 | LoadImage (image) | Character 1 reference sheet — analyzed by Qwen as `[SBJ1]` |
-| 2 | LoadImage (image2) | Character 2 reference sheet — analyzed by Qwen as `[SBJ2]` |
+| 1 | LoadImage (image) | Character 1 reference sheet — analyzed by Qwen as `(S1)` |
+| 2 | LoadImage (image2) | Character 2 reference sheet — analyzed by Qwen as `(S2)` |
 
 Each reference sheet can contain multiple views (front, side, outfit) of the same character. Qwen interprets them as **one single Subject**.
 
 > **Note:** Color palette swatches sometimes present in character sheets are automatically ignored by Qwen — they will not appear as scene elements.
 
-### Prompt Tags
+### Prompt Syntax
 
-Use these shorthand tags in the custom prompt field:
+Use the `(SN)` speaker/subject syntax in the custom prompt field:
 
-| Tag | Meaning | Example |
-|-----|---------|---------|
-| `[SBJ1]` | Subject 1 (character from ref image 1) | `[SBJ1] walks into the room` |
-| `[SBJ2]` | Subject 2 (character from ref image 2) | `[SBJ2] turns around` |
-| `[D]...[/D]` | Spoken dialogue | `[SBJ1] whispers [D]I missed you[/D]` |
-| `[SPK1]` | Speaker 1 (dialogue attribution) | Assigned automatically by Qwen |
-| `[SPK2]` | Speaker 2 | Assigned automatically by Qwen |
+| Syntax | Meaning | Example |
+|--------|---------|---------|
+| `(S1)` | Subject 1 (character from ref image 1) | `(S1) walks into the room` |
+| `(S2)` | Subject 2 (character from ref image 2) | `(S2) turns around` |
+| `(S3)` | Subject 3 (ref image 3) | `(S3) is a character sheet of Tifa` |
+| `(S4)` | Reference video input | `(S4) is a video with the target voice` |
+| `(SN) <verb> "text"` | Dialogue line, any verb/language | `(S1) dice "ciao"` |
+| `(SN) <verb> [XX] "text"` | Dialogue with language tag | `(S1) says [IT] "come va?"` |
+| `(VO) <verb> "text"` | Off-screen voiceover | `(VO) narrates "Meanwhile..."` |
+
+Language codes `[XX]`: EN IT FR DE ES PT RU ZH JA KO AR → `<d>[Language]` in the MMH3 prompt.
 
 **Example prompt:**
 ```
-[SBJ1] kisses [SBJ2] in a dimly lit bedroom, [SBJ2] whispers [D]don't stop[/D]
+(S1) kisses (S2) in a dimly lit bedroom, (S2) whispers [IT] "non fermarti"
 ```
 
-### Action Tags (NSFW)
-
-Trigger interaction between subjects without writing a full prompt. Qwen generates the complete scene description.
-
-| Tag | Action | Example |
-|-----|--------|---------|
-| `[ACTION]` | Random NSFW interaction (Qwen chooses) | `[ACTION]` or `[ACTION] in a shower` |
-| `[KISS]` | Passionate / french kiss | `[SBJ1] [KISS] [SBJ2]` |
-| `[ORAL]` | Oral sex | `[ORAL] on the couch` |
-| `[SEX]` | Full intercourse | `[SEX] in a bedroom` |
-| `[TOUCH]` | Intimate caressing / groping | `[TOUCH]` |
-| `[GRIND]` | Grinding / tribbing / body friction | `[SBJ1] [GRIND] [SBJ2]` |
-
-**Rules:**
-- Case-insensitive (`[kiss]` = `[KISS]` = `[Kiss]`)
-- Combinable with subject tags and free text: `[SBJ1] [KISS] [SBJ2] in a candlelit room`
-- If used alone (e.g. just `[ACTION]`), Qwen generates the full scene context
-- Anatomical consistency is enforced — actions match the subjects' genders from reference images
-
-### Audio / Video References
-
-If needed, use manual tags in the custom prompt:
-- `[A1]audio description[/A1]` for audio reference
-- `[V1]video description[/V1]` for video reference
+> See `MMH3_Syntax_Sheet.md` for the full comfy→native mapping.
 
 ### Settings
 

@@ -55,9 +55,9 @@
 | `image` | Primary reference (character, style, scene) | — |
 | `image2` | Additional references (batch, up to 9) | 1–9 |
 
-> 💡 Qwen3-VL sees **only the first 2 images**. Reference them by order in your prompt: `<Picture 1>`, `<Picture 2>`, etc.
+> 💡 Qwen3-VL sees **only the first 2 images**. Reference them by slot in your prompt: `(S1)`, `(S2)`, etc.
 >
-> 📌 For images 3–4 connected to MiniMax H3 (`ref_image_2`, `ref_image_3`), describe them in the custom prompt using `[P3]description[/P3]` and `[P4]description[/P4]` tags. Qwen will generate the matching `<Picture 3>` / `<Picture 4>` entries automatically.
+> 📌 For additional references connected to MiniMax H3 (`ref_image_2`, `ref_image_3`, video), describe them in the custom prompt using `(S3) è ...` / `(S4) è un video ...` — Qwen generates the matching `<Picture N>` / `<Video N>` entries automatically.
 
 ---
 
@@ -86,7 +86,7 @@ Describe the scene naturally. Be clear about the concepts below — the model ha
 
 > 🔄 **FL2VA**: Describe the **transition** between frames — how subjects move, poses change, composition evolves. Do NOT re-describe the scene (the images already fix it).
 
-> 🎞️ **R2VA**: Reference your inputs by tag: `<Picture 1>`, `<Picture 2>`, `<Video 1>`, `<Audio 1>`. State what each reference controls (identity, style, motion, voice).
+> 🎞️ **R2VA**: Reference your inputs with `(SN)` tags: `(S1)`/`(S2)`/`(S3)` = the 3 image slots, `(S4)` = the video input. State what each reference controls (identity, style, motion, voice).
 
 ### 📷 4. Camera
 
@@ -191,7 +191,7 @@ MiniMax H3 is trained with the **short edge at 768 px** and the long edge **capp
 > *"[STATIC_CAMERA] she continues a slow rhythmic motion, breathing steadily, the action flowing naturally without resetting" — upload the same image to both `image` and `image2`*
 
 ### R2VA
-> *"<Picture 1> is the character reference — a young woman with red hair. <Picture 2> is the environment — a luxury bathroom. Generate a scene where the woman from <Picture 1> is in the environment from <Picture 2>, relaxing in the tub. Audio: water splashing, soft sighs. No music."*
+> *"(S1) is a young woman with red hair — character reference. (S2) is a luxury bathroom — environment reference. The woman from (S1) relaxes in the tub in the environment from (S2). Audio: water splashing, soft sighs. No music."*
 
 ---
 
