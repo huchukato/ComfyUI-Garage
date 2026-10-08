@@ -2,7 +2,7 @@
   "id": "2cfd697f-f2a4-4f94-9ae2-1c60e3bd7fe1",
   "revision": 0,
   "last_node_id": 164,
-  "last_link_id": 333,
+  "last_link_id": 338,
   "nodes": [
     {
       "id": 82,
@@ -30,34 +30,36 @@
         {
           "name": "negative",
           "type": "STRING",
-          "links": []
+          "links": [
+            338
+          ]
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI-TagForge",
+        "aux_id": "huchukato/ComfyUI-TagForge",
         "ver": "43677b093ae8c18ac35768c575d1edb2f5483119",
         "Node name for S&R": "WildcardProcessor",
-        "aux_id": "huchukato/ComfyUI-TagForge"
+        "cnr_id": "ComfyUI-TagForge"
       },
       "widgets_values": [
-        "score_9, score_8_up, score_7_up, white background, 1girl, kido saori, light purple hair, very long hair, bangs, aqua eyes, large breasts, __pmp/prmpt/clths/types_general__",
-        5618475788141,
+        "white background, 1girl, kido saori, light purple hair, very long hair, bangs, aqua eyes, large breasts, __pmp/prmpt/clths/types_general__",
+        537289708651977,
         "randomize",
-        "score_9, score_8_up, score_7_up, white background, 1girl, kido saori, light purple hair, very long hair, bangs, aqua eyes, large breasts, beachwear",
+        "score_9, score_8_up, score_7_up, white background, 1girl, kido saori, light purple hair, very long hair, bangs, aqua eyes, large breasts, couture",
         "populate",
         "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
         0.5,
-        "None"
+        "Pony"
       ],
       "widgets_values_named": {
-        "text": "score_9, score_8_up, score_7_up, white background, 1girl, kido saori, light purple hair, very long hair, bangs, aqua eyes, large breasts, __pmp/prmpt/clths/types_general__",
-        "seed": 5618475788141,
+        "text": "white background, 1girl, kido saori, light purple hair, very long hair, bangs, aqua eyes, large breasts, __pmp/prmpt/clths/types_general__",
+        "seed": 537289708651977,
         "control_after_generate": "randomize",
-        "populated_text": "score_9, score_8_up, score_7_up, white background, 1girl, kido saori, light purple hair, very long hair, bangs, aqua eyes, large breasts, beachwear",
+        "populated_text": "score_9, score_8_up, score_7_up, white background, 1girl, kido saori, light purple hair, very long hair, bangs, aqua eyes, large breasts, couture",
         "mode": "populate",
         "deduplicate": "score_9, score_8_up, score_7_up, masterwork, masterpiece, best quality, detailed, depth of field, high detail, very aesthetic, dynamic pose, dynamic angle, pier, day, dim lighting, sidelighting, colored shadow, 1girl, tifa lockhart, final fantasy vii, black hair, red eyes, large breasts, gag, areola slip, 1boy, large penis, veiny penis, from above, looking up, handjob, allfours, open mouth, oral sex, deepthroat, veined penis, cum, cum on tongue, ",
         "downvote_factor": 0.5,
-        "base_model": "None"
+        "base_model": "Pony"
       },
       "color": "#9e3fc0",
       "bgcolor": "#36283b"
@@ -84,6 +86,14 @@
             "name": "positive"
           },
           "link": 276
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "widget": {
+            "name": "negative"
+          },
+          "link": 338
         },
         {
           "label": "bbox",
@@ -115,30 +125,20 @@
       ],
       "outputs": [
         {
-          "label": "RAW IMAGE",
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            328,
-            331
-          ]
-        },
-        {
-          "label": "HIRESFIX",
-          "name": "image_1",
-          "type": "IMAGE",
-          "links": [
-            329
-          ]
-        },
-        {
-          "label": "FACEDET",
+          "label": "ENHANCED",
           "name": "image_2",
           "type": "IMAGE",
           "links": [
-            330,
-            332,
-            333
+            336,
+            337
+          ]
+        },
+        {
+          "label": "RAW",
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            335
           ]
         }
       ],
@@ -195,9 +195,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
         "Node name for S&R": "PixaromaMonitor",
+        "cnr_id": "ComfyUI-Pixaroma",
         "monitorState": {
           "version": 1,
           "layout": "bars",
@@ -249,10 +250,11 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
         "Node name for S&R": "PixaromaRunTimer",
-        "runTimerLastMs": 21401.5
+        "cnr_id": "ComfyUI-Pixaroma",
+        "runTimerLastMs": 57412.20000000298
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -276,9 +278,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
-        "Node name for S&R": "PixaromaLabel"
+        "Node name for S&R": "PixaromaLabel",
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"Pimp My Pony\",\"fontSize\":119,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#ec4899\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
@@ -308,9 +311,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
-        "Node name for S&R": "PixaromaLabel"
+        "Node name for S&R": "PixaromaLabel",
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"PonyXL / Illustrious Text To Image + HiResFix + FaceDetailer\",\"fontSize\":29,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#f472b6\",\"padding\":10,\"borderRadius\":6,\"opacity\":0.7,\"fontWeight\":\"normal\",\"lineHeight\":1}"
@@ -333,13 +337,13 @@
         1393.8632521875002
       ],
       "flags": {},
-      "order": 12,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 333
+          "link": 337
         },
         {
           "name": "name",
@@ -350,9 +354,10 @@
       ],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
         "Node name for S&R": "PixaromaSaveImage",
+        "cnr_id": "ComfyUI-Pixaroma",
         "saveImageState": "{\"version\":1,\"folder\":\"PMP\",\"pattern\":\"FD_%date:yyyy-MM-dd%_%counter%\",\"format\":\"jpg\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":true,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":true,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}",
         "pixSiLastRun": {
           "ok": true,
@@ -360,12 +365,12 @@
           "folder": "/workspace/runpod-slim/ComfyUI/output/PMP",
           "entries": [
             {
-              "filename": "FD_2026-10-07_064.jpg",
+              "filename": "FD_2026-10-08_001.jpg",
               "subfolder": "PMP",
               "type": "output",
               "token": "",
               "path": "",
-              "bust": "1791383140393"
+              "bust": "1791432836958"
             }
           ],
           "n": 1,
@@ -400,9 +405,10 @@
       "outputs": [],
       "title": "README",
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
-        "Node name for S&R": "PixaromaNote"
+        "Node name for S&R": "PixaromaNote",
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"version\":1,\"content\":\"<h1 style=\\\"color: #ff8c42\\\">PIMPMYPONY TXT2IMG — WILDCARDS + FACE DETAILER</h1>\\n<p>PonyXL / Illustrious Text-to-Image with TagForge wildcards and built-in <b>Easy-Use Face Detailer</b> (no Impact Pack needed).</p>\\n\\n<h2>🖥️ Civitai Model</h2>\\n<ul>\\n<li><a href=\\\"https://civitai.com/models/1195827?modelVersionId=2628215\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">PimpMyPony - Real Anime</a></li>\\n<li><a href=\\\"https://civitai.com/models/1195827?modelVersionId=2611135\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">PimpMyPony - InCase Style</a></li>\\n<li><a href=\\\"https://civitai.com/models/1195827?modelVersionId=1346446\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">PimpMyPony - Semi Real Anime</a></li>\\n</ul>\\n<p>The workflow ships with <code>ilustmix_v111.safetensors</code> — any Pony/Illustrious XL checkpoint works.</p>\\n<hr>\\n\\n<h2>😊 FACE DETAILER (Easy-Use — no Impact Pack)</h2>\\n<p>Runs on <code>UltralyticsDetector → PreDetailerFix → DetailerFix</code> from <b>ComfyUI-Easy-Use</b>.</p>\\n<p><b>Required detector models:</b></p>\\n<ul>\\n<li><code>face_yolov8m.pt</code> → <code>ComfyUI/models/ultralytics/bbox/</code><br>\\n<a href=\\\"https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8m.pt\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">🔗 download</a></li>\\n<li><code>sam_vit_b_01ec64.pth</code> → <code>ComfyUI/models/sams/</code><br>\\n<a href=\\\"https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">🔗 download</a></li>\\n</ul>\\n<hr>\\n\\n<h2>🎛️ AutoTag Node with Wildcards included</h2>\\n<p>Install it from ComfyUI Manager or clone the repo:</p>\\n<pre>cd ComfyUI/custom_nodes\\ngit clone https://github.com/huchukato/ComfyUI-TagForge.git</pre>\\n\\n<p>✨ <b>Wildcard Sub-Selection</b> (a1111-sd-webui-tagcomplete style):</p>\\n<ul>\\n<li>Type <code>__</code> to see available wildcards</li>\\n<li>Select a wildcard with arrow keys and press Enter → inserts <code>__wildcard_name__</code></li>\\n<li>Auto-show options → immediately displays all options from that wildcard</li>\\n<li>Select an option and press Enter → replaces wildcard with chosen option</li>\\n<li>ESC → keeps inserted wildcard and closes options</li>\\n</ul>\\n\\n<p>🌟 <b>Features</b></p>\\n<ul>\\n<li>Smart parsing: wildcards with complex paths (e.g. <code>__pmp/blwjob/blwjb__</code>)</li>\\n<li>Line-by-line options: each line in wildcard file becomes a separate option</li>\\n<li>Text overflow handling: long options truncated with hover expansion</li>\\n<li>Full compatibility with existing wildcard files and formats</li>\\n<li>Multiple sources: repository, ComfyUI/models and DynamicPrompts</li>\\n</ul>\\n\\n<p>📁 <b>Wildcard Sources</b> (in priority order):</p>\\n<ol>\\n<li>Repository wildcards/ folder</li>\\n<li>ComfyUI models/wildcards/</li>\\n<li>ComfyUI custom_nodes/wildcards/</li>\\n<li>DynamicPrompts wildcards/</li>\\n<li>Extra model paths configuration</li>\\n</ol>\\n<p><i>This extension is based on ComfyUI-Custom-Scripts.</i></p>\\n<hr>\\n\\n<h2>📁 Manual Wildcard Setup (Optional)</h2>\\n<p>To use wildcards with Easy-Use you may need to copy the wildcards folder:</p>\\n<pre>cp -r /path/to/ComfyUI-TagForge/wildcards \\\\\\n    /path/to/ComfyUI/custom_nodes/ComfyUI-Easy-Use/wildcards/</pre>\\n<p>Then <b>restart ComfyUI</b> to load the new wildcards.</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":517.0199082421873,\"height\":814.8184835546876}",
@@ -427,39 +433,40 @@
         718.3447292968751
       ],
       "flags": {},
-      "order": 11,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
           "name": "image1",
           "shape": 7,
           "type": "IMAGE",
-          "link": 331
+          "link": 335
         },
         {
           "name": "image2",
           "shape": 7,
           "type": "IMAGE",
-          "link": 332
+          "link": 336
         }
       ],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
         "Node name for S&R": "PixaromaCompare",
+        "cnr_id": "ComfyUI-Pixaroma",
         "compareState": {
           "mode": 0,
           "showWhich": 0,
           "opacity": 0.5,
           "images": [
             {
-              "filename": "pixaroma_compare_pixcmp_guhzm_00001_.png",
+              "filename": "pixaroma_compare_pixcmp_fkafl_00001_.png",
               "subfolder": "",
               "type": "temp"
             },
             {
-              "filename": "pixaroma_compare_pixcmp_guhzm_00002_.png",
+              "filename": "pixaroma_compare_pixcmp_fkafl_00002_.png",
               "subfolder": "",
               "type": "temp"
             }
@@ -503,192 +510,6 @@
       },
       "color": "#8050d3",
       "bgcolor": "#322b3e"
-    },
-    {
-      "id": 162,
-      "type": "PixaromaSaveImage",
-      "pos": [
-        937.5142954087356,
-        -523.2953124174767
-      ],
-      "size": [
-        474,
-        438.9767746562503
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 328
-        },
-        {
-          "name": "name",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        }
-      ],
-      "outputs": [],
-      "title": "Raw Image",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
-        "Node name for S&R": "PixaromaSaveImage",
-        "saveImageState": "{\"version\":1,\"folder\":\"PMP\",\"pattern\":\"RAW_%date:yyyy-MM-dd%_%counter%\",\"format\":\"jpg\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":false,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":true,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}",
-        "pixSiLastRun": {
-          "ok": false,
-          "sum": "preview only - not saved",
-          "folder": "/workspace/runpod-slim/ComfyUI/output/PMP",
-          "entries": [
-            {
-              "filename": "pixaroma_save_preview_45cd4080a85d4f0b9b7addcff22ccb93.png",
-              "subfolder": "",
-              "type": "temp",
-              "token": "",
-              "path": "",
-              "bust": "1791383131981"
-            }
-          ],
-          "n": 1,
-          "w": 832,
-          "h": 1216
-        }
-      },
-      "widgets_values": [
-        ""
-      ],
-      "widgets_values_named": {
-        "pixaroma_save_image": ""
-      },
-      "color": "#cf2a9e",
-      "bgcolor": "#3e2536"
-    },
-    {
-      "id": 163,
-      "type": "PixaromaSaveImage",
-      "pos": [
-        931.9512670546715,
-        -38.99918519200816
-      ],
-      "size": [
-        474,
-        438.9767746562503
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 329
-        },
-        {
-          "name": "name",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        }
-      ],
-      "outputs": [],
-      "title": "HiResFix",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
-        "Node name for S&R": "PixaromaSaveImage",
-        "saveImageState": "{\"version\":1,\"folder\":\"PMP\",\"pattern\":\"HRF_%date:yyyy-MM-dd%_%counter%\",\"format\":\"jpg\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":false,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":true,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}",
-        "pixSiLastRun": {
-          "ok": false,
-          "sum": "preview only - not saved",
-          "folder": "/workspace/runpod-slim/ComfyUI/output/PMP",
-          "entries": [
-            {
-              "filename": "pixaroma_save_preview_d6cbf370b2b047c185f3487a8089ec91.png",
-              "subfolder": "",
-              "type": "temp",
-              "token": "",
-              "path": "",
-              "bust": "1791383131668"
-            }
-          ],
-          "n": 1,
-          "w": 1664,
-          "h": 2432
-        }
-      },
-      "widgets_values": [
-        ""
-      ],
-      "widgets_values_named": {
-        "pixaroma_save_image": ""
-      },
-      "color": "#d57bba",
-      "bgcolor": "#3f313b"
-    },
-    {
-      "id": 164,
-      "type": "PixaromaSaveImage",
-      "pos": [
-        933.5853507656101,
-        448.5857321517415
-      ],
-      "size": [
-        474,
-        438.9767746562503
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 330
-        },
-        {
-          "name": "name",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        }
-      ],
-      "outputs": [],
-      "title": "Face Detailer",
-      "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
-        "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
-        "Node name for S&R": "PixaromaSaveImage",
-        "saveImageState": "{\"version\":1,\"folder\":\"PMP\",\"pattern\":\"FD_%date:yyyy-MM-dd%_%counter%\",\"format\":\"jpg\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":false,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":true,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}",
-        "pixSiLastRun": {
-          "ok": false,
-          "sum": "preview only - not saved",
-          "folder": "/workspace/runpod-slim/ComfyUI/output/PMP",
-          "entries": [
-            {
-              "filename": "pixaroma_save_preview_348a1239f8cc44a8878975ad219c0dd2.png",
-              "subfolder": "",
-              "type": "temp",
-              "token": "",
-              "path": "",
-              "bust": "1791383141684"
-            }
-          ],
-          "n": 1,
-          "w": 1664,
-          "h": 2432
-        }
-      },
-      "widgets_values": [
-        ""
-      ],
-      "widgets_values_named": {
-        "pixaroma_save_image": ""
-      },
-      "color": "#9e3fc0",
-      "bgcolor": "#36283b"
     }
   ],
   "links": [
@@ -701,52 +522,36 @@
       "STRING"
     ],
     [
-      328,
-      92,
-      0,
-      162,
-      0,
-      "IMAGE"
-    ],
-    [
-      329,
+      335,
       92,
       1,
-      163,
-      0,
-      "IMAGE"
-    ],
-    [
-      330,
-      92,
-      2,
-      164,
-      0,
-      "IMAGE"
-    ],
-    [
-      331,
-      92,
-      0,
       157,
       0,
       "IMAGE"
     ],
     [
-      332,
+      336,
       92,
-      2,
+      0,
       157,
       1,
       "IMAGE"
     ],
     [
-      333,
+      337,
       92,
-      2,
+      0,
       148,
       0,
       "IMAGE"
+    ],
+    [
+      338,
+      82,
+      1,
+      92,
+      1,
+      "STRING"
     ]
   ],
   "groups": [],
@@ -758,7 +563,7 @@
         "state": {
           "lastGroupId": 9,
           "lastNodeId": 164,
-          "lastLinkId": 333,
+          "lastLinkId": 338,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -779,7 +584,7 @@
             2483.2013498530914,
             -4.669200381759521,
             128,
-            108
+            88
           ]
         },
         "inputs": [
@@ -921,42 +726,29 @@
         ],
         "outputs": [
           {
-            "id": "a9494e02-4fa8-41f5-8337-aee1e2d8ac2f",
-            "name": "image",
-            "type": "IMAGE",
-            "linkIds": [
-              315
-            ],
-            "label": "RAW IMAGE",
-            "pos": [
-              2507.2013498530914,
-              19.33079961824048
-            ]
-          },
-          {
-            "id": "d44dc268-51af-4bb5-aa85-057dd7466972",
-            "name": "image_1",
-            "type": "IMAGE",
-            "linkIds": [
-              317
-            ],
-            "label": "HIRESFIX",
-            "pos": [
-              2507.2013498530914,
-              39.330799618240476
-            ]
-          },
-          {
             "id": "94aa670e-5a52-43a4-924b-ea7a69607d93",
             "name": "image_2",
             "type": "IMAGE",
             "linkIds": [
               318
             ],
-            "label": "FACEDET",
+            "label": "ENHANCED",
             "pos": [
               2507.2013498530914,
-              59.330799618240476
+              19.33079961824048
+            ]
+          },
+          {
+            "id": "3441186e-20de-4f7a-a2a8-f9cf5555f647",
+            "name": "image",
+            "type": "IMAGE",
+            "linkIds": [
+              334
+            ],
+            "label": "RAW",
+            "pos": [
+              2507.2013498530914,
+              39.330799618240476
             ]
           }
         ],
@@ -1096,9 +888,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-easy-use",
+              "aux_id": "yolain/ComfyUI-Easy-Use",
               "ver": "67afdc8204683e32549e63b7b02dc006d20441fa",
-              "Node name for S&R": "easy fullLoader"
+              "Node name for S&R": "easy fullLoader",
+              "cnr_id": "comfyui-easy-use"
             },
             "widgets_values": [
               "ilustmix_v111.safetensors",
@@ -1271,7 +1064,7 @@
                 "name": "image",
                 "type": "IMAGE",
                 "links": [
-                  315
+                  334
                 ]
               },
               {
@@ -1318,9 +1111,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-easy-use",
+              "aux_id": "yolain/ComfyUI-Easy-Use",
               "ver": "67afdc8204683e32549e63b7b02dc006d20441fa",
-              "Node name for S&R": "easy fullkSampler"
+              "Node name for S&R": "easy fullkSampler",
+              "cnr_id": "comfyui-easy-use"
             },
             "widgets_values": [
               20,
@@ -1331,7 +1125,7 @@
               "Hide",
               0,
               "ComfyUI",
-              114240455744071,
+              555479443986597,
               "randomize"
             ],
             "widgets_values_named": {
@@ -1343,7 +1137,7 @@
               "image_output": "Hide",
               "link_id": 0,
               "save_prefix": "ComfyUI",
-              "seed": 114240455744071,
+              "seed": 555479443986597,
               "control_after_generate": "randomize"
             },
             "color": "#6a3fcf",
@@ -1385,9 +1179,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-easy-use",
+              "aux_id": "yolain/ComfyUI-Easy-Use",
               "ver": "67afdc8204683e32549e63b7b02dc006d20441fa",
-              "Node name for S&R": "easy ultralyticsDetectorPipe"
+              "Node name for S&R": "easy ultralyticsDetectorPipe",
+              "cnr_id": "comfyui-easy-use"
             },
             "widgets_values": [
               "bbox/face_yolov8m.pt",
@@ -1440,9 +1235,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-easy-use",
+              "aux_id": "yolain/ComfyUI-Easy-Use",
               "ver": "67afdc8204683e32549e63b7b02dc006d20441fa",
-              "Node name for S&R": "easy samLoaderPipe"
+              "Node name for S&R": "easy samLoaderPipe",
+              "cnr_id": "comfyui-easy-use"
             },
             "widgets_values": [
               "sam_vit_b_01ec64.pth",
@@ -1530,15 +1326,16 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-easy-use",
+              "aux_id": "yolain/ComfyUI-Easy-Use",
               "ver": "67afdc8204683e32549e63b7b02dc006d20441fa",
-              "Node name for S&R": "easy preDetailerFix"
+              "Node name for S&R": "easy preDetailerFix",
+              "cnr_id": "comfyui-easy-use"
             },
             "widgets_values": [
               512,
               true,
               768,
-              2773739466069,
+              885342300546305,
               "randomize",
               20,
               7,
@@ -1556,7 +1353,7 @@
               "guide_size": 512,
               "guide_size_for": true,
               "max_size": 768,
-              "seed": 2773739466069,
+              "seed": 885342300546305,
               "control_after_generate": "randomize",
               "steps": 20,
               "cfg": 7,
@@ -1633,9 +1430,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-easy-use",
+              "aux_id": "yolain/ComfyUI-Easy-Use",
               "ver": "67afdc8204683e32549e63b7b02dc006d20441fa",
-              "Node name for S&R": "easy detailerFix"
+              "Node name for S&R": "easy detailerFix",
+              "cnr_id": "comfyui-easy-use"
             },
             "widgets_values": [
               "Hide",
@@ -1710,9 +1508,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-easy-use",
+              "aux_id": "yolain/ComfyUI-Easy-Use",
               "ver": "67afdc8204683e32549e63b7b02dc006d20441fa",
-              "Node name for S&R": "easy hiresFix"
+              "Node name for S&R": "easy hiresFix",
+              "cnr_id": "comfyui-easy-use"
             },
             "widgets_values": [
               "4xUltrasharp_4xUltrasharpV10.pth",
@@ -1836,9 +1635,7 @@
                 "localized_name": "image",
                 "name": "image",
                 "type": "IMAGE",
-                "links": [
-                  317
-                ]
+                "links": []
               },
               {
                 "localized_name": "model",
@@ -1884,9 +1681,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-easy-use",
+              "aux_id": "yolain/ComfyUI-Easy-Use",
               "ver": "67afdc8204683e32549e63b7b02dc006d20441fa",
-              "Node name for S&R": "easy fullkSampler"
+              "Node name for S&R": "easy fullkSampler",
+              "cnr_id": "comfyui-easy-use"
             },
             "widgets_values": [
               12,
@@ -1897,7 +1695,7 @@
               "Hide",
               0,
               "ComfyUI",
-              212530159271302,
+              989781005829217,
               "randomize"
             ],
             "widgets_values_named": {
@@ -1909,7 +1707,7 @@
               "image_output": "Hide",
               "link_id": 0,
               "save_prefix": "ComfyUI",
-              "seed": 212530159271302,
+              "seed": 989781005829217,
               "control_after_generate": "randomize"
             },
             "color": "#d350ac",
@@ -2044,6 +1842,30 @@
             "type": "COMBO"
           },
           {
+            "id": 313,
+            "origin_id": 152,
+            "origin_slot": 0,
+            "target_id": 153,
+            "target_slot": 0,
+            "type": "PIPE_LINE"
+          },
+          {
+            "id": 314,
+            "origin_id": 132,
+            "origin_slot": 0,
+            "target_id": 152,
+            "target_slot": 0,
+            "type": "PIPE_LINE"
+          },
+          {
+            "id": 324,
+            "origin_id": 153,
+            "origin_slot": 0,
+            "target_id": 135,
+            "target_slot": 0,
+            "type": "PIPE_LINE"
+          },
+          {
             "id": 273,
             "origin_id": -10,
             "origin_slot": 3,
@@ -2076,52 +1898,20 @@
             "type": "COMBO"
           },
           {
-            "id": 313,
-            "origin_id": 152,
-            "origin_slot": 0,
-            "target_id": 153,
-            "target_slot": 0,
-            "type": "PIPE_LINE"
-          },
-          {
-            "id": 314,
-            "origin_id": 132,
-            "origin_slot": 0,
-            "target_id": 152,
-            "target_slot": 0,
-            "type": "PIPE_LINE"
-          },
-          {
-            "id": 315,
-            "origin_id": 132,
-            "origin_slot": 1,
-            "target_id": -20,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 317,
-            "origin_id": 153,
-            "origin_slot": 1,
-            "target_id": -20,
-            "target_slot": 1,
-            "type": "IMAGE"
-          },
-          {
             "id": 318,
             "origin_id": 136,
             "origin_slot": 1,
             "target_id": -20,
-            "target_slot": 2,
+            "target_slot": 0,
             "type": "IMAGE"
           },
           {
-            "id": 324,
-            "origin_id": 153,
-            "origin_slot": 0,
-            "target_id": 135,
-            "target_slot": 0,
-            "type": "PIPE_LINE"
+            "id": 334,
+            "origin_id": 132,
+            "origin_slot": 1,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGE"
           }
         ],
         "extra": {
@@ -2145,10 +1935,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.5644739300537778,
+      "scale": 0.8264462809917354,
       "offset": [
-        2761.8092670636793,
-        1361.7250884818486
+        1438.0452560512517,
+        920.7702560244618
       ]
     }
   },
