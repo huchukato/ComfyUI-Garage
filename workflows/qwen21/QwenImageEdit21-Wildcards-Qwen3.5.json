@@ -2,7 +2,7 @@
   "id": "54bb395d-3e60-4c94-b525-85523901575b",
   "revision": 0,
   "last_node_id": 569,
-  "last_link_id": 895,
+  "last_link_id": 898,
   "nodes": [
     {
       "id": 526,
@@ -102,10 +102,10 @@
         "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "widgets_values": [
-        "Replace the entire head and hair of the person in <image1> with the head, facial identity, facial hair, and hairstyle of the person in <image2>, re-rendered photorealistically in place — not a composited cutout. Retain the exact skull geometry, hairline, and facial expression from <image2>, adapted to the pose, framing and lighting of <image1>. Blend at the neckline and collar of <image1>, recalculating ambient occlusion and specular highlights so the new head matches the directional lighting and environmental reflections of <image1>. Keep the body, clothing and background of <image1> completely unchanged — the result must look like a single photograph."
+        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency."
       ],
       "widgets_values_named": {
-        "text": "Replace the entire head and hair of the person in <image1> with the head, facial identity, facial hair, and hairstyle of the person in <image2>, re-rendered photorealistically in place — not a composited cutout. Retain the exact skull geometry, hairline, and facial expression from <image2>, adapted to the pose, framing and lighting of <image1>. Blend at the neckline and collar of <image1>, recalculating ambient occlusion and specular highlights so the new head matches the directional lighting and environmental reflections of <image1>. Keep the body, clothing and background of <image1> completely unchanged — the result must look like a single photograph."
+        "text": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency."
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -163,7 +163,15 @@
           "widget": {
             "name": "prompt"
           },
-          "link": 865
+          "link": 897
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt"
+          },
+          "link": 898
         },
         {
           "label": "skip_autoprompt",
@@ -221,7 +229,7 @@
         0,
         1024,
         "",
-        "ugly, bad quality, low quality, blurry",
+        "",
         1,
         25,
         "euler",
@@ -241,7 +249,7 @@
         "seed": 0,
         "resolution": 1024,
         "prompt": "",
-        "negative_prompt": "ugly, bad quality, low quality, blurry",
+        "negative_prompt": "",
         "cfg": 1,
         "steps": 25,
         "sampler_name": "euler",
@@ -278,13 +286,15 @@
           "name": "processed_text",
           "type": "STRING",
           "links": [
-            865
+            897
           ]
         },
         {
           "name": "negative",
           "type": "STRING",
-          "links": null
+          "links": [
+            898
+          ]
         }
       ],
       "properties": {
@@ -296,20 +306,20 @@
         "tagforge_wildcard_mode": "populate"
       },
       "widgets_values": [
-        "__qwen21/headswap__",
-        175040467273976,
+        "__qwen21/prosheet__",
+        145584229307722,
         "randomize",
-        "Replace the entire head and hair of the person in <image1> with the head, facial identity, facial hair, and hairstyle of the person in <image2>, re-rendered photorealistically in place — not a composited cutout. Retain the exact skull geometry, hairline, and facial expression from <image2>, adapted to the pose, framing and lighting of <image1>. Blend at the neckline and collar of <image1>, recalculating ambient occlusion and specular highlights so the new head matches the directional lighting and environmental reflections of <image1>. Keep the body, clothing and background of <image1> completely unchanged — the result must look like a single photograph.",
+        "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.",
         "populate",
         true,
         0.5,
         "None"
       ],
       "widgets_values_named": {
-        "text": "__qwen21/headswap__",
-        "seed": 175040467273976,
+        "text": "__qwen21/prosheet__",
+        "seed": 145584229307722,
         "control_after_generate": "randomize",
-        "populated_text": "Replace the entire head and hair of the person in <image1> with the head, facial identity, facial hair, and hairstyle of the person in <image2>, re-rendered photorealistically in place — not a composited cutout. Retain the exact skull geometry, hairline, and facial expression from <image2>, adapted to the pose, framing and lighting of <image1>. Blend at the neckline and collar of <image1>, recalculating ambient occlusion and specular highlights so the new head matches the directional lighting and environmental reflections of <image1>. Keep the body, clothing and background of <image1> completely unchanged — the result must look like a single photograph.",
+        "populated_text": "Create a professional character reference sheet based strictly on <image1>.\n\nThe character is the same person shown in <image2>. Use <image2> as an additional reference to capture more accurate facial features, proportions, hairstyle, clothing details, accessories, and other fine details.\n\nCharacter consistency:\n* Preserve the character's exact face, facial structure, hairstyle, proportions, clothing, colors, accessories, and identifiable details from the references.\n* Do not redesign, reinterpret, beautify, or alter the face.\n* Maintain the exact same person and identity across every panel.\n* Capture all fine details from both reference images.\n* Use <image2> whenever it provides additional information or details not clearly visible in <image1>.\n\nTop section — full-body turnaround:\nPlace three full-body character views across the top:\n1. Front view\n2. Side/profile view\n3. Back view\n* Same outfit and identical character proportions in all three views.\n* Use the same neutral standing pose for every view.\n* Arms slightly separated from the torso so the silhouette and clothing are clearly visible.\n* Hands relaxed and naturally posed.\n* Keep the camera height, framing, scale, and perspective consistent between all three views.\n* No pose drift, proportion drift, outfit changes, or character redesign.\n* The back view must accurately match the front and side views.\n\nBottom section — expressions and props:\nUse the bottom area for a clean collection of smaller reference panels.\nInclude three facial expression close-ups:\n* Open mouth\n* Smiling with teeth visible\n* Surprised expression\n\nRight side — large portrait:\nPlace one large, highly detailed shoulder-up portrait of the same person on the right side.\n* Preserve the exact face and identity from <image1> and <image2>.\n* Use <image2> to improve facial accuracy and capture details that may be missing from <image1>.\n* High facial detail and accurate proportions.\n* Clean, centered composition.\n* Professional character-sheet presentation.\n* The portrait must clearly match the face shown in all turnaround views and expression panels.\n\nLayout and quality:\n* Clean, professional character-sheet layout.\n* Clearly separated panels with consistent spacing.\n* Nothing may overlap, collide, merge, or bleed into another panel.\n* No element should cross into another frame.\n* Keep every character, expression, prop, and portrait completely contained within its designated area.\n* No cropped heads, hands, feet, props, or important clothing details.\n* Balanced spacing and clear visual hierarchy.\n* High resolution and highly detailed.\n* Maintain absolute character consistency across the entire sheet.\n* Zero identity drift, zero outfit drift, zero proportion drift, and zero visual inconsistency.",
         "mode": "populate",
         "deduplicate": true,
         "downvote_factor": 0.5,
@@ -731,7 +741,7 @@
         "cnr_id": "ComfyUI-Pixaroma",
         "ver": "7a1cf573034fe14e29c1200d884531231a003e2e",
         "Node name for S&R": "PixaromaSizes",
-        "sizesState": "{\"version\":1,\"sizes\":[[1024,1024],[1152,864],[1248,832],[1376,768],[1920,1088],[1536,1536],[2560,1440],[2048,2048],[2400,1792],[2528,1696],[2752,1536]],\"selected\":2,\"orientation\":\"portrait\",\"snap\":32,\"accent\":null,\"collapsed\":false,\"starred\":[\"2048x2048\",\"1792x2400\",\"1696x2528\",\"1536x2752\"],\"w\":832,\"h\":1248}"
+        "sizesState": "{\"version\":1,\"sizes\":[[1024,1024],[1152,864],[1248,832],[1376,768],[1920,1088],[1536,1536],[2560,1440],[2048,2048],[2400,1792],[2528,1696],[2752,1536]],\"selected\":10,\"orientation\":\"landscape\",\"snap\":32,\"accent\":null,\"collapsed\":false,\"starred\":[\"2048x2048\",\"1792x2400\",\"1696x2528\",\"1536x2752\"],\"w\":2752,\"h\":1536}"
       },
       "widgets_values": [
         {
@@ -782,8 +792,8 @@
               1536
             ]
           ],
-          "selected": 2,
-          "orientation": "portrait",
+          "selected": 10,
+          "orientation": "landscape",
           "snap": 32,
           "accent": null,
           "collapsed": false,
@@ -793,8 +803,8 @@
             "1696x2528",
             "1536x2752"
           ],
-          "w": 832,
-          "h": 1248
+          "w": 2752,
+          "h": 1536
         }
       ],
       "widgets_values_named": {
@@ -846,8 +856,8 @@
               1536
             ]
           ],
-          "selected": 2,
-          "orientation": "portrait",
+          "selected": 10,
+          "orientation": "landscape",
           "snap": 32,
           "accent": null,
           "collapsed": false,
@@ -857,8 +867,8 @@
             "1696x2528",
             "1536x2752"
           ],
-          "w": 832,
-          "h": 1248
+          "w": 2752,
+          "h": 1536
         }
       },
       "color": "#2f7fc0",
@@ -903,12 +913,12 @@
         "Node name for S&R": "PixaromaLoadImageMini"
       },
       "widgets_values": [
-        "F2K_00021_.png",
+        "PMP/FD_2026-10-09_002.jpg [output]",
         "image",
         ""
       ],
       "widgets_values_named": {
-        "image": "F2K_00021_.png",
+        "image": "PMP/FD_2026-10-09_002.jpg [output]",
         "upload": "image",
         "pixaroma_load_image_mini_ui": ""
       },
@@ -951,12 +961,12 @@
         "Node name for S&R": "PixaromaLoadImageMini"
       },
       "widgets_values": [
-        "SeedVR2_50516_.jpg",
+        "PMP/FD_2026-10-09_003.jpg [output]",
         "image",
         ""
       ],
       "widgets_values_named": {
-        "image": "SeedVR2_50516_.jpg",
+        "image": "PMP/FD_2026-10-09_003.jpg [output]",
         "upload": "image",
         "pixaroma_load_image_mini_ui": ""
       },
@@ -1054,7 +1064,7 @@
         "dropdownState": {
           "version": 1,
           "type": "int",
-          "index": 0,
+          "index": 2,
           "mode": "fixed",
           "options": [
             {
@@ -1144,30 +1154,6 @@
       "INT"
     ],
     [
-      865,
-      512,
-      0,
-      515,
-      4,
-      "STRING"
-    ],
-    [
-      886,
-      565,
-      0,
-      515,
-      6,
-      "IMAGE"
-    ],
-    [
-      887,
-      566,
-      0,
-      515,
-      7,
-      "IMAGE"
-    ],
-    [
       894,
       515,
       0,
@@ -1182,6 +1168,38 @@
       557,
       0,
       "IMAGE"
+    ],
+    [
+      886,
+      565,
+      0,
+      515,
+      7,
+      "IMAGE"
+    ],
+    [
+      887,
+      566,
+      0,
+      515,
+      8,
+      "IMAGE"
+    ],
+    [
+      897,
+      512,
+      0,
+      515,
+      4,
+      "STRING"
+    ],
+    [
+      898,
+      512,
+      1,
+      515,
+      5,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1230,7 +1248,7 @@
         "state": {
           "lastGroupId": 47,
           "lastNodeId": 569,
-          "lastLinkId": 895,
+          "lastLinkId": 898,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2024,6 +2042,20 @@
                 "link": null
               },
               {
+                "localized_name": "image_6",
+                "name": "images.image_6",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "image_7",
+                "name": "images.image_7",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
                 "localized_name": "vae",
                 "name": "vae",
                 "shape": 7,
@@ -2173,7 +2205,7 @@
             ],
             "size": [
               492.35952363843035,
-              392
+              412
             ],
             "flags": {},
             "order": 9,
@@ -2192,6 +2224,13 @@
                 "shape": 7,
                 "type": "IMAGE",
                 "link": 855
+              },
+              {
+                "localized_name": "image3",
+                "name": "image3",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
               },
               {
                 "localized_name": "video",
@@ -2261,7 +2300,7 @@
               "",
               8192,
               false,
-              1762208886,
+              342044544,
               "randomize",
               false,
               false,
@@ -2275,7 +2314,7 @@
               "prompt": "",
               "max_tokens": 8192,
               "keep_model_loaded": false,
-              "seed": 1762208886,
+              "seed": 342044544,
               "control_after_generate": "randomize",
               "keep_last_prompt": false,
               "passthrough": false,
@@ -2473,30 +2512,6 @@
             "type": "MODEL"
           },
           {
-            "id": 846,
-            "origin_id": 493,
-            "origin_slot": 0,
-            "target_id": 545,
-            "target_slot": 0,
-            "type": "CLIP"
-          },
-          {
-            "id": 849,
-            "origin_id": 486,
-            "origin_slot": 0,
-            "target_id": 545,
-            "target_slot": 6,
-            "type": "VAE"
-          },
-          {
-            "id": 843,
-            "origin_id": 547,
-            "origin_slot": 0,
-            "target_id": 545,
-            "target_slot": 7,
-            "type": "STRING"
-          },
-          {
             "id": 852,
             "origin_id": -10,
             "origin_slot": 0,
@@ -2519,30 +2534,6 @@
             "target_id": 509,
             "target_slot": 4,
             "type": "INT"
-          },
-          {
-            "id": 891,
-            "origin_id": -10,
-            "origin_slot": 3,
-            "target_id": 545,
-            "target_slot": 9,
-            "type": "INT"
-          },
-          {
-            "id": 858,
-            "origin_id": -10,
-            "origin_slot": 4,
-            "target_id": 547,
-            "target_slot": 5,
-            "type": "STRING"
-          },
-          {
-            "id": 868,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 545,
-            "target_slot": 8,
-            "type": "STRING"
           },
           {
             "id": 815,
@@ -2617,11 +2608,27 @@
             "type": "FLOAT"
           },
           {
+            "id": 854,
+            "origin_id": -10,
+            "origin_slot": 18,
+            "target_id": 547,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 855,
+            "origin_id": -10,
+            "origin_slot": 19,
+            "target_id": 547,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
             "id": 856,
             "origin_id": -10,
             "origin_slot": 15,
             "target_id": 547,
-            "target_slot": 3,
+            "target_slot": 4,
             "type": "COMBO"
           },
           {
@@ -2629,16 +2636,32 @@
             "origin_id": -10,
             "origin_slot": 16,
             "target_id": 547,
-            "target_slot": 4,
+            "target_slot": 5,
             "type": "COMBO"
+          },
+          {
+            "id": 858,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 547,
+            "target_slot": 6,
+            "type": "STRING"
           },
           {
             "id": 859,
             "origin_id": -10,
             "origin_slot": 17,
             "target_id": 547,
-            "target_slot": 6,
+            "target_slot": 7,
             "type": "BOOLEAN"
+          },
+          {
+            "id": 846,
+            "origin_id": 493,
+            "origin_slot": 0,
+            "target_id": 545,
+            "target_slot": 0,
+            "type": "CLIP"
           },
           {
             "id": 847,
@@ -2646,14 +2669,6 @@
             "origin_slot": 18,
             "target_id": 545,
             "target_slot": 1,
-            "type": "IMAGE"
-          },
-          {
-            "id": 854,
-            "origin_id": -10,
-            "origin_slot": 18,
-            "target_id": 547,
-            "target_slot": 0,
             "type": "IMAGE"
           },
           {
@@ -2665,12 +2680,36 @@
             "type": "IMAGE"
           },
           {
-            "id": 855,
+            "id": 849,
+            "origin_id": 486,
+            "origin_slot": 0,
+            "target_id": 545,
+            "target_slot": 8,
+            "type": "VAE"
+          },
+          {
+            "id": 843,
+            "origin_id": 547,
+            "origin_slot": 0,
+            "target_id": 545,
+            "target_slot": 9,
+            "type": "STRING"
+          },
+          {
+            "id": 868,
             "origin_id": -10,
-            "origin_slot": 19,
-            "target_id": 547,
-            "target_slot": 1,
-            "type": "IMAGE"
+            "origin_slot": 5,
+            "target_id": 545,
+            "target_slot": 10,
+            "type": "STRING"
+          },
+          {
+            "id": 891,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 545,
+            "target_slot": 11,
+            "type": "INT"
           }
         ],
         "extra": {
@@ -2687,10 +2726,10 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.7202280745341726,
+      "scale": 0.5952298136646054,
       "offset": [
-        1655.7756662139536,
-        -2123.4633701903936
+        2197.70135252376,
+        -1843.18908486411
       ]
     }
   },
@@ -2709,5 +2748,10 @@
       }
     ]
   },
-  "version": 0.4
+  "version": 0.4,
+  "seed_widgets": {
+    "512": 1,
+    "515": 2,
+    "560": 1
+  }
 }
