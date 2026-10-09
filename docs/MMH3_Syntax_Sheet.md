@@ -78,3 +78,12 @@ Wildcards: `__mmh3/camera__` (random) o `__mmh3/camera/truck__`, `__mmh3/camera/
 - Voce/tone/accento → `overall_soundscape`, mai dentro le virgolette.
 - Nessun contenuto parlato richiesto → niente dialogo, niente voce inventata, soundscape solo ambiente/foley.
 - `non_diegetic_music` = `N/A` a meno di richiesta esplicita.
+
+## Wildcards `mmh3/`
+
+| Wild | Contenuto |
+|---|---|
+| `__mmh3/music__`, `__mmh3/music/<genere>__` | colonne sonore (`orchestral`, `electronic`, `piano`, `jazz`, `lofi`, `ambient`, `tension`) |
+| `__mmh3/style__`, `__mmh3/style/<nome>__` | stile render (`matchref`, `cinematic`, `liveaction`, `claymation`, `watercolor`, `vintage`, `papercraft`, `collage`, `handdrawn`) |
+| `__mmh3/camera__`, `__mmh3/camera/<move>__` | movimenti camera nativi H3, iniettabili inline per shot |
+| `__mmh3/nsfw/act/<atto>__`, `__mmh3/nsfw/loop/<atto>__` | atti NSFW in frasi naturali; `loop/*` = motion ciclico seamless (camera ferma, ritorno alla pose iniziale); `*` = random |
