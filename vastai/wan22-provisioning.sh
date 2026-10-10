@@ -136,7 +136,7 @@ function provisioning_start() {
     echo "🔄 Downloading PMP wildcards from Garage..."
     WILDCARD_DIR="${COMFYUI_DIR}/custom_nodes/ComfyUI-TagForge/wildcards"
     WILDCARD_BASE="https://github.com/huchukato/ComfyUI-Garage/raw/master/wildcards"
-    WILDCARD_FILES="pmp/act.yaml pmp/actff.yaml pmp/actffm.yaml pmp/actmmf.yaml pmp/actsolo.yaml pmp/blwjob.yaml pmp/prmpt.yaml pmp/qwen21.yaml pmp/prmpt/acc.yaml pmp/prmpt/char.yaml pmp/prmpt/clths.yaml pmp/prmpt/exprss.yaml pmp/prmpt/hair.yaml pmp/prmpt/imgcmp.yaml pmp/prmpt/lctns.yaml pmp/prmpt/light.yaml pmp/prmpt/pose.yaml pmp/prmpt/styles.yaml"
+    WILDCARD_FILES="pmp/act.yaml pmp/actff.yaml pmp/actffm.yaml pmp/actmmf.yaml pmp/actsolo.yaml pmp/blwjob.yaml pmp/prmpt.yaml pmp/qwen21.yaml pmp/prmpt/acc.yaml pmp/prmpt/char.yaml pmp/prmpt/clths.yaml pmp/prmpt/exprss.yaml pmp/prmpt/hair.yaml pmp/prmpt/imgcmp.yaml pmp/prmpt/lctns.yaml pmp/prmpt/light.yaml pmp/prmpt/pose.yaml pmp/prmpt/styles.yaml pmp/prmpt/dynmc.yaml"
     for wf in $WILDCARD_FILES; do
         mkdir -p "$WILDCARD_DIR/$(dirname "$wf")"
         wget -q --tries=3 --timeout=30 "$WILDCARD_BASE/$wf" -O "$WILDCARD_DIR/$wf" || echo "⚠️ wildcard $wf download failed"
