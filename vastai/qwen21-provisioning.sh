@@ -57,8 +57,6 @@ VAE_MODELS=(
 
 ESRGAN_MODELS=(
     "https://huggingface.co/huchukato/garage/resolve/main/upscale_models/4xUltrasharp_4xUltrasharpV10.pth"
-    "https://huggingface.co/huchukato/garage/resolve/main/upscale_models/4x-AnimeSharp.pth"
-    "https://huggingface.co/huchukato/garage/resolve/main/upscale_models/RealESRGAN_x4plus.pth"
 )
 
 TEXT_ENCODERS=(
