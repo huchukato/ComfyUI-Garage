@@ -1,71 +1,9 @@
 {
  "id": "b1f0c2a4-7d3e-4a19-9c88-mmxdirector01",
  "revision": 0,
- "last_node_id": 427,
+ "last_node_id": 429,
  "last_link_id": 916,
  "nodes": [
-  {
-   "id": 90,
-   "type": "MarkdownNote",
-   "pos": [
-    -2470,
-    270
-   ],
-   "size": [
-    565.7899849352964,
-    746.7381176718277
-   ],
-   "flags": {},
-   "order": 0,
-   "mode": 0,
-   "inputs": [],
-   "outputs": [],
-   "title": "Note: How this works",
-   "properties": {
-    "cnr_id": "comfy-core",
-    "ver": "0.30.0",
-    "Node name for S&R": "MarkdownNote"
-   },
-   "widgets_values": [
-    "## MiniMax H3 Director\n\nThe LTX Director timeline, wired to **MiniMax H3**.\n\n### Two model paths\nThe dropdown next to **Delete** on the toolbar picks the conditioning path, and each path needs its **own UNet**:\n\n| Toolbar | UNet to load |\n|---|---|\n| `Refs OFF (fl2va)` | `minimax_h3_fl2va_*` |\n| `Refs ON (ref2va)` | `minimax_h3_ref2va_*` |\n\nThis workflow ships with **fl2va** loaded (text to video + optional first/last frame).\n\n### How the timeline maps\n- **Text/prompt segments** compile into a storyboard prompt: `[0s-1.5s] shot one…`. That is H3's native notation for timed control.\n- **An image at the start** of the window becomes `first_frame`; an image marked as an **end frame** (or one that runs to the end) becomes `last_frame`. H3 anchors keyframes only at those two positions.\n- **Images in the middle**, the **reference-video track** and the **audio track** need `Refs ON (ref2va)`; they become `<Picture i>`, `<Video k>` and `<Audio j>`.\n- **Character slots** `@char1..@char3` become `<Picture i>` in ref2va, or their VLM description in fl2va.\n\n### Length and canvas\nLength snaps up to H3's **17k+5 frame grid at 24 fps** — 5 s becomes 124 frames (5.17 s). The native canvas is a 768 px short edge capped at 768×1344.\n\n### Audio\nH3 generates stereo audio **jointly** with the video, so there is nothing to inpaint. The sampler's single latent feeds both decoders. If you want your own music instead, wire the Director's `combined_audio` into `CreateVideo`.\n\n### Preview\n**MiniMax H3 Preview Override** sits between the Director and the sampler. ComfyUI's built-in preview only ever draws the *first* latent frame — this streams the whole shot while it denoises, so you see cuts, motion and timing from the first steps. Needs ComfyUI-VideoHelperSuite for the player. Bypass it (Ctrl+B) if you want the plain single-frame preview back.\n\n### Prompt output\nThe `prompt` output returns the exact storyboard text that was encoded — connect a preview node to it when a shot is not landing.\n\n### Enhance Prompt\nThe two **Load Image** nodes point at files that only exist on the machine this example was built on — pick your own references there. Sockets on the Enhance node grow as you connect, up to nine.\n\nIt needs a **vision** model on Ollama / LM Studio / any OpenAI-compatible endpoint; a text-only model ignores the images without saying so. Leave `base_url` empty for the provider default.\n\n`prompt` goes to the Director's `global_prompt`, `ref_images` to its `ref_images`, and `duration_seconds` to its **`duration`** input — the connection-only one, so the length is typed once."
-   ],
-   "widgets_values_named": {
-    "text": "## MiniMax H3 Director\n\nThe LTX Director timeline, wired to **MiniMax H3**.\n\n### Two model paths\nThe dropdown next to **Delete** on the toolbar picks the conditioning path, and each path needs its **own UNet**:\n\n| Toolbar | UNet to load |\n|---|---|\n| `Refs OFF (fl2va)` | `minimax_h3_fl2va_*` |\n| `Refs ON (ref2va)` | `minimax_h3_ref2va_*` |\n\nThis workflow ships with **fl2va** loaded (text to video + optional first/last frame).\n\n### How the timeline maps\n- **Text/prompt segments** compile into a storyboard prompt: `[0s-1.5s] shot one…`. That is H3's native notation for timed control.\n- **An image at the start** of the window becomes `first_frame`; an image marked as an **end frame** (or one that runs to the end) becomes `last_frame`. H3 anchors keyframes only at those two positions.\n- **Images in the middle**, the **reference-video track** and the **audio track** need `Refs ON (ref2va)`; they become `<Picture i>`, `<Video k>` and `<Audio j>`.\n- **Character slots** `@char1..@char3` become `<Picture i>` in ref2va, or their VLM description in fl2va.\n\n### Length and canvas\nLength snaps up to H3's **17k+5 frame grid at 24 fps** — 5 s becomes 124 frames (5.17 s). The native canvas is a 768 px short edge capped at 768×1344.\n\n### Audio\nH3 generates stereo audio **jointly** with the video, so there is nothing to inpaint. The sampler's single latent feeds both decoders. If you want your own music instead, wire the Director's `combined_audio` into `CreateVideo`.\n\n### Preview\n**MiniMax H3 Preview Override** sits between the Director and the sampler. ComfyUI's built-in preview only ever draws the *first* latent frame — this streams the whole shot while it denoises, so you see cuts, motion and timing from the first steps. Needs ComfyUI-VideoHelperSuite for the player. Bypass it (Ctrl+B) if you want the plain single-frame preview back.\n\n### Prompt output\nThe `prompt` output returns the exact storyboard text that was encoded — connect a preview node to it when a shot is not landing.\n\n### Enhance Prompt\nThe two **Load Image** nodes point at files that only exist on the machine this example was built on — pick your own references there. Sockets on the Enhance node grow as you connect, up to nine.\n\nIt needs a **vision** model on Ollama / LM Studio / any OpenAI-compatible endpoint; a text-only model ignores the images without saying so. Leave `base_url` empty for the provider default.\n\n`prompt` goes to the Director's `global_prompt`, `ref_images` to its `ref_images`, and `duration_seconds` to its **`duration`** input — the connection-only one, so the length is typed once."
-   },
-   "color": "#222",
-   "bgcolor": "#000"
-  },
-  {
-   "id": 91,
-   "type": "MarkdownNote",
-   "pos": [
-    -2460,
-    1090
-   ],
-   "size": [
-    560,
-    420
-   ],
-   "flags": {},
-   "order": 1,
-   "mode": 0,
-   "inputs": [],
-   "outputs": [],
-   "title": "Note: Models & sampling",
-   "properties": {
-    "cnr_id": "comfy-core",
-    "ver": "0.30.0",
-    "Node name for S&R": "MarkdownNote"
-   },
-   "widgets_values": [
-    "## Models\n\n```\n📂 ComfyUI/models/\n├── 📂 diffusion_models/\n│   ├── minimax_h3_fl2va_pruned_*.safetensors\n│   └── minimax_h3_ref2va_pruned_*.safetensors\n├── 📂 text_encoders/\n│   └── qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\n└── 📂 vae/\n    ├── minimax_h3_video_vae_fp16.safetensors\n    └── minimax_h3_audio_vae_fp32.safetensors\n```\n\n[🤗 Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-Org/MiniMax-H3)\n\n**CLIPLoader type must be `minimax`.**\n\nSampling: `res_multistep` + `simple` at ~20 steps, through `BasicGuider` (no CFG). For reference-heavy ref2va prompts, `beta` or `normal` often beats `simple`.\n\nSigma shift lives in the Director's gear menu (video 12.0 / audio 3.0 are the H3 defaults) and is applied to the `model` output."
-   ],
-   "widgets_values_named": {
-    "text": "## Models\n\n```\n📂 ComfyUI/models/\n├── 📂 diffusion_models/\n│   ├── minimax_h3_fl2va_pruned_*.safetensors\n│   └── minimax_h3_ref2va_pruned_*.safetensors\n├── 📂 text_encoders/\n│   └── qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\n└── 📂 vae/\n    ├── minimax_h3_video_vae_fp16.safetensors\n    └── minimax_h3_audio_vae_fp32.safetensors\n```\n\n[🤗 Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-Org/MiniMax-H3)\n\n**CLIPLoader type must be `minimax`.**\n\nSampling: `res_multistep` + `simple` at ~20 steps, through `BasicGuider` (no CFG). For reference-heavy ref2va prompts, `beta` or `normal` often beats `simple`.\n\nSigma shift lives in the Director's gear menu (video 12.0 / audio 3.0 are the H3 defaults) and is applied to the `model` output."
-   },
-   "color": "#222",
-   "bgcolor": "#000"
-  },
   {
    "id": 376,
    "type": "Reroute",
@@ -426,7 +364,7 @@
     90
    ],
    "size": [
-    1380,
+    1389.3919965323585,
     1822
    ],
    "flags": {},
@@ -447,13 +385,13 @@
      "name": "model",
      "shape": 7,
      "type": "MODEL",
-     "link": 871
+     "link": null
     },
     {
      "name": "model_ref2va",
      "shape": 7,
      "type": "MODEL",
-     "link": 873
+     "link": null
     },
     {
      "name": "audio_vae",
@@ -775,7 +713,7 @@
    ],
    "size": [
     432.26060835367514,
-    76.13273279780401
+    86
    ],
    "flags": {},
    "order": 10,
@@ -874,7 +812,7 @@
     413.29741193745986
    ],
    "flags": {},
-   "order": 2,
+   "order": 0,
    "mode": 0,
    "inputs": [],
    "outputs": [
@@ -923,7 +861,7 @@
     413.2974119374598
    ],
    "flags": {},
-   "order": 3,
+   "order": 1,
    "mode": 0,
    "inputs": [],
    "outputs": [
@@ -972,7 +910,7 @@
     413.2974119374598
    ],
    "flags": {},
-   "order": 4,
+   "order": 2,
    "mode": 0,
    "inputs": [],
    "outputs": [
@@ -1093,17 +1031,13 @@
      "label": "FL2VA",
      "name": "MODEL",
      "type": "MODEL",
-     "links": [
-      871
-     ]
+     "links": []
     },
     {
      "label": "R2VA",
      "name": "MODEL_1",
      "type": "MODEL",
-     "links": [
-      873
-     ]
+     "links": []
     },
     {
      "name": "CLIP",
@@ -1183,7 +1117,7 @@
    "flags": {
     "no_title": true
    },
-   "order": 5,
+   "order": 3,
    "mode": 0,
    "inputs": [],
    "outputs": [],
@@ -1206,7 +1140,7 @@
    "id": 399,
    "type": "PixaromaLabel",
    "pos": [
-    -2441.6830334554875,
+    -2446.26291445574,
     -148.18830956728334
    ],
    "size": [
@@ -1216,7 +1150,7 @@
    "flags": {
     "no_title": true
    },
-   "order": 6,
+   "order": 4,
    "mode": 0,
    "inputs": [],
    "outputs": [],
@@ -1249,7 +1183,7 @@
    "flags": {
     "no_title": true
    },
-   "order": 7,
+   "order": 5,
    "mode": 0,
    "inputs": [],
    "outputs": [],
@@ -1303,7 +1237,7 @@
    "flags": {
     "no_title": true
    },
-   "order": 8,
+   "order": 6,
    "mode": 0,
    "inputs": [],
    "outputs": [],
@@ -1320,15 +1254,15 @@
    "id": 405,
    "type": "PixaromaGroupSwitch",
    "pos": [
-    -2450.6518637683757,
-    31.762976201435304
+    -2440.76623383576,
+    32.60064075702404
    ],
    "size": [
-    527.4652769911431,
+    527.7742029265376,
     165
    ],
    "flags": {},
-   "order": 9,
+   "order": 7,
    "mode": 0,
    "inputs": [],
    "outputs": [],
@@ -1711,6 +1645,72 @@
    },
    "color": "#50c2d3",
    "bgcolor": "#2b3c3e"
+  },
+  {
+   "id": 428,
+   "type": "PixaromaLabel",
+   "pos": [
+    -2151.610826013309,
+    -155.01957052917285
+   ],
+   "size": [
+    271,
+    73
+   ],
+   "flags": {
+    "no_title": true
+   },
+   "order": 8,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "cnr_id": "ComfyUI-Pixaroma",
+    "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
+    "Node name for S&R": "PixaromaLabel",
+    "aux_id": "pixaroma/ComfyUI-Pixaroma"
+   },
+   "widgets_values": [
+    "{\"text\":\"storyboard\",\"fontSize\":53,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"transparent\",\"padding\":10,\"borderRadius\":9,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+   ],
+   "widgets_values_named": {
+    "label_json": "{\"text\":\"storyboard\",\"fontSize\":53,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"transparent\",\"padding\":10,\"borderRadius\":9,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+   },
+   "color": "rgba(0,0,0,0)",
+   "bgcolor": "rgba(0,0,0,0)"
+  },
+  {
+   "id": 429,
+   "type": "PixaromaNote",
+   "pos": [
+    -2455.853498480826,
+    267.0641155011332
+   ],
+   "size": [
+    555.8507425474331,
+    1171.959821500617
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "README",
+   "properties": {
+    "cnr_id": "ComfyUI-Pixaroma",
+    "ver": "c8740b64fd09d93b89273b489791ac6ca42512f2",
+    "Node name for S&R": "PixaromaNote"
+   },
+   "widgets_values": [
+    "{\"version\": 1, \"content\": \"<h2>Director Storyboard (QwenVL)</h2><p><b>Pipeline</b>: character sheet &rarr; scene stills (Qwen 2.1, preset <i>IMG &rsaquo; Storyboard</i>) &rarr; multi-scene video with audio (MiniMax H3 Director).</p><h3>1 &middot; The stills</h3><p>Load your scene stills into the three <code>PixaromaLoadImageMini</code> nodes on the left, <b>in chronological order</b>: they feed the enhancer (image/2/3) and the Director (batch &rarr; ref_images). The order is the <Picture N> numbering.</p><h3>2 &middot; SETTINGS (subgraph)</h3><p>Inside: the models (fl2va + Singularity ref2va, 32B TE, video/audio VAEs), the QwenVL enhancer (GGUF Qwen3.5-9B) and the attention chains (kitchen + sol-attn) already applied to both paths. Only touch it to swap models.</p><h3>3 &middot; The prompt</h3><p>In the QwenVL node inside SETTINGS: preset <code>MiniMax &rsaquo; Director Storyboard</code> + your scene idea <b>with timestamps</b> (00:00 / 00:04 / 00:08 for 10s), one scene per still, in order. The generated prompt shows up in the <code>PixaromaShowText</code> node after the run.</p><h3>4 &middot; The Director</h3><p>Refs ON (ref2va), canvas 1344&times;768, duration 10s. The <b>COMPILED PROMPT panel is decorative</b> in this workflow: it shows the native compilation, but the prompt that actually runs is QwenVL's, injected via <code>external_prompt</code> which replaces it. Timeline, global prompt and subject slots stay empty.</p><h3>5 &middot; Output</h3><p>Sampler 20 steps (res_multistep/simple) &rarr; RIFE 48fps &rarr; mp4 with generated audio.</p><h3>Native variant</h3><p><code>MiniMaxH3-Director-Native</code> drives the Director by itself: drag the stills onto the MAIN timeline track (the position = the shot's timestamp), character sheet into subject slot @ref1, global prompt + per-segment prompts &mdash; the COMPILED PROMPT is what runs. Ref Size <code>max</code> recommended for identity.</p>\", \"buttonColor\": \"#f66744\", \"lineColor\": \"#f66744\", \"width\": 420, \"height\": 320}",
+    ""
+   ],
+   "widgets_values_named": {
+    "note_json": "{\"version\":1,\"content\":\"\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":420,\"height\":320}",
+    "note_dom": ""
+   },
+   "color": "#d57bba",
+   "bgcolor": "#3f313b"
   }
  ],
  "links": [
@@ -1795,44 +1795,12 @@
    "VAE"
   ],
   [
-   113,
-   5,
-   4,
-   15,
-   2,
-   "FLOAT"
-  ],
-  [
    888,
    397,
    5,
    416,
    0,
    "STRING"
-  ],
-  [
-   890,
-   394,
-   0,
-   397,
-   5,
-   "IMAGE"
-  ],
-  [
-   891,
-   395,
-   0,
-   397,
-   6,
-   "IMAGE"
-  ],
-  [
-   892,
-   396,
-   0,
-   397,
-   7,
-   "IMAGE"
   ],
   [
    896,
@@ -1881,6 +1849,62 @@
    419,
    5,
    "VAE"
+  ],
+  [
+   910,
+   422,
+   0,
+   423,
+   0,
+   "IMAGE"
+  ],
+  [
+   911,
+   419,
+   2,
+   423,
+   1,
+   "AUDIO"
+  ],
+  [
+   113,
+   5,
+   4,
+   15,
+   2,
+   "FLOAT"
+  ],
+  [
+   890,
+   394,
+   0,
+   397,
+   5,
+   "IMAGE"
+  ],
+  [
+   891,
+   395,
+   0,
+   397,
+   6,
+   "IMAGE"
+  ],
+  [
+   892,
+   396,
+   0,
+   397,
+   7,
+   "IMAGE"
+  ],
+  [
+   909,
+   419,
+   1,
+   422,
+   0,
+   "IMAGE"
   ],
   [
    902,
@@ -1961,36 +1985,12 @@
    5,
    13,
    "STRING"
-  ],
-  [
-   909,
-   419,
-   1,
-   422,
-   0,
-   "IMAGE"
-  ],
-  [
-   910,
-   422,
-   0,
-   423,
-   0,
-   "IMAGE"
-  ],
-  [
-   911,
-   419,
-   2,
-   423,
-   1,
-   "AUDIO"
   ]
  ],
  "groups": [
   {
    "id": 2,
-   "title": "🎛 4 Director (timeline)",
+   "title": "🎛 Director (timeline)",
    "bounding": [
     -820,
     10,
@@ -2068,8 +2068,8 @@
     "version": 1,
     "state": {
      "lastGroupId": 54,
-     "lastNodeId": 423,
-     "lastLinkId": 912,
+     "lastNodeId": 429,
+     "lastLinkId": 916,
      "lastRerouteId": 0
     },
     "revision": 0,
@@ -2631,8 +2631,8 @@
     "version": 1,
     "state": {
      "lastGroupId": 54,
-     "lastNodeId": 423,
-     "lastLinkId": 912,
+     "lastNodeId": 429,
+     "lastLinkId": 916,
      "lastRerouteId": 0
     },
     "revision": 0,
@@ -2965,8 +2965,8 @@
     "version": 1,
     "state": {
      "lastGroupId": 54,
-     "lastNodeId": 423,
-     "lastLinkId": 912,
+     "lastNodeId": 429,
+     "lastLinkId": 916,
      "lastRerouteId": 0
     },
     "revision": 0,
@@ -4022,14 +4022,6 @@
       "type": "STRING"
      },
      {
-      "id": 887,
-      "origin_id": -10,
-      "origin_slot": 0,
-      "target_id": 411,
-      "target_slot": 6,
-      "type": "STRING"
-     },
-     {
       "id": 859,
       "origin_id": -10,
       "origin_slot": 1,
@@ -4086,14 +4078,6 @@
       "type": "COMBO"
      },
      {
-      "id": 886,
-      "origin_id": -10,
-      "origin_slot": 8,
-      "target_id": 411,
-      "target_slot": 8,
-      "type": "COMBO"
-     },
-     {
       "id": 880,
       "origin_id": -10,
       "origin_slot": 9,
@@ -4118,6 +4102,30 @@
       "type": "IMAGE"
      },
      {
+      "id": 887,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 411,
+      "target_slot": 6,
+      "type": "STRING"
+     },
+     {
+      "id": 912,
+      "origin_id": -10,
+      "origin_slot": 12,
+      "target_id": 411,
+      "target_slot": 7,
+      "type": "BOOLEAN"
+     },
+     {
+      "id": 886,
+      "origin_id": -10,
+      "origin_slot": 8,
+      "target_id": 411,
+      "target_slot": 8,
+      "type": "COMBO"
+     },
+     {
       "id": 869,
       "origin_id": 412,
       "origin_slot": 0,
@@ -4132,14 +4140,6 @@
       "target_id": 415,
       "target_slot": 0,
       "type": "MODEL"
-     },
-     {
-      "id": 912,
-      "origin_id": -10,
-      "origin_slot": 12,
-      "target_id": 411,
-      "target_slot": 7,
-      "type": "BOOLEAN"
      }
     ],
     "extra": {
@@ -4151,8 +4151,8 @@
     "version": 1,
     "state": {
      "lastGroupId": 54,
-     "lastNodeId": 423,
-     "lastLinkId": 912,
+     "lastNodeId": 429,
+     "lastLinkId": 916,
      "lastRerouteId": 0
     },
     "revision": 0,
@@ -4755,30 +4755,6 @@
       "type": "VIDEO"
      },
      {
-      "id": 903,
-      "origin_id": -10,
-      "origin_slot": 6,
-      "target_id": 380,
-      "target_slot": 3,
-      "type": "COMBO"
-     },
-     {
-      "id": 904,
-      "origin_id": -10,
-      "origin_slot": 7,
-      "target_id": 380,
-      "target_slot": 4,
-      "type": "COMBO"
-     },
-     {
-      "id": 905,
-      "origin_id": -10,
-      "origin_slot": 8,
-      "target_id": 380,
-      "target_slot": 5,
-      "type": "INT"
-     },
-     {
       "id": 906,
       "origin_id": 381,
       "origin_slot": 0,
@@ -4803,6 +4779,30 @@
       "type": "AUDIO"
      },
      {
+      "id": 903,
+      "origin_id": -10,
+      "origin_slot": 6,
+      "target_id": 380,
+      "target_slot": 3,
+      "type": "COMBO"
+     },
+     {
+      "id": 904,
+      "origin_id": -10,
+      "origin_slot": 7,
+      "target_id": 380,
+      "target_slot": 4,
+      "type": "COMBO"
+     },
+     {
+      "id": 905,
+      "origin_id": -10,
+      "origin_slot": 8,
+      "target_id": 380,
+      "target_slot": 5,
+      "type": "INT"
+     },
+     {
       "id": 893,
       "origin_id": 417,
       "origin_slot": 0,
@@ -4820,8 +4820,8 @@
     "version": 1,
     "state": {
      "lastGroupId": 54,
-     "lastNodeId": 423,
-     "lastLinkId": 912,
+     "lastNodeId": 429,
+     "lastLinkId": 916,
      "lastRerouteId": 0
     },
     "revision": 0,
@@ -5389,18 +5389,15 @@
   "VHS_MetadataImage": true,
   "VHS_KeepIntermediate": true,
   "ds": {
-   "scale": 0.7232720675093939,
+   "scale": 0.5434050093984929,
    "offset": [
-    2796.0778543130655,
-    -405.5783869534493
+    3392.7159693805565,
+    822.8623893716072
    ]
   }
  },
  "extensions": {
-  "seed_widgets": {
-   "380": 0,
-   "386": 6
-  },
+  "seed_widgets": {},
   "models": []
  },
  "version": 0.4,
