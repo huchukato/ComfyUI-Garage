@@ -267,9 +267,9 @@
    },
    "widgets_values": [
     99661097802121,
-    "euler",
-    "beta",
-    6,
+    "res_multistep",
+    "simple",
+    20,
     1
    ],
    "widgets_values_named": {
@@ -1563,41 +1563,6 @@
    "bgcolor": "#23362f"
   },
   {
-   "id": 406,
-   "type": "LoraLoaderModelOnly",
-   "pos": [
-    -1856.5964406272474,
-    -210.68518194068324
-   ],
-   "size": [
-    270,
-    90
-   ],
-   "flags": {},
-   "order": 0,
-   "mode": 0,
-   "inputs": [
-    {
-     "name": "model",
-     "type": "MODEL",
-     "link": null
-    }
-   ],
-   "outputs": [
-    {
-     "name": "MODEL",
-     "type": "MODEL",
-     "links": [
-      864
-     ]
-    }
-   ],
-   "widgets_values": [
-    "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
-    1
-   ]
-  },
-  {
    "id": 407,
    "type": "ModelAttentionBackend",
    "pos": [
@@ -1615,7 +1580,7 @@
     {
      "name": "model",
      "type": "MODEL",
-     "link": null
+     "link": 853
     }
    ],
    "outputs": [
@@ -1987,7 +1952,7 @@
    853,
    397,
    1,
-   406,
+   407,
    0,
    "MODEL"
   ],
@@ -2014,14 +1979,6 @@
    5,
    13,
    "STRING"
-  ],
-  [
-   864,
-   406,
-   0,
-   407,
-   0,
-   "MODEL"
   ],
   [
    865,
