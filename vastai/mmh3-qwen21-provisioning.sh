@@ -1,7 +1,7 @@
 #!/bin/bash
 # Vast.ai provisioning — MiniMax H3 + Qwen Image 2.1 TEST edition (storyboard pipeline)
 # Mirrors runpod/Dockerfile.CU13-MMH3-QWEN21: both model sets, the Director workflow,
-# the GGUF-Loader node. ~113GB of models on first boot.
+# the MiniMaxH3-Director node. ~113GB of models on first boot.
 
 source /venv/main/bin/activate
 COMFYUI_DIR=${WORKSPACE}/ComfyUI
