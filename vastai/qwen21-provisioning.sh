@@ -26,7 +26,6 @@ NODES=(
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/pixaroma/ComfyUI-Pixaroma"
     "https://github.com/kijai/ComfyUI-KJNodes"
-    "https://github.com/ChrisColeTech/ComfyUI-GGUF-Loader"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
     "https://github.com/huchukato/ComfyUI-Gallery"
     "https://github.com/yolain/ComfyUI-Easy-Use"
