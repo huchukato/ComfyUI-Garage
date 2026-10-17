@@ -1,8 +1,8 @@
 {
  "id": "b1f0c2a4-7d3e-4a19-9c88-mmxdirector01",
  "revision": 0,
- "last_node_id": 391,
- "last_link_id": 840,
+ "last_node_id": 396,
+ "last_link_id": 845,
  "nodes": [
   {
    "id": 16,
@@ -1279,6 +1279,193 @@
     }
    ],
    "widgets_values": []
+  },
+  {
+   "id": 392,
+   "type": "LoraLoaderModelOnly",
+   "pos": [
+    -1450,
+    -320
+   ],
+   "size": [
+    270,
+    90
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      841
+     ]
+    }
+   ],
+   "widgets_values": [
+    "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+    1
+   ]
+  },
+  {
+   "id": 393,
+   "type": "ModelAttentionBackend",
+   "pos": [
+    -1150,
+    -320
+   ],
+   "size": [
+    270,
+    90
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      842
+     ]
+    }
+   ],
+   "widgets_values": [
+    "comfy kitchen attention"
+   ]
+  },
+  {
+   "id": 394,
+   "type": "BlockSparseAttention",
+   "pos": [
+    -850,
+    -320
+   ],
+   "size": [
+    270,
+    90
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      843
+     ]
+    }
+   ],
+   "widgets_values": [
+    "sol-attn",
+    1,
+    0.2,
+    1,
+    "",
+    12288,
+    256,
+    "exact_kv_and_rows",
+    false
+   ]
+  },
+  {
+   "id": 395,
+   "type": "ModelAttentionBackend",
+   "pos": [
+    -1450,
+    1490
+   ],
+   "size": [
+    270,
+    90
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      844
+     ]
+    }
+   ],
+   "widgets_values": [
+    "comfy kitchen attention"
+   ]
+  },
+  {
+   "id": 396,
+   "type": "BlockSparseAttention",
+   "pos": [
+    -1150,
+    1490
+   ],
+   "size": [
+    270,
+    90
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      845
+     ]
+    }
+   ],
+   "widgets_values": [
+    "sol-attn",
+    1,
+    0.2,
+    1,
+    "",
+    12288,
+    256,
+    "exact_kv_and_rows",
+    false
+   ]
   }
  ],
  "links": [
@@ -1286,16 +1473,16 @@
    101,
    1,
    0,
-   5,
-   2,
+   395,
+   0,
    "MODEL"
   ],
   [
    102,
    16,
    0,
-   5,
-   3,
+   392,
+   0,
    "MODEL"
   ],
   [
@@ -1537,6 +1724,46 @@
    5,
    6,
    "IMAGE"
+  ],
+  [
+   841,
+   392,
+   0,
+   393,
+   0,
+   "MODEL"
+  ],
+  [
+   842,
+   393,
+   0,
+   394,
+   0,
+   "MODEL"
+  ],
+  [
+   843,
+   394,
+   0,
+   5,
+   3,
+   "MODEL"
+  ],
+  [
+   844,
+   395,
+   0,
+   396,
+   0,
+   "MODEL"
+  ],
+  [
+   845,
+   396,
+   0,
+   5,
+   2,
+   "MODEL"
   ]
  ],
  "groups": [
