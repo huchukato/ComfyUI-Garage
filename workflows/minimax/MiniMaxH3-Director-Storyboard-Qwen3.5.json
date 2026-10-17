@@ -2,7 +2,7 @@
  "id": "b1f0c2a4-7d3e-4a19-9c88-mmxdirector01",
  "revision": 0,
  "last_node_id": 429,
- "last_link_id": 916,
+ "last_link_id": 919,
  "nodes": [
   {
    "id": 376,
@@ -320,7 +320,7 @@
    ],
    "flags": {},
    "order": 25,
-   "mode": 4,
+   "mode": 0,
    "inputs": [
     {
      "name": "video",
@@ -385,13 +385,13 @@
      "name": "model",
      "shape": 7,
      "type": "MODEL",
-     "link": null
+     "link": 917
     },
     {
      "name": "model_ref2va",
      "shape": 7,
      "type": "MODEL",
-     "link": null
+     "link": 918
     },
     {
      "name": "audio_vae",
@@ -511,6 +511,11 @@
     },
     {
      "name": "retake_info",
+     "type": "STRING",
+     "links": null
+    },
+    {
+     "name": "timeline_data",
      "type": "STRING",
      "links": null
     }
@@ -804,8 +809,8 @@
    "id": 394,
    "type": "PixaromaLoadImageMini",
    "pos": [
-    -1847.8581875627751,
-    94.48837725688365
+    -1835.1738074731481,
+    95.60585741933926
    ],
    "size": [
     393.77302518873785,
@@ -830,19 +835,19 @@
      "links": null
     }
    ],
-   "title": "Image 1",
+   "title": "[Shot 1]",
    "properties": {
     "cnr_id": "ComfyUI-Pixaroma",
     "ver": "c8740b64fd09d93b89273b489791ac6ca42512f2",
     "Node name for S&R": "PixaromaLoadImageMini"
    },
    "widgets_values": [
-    "Qwen21_2026-10-17_004%.jpg [output]",
+    "whatdreamscost/Qwen21_2026-10-17_004%.jpg",
     "image",
     ""
    ],
    "widgets_values_named": {
-    "image": "Qwen21_2026-10-17_004%.jpg [output]",
+    "image": "whatdreamscost/Qwen21_2026-10-17_004%.jpg",
     "upload": "image",
     "pixaroma_load_image_mini_ui": ""
    },
@@ -853,7 +858,7 @@
    "id": 395,
    "type": "PixaromaLoadImageMini",
    "pos": [
-    -1839.6514304923935,
+    -1837.2727007898566,
     556.1297074338854
    ],
    "size": [
@@ -879,19 +884,19 @@
      "links": []
     }
    ],
-   "title": "Image 2",
+   "title": "[Shot 2]",
    "properties": {
     "cnr_id": "ComfyUI-Pixaroma",
     "ver": "c8740b64fd09d93b89273b489791ac6ca42512f2",
     "Node name for S&R": "PixaromaLoadImageMini"
    },
    "widgets_values": [
-    "Qwen21_2026-10-17_005%.jpg [output]",
+    "whatdreamscost/Qwen21_2026-10-17_005%.jpg",
     "image",
     ""
    ],
    "widgets_values_named": {
-    "image": "Qwen21_2026-10-17_005%.jpg [output]",
+    "image": "whatdreamscost/Qwen21_2026-10-17_005%.jpg",
     "upload": "image",
     "pixaroma_load_image_mini_ui": ""
    },
@@ -902,7 +907,7 @@
    "id": 396,
    "type": "PixaromaLoadImageMini",
    "pos": [
-    -1831.9174805014004,
+    -1831.5776619724666,
     1027.7224303832936
    ],
    "size": [
@@ -928,19 +933,19 @@
      "links": []
     }
    ],
-   "title": "Image 3",
+   "title": "[Shot 3]",
    "properties": {
     "cnr_id": "ComfyUI-Pixaroma",
     "ver": "c8740b64fd09d93b89273b489791ac6ca42512f2",
     "Node name for S&R": "PixaromaLoadImageMini"
    },
    "widgets_values": [
-    "Qwen21_2026-10-17_006%.jpg [output]",
+    "whatdreamscost/Qwen21_2026-10-17_006%.jpg",
     "image",
     ""
    ],
    "widgets_values_named": {
-    "image": "Qwen21_2026-10-17_006%.jpg [output]",
+    "image": "whatdreamscost/Qwen21_2026-10-17_006%.jpg",
     "upload": "image",
     "pixaroma_load_image_mini_ui": ""
    },
@@ -1031,13 +1036,17 @@
      "label": "FL2VA",
      "name": "MODEL",
      "type": "MODEL",
-     "links": []
+     "links": [
+      917
+     ]
     },
     {
      "label": "R2VA",
      "name": "MODEL_1",
      "type": "MODEL",
-     "links": []
+     "links": [
+      918
+     ]
     },
     {
      "name": "CLIP",
@@ -1085,8 +1094,7 @@
     "minimax_h3_audio_vae_fp32.safetensors",
     "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
     "MiniMax › Director Storyboard",
-    "10s",
-    false
+    "10s"
    ],
    "widgets_values_named": {
     "prompt": "3 scene in 10 secondi, una per still, in ordine:\nalle 00:00 (S1) è nel salotto della villa al tramonto — luce dorata calda dalla vetrata, in piedi accanto alla finestra, sguardo sereno e composto; la scena si apre esattamente sulla still 1\nalle 00:04 (S1) cammina lungo il colonnato del giardino al mattino — luce fredda netta, passo deciso, vento leggero sui capelli lunghi; taglio di scena netto\nalle 00:08 (S1) di notte in un interno — luce lunare blu dal finestrone, primo piano, sguardo determinato, tensione solenne prima della rivelazione\nLuce cinematica, identità di (S1) identica in tutte le scene, atmosfera aristocratica e sospesa. Niente dialoghi.",
@@ -1097,8 +1105,7 @@
     "vae_name_1": "minimax_h3_audio_vae_fp32.safetensors",
     "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
     "preset_prompt": "MiniMax › Director Storyboard",
-    "duration": "10s",
-    "passthrough": false
+    "duration": "10s"
    },
    "color": "#1f9eb2",
    "bgcolor": "#233639"
@@ -1245,7 +1252,7 @@
     "cnr_id": "ComfyUI-Pixaroma",
     "ver": "c8740b64fd09d93b89273b489791ac6ca42512f2",
     "Node name for S&R": "PixaromaRunTimer",
-    "runTimerLastMs": 405465.7000000477
+    "runTimerLastMs": 129695.29999995232
    },
    "color": "#1d1d1d",
    "bgcolor": "#2a2a2a"
@@ -1368,10 +1375,10 @@
     "Node name for S&R": "PixaromaShowText"
    },
    "widgets_values": [
-    "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nsubject_definitions:\n<Subject 1> is a young woman with long, flowing lavender hair, piercing blue eyes, and a poised, aristocratic demeanor. She wears a white halter-style top with black geometric accents, a fitted corset with diamond patterns, a short white skirt with thigh straps, and tall white boots with purple soles. A teal jacket with plush purple fur trim is draped over her shoulders. She wears diamond-shaped blue earrings and a matching diamond pendant at her collarbone.\n<Picture 1> is the still of the opening moment (00:00) — a three-quarter profile shot of her standing on a windswept coastal cliff at twilight, gazing toward the horizon with a serene, composed expression.\n<Picture 2> is the still of the next moment (00:04) — a rear three-quarter tracking shot of her walking away down a sunlit colonnade lined with tall cypress trees, her posture upright and purposeful.\n<Picture 3> is the still of the final moment (00:08) — an intimate close-up of her seated in a dimly lit interior, moonlight casting sharp highlights on her face as she stares directly into the camera with intense, determined resolve.\n<Environment>: A shifting triptych of atmospheres: first, a twilight coastal cliff with purple-hued sky and distant ocean waves; second, a bright, crisp morning colonnade with classical stone pillars and misty greenery; third, a shadowy, moonlit interior space with cool blue ambient light and a large window framing the night sky.\n<Prop or VFX>: The teal-and-purple fur-trimmed jacket remains a constant visual anchor across all three scenes, symbolizing continuity of identity despite changing environments and times of day.\n\nsummary:\nA 10-second cinematic sequence composed of three distinct shots, each anchored by one storyboard still. The video moves from a tranquil twilight silhouette to a purposeful morning walk, culminating in a tense nocturnal close-up. All three shots feature the same character with identical styling, ensuring identity continuity. The camera work is smooth and deliberate, with each shot beginning or ending precisely on its corresponding reference image.\n\nretention_analysis:\n<Picture 1> (appears in [Shot 1]): fully_preserved - framing, pose, lighting and content match the still exactly at the declared moment\n<Picture 2> (appears in [Shot 2]): fully_preserved - framing, pose, lighting and content match the still exactly at the declared moment\n<Picture 3> (appears in [Shot 3]): fully_preserved - framing, pose, lighting and content match the still exactly at the declared moment\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - identity stays exact across shots, with consistent hair color, eye color, outfit details, and physical proportions maintained throughout the sequence.\n\ndetailed_description:\nThe target video uses a cinematic anime-inspired live-action hybrid style with high-contrast lighting, smooth camera movements, and a focus on atmospheric storytelling.\n\n[Shot 1] At 00:00.000, the shot begins from <Picture 1>. The camera holds a steady three-quarter profile view of the lavender-haired woman standing on a windswept coastal cliff at twilight. Her teal jacket with purple fur trim billows slightly in the breeze as she gazes toward the horizon with serene composure. The purple-hued sky and distant ocean waves create a tranquil, almost meditative mood. The shot lingers for four seconds, allowing the viewer to absorb the stillness before the transition.\n\n[Shot 2] At 00:04.000, the shot cuts to <Picture 2>. The camera now tracks from behind as she walks purposefully down a sunlit colonnade lined with tall, slender cypress trees. Her posture is upright and confident, her boots clicking softly against the stone pavement. The bright morning light casts sharp shadows, emphasizing the crispness of the air and the clarity of her resolve. The camera follows her movement smoothly, maintaining a medium-full shot that captures both her figure and the architectural grandeur of the colonnade.\n\n[Shot 3] At 00:08.000, the shot transitions to <Picture 3>. The camera pushes in for an intimate close-up as she sits in a dimly lit interior, moonlight streaming through a large window to illuminate her face with cool, ethereal tones. Her expression has shifted to one of intense determination, her blue eyes locking directly with the viewer. The plush fur of her jacket frames her shoulders, and the diamond pendant at her throat catches the light. The shot holds for two seconds, building tension before the video concludes on this powerful, silent gaze.\n\noverall_soundscape:\nThe soundscape is minimal and atmospheric. Shot 1 features the soft rustle of wind through coastal grass and distant, muffled waves. Shot 2 introduces the crisp sound of footsteps on stone and a gentle breeze moving through the colonnade. Shot 3 is dominated by the low hum of a distant city and the faint, rhythmic sound of rain against the window, enhancing the sense of isolation and anticipation.\n\nnon_diegetic_music:\nA sparse, ambient electronic score with deep bass pulses and high-frequency chimes, evoking a sense of impending revelation without overpowering the visual narrative."
+    "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nsubject_definitions:\n<Subject 1> is a young woman with long flowing lavender hair, striking blue eyes, and an aristocratic bearing. She wears a white halter top with black geometric accents, a fitted black corset with diamond patterns, a short white skirt, thigh-high boots, and a teal jacket with plush purple fur lining draped over her shoulders. She wears diamond-shaped blue earrings and a matching blue gemstone pendant at her collarbone.\n<Picture 1> is the still of the opening moment (00:00) — a three-quarter profile shot of her standing on a rocky coastal cliff at twilight, wind gently lifting her hair and jacket, gazing serenely toward the horizon where the sea meets a violet-pink sky.\n<Picture 2> is the still of the next moment (00:04) — a rear tracking shot of her walking away down a sunlit colonnade lined with tall cypress trees, her posture upright and purposeful, sunlight casting sharp shadows across the stone path.\n<Picture 3> is the still of the final moment (00:08) — a tight close-up of her seated inside a dimly lit vehicle at night, moonlight streaming through the window to illuminate her face, her expression intense and resolute, eyes locked forward with palpable tension.\n<Environment>: The video transitions through three distinct settings: a windswept coastal cliff at twilight with violet skies and crashing waves; a formal, sun-drenched garden colonnade with classical columns and manicured cypress trees; and a confined, shadowy vehicle interior at night, lit only by cool moonlight.\n<Prop or VFX>: The plush purple fur lining of her jacket remains a consistent tactile element across all scenes, catching light differently in each environment.\n\nsummary:\nA 10-second cinematic sequence following one continuous character through three sharply defined moments: twilight contemplation on a cliff, purposeful movement through a garden colonnade, and tense stillness inside a night vehicle. Three storyboard stills anchor each shot exactly, with smooth camera transitions linking them into a unified narrative arc.\n\nretention_analysis:\n<Picture 1> (appears in [Shot 1]): fully_preserved — framing, pose, lighting, and content match the still exactly at the declared moment; the camera holds a steady three-quarter profile as the wind animates her hair and jacket.\n<Picture 2> (appears in [Shot 2]): fully_preserved — the rear tracking shot begins and ends on this keyframe, with the colonnade’s perspective and her walking posture locked precisely to the still.\n<Picture 3> (appears in [Shot 3]): fully_preserved — the close-up is anchored at the shot’s conclusion, with moonlight falloff, facial expression, and gemstone pendant matching the reference frame exactly.\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved — identity stays exact across shots: lavender hair, blue eyes, corset outfit, and jewelry remain consistent; only lighting and environment shift.\n\ndetailed_description:\nThe target video uses a cinematic anime-inspired live-action hybrid style with high-contrast lighting, deliberate camera movement, and aristocratic atmosphere.\n\n[Shot 1] at 00:00.000, the shot begins from <Picture 1>. A slow push-in captures her standing on a rocky cliff edge as twilight bleeds into night. The wind catches her lavender hair and teal jacket, creating soft motion against the stillness of the violet sky. Her gaze is calm, composed, almost meditative, as if she is watching something only she sees. The camera lingers on the interplay of warm horizon glow and cool shadow across her face before the cut.\n\n[Shot 2] At 00:04.000, the shot cuts to a rear tracking shot moving backward as she walks away down a sunlit colonnade. The shot’s keyframe corresponds to <Picture 2>. Tall cypress trees line the path, their dark green forms contrasting with the pale stone columns and bright morning light. Her steps are deliberate, her posture upright, suggesting purpose rather than leisure. The camera maintains a steady distance, emphasizing her solitude within the grand, classical architecture.\n\n[Shot 3] At 00:08.000, the scene shifts to a tight close-up inside a dimly lit vehicle. The shot ends on <Picture 3>. Cool moonlight streams through the window, illuminating her face in sharp relief while the rest of the interior fades into shadow. Her expression has hardened; the serenity of the first shot is gone, replaced by steely determination. The camera holds static, amplifying the tension as if she is waiting for something inevitable.\n\noverall_soundscape:\nAmbient wind rustling through grass and rocks in the first shot; distant ocean waves rolling softly. In the second shot, the sound of her footsteps on stone and a faint breeze through the colonnade. In the third shot, the low hum of a car engine and the distant drip of rain against the window. No dialogue is spoken; only subtle breathing and the weight of silence.\n\nnon_diegetic_music:\nA low, pulsing cello line underpinned by sparse piano chords, building subtly in intensity as the sequence progresses."
    ],
    "widgets_values_named": {
-    "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nsubject_definitions:\n<Subject 1> is a young woman with long, flowing lavender hair, piercing blue eyes, and a poised, aristocratic demeanor. She wears a white halter-style top with black geometric accents, a fitted corset with diamond patterns, a short white skirt with thigh straps, and tall white boots with purple soles. A teal jacket with plush purple fur trim is draped over her shoulders. She wears diamond-shaped blue earrings and a matching diamond pendant at her collarbone.\n<Picture 1> is the still of the opening moment (00:00) — a three-quarter profile shot of her standing on a windswept coastal cliff at twilight, gazing toward the horizon with a serene, composed expression.\n<Picture 2> is the still of the next moment (00:04) — a rear three-quarter tracking shot of her walking away down a sunlit colonnade lined with tall cypress trees, her posture upright and purposeful.\n<Picture 3> is the still of the final moment (00:08) — an intimate close-up of her seated in a dimly lit interior, moonlight casting sharp highlights on her face as she stares directly into the camera with intense, determined resolve.\n<Environment>: A shifting triptych of atmospheres: first, a twilight coastal cliff with purple-hued sky and distant ocean waves; second, a bright, crisp morning colonnade with classical stone pillars and misty greenery; third, a shadowy, moonlit interior space with cool blue ambient light and a large window framing the night sky.\n<Prop or VFX>: The teal-and-purple fur-trimmed jacket remains a constant visual anchor across all three scenes, symbolizing continuity of identity despite changing environments and times of day.\n\nsummary:\nA 10-second cinematic sequence composed of three distinct shots, each anchored by one storyboard still. The video moves from a tranquil twilight silhouette to a purposeful morning walk, culminating in a tense nocturnal close-up. All three shots feature the same character with identical styling, ensuring identity continuity. The camera work is smooth and deliberate, with each shot beginning or ending precisely on its corresponding reference image.\n\nretention_analysis:\n<Picture 1> (appears in [Shot 1]): fully_preserved - framing, pose, lighting and content match the still exactly at the declared moment\n<Picture 2> (appears in [Shot 2]): fully_preserved - framing, pose, lighting and content match the still exactly at the declared moment\n<Picture 3> (appears in [Shot 3]): fully_preserved - framing, pose, lighting and content match the still exactly at the declared moment\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - identity stays exact across shots, with consistent hair color, eye color, outfit details, and physical proportions maintained throughout the sequence.\n\ndetailed_description:\nThe target video uses a cinematic anime-inspired live-action hybrid style with high-contrast lighting, smooth camera movements, and a focus on atmospheric storytelling.\n\n[Shot 1] At 00:00.000, the shot begins from <Picture 1>. The camera holds a steady three-quarter profile view of the lavender-haired woman standing on a windswept coastal cliff at twilight. Her teal jacket with purple fur trim billows slightly in the breeze as she gazes toward the horizon with serene composure. The purple-hued sky and distant ocean waves create a tranquil, almost meditative mood. The shot lingers for four seconds, allowing the viewer to absorb the stillness before the transition.\n\n[Shot 2] At 00:04.000, the shot cuts to <Picture 2>. The camera now tracks from behind as she walks purposefully down a sunlit colonnade lined with tall, slender cypress trees. Her posture is upright and confident, her boots clicking softly against the stone pavement. The bright morning light casts sharp shadows, emphasizing the crispness of the air and the clarity of her resolve. The camera follows her movement smoothly, maintaining a medium-full shot that captures both her figure and the architectural grandeur of the colonnade.\n\n[Shot 3] At 00:08.000, the shot transitions to <Picture 3>. The camera pushes in for an intimate close-up as she sits in a dimly lit interior, moonlight streaming through a large window to illuminate her face with cool, ethereal tones. Her expression has shifted to one of intense determination, her blue eyes locking directly with the viewer. The plush fur of her jacket frames her shoulders, and the diamond pendant at her throat catches the light. The shot holds for two seconds, building tension before the video concludes on this powerful, silent gaze.\n\noverall_soundscape:\nThe soundscape is minimal and atmospheric. Shot 1 features the soft rustle of wind through coastal grass and distant, muffled waves. Shot 2 introduces the crisp sound of footsteps on stone and a gentle breeze moving through the colonnade. Shot 3 is dominated by the low hum of a distant city and the faint, rhythmic sound of rain against the window, enhancing the sense of isolation and anticipation.\n\nnon_diegetic_music:\nA sparse, ambient electronic score with deep bass pulses and high-frequency chimes, evoking a sense of impending revelation without overpowering the visual narrative."
+    "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nsubject_definitions:\n<Subject 1> is a young woman with long flowing lavender hair, striking blue eyes, and an aristocratic bearing. She wears a white halter top with black geometric accents, a fitted black corset with diamond patterns, a short white skirt, thigh-high boots, and a teal jacket with plush purple fur lining draped over her shoulders. She wears diamond-shaped blue earrings and a matching blue gemstone pendant at her collarbone.\n<Picture 1> is the still of the opening moment (00:00) — a three-quarter profile shot of her standing on a rocky coastal cliff at twilight, wind gently lifting her hair and jacket, gazing serenely toward the horizon where the sea meets a violet-pink sky.\n<Picture 2> is the still of the next moment (00:04) — a rear tracking shot of her walking away down a sunlit colonnade lined with tall cypress trees, her posture upright and purposeful, sunlight casting sharp shadows across the stone path.\n<Picture 3> is the still of the final moment (00:08) — a tight close-up of her seated inside a dimly lit vehicle at night, moonlight streaming through the window to illuminate her face, her expression intense and resolute, eyes locked forward with palpable tension.\n<Environment>: The video transitions through three distinct settings: a windswept coastal cliff at twilight with violet skies and crashing waves; a formal, sun-drenched garden colonnade with classical columns and manicured cypress trees; and a confined, shadowy vehicle interior at night, lit only by cool moonlight.\n<Prop or VFX>: The plush purple fur lining of her jacket remains a consistent tactile element across all scenes, catching light differently in each environment.\n\nsummary:\nA 10-second cinematic sequence following one continuous character through three sharply defined moments: twilight contemplation on a cliff, purposeful movement through a garden colonnade, and tense stillness inside a night vehicle. Three storyboard stills anchor each shot exactly, with smooth camera transitions linking them into a unified narrative arc.\n\nretention_analysis:\n<Picture 1> (appears in [Shot 1]): fully_preserved — framing, pose, lighting, and content match the still exactly at the declared moment; the camera holds a steady three-quarter profile as the wind animates her hair and jacket.\n<Picture 2> (appears in [Shot 2]): fully_preserved — the rear tracking shot begins and ends on this keyframe, with the colonnade’s perspective and her walking posture locked precisely to the still.\n<Picture 3> (appears in [Shot 3]): fully_preserved — the close-up is anchored at the shot’s conclusion, with moonlight falloff, facial expression, and gemstone pendant matching the reference frame exactly.\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved — identity stays exact across shots: lavender hair, blue eyes, corset outfit, and jewelry remain consistent; only lighting and environment shift.\n\ndetailed_description:\nThe target video uses a cinematic anime-inspired live-action hybrid style with high-contrast lighting, deliberate camera movement, and aristocratic atmosphere.\n\n[Shot 1] at 00:00.000, the shot begins from <Picture 1>. A slow push-in captures her standing on a rocky cliff edge as twilight bleeds into night. The wind catches her lavender hair and teal jacket, creating soft motion against the stillness of the violet sky. Her gaze is calm, composed, almost meditative, as if she is watching something only she sees. The camera lingers on the interplay of warm horizon glow and cool shadow across her face before the cut.\n\n[Shot 2] At 00:04.000, the shot cuts to a rear tracking shot moving backward as she walks away down a sunlit colonnade. The shot’s keyframe corresponds to <Picture 2>. Tall cypress trees line the path, their dark green forms contrasting with the pale stone columns and bright morning light. Her steps are deliberate, her posture upright, suggesting purpose rather than leisure. The camera maintains a steady distance, emphasizing her solitude within the grand, classical architecture.\n\n[Shot 3] At 00:08.000, the scene shifts to a tight close-up inside a dimly lit vehicle. The shot ends on <Picture 3>. Cool moonlight streams through the window, illuminating her face in sharp relief while the rest of the interior fades into shadow. Her expression has hardened; the serenity of the first shot is gone, replaced by steely determination. The camera holds static, amplifying the tension as if she is waiting for something inevitable.\n\noverall_soundscape:\nAmbient wind rustling through grass and rocks in the first shot; distant ocean waves rolling softly. In the second shot, the sound of her footsteps on stone and a faint breeze through the colonnade. In the third shot, the low hum of a car engine and the distant drip of rain against the window. No dialogue is spoken; only subtle breathing and the weight of silence.\n\nnon_diegetic_music:\nA low, pulsing cello line underpinned by sparse piano chords, building subtly in intensity as the sequence progresses."
    },
    "color": "#5086d3",
    "bgcolor": "#2b333e"
@@ -1449,6 +1456,7 @@
      ]
     }
    ],
+   "title": "SAMPLER",
    "properties": {
     "cnr_id": "comfy-core",
     "ver": "0.41.2",
@@ -1482,7 +1490,7 @@
    ],
    "flags": {},
    "order": 26,
-   "mode": 0,
+   "mode": 4,
    "inputs": [
     {
      "name": "frames",
@@ -1538,7 +1546,7 @@
    ],
    "flags": {},
    "order": 27,
-   "mode": 0,
+   "mode": 4,
    "inputs": [
     {
      "name": "images",
@@ -1702,11 +1710,11 @@
     "Node name for S&R": "PixaromaNote"
    },
    "widgets_values": [
-    "{\"version\": 1, \"content\": \"<h2>Director Storyboard (QwenVL)</h2><p><b>Pipeline</b>: character sheet &rarr; scene stills (Qwen 2.1, preset <i>IMG &rsaquo; Storyboard</i>) &rarr; multi-scene video with audio (MiniMax H3 Director).</p><h3>1 &middot; The stills</h3><p>Load your scene stills into the three <code>PixaromaLoadImageMini</code> nodes on the left, <b>in chronological order</b>: they feed the enhancer (image/2/3) and the Director (batch &rarr; ref_images). The order is the <Picture N> numbering.</p><h3>2 &middot; SETTINGS (subgraph)</h3><p>Inside: the models (fl2va + Singularity ref2va, 32B TE, video/audio VAEs), the QwenVL enhancer (GGUF Qwen3.5-9B) and the attention chains (kitchen + sol-attn) already applied to both paths. Only touch it to swap models.</p><h3>3 &middot; The prompt</h3><p>In the QwenVL node inside SETTINGS: preset <code>MiniMax &rsaquo; Director Storyboard</code> + your scene idea <b>with timestamps</b> (00:00 / 00:04 / 00:08 for 10s), one scene per still, in order. The generated prompt shows up in the <code>PixaromaShowText</code> node after the run.</p><h3>4 &middot; The Director</h3><p>Refs ON (ref2va), canvas 1344&times;768, duration 10s. The <b>COMPILED PROMPT panel is decorative</b> in this workflow: it shows the native compilation, but the prompt that actually runs is QwenVL's, injected via <code>external_prompt</code> which replaces it. Timeline, global prompt and subject slots stay empty.</p><h3>5 &middot; Output</h3><p>Sampler 20 steps (res_multistep/simple) &rarr; RIFE 48fps &rarr; mp4 with generated audio.</p><h3>Native variant</h3><p><code>MiniMaxH3-Director-Native</code> drives the Director by itself: drag the stills onto the MAIN timeline track (the position = the shot's timestamp), character sheet into subject slot @ref1, global prompt + per-segment prompts &mdash; the COMPILED PROMPT is what runs. Ref Size <code>max</code> recommended for identity.</p>\", \"buttonColor\": \"#f66744\", \"lineColor\": \"#f66744\", \"width\": 420, \"height\": 320}",
+    "{\"version\": 1, \"content\": \"<h2>&#127916; MiniMax H3 Director &mdash; Storyboard (QwenVL)</h2><p><b>Pipeline</b>: character sheet &rarr; scene stills <span style=\\\"color:#818cf8\\\">(Qwen 2.1, preset <i>IMG &rsaquo; Storyboard</i>)</span> &rarr; multi-scene video with audio <span style=\\\"color:#4ade80\\\">(MiniMax H3 Director)</span>.</p><table class=\\\"pix-note-grid\\\"><thead><tr><th>Step</th><th>Where</th><th>What</th></tr></thead><tbody><tr><td><b>1</b></td><td><code>PixaromaLoadImageMini</code> &times;3</td><td>Your scene stills, <b>chronological order</b>. They feed the enhancer (image/2/3) and the Director (batch &rarr; ref_images). The order = the <code><Picture N></code> numbering.</td></tr><tr><td><b>2</b></td><td><code>SETTINGS</code> subgraph</td><td>Models (fl2va + Singularity ref2va, 32B TE, video/audio VAEs), the QwenVL enhancer (GGUF Qwen3.5-9B) and the attention chains (kitchen + sol-attn) already wired on both paths. Only touch it to swap models.</td></tr><tr><td><b>3</b></td><td>QwenVL (inside SETTINGS)</td><td>Preset <code>MiniMax &rsaquo; Director Storyboard</code> + your scene idea <b>with timestamps</b> (00:00 / 00:04 / 00:08 for 10s) &mdash; one scene per still, in order. The generated prompt appears in <code>PixaromaShowText</code> after the run.</td></tr><tr><td><b>4</b></td><td><code>Director</code></td><td>Refs ON (ref2va), canvas 1344&times;768, duration 10s. <b>The COMPILED PROMPT panel is decorative here</b>: the real prompt is QwenVL's, injected via <code>external_prompt</code> which replaces it. Timeline, global prompt and subject slots stay empty.</td></tr><tr><td><b>5</b></td><td>Output chain</td><td>Sampler 20 steps (res_multistep/simple) &rarr; RIFE 48fps &rarr; mp4 with generated audio.</td></tr></tbody></table><h3>Idea format (paste-ready)</h3><p><code>3 scenes in 10 seconds, one per still, in order:<br>at 00:00 (S1) &hellip; scene 1 description<br>at 00:04 (S1) &hellip; scene 2 description<br>at 00:08 (S1) &hellip; scene 3 description<br>Cinematic light, identity unchanged across scenes.</code></p><h3>&#128269; Native variant</h3><p><code>MiniMaxH3-Director-Native</code> drives the Director by itself: drag the stills onto the <b>MAIN timeline track</b> (the position = the shot's timestamp), character sheet into subject slot <code>@ref1</code>, global prompt + per-segment prompts &mdash; <b>the COMPILED PROMPT is what runs</b>. Ref Size <code>max</code> recommended for identity. The QwenVL enhancer is skipped (nothing consumes its output).</p>\", \"buttonColor\": \"#f66744\", \"lineColor\": \"#f66744\", \"width\": 520, \"height\": 560}",
     ""
    ],
    "widgets_values_named": {
-    "note_json": "{\"version\":1,\"content\":\"\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":420,\"height\":320}",
+    "note_json": "{\"version\": 1, \"content\": \"<h2>Director Storyboard (QwenVL)</h2><p><b>Pipeline</b>: character sheet &rarr; scene stills (Qwen 2.1, preset <i>IMG &rsaquo; Storyboard</i>) &rarr; multi-scene video with audio (MiniMax H3 Director).</p><h3>1 &middot; The stills</h3><p>Load your scene stills into the three <code>PixaromaLoadImageMini</code> nodes on the left, <b>in chronological order</b>: they feed the enhancer (image/2/3) and the Director (batch &rarr; ref_images). The order is the <Picture N> numbering.</p><h3>2 &middot; SETTINGS (subgraph)</h3><p>Inside: the models (fl2va + Singularity ref2va, 32B TE, video/audio VAEs), the QwenVL enhancer (GGUF Qwen3.5-9B) and the attention chains (kitchen + sol-attn) already applied to both paths. Only touch it to swap models.</p><h3>3 &middot; The prompt</h3><p>In the QwenVL node inside SETTINGS: preset <code>MiniMax &rsaquo; Director Storyboard</code> + your scene idea <b>with timestamps</b> (00:00 / 00:04 / 00:08 for 10s), one scene per still, in order. The generated prompt shows up in the <code>PixaromaShowText</code> node after the run.</p><h3>4 &middot; The Director</h3><p>Refs ON (ref2va), canvas 1344&times;768, duration 10s. The <b>COMPILED PROMPT panel is decorative</b> in this workflow: it shows the native compilation, but the prompt that actually runs is QwenVL's, injected via <code>external_prompt</code> which replaces it. Timeline, global prompt and subject slots stay empty.</p><h3>5 &middot; Output</h3><p>Sampler 20 steps (res_multistep/simple) &rarr; RIFE 48fps &rarr; mp4 with generated audio.</p><h3>Native variant</h3><p><code>MiniMaxH3-Director-Native</code> drives the Director by itself: drag the stills onto the MAIN timeline track (the position = the shot's timestamp), character sheet into subject slot @ref1, global prompt + per-segment prompts &mdash; the COMPILED PROMPT is what runs. Ref Size <code>max</code> recommended for identity.</p>\", \"buttonColor\": \"#f66744\", \"lineColor\": \"#f66744\", \"width\": 420, \"height\": 320}",
     "note_dom": ""
    },
    "color": "#d57bba",
@@ -1867,46 +1875,6 @@
    "AUDIO"
   ],
   [
-   113,
-   5,
-   4,
-   15,
-   2,
-   "FLOAT"
-  ],
-  [
-   890,
-   394,
-   0,
-   397,
-   5,
-   "IMAGE"
-  ],
-  [
-   891,
-   395,
-   0,
-   397,
-   6,
-   "IMAGE"
-  ],
-  [
-   892,
-   396,
-   0,
-   397,
-   7,
-   "IMAGE"
-  ],
-  [
-   909,
-   419,
-   1,
-   422,
-   0,
-   "IMAGE"
-  ],
-  [
    902,
    419,
    0,
@@ -1944,6 +1912,22 @@
    0,
    393,
    1,
+   "IMAGE"
+  ],
+  [
+   113,
+   5,
+   4,
+   15,
+   2,
+   "FLOAT"
+  ],
+  [
+   909,
+   419,
+   1,
+   422,
+   0,
    "IMAGE"
   ],
   [
@@ -1985,6 +1969,46 @@
    5,
    13,
    "STRING"
+  ],
+  [
+   917,
+   397,
+   0,
+   5,
+   2,
+   "MODEL"
+  ],
+  [
+   918,
+   397,
+   1,
+   5,
+   3,
+   "MODEL"
+  ],
+  [
+   890,
+   394,
+   0,
+   397,
+   5,
+   "IMAGE"
+  ],
+  [
+   891,
+   395,
+   0,
+   397,
+   6,
+   "IMAGE"
+  ],
+  [
+   892,
+   396,
+   0,
+   397,
+   7,
+   "IMAGE"
   ]
  ],
  "groups": [
@@ -2069,7 +2093,7 @@
     "state": {
      "lastGroupId": 54,
      "lastNodeId": 429,
-     "lastLinkId": 916,
+     "lastLinkId": 919,
      "lastRerouteId": 0
     },
     "revision": 0,
@@ -2632,7 +2656,7 @@
     "state": {
      "lastGroupId": 54,
      "lastNodeId": 429,
-     "lastLinkId": 916,
+     "lastLinkId": 919,
      "lastRerouteId": 0
     },
     "revision": 0,
@@ -2966,7 +2990,7 @@
     "state": {
      "lastGroupId": 54,
      "lastNodeId": 429,
-     "lastLinkId": 916,
+     "lastLinkId": 919,
      "lastRerouteId": 0
     },
     "revision": 0,
@@ -2978,7 +3002,7 @@
       -3025.1528144507542,
       459.061886534091,
       130.44140625,
-      307.99999999999994
+      287.99999999999994
      ]
     },
     "outputNode": {
@@ -3138,18 +3162,6 @@
       "pos": [
        -2918.7114082007542,
        703.061886534091
-      ]
-     },
-     {
-      "id": "5686564d-9f05-431a-bba3-55bbd67f58d8",
-      "name": "passthrough",
-      "type": "BOOLEAN",
-      "linkIds": [
-       912
-      ],
-      "pos": [
-       -2918.7114082007542,
-       723.061886534091
       ]
      }
     ],
@@ -3600,15 +3612,6 @@
         "link": 887
        },
        {
-        "localized_name": "passthrough",
-        "name": "passthrough",
-        "type": "BOOLEAN",
-        "widget": {
-         "name": "passthrough"
-        },
-        "link": 912
-       },
-       {
         "localized_name": "duration",
         "name": "duration",
         "shape": 7,
@@ -3641,7 +3644,7 @@
        "3 scene in 10 secondi, una per still, in ordine:\nalle 00:00 (S1) è nel salotto della villa al tramonto — luce dorata calda dalla vetrata, in piedi accanto alla finestra, sguardo sereno e composto; la scena si apre esattamente sulla still 1\nalle 00:04 (S1) cammina lungo il colonnato del giardino al mattino — luce fredda netta, passo deciso, vento leggero sui capelli lunghi; taglio di scena netto\nalle 00:08 (S1) di notte in un interno — luce lunare blu dal finestrone, primo piano, sguardo determinato, tensione solenne prima della rivelazione\nLuce cinematica, identità di (S1) identica in tutte le scene, atmosfera aristocratica e sospesa. Niente dialoghi.",
        8192,
        false,
-       3846930856,
+       1279605119,
        "randomize",
        false,
        false,
@@ -3655,7 +3658,7 @@
        "prompt": "3 scene in 10 secondi, una per still, in ordine:\nalle 00:00 (S1) è nel salotto della villa al tramonto — luce dorata calda dalla vetrata, in piedi accanto alla finestra, sguardo sereno e composto; la scena si apre esattamente sulla still 1\nalle 00:04 (S1) cammina lungo il colonnato del giardino al mattino — luce fredda netta, passo deciso, vento leggero sui capelli lunghi; taglio di scena netto\nalle 00:08 (S1) di notte in un interno — luce lunare blu dal finestrone, primo piano, sguardo determinato, tensione solenne prima della rivelazione\nLuce cinematica, identità di (S1) identica in tutte le scene, atmosfera aristocratica e sospesa. Niente dialoghi.",
        "max_tokens": 8192,
        "keep_model_loaded": false,
-       "seed": 3846930856,
+       "seed": 1279605119,
        "control_after_generate": "randomize",
        "keep_last_prompt": false,
        "passthrough": false,
@@ -4102,30 +4105,6 @@
       "type": "IMAGE"
      },
      {
-      "id": 887,
-      "origin_id": -10,
-      "origin_slot": 0,
-      "target_id": 411,
-      "target_slot": 6,
-      "type": "STRING"
-     },
-     {
-      "id": 912,
-      "origin_id": -10,
-      "origin_slot": 12,
-      "target_id": 411,
-      "target_slot": 7,
-      "type": "BOOLEAN"
-     },
-     {
-      "id": 886,
-      "origin_id": -10,
-      "origin_slot": 8,
-      "target_id": 411,
-      "target_slot": 8,
-      "type": "COMBO"
-     },
-     {
       "id": 869,
       "origin_id": 412,
       "origin_slot": 0,
@@ -4140,6 +4119,22 @@
       "target_id": 415,
       "target_slot": 0,
       "type": "MODEL"
+     },
+     {
+      "id": 887,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 411,
+      "target_slot": 6,
+      "type": "STRING"
+     },
+     {
+      "id": 886,
+      "origin_id": -10,
+      "origin_slot": 8,
+      "target_id": 411,
+      "target_slot": 7,
+      "type": "COMBO"
      }
     ],
     "extra": {
@@ -4152,12 +4147,12 @@
     "state": {
      "lastGroupId": 54,
      "lastNodeId": 429,
-     "lastLinkId": 916,
+     "lastLinkId": 919,
      "lastRerouteId": 0
     },
     "revision": 0,
     "config": {},
-    "name": "2nd Sampler",
+    "name": "SAMPLER",
     "inputNode": {
      "id": -10,
      "bounding": [
@@ -4182,7 +4177,7 @@
       "name": "model",
       "type": "MODEL",
       "linkIds": [
-       894
+       919
       ],
       "localized_name": "model",
       "pos": [
@@ -4335,119 +4330,11 @@
     "widgets": [],
     "nodes": [
      {
-      "id": 417,
-      "type": "ModelAttentionBackend",
-      "pos": [
-       1489.8520719706341,
-       -151.72532561482205
-      ],
-      "size": [
-       270.72746212121206,
-       68.69015151515151
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-       {
-        "localized_name": "model",
-        "name": "model",
-        "type": "MODEL",
-        "link": 894
-       }
-      ],
-      "outputs": [
-       {
-        "localized_name": "model",
-        "name": "model",
-        "type": "MODEL",
-        "links": [
-         893
-        ]
-       }
-      ],
-      "properties": {
-       "cnr_id": "comfy-core",
-       "ver": "0.41.2",
-       "Node name for S&R": "ModelAttentionBackend"
-      },
-      "widgets_values": [
-       "comfy kitchen attention"
-      ],
-      "widgets_values_named": {
-       "attention": "comfy kitchen attention"
-      },
-      "color": "#d350ac",
-      "bgcolor": "#3e2b38"
-     },
-     {
-      "id": 418,
-      "type": "BlockSparseAttention",
-      "pos": [
-       1492.7384350170676,
-       -36.114851341748185
-      ],
-      "size": [
-       270,
-       250
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-       {
-        "localized_name": "model",
-        "name": "model",
-        "type": "MODEL",
-        "link": 893
-       }
-      ],
-      "outputs": [
-       {
-        "localized_name": "model",
-        "name": "model",
-        "type": "MODEL",
-        "links": [
-         895
-        ]
-       }
-      ],
-      "properties": {
-       "cnr_id": "comfy-core",
-       "ver": "0.41.2",
-       "Node name for S&R": "BlockSparseAttention"
-      },
-      "widgets_values": [
-       "sol-attn",
-       1,
-       0.2,
-       1,
-       "",
-       12288,
-       256,
-       "exact_kv_and_rows",
-       false
-      ],
-      "widgets_values_named": {
-       "selection": "sol-attn",
-       "selection.tau": 1,
-       "start_percent": 0.2,
-       "end_percent": 1,
-       "dense_blocks": "",
-       "min_tokens": 12288,
-       "extra_tokens": 256,
-       "sink_conditioning": "exact_kv_and_rows",
-       "verbose": false
-      },
-      "color": "#d350ac",
-      "bgcolor": "#3e2b38"
-     },
-     {
       "id": 380,
       "type": "34799705-d10d-4df1-a28f-c7e497d2d676",
       "pos": [
-       1471.8278446709974,
-       291.110053481405
+       1476.9093288538904,
+       90.09468344337448
       ],
       "size": [
        290,
@@ -4461,7 +4348,7 @@
         "localized_name": "model",
         "name": "model",
         "type": "MODEL",
-        "link": 895
+        "link": 919
        },
        {
         "localized_name": "conditioning",
@@ -4516,14 +4403,14 @@
        "previewExposures": []
       },
       "widgets_values": [
-       633946262765233,
+       99250768152389,
        "res_multistep",
        "simple",
        20,
        1
       ],
       "widgets_values_named": {
-       "noise_seed": 633946262765233,
+       "noise_seed": 99250768152389,
        "sampler_name": "res_multistep",
        "scheduler": "simple",
        "steps": 20,
@@ -4536,8 +4423,8 @@
       "id": 381,
       "type": "700e308a-1e88-43d7-a134-757ad0c83bce",
       "pos": [
-       1475.4035886051402,
-       544.7668221252432
+       1480.4850727880332,
+       343.75145208721193
       ],
       "size": [
        210,
@@ -4604,15 +4491,15 @@
       "id": 421,
       "type": "GetVideoComponents",
       "pos": [
-       1486.2816519240855,
-       698.6944573090868
+       1481.1525152893485,
+       494.06616501314284
       ],
       "size": [
        203.38828125,
        106
       ],
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [
        {
@@ -4667,29 +4554,8 @@
       "bgcolor": "#263628"
      }
     ],
-    "groups": [
-     {
-      "id": 49,
-      "title": "ATTN",
-      "bounding": [
-       1479.8520719706337,
-       -221.7253256148218,
-       294.1583327434025,
-       454.3313076064075
-      ],
-      "color": "#88A",
-      "flags": {}
-     }
-    ],
+    "groups": [],
     "links": [
-     {
-      "id": 895,
-      "origin_id": 418,
-      "origin_slot": 0,
-      "target_id": 380,
-      "target_slot": 0,
-      "type": "MODEL"
-     },
      {
       "id": 806,
       "origin_id": 380,
@@ -4697,14 +4563,6 @@
       "target_id": 381,
       "target_slot": 1,
       "type": "LATENT"
-     },
-     {
-      "id": 894,
-      "origin_id": -10,
-      "origin_slot": 0,
-      "target_id": 417,
-      "target_slot": 0,
-      "type": "MODEL"
      },
      {
       "id": 796,
@@ -4803,10 +4661,10 @@
       "type": "INT"
      },
      {
-      "id": 893,
-      "origin_id": 417,
+      "id": 919,
+      "origin_id": -10,
       "origin_slot": 0,
-      "target_id": 418,
+      "target_id": 380,
       "target_slot": 0,
       "type": "MODEL"
      }
@@ -4821,7 +4679,7 @@
     "state": {
      "lastGroupId": 54,
      "lastNodeId": 429,
-     "lastLinkId": 916,
+     "lastLinkId": 919,
      "lastRerouteId": 0
     },
     "revision": 0,
@@ -4974,7 +4832,7 @@
       ],
       "flags": {},
       "order": 0,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
        {
         "localized_name": "custom_config",
@@ -5046,7 +4904,7 @@
       ],
       "flags": {},
       "order": 3,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
        {
         "localized_name": "model",
@@ -5109,7 +4967,7 @@
       ],
       "flags": {},
       "order": 2,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
        {
         "localized_name": "images",
@@ -5186,7 +5044,7 @@
       ],
       "flags": {},
       "order": 1,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
        {
         "localized_name": "frames",
@@ -5389,10 +5247,10 @@
   "VHS_MetadataImage": true,
   "VHS_KeepIntermediate": true,
   "ds": {
-   "scale": 0.5434050093984929,
+   "scale": 0.6575200613721769,
    "offset": [
-    3392.7159693805565,
-    822.8623893716072
+    2458.7880745226194,
+    755.2191203187554
    ]
   }
  },
