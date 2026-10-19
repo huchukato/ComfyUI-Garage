@@ -2,14 +2,14 @@
   "id": "b1f0c2a4-7d3e-4a19-9c88-mmxdirector01",
   "revision": 0,
   "last_node_id": 429,
-  "last_link_id": 918,
+  "last_link_id": 919,
   "nodes": [
     {
       "id": 90,
       "type": "MarkdownNote",
       "pos": [
-        -2470,
-        270
+        -1407.5639042599703,
+        653.4917448735815
       ],
       "size": [
         565.7899849352964,
@@ -39,8 +39,8 @@
       "id": 91,
       "type": "MarkdownNote",
       "pos": [
-        -2460,
-        1090
+        -1406.0920423418697,
+        1449.1424402811256
       ],
       "size": [
         560,
@@ -70,8 +70,8 @@
       "id": 376,
       "type": "Reroute",
       "pos": [
-        -1690,
-        -20
+        -1372.9689174198334,
+        -28.926771356224315
       ],
       "size": [
         75,
@@ -107,8 +107,8 @@
       "id": 378,
       "type": "Reroute",
       "pos": [
-        -1690,
-        -50
+        -1372.9689174198334,
+        -58.92677135622434
       ],
       "size": [
         75,
@@ -581,7 +581,7 @@
         "aux_id": "CGlide/ComfyUI-MiniMaxH3-Director",
         "ver": "0.1.3",
         "Node name for S&R": "MiniMaxH3DirectorCS",
-        "global_prompt": "",
+        "global_prompt": "subject_definitions:\n<Subject 1> is Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents, shown in <Picture 1>.\n\nsummary: [reference generation]\n\nretention_analysis:\n<Subject 1>: fully_preserved - lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\n\nnon_diegetic_music: N/A",
         "mainTrackEnabled": true,
         "audioTrackEnabled": true,
         "motionTrackEnabled": true,
@@ -602,12 +602,12 @@
         "divisible_by": 32,
         "img_compression": 0,
         "guide_strength": "",
-        "local_prompts": "",
-        "segment_lengths": "",
-        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-17_002__1792434363986.jpg\"}],\"description\":\"\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"\",\"voice\":null}],\"segments\":[],\"motionSegments\":[],\"audioSegments\":[]}",
+        "local_prompts": "Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.",
+        "segment_lengths": "240",
+        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"subject_definitions:\\n<Subject 1> is Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents, shown in <Picture 1>.\\n\\nsummary: [reference generation]\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved - lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\\n\\nnon_diegetic_music: N/A\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-17_002__1792438924260.jpg\"}],\"description\":\"Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents.\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\",\"voice\":null}],\"segments\":[{\"id\":\"1792439042779dbc4e\",\"start\":0,\"length\":120,\"prompt\":\"Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.\",\"type\":\"text\"}],\"motionSegments\":[],\"audioSegments\":[]}",
         "shift_video": 12,
         "shift_audio": 3,
-        "ref_image_size": "match",
+        "ref_image_size": "max",
         "start_second": 0,
         "end_second": 10,
         "duration_seconds": 10,
@@ -632,9 +632,9 @@
         0,
         240,
         240,
-        "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-17_002__1792434363986.jpg\"}],\"description\":\"\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"\",\"voice\":null}],\"segments\":[],\"motionSegments\":[],\"audioSegments\":[]}",
-        "",
-        "",
+        "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"subject_definitions:\\n<Subject 1> is Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents, shown in <Picture 1>.\\n\\nsummary: [reference generation]\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved - lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\\n\\nnon_diegetic_music: N/A\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-17_002__1792438924260.jpg\"}],\"description\":\"Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents.\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\",\"voice\":null}],\"segments\":[{\"id\":\"1792439042779dbc4e\",\"start\":0,\"length\":120,\"prompt\":\"Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.\",\"type\":\"text\"}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.",
+        "240",
         "",
         true,
         true,
@@ -647,7 +647,7 @@
         32,
         0,
         false,
-        "match",
+        "max",
         12,
         3,
         "",
@@ -661,9 +661,9 @@
         "start_frame": 0,
         "end_frame": 240,
         "duration_frames": 240,
-        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-17_002__1792434363986.jpg\"}],\"description\":\"\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"\",\"voice\":null}],\"segments\":[],\"motionSegments\":[],\"audioSegments\":[]}",
-        "local_prompts": "",
-        "segment_lengths": "",
+        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"subject_definitions:\\n<Subject 1> is Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents, shown in <Picture 1>.\\n\\nsummary: [reference generation]\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved - lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\\n\\nnon_diegetic_music: N/A\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-17_002__1792438924260.jpg\"}],\"description\":\"Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents.\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\",\"voice\":null}],\"segments\":[{\"id\":\"1792439042779dbc4e\",\"start\":0,\"length\":120,\"prompt\":\"Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.\",\"type\":\"text\"}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "local_prompts": "Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.",
+        "segment_lengths": "240",
         "guide_strength": "",
         "use_custom_audio": true,
         "use_custom_motion": true,
@@ -676,7 +676,7 @@
         "divisible_by": 32,
         "img_compression": 0,
         "override_audio": false,
-        "ref_image_size": "match",
+        "ref_image_size": "max",
         "shift_video": 12,
         "shift_audio": 3,
         "ref_image_notes": "",
@@ -895,8 +895,8 @@
       "id": 398,
       "type": "PixaromaLabel",
       "pos": [
-        -2442.2042906539914,
-        -272.32641284499914
+        -1378.2847563357318,
+        -304.8182921884452
       ],
       "size": [
         560,
@@ -910,10 +910,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
         "Node name for S&R": "PixaromaLabel",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"MiniMax H3\",\"fontSize\":98,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#581c87\",\"padding\":10,\"borderRadius\":6,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
@@ -928,8 +928,8 @@
       "id": 399,
       "type": "PixaromaLabel",
       "pos": [
-        -2441.6830334554875,
-        -148.18830956728334
+        -1377.7634991372279,
+        -180.68018891072933
       ],
       "size": [
         227,
@@ -943,10 +943,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
         "Node name for S&R": "PixaromaLabel",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"DIRECTOR\",\"fontSize\":53,\"fontFamily\":\"Impact\",\"fontColor\":\"#c075f6\",\"textAlign\":\"left\",\"backgroundColor\":\"transparent\",\"padding\":10,\"borderRadius\":9,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
@@ -961,8 +961,8 @@
       "id": 403,
       "type": "PixaromaMonitor",
       "pos": [
-        -1793.3702265471777,
-        -268.78428016659103
+        -729.4506922289173,
+        -301.2761595100371
       ],
       "size": [
         376.00975871618766,
@@ -976,10 +976,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "c8740b64fd09d93b89273b489791ac6ca42512f2",
         "Node name for S&R": "PixaromaMonitor",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "monitorState": {
           "version": 1,
           "layout": "bars",
@@ -1016,8 +1016,8 @@
       "id": 404,
       "type": "PixaromaRunTimer",
       "pos": [
-        -1368.8502660645433,
-        -194.6675481522116
+        -304.9307317462831,
+        -227.15942749565758
       ],
       "size": [
         295.49106497723164,
@@ -1031,10 +1031,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "c8740b64fd09d93b89273b489791ac6ca42512f2",
         "Node name for S&R": "PixaromaRunTimer",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "runTimerLastMs": 405465.7000000477
       },
       "color": "#1d1d1d",
@@ -1044,8 +1044,8 @@
       "id": 405,
       "type": "PixaromaGroupSwitch",
       "pos": [
-        -2450.6518637683757,
-        31.762976201435304
+        -1376.380934261054,
+        413.477208769824
       ],
       "size": [
         527.4652769911431,
@@ -1058,10 +1058,10 @@
       "outputs": [],
       "title": "OPTIONS",
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
         "Node name for S&R": "PixaromaGroupSwitch",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "groupSwitchState": {
           "version": 1,
           "action": "bypass",
@@ -1397,8 +1397,8 @@
       "id": 429,
       "type": "PixaromaLabel",
       "pos": [
-        -2099.6905978866553,
-        -146.46771257393337
+        -1035.7710635683957,
+        -178.95959191737936
       ],
       "size": [
         211,
@@ -1412,10 +1412,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "94e3f5f8521dce9818835c4b78afb6ef79b658c0",
         "Node name for S&R": "PixaromaLabel",
-        "aux_id": "pixaroma/ComfyUI-Pixaroma"
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "{\"text\":\"native\",\"fontSize\":53,\"fontFamily\":\"Courier New\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"transparent\",\"padding\":10,\"borderRadius\":9,\"opacity\":1,\"fontWeight\":\"bold\",\"lineHeight\":1}"
@@ -1573,6 +1573,14 @@
       "AUDIO"
     ],
     [
+      902,
+      419,
+      0,
+      14,
+      0,
+      "VIDEO"
+    ],
+    [
       113,
       5,
       4,
@@ -1587,14 +1595,6 @@
       422,
       0,
       "IMAGE"
-    ],
-    [
-      902,
-      419,
-      0,
-      14,
-      0,
-      "VIDEO"
     ],
     [
       854,
@@ -1646,18 +1646,6 @@
         10,
         1434.1900375716732,
         1923.3868097766258
-      ],
-      "color": "#3f789e",
-      "flags": {}
-    },
-    {
-      "id": 44,
-      "title": "🖼️  Input Images",
-      "bounding": [
-        -1857.8941673204667,
-        16.44757689701122,
-        442.2216955147637,
-        1441.4486632795322
       ],
       "color": "#3f789e",
       "flags": {}
@@ -1719,7 +1707,7 @@
         "state": {
           "lastGroupId": 54,
           "lastNodeId": 429,
-          "lastLinkId": 918,
+          "lastLinkId": 919,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2282,7 +2270,7 @@
         "state": {
           "lastGroupId": 54,
           "lastNodeId": 429,
-          "lastLinkId": 918,
+          "lastLinkId": 919,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2616,7 +2604,7 @@
         "state": {
           "lastGroupId": 54,
           "lastNodeId": 429,
-          "lastLinkId": 918,
+          "lastLinkId": 919,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3486,7 +3474,7 @@
         "state": {
           "lastGroupId": 54,
           "lastNodeId": 429,
-          "lastLinkId": 918,
+          "lastLinkId": 919,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3516,7 +3504,7 @@
             "name": "model",
             "type": "MODEL",
             "linkIds": [
-              894
+              919
             ],
             "localized_name": "model",
             "pos": [
@@ -3669,119 +3657,11 @@
         "widgets": [],
         "nodes": [
           {
-            "id": 417,
-            "type": "ModelAttentionBackend",
-            "pos": [
-              1489.8520719706341,
-              -151.72532561482205
-            ],
-            "size": [
-              270.72746212121206,
-              68.69015151515151
-            ],
-            "flags": {},
-            "order": 2,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 894
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "links": [
-                  893
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.41.2",
-              "Node name for S&R": "ModelAttentionBackend"
-            },
-            "widgets_values": [
-              "comfy kitchen attention"
-            ],
-            "widgets_values_named": {
-              "attention": "comfy kitchen attention"
-            },
-            "color": "#d350ac",
-            "bgcolor": "#3e2b38"
-          },
-          {
-            "id": 418,
-            "type": "BlockSparseAttention",
-            "pos": [
-              1492.7384350170676,
-              -36.114851341748185
-            ],
-            "size": [
-              270,
-              250
-            ],
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "link": 893
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "MODEL",
-                "links": [
-                  895
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.41.2",
-              "Node name for S&R": "BlockSparseAttention"
-            },
-            "widgets_values": [
-              "sol-attn",
-              1,
-              0.2,
-              1,
-              "",
-              12288,
-              256,
-              "exact_kv_and_rows",
-              false
-            ],
-            "widgets_values_named": {
-              "selection": "sol-attn",
-              "selection.tau": 1,
-              "start_percent": 0.2,
-              "end_percent": 1,
-              "dense_blocks": "",
-              "min_tokens": 12288,
-              "extra_tokens": 256,
-              "sink_conditioning": "exact_kv_and_rows",
-              "verbose": false
-            },
-            "color": "#d350ac",
-            "bgcolor": "#3e2b38"
-          },
-          {
             "id": 380,
             "type": "34799705-d10d-4df1-a28f-c7e497d2d676",
             "pos": [
-              1471.8278446709974,
-              291.110053481405
+              1461.34430526554,
+              164.54947342750523
             ],
             "size": [
               290,
@@ -3795,7 +3675,7 @@
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 895
+                "link": 919
               },
               {
                 "localized_name": "conditioning",
@@ -3850,14 +3730,14 @@
               "previewExposures": []
             },
             "widgets_values": [
-              633946262765233,
+              120941517402898,
               "res_multistep",
               "simple",
               20,
               1
             ],
             "widgets_values_named": {
-              "noise_seed": 633946262765233,
+              "noise_seed": 120941517402898,
               "sampler_name": "res_multistep",
               "scheduler": "simple",
               "steps": 20,
@@ -3870,8 +3750,8 @@
             "id": 381,
             "type": "700e308a-1e88-43d7-a134-757ad0c83bce",
             "pos": [
-              1475.4035886051402,
-              544.7668221252432
+              1458.8378635280867,
+              416.9672783234253
             ],
             "size": [
               210,
@@ -3938,15 +3818,15 @@
             "id": 421,
             "type": "GetVideoComponents",
             "pos": [
-              1486.2816519240855,
-              698.6944573090868
+              1462.2041676201463,
+              569.0581280907763
             ],
             "size": [
               203.38828125,
               106
             ],
             "flags": {},
-            "order": 4,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
@@ -4001,29 +3881,8 @@
             "bgcolor": "#263628"
           }
         ],
-        "groups": [
-          {
-            "id": 49,
-            "title": "ATTN",
-            "bounding": [
-              1479.8520719706337,
-              -221.7253256148218,
-              294.1583327434025,
-              454.3313076064075
-            ],
-            "color": "#88A",
-            "flags": {}
-          }
-        ],
+        "groups": [],
         "links": [
-          {
-            "id": 895,
-            "origin_id": 418,
-            "origin_slot": 0,
-            "target_id": 380,
-            "target_slot": 0,
-            "type": "MODEL"
-          },
           {
             "id": 806,
             "origin_id": 380,
@@ -4031,14 +3890,6 @@
             "target_id": 381,
             "target_slot": 1,
             "type": "LATENT"
-          },
-          {
-            "id": 894,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 417,
-            "target_slot": 0,
-            "type": "MODEL"
           },
           {
             "id": 796,
@@ -4137,10 +3988,10 @@
             "type": "INT"
           },
           {
-            "id": 893,
-            "origin_id": 417,
+            "id": 919,
+            "origin_id": -10,
             "origin_slot": 0,
-            "target_id": 418,
+            "target_id": 380,
             "target_slot": 0,
             "type": "MODEL"
           }
@@ -4155,7 +4006,7 @@
         "state": {
           "lastGroupId": 54,
           "lastNodeId": 429,
-          "lastLinkId": 918,
+          "lastLinkId": 919,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -4347,10 +4198,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -4412,10 +4263,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "2xLexicaRRDBNet",
@@ -4487,10 +4338,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "1080p",
@@ -4562,10 +4413,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               100,
@@ -4717,16 +4568,16 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.55.17",
+    "frontendVersion": "1.55.18",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.5434050093984927,
+      "scale": 0.6575200613721762,
       "offset": [
-        3401.7180157887974,
-        848.2321198429975
+        2246.5220783667055,
+        167.1006087850079
       ]
     }
   },
