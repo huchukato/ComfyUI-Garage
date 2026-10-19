@@ -1,8 +1,8 @@
 {
   "id": "b1f0c2a4-7d3e-4a19-9c88-mmxdirector01",
   "revision": 0,
-  "last_node_id": 429,
-  "last_link_id": 919,
+  "last_node_id": 430,
+  "last_link_id": 920,
   "nodes": [
     {
       "id": 90,
@@ -154,7 +154,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 15,
+      "order": 16,
       "mode": 4,
       "inputs": [
         {
@@ -270,7 +270,7 @@
         26
       ],
       "flags": {},
-      "order": 16,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -307,7 +307,7 @@
         26
       ],
       "flags": {},
-      "order": 14,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -344,7 +344,7 @@
         26
       ],
       "flags": {},
-      "order": 18,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -381,7 +381,7 @@
         571.4908518313637
       ],
       "flags": {},
-      "order": 20,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -569,7 +569,9 @@
         {
           "name": "prompt",
           "type": "STRING",
-          "links": null
+          "links": [
+            920
+          ]
         },
         {
           "name": "retake_info",
@@ -581,7 +583,7 @@
         "aux_id": "CGlide/ComfyUI-MiniMaxH3-Director",
         "ver": "0.1.3",
         "Node name for S&R": "MiniMaxH3DirectorCS",
-        "global_prompt": "subject_definitions:\n<Subject 1> is Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents, shown in <Picture 1>.\n\nsummary: [reference generation]\n\nretention_analysis:\n<Subject 1>: fully_preserved - lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\n\nnon_diegetic_music: N/A",
+        "global_prompt": "Arcane-style cinematic realism, painterly textures and dramatic rim lighting; a chaotic, electric atmosphere in a neon-lit Zaun workshop; her look stays exactly the same in every shot.",
         "mainTrackEnabled": true,
         "audioTrackEnabled": true,
         "motionTrackEnabled": true,
@@ -602,9 +604,9 @@
         "divisible_by": 32,
         "img_compression": 0,
         "guide_strength": "",
-        "local_prompts": "Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.",
-        "segment_lengths": "240",
-        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"subject_definitions:\\n<Subject 1> is Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents, shown in <Picture 1>.\\n\\nsummary: [reference generation]\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved - lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\\n\\nnon_diegetic_music: N/A\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-17_002__1792438924260.jpg\"}],\"description\":\"Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents.\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\",\"voice\":null}],\"segments\":[{\"id\":\"1792439042779dbc4e\",\"start\":0,\"length\":120,\"prompt\":\"Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.\",\"type\":\"text\"}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "local_prompts": "Fast whip-pan settling on her as she spins around from a workbench, long blue braids swinging; she grins wide, eyes glittering with mischief, sparks drifting in the neon haze. | Low-angle tracking shot as she strides toward the camera through the workshop, braids trailing behind her; she kicks a scrap of metal aside and laughs, pink and cyan neon flickering across her face.",
+        "segment_lengths": "120,120",
+        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"Arcane-style cinematic realism, painterly textures and dramatic rim lighting; a chaotic, electric atmosphere in a neon-lit Zaun workshop; her look stays exactly the same in every shot.\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-07_007__1792441928474.jpg\"}],\"description\":\"Vibrant blue hair styled in a long side braid, striking pink eyes, curvaceous build, wearing a pink halter top with a brown corset, plaid skirt, and brown boots.\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"blue braided hair, pink eyes, curvaceous build, pink halter top, brown corset, plaid skirt, brown boots, cloud tattoos on arms and legs.\",\"voice\":null}],\"segments\":[{\"id\":\"1792439042779dbc4e\",\"start\":0,\"length\":120,\"prompt\":\"Fast whip-pan settling on her as she spins around from a workbench, long blue braids swinging; she grins wide, eyes glittering with mischief, sparks drifting in the neon haze.\",\"type\":\"text\",\"isEndFrame\":false},{\"id\":\"1792441997891mcf49\",\"start\":120,\"length\":120,\"prompt\":\"Low-angle tracking shot as she strides toward the camera through the workshop, braids trailing behind her; she kicks a scrap of metal aside and laughs, pink and cyan neon flickering across her face.\",\"type\":\"text\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
         "shift_video": 12,
         "shift_audio": 3,
         "ref_image_size": "max",
@@ -632,9 +634,9 @@
         0,
         240,
         240,
-        "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"subject_definitions:\\n<Subject 1> is Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents, shown in <Picture 1>.\\n\\nsummary: [reference generation]\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved - lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\\n\\nnon_diegetic_music: N/A\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-17_002__1792438924260.jpg\"}],\"description\":\"Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents.\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\",\"voice\":null}],\"segments\":[{\"id\":\"1792439042779dbc4e\",\"start\":0,\"length\":120,\"prompt\":\"Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.\",\"type\":\"text\"}],\"motionSegments\":[],\"audioSegments\":[]}",
-        "Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.",
-        "240",
+        "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"Arcane-style cinematic realism, painterly textures and dramatic rim lighting; a chaotic, electric atmosphere in a neon-lit Zaun workshop; her look stays exactly the same in every shot.\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-07_007__1792441928474.jpg\"}],\"description\":\"Vibrant blue hair styled in a long side braid, striking pink eyes, curvaceous build, wearing a pink halter top with a brown corset, plaid skirt, and brown boots.\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"blue braided hair, pink eyes, curvaceous build, pink halter top, brown corset, plaid skirt, brown boots, cloud tattoos on arms and legs.\",\"voice\":null}],\"segments\":[{\"id\":\"1792439042779dbc4e\",\"start\":0,\"length\":120,\"prompt\":\"Fast whip-pan settling on her as she spins around from a workbench, long blue braids swinging; she grins wide, eyes glittering with mischief, sparks drifting in the neon haze.\",\"type\":\"text\",\"isEndFrame\":false},{\"id\":\"1792441997891mcf49\",\"start\":120,\"length\":120,\"prompt\":\"Low-angle tracking shot as she strides toward the camera through the workshop, braids trailing behind her; she kicks a scrap of metal aside and laughs, pink and cyan neon flickering across her face.\",\"type\":\"text\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "Fast whip-pan settling on her as she spins around from a workbench, long blue braids swinging; she grins wide, eyes glittering with mischief, sparks drifting in the neon haze. | Low-angle tracking shot as she strides toward the camera through the workshop, braids trailing behind her; she kicks a scrap of metal aside and laughs, pink and cyan neon flickering across her face.",
+        "120,120",
         "",
         true,
         true,
@@ -661,9 +663,9 @@
         "start_frame": 0,
         "end_frame": 240,
         "duration_frames": 240,
-        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"subject_definitions:\\n<Subject 1> is Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents, shown in <Picture 1>.\\n\\nsummary: [reference generation]\\n\\nretention_analysis:\\n<Subject 1>: fully_preserved - lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\\n\\nnon_diegetic_music: N/A\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-17_002__1792438924260.jpg\"}],\"description\":\"Long wavy lavender hair with bangs, youthful anime face, curvy athletic build, white and teal outfit with purple fur accents.\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"lavender hair with bangs, teal eyes, white top with teal accents, purple fur trim, white boots with purple soles, diamond-shaped teal necklace.\",\"voice\":null}],\"segments\":[{\"id\":\"1792439042779dbc4e\",\"start\":0,\"length\":120,\"prompt\":\"Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.\",\"type\":\"text\"}],\"motionSegments\":[],\"audioSegments\":[]}",
-        "local_prompts": "Slow dolly-in from the glass wall toward her; Saori turns from the window, long auburn hair catching the golden sunset light; she settles into a serene half-smile.",
-        "segment_lengths": "240",
+        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":126,\"showFilenames\":true,\"showPromptZones\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"Arcane-style cinematic realism, painterly textures and dramatic rim lighting; a chaotic, electric atmosphere in a neon-lit Zaun workshop; her look stays exactly the same in every shot.\",\"retake_global_prompt\":\"\",\"overall_soundscape\":\"\",\"non_diegetic_music\":\"\",\"prompt_override\":\"\",\"prompt_override_on\":false,\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":240,\"reference_mode\":\"REF2VA\",\"prompt_format\":\"minimax\",\"analyzeProvider\":\"qwenvl\",\"analyzeBaseUrl\":\"\",\"analyzeModel\":\"\",\"summary\":\"\",\"task_type_override\":\"\",\"subjectSlotCount\":1,\"subjects\":[{\"images\":[{\"name\":\"whatdreamscost/mmxref_Qwen21_2026-10-07_007__1792441928474.jpg\"}],\"description\":\"Vibrant blue hair styled in a long side braid, striking pink eyes, curvaceous build, wearing a pink halter top with a brown corset, plaid skirt, and brown boots.\",\"shortName\":\"\",\"kind\":\"person\",\"retention\":\"fully_preserved\",\"retentionNote\":\"blue braided hair, pink eyes, curvaceous build, pink halter top, brown corset, plaid skirt, brown boots, cloud tattoos on arms and legs.\",\"voice\":null}],\"segments\":[{\"id\":\"1792439042779dbc4e\",\"start\":0,\"length\":120,\"prompt\":\"Fast whip-pan settling on her as she spins around from a workbench, long blue braids swinging; she grins wide, eyes glittering with mischief, sparks drifting in the neon haze.\",\"type\":\"text\",\"isEndFrame\":false},{\"id\":\"1792441997891mcf49\",\"start\":120,\"length\":120,\"prompt\":\"Low-angle tracking shot as she strides toward the camera through the workshop, braids trailing behind her; she kicks a scrap of metal aside and laughs, pink and cyan neon flickering across her face.\",\"type\":\"text\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "local_prompts": "Fast whip-pan settling on her as she spins around from a workbench, long blue braids swinging; she grins wide, eyes glittering with mischief, sparks drifting in the neon haze. | Low-angle tracking shot as she strides toward the camera through the workshop, braids trailing behind her; she kicks a scrap of metal aside and laughs, pink and cyan neon flickering across her face.",
+        "segment_lengths": "120,120",
         "guide_strength": "",
         "use_custom_audio": true,
         "use_custom_motion": true,
@@ -698,7 +700,7 @@
         26
       ],
       "flags": {},
-      "order": 17,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -1035,7 +1037,7 @@
         "ver": "c8740b64fd09d93b89273b489791ac6ca42512f2",
         "Node name for S&R": "PixaromaRunTimer",
         "cnr_id": "ComfyUI-Pixaroma",
-        "runTimerLastMs": 405465.7000000477
+        "runTimerLastMs": 515931.10000002384
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -1134,7 +1136,7 @@
         242.10508459685246
       ],
       "flags": {},
-      "order": 19,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -1227,7 +1229,7 @@
         264.5039593724789
       ],
       "flags": {},
-      "order": 21,
+      "order": 22,
       "mode": 4,
       "inputs": [
         {
@@ -1283,7 +1285,7 @@
         334
       ],
       "flags": {},
-      "order": 22,
+      "order": 23,
       "mode": 4,
       "inputs": [
         {
@@ -1425,6 +1427,49 @@
       },
       "color": "rgba(0,0,0,0)",
       "bgcolor": "rgba(0,0,0,0)"
+    },
+    {
+      "id": 430,
+      "type": "PixaromaShowText",
+      "pos": [
+        647.6076198290325,
+        1401.4296512794515
+      ],
+      "size": [
+        724.537532579559,
+        553.1180213846878
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 920
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Final Prompt",
+      "properties": {
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "ver": "588e7f0e27a00364074899d5592c0d5a4c940148",
+        "Node name for S&R": "PixaromaShowText"
+      },
+      "widgets_values": [
+        "subject_definitions:\n<Subject 1> is Vibrant blue hair styled in a long side braid, striking pink eyes, curvaceous build, wearing a pink halter top with a brown corset, plaid skirt, and brown boots, shown in <Picture 1>.\n\nsummary: [reference generation]\n\nretention_analysis:\n<Subject 1>: fully_preserved - blue braided hair, pink eyes, curvaceous build, pink halter top, brown corset, plaid skirt, brown boots, cloud tattoos on arms and legs.\n\ndetailed_description: Arcane-style cinematic realism, painterly textures and dramatic rim lighting; a chaotic, electric atmosphere in a neon-lit Zaun workshop; her look stays exactly the same in every shot. [Shot 1] Fast whip-pan settling on her as she spins around from a workbench, long blue braids swinging; she grins wide, eyes glittering with mischief, sparks drifting in the neon haze. [Shot 2] At 00:05.000, Low-angle tracking shot as she strides toward the camera through the workshop, braids trailing behind her; she kicks a scrap of metal aside and laughs, pink and cyan neon flickering across her face.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "text": "subject_definitions:\n<Subject 1> is Vibrant blue hair styled in a long side braid, striking pink eyes, curvaceous build, wearing a pink halter top with a brown corset, plaid skirt, and brown boots, shown in <Picture 1>.\n\nsummary: [reference generation]\n\nretention_analysis:\n<Subject 1>: fully_preserved - blue braided hair, pink eyes, curvaceous build, pink halter top, brown corset, plaid skirt, brown boots, cloud tattoos on arms and legs.\n\ndetailed_description: Arcane-style cinematic realism, painterly textures and dramatic rim lighting; a chaotic, electric atmosphere in a neon-lit Zaun workshop; her look stays exactly the same in every shot. [Shot 1] Fast whip-pan settling on her as she spins around from a workbench, long blue braids swinging; she grins wide, eyes glittering with mischief, sparks drifting in the neon haze. [Shot 2] At 00:05.000, Low-angle tracking shot as she strides toward the camera through the workshop, braids trailing behind her; she kicks a scrap of metal aside and laughs, pink and cyan neon flickering across her face.\n\nnon_diegetic_music: N/A"
+      },
+      "color": "#5086d3",
+      "bgcolor": "#2b333e"
     }
   ],
   "links": [
@@ -1573,14 +1618,6 @@
       "AUDIO"
     ],
     [
-      902,
-      419,
-      0,
-      14,
-      0,
-      "VIDEO"
-    ],
-    [
       113,
       5,
       4,
@@ -1595,6 +1632,14 @@
       422,
       0,
       "IMAGE"
+    ],
+    [
+      902,
+      419,
+      0,
+      14,
+      0,
+      "VIDEO"
     ],
     [
       854,
@@ -1635,6 +1680,14 @@
       5,
       4,
       "VAE"
+    ],
+    [
+      920,
+      5,
+      8,
+      430,
+      0,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1706,8 +1759,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 54,
-          "lastNodeId": 429,
-          "lastLinkId": 919,
+          "lastNodeId": 430,
+          "lastLinkId": 920,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2269,8 +2322,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 54,
-          "lastNodeId": 429,
-          "lastLinkId": 919,
+          "lastNodeId": 430,
+          "lastLinkId": 920,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2603,8 +2656,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 54,
-          "lastNodeId": 429,
-          "lastLinkId": 919,
+          "lastNodeId": 430,
+          "lastLinkId": 920,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3473,8 +3526,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 54,
-          "lastNodeId": 429,
-          "lastLinkId": 919,
+          "lastNodeId": 430,
+          "lastLinkId": 920,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3730,14 +3783,14 @@
               "previewExposures": []
             },
             "widgets_values": [
-              120941517402898,
+              231640954447834,
               "res_multistep",
               "simple",
               20,
               1
             ],
             "widgets_values_named": {
-              "noise_seed": 120941517402898,
+              "noise_seed": 231640954447834,
               "sampler_name": "res_multistep",
               "scheduler": "simple",
               "steps": 20,
@@ -3964,6 +4017,14 @@
             "type": "AUDIO"
           },
           {
+            "id": 919,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 380,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
             "id": 903,
             "origin_id": -10,
             "origin_slot": 6,
@@ -3986,14 +4047,6 @@
             "target_id": 380,
             "target_slot": 5,
             "type": "INT"
-          },
-          {
-            "id": 919,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 380,
-            "target_slot": 0,
-            "type": "MODEL"
           }
         ],
         "extra": {
@@ -4005,8 +4058,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 54,
-          "lastNodeId": 429,
-          "lastLinkId": 919,
+          "lastNodeId": 430,
+          "lastLinkId": 920,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -4568,16 +4621,16 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.55.18",
+    "frontendVersion": "1.55.17",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ds": {
-      "scale": 0.6575200613721762,
+      "scale": 0.597745510338343,
       "offset": [
-        2246.5220783667055,
-        167.1006087850079
+        1568.5381130895585,
+        56.57427245790973
       ]
     }
   },
