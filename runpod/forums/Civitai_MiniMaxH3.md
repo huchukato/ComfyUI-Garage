@@ -20,6 +20,11 @@ Deploy the endpoint → attach a ≥160 GB network volume → paste the endpoint
 - 🟣 [RunPod — ComfyUI MiniMax H3 pod template](https://console.runpod.io/hub/template/bii5d425kp?ref=ioakclrv)
 - 🔵 [Vast.ai — OneClick ComfyUI MiniMax H3 Turbo Uncensored + Qwen3.5 AutoPrompt](https://cloud.vast.ai/?ref_id=188688&creator_id=188688&name=OneClick%20-%20ComfyUI%20-%20MiniMax%20H3%20Turbo%20Uncensored%20-%20Qwen3.5%20AutoPrompt)
 
+**Want both stacks (video + Qwen Image 2.1 image gen/edit)?**
+
+- 🟣 [RunPod — ComfyUI MiniMax H3 + Qwen Image 2.1 pod template](https://console.runpod.io/hub/template/janme4pbim?ref=ioakclrv)
+- 🔵 [Vast.ai — OneClick ComfyUI MiniMax H3 + Qwen Image 2.1 — Qwen 3.5 Autoprompt](https://cloud.vast.ai/?ref_id=749134&creator_id=749134&name=OneClick%20-%20ComfyUI%20-%20MiniMax%20H3%20%2B%20Qwen%20Image%202.1%20-%20Qwen%203.5%20Autoprompt)
+
 ---
 
 ## ⬆️ 2026/10/23 UPDATE ⬆️
