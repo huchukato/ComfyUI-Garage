@@ -35,10 +35,23 @@ The pack adds the **Director pair** — timeline-driven multi-scene videos with 
 
 - **Director-Native** (`MiniMaxH3-Director-Native-Qwen3.5.json`): character sheet + **ideas one per line** (each line = a segment) → the Director compiles the full timeline prompt itself. **Auto-Analyze** builds the subject description from the sheet; the built-in QwenVL **Enhance** expands each segment. The **compiled prompt is what runs** — visible in the ShowText node
 - **Director-Storyboard** (`MiniMaxH3-Director-Storyboard-Qwen3.5.json`): generate up to **3 scene stills** with `QwenImageEdit21-Wildcards` (preset `IMG › Storyboard`), load them chronologically — the in-graph QwenVL turns stills + idea into the final R2VA prompt (`external_prompt`), the Director renders it with the stills as references
-- **Singularity Turbo baked in both**: `euler` + `beta` + 6 steps + `minimax_h3_ref2v_turbo_4step` at strength 1.0 — the `config` dropdown switches to the 20-step quality preset
+- **Quality preset by default**: both Directors run the **20-step quality recipe** (`res_multistep` + `simple`) — at 6 turbo steps reference adherence drifts (subject out of frame) and audio doesn't converge (garbled speech). The `config` dropdown offers `r2va_singularity_turbo` (`euler` + `beta` + 6 steps + ref2v turbo LoRA) for fast drafts without identity/speech-critical content
 - **References switch** (Native): `REF2VA` (Refs ON — the sheet drives identity, default) / `OFF` (text-only, fl2va path)
 - **Style dropdown** like Singularity: `[MATCH REF1]` follows the reference's art style, or force one (cinematic, anime2d, claymation, …) — expands via the `mmh3/style/` wildcards
 - Requires **QwenVL-Mod ≥ 2.12.2** (GGUF import fix — nodes register cleanly even without llama-cpp-python)
+
+### 🪄 Director Canvas — Auto-Enhance + Wildcards
+
+- **Auto-enhance at queue**: queueing a Director workflow expands every segment still holding its simplified idea through the built-in QwenVL — the same thing the serverless handler does per job. Editing a segment's text re-enhances it on the next queue
+- **Enhance button fixed**: it now actually appears on the Segment Prompt panel (single segment selected) for one-off manual re-runs
+- **Wildcards on canvas**: the enhance route expands `__mmh3/...__` tokens in ideas and the global prompt — no WildcardProcessor node needed
+- Requires **MiniMaxH3-Director ≥ 0.3.8**
+
+### 💬 Qwen Chat — Storyboard Flow
+
+- With a Qwen Image 2.1 workflow open and a reference attached, ask for a storyboard: the chat invents **3 chronological still prompts** (one location, evolving light, one gesture each) + the timestamped **Director idea**, and offers **Generate Still 1/2/3** buttons that set the prompt and queue one still per turn
+- Chat reply budget doubled: max tokens 1024 → 2048
+- Requires **QwenVL-Mod ≥ 2.12.2**
 
 ### 🖼️ ForgeHub v0.1.18
 
