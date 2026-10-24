@@ -31,10 +31,10 @@ Deploy the endpoint → attach a ≥160 GB network volume → paste the endpoint
 
 ### 🎬 MiniMax H3 Director — Two New Workflows
 
-The pack adds the **Director pair** — timeline-driven multi-scene videos with audio, powered by the new **MiniMaxH3-Director** custom node (auto-installed with the pack):
+The pack adds the **Director pair** — timeline-driven multi-scene videos with audio, powered by the new **MiniMaxH3-Director** custom node (install via git — not yet in the Manager; see Installation):
 
 - **Director-Native** (`MiniMaxH3-Director-Native-Qwen3.5.json`): character sheet + **ideas one per line** (each line = a segment) → the Director compiles the full timeline prompt itself. **Auto-Analyze** builds the subject description from the sheet; the built-in QwenVL **Enhance** expands each segment. The **compiled prompt is what runs** — visible in the ShowText node
-- **Director-Storyboard** (`MiniMaxH3-Director-Storyboard-Qwen3.5.json`): generate up to **3 scene stills** with `QwenImageEdit21-Wildcards` (preset `IMG › Storyboard`), load them chronologically — the in-graph QwenVL turns stills + idea into the final R2VA prompt (`external_prompt`), the Director renders it with the stills as references
+- **Director-Storyboard** (`MiniMaxH3-Director-Storyboard-Qwen3.5.json`): generate up to **3 scene stills** with `QwenImageEdit21-Wildcards-Qwen3.5.json` (preset `IMG › Storyboard`), load them chronologically — the in-graph QwenVL turns stills + idea into the final R2VA prompt (`external_prompt`), the Director renders it with the stills as references
 - **Quality preset by default**: both Directors run the **20-step quality recipe** (`res_multistep` + `simple`) — at 6 turbo steps reference adherence drifts (subject out of frame) and audio doesn't converge (garbled speech). The `config` dropdown offers `r2va_singularity_turbo` (`euler` + `beta` + 6 steps + ref2v turbo LoRA) for fast drafts without identity/speech-critical content
 - **References switch** (Native): `REF2VA` (Refs ON — the sheet drives identity, default) / `OFF` (text-only, fl2va path)
 - **Style dropdown** like Singularity: `[MATCH REF1]` follows the reference's art style, or force one (cinematic, anime2d, claymation, …) — expands via the `mmh3/style/` wildcards
@@ -574,7 +574,7 @@ All workflows are pre-wired with `lightx2v Turbo LoRA` at **8 steps** + SOL-ATTN
 4. ⚡ **R2VA Turbo** — `MiniMaxH3-Turbo-R2VA-Qwen3.5.json` — text + reference images (`image` + `image2`) — Reference-to-video. Lock identity, style, motion, camera, or voice using up to 9 ref images.
 5. ⚡ **Singularity R2VA** ⭐ — `MiniMaxH3-Singularity-R2VA-Qwen3.5.json` — reference-to-video on the **fused Singularity checkpoint** (T2V/I2V/R2V/V2V in one unet, no rank-256 LoRA). Turbo recipe baked: `euler` + `beta` + 6 steps + ref2v turbo LoRA.
 6. 🎬 **Director Native** ⭐ — `MiniMaxH3-Director-Native-Qwen3.5.json` — charsheet + ideas one per line → the Director compiles the multi-segment timeline (auto-Analyze + per-segment Enhance). Singularity Turbo baked, `config` dropdown, refs switch, style dropdown.
-7. 🎬 **Director Storyboard** ⭐ — `MiniMaxH3-Director-Storyboard-Qwen3.5.json` — up to 3 scene stills (from `QwenImageEdit21`, preset `IMG › Storyboard`) → in-graph QwenVL writes the final R2VA prompt → Director renders with the stills as references. Singularity Turbo baked.
+7. 🎬 **Director Storyboard** ⭐ — `MiniMaxH3-Director-Storyboard-Qwen3.5.json` — up to 3 scene stills (from `QwenImageEdit21-Wildcards-Qwen3.5.json`, preset `IMG › Storyboard`) → in-graph QwenVL writes the final R2VA prompt → Director renders with the stills as references. Quality preset baked.
 
 > FL2VA and R2VA include **TensorRT upscaling** and **RIFE frame interpolation** for 48 fps high-resolution output.
 
@@ -699,6 +699,12 @@ The workflows include built-in NSFW presets for the Qwen3.5 prompt enhancer:
 ### Custom Nodes Required
 
 - **ComfyUI-QwenVL-Mod** — All workflows (Qwen3.5 prompt enhancer) — [huchukato/ComfyUI-QwenVL-Mod](https://github.com/huchukato/ComfyUI-QwenVL-Mod)
+- **MiniMaxH3-Director** — Director Native + Storyboard workflows ⭐ — [huchukato/ComfyUI-MiniMaxH3-Director](https://github.com/huchukato/ComfyUI-MiniMaxH3-Director) — **not yet in the Manager registry**, install via git:
+  ```bash
+  cd ComfyUI/custom_nodes
+  git clone https://github.com/huchukato/ComfyUI-MiniMaxH3-Director
+  ```
+  then restart ComfyUI (≥ 0.3.8 for auto-enhance + the visible Enhance button)
 - **Block Sparse Attention** — Turbo workflows use the native ComfyUI node (built-in, no install needed)
 - **ComfyUI-RIFE-TensorRT-Auto** — FL2VA, R2VA (frame interpolation) — [huchukato/ComfyUI-RIFE-TensorRT-Auto](https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto)
 - **ComfyUI-Upscaler-TensorRT-Auto** — FL2VA, R2VA (upscaling) — [huchukato/ComfyUI-Upscaler-TensorRT-Auto](https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto)
