@@ -31,7 +31,12 @@ Deploy the endpoint → attach a ≥160 GB network volume → paste the endpoint
 
 ### 🎬 MiniMax H3 Director — Two New Workflows
 
-The pack adds the **Director pair** — timeline-driven multi-scene videos with audio, powered by the new **MiniMaxH3-Director** custom node (install via git — not yet in the Manager; see Installation):
+The pack adds the **Director pair** — timeline-driven multi-scene videos with audio, powered by the new **MiniMaxH3-Director** custom node — [huchukato/ComfyUI-MiniMaxH3-Director](https://github.com/huchukato/ComfyUI-MiniMaxH3-Director). Not yet in the Manager registry — install via git and restart ComfyUI:
+
+```bash
+cd ComfyUI/custom_nodes
+git clone https://github.com/huchukato/ComfyUI-MiniMaxH3-Director
+```
 
 - **Director-Native** (`MiniMaxH3-Director-Native-Qwen3.5.json`): character sheet + **ideas one per line** (each line = a segment) → the Director compiles the full timeline prompt itself. **Auto-Analyze** builds the subject description from the sheet; the built-in QwenVL **Enhance** expands each segment. The **compiled prompt is what runs** — visible in the ShowText node
 - **Director-Storyboard** (`MiniMaxH3-Director-Storyboard-Qwen3.5.json`): generate up to **3 scene stills** with `QwenImageEdit21-Wildcards-Qwen3.5.json` (preset `IMG › Storyboard`), load them chronologically — the in-graph QwenVL turns stills + idea into the final R2VA prompt (`external_prompt`), the Director renders it with the stills as references
