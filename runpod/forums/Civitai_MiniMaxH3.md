@@ -31,11 +31,11 @@ Deploy the endpoint → attach a ≥160 GB network volume → paste the endpoint
 
 ### 🎬 MiniMax H3 Director — Two New Workflows
 
-The pack adds the **Director pair** — timeline-driven multi-scene videos with audio, powered by the new **MiniMaxH3-Director** custom node — [huchukato/ComfyUI-MiniMaxH3-Director](https://github.com/huchukato/ComfyUI-MiniMaxH3-Director). Not yet in the Manager registry — install via git and restart ComfyUI:
+The pack adds the **Director pair** — timeline-driven multi-scene videos with audio, powered by the new **MiniMaxH3-Director** custom node — [huchukato/ComfyUI-MiniMaxH3-Director-Enhanced](https://github.com/huchukato/ComfyUI-MiniMaxH3-Director-Enhanced). Not yet in the Manager registry — install via git and restart ComfyUI:
 
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/huchukato/ComfyUI-MiniMaxH3-Director
+git clone https://github.com/huchukato/ComfyUI-MiniMaxH3-Director-Enhanced
 ```
 
 - **Director-Native** (`MiniMaxH3-Director-Native-Qwen3.5.json`): character sheet + **ideas one per line** (each line = a segment) → the Director compiles the full timeline prompt itself. **Auto-Analyze** builds the subject description from the sheet; the built-in QwenVL **Enhance** expands each segment. The **compiled prompt is what runs** — visible in the ShowText node
@@ -704,10 +704,10 @@ The workflows include built-in NSFW presets for the Qwen3.5 prompt enhancer:
 ### Custom Nodes Required
 
 - **ComfyUI-QwenVL-Mod** — All workflows (Qwen3.5 prompt enhancer) — [huchukato/ComfyUI-QwenVL-Mod](https://github.com/huchukato/ComfyUI-QwenVL-Mod)
-- **MiniMaxH3-Director** — Director Native + Storyboard workflows ⭐ — [huchukato/ComfyUI-MiniMaxH3-Director](https://github.com/huchukato/ComfyUI-MiniMaxH3-Director) — **not yet in the Manager registry**, install via git:
+- **MiniMaxH3-Director** — Director Native + Storyboard workflows ⭐ — [huchukato/ComfyUI-MiniMaxH3-Director-Enhanced](https://github.com/huchukato/ComfyUI-MiniMaxH3-Director-Enhanced) — **not yet in the Manager registry**, install via git:
   ```bash
   cd ComfyUI/custom_nodes
-  git clone https://github.com/huchukato/ComfyUI-MiniMaxH3-Director
+  git clone https://github.com/huchukato/ComfyUI-MiniMaxH3-Director-Enhanced
   ```
   then restart ComfyUI (≥ 0.3.8 for auto-enhance + the visible Enhance button)
 - **Block Sparse Attention** — Turbo workflows use the native ComfyUI node (built-in, no install needed)

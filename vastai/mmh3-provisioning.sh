@@ -31,7 +31,7 @@ NODES=(
     "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
-    "https://github.com/huchukato/ComfyUI-MiniMaxH3-Director"
+    "https://github.com/huchukato/ComfyUI-MiniMaxH3-Director-Enhanced"
     "https://github.com/huchukato/ComfyUI-Gallery"
 )
 
