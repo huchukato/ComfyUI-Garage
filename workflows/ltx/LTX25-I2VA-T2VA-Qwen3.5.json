@@ -1,8 +1,8 @@
 {
   "id": "07824bbb-6672-4bb0-ac36-4313a519e35b",
   "revision": 0,
-  "last_node_id": 425,
-  "last_link_id": 838,
+  "last_node_id": 428,
+  "last_link_id": 842,
   "nodes": [
     {
       "id": 407,
@@ -13,10 +13,10 @@
       ],
       "size": [
         690.254015619566,
-        725.0178837860059
+        334
       ],
       "flags": {},
-      "order": 12,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -48,7 +48,7 @@
           "widget": {
             "name": "filename_prefix"
           },
-          "link": 837
+          "link": 840
         }
       ],
       "outputs": [
@@ -60,10 +60,10 @@
       ],
       "title": "50FPS",
       "properties": {
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
+        "cnr_id": "comfyui-videohelpersuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "cnr_id": "comfyui-videohelpersuite"
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
       },
       "widgets_values": {
         "frame_rate": 50,
@@ -132,7 +132,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 9,
+      "order": 13,
       "mode": 4,
       "inputs": [
         {
@@ -146,7 +146,7 @@
           "widget": {
             "name": "filename_prefix"
           },
-          "link": 838
+          "link": 841
         }
       ],
       "outputs": [
@@ -219,12 +219,12 @@
       "id": 415,
       "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
-        945.1532781865635,
-        7302.00372320374
+        2269.040746936571,
+        6870.30219195376
       ],
       "size": [
-        444.859181878022,
-        166.09576374823882
+        316.3812873467722,
+        118.40333015448869
       ],
       "flags": {},
       "order": 1,
@@ -281,8 +281,8 @@
       "id": 402,
       "type": "MarkdownNote",
       "pos": [
-        1441.0582846525856,
-        6766.463459545996
+        1450.0269369963357,
+        6857.283412671
       ],
       "size": [
         276.45715836196905,
@@ -316,7 +316,7 @@
         425.59897469067437
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -335,10 +335,10 @@
       ],
       "title": "QWEN PROMPT",
       "properties": {
-        "aux_id": "yolain/ComfyUI-Easy-Use",
+        "cnr_id": "comfyui-easy-use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "cnr_id": "comfyui-easy-use"
+        "aux_id": "yolain/ComfyUI-Easy-Use"
       },
       "widgets_values": [
         "The camera remains locked-off, completely static throughout the entire clip. A woman with dark curly hair and a delicate necklace lies on her back on a bed, her eyes closed in pleasure. She is actively engaged in oral sex, her head tilted back as she performs the act with focused intensity. Her hands are positioned to support the partner above her, her fingers gently gripping the fabric of his shorts. The lighting is soft and warm, highlighting the contours of her face and the intimate nature of the moment. The background is softly blurred, keeping the focus on her and the action. As the scene progresses, her movements become slightly more animated, her expression shifting between pleasure and concentration. The air is thick with the sounds of their breathing, the occasional wet sound of skin contact, and the soft rustle of fabric as she adjusts her position. No dialogue is present, only the natural, unfiltered sounds of their interaction."
@@ -361,7 +361,7 @@
         223.76912297389026
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -417,14 +417,14 @@
         400
       ],
       "flags": {},
-      "order": 7,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
           "name": "image",
           "shape": 7,
           "type": "IMAGE",
-          "link": 836
+          "link": null
         },
         {
           "name": "image2",
@@ -457,9 +457,7 @@
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "links": [
-            816
-          ]
+          "links": []
         },
         {
           "name": "IMAGE2",
@@ -478,10 +476,10 @@
         }
       ],
       "properties": {
-        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution",
+        "cnr_id": "ComfyUI-PerfectVideoResolution",
         "ver": "ba74ae0362d318da2ab1bad5a5bab46b6a2cf5e4",
         "Node name for S&R": "ComfyUI-PerfectVideoResolution",
-        "cnr_id": "ComfyUI-PerfectVideoResolution"
+        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
         "LTX",
@@ -520,7 +518,7 @@
         670
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -599,7 +597,7 @@
           "label": "first_frame",
           "name": "input",
           "type": "IMAGE,MASK",
-          "link": 816
+          "link": 842
         }
       ],
       "outputs": [
@@ -640,8 +638,8 @@
       "widgets_values": [
         1920,
         768,
-        "fellatio",
         "",
+        false,
         false,
         5,
         25,
@@ -650,14 +648,14 @@
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
         "LTX › NSFW I2V",
         "5s",
-        "[LOCKED_OFF]",
+        "None",
         false
       ],
       "widgets_values_named": {
         "value_3": 1920,
         "value_4": 768,
-        "value": "fellatio",
-        "value_6": "",
+        "value": "",
+        "value_6": false,
         "value_1": false,
         "value_2": 5,
         "value_5": 25,
@@ -666,89 +664,11 @@
         "model_name_1": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
         "preset_prompt": "LTX › NSFW I2V",
         "duration": "5s",
-        "camera_tag": "[LOCKED_OFF]",
+        "camera_tag": "None",
         "passthrough": false
       },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 422,
-      "type": "PixaromaLoadImage",
-      "pos": [
-        931.7334522203568,
-        6390.860891268966
-      ],
-      "size": [
-        487.8614342182161,
-        806.8513383264306
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            836
-          ]
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": []
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": []
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": []
-        },
-        {
-          "name": "filename",
-          "type": "STRING",
-          "links": [
-            837,
-            838
-          ]
-        },
-        {
-          "name": "original_width",
-          "type": "INT",
-          "links": []
-        },
-        {
-          "name": "original_height",
-          "type": "INT",
-          "links": []
-        }
-      ],
-      "title": "Load Image",
-      "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
-        "ver": "bcd259fa9f7b89fc4776baed1579e8c4788d56d7",
-        "Node name for S&R": "PixaromaLoadImage",
-        "cnr_id": "ComfyUI-Pixaroma",
-        "loadImagePixState": "{\"allow_upscale\":false}"
-      },
-      "widgets_values": [
-        "S02_EP11_ThatNightLucia_308_v01.jpg",
-        "image",
-        ""
-      ],
-      "widgets_values_named": {
-        "image": "S02_EP11_ThatNightLucia_308_v01.jpg",
-        "upload": "image",
-        "pixaroma_load_image_ui": ""
-      },
-      "color": "#223",
-      "bgcolor": "#335"
     },
     {
       "id": 424,
@@ -769,9 +689,10 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "54da99b8925a0d478c327cca012bea5ce49a71ab",
-        "Node name for S&R": "PixaromaMonitor"
+        "Node name for S&R": "PixaromaMonitor",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma"
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -795,13 +716,192 @@
       "inputs": [],
       "outputs": [],
       "properties": {
-        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "cnr_id": "ComfyUI-Pixaroma",
         "ver": "54da99b8925a0d478c327cca012bea5ce49a71ab",
         "Node name for S&R": "PixaromaRunTimer",
-        "runTimerLastMs": 160590.29999998212
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "runTimerLastMs": 95797.10000002384
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 426,
+      "type": "PixaromaLoadImageMini",
+      "pos": [
+        922.2363835312057,
+        6396.138688044464
+      ],
+      "size": [
+        485.88916406249973,
+        832.7422617187494
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            842
+          ]
+        },
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "links": [
+            839
+          ]
+        }
+      ],
+      "title": "Load Image",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "2862183894cf25d83b45f2432b6dd5782c0831b1",
+        "Node name for S&R": "PixaromaLoadImageMini"
+      },
+      "widgets_values": [
+        "S02_EP11_New_Features_Cecilia_Novaksus_571_v01.jpg",
+        "image",
+        ""
+      ],
+      "widgets_values_named": {
+        "image": "S02_EP11_New_Features_Cecilia_Novaksus_571_v01.jpg",
+        "upload": "image",
+        "pixaroma_load_image_mini_ui": ""
+      },
+      "color": "#1f9e6a",
+      "bgcolor": "#23362f"
+    },
+    {
+      "id": 427,
+      "type": "PixaromaImageInfo",
+      "pos": [
+        1091.3825671249565,
+        6766.603820856956
+      ],
+      "size": [
+        216,
+        106
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_info",
+          "type": "PIX_IMAGE_INFO",
+          "link": 839
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [
+            840,
+            841
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "2862183894cf25d83b45f2432b6dd5782c0831b1",
+        "Node name for S&R": "PixaromaImageInfo"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 428,
+      "type": "PixaromaGroupSwitch",
+      "pos": [
+        2270.175438218707,
+        6696.721121638196
+      ],
+      "size": [
+        321.47234454022237,
+        103
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "d61f7a2379a0466469749e62f0b8064cf310b1be",
+        "Node name for S&R": "PixaromaGroupSwitch",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
+        "groupSwitchState": {
+          "version": 1,
+          "action": "bypass",
+          "scope": "pick",
+          "picked": [
+            "ng:23",
+            "ng:24",
+            "ng:31",
+            "ng:30"
+          ],
+          "sort": "name",
+          "restriction": "any"
+        },
+        "pixAccent": "#c026d3"
+      },
+      "widgets_values": [
+        {
+          "version": 1,
+          "action": "bypass",
+          "scope": "pick",
+          "picked": [
+            "ng:23",
+            "ng:24",
+            "ng:31",
+            "ng:30"
+          ],
+          "sort": "name",
+          "restriction": "any"
+        }
+      ],
+      "widgets_values_named": {
+        "group_switch_ui": {
+          "version": 1,
+          "action": "bypass",
+          "scope": "pick",
+          "picked": [
+            "ng:23",
+            "ng:24",
+            "ng:31",
+            "ng:30"
+          ],
+          "sort": "name",
+          "restriction": "any"
+        }
+      },
+      "color": "#8050d3",
+      "bgcolor": "#322b3e"
     }
   ],
   "links": [
@@ -846,25 +946,33 @@
       "INT"
     ],
     [
-      836,
-      422,
-      0,
-      419,
+      813,
+      398,
+      2,
+      418,
       0,
       "IMAGE"
     ],
     [
-      837,
-      422,
+      839,
+      426,
+      1,
+      427,
+      0,
+      "PIX_IMAGE_INFO"
+    ],
+    [
+      840,
+      427,
       4,
       407,
       4,
       "STRING"
     ],
     [
-      816,
-      419,
-      2,
+      842,
+      426,
+      0,
       398,
       8,
       "IMAGE"
@@ -878,20 +986,12 @@
       "VIDEO"
     ],
     [
-      838,
-      422,
+      841,
+      427,
       4,
       75,
       1,
       "STRING"
-    ],
-    [
-      813,
-      398,
-      2,
-      418,
-      0,
-      "IMAGE"
     ]
   ],
   "groups": [
@@ -904,7 +1004,7 @@
         707.2704447269734,
         1089.679914151512
       ],
-      "color": "#a1309b",
+      "color": "#88A",
       "flags": {}
     },
     {
@@ -916,7 +1016,7 @@
         620.9813207043517,
         1081.1663232705541
       ],
-      "color": "#a1309b",
+      "color": "#88A",
       "flags": {}
     }
   ],
@@ -927,8 +1027,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 33,
-          "lastNodeId": 425,
-          "lastLinkId": 838,
+          "lastNodeId": 428,
+          "lastLinkId": 842,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1307,7 +1407,7 @@
                 ]
               },
               {
-                "localized_name": "thinking",
+                "localized_name": "ragionamento",
                 "name": "thinking",
                 "type": "STRING",
                 "links": null
@@ -1482,7 +1582,7 @@
             ],
             "widgets_values_named": {
               "value": 5,
-              "fixed": "fixed"
+              "control_after_generate": "fixed"
             }
           },
           {
@@ -1717,7 +1817,7 @@
             ],
             "widgets_values_named": {
               "value": 1280,
-              "fixed": "fixed"
+              "control_after_generate": "fixed"
             }
           },
           {
@@ -1886,7 +1986,7 @@
             ],
             "widgets_values_named": {
               "value": 720,
-              "fixed": "fixed"
+              "control_after_generate": "fixed"
             }
           },
           {
@@ -2086,7 +2186,7 @@
             ],
             "widgets_values_named": {
               "value": 24,
-              "fixed": "fixed"
+              "control_after_generate": "fixed"
             }
           },
           {
@@ -4149,7 +4249,7 @@
             ],
             "size": [
               400,
-              392
+              412
             ],
             "flags": {},
             "order": 46,
@@ -4165,6 +4265,13 @@
               {
                 "localized_name": "image2",
                 "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "image3",
+                "name": "image3",
                 "shape": 7,
                 "type": "IMAGE",
                 "link": null
@@ -4243,10 +4350,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
+              "cnr_id": "ComfyUI-QwenVL-Mod",
               "ver": "1ee8fa95cfe6742b62a563f414c67c6d685f2571",
               "Node name for S&R": "QwenVL_Unified",
-              "cnr_id": "ComfyUI-QwenVL-Mod"
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod"
             },
             "widgets_values": [
               "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q4_K_M.gguf",
@@ -4948,38 +5055,6 @@
             "type": "IMAGE"
           },
           {
-            "id": 830,
-            "origin_id": -10,
-            "origin_slot": 2,
-            "target_id": 423,
-            "target_slot": 6,
-            "type": "STRING"
-          },
-          {
-            "id": 831,
-            "origin_id": -10,
-            "origin_slot": 10,
-            "target_id": 423,
-            "target_slot": 3,
-            "type": "COMBO"
-          },
-          {
-            "id": 832,
-            "origin_id": -10,
-            "origin_slot": 11,
-            "target_id": 423,
-            "target_slot": 4,
-            "type": "COMBO"
-          },
-          {
-            "id": 834,
-            "origin_id": -10,
-            "origin_slot": 13,
-            "target_id": 423,
-            "target_slot": 5,
-            "type": "COMBO"
-          },
-          {
             "id": 693,
             "origin_id": 363,
             "origin_slot": 0,
@@ -4996,11 +5071,43 @@
             "type": "BOOLEAN"
           },
           {
+            "id": 831,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 423,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 832,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": 423,
+            "target_slot": 5,
+            "type": "COMBO"
+          },
+          {
+            "id": 834,
+            "origin_id": -10,
+            "origin_slot": 13,
+            "target_id": 423,
+            "target_slot": 6,
+            "type": "COMBO"
+          },
+          {
+            "id": 830,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 423,
+            "target_slot": 7,
+            "type": "STRING"
+          },
+          {
             "id": 835,
             "origin_id": -10,
             "origin_slot": 14,
             "target_id": 423,
-            "target_slot": 7,
+            "target_slot": 8,
             "type": "BOOLEAN"
           },
           {
@@ -5008,7 +5115,7 @@
             "origin_id": -10,
             "origin_slot": 12,
             "target_id": 423,
-            "target_slot": 8,
+            "target_slot": 9,
             "type": "COMBO"
           },
           {
@@ -5085,8 +5192,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 33,
-          "lastNodeId": 425,
-          "lastLinkId": 838,
+          "lastNodeId": 428,
+          "lastLinkId": 842,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -5278,10 +5385,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "cnr_id": "Auto-TensorRT-RIFE"
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -5353,10 +5460,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-RIFE",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "cnr_id": "Auto-TensorRT-RIFE"
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
             },
             "widgets_values": [
               100,
@@ -5420,10 +5527,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "cnr_id": "Auto-TensorRT-Upscaler"
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "2xLexicaRRDBNet",
@@ -5447,7 +5554,7 @@
             ],
             "size": [
               311.232421875,
-              94
+              76
             ],
             "flags": {},
             "order": 3,
@@ -5495,10 +5602,10 @@
               }
             ],
             "properties": {
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
+              "cnr_id": "Auto-TensorRT-Upscaler",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "cnr_id": "Auto-TensorRT-Upscaler"
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
             },
             "widgets_values": [
               "1080p",
@@ -5584,22 +5691,6 @@
             "type": "COMBO"
           },
           {
-            "id": 367,
-            "origin_id": -10,
-            "origin_slot": 1,
-            "target_id": 176,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 368,
-            "origin_id": -10,
-            "origin_slot": 2,
-            "target_id": 177,
-            "target_slot": 3,
-            "type": "INT"
-          },
-          {
             "id": 333,
             "origin_id": -10,
             "origin_slot": 3,
@@ -5616,14 +5707,6 @@
             "type": "COMBO"
           },
           {
-            "id": 372,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 199,
-            "target_slot": 1,
-            "type": "INT"
-          },
-          {
             "id": 373,
             "origin_id": -10,
             "origin_slot": 6,
@@ -5638,6 +5721,30 @@
             "target_id": 200,
             "target_slot": 3,
             "type": "INT"
+          },
+          {
+            "id": 367,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 176,
+            "target_slot": 2,
+            "type": "COMBO"
+          },
+          {
+            "id": 368,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 177,
+            "target_slot": 3,
+            "type": "INT"
+          },
+          {
+            "id": 372,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 199,
+            "target_slot": 1,
+            "type": "INT"
           }
         ],
         "extra": {
@@ -5648,7 +5755,7 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.53.6",
+    "frontendVersion": "1.57.4",
     "workflowRendererVersion": "Vue-corrected",
     "prompt": {
       "1": {
@@ -6050,14 +6157,14 @@
     "ds": {
       "scale": 0.7513148009015783,
       "offset": [
-        -878.8800983749564,
-        -6029.35980132571
+        100.16398756254232,
+        -5894.086527888195
       ]
     }
   },
   "extensions": {
-    "models": [],
-    "seed_widgets": {}
+    "seed_widgets": {},
+    "models": []
   },
   "version": 0.4,
   "seed_widgets": {}
