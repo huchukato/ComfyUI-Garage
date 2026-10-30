@@ -1,32 +1,33 @@
-# LTX video styles — shared style vocabulary for LTX 2.5 workflows.
-# Use __ltx/style__ or __ltx/style/<name>__. Each entry is an observable descriptor.
+# LTX video styles — plain style descriptors for LTX 2.5 workflows.
+# Use __ltx/style__ or __ltx/style/<name>__. No bracket tags — LTX responds to
+# descriptive prose, not mmh3-style control tokens.
 ltx:
   style:
     matchimg:
-    - "[MATCHIMG] match the reference image's rendering style exactly — same lighting mood, color grading and texture treatment; the image drives look, the prompt drives action"
-    - "[MATCHIMG] preserve the reference image's visual style across every frame; use the image for style and content anchoring"
+    - "match the reference image's rendering style exactly — same lighting mood, color grading and texture treatment; the image drives look, the prompt drives action"
+    - "preserve the reference image's visual style across every frame; use the image for style and content anchoring"
     cinematic:
-    - "[CINEMATIC] cinematic look, anamorphic framing, filmic color grading and shallow depth of field"
-    - "[CINEMATIC] cinematic realism, dramatic lighting, lens flares and motion blur"
+    - "cinematic look, anamorphic framing, filmic color grading and shallow depth of field"
+    - "cinematic realism, dramatic lighting, lens flares and motion blur"
     liveaction:
-    - "[LIVEACTION] live-action footage, natural skin tones, realistic textures and practical lighting"
-    - "[LIVEACTION] documentary-style live-action, natural light and handheld realism"
+    - "live-action footage, natural skin tones, realistic textures and practical lighting"
+    - "documentary-style live-action, natural light and handheld realism"
     anime2d:
-    - "[ANIME2D] 2D-animated style, clean linework, flat cel-shading and vivid colors"
-    - "[ANIME2D] modern anime film look, painterly backgrounds and soft cel-shading"
+    - "2D-animated style, clean linework, flat cel-shading and vivid colors"
+    - "modern anime film look, painterly backgrounds and soft cel-shading"
     cg3d:
-    - "[CG3D] 3D CG render, subsurface skin shading, ray-traced lighting and smooth surfaces"
-    - "[CG3D] stylized 3D animated film look, soft global illumination and rounded forms"
+    - "3D CG render, subsurface skin shading, ray-traced lighting and smooth surfaces"
+    - "stylized 3D animated film look, soft global illumination and rounded forms"
     claymation:
-    - "[CLAYMATION] claymation stop-motion, visible clay fingerprints, miniature sets and stepped frame timing"
+    - "claymation stop-motion, visible clay fingerprints, miniature sets and stepped frame timing"
     watercolor:
-    - "[WATERCOLOR] watercolor painting look, soft pigment bleeds, paper texture and translucent washes"
+    - "watercolor painting look, soft pigment bleeds, paper texture and translucent washes"
     vintage:
-    - "[VINTAGE] vintage film look, warm faded tones, halation, grain and gentle gate weave"
-    - "[VINTAGE] 90s videotape aesthetic, chroma bleed, scanline softness and warm cast"
+    - "vintage film look, warm faded tones, halation, grain and gentle gate weave"
+    - "90s videotape aesthetic, chroma bleed, scanline softness and warm cast"
     papercraft:
-    - "[PAPERCRAFT] papercraft stop-motion, layered cut-paper sets, visible paper edges and miniature depth"
+    - "papercraft stop-motion, layered cut-paper sets, visible paper edges and miniature depth"
     collage:
-    - "[COLLAGE] paper collage look, flat cut-out shapes, mixed textures and bold graphic composition"
+    - "paper collage look, flat cut-out shapes, mixed textures and bold graphic composition"
     handdrawn:
-    - "[HANDDRAWN] hand-drawn sketch style, pencil linework, rough hatching and loose organic strokes"
+    - "hand-drawn sketch style, pencil linework, rough hatching and loose organic strokes"
