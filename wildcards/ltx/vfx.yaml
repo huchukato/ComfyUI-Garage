@@ -1,0 +1,35 @@
+# LTX VFX & physical feedback — plain descriptive clauses for LTX 2.5.
+# trigger + form + direction/motion + environmental interaction.
+# Use __ltx/vfx__ or __ltx/vfx/<name>__.
+ltx:
+  vfx:
+    energy:
+    - "a glowing energy bolt fires from the source, traveling fast along a straight path and bursting on impact with a bright flash"
+    - "crackling energy gathers at the emission point, then releases in a directed beam that leaves a fading luminous trail"
+    explosion:
+    - "an explosion erupts at the impact point, expanding fire and smoke outward, throwing debris along a ballistic arc as a pressure wave ripples through the surroundings"
+    - "a sudden blast blooms from the ground, dust and sparks lift into the air and nearby surfaces flash with the explosion's light"
+    sparks:
+    - "bright sparks burst from the contact point, scattering in a dense cone and decaying quickly as they fall"
+    - "a thin spray of sparks jets sideways from the friction point, glowing white-hot then dimming within a second"
+    smoke:
+    - "thick smoke billows from the source, expanding slowly and drifting with the wind as it diffuses into the light"
+    - "a low column of smoke rises and bends sideways, its edges curling and thinning as ambient light passes through"
+    dust:
+    - "dust kicks up from the ground around the impact, spreading in a rolling cloud that catches the light before settling"
+    - "fine dust lifts with each step and hangs briefly in the air, visible in the shafts of light"
+    debris:
+    - "fragments break free on impact, scattering outward with realistic momentum before clattering to the ground"
+    - "small debris flies off in a radial pattern, tumbling through the air and bouncing once before coming to rest"
+    liquid:
+    - "liquid sprays from the impact source in a fine arc, droplets catching the light before splashing and settling on the surface"
+    - "a splash bursts upward on contact, heavy droplets falling back down and leaving a dark wet patch"
+    rift:
+    - "a glowing rift tears open in the air, its edges flickering with unstable energy while swirling light churns inside"
+    - "a portal forms as a widening ellipse of light, shimmering edges distorting the space around it before it collapses"
+    lightning:
+    - "a lightning bolt forks down from the sky, branching mid-air and flashing the whole scene white for an instant"
+    - "rapid flashes of lightning illuminate the clouds from within, each strike followed by a brief afterglow"
+    feedback:
+    - "hair and clothing react to the sudden force, whipping sideways as dust lifts off nearby surfaces"
+    - "the impact sends a visible recoil through the body, loose fabric snapping and small objects rattling nearby"
