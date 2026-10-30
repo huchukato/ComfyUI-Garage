@@ -2,7 +2,7 @@
   "id": "0112e9af-5129-48ba-af78-92c40ac40b40",
   "revision": 0,
   "last_node_id": 233,
-  "last_link_id": 464,
+  "last_link_id": 466,
   "nodes": [
     {
       "id": 199,
@@ -130,10 +130,10 @@
       ],
       "title": "50FPS",
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
+        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite",
         "ver": "4ee72c065db22c9d96c2427954dc69e7b908444b",
         "Node name for S&R": "VHS_VideoCombine",
-        "aux_id": "Kosinkadink/ComfyUI-VideoHelperSuite"
+        "cnr_id": "comfyui-videohelpersuite"
       },
       "widgets_values": {
         "frame_rate": 50,
@@ -248,28 +248,28 @@
       "id": 220,
       "type": "ComfyUI-PerfectVideoResolution",
       "pos": [
-        221.00387799877586,
-        2250.6036670476
+        219.72228631676003,
+        2264.777621369407
       ],
       "size": [
         271.712890625,
         350
       ],
       "flags": {},
-      "order": 9,
+      "order": 0,
       "mode": 0,
       "inputs": [
         {
           "name": "image",
           "shape": 7,
           "type": "IMAGE",
-          "link": 448
+          "link": null
         },
         {
           "name": "image2",
           "shape": 7,
           "type": "IMAGE",
-          "link": 449
+          "link": null
         },
         {
           "name": "mask",
@@ -296,16 +296,12 @@
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "links": [
-            417
-          ]
+          "links": []
         },
         {
           "name": "IMAGE2",
           "type": "IMAGE",
-          "links": [
-            418
-          ]
+          "links": []
         },
         {
           "name": "MASK",
@@ -319,10 +315,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI-PerfectVideoResolution",
+        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution",
         "ver": "ba74ae0362d318da2ab1bad5a5bab46b6a2cf5e4",
         "Node name for S&R": "ComfyUI-PerfectVideoResolution",
-        "aux_id": "huchukato/ComfyUI-PerfectVideoResolution"
+        "cnr_id": "ComfyUI-PerfectVideoResolution"
       },
       "widgets_values": [
         "LTX",
@@ -353,15 +349,15 @@
       "id": 216,
       "type": "MarkdownNote",
       "pos": [
-        218.06636661677499,
-        2650.7763373476787
+        220.95781732392,
+        2702.2738389001274
       ],
       "size": [
         274.89782796619784,
         464.17549867446996
       ],
       "flags": {},
-      "order": 0,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -388,7 +384,7 @@
         115.72465603730188
       ],
       "flags": {},
-      "order": 1,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -475,13 +471,13 @@
           "label": "first_frame",
           "name": "input",
           "type": "IMAGE,MASK",
-          "link": 417
+          "link": 465
         },
         {
           "label": "last_frame",
           "name": "input_1",
           "type": "IMAGE,MASK",
-          "link": 418
+          "link": 466
         }
       ],
       "outputs": [
@@ -584,10 +580,10 @@
       ],
       "title": "QWEN AUTOPROMPT",
       "properties": {
-        "cnr_id": "comfyui-easy-use",
+        "aux_id": "yolain/ComfyUI-Easy-Use",
         "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
         "Node name for S&R": "easy showAnything",
-        "aux_id": "yolain/ComfyUI-Easy-Use"
+        "cnr_id": "comfyui-easy-use"
       },
       "widgets_values": [
         "In a dimly lit room bathed in moody purple neon light, a blonde woman with a high ponytail leans forward over a beige couch, her body arched in a sensual curve. She wears sheer black stockings with a glowing white band at the thigh, a glossy black arm sleeve on her right arm, and delicate nipple piercings glint under the ambient glow. Behind her, a man in a black long-sleeve shirt and matching pants stands close, his hands firmly placed on her hips, guiding her movement. At the start of the five-second sequence, she is slightly more upright, her head tilted back with eyes closed in surrender, her hair cascading loosely over her shoulder. As the scene unfolds, she slowly lowers her upper body further toward the couch cushion, her spine curving deeper into the arch, her expression shifting from closed-eyed ecstasy to a soft, focused gaze downward. Her ponytail swings gently with the motion, strands catching the violet light. The man remains steady, his grip unwavering, his presence anchoring her movement. The camera executes a slow, smooth dolly-in from a medium shot to a tighter waist-up framing, maintaining the intimate, continuous take. Ambient sounds fill the space: the soft creak of the couch cushion beneath her, the faint hum of the retro radio in the background, and the subtle rustle of her hair against the fabric. No dialogue is spoken; only the quiet, rhythmic breathing of both figures underscores the scene. By the final frame, she is fully lowered, her chest nearly brushing the couch, her body in a deep, fluid pose that matches the stillness of the last image, while the man’s hands remain fixed on her hips, completing the seamless transition from the first frame’s poised tension to the final frame’s surrendered stillness."
@@ -610,7 +606,7 @@
         788.5105882109278
       ],
       "flags": {},
-      "order": 2,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -645,14 +641,15 @@
       "flags": {
         "no_title": true
       },
-      "order": 3,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "bcd259fa9f7b89fc4776baed1579e8c4788d56d7",
-        "Node name for S&R": "PixaromaMonitor"
+        "Node name for S&R": "PixaromaMonitor",
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -671,14 +668,15 @@
       "flags": {
         "no_title": true
       },
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "bcd259fa9f7b89fc4776baed1579e8c4788d56d7",
         "Node name for S&R": "PixaromaRunTimer",
+        "cnr_id": "ComfyUI-Pixaroma",
         "runTimerLastMs": 569947.6999999881
       },
       "color": "#1d1d1d",
@@ -688,22 +686,24 @@
       "id": 229,
       "type": "PixaromaLoadImageMini",
       "pos": [
-        -772.2043759177644,
-        2261.524817335381
+        -773.4769739739421,
+        2259.834015677704
       ],
       "size": [
-        469.06183636910805,
-        792.7676219444713
+        472.497401439495,
+        784.5069766116169
       ],
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "image",
           "type": "IMAGE",
-          "links": null
+          "links": [
+            465
+          ]
         },
         {
           "name": "image_info",
@@ -715,9 +715,10 @@
       ],
       "title": "First Frame",
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "d61f7a2379a0466469749e62f0b8064cf310b1be",
-        "Node name for S&R": "PixaromaLoadImageMini"
+        "Node name for S&R": "PixaromaLoadImageMini",
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "S02_EP13_Lucia_Update_Novaksus_283_anim_01_01_draft.jpg",
@@ -744,7 +745,7 @@
         787.1523617158143
       ],
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -752,7 +753,7 @@
           "name": "image",
           "type": "IMAGE",
           "links": [
-            449
+            466
           ]
         },
         {
@@ -763,9 +764,10 @@
       ],
       "title": "Last Frame",
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "d61f7a2379a0466469749e62f0b8064cf310b1be",
-        "Node name for S&R": "PixaromaLoadImageMini"
+        "Node name for S&R": "PixaromaLoadImageMini",
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "widgets_values": [
         "S02_EP13_Lucia_Update_Novaksus_283_anim_01_02_draft.jpg",
@@ -784,15 +786,15 @@
       "id": 231,
       "type": "PixaromaImageInfo",
       "pos": [
-        -492.51475372878804,
-        2746.202645751983
+        -568.4299494333328,
+        2730.0545905585795
       ],
       "size": [
         216,
         106
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -805,9 +807,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "links": [
-            448
-          ]
+          "links": []
         },
         {
           "name": "mask",
@@ -834,9 +834,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "d61f7a2379a0466469749e62f0b8064cf310b1be",
-        "Node name for S&R": "PixaromaImageInfo"
+        "Node name for S&R": "PixaromaImageInfo",
+        "cnr_id": "ComfyUI-Pixaroma"
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -853,14 +854,15 @@
         103
       ],
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {
-        "cnr_id": "ComfyUI-Pixaroma",
+        "aux_id": "pixaroma/ComfyUI-Pixaroma",
         "ver": "d61f7a2379a0466469749e62f0b8064cf310b1be",
         "Node name for S&R": "PixaromaGroupSwitch",
+        "cnr_id": "ComfyUI-Pixaroma",
         "groupSwitchState": {
           "version": 1,
           "action": "bypass",
@@ -946,22 +948,6 @@
       "INT"
     ],
     [
-      417,
-      220,
-      2,
-      129,
-      5,
-      "IMAGE"
-    ],
-    [
-      418,
-      220,
-      3,
-      129,
-      6,
-      "IMAGE"
-    ],
-    [
       447,
       229,
       1,
@@ -970,20 +956,20 @@
       "PIX_IMAGE_INFO"
     ],
     [
-      448,
-      231,
+      289,
+      129,
       0,
-      220,
+      199,
       0,
-      "IMAGE"
+      "VIDEO"
     ],
     [
-      449,
-      230,
-      0,
-      220,
+      451,
+      231,
+      4,
+      199,
       1,
-      "IMAGE"
+      "STRING"
     ],
     [
       450,
@@ -1002,20 +988,20 @@
       "IMAGE"
     ],
     [
-      289,
+      465,
+      229,
+      0,
       129,
-      0,
-      199,
-      0,
-      "VIDEO"
+      5,
+      "IMAGE"
     ],
     [
-      451,
-      231,
-      4,
-      199,
-      1,
-      "STRING"
+      466,
+      230,
+      0,
+      129,
+      6,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -1052,7 +1038,7 @@
         "state": {
           "lastGroupId": 27,
           "lastNodeId": 233,
-          "lastLinkId": 464,
+          "lastLinkId": 466,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1546,7 +1532,7 @@
             ],
             "widgets_values_named": {
               "value": 5,
-              "fixed": "fixed"
+              "control_after_generate": "fixed"
             }
           },
           {
@@ -2082,7 +2068,7 @@
             ],
             "widgets_values_named": {
               "value": 25,
-              "fixed": "fixed"
+              "control_after_generate": "fixed"
             }
           },
           {
@@ -2808,7 +2794,7 @@
             ],
             "widgets_values_named": {
               "value": 1280,
-              "fixed": "fixed"
+              "control_after_generate": "fixed"
             }
           },
           {
@@ -2871,7 +2857,7 @@
             ],
             "widgets_values_named": {
               "value": 720,
-              "fixed": "fixed"
+              "control_after_generate": "fixed"
             }
           },
           {
@@ -3672,9 +3658,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "ComfyUI-QwenVL-Mod",
+              "aux_id": "huchukato/ComfyUI-QwenVL-Mod",
               "ver": "1ee8fa95cfe6742b62a563f414c67c6d685f2571",
-              "Node name for S&R": "QwenVL_Unified"
+              "Node name for S&R": "QwenVL_Unified",
+              "cnr_id": "ComfyUI-QwenVL-Mod"
             },
             "widgets_values": [
               "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
@@ -4292,28 +4279,12 @@
             "type": "COMBO"
           },
           {
-            "id": 460,
-            "origin_id": -10,
-            "origin_slot": 8,
-            "target_id": 232,
-            "target_slot": 9,
-            "type": "COMBO"
-          },
-          {
             "id": 461,
             "origin_id": -10,
             "origin_slot": 9,
             "target_id": 232,
             "target_slot": 6,
             "type": "COMBO"
-          },
-          {
-            "id": 462,
-            "origin_id": -10,
-            "origin_slot": 10,
-            "target_id": 232,
-            "target_slot": 8,
-            "type": "BOOLEAN"
           },
           {
             "id": 463,
@@ -4402,6 +4373,22 @@
             "target_id": 130,
             "target_slot": 1,
             "type": "INT"
+          },
+          {
+            "id": 462,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 232,
+            "target_slot": 8,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 460,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 232,
+            "target_slot": 9,
+            "type": "COMBO"
           }
         ],
         "extra": {
@@ -4415,7 +4402,7 @@
         "state": {
           "lastGroupId": 27,
           "lastNodeId": 233,
-          "lastLinkId": 464,
+          "lastLinkId": 466,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -4607,10 +4594,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoLoadRifeTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               "rife425_ensemble_False_scale_1_sim",
@@ -4682,10 +4669,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-RIFE",
+              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto",
               "ver": "120f2ca1b1e226d7e3c23917647d78a6a3318b92",
               "Node name for S&R": "AutoRifeTensorrt",
-              "aux_id": "huchukato/ComfyUI-RIFE-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-RIFE"
             },
             "widgets_values": [
               100,
@@ -4749,10 +4736,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "LoadUpscalerTensorrtModel",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "2xLexicaRRDBNet",
@@ -4824,10 +4811,10 @@
               }
             ],
             "properties": {
-              "cnr_id": "Auto-TensorRT-Upscaler",
+              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto",
               "ver": "cc7141930a69268d37dc16067ed8e3bd8f46e687",
               "Node name for S&R": "UpscalerTensorrt",
-              "aux_id": "huchukato/ComfyUI-Upscaler-TensorRT-Auto"
+              "cnr_id": "Auto-TensorRT-Upscaler"
             },
             "widgets_values": [
               "1080p",
@@ -4897,36 +4884,12 @@
             "type": "COMBO"
           },
           {
-            "id": 367,
-            "origin_id": -10,
-            "origin_slot": 1,
-            "target_id": 176,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 368,
-            "origin_id": -10,
-            "origin_slot": 2,
-            "target_id": 177,
-            "target_slot": 3,
-            "type": "INT"
-          },
-          {
             "id": 371,
             "origin_id": -10,
             "origin_slot": 4,
             "target_id": 217,
             "target_slot": 0,
             "type": "COMBO"
-          },
-          {
-            "id": 372,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 217,
-            "target_slot": 1,
-            "type": "INT"
           },
           {
             "id": 373,
@@ -4967,6 +4930,30 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "IMAGE"
+          },
+          {
+            "id": 367,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 176,
+            "target_slot": 2,
+            "type": "COMBO"
+          },
+          {
+            "id": 368,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 177,
+            "target_slot": 3,
+            "type": "INT"
+          },
+          {
+            "id": 372,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 217,
+            "target_slot": 1,
+            "type": "INT"
           }
         ],
         "extra": {
@@ -4977,7 +4964,7 @@
   },
   "config": {},
   "extra": {
-    "frontendVersion": "1.55.17",
+    "frontendVersion": "1.57.4",
     "workflowRendererVersion": "Vue-corrected",
     "ue_links": [],
     "VHS_latentpreview": false,
@@ -4987,8 +4974,8 @@
     "ds": {
       "scale": 0.8686707830755438,
       "offset": [
-        1175.8504033305167,
-        -1715.6148101716817
+        897.6011103196099,
+        -1754.408815226952
       ]
     }
   },
