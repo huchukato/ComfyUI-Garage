@@ -1431,7 +1431,7 @@
       ]
      },
      {
-      "id": "9a6d9d11-643c-4edb-b932-e6d7643aefde",
+      "id": "bdcee4dc-5c30-40cb-ac54-1f02cf1e1824",
       "name": "input_2",
       "type": "IMAGE,MASK",
       "linkIds": [
@@ -1445,7 +1445,7 @@
       ]
      },
      {
-      "id": "75ea061d-5dc6-4d6e-9b78-f4a2f7d68cf0",
+      "id": "a8b67514-007c-486b-897d-1185fe0cd512",
       "name": "input_3",
       "type": "IMAGE,MASK",
       "linkIds": [
@@ -1459,7 +1459,7 @@
       ]
      },
      {
-      "id": "c64c53db-5689-4032-89de-edeb2a0e5a34",
+      "id": "6c0ee494-b779-45d1-aa74-070b024dff47",
       "name": "input_4",
       "type": "IMAGE,MASK",
       "linkIds": [
@@ -5432,222 +5432,222 @@
       "target_slot": 1,
       "type": "INT"
      },
-     [
-      600,
-      -10,
-      13,
-      240,
-      0,
-      "IMAGE,MASK"
-     ],
-     [
-      603,
-      113,
-      0,
-      240,
-      1,
-      "INT"
-     ],
-     [
-      604,
-      98,
-      0,
-      240,
-      2,
-      "INT"
-     ],
-     [
-      609,
-      240,
-      0,
-      243,
-      0,
-      "IMAGE"
-     ],
-     [
-      612,
-      243,
-      0,
-      246,
-      4,
-      "IMAGE"
-     ],
-     [
-      615,
-      210,
-      0,
-      246,
-      2,
-      "VAE"
-     ],
-     [
-      601,
-      -10,
-      14,
-      241,
-      0,
-      "IMAGE,MASK"
-     ],
-     [
-      605,
-      113,
-      0,
-      241,
-      1,
-      "INT"
-     ],
-     [
-      606,
-      98,
-      0,
-      241,
-      2,
-      "INT"
-     ],
-     [
-      610,
-      241,
-      0,
-      244,
-      0,
-      "IMAGE"
-     ],
-     [
-      613,
-      244,
-      0,
-      247,
-      4,
-      "IMAGE"
-     ],
-     [
-      616,
-      210,
-      0,
-      247,
-      2,
-      "VAE"
-     ],
-     [
-      602,
-      -10,
-      15,
-      242,
-      0,
-      "IMAGE,MASK"
-     ],
-     [
-      607,
-      113,
-      0,
-      242,
-      1,
-      "INT"
-     ],
-     [
-      608,
-      98,
-      0,
-      242,
-      2,
-      "INT"
-     ],
-     [
-      611,
-      242,
-      0,
-      245,
-      0,
-      "IMAGE"
-     ],
-     [
-      614,
-      245,
-      0,
-      248,
-      4,
-      "IMAGE"
-     ],
-     [
-      617,
-      210,
-      0,
-      248,
-      2,
-      "VAE"
-     ],
-     [
-      621,
-      246,
-      0,
-      247,
-      0,
-      "CONDITIONING"
-     ],
-     [
-      622,
-      246,
-      1,
-      247,
-      1,
-      "CONDITIONING"
-     ],
-     [
-      623,
-      246,
-      2,
-      247,
-      3,
-      "LATENT"
-     ],
-     [
-      624,
-      247,
-      0,
-      248,
-      0,
-      "CONDITIONING"
-     ],
-     [
-      625,
-      247,
-      1,
-      248,
-      1,
-      "CONDITIONING"
-     ],
-     [
-      626,
-      247,
-      2,
-      248,
-      3,
-      "LATENT"
-     ],
-     [
-      618,
-      115,
-      0,
-      246,
-      0,
-      "CONDITIONING"
-     ],
-     [
-      619,
-      115,
-      1,
-      246,
-      1,
-      "CONDITIONING"
-     ],
-     [
-      620,
-      115,
-      2,
-      246,
-      3,
-      "LATENT"
-     ]
+     {
+      "id": 600,
+      "origin_id": -10,
+      "origin_slot": 13,
+      "target_id": 240,
+      "target_slot": 0,
+      "type": "IMAGE,MASK"
+     },
+     {
+      "id": 603,
+      "origin_id": 113,
+      "origin_slot": 0,
+      "target_id": 240,
+      "target_slot": 1,
+      "type": "INT"
+     },
+     {
+      "id": 604,
+      "origin_id": 98,
+      "origin_slot": 0,
+      "target_id": 240,
+      "target_slot": 2,
+      "type": "INT"
+     },
+     {
+      "id": 609,
+      "origin_id": 240,
+      "origin_slot": 0,
+      "target_id": 243,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 612,
+      "origin_id": 243,
+      "origin_slot": 0,
+      "target_id": 246,
+      "target_slot": 4,
+      "type": "IMAGE"
+     },
+     {
+      "id": 615,
+      "origin_id": 210,
+      "origin_slot": 0,
+      "target_id": 246,
+      "target_slot": 2,
+      "type": "VAE"
+     },
+     {
+      "id": 601,
+      "origin_id": -10,
+      "origin_slot": 14,
+      "target_id": 241,
+      "target_slot": 0,
+      "type": "IMAGE,MASK"
+     },
+     {
+      "id": 605,
+      "origin_id": 113,
+      "origin_slot": 0,
+      "target_id": 241,
+      "target_slot": 1,
+      "type": "INT"
+     },
+     {
+      "id": 606,
+      "origin_id": 98,
+      "origin_slot": 0,
+      "target_id": 241,
+      "target_slot": 2,
+      "type": "INT"
+     },
+     {
+      "id": 610,
+      "origin_id": 241,
+      "origin_slot": 0,
+      "target_id": 244,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 613,
+      "origin_id": 244,
+      "origin_slot": 0,
+      "target_id": 247,
+      "target_slot": 4,
+      "type": "IMAGE"
+     },
+     {
+      "id": 616,
+      "origin_id": 210,
+      "origin_slot": 0,
+      "target_id": 247,
+      "target_slot": 2,
+      "type": "VAE"
+     },
+     {
+      "id": 602,
+      "origin_id": -10,
+      "origin_slot": 15,
+      "target_id": 242,
+      "target_slot": 0,
+      "type": "IMAGE,MASK"
+     },
+     {
+      "id": 607,
+      "origin_id": 113,
+      "origin_slot": 0,
+      "target_id": 242,
+      "target_slot": 1,
+      "type": "INT"
+     },
+     {
+      "id": 608,
+      "origin_id": 98,
+      "origin_slot": 0,
+      "target_id": 242,
+      "target_slot": 2,
+      "type": "INT"
+     },
+     {
+      "id": 611,
+      "origin_id": 242,
+      "origin_slot": 0,
+      "target_id": 245,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 614,
+      "origin_id": 245,
+      "origin_slot": 0,
+      "target_id": 248,
+      "target_slot": 4,
+      "type": "IMAGE"
+     },
+     {
+      "id": 617,
+      "origin_id": 210,
+      "origin_slot": 0,
+      "target_id": 248,
+      "target_slot": 2,
+      "type": "VAE"
+     },
+     {
+      "id": 621,
+      "origin_id": 246,
+      "origin_slot": 0,
+      "target_id": 247,
+      "target_slot": 0,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 622,
+      "origin_id": 246,
+      "origin_slot": 1,
+      "target_id": 247,
+      "target_slot": 1,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 623,
+      "origin_id": 246,
+      "origin_slot": 2,
+      "target_id": 247,
+      "target_slot": 3,
+      "type": "LATENT"
+     },
+     {
+      "id": 624,
+      "origin_id": 247,
+      "origin_slot": 0,
+      "target_id": 248,
+      "target_slot": 0,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 625,
+      "origin_id": 247,
+      "origin_slot": 1,
+      "target_id": 248,
+      "target_slot": 1,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 626,
+      "origin_id": 247,
+      "origin_slot": 2,
+      "target_id": 248,
+      "target_slot": 3,
+      "type": "LATENT"
+     },
+     {
+      "id": 618,
+      "origin_id": 115,
+      "origin_slot": 0,
+      "target_id": 246,
+      "target_slot": 0,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 619,
+      "origin_id": 115,
+      "origin_slot": 1,
+      "target_id": 246,
+      "target_slot": 1,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 620,
+      "origin_id": 115,
+      "origin_slot": 2,
+      "target_id": 246,
+      "target_slot": 3,
+      "type": "LATENT"
+     }
     ],
     "extra": {
      "ue_links": [],
