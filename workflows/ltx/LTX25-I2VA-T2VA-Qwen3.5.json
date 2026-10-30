@@ -612,7 +612,8 @@
           "name": "output",
           "type": "STRING",
           "links": [
-            797
+            797,
+            844
           ]
         },
         {
@@ -902,6 +903,139 @@
       },
       "color": "#8050d3",
       "bgcolor": "#322b3e"
+    },
+    {
+      "id": 700,
+      "type": "StringConcatenate",
+      "pos": [
+        1741,
+        7560
+      ],
+      "size": [
+        320,
+        140
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": null
+        },
+        {
+          "name": "string_b",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": null
+        },
+        {
+          "name": "delimiter",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            843
+          ],
+          "shape": 7
+        }
+      ],
+      "title": "Expanded prompt",
+      "properties": {},
+      "widgets_values": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 701,
+      "type": "PixaromaShowText",
+      "pos": [
+        2080,
+        7480
+      ],
+      "size": [
+        494,
+        200
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "shape": 7,
+          "type": "*",
+          "link": 843
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 7
+        }
+      ],
+      "title": "Wildcard expanded",
+      "properties": {},
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 702,
+      "type": "PixaromaShowText",
+      "pos": [
+        2080,
+        7200
+      ],
+      "size": [
+        494,
+        240
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "shape": 7,
+          "type": "*",
+          "link": 844
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 7
+        }
+      ],
+      "title": "Final prompt (QwenVL)",
+      "properties": {},
+      "widgets_values": [
+        ""
+      ]
     }
   ],
   "links": [
@@ -991,6 +1125,22 @@
       4,
       75,
       1,
+      "STRING"
+    ],
+    [
+      843,
+      700,
+      0,
+      701,
+      0,
+      "STRING"
+    ],
+    [
+      844,
+      398,
+      1,
+      702,
+      0,
       "STRING"
     ]
   ],
@@ -3888,7 +4038,7 @@
             },
             "widgets_values": [
               "LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors",
-              1.87
+              0.7
             ],
             "widgets_values_named": {
               "lora_name": "LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors",
