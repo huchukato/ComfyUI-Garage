@@ -10,6 +10,7 @@ APT_PACKAGES=(
 PIP_PACKAGES=(
     "--upgrade --force-reinstall --no-cache-dir https://github.com/JamePeng/llama-cpp-python/releases/download/v0.4.3-cu131-linux-20261017/llama_cpp_python-0.4.3+cu131-cp312-cp312-linux_x86_64.whl"
     "huggingface_hub"
+    "comfyui-manager>=4.2.1"
     "hf-transfer"
     "sageattention"
     "kornia==0.8.2"
