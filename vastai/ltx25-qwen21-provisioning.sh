@@ -16,9 +16,6 @@ PIP_PACKAGES=(
     "tensorrt-cu13==10.15.1.29"
     "tensorrt-cu13-bindings==10.15.1.29"
     "tensorrt-cu13-libs==10.15.1.29"    "--upgrade --force-reinstall --no-cache-dir https://github.com/JamePeng/llama-cpp-python/releases/download/v0.4.3-cu131-linux-20261017/llama_cpp_python-0.4.3+cu131-cp312-cp312-linux_x86_64.whl"
-    "huggingface_hub"
-    "tensorrt-cu13==10.15.1.29"
-    "tensorrt-cu13-bindings==10.15.1.29"
     "tensorrt-cu13-libs==10.15.1.29"
 )
 
