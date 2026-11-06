@@ -1,0 +1,3072 @@
+{
+  "id": "90b6d2bc-24e3-4235-8edf-1ed7c69702ab",
+  "revision": 0,
+  "last_node_id": 139,
+  "last_link_id": 1111,
+  "nodes": [
+    {
+      "id": 55,
+      "type": "LTXDirectorCropGuides",
+      "pos": [
+        8770,
+        -930
+      ],
+      "size": [
+        240,
+        70
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1087
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1089
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 163
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            1065
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            1066
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            158
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXDirectorCropGuides",
+        "cnr_id": "whatdreamscost-comfyui",
+        "ver": "1.3.9"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 18,
+      "type": "LTXVConcatAVLatent",
+      "pos": [
+        9450,
+        -790
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "link": 1076
+        },
+        {
+          "name": "audio_latent",
+          "type": "LATENT",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVConcatAVLatent",
+        "cnr_id": "comfy-core",
+        "ver": "0.7.0",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 20,
+      "type": "KSamplerSelect",
+      "pos": [
+        9450,
+        -690
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.56",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "euler"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 21,
+      "type": "BasicScheduler",
+      "pos": [
+        9450,
+        -590
+      ],
+      "size": [
+        210,
+        110
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1077
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            36
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.4"
+      },
+      "widgets_values": [
+        "linear_quadratic",
+        4,
+        0.42
+      ],
+      "widgets_values_named": {
+        "scheduler": "linear_quadratic",
+        "steps": 4,
+        "denoise": 0.42
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 13,
+      "type": "LatentUpscaleModelLoader",
+      "pos": [
+        8770,
+        -820
+      ],
+      "size": [
+        300.198828125,
+        60
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT_UPSCALE_MODEL",
+          "type": "LATENT_UPSCALE_MODEL",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LatentUpscaleModelLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.4"
+      },
+      "widgets_values": [
+        "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors"
+      ],
+      "widgets_values_named": {
+        "model_name": "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 14,
+      "type": "LTXVLatentUpsampler",
+      "pos": [
+        8770,
+        -720
+      ],
+      "size": [
+        240,
+        70
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 158
+        },
+        {
+          "name": "upscale_model",
+          "type": "LATENT_UPSCALE_MODEL",
+          "link": 16
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1104
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            1068
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVLatentUpsampler",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 27,
+      "type": "LTXVConditioning",
+      "pos": [
+        8770,
+        -380
+      ],
+      "size": [
+        240,
+        90
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1055
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1034
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 1063
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            1079
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            1080
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVConditioning",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.56",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        24
+      ],
+      "widgets_values_named": {
+        "frame_rate": 24
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 128,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        8770,
+        -250
+      ],
+      "size": [
+        262.341796875,
+        30
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 1056
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            1034
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut",
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 28,
+      "type": "CFGGuider",
+      "pos": [
+        9450,
+        -380
+      ],
+      "size": [
+        210,
+        100
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1092
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1086
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1088
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CFGGuider",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        1
+      ],
+      "widgets_values_named": {
+        "cfg": 1
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 29,
+      "type": "LTXVConcatAVLatent",
+      "pos": [
+        9450,
+        -240
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "link": 1090
+        },
+        {
+          "name": "audio_latent",
+          "type": "LATENT",
+          "link": 1058
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            64
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVConcatAVLatent",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.0"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 32,
+      "type": "KSamplerSelect",
+      "pos": [
+        9450,
+        -150
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.56",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "euler"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 33,
+      "type": "BasicScheduler",
+      "pos": [
+        9450,
+        -50
+      ],
+      "size": [
+        210,
+        110
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1091
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            63
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.4"
+      },
+      "widgets_values": [
+        "linear_quadratic",
+        8,
+        1
+      ],
+      "widgets_values_named": {
+        "scheduler": "linear_quadratic",
+        "steps": 8,
+        "denoise": 1
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 1,
+      "type": "VAEDecode",
+      "pos": [
+        10170,
+        -410
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 153
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1103
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core",
+        "ver": "0.9.1"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 2,
+      "type": "CreateVideo",
+      "pos": [
+        10170,
+        -320
+      ],
+      "size": [
+        224.158203125,
+        174
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 3
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 4
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": 1064
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            67
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core",
+        "ver": "0.19.3"
+      },
+      "widgets_values": [
+        24,
+        8,
+        "sRGB",
+        "auto",
+        "none"
+      ],
+      "widgets_values_named": {
+        "fps": 24,
+        "bit_depth": 8,
+        "color_space": "sRGB",
+        "chroma_subsampling": "auto",
+        "codec": "none"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 37,
+      "type": "SaveVideo",
+      "pos": [
+        10400,
+        -500
+      ],
+      "size": [
+        760,
+        560
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 67
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "cnr_id": "comfy-core",
+        "ver": "0.19.3"
+      },
+      "widgets_values": [
+        "video/LTX_Director",
+        "auto",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "video/LTX_Director",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 30,
+      "type": "RandomNoise",
+      "pos": [
+        8770,
+        -610
+      ],
+      "size": [
+        210,
+        90
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            33,
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core",
+        "ver": "0.19.3"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "noise_seed": 0,
+        "control_after_generate": "fixed"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 17,
+      "type": "CFGGuider",
+      "pos": [
+        9450,
+        -930
+      ],
+      "size": [
+        210,
+        100
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1078
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1072
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1074
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CFGGuider",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        1
+      ],
+      "widgets_values_named": {
+        "cfg": 1
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 34,
+      "type": "LTXVSeparateAVLatent",
+      "pos": [
+        9920,
+        -380
+      ],
+      "size": [
+        200,
+        50
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "av_latent",
+          "type": "LATENT",
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "links": [
+            163
+          ]
+        },
+        {
+          "name": "audio_latent",
+          "type": "LATENT",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVSeparateAVLatent",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.0"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 54,
+      "type": "LTXDirectorCropGuides",
+      "pos": [
+        9920,
+        -820
+      ],
+      "size": [
+        210,
+        80
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1073
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1075
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 152
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            153
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXDirectorCropGuides",
+        "cnr_id": "whatdreamscost-comfyui",
+        "ver": "1.3.9"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 22,
+      "type": "LTXVSeparateAVLatent",
+      "pos": [
+        9920,
+        -930
+      ],
+      "size": [
+        210,
+        70
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "av_latent",
+          "type": "LATENT",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "links": [
+            152
+          ]
+        },
+        {
+          "name": "audio_latent",
+          "type": "LATENT",
+          "links": [
+            43
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVSeparateAVLatent",
+        "cnr_id": "comfy-core",
+        "ver": "0.5.1",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 19,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        9680,
+        -930
+      ],
+      "size": [
+        233.912109375,
+        190
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 33
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 34
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 35
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 36
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            39
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 31,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        9680,
+        -380
+      ],
+      "size": [
+        233.912109375,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 60
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 61
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 62
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 63
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            66
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 24,
+      "type": "LTXVAudioVAEDecode",
+      "pos": [
+        10170,
+        -500
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 43
+        },
+        {
+          "label": "Audio VAE",
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": 1101
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Audio",
+          "type": "AUDIO",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVAudioVAEDecode",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.0"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 10,
+      "type": "ModelPreviewOverrideKJ",
+      "pos": [
+        6767.586050777982,
+        -870.8064552337494
+      ],
+      "size": [
+        520,
+        650
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1098
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 1099
+        },
+        {
+          "name": "audio_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1050
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelPreviewOverrideKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "996b010ae4613ae0743121ace5975830dcf8e6af",
+        "kjPovPanelH": 146
+      },
+      "widgets_values": [
+        0,
+        80,
+        true,
+        240,
+        24,
+        "taeltx2_3.safetensors",
+        ""
+      ],
+      "widgets_values_named": {
+        "max_resolution": 0,
+        "jpeg_quality": 80,
+        "suppress_default_preview": true,
+        "preview_frames": 240,
+        "preview_fps": 24,
+        "tiny_vae": "taeltx2_3.safetensors",
+        "preview": ""
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 131,
+      "type": "LTXDirector",
+      "pos": [
+        7340,
+        -930
+      ],
+      "size": [
+        1380,
+        1000
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1050
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1100
+        },
+        {
+          "name": "audio_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 1102
+        },
+        {
+          "name": "optional_latent",
+          "shape": 7,
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "global_prompt",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            1071,
+            1085
+          ]
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            1055,
+            1056
+          ]
+        },
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "links": [
+            1082
+          ]
+        },
+        {
+          "name": "audio_latent",
+          "type": "LATENT",
+          "links": [
+            1058
+          ]
+        },
+        {
+          "name": "guide_data",
+          "type": "GUIDE_DATA",
+          "links": [
+            1069,
+            1083
+          ]
+        },
+        {
+          "name": "motion_guide_data",
+          "type": "MOTION_GUIDE_DATA",
+          "links": [
+            1070,
+            1084
+          ]
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "links": [
+            1063,
+            1064
+          ]
+        },
+        {
+          "name": "combined_audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXDirector",
+        "global_prompt": "A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \"H\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.",
+        "mainTrackEnabled": true,
+        "audioTrackEnabled": true,
+        "motionTrackEnabled": true,
+        "audioTrackWasEnabledBeforeOverride": false,
+        "inpaint_audio": true,
+        "override_audio": false,
+        "overrideAudio": false,
+        "showFilenames": true,
+        "use_custom_audio": true,
+        "use_custom_motion": true,
+        "frame_rate": 25,
+        "display_mode": "seconds",
+        "custom_width": 0,
+        "custom_height": 0,
+        "resize_method": "maintain aspect ratio",
+        "divisible_by": 32,
+        "img_compression": 18,
+        "guide_strength": "1.00,1.00,1.00,1.00,1.00,1.00",
+        "local_prompts": "The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech. | The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a calm confident voice: \"Welcome to ForgeHub — your AI creation studio.\" | Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says: \"Images, videos, voices — all forged in one place.\" | The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a warm enthusiastic voice: \"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\" | Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says with emphasis: \"ForgeHub — forge what's next.\" | Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.",
+        "segment_lengths": "150,200,200,300,200,150",
+        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":60,\"showFilenames\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \\\"H\\\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.\",\"retake_global_prompt\":\"\",\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":1200,\"segments\":[{\"id\":\"17939866228680t2dy\",\"start\":0,\"length\":150,\"prompt\":\"The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_001%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_001%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"179398669294287659\",\"start\":150,\"length\":200,\"prompt\":\"The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a calm confident voice: \\\"Welcome to ForgeHub — your AI creation studio.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_002%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_002%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986707132md4gh\",\"start\":350,\"length\":200,\"prompt\":\"Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says: \\\"Images, videos, voices — all forged in one place.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_003%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_003%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986724009emjkd\",\"start\":550,\"length\":300,\"prompt\":\"The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a warm enthusiastic voice: \\\"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_004%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_004%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986742576uiizk\",\"start\":850,\"length\":200,\"prompt\":\"Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says with emphasis: \\\"ForgeHub — forge what's next.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_005%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_005%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986861293gwed7\",\"start\":1050,\"length\":150,\"prompt\":\"Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/banner.jpeg\",\"imageB64\":\"/api/view?filename=banner.jpeg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "epsilon": 0.001,
+        "start_second": 0,
+        "end_second": 48,
+        "duration_seconds": 48,
+        "start_frame": 0,
+        "end_frame": 1200,
+        "duration_frames": 1200,
+        "cnr_id": "whatdreamscost-comfyui",
+        "ver": "2.0.0",
+        "timeline_ui": "",
+        "has_serialized_properties": true,
+        "propHeight": 90,
+        "globalPropHeight": 60,
+        "retakeMode": false
+      },
+      "widgets_values": [
+        0,
+        48,
+        48,
+        0,
+        1200,
+        1200,
+        "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":60,\"showFilenames\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \\\"H\\\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.\",\"retake_global_prompt\":\"\",\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":1200,\"segments\":[{\"id\":\"17939866228680t2dy\",\"start\":0,\"length\":150,\"prompt\":\"The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_001%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_001%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"179398669294287659\",\"start\":150,\"length\":200,\"prompt\":\"The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a calm confident voice: \\\"Welcome to ForgeHub — your AI creation studio.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_002%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_002%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986707132md4gh\",\"start\":350,\"length\":200,\"prompt\":\"Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says: \\\"Images, videos, voices — all forged in one place.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_003%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_003%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986724009emjkd\",\"start\":550,\"length\":300,\"prompt\":\"The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a warm enthusiastic voice: \\\"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_004%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_004%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986742576uiizk\",\"start\":850,\"length\":200,\"prompt\":\"Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says with emphasis: \\\"ForgeHub — forge what's next.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_005%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_005%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986861293gwed7\",\"start\":1050,\"length\":150,\"prompt\":\"Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/banner.jpeg\",\"imageB64\":\"/api/view?filename=banner.jpeg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech. | The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a calm confident voice: \"Welcome to ForgeHub — your AI creation studio.\" | Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says: \"Images, videos, voices — all forged in one place.\" | The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a warm enthusiastic voice: \"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\" | Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says with emphasis: \"ForgeHub — forge what's next.\" | Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.",
+        "150,200,200,300,200,150",
+        0.001,
+        "1.00,1.00,1.00,1.00,1.00,1.00",
+        true,
+        true,
+        true,
+        25,
+        "seconds",
+        0,
+        0,
+        "maintain aspect ratio",
+        32,
+        18,
+        false,
+        ""
+      ],
+      "widgets_values_named": {
+        "start_second": 0,
+        "end_second": 48,
+        "duration_seconds": 48,
+        "start_frame": 0,
+        "end_frame": 1200,
+        "duration_frames": 1200,
+        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":60,\"showFilenames\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \\\"H\\\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.\",\"retake_global_prompt\":\"\",\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":1200,\"segments\":[{\"id\":\"17939866228680t2dy\",\"start\":0,\"length\":150,\"prompt\":\"The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_001%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_001%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"179398669294287659\",\"start\":150,\"length\":200,\"prompt\":\"The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a calm confident voice: \\\"Welcome to ForgeHub — your AI creation studio.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_002%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_002%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986707132md4gh\",\"start\":350,\"length\":200,\"prompt\":\"Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says: \\\"Images, videos, voices — all forged in one place.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_003%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_003%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986724009emjkd\",\"start\":550,\"length\":300,\"prompt\":\"The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a warm enthusiastic voice: \\\"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_004%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_004%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986742576uiizk\",\"start\":850,\"length\":200,\"prompt\":\"Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says with emphasis: \\\"ForgeHub — forge what's next.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_005%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_005%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986861293gwed7\",\"start\":1050,\"length\":150,\"prompt\":\"Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/banner.jpeg\",\"imageB64\":\"/api/view?filename=banner.jpeg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "local_prompts": "The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech. | The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a calm confident voice: \"Welcome to ForgeHub — your AI creation studio.\" | Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says: \"Images, videos, voices — all forged in one place.\" | The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a warm enthusiastic voice: \"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\" | Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says with emphasis: \"ForgeHub — forge what's next.\" | Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.",
+        "segment_lengths": "150,200,200,300,200,150",
+        "epsilon": 0.001,
+        "guide_strength": "1.00,1.00,1.00,1.00,1.00,1.00",
+        "use_custom_audio": true,
+        "use_custom_motion": true,
+        "inpaint_audio": true,
+        "frame_rate": 25,
+        "display_mode": "seconds",
+        "custom_width": 0,
+        "custom_height": 0,
+        "resize_method": "maintain aspect ratio",
+        "divisible_by": 32,
+        "img_compression": 18,
+        "override_audio": false,
+        "timeline_ui": ""
+      }
+    },
+    {
+      "id": 130,
+      "type": "MarkdownNote",
+      "pos": [
+        6468.559385566269,
+        -132.07024619571527
+      ],
+      "size": [
+        840,
+        270
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "FAQ",
+      "properties": {},
+      "widgets_values": [
+        "# FAQ + Support\n\n| Getting Started | Troubleshooting & Support |\n| :--- | :--- |\n| **How do I use this??**<br>I'll be posting tutorials on my YouTube channel soon!<br><https://www.youtube.com/@WhatDreamsCost/> | **I'm getting errors when running this workflow!**<br>Double check that you have all of the correct models loaded. This is using the newest version of 2x upscaler (v1.1). You can change it to the older one under the Model Loader. |\n| **Where do I download these models??**<br>There is a good list of models and download links here: <https://github.com/wildminder/awesome-ltx2?tab=readme-ov-file><br><br>Also the latest v1.1 spatial upscaler can be found here: <https://huggingface.co/Lightricks/LTX-2.3/tree/main><br><br>The tiny vae (`taeltx2_3.safetensors`) is found here:<br><https://huggingface.co/Kijai/LTX2.3_comfy/blob/main/vae/taeltx2_3.safetensors> | **How can I support you?**<br>If you'd like, you can buy me a coffee here!<br><https://ko-fi.com/whatdreamscost><br><br>Or follow me on my socials :)<br>• <https://x.com/WhatDreamsCost><br>• <https://www.youtube.com/@WhatDreamsCost/><br>• <https://www.linkedin.com/in/imjonathanwatkins/> |"
+      ],
+      "widgets_values_named": {
+        "text": "# FAQ + Support\n\n| Getting Started | Troubleshooting & Support |\n| :--- | :--- |\n| **How do I use this??**<br>I'll be posting tutorials on my YouTube channel soon!<br><https://www.youtube.com/@WhatDreamsCost/> | **I'm getting errors when running this workflow!**<br>Double check that you have all of the correct models loaded. This is using the newest version of 2x upscaler (v1.1). You can change it to the older one under the Model Loader. |\n| **Where do I download these models??**<br>There is a good list of models and download links here: <https://github.com/wildminder/awesome-ltx2?tab=readme-ov-file><br><br>Also the latest v1.1 spatial upscaler can be found here: <https://huggingface.co/Lightricks/LTX-2.3/tree/main><br><br>The tiny vae (`taeltx2_3.safetensors`) is found here:<br><https://huggingface.co/Kijai/LTX2.3_comfy/blob/main/vae/taeltx2_3.safetensors> | **How can I support you?**<br>If you'd like, you can buy me a coffee here!<br><https://ko-fi.com/whatdreamscost><br><br>Or follow me on my socials :)<br>• <https://x.com/WhatDreamsCost><br>• <https://www.youtube.com/@WhatDreamsCost/><br>• <https://www.linkedin.com/in/imjonathanwatkins/> |"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 132,
+      "type": "LTXDirectorGuide",
+      "pos": [
+        9030,
+        -930
+      ],
+      "size": [
+        400,
+        400
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1065
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1066
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1105
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 1068
+        },
+        {
+          "name": "guide_data",
+          "type": "GUIDE_DATA",
+          "link": 1069
+        },
+        {
+          "name": "motion_guide_data",
+          "shape": 7,
+          "type": "MOTION_GUIDE_DATA",
+          "link": 1070
+        },
+        {
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": 1071
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            1072,
+            1073
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            1074,
+            1075
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            1076
+          ]
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            1077,
+            1078
+          ]
+        },
+        {
+          "name": "latent_downscale_factor",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXDirectorGuide",
+        "cnr_id": "whatdreamscost-comfyui",
+        "ver": "2.0.0"
+      },
+      "widgets_values": [
+        "None",
+        1,
+        1,
+        "bicubic",
+        1,
+        "center",
+        true,
+        false,
+        256,
+        64,
+        false
+      ],
+      "widgets_values_named": {
+        "ic_lora_name": "None",
+        "ic_lora_strength": 1,
+        "scale_by": 1,
+        "upscale_method": "bicubic",
+        "image_attention_strength": 1,
+        "crop": "center",
+        "auto_snap_ic_grid": true,
+        "use_tiled_encode": false,
+        "tile_size": 256,
+        "tile_overlap": 64,
+        "retake_mode": false
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 133,
+      "type": "LTXDirectorGuide",
+      "pos": [
+        9030,
+        -380
+      ],
+      "size": [
+        400,
+        400
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1079
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1080
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1106
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 1082
+        },
+        {
+          "name": "guide_data",
+          "type": "GUIDE_DATA",
+          "link": 1083
+        },
+        {
+          "name": "motion_guide_data",
+          "shape": 7,
+          "type": "MOTION_GUIDE_DATA",
+          "link": 1084
+        },
+        {
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": 1085
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            1086,
+            1087
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            1088,
+            1089
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            1090
+          ]
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            1091,
+            1092
+          ]
+        },
+        {
+          "name": "latent_downscale_factor",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXDirectorGuide",
+        "cnr_id": "whatdreamscost-comfyui",
+        "ver": "2.0.0"
+      },
+      "widgets_values": [
+        "None",
+        1,
+        0.5,
+        "bicubic",
+        1,
+        "center",
+        true,
+        false,
+        256,
+        64,
+        false
+      ],
+      "widgets_values_named": {
+        "ic_lora_name": "None",
+        "ic_lora_strength": 1,
+        "scale_by": 0.5,
+        "upscale_method": "bicubic",
+        "image_attention_strength": 1,
+        "crop": "center",
+        "auto_snap_ic_grid": true,
+        "use_tiled_encode": false,
+        "tile_size": 256,
+        "tile_overlap": 64,
+        "retake_mode": false
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 134,
+      "type": "PixaromaMonitor",
+      "pos": [
+        7389.427394168415,
+        -1159.8903689421563
+      ],
+      "size": [
+        305,
+        139
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PixaromaMonitor"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 135,
+      "type": "PixaromaRunTimer",
+      "pos": [
+        7718.925135044583,
+        -1087.9666683752725
+      ],
+      "size": [
+        174,
+        58
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PixaromaRunTimer",
+        "runTimerLastMs": 555576.3000000119
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 139,
+      "type": "8d1201dd-1d95-479d-932e-c4bfee3c3a1f",
+      "pos": [
+        6251.427309945177,
+        -913.4053347137487
+      ],
+      "size": [
+        479.5163042215827,
+        296.4856672226996
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "vae_audio",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        },
+        {
+          "label": "vae_video",
+          "name": "vae_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "vae_prev",
+          "name": "vae_name_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name_2"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            1098
+          ]
+        },
+        {
+          "label": "vae_prev",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            1099
+          ]
+        },
+        {
+          "label": "clip",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1100
+          ]
+        },
+        {
+          "label": "vae_audio",
+          "name": "VAE_1",
+          "type": "VAE",
+          "links": [
+            1101,
+            1102
+          ]
+        },
+        {
+          "label": "vae_video",
+          "name": "VAE_2",
+          "type": "VAE",
+          "links": [
+            1103,
+            1104,
+            1105,
+            1106
+          ]
+        }
+      ],
+      "title": "MODELS",
+      "properties": {
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+        "gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors",
+        "ltx-2.5-audio-vae-bf16.safetensors",
+        "ltx-2.5-video-vae-conv-bf16.safetensors",
+        "taeltx2_3.safetensors"
+      ],
+      "widgets_values_named": {
+        "unet_name": "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+        "clip_name": "gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors",
+        "vae_name": "ltx-2.5-audio-vae-bf16.safetensors",
+        "vae_name_1": "ltx-2.5-video-vae-conv-bf16.safetensors",
+        "vae_name_2": "taeltx2_3.safetensors"
+      },
+      "color": "#1f9285",
+      "bgcolor": "#233533"
+    }
+  ],
+  "links": [
+    [
+      3,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      24,
+      0,
+      2,
+      1,
+      "AUDIO"
+    ],
+    [
+      16,
+      13,
+      0,
+      14,
+      1,
+      "LATENT_UPSCALE_MODEL"
+    ],
+    [
+      32,
+      34,
+      1,
+      18,
+      1,
+      "LATENT"
+    ],
+    [
+      33,
+      30,
+      0,
+      19,
+      0,
+      "NOISE"
+    ],
+    [
+      34,
+      17,
+      0,
+      19,
+      1,
+      "GUIDER"
+    ],
+    [
+      35,
+      20,
+      0,
+      19,
+      2,
+      "SAMPLER"
+    ],
+    [
+      36,
+      21,
+      0,
+      19,
+      3,
+      "SIGMAS"
+    ],
+    [
+      37,
+      18,
+      0,
+      19,
+      4,
+      "LATENT"
+    ],
+    [
+      39,
+      19,
+      0,
+      22,
+      0,
+      "LATENT"
+    ],
+    [
+      43,
+      22,
+      1,
+      24,
+      0,
+      "LATENT"
+    ],
+    [
+      60,
+      30,
+      0,
+      31,
+      0,
+      "NOISE"
+    ],
+    [
+      61,
+      28,
+      0,
+      31,
+      1,
+      "GUIDER"
+    ],
+    [
+      62,
+      32,
+      0,
+      31,
+      2,
+      "SAMPLER"
+    ],
+    [
+      63,
+      33,
+      0,
+      31,
+      3,
+      "SIGMAS"
+    ],
+    [
+      64,
+      29,
+      0,
+      31,
+      4,
+      "LATENT"
+    ],
+    [
+      66,
+      31,
+      0,
+      34,
+      0,
+      "LATENT"
+    ],
+    [
+      152,
+      22,
+      0,
+      54,
+      2,
+      "LATENT"
+    ],
+    [
+      153,
+      54,
+      2,
+      1,
+      0,
+      "LATENT"
+    ],
+    [
+      158,
+      55,
+      2,
+      14,
+      0,
+      "LATENT"
+    ],
+    [
+      163,
+      34,
+      0,
+      55,
+      2,
+      "LATENT"
+    ],
+    [
+      1034,
+      128,
+      0,
+      27,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1055,
+      131,
+      1,
+      27,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      1056,
+      131,
+      1,
+      128,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      1058,
+      131,
+      3,
+      29,
+      1,
+      "LATENT"
+    ],
+    [
+      1063,
+      131,
+      6,
+      27,
+      2,
+      "FLOAT"
+    ],
+    [
+      1064,
+      131,
+      6,
+      2,
+      2,
+      "FLOAT"
+    ],
+    [
+      1065,
+      55,
+      0,
+      132,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      1066,
+      55,
+      1,
+      132,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1068,
+      14,
+      0,
+      132,
+      3,
+      "LATENT"
+    ],
+    [
+      1069,
+      131,
+      4,
+      132,
+      4,
+      "GUIDE_DATA"
+    ],
+    [
+      1070,
+      131,
+      5,
+      132,
+      5,
+      "MOTION_GUIDE_DATA"
+    ],
+    [
+      1071,
+      131,
+      0,
+      132,
+      6,
+      "MODEL"
+    ],
+    [
+      1072,
+      132,
+      0,
+      17,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1073,
+      132,
+      0,
+      54,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      1074,
+      132,
+      1,
+      17,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      1075,
+      132,
+      1,
+      54,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1076,
+      132,
+      2,
+      18,
+      0,
+      "LATENT"
+    ],
+    [
+      1077,
+      132,
+      3,
+      21,
+      0,
+      "MODEL"
+    ],
+    [
+      1078,
+      132,
+      3,
+      17,
+      0,
+      "MODEL"
+    ],
+    [
+      1079,
+      27,
+      0,
+      133,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      1080,
+      27,
+      1,
+      133,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1082,
+      131,
+      2,
+      133,
+      3,
+      "LATENT"
+    ],
+    [
+      1083,
+      131,
+      4,
+      133,
+      4,
+      "GUIDE_DATA"
+    ],
+    [
+      1084,
+      131,
+      5,
+      133,
+      5,
+      "MOTION_GUIDE_DATA"
+    ],
+    [
+      1085,
+      131,
+      0,
+      133,
+      6,
+      "MODEL"
+    ],
+    [
+      1086,
+      133,
+      0,
+      28,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1087,
+      133,
+      0,
+      55,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      1088,
+      133,
+      1,
+      28,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      1089,
+      133,
+      1,
+      55,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1090,
+      133,
+      2,
+      29,
+      0,
+      "LATENT"
+    ],
+    [
+      1091,
+      133,
+      3,
+      33,
+      0,
+      "MODEL"
+    ],
+    [
+      1092,
+      133,
+      3,
+      28,
+      0,
+      "MODEL"
+    ],
+    [
+      67,
+      2,
+      0,
+      37,
+      0,
+      "VIDEO"
+    ],
+    [
+      1050,
+      10,
+      0,
+      131,
+      0,
+      "MODEL"
+    ],
+    [
+      1098,
+      139,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      1099,
+      139,
+      1,
+      10,
+      1,
+      "VAE"
+    ],
+    [
+      1100,
+      139,
+      2,
+      131,
+      1,
+      "CLIP"
+    ],
+    [
+      1101,
+      139,
+      3,
+      24,
+      1,
+      "VAE"
+    ],
+    [
+      1102,
+      139,
+      3,
+      131,
+      2,
+      "VAE"
+    ],
+    [
+      1103,
+      139,
+      4,
+      1,
+      1,
+      "VAE"
+    ],
+    [
+      1104,
+      139,
+      4,
+      14,
+      2,
+      "VAE"
+    ],
+    [
+      1105,
+      139,
+      4,
+      132,
+      2,
+      "VAE"
+    ],
+    [
+      1106,
+      139,
+      4,
+      133,
+      2,
+      "VAE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Stage #2 Upscale",
+      "bounding": [
+        8760,
+        -1000,
+        1380,
+        530
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Stage #1",
+      "bounding": [
+        8760,
+        -450,
+        1380,
+        520
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Process Video",
+      "bounding": [
+        10160,
+        -570,
+        1010,
+        640
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "PREVIEW",
+      "bounding": [
+        6747.672823344005,
+        -948.8300094706174,
+        567.2484310119271,
+        755.3555639387627
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "8d1201dd-1d95-479d-932e-c4bfee3c3a1f",
+        "version": 1,
+        "state": {
+          "lastGroupId": 4,
+          "lastNodeId": 139,
+          "lastLinkId": 1111,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "MODELS",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            6262,
+            -756.8397552035213,
+            128,
+            148
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            6810,
+            -806.8397552035213,
+            128,
+            148
+          ]
+        },
+        "inputs": [
+          {
+            "id": "b6592004-7c5b-406a-946d-a0979add9481",
+            "name": "unet_name",
+            "type": "COMBO",
+            "linkIds": [
+              1107
+            ],
+            "pos": [
+              6366,
+              -732.8397552035213
+            ]
+          },
+          {
+            "id": "2281d322-3979-4895-855e-86ec4977b93b",
+            "name": "clip_name",
+            "type": "COMBO",
+            "linkIds": [
+              1108
+            ],
+            "pos": [
+              6366,
+              -712.8397552035213
+            ]
+          },
+          {
+            "id": "fa4f1e6a-4363-44ce-a2df-e925ca9db5eb",
+            "name": "vae_name",
+            "type": "COMBO",
+            "linkIds": [
+              1109
+            ],
+            "label": "vae_audio",
+            "pos": [
+              6366,
+              -692.8397552035213
+            ]
+          },
+          {
+            "id": "985ce8f9-c4c0-4bdc-95be-136ccd1ea20d",
+            "name": "vae_name_1",
+            "type": "COMBO",
+            "linkIds": [
+              1110
+            ],
+            "label": "vae_video",
+            "pos": [
+              6366,
+              -672.8397552035213
+            ]
+          },
+          {
+            "id": "036112fc-286d-4419-97ec-170650f5acdd",
+            "name": "vae_name_2",
+            "type": "COMBO",
+            "linkIds": [
+              1111
+            ],
+            "label": "vae_prev",
+            "pos": [
+              6366,
+              -652.8397552035213
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "d988d0a9-bed8-463f-8b0d-a2b5ae847912",
+            "name": "model",
+            "type": "MODEL",
+            "linkIds": [
+              1097
+            ],
+            "localized_name": "model",
+            "pos": [
+              6834,
+              -782.8397552035213
+            ]
+          },
+          {
+            "id": "37bed6dd-ec19-42dd-a409-79539f865582",
+            "name": "VAE",
+            "type": "VAE",
+            "linkIds": [
+              13
+            ],
+            "localized_name": "VAE",
+            "label": "vae_prev",
+            "pos": [
+              6834,
+              -762.8397552035213
+            ]
+          },
+          {
+            "id": "f47d2bc2-d014-4359-ba43-3cf29cf040eb",
+            "name": "CLIP",
+            "type": "CLIP",
+            "linkIds": [
+              1093
+            ],
+            "localized_name": "CLIP",
+            "label": "clip",
+            "pos": [
+              6834,
+              -742.8397552035213
+            ]
+          },
+          {
+            "id": "5ca58fb6-9c5f-46e8-819a-f9761f3c674c",
+            "name": "VAE_1",
+            "type": "VAE",
+            "linkIds": [
+              44
+            ],
+            "localized_name": "VAE_1",
+            "label": "vae_audio",
+            "pos": [
+              6834,
+              -722.8397552035213
+            ]
+          },
+          {
+            "id": "ce416852-14b2-40d8-b2d1-e2642c8fdcf1",
+            "name": "VAE_2",
+            "type": "VAE",
+            "linkIds": [
+              2
+            ],
+            "localized_name": "VAE_2",
+            "label": "vae_video",
+            "pos": [
+              6834,
+              -702.8397552035213
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 137,
+            "type": "LTX2AttentionTunerPatch",
+            "pos": [
+              6460.572880986533,
+              -1015.0890586022332
+            ],
+            "size": [
+              283.841796875,
+              178
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 1094
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "links": [
+                  1097
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "LTX2AttentionTunerPatch"
+            },
+            "widgets_values": [
+              "",
+              1,
+              1,
+              1,
+              1,
+              true
+            ],
+            "widgets_values_named": {
+              "blocks": "",
+              "video_scale": 1,
+              "audio_scale": 1,
+              "audio_to_video_scale": 1,
+              "video_to_audio_scale": 1,
+              "triton_kernels": true
+            }
+          },
+          {
+            "id": 35,
+            "type": "UNETLoader",
+            "pos": [
+              6451.699019187013,
+              -1154.0782783093996
+            ],
+            "size": [
+              300,
+              90
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "unet_name",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 1107
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODELLO",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  1094
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "UNETLoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.22.3"
+            },
+            "widgets_values": [
+              "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+              "default"
+            ],
+            "widgets_values_named": {
+              "unet_name": "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+              "weight_dtype": "default"
+            },
+            "color": "#222",
+            "bgcolor": "#000"
+          },
+          {
+            "id": 6,
+            "type": "VAELoaderKJ",
+            "pos": [
+              6450,
+              -760
+            ],
+            "size": [
+              300,
+              110
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae_name",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 1111
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  13
+                ]
+              }
+            ],
+            "title": "Tiny VAELoader KJ",
+            "properties": {
+              "Node name for S&R": "VAELoaderKJ",
+              "cnr_id": "comfyui-kjnodes",
+              "ver": "1.2.5"
+            },
+            "widgets_values": [
+              "taeltx2_3.safetensors",
+              "main_device",
+              "bf16"
+            ],
+            "widgets_values_named": {
+              "vae_name": "taeltx2_3.safetensors",
+              "device": "main_device",
+              "weight_dtype": "bf16"
+            },
+            "color": "#222",
+            "bgcolor": "#000"
+          },
+          {
+            "id": 136,
+            "type": "CLIPLoader",
+            "pos": [
+              6458.087097373424,
+              -593.6967283564555
+            ],
+            "size": [
+              270,
+              106
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_name",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 1108
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  1093
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPLoader"
+            },
+            "widgets_values": [
+              "gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors",
+              "ltxv",
+              "default"
+            ],
+            "widgets_values_named": {
+              "clip_name": "gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors",
+              "type": "ltxv",
+              "device": "default"
+            },
+            "color": "#222",
+            "bgcolor": "#000"
+          },
+          {
+            "id": 8,
+            "type": "VAELoader",
+            "pos": [
+              6450,
+              -420
+            ],
+            "size": [
+              290,
+              60
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "nome_vae",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 1109
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  44
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAELoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.22.2"
+            },
+            "widgets_values": [
+              "ltx-2.5-audio-vae-bf16.safetensors"
+            ],
+            "widgets_values_named": {
+              "vae_name": "ltx-2.5-audio-vae-bf16.safetensors"
+            },
+            "color": "#222",
+            "bgcolor": "#000"
+          },
+          {
+            "id": 36,
+            "type": "VAELoader",
+            "pos": [
+              6450,
+              -310
+            ],
+            "size": [
+              300,
+              60
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "nome_vae",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 1110
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  2
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAELoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.22.2"
+            },
+            "widgets_values": [
+              "ltx-2.5-video-vae-conv-bf16.safetensors"
+            ],
+            "widgets_values_named": {
+              "vae_name": "ltx-2.5-video-vae-conv-bf16.safetensors"
+            },
+            "color": "#222",
+            "bgcolor": "#000"
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 1094,
+            "origin_id": 35,
+            "origin_slot": 0,
+            "target_id": 137,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 1097,
+            "origin_id": 137,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 13,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 1093,
+            "origin_id": 136,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 2,
+            "type": "CLIP"
+          },
+          {
+            "id": 44,
+            "origin_id": 8,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 3,
+            "type": "VAE"
+          },
+          {
+            "id": 2,
+            "origin_id": 36,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 4,
+            "type": "VAE"
+          },
+          {
+            "id": 1107,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 35,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1108,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 136,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1109,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 8,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1110,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 36,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1111,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 6,
+            "target_slot": 0,
+            "type": "COMBO"
+          }
+        ],
+        "extra": {
+          "pixaromaGroups": []
+        }
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.794535664843787,
+      "offset": [
+        -6783.455267451603,
+        1422.444937052139
+      ]
+    },
+    "frontendVersion": "1.57.6",
+    "workflowRendererVersion": "LG",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "extensions": {
+    "seed_widgets": {
+      "30": 0
+    }
+  },
+  "version": 0.4,
+  "seed_widgets": {
+    "30": 0
+  }
+}
