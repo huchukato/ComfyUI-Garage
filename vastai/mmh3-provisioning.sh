@@ -32,6 +32,7 @@ NODES=(
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/huchukato/ComfyUI-PerfectVideoResolution"
     "https://github.com/huchukato/ComfyUI-MiniMaxH3-Director-Enhanced"
+    "https://github.com/veda-sparse/Veda-on-ComfyUI"
     "https://github.com/huchukato/ComfyUI-Gallery"
 )
 
@@ -75,6 +76,9 @@ CONTROLNET_MODELS=(
 MINIMAX_MODELS=(
     "vae|minimax_h3_video_vae_fp16.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors|5200000000"
     "vae|minimax_h3_audio_vae_fp32.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors|600000000"
+    # ── Veda sparse-attention predictors (FP8, 275MB each) ──
+    "veda|minimax_h3_r2va_veda_preview_fp8.safetensors|https://huggingface.co/Veda-Sparse/Minimax-H3-R2VA-Veda-Preview/resolve/main/minimax_h3_r2va_veda_preview_fp8.safetensors|250000000"
+    "veda|minimax_h3_t2va_veda_8nfe_600step_preview_fp8.safetensors|https://huggingface.co/Veda-Sparse/Minimax-H3-T2VA-Veda-8NFE-600Step-Preview/resolve/main/minimax_h3_t2va_veda_8nfe_600step_preview_fp8.safetensors|250000000"
     # ── Tiny H3 VAE for fast previews (Kijai TAE) → models/vae_approx ──
     "vae_approx|taeh3.safetensors|https://huggingface.co/Kijai/MiniMax-H3-TAE/resolve/main/vae_approx/taeh3.safetensors|9000000"
     # ── Pure INT8 ConvRot DiT (Comfy-Org official) — better quality than NVFP4 hybrid ──
