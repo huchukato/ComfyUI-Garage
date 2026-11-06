@@ -90,6 +90,20 @@ LTX_MODELS=(
 )
 
 
+# Qwen Image 2.1 models
+QWEN21_MODELS=(
+    # ── Qwen Image 2.1 official Comfy-Org int8_convrot — stock name the workflows expect ──
+    "diffusion_models|qwen_image_2.1_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors|7200000000"
+    # ── Heretic (uncensored) Qwen3-VL-8B encoder, int8 convrot — saved under the stock name the workflow expects ──
+    "text_encoders|qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors|https://huggingface.co/craftingmod/Qwen3-VL-8B-Heretic-INT8/resolve/main/qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors|10900000000"
+    "vae|qwen_image_2.1_vae_bf16.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors|670000000"
+    # ── Elusarca detail-enhancer LoRA (Qwen 2.1, ~80MB) ──
+    "loras|elusarcas-qwen2-1-detailer-v1.safetensors|https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors|79000000"
+    # ── QwenVL-Mod enhancer LLM: Defiant-Fable NEO-MAX Q6_K + mmproj ──
+    "LLM/GGUF|Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf|https://huggingface.co/DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF/resolve/main/Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf|8500000000"
+    "LLM/GGUF|mmproj-BF16.gguf|https://huggingface.co/DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF/resolve/main/mmproj-BF16.gguf|900000000"
+)
+
 YOLO_MODELS=(
     "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8m.pt"
 )
