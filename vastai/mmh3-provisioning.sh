@@ -19,7 +19,6 @@ PIP_PACKAGES=(
 NODES=(
     "https://github.com/huchukato/ComfyUI-TagForge"
     "https://github.com/huchukato/ComfyUI-QwenVL-Mod"
-    "https://github.com/huchukato/ComfyUI-CharSheet"
     "https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-HuggingFace"
