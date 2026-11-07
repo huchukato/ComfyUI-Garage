@@ -82,6 +82,7 @@ CONTROLNET_MODELS=(
 LARGE_MODELS=(
     # ── Qwen Image 2.1 (storyboard Stage1) ──
     "diffusion_models|qwen_image_2.1_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors|7200000000"
+    "diffusion_models|qwen_image_2.1_turbo_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_turbo_int8_convrot.safetensors|7300000000"
     "text_encoders|qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors|https://huggingface.co/craftingmod/Qwen3-VL-8B-Heretic-INT8/resolve/main/qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors|10900000000"
     "vae|qwen_image_2.1_vae_bf16.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors|670000000"
     "loras|elusarcas-qwen2-1-detailer-v1.safetensors|https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors|79000000"

@@ -70,6 +70,7 @@ CONTROLNET_MODELS=(
 QWEN21_MODELS=(
     # ── Qwen Image 2.1 official Comfy-Org int8_convrot — stock name the workflows expect ──
     "diffusion_models|qwen_image_2.1_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors|7200000000"
+    "diffusion_models|qwen_image_2.1_turbo_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_turbo_int8_convrot.safetensors|7300000000"
     # ── Heretic (uncensored) Qwen3-VL-8B encoder, int8 convrot — saved under the stock name the workflow expects ──
     "text_encoders|qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors|https://huggingface.co/craftingmod/Qwen3-VL-8B-Heretic-INT8/resolve/main/qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors|10900000000"
     "vae|qwen_image_2.1_vae_bf16.safetensors|https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors|670000000"
