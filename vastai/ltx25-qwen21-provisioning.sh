@@ -38,7 +38,7 @@ NODES=(
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
     "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
-    "https://github.com/huchukato/LTX-Director"
+    "https://github.com/huchukato/ComfyUI-LTX-Director-Enhanced"
 )
 
 WORKFLOWS=(
