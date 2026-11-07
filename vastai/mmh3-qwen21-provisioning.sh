@@ -46,7 +46,6 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-T2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Turbo-R2VA-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Singularity-R2VA-Qwen3.5.json"
-    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Director-Storyboard-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/minimax/MiniMaxH3-Director-Native-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/qwen21/QwenImageEdit21-Wildcards-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/qwen21/QwenImageEdit21-Turbo-Wildcards-Qwen3.5.json"
