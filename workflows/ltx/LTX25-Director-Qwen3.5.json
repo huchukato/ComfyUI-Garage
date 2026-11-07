@@ -1,8 +1,8 @@
 {
   "id": "90b6d2bc-24e3-4235-8edf-1ed7c69702ab",
   "revision": 0,
-  "last_node_id": 721,
-  "last_link_id": 1167,
+  "last_node_id": 725,
+  "last_link_id": 1213,
   "nodes": [
     {
       "id": 37,
@@ -90,7 +90,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            1050
+            1199
           ]
         }
       ],
@@ -106,7 +106,7 @@
         true,
         240,
         24,
-        "taeltx2_3.safetensors",
+        "none",
         ""
       ],
       "widgets_values_named": {
@@ -115,224 +115,22 @@
         "suppress_default_preview": true,
         "preview_frames": 240,
         "preview_fps": 24,
-        "tiny_vae": "taeltx2_3.safetensors",
+        "tiny_vae": "none",
         "preview": ""
       },
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 131,
-      "type": "LTXDirector",
-      "pos": [
-        7335.7143350676,
-        -912.8940791383891
-      ],
-      "size": [
-        1387.6613988749732,
-        1024
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 1050
-        },
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 1100
-        },
-        {
-          "name": "local_prompts",
-          "type": "STRING",
-          "link": 1167
-        },
-        {
-          "name": "audio_vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": 1102
-        },
-        {
-          "name": "optional_latent",
-          "shape": 7,
-          "type": "LATENT",
-          "link": null
-        },
-        {
-          "name": "global_prompt",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "links": [
-            1118,
-            1131
-          ]
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "links": [
-            1112
-          ]
-        },
-        {
-          "name": "video_latent",
-          "type": "LATENT",
-          "links": [
-            1115
-          ]
-        },
-        {
-          "name": "audio_latent",
-          "type": "LATENT",
-          "links": [
-            1119
-          ]
-        },
-        {
-          "name": "guide_data",
-          "type": "GUIDE_DATA",
-          "links": [
-            1116,
-            1129
-          ]
-        },
-        {
-          "name": "motion_guide_data",
-          "type": "MOTION_GUIDE_DATA",
-          "links": [
-            1117,
-            1130
-          ]
-        },
-        {
-          "name": "frame_rate",
-          "type": "FLOAT",
-          "links": [
-            1113,
-            1140
-          ]
-        },
-        {
-          "name": "combined_audio",
-          "type": "AUDIO",
-          "links": null
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LTXDirector",
-        "global_prompt": "A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \"H\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.",
-        "mainTrackEnabled": true,
-        "audioTrackEnabled": true,
-        "motionTrackEnabled": true,
-        "audioTrackWasEnabledBeforeOverride": false,
-        "inpaint_audio": true,
-        "override_audio": false,
-        "overrideAudio": false,
-        "showFilenames": true,
-        "use_custom_audio": true,
-        "use_custom_motion": true,
-        "frame_rate": 25,
-        "display_mode": "seconds",
-        "custom_width": 0,
-        "custom_height": 0,
-        "resize_method": "maintain aspect ratio",
-        "divisible_by": 32,
-        "img_compression": 18,
-        "guide_strength": "1.00,1.00,1.00,1.00,1.00,1.00",
-        "local_prompts": "",
-        "segment_lengths": "150,200,200,300,200,150",
-        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":60,\"showFilenames\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \\\"H\\\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.\",\"retake_global_prompt\":\"\",\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":1200,\"segments\":[{\"id\":\"17939866228680t2dy\",\"start\":0,\"length\":150,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_001%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_001%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"179398669294287659\",\"start\":150,\"length\":200,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_002%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_002%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986707132md4gh\",\"start\":350,\"length\":200,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_003%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_003%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986724009emjkd\",\"start\":550,\"length\":300,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_004%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_004%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986742576uiizk\",\"start\":850,\"length\":200,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_005%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_005%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986861293gwed7\",\"start\":1050,\"length\":150,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/banner.jpeg\",\"imageB64\":\"/api/view?filename=banner.jpeg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
-        "epsilon": 0.001,
-        "start_second": 0,
-        "end_second": 48,
-        "duration_seconds": 48,
-        "start_frame": 0,
-        "end_frame": 1200,
-        "duration_frames": 1200,
-        "cnr_id": "whatdreamscost-comfyui",
-        "ver": "2.0.0",
-        "timeline_ui": "",
-        "has_serialized_properties": true,
-        "propHeight": 90,
-        "globalPropHeight": 60,
-        "retakeMode": false,
-        "isSnapping": true
-      },
-      "widgets_values": [
-        0,
-        48,
-        48,
-        0,
-        1200,
-        1200,
-        "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":60,\"showFilenames\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \\\"H\\\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.\",\"retake_global_prompt\":\"\",\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":1200,\"segments\":[{\"id\":\"17939866228680t2dy\",\"start\":0,\"length\":150,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_001%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_001%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"179398669294287659\",\"start\":150,\"length\":200,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_002%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_002%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986707132md4gh\",\"start\":350,\"length\":200,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_003%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_003%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986724009emjkd\",\"start\":550,\"length\":300,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_004%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_004%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986742576uiizk\",\"start\":850,\"length\":200,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_005%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_005%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986861293gwed7\",\"start\":1050,\"length\":150,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/banner.jpeg\",\"imageB64\":\"/api/view?filename=banner.jpeg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
-        "150,200,200,300,200,150",
-        0.001,
-        "1.00,1.00,1.00,1.00,1.00,1.00",
-        true,
-        true,
-        true,
-        25,
-        "seconds",
-        0,
-        0,
-        "maintain aspect ratio",
-        32,
-        18,
-        false,
-        "",
-        ""
-      ],
-      "widgets_values_named": {
-        "start_second": 0,
-        "end_second": 48,
-        "duration_seconds": 48,
-        "start_frame": 0,
-        "end_frame": 1200,
-        "duration_frames": 1200,
-        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":60,\"showFilenames\":true,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \\\"H\\\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.\",\"retake_global_prompt\":\"\",\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":1200,\"segments\":[{\"id\":\"17939866228680t2dy\",\"start\":0,\"length\":150,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_001%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_001%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"179398669294287659\",\"start\":150,\"length\":200,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_002%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_002%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986707132md4gh\",\"start\":350,\"length\":200,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_003%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_003%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986724009emjkd\",\"start\":550,\"length\":300,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_004%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_004%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986742576uiizk\",\"start\":850,\"length\":200,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_005%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_005%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1793986861293gwed7\",\"start\":1050,\"length\":150,\"prompt\":\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/banner.jpeg\",\"imageB64\":\"/api/view?filename=banner.jpeg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
-        "segment_lengths": "150,200,200,300,200,150",
-        "epsilon": 0.001,
-        "guide_strength": "1.00,1.00,1.00,1.00,1.00,1.00",
-        "use_custom_audio": true,
-        "use_custom_motion": true,
-        "inpaint_audio": true,
-        "frame_rate": 25,
-        "display_mode": "seconds",
-        "custom_width": 0,
-        "custom_height": 0,
-        "resize_method": "maintain aspect ratio",
-        "divisible_by": 32,
-        "img_compression": 18,
-        "override_audio": false,
-        "local_prompts": "",
-        "timeline_ui": ""
-      },
-      "color": "#1f9e6a",
-      "bgcolor": "#23362f"
+      "color": "#5086d3",
+      "bgcolor": "#2b333e"
     },
     {
       "id": 130,
       "type": "MarkdownNote",
       "pos": [
-        7336.603283977172,
-        179.53411872436203
+        9134.280758239203,
+        202.67754961568136
       ],
       "size": [
-        1384.729519895238,
-        289.8258485389665
+        1169.216951420839,
+        304.4206543646808
       ],
       "flags": {},
       "order": 0,
@@ -394,7 +192,7 @@
       "outputs": [],
       "properties": {
         "Node name for S&R": "PixaromaRunTimer",
-        "runTimerLastMs": 214486.30000001192
+        "runTimerLastMs": 64034.39999997616
       },
       "color": "#1d1d1d",
       "bgcolor": "#2a2a2a"
@@ -407,8 +205,8 @@
         -910
       ],
       "size": [
-        476.1284876601503,
-        550.8137226938516
+        476.89544505043887,
+        309.78753000852885
       ],
       "flags": {},
       "order": 3,
@@ -463,7 +261,7 @@
           "name": "CLIP",
           "type": "CLIP",
           "links": [
-            1100
+            1200
           ]
         },
         {
@@ -471,8 +269,8 @@
           "name": "VAE_1",
           "type": "VAE",
           "links": [
-            1102,
-            1137
+            1137,
+            1201
           ]
         },
         {
@@ -483,13 +281,6 @@
             1114,
             1128,
             1139
-          ]
-        },
-        {
-          "name": "RESPONSE",
-          "type": "STRING",
-          "links": [
-            1161
           ]
         }
       ],
@@ -503,11 +294,7 @@
         "ltx-2.5-video-vae-conv-bf16.safetensors",
         "taeltx2_3.safetensors",
         "LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors",
-        0,
-        "A 48-second cinematic showcase: a purple chrome robot with a glowing neural halo and an \"H\" chest emblem awakens in a dark futuristic forge, demonstrates holographic creative tools, presents ForgeHub to the camera, ends with a heroic pose and the ForgeHub logo. Photorealistic, violet lighting, film-like atmosphere.",
-        "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-        "LTX › SFW T2V",
-        "10s"
+        0
       ],
       "widgets_values_named": {
         "unet_name": "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
@@ -516,11 +303,7 @@
         "vae_name_1": "ltx-2.5-video-vae-conv-bf16.safetensors",
         "vae_name_2": "taeltx2_3.safetensors",
         "lora_name": "LTX_10Eros-v15_LoRA_fro99-avgrank103.safetensors",
-        "strength_model": 0,
-        "prompt": "A 48-second cinematic showcase: a purple chrome robot with a glowing neural halo and an \"H\" chest emblem awakens in a dark futuristic forge, demonstrates holographic creative tools, presents ForgeHub to the camera, ends with a heroic pose and the ForgeHub logo. Photorealistic, violet lighting, film-like atmosphere.",
-        "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-        "preset_prompt": "LTX › SFW T2V",
-        "duration": "10s"
+        "strength_model": 0
       },
       "color": "#1f9285",
       "bgcolor": "#233533"
@@ -603,7 +386,7 @@
         {
           "name": "positive",
           "type": "CONDITIONING",
-          "link": 1112
+          "link": 1204
         },
         {
           "name": "frame_rate",
@@ -611,7 +394,7 @@
           "widget": {
             "name": "frame_rate"
           },
-          "link": 1113
+          "link": 1211
         },
         {
           "name": "vae",
@@ -621,29 +404,29 @@
         {
           "name": "latent",
           "type": "LATENT",
-          "link": 1115
+          "link": 1205
         },
         {
           "name": "guide_data",
           "type": "GUIDE_DATA",
-          "link": 1116
+          "link": 1207
         },
         {
           "name": "motion_guide_data",
           "shape": 7,
           "type": "MOTION_GUIDE_DATA",
-          "link": 1117
+          "link": 1209
         },
         {
           "name": "model",
           "shape": 7,
           "type": "MODEL",
-          "link": 1118
+          "link": 1202
         },
         {
           "name": "audio_latent",
           "type": "LATENT",
-          "link": 1119
+          "link": 1206
         },
         {
           "name": "noise",
@@ -731,19 +514,19 @@
         {
           "name": "guide_data",
           "type": "GUIDE_DATA",
-          "link": 1129
+          "link": 1208
         },
         {
           "name": "motion_guide_data",
           "shape": 7,
           "type": "MOTION_GUIDE_DATA",
-          "link": 1130
+          "link": 1210
         },
         {
           "name": "model",
           "shape": 7,
           "type": "MODEL",
-          "link": 1131
+          "link": 1203
         },
         {
           "name": "audio_latent",
@@ -822,7 +605,7 @@
           "widget": {
             "name": "fps"
           },
-          "link": 1140
+          "link": 1212
         }
       ],
       "outputs": [
@@ -920,8 +703,8 @@
       "id": 704,
       "type": "PixaromaGroupSwitch",
       "pos": [
-        6255.7111326199465,
-        -298.9808285355532
+        6257.417121173986,
+        -546.5114098577482
       ],
       "size": [
         460,
@@ -999,8 +782,8 @@
       "id": 705,
       "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
-        6253.037773756401,
-        -76.61413228834273
+        6258.288482043747,
+        -345.25079102406255
       ],
       "size": [
         460.3590002640684,
@@ -1039,7 +822,7 @@
       ],
       "size": [
         521.9509782988307,
-        621.7914427084531
+        334
       ],
       "flags": {},
       "order": 16,
@@ -1153,30 +936,28 @@
       "id": 719,
       "type": "PixaromaShowText",
       "pos": [
-        6750.046759637091,
-        -92.841937200958
+        6743.567936246554,
+        -80.31496649290638
       ],
       "size": [
-        558.6493901497352,
-        555.0966862995128
+        562.6676077436905,
+        493.04649027754726
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
           "name": "source",
           "type": "*",
-          "link": 1161
+          "link": 1213
         }
       ],
       "outputs": [
         {
           "name": "text",
           "type": "STRING",
-          "links": [
-            1167
-          ]
+          "links": []
         }
       ],
       "title": "Qwen Prompt",
@@ -1184,13 +965,226 @@
         "Node name for S&R": "PixaromaShowText"
       },
       "widgets_values": [
-        "In a dark, industrial futuristic forge filled with floating sparks and molten metal residue, a sleek purple chrome robot with a glowing neural halo and an \"H\" chest emblem awakens from a dormant state, its optical sensors flickering to life as the ambient hum of machinery and the crackle of cooling metal fill the air. First, the robot’s chest panel slides open with a soft mechanical whir, projecting a shimmering holographic interface that cycles through creative tools—3D modeling grids, neural design brushes, and texture synthesis swatches—each element rotating slowly in midair as the robot’s arms gesture precisely toward them. Then, the holograms coalesce into a dynamic presentation of ForgeHub, with floating data streams and wireframe schematics swirling around the robot’s torso as it turns its head to face the camera directly, its voice calm and synthetic: “ForgeHub. Where imagination meets precision.” Meanwhile, the violet lighting intensifies slightly, casting sharp, cinematic reflections off the robot’s polished chrome surface and the forge’s metallic walls, while the camera executes a slow, continuous dolly-in from a medium shot to a tight close-up on the robot’s face, maintaining a steady, deliberate pace. As the robot’s presentation concludes, it steps back into a wide stance, raising one arm in a heroic pose with its chest emblem glowing brighter, and the ForgeHub logo materializes in bold, metallic letters beside it as the holographic tools fade into a soft afterglow. Finally, the robot’s neural halo pulses rhythmically in sync with a low, resonant hum, and the forge’s background dimmer to emphasize the robot and logo as the scene resolves into a still, powerful tableau. No dialogue beyond the single line; ambient sounds include the distant drip of molten metal, the soft whir of holographic projectors, and the subtle mechanical clicks of the robot’s movements, all layered to create an immersive, high-tech atmosphere."
+        "A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \"H\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots. | In a dark futuristic forge, the eyes of a sleek purple robot flicker to life with a soft violet glow. It slowly raises its head, surveying its surroundings as shimmering violet holographic particles swirl around its chassis. Dramatic rim lighting traces the contours of its metallic body against the shadowed background. The camera pushes in slowly, drawing the viewer deeper into the moment. Sound: a low electric hum fills the space, punctuated by the occasional crackle of distant sparks. No speech. | The purple robot strides purposefully toward a holographic workbench, its movements fluid and precise. As it approaches, floating UI panels ignite with light, displaying cascading image grids and video timelines. It sweeps one hand across the interface, causing panels to ripple and rearrange. Behind it, a vast purple nebula shimmers in the distance. Medium shot framing captures both the robot and the expanding digital workspace. Sound: the robot speaks in a deep resonant male voice, calm and confident: \"Welcome to ForgeHub — your AI creation studio.\" | Cinematic macro close-up on the robot's hands as they forge a glowing purple orb of pure energy. Molten light and flying sparks swirl within the orb, coalescing into fleeting images and video frames that spin and reform. The dark background dissolves into soft violet bokeh, isolating the radiant creation at the center of frame. Sound: the robot's deep male voice, steady and deliberate: \"Images, videos, voices — all forged in one place.\" | The purple robot faces the camera directly in a friendly talking-head composition, its expression warm and inviting. It gestures naturally with one hand as it speaks, the movement smooth and assured. A clean dark studio background keeps the focus on the robot, with a soft purple rim light separating it from the shadows. Medium close-up framing creates an intimate, personal connection. Sound: the robot speaks in a deep warm male voice, enthusiastic and welcoming: \"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\" | Low-angle epic shot of the purple robot striking a confident, commanding pose. Its chest emblem pulses with brilliant light, and a neural halo around its head ignites fully, radiating outward. Bright light rays burst behind it, filling the frame with dramatic, cinematic grandeur. The camera holds steady, emphasizing the robot's authority and presence. Sound: the robot speaks in a deep powerful male voice, with strong emphasis: \"ForgeHub — forge what's next.\" | The camera slowly zooms out in a sweeping cinematic pullback, revealing multiple robotic arms welding around a glowing ForgeHub logo emblem at the center of the frame. Sparks drift lazily downward as the logo takes shape, while intricate purple circuitry glows and pulses throughout the background. The screen gently fades to darkness as the emblem reaches full brilliance. Sound: atmospheric music rises and swells, carrying a sense of wonder and completion. No speech."
       ],
       "widgets_values_named": {
-        "text": "In a dark, industrial futuristic forge filled with floating sparks and molten metal residue, a sleek purple chrome robot with a glowing neural halo and an \"H\" chest emblem awakens from a dormant state, its optical sensors flickering to life as the ambient hum of machinery and the crackle of cooling metal fill the air. First, the robot’s chest panel slides open with a soft mechanical whir, projecting a shimmering holographic interface that cycles through creative tools—3D modeling grids, neural design brushes, and texture synthesis swatches—each element rotating slowly in midair as the robot’s arms gesture precisely toward them. Then, the holograms coalesce into a dynamic presentation of ForgeHub, with floating data streams and wireframe schematics swirling around the robot’s torso as it turns its head to face the camera directly, its voice calm and synthetic: “ForgeHub. Where imagination meets precision.” Meanwhile, the violet lighting intensifies slightly, casting sharp, cinematic reflections off the robot’s polished chrome surface and the forge’s metallic walls, while the camera executes a slow, continuous dolly-in from a medium shot to a tight close-up on the robot’s face, maintaining a steady, deliberate pace. As the robot’s presentation concludes, it steps back into a wide stance, raising one arm in a heroic pose with its chest emblem glowing brighter, and the ForgeHub logo materializes in bold, metallic letters beside it as the holographic tools fade into a soft afterglow. Finally, the robot’s neural halo pulses rhythmically in sync with a low, resonant hum, and the forge’s background dimmer to emphasize the robot and logo as the scene resolves into a still, powerful tableau. No dialogue beyond the single line; ambient sounds include the distant drip of molten metal, the soft whir of holographic projectors, and the subtle mechanical clicks of the robot’s movements, all layered to create an immersive, high-tech atmosphere."
+        "text": "A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \"H\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots. | In a dark futuristic forge, the eyes of a sleek purple robot flicker to life with a soft violet glow. It slowly raises its head, surveying its surroundings as shimmering violet holographic particles swirl around its chassis. Dramatic rim lighting traces the contours of its metallic body against the shadowed background. The camera pushes in slowly, drawing the viewer deeper into the moment. Sound: a low electric hum fills the space, punctuated by the occasional crackle of distant sparks. No speech. | The purple robot strides purposefully toward a holographic workbench, its movements fluid and precise. As it approaches, floating UI panels ignite with light, displaying cascading image grids and video timelines. It sweeps one hand across the interface, causing panels to ripple and rearrange. Behind it, a vast purple nebula shimmers in the distance. Medium shot framing captures both the robot and the expanding digital workspace. Sound: the robot speaks in a deep resonant male voice, calm and confident: \"Welcome to ForgeHub — your AI creation studio.\" | Cinematic macro close-up on the robot's hands as they forge a glowing purple orb of pure energy. Molten light and flying sparks swirl within the orb, coalescing into fleeting images and video frames that spin and reform. The dark background dissolves into soft violet bokeh, isolating the radiant creation at the center of frame. Sound: the robot's deep male voice, steady and deliberate: \"Images, videos, voices — all forged in one place.\" | The purple robot faces the camera directly in a friendly talking-head composition, its expression warm and inviting. It gestures naturally with one hand as it speaks, the movement smooth and assured. A clean dark studio background keeps the focus on the robot, with a soft purple rim light separating it from the shadows. Medium close-up framing creates an intimate, personal connection. Sound: the robot speaks in a deep warm male voice, enthusiastic and welcoming: \"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\" | Low-angle epic shot of the purple robot striking a confident, commanding pose. Its chest emblem pulses with brilliant light, and a neural halo around its head ignites fully, radiating outward. Bright light rays burst behind it, filling the frame with dramatic, cinematic grandeur. The camera holds steady, emphasizing the robot's authority and presence. Sound: the robot speaks in a deep powerful male voice, with strong emphasis: \"ForgeHub — forge what's next.\" | The camera slowly zooms out in a sweeping cinematic pullback, revealing multiple robotic arms welding around a glowing ForgeHub logo emblem at the center of the frame. Sparks drift lazily downward as the logo takes shape, while intricate purple circuitry glows and pulses throughout the background. The screen gently fades to darkness as the emblem reaches full brilliance. Sound: atmospheric music rises and swells, carrying a sense of wonder and completion. No speech."
       },
       "color": "#9b8ad5",
       "bgcolor": "#36333f"
+    },
+    {
+      "id": 724,
+      "type": "LTXDirector",
+      "pos": [
+        7335.7143350676,
+        -912.8940791383891
+      ],
+      "size": [
+        1378.1540770715083,
+        1331
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1199
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1200
+        },
+        {
+          "name": "audio_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 1201
+        },
+        {
+          "name": "optional_latent",
+          "shape": 7,
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "global_prompt",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            1202,
+            1203
+          ]
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            1204
+          ]
+        },
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "links": [
+            1205
+          ]
+        },
+        {
+          "name": "audio_latent",
+          "type": "LATENT",
+          "links": [
+            1206
+          ]
+        },
+        {
+          "name": "guide_data",
+          "type": "GUIDE_DATA",
+          "links": [
+            1207,
+            1208
+          ]
+        },
+        {
+          "name": "motion_guide_data",
+          "type": "MOTION_GUIDE_DATA",
+          "links": [
+            1209,
+            1210
+          ]
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "links": [
+            1211,
+            1212
+          ]
+        },
+        {
+          "name": "combined_audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "assembled_prompt",
+          "type": "STRING",
+          "links": [
+            1213
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXDirector",
+        "global_prompt": "A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \"H\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.",
+        "mainTrackEnabled": true,
+        "audioTrackEnabled": true,
+        "motionTrackEnabled": true,
+        "audioTrackWasEnabledBeforeOverride": false,
+        "inpaint_audio": true,
+        "override_audio": false,
+        "overrideAudio": false,
+        "showFilenames": false,
+        "use_custom_audio": true,
+        "use_custom_motion": true,
+        "frame_rate": 25,
+        "display_mode": "seconds",
+        "custom_width": 0,
+        "custom_height": 0,
+        "resize_method": "maintain aspect ratio",
+        "divisible_by": 32,
+        "img_compression": 18,
+        "guide_strength": "1.00,1.00,1.00,1.00,1.00,1.00",
+        "local_prompts": "The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech. | The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a deep resonant male voice, calm and confident: \"Welcome to ForgeHub — your AI creation studio.\" | Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says in a deep male voice, steady and deliberate: \"Images, videos, voices — all forged in one place.\" | The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a deep warm male voice, enthusiastic and welcoming: \"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\" | Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says in a deep powerful male voice, with emphasis: \"ForgeHub — forge what's next.\" | Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.",
+        "segment_lengths": "150,200,200,300,200,150",
+        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":299,\"showFilenames\":false,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \\\"H\\\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.\",\"retake_global_prompt\":\"\",\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":1200,\"segments\":[{\"id\":\"1794009047306uhj32\",\"start\":0,\"length\":150,\"prompt\":\"The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_001%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_001%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009092224mawd4\",\"start\":150,\"length\":200,\"prompt\":\"The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a deep resonant male voice, calm and confident: \\\"Welcome to ForgeHub — your AI creation studio.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_002%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_002%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009124940ncelz\",\"start\":350,\"length\":200,\"prompt\":\"Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says in a deep male voice, steady and deliberate: \\\"Images, videos, voices — all forged in one place.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_003%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_003%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009160683icrvb\",\"start\":550,\"length\":300,\"prompt\":\"The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a deep warm male voice, enthusiastic and welcoming: \\\"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_004%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_004%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"179400918135268l70\",\"start\":850,\"length\":200,\"prompt\":\"Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says in a deep powerful male voice, with emphasis: \\\"ForgeHub — forge what's next.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_005%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_005%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009211756zzson\",\"start\":1050,\"length\":150,\"prompt\":\"Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/banner.jpeg\",\"imageB64\":\"/api/view?filename=banner.jpeg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "epsilon": 0.001,
+        "start_second": 0,
+        "end_second": 48,
+        "duration_seconds": 48,
+        "start_frame": 0,
+        "end_frame": 1200,
+        "duration_frames": 1200,
+        "cnr_id": "whatdreamscost-comfyui",
+        "ver": "2.0.0",
+        "timeline_ui": "",
+        "has_serialized_properties": true,
+        "propHeight": 90,
+        "globalPropHeight": 299,
+        "retakeMode": false,
+        "isSnapping": true,
+        "enhance": true,
+        "enhancer_model": "Qwen3.5-9B-Defiant-Fable-Heretic-GGUF :: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
+        "enhancer_preset": "LTX › Director"
+      },
+      "widgets_values": [
+        0,
+        48,
+        48,
+        0,
+        1200,
+        1200,
+        "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":299,\"showFilenames\":false,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \\\"H\\\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.\",\"retake_global_prompt\":\"\",\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":1200,\"segments\":[{\"id\":\"1794009047306uhj32\",\"start\":0,\"length\":150,\"prompt\":\"The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_001%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_001%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009092224mawd4\",\"start\":150,\"length\":200,\"prompt\":\"The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a deep resonant male voice, calm and confident: \\\"Welcome to ForgeHub — your AI creation studio.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_002%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_002%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009124940ncelz\",\"start\":350,\"length\":200,\"prompt\":\"Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says in a deep male voice, steady and deliberate: \\\"Images, videos, voices — all forged in one place.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_003%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_003%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009160683icrvb\",\"start\":550,\"length\":300,\"prompt\":\"The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a deep warm male voice, enthusiastic and welcoming: \\\"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_004%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_004%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"179400918135268l70\",\"start\":850,\"length\":200,\"prompt\":\"Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says in a deep powerful male voice, with emphasis: \\\"ForgeHub — forge what's next.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_005%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_005%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009211756zzson\",\"start\":1050,\"length\":150,\"prompt\":\"Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/banner.jpeg\",\"imageB64\":\"/api/view?filename=banner.jpeg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "150,200,200,300,200,150",
+        0.001,
+        "1.00,1.00,1.00,1.00,1.00,1.00",
+        true,
+        true,
+        true,
+        25,
+        "seconds",
+        0,
+        0,
+        "maintain aspect ratio",
+        32,
+        18,
+        false,
+        true,
+        "Qwen3.5-9B-Defiant-Fable-Heretic-GGUF :: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
+        "LTX › Director",
+        "The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech. | The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a deep resonant male voice, calm and confident: \"Welcome to ForgeHub — your AI creation studio.\" | Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says in a deep male voice, steady and deliberate: \"Images, videos, voices — all forged in one place.\" | The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a deep warm male voice, enthusiastic and welcoming: \"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\" | Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says in a deep powerful male voice, with emphasis: \"ForgeHub — forge what's next.\" | Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.",
+        ""
+      ],
+      "widgets_values_named": {
+        "start_second": 0,
+        "end_second": 48,
+        "duration_seconds": 48,
+        "start_frame": 0,
+        "end_frame": 1200,
+        "duration_frames": 1200,
+        "timeline_data": "{\"mainTrackEnabled\":true,\"audioTrackEnabled\":true,\"motionTrackEnabled\":true,\"propHeight\":90,\"globalPropHeight\":299,\"showFilenames\":false,\"overrideAudio\":false,\"inpaint_audio\":true,\"global_prompt\":\"A cinematic showcase featuring a purple and chrome humanoid robot with a glowing neural-network halo and an \\\"H\\\" chest emblem. The robot awakens in a dark futuristic forge, demonstrates its creative powers through holographic interfaces and energy manipulation, then presents ForgeHub directly to the camera before a heroic finale. Sleek sci-fi aesthetic, violet and purple lighting, photorealistic, atmospheric particles, dramatic cinematic shots.\",\"retake_global_prompt\":\"\",\"retakeMode\":false,\"retakeStart\":24,\"retakeLength\":48,\"retakePrompt\":\"\",\"retakeStrength\":1,\"retakeVideo\":null,\"normalStartFrame\":0,\"normalDurationFrames\":1200,\"segments\":[{\"id\":\"1794009047306uhj32\",\"start\":0,\"length\":150,\"prompt\":\"The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_001%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_001%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009092224mawd4\",\"start\":150,\"length\":200,\"prompt\":\"The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a deep resonant male voice, calm and confident: \\\"Welcome to ForgeHub — your AI creation studio.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_002%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_002%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009124940ncelz\",\"start\":350,\"length\":200,\"prompt\":\"Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says in a deep male voice, steady and deliberate: \\\"Images, videos, voices — all forged in one place.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_003%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_003%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009160683icrvb\",\"start\":550,\"length\":300,\"prompt\":\"The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a deep warm male voice, enthusiastic and welcoming: \\\"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_004%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_004%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"179400918135268l70\",\"start\":850,\"length\":200,\"prompt\":\"Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says in a deep powerful male voice, with emphasis: \\\"ForgeHub — forge what's next.\\\"\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/Qwen21_2026-11-06_005%.jpg\",\"imageB64\":\"/api/view?filename=Qwen21_2026-11-06_005%25.jpg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false},{\"id\":\"1794009211756zzson\",\"start\":1050,\"length\":150,\"prompt\":\"Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.\",\"type\":\"image\",\"imageFile\":\"whatdreamscost/banner.jpeg\",\"imageB64\":\"/api/view?filename=banner.jpeg&type=input&subfolder=whatdreamscost\",\"isEndFrame\":false}],\"motionSegments\":[],\"audioSegments\":[]}",
+        "segment_lengths": "150,200,200,300,200,150",
+        "epsilon": 0.001,
+        "guide_strength": "1.00,1.00,1.00,1.00,1.00,1.00",
+        "use_custom_audio": true,
+        "use_custom_motion": true,
+        "inpaint_audio": true,
+        "frame_rate": 25,
+        "display_mode": "seconds",
+        "custom_width": 0,
+        "custom_height": 0,
+        "resize_method": "maintain aspect ratio",
+        "divisible_by": 32,
+        "img_compression": 18,
+        "override_audio": false,
+        "enhance": true,
+        "enhancer_model": "Qwen3.5-9B-Defiant-Fable-Heretic-GGUF :: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
+        "enhancer_preset": "LTX › Director",
+        "local_prompts": "The purple robot's eyes flicker on in a dark futuristic forge, it slowly raises its head, violet holographic particles swirl around, dramatic rim lighting, slow push-in camera. Ambient: low electric hum, sparks crackling. No speech. | The robot walks to a holographic workbench, floating UI panels light up showing image grids and video timelines, it sweeps a hand across them, purple nebula background, medium shot. He says in a deep resonant male voice, calm and confident: \"Welcome to ForgeHub — your AI creation studio.\" | Close-up on the robot's hands forging a glowing purple orb of energy, molten light and sparks forming images and video frames inside it, dark background, violet bokeh, cinematic macro. He says in a deep male voice, steady and deliberate: \"Images, videos, voices — all forged in one place.\" | The robot faces the camera directly, friendly talking head, gesturing naturally with one hand, clean dark studio background, soft purple rim light, medium close-up. He says in a deep warm male voice, enthusiastic and welcoming: \"Connect your workflows, pick a model, and create. From a single still to a full cinematic scene — ForgeHub handles the forge, you bring the vision.\" | Low-angle shot, the robot strikes a confident pose, chest emblem pulses bright, neural halo fully lit, light rays burst behind, epic cinematic framing. He says in a deep powerful male voice, with emphasis: \"ForgeHub — forge what's next.\" | Slow cinematic zoom out revealing robotic arms welding around a glowing ForgeHub logo emblem at center, sparks drifting down, purple circuitry glowing in background, screen gently fades. Atmospheric music rises. No speech.",
+        "timeline_ui": ""
+      },
+      "color": "#1f9e6a",
+      "bgcolor": "#23362f"
     }
   ],
   "links": [
@@ -1211,68 +1205,12 @@
       "VAE"
     ],
     [
-      1112,
-      131,
-      1,
-      146,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      1113,
-      131,
-      6,
-      146,
-      1,
-      "FLOAT"
-    ],
-    [
       1114,
       139,
       4,
       146,
       2,
       "VAE"
-    ],
-    [
-      1115,
-      131,
-      2,
-      146,
-      3,
-      "LATENT"
-    ],
-    [
-      1116,
-      131,
-      4,
-      146,
-      4,
-      "GUIDE_DATA"
-    ],
-    [
-      1117,
-      131,
-      5,
-      146,
-      5,
-      "MOTION_GUIDE_DATA"
-    ],
-    [
-      1118,
-      131,
-      0,
-      146,
-      6,
-      "MODEL"
-    ],
-    [
-      1119,
-      131,
-      3,
-      146,
-      7,
-      "LATENT"
     ],
     [
       1125,
@@ -1305,30 +1243,6 @@
       147,
       3,
       "VAE"
-    ],
-    [
-      1129,
-      131,
-      4,
-      147,
-      4,
-      "GUIDE_DATA"
-    ],
-    [
-      1130,
-      131,
-      5,
-      147,
-      5,
-      "MOTION_GUIDE_DATA"
-    ],
-    [
-      1131,
-      131,
-      0,
-      147,
-      6,
-      "MODEL"
     ],
     [
       1132,
@@ -1379,26 +1293,10 @@
       "VAE"
     ],
     [
-      1140,
-      131,
-      6,
-      148,
-      4,
-      "FLOAT"
-    ],
-    [
       1144,
       703,
       0,
       708,
-      0,
-      "IMAGE"
-    ],
-    [
-      1147,
-      148,
-      1,
-      703,
       0,
       "IMAGE"
     ],
@@ -1411,9 +1309,105 @@
       "AUDIO"
     ],
     [
-      1161,
-      139,
+      1147,
+      148,
+      1,
+      703,
+      0,
+      "IMAGE"
+    ],
+    [
+      1202,
+      724,
+      0,
+      146,
+      6,
+      "MODEL"
+    ],
+    [
+      1203,
+      724,
+      0,
+      147,
+      6,
+      "MODEL"
+    ],
+    [
+      1204,
+      724,
+      1,
+      146,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      1205,
+      724,
+      2,
+      146,
+      3,
+      "LATENT"
+    ],
+    [
+      1206,
+      724,
+      3,
+      146,
+      7,
+      "LATENT"
+    ],
+    [
+      1207,
+      724,
+      4,
+      146,
+      4,
+      "GUIDE_DATA"
+    ],
+    [
+      1208,
+      724,
+      4,
+      147,
+      4,
+      "GUIDE_DATA"
+    ],
+    [
+      1209,
+      724,
       5,
+      146,
+      5,
+      "MOTION_GUIDE_DATA"
+    ],
+    [
+      1210,
+      724,
+      5,
+      147,
+      5,
+      "MOTION_GUIDE_DATA"
+    ],
+    [
+      1211,
+      724,
+      6,
+      146,
+      1,
+      "FLOAT"
+    ],
+    [
+      1212,
+      724,
+      6,
+      148,
+      4,
+      "FLOAT"
+    ],
+    [
+      1213,
+      724,
+      8,
       719,
       0,
       "STRING"
@@ -1427,35 +1421,27 @@
       "VIDEO"
     ],
     [
-      1050,
+      1199,
       10,
       0,
-      131,
+      724,
       0,
       "MODEL"
     ],
     [
-      1100,
+      1200,
       139,
       2,
-      131,
+      724,
       1,
       "CLIP"
     ],
     [
-      1167,
-      719,
-      0,
-      131,
-      2,
-      "STRING"
-    ],
-    [
-      1102,
+      1201,
       139,
       3,
-      131,
-      3,
+      724,
+      2,
       "VAE"
     ]
   ],
@@ -1504,8 +1490,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 29,
-          "lastNodeId": 721,
-          "lastLinkId": 1167,
+          "lastNodeId": 725,
+          "lastLinkId": 1213,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1517,7 +1503,7 @@
             5710.518397681863,
             -818.2400048482339,
             135.87890625,
-            268
+            188
           ]
         },
         "outputNode": {
@@ -1526,7 +1512,7 @@
             6810,
             -806.8397552035213,
             128,
-            168
+            148
           ]
         },
         "inputs": [
@@ -1616,54 +1602,6 @@
               5822.397303931863,
               -674.2400048482339
             ]
-          },
-          {
-            "id": "251fdfef-8db6-42fa-a734-9fdf61a0dc39",
-            "name": "prompt",
-            "type": "STRING",
-            "linkIds": [
-              1163
-            ],
-            "pos": [
-              5822.397303931863,
-              -654.2400048482339
-            ]
-          },
-          {
-            "id": "f37abf0d-76dd-4b6d-aad9-315dd246407e",
-            "name": "model_name",
-            "type": "COMBO",
-            "linkIds": [
-              1164
-            ],
-            "pos": [
-              5822.397303931863,
-              -634.2400048482339
-            ]
-          },
-          {
-            "id": "68c52f4d-615c-4971-8b98-213ab4ad6003",
-            "name": "preset_prompt",
-            "type": "COMBO",
-            "linkIds": [
-              1165
-            ],
-            "pos": [
-              5822.397303931863,
-              -614.2400048482339
-            ]
-          },
-          {
-            "id": "dcfd9f75-06c1-4c1c-b406-c0e3251e40f7",
-            "name": "duration",
-            "type": "COMBO",
-            "linkIds": [
-              1166
-            ],
-            "pos": [
-              5822.397303931863,
-              -594.2400048482339
-            ]
           }
         ],
         "outputs": [
@@ -1734,18 +1672,6 @@
             "pos": [
               6834,
               -702.8397552035213
-            ]
-          },
-          {
-            "id": "c41e3c76-c80e-4120-bad3-5852bf43435c",
-            "name": "RESPONSE",
-            "type": "STRING",
-            "linkIds": [
-              1162
-            ],
-            "pos": [
-              6834,
-              -682.8397552035213
             ]
           }
         ],
@@ -2122,118 +2048,6 @@
             },
             "color": "#d350ac",
             "bgcolor": "#3e2b38"
-          },
-          {
-            "id": 721,
-            "type": "QwenVL_Unified_PromptEnhancer",
-            "pos": [
-              5939.820653757182,
-              -1079.538251579513
-            ],
-            "size": [
-              431.874609375,
-              544
-            ],
-            "flags": {},
-            "order": 7,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "model_name",
-                "name": "model_name",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model_name"
-                },
-                "link": 1164
-              },
-              {
-                "localized_name": "prompt_text",
-                "name": "prompt_text",
-                "type": "STRING",
-                "widget": {
-                  "name": "prompt_text"
-                },
-                "link": 1163
-              },
-              {
-                "localized_name": "enhancement_style",
-                "name": "enhancement_style",
-                "type": "COMBO",
-                "widget": {
-                  "name": "enhancement_style"
-                },
-                "link": 1165
-              },
-              {
-                "localized_name": "duration",
-                "name": "duration",
-                "type": "COMBO",
-                "widget": {
-                  "name": "duration"
-                },
-                "link": 1166
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "ENHANCED_OUTPUT",
-                "name": "ENHANCED_OUTPUT",
-                "type": "STRING",
-                "links": [
-                  1162
-                ]
-              }
-            ],
-            "properties": {
-              "Node name for S&R": "QwenVL_Unified_PromptEnhancer"
-            },
-            "widgets_values": [
-              "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-              "",
-              "Enhance",
-              "None",
-              "None",
-              8192,
-              0.7,
-              0.9,
-              1.1,
-              false,
-              "auto",
-              "None (FP16)",
-              "auto",
-              false,
-              false,
-              1942040304,
-              "randomize",
-              false,
-              false,
-              "5s"
-            ],
-            "widgets_values_named": {
-              "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
-              "prompt_text": "",
-              "enhancement_style": "Enhance",
-              "camera_tag": "None",
-              "style_tag": "None",
-              "max_tokens": 8192,
-              "temperature": 0.7,
-              "top_p": 0.9,
-              "repetition_penalty": 1.1,
-              "english_output": false,
-              "device": "auto",
-              "quantization": "None (FP16)",
-              "attention_mode": "auto",
-              "use_torch_compile": false,
-              "keep_model_loaded": false,
-              "seed": 1942040304,
-              "control_after_generate": "randomize",
-              "keep_last_prompt": false,
-              "passthrough": false,
-              "duration": "5s"
-            },
-            "color": "#d97706",
-            "bgcolor": "#451a03"
           }
         ],
         "groups": [],
@@ -2349,46 +2163,6 @@
             "target_id": 709,
             "target_slot": 2,
             "type": "FLOAT"
-          },
-          {
-            "id": 1162,
-            "origin_id": 721,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 5,
-            "type": "STRING"
-          },
-          {
-            "id": 1163,
-            "origin_id": -10,
-            "origin_slot": 7,
-            "target_id": 721,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 1164,
-            "origin_id": -10,
-            "origin_slot": 8,
-            "target_id": 721,
-            "target_slot": 0,
-            "type": "COMBO"
-          },
-          {
-            "id": 1165,
-            "origin_id": -10,
-            "origin_slot": 9,
-            "target_id": 721,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
-            "id": 1166,
-            "origin_id": -10,
-            "origin_slot": 10,
-            "target_id": 721,
-            "target_slot": 3,
-            "type": "COMBO"
           }
         ],
         "extra": {
@@ -2400,8 +2174,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 29,
-          "lastNodeId": 721,
-          "lastLinkId": 1167,
+          "lastNodeId": 725,
+          "lastLinkId": 1213,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -3430,8 +3204,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 29,
-          "lastNodeId": 721,
-          "lastLinkId": 1167,
+          "lastNodeId": 725,
+          "lastLinkId": 1213,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -4636,8 +4410,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 29,
-          "lastNodeId": 721,
-          "lastLinkId": 1167,
+          "lastNodeId": 725,
+          "lastLinkId": 1213,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -5028,8 +4802,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 29,
-          "lastNodeId": 721,
-          "lastLinkId": 1167,
+          "lastNodeId": 725,
+          "lastLinkId": 1213,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -5592,10 +5366,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.9613881544609842,
+      "scale": 0.6566410453254454,
       "offset": [
-        -5964.392989895541,
-        1396.019549605159
+        -5331.851654167572,
+        1430.1481211934092
       ]
     },
     "frontendVersion": "1.57.6",
@@ -5606,9 +5380,7 @@
     "VHS_KeepIntermediate": true
   },
   "extensions": {
-    "seed_widgets": {
-      "30": 0
-    }
+    "seed_widgets": {}
   },
   "version": 0.4,
   "seed_widgets": {}
