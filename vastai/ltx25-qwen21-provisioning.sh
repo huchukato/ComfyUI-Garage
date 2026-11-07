@@ -80,8 +80,8 @@ CONTROLNET_MODELS=(
 LTX_MODELS=(
     "diffusion_models|ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|https://huggingface.co/huchukato/garage/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors|21000000000"
     "text_encoders|gemma4-12b-uncensored-heretic-ltx2.5-comfy-int8-convrot.safetensors|https://huggingface.co/DeepNeuralNerd/Gemma-4-12B-it-uncensored-heretic-DeepNeuralNerd-LTX_2.5_ComfyUI/resolve/main/Gemma-4-12B-it-uncensored-heretic%20-%20DeepNeuralNerd%20-LTX%202.5-ComfyUI-int8convrot.safetensors|13000000000"
+    "text_encoders|gemma4_e2b_it_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/gemma-4/resolve/main/text_encoders/gemma4_e2b_it_int8_convrot.safetensors|5000000000"
     "vae|taeltx2_3.safetensors|https://huggingface.co/Kijai/LTX2.3_comfy/resolve/main/vae/taeltx2_3.safetensors|45000000"
-    "vae|ltx-2.5-video-vae-conv-bf16.safetensors|https://huggingface.co/huchukato/garage/resolve/main/vae/ltx-2.5-video-vae-conv-bf16.safetensors|1400000000"
     "vae|ltx-2.5-audio-vae-bf16.safetensors|https://huggingface.co/huchukato/garage/resolve/main/vae/ltx-2.5-audio-vae-bf16.safetensors|350000000"
     "diffusion_models|ltx-2.3-22b-distilled-1.1_transformer_only_int8_convrot.safetensors|https://huggingface.co/Kijai/LTX2.3_comfy/resolve/main/diffusion_models/ltx-2.3-22b-distilled-1.1_transformer_only_int8_convrot.safetensors|12000000000"
     "vae|ltx-2.5-video-vae-bf16.safetensors|https://huggingface.co/huchukato/garage/resolve/main/vae/ltx-2.5-video-vae-bf16.safetensors|1400000000"
