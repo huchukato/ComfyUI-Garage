@@ -79,25 +79,20 @@ MINIMAX_MODELS=(
     # ── Tiny H3 VAE for fast previews (Kijai TAE) → models/vae_approx ──
     "vae_approx|taeh3.safetensors|https://huggingface.co/Kijai/MiniMax-H3-TAE/resolve/main/vae_approx/taeh3.safetensors|9000000"
     # ── Pure INT8 ConvRot DiT (Comfy-Org official) — better quality than NVFP4 hybrid ──
-    "diffusion_models|minimax_h3_fl2va_pruned_int8_convrot.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors|20000000000"
     # ── Singularity fusion (T2V/I2V/R2V/V2V in un unet solo) — sostituisce ref2va nativo ──
-    "diffusion_models|Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors|https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity/resolve/main/Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors|20000000000"
+    "diffusion_models|Minimax-h3_Singularity_ref2va_v2_pruned_int8.safetensors|https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity/resolve/main/Minimax-h3_Singularity_ref2va_v2_pruned_int8.safetensors|20000000000"
+    "diffusion_models|PRISM_DMAD_PDMD_int8.safetensors|https://huggingface.co/OliviaRossi/Minimax-h3_Singularity-x-10Eros-Max_PRISM/resolve/main/PRISM_DMAD_PDMD_int8.safetensors|20000000000"
     # ── Full H3 conditioning TE: Ultra Heretic INT8 ConvRot (uncensored, ethanfel) ──
     "text_encoders|qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|15000000000"
     # ── lightx2v Turbo LoRA 8-step 768p (Apache-2.0, trained at 1344×768) — no custom node needed ──
-    "loras|minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors|1950000000"
-    "loras|minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors|1950000000"
     # ── fal Realism People LoRA (trigger: r34l1sm) ──
-    "loras|h3-realism-people-t2v-i2v-r2v.safetensors|https://huggingface.co/fal/MiniMax-H3-Realism-People-LoRA/resolve/main/h3-realism-people-t2v-i2v-r2v.safetensors|100000000"
     # ── akatz Character-Swap LoRA — ref2v character swap ──
-    "loras|h3_character_swap_pro4500_1000.safetensors|https://huggingface.co/akatz-ai/MiniMax-H3-Character-Swap-LoRA/resolve/main/h3_character_swap_pro4500_1000.safetensors|150000000"
     # ── TenStrip combined turbo LoRA (4.4GB) — the exact delta fused into the TURBO checkpoint; use with 10Eros non-turbo ──
-    "loras|lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|https://huggingface.co/TenStrip/MinimaxH3-Turbo_Shenanigans/resolve/main/lightx2v_hybrid-4to8step-full-fusion_Turbo_pruned.safetensors|4300000000"
     # ── QwenVL-Mod enhancer LLM: Defiant-Fable NEO-MAX Q6_K + mmproj (Analyze built-in) ──
     "LLM/GGUF|Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf|https://huggingface.co/DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF/resolve/main/Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf|8500000000"
     "LLM/GGUF|mmproj-BF16.gguf|https://huggingface.co/DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF/resolve/main/mmproj-BF16.gguf|900000000"
     # ── 10Eros-Max Hybrid Beta5 INT8 NON-turbo (TenStrip, 21GB) — turbo via LoRA esterno regolabile (no color shift baked-in) ──
-    "diffusion_models|10Eros_Max_h3_hybrid_beta5_int8.safetensors|https://huggingface.co/TenStrip/10Eros-Max/resolve/main/10Eros_Max_h3_hybrid_beta5_int8.safetensors|20000000000"
+    "diffusion_models|10Eros_Max_h3_8stepTURBO_beta7_fix1-native_int8_protected_edges_HQ.safetensors|https://huggingface.co/TenStrip/10Eros-Max/resolve/main/10Eros_Max_h3_8stepTURBO_beta7_fix1-native_int8_protected_edges_HQ.safetensors|20000000000"
     # ── Prebuilt TensorRT engines (RTX PRO 6000, TRT 10.15.1.29) — skips ~1min compile at first use ──
     "tensorrt/rife|rife425_ensemble_False_scale_1_sim_fp16_large_1x3x720x720_1x3x1440x1440_1x3x1920x1920_10.15.1.29.trt|https://huggingface.co/huchukato/garage/resolve/main/tensorrt/rife/rife425_ensemble_False_scale_1_sim_fp16_large_1x3x720x720_1x3x1440x1440_1x3x1920x1920_10.15.1.29.trt|40000000"
     "tensorrt/upscaler|2xLexicaRRDBNet_fp16_1x3x256x256_2x3x512x512_2x3x2048x2048_10.15.1.29.trt|https://huggingface.co/huchukato/garage/resolve/main/tensorrt/upscaler/2xLexicaRRDBNet_fp16_1x3x256x256_2x3x512x512_2x3x2048x2048_10.15.1.29.trt|30000000"
