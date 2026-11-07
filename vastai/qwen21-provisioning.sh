@@ -19,7 +19,6 @@ PIP_PACKAGES=(
 NODES=(
     "https://github.com/huchukato/ComfyUI-TagForge"
     "https://github.com/huchukato/ComfyUI-QwenVL-Mod"
-    "https://github.com/huchukato/ComfyUI-CharSheet"
     "https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-Upscaler-TensorRT-Auto"
     "https://github.com/huchukato/ComfyUI-HuggingFace"
@@ -40,6 +39,7 @@ WORKFLOWS=(
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/Pony-XL-Outpaint.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/utils/RIFE-Upscale-TensorRT.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/qwen21/QwenImageEdit21-Wildcards-Qwen3.5.json"
+    "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/qwen21/QwenImageEdit21-Turbo-Wildcards-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/qwen21/QwenImage21-T2I-Wildcards-Qwen3.5.json"
     "https://github.com/huchukato/ComfyUI-Garage/raw/master/workflows/pony/PimpMyPony-Wildcards-HiResFix-FaceDet.json"
 )
