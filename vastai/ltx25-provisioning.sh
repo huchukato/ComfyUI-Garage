@@ -10,7 +10,6 @@ APT_PACKAGES=(
 PIP_PACKAGES=(
     "--upgrade --force-reinstall --no-cache-dir https://github.com/JamePeng/llama-cpp-python/releases/download/v0.4.3-cu131-linux-20261017/llama_cpp_python-0.4.3+cu131-cp312-cp312-linux_x86_64.whl"
     "huggingface_hub"
-    "comfyui-manager"
     "hf-transfer"
     "sageattention"
     "kornia==0.8.2"
@@ -20,6 +19,7 @@ PIP_PACKAGES=(
 )
 
 NODES=(
+    "https://github.com/ltdrdata/ComfyUI-Manager"
     "https://github.com/huchukato/ComfyUI-TagForge"
     "https://github.com/huchukato/ComfyUI-QwenVL-Mod"
     "https://github.com/Lightricks/ComfyUI-LTXVideo"

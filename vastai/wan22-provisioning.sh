@@ -9,14 +9,13 @@ APT_PACKAGES=(
 PIP_PACKAGES=(
     "--upgrade --force-reinstall --no-cache-dir https://github.com/JamePeng/llama-cpp-python/releases/download/v0.4.3-cu131-linux-20261017/llama_cpp_python-0.4.3+cu131-cp312-cp312-linux_x86_64.whl"
     "sageattention"
-    "comfyui-manager"
     "tensorrt_cu13==10.15.1.29"
     "tensorrt_cu13_bindings==10.15.1.29"
     "tensorrt_cu13_libs==10.15.1.29"
 )
 
 NODES=(
-    "https://github.com/Comfy-Org/ComfyUI-Manager"
+    "https://github.com/ltdrdata/ComfyUI-Manager"
     "https://github.com/huchukato/ComfyUI-TagForge"
     "https://github.com/huchukato/ComfyUI-QwenVL-Mod"
     "https://github.com/huchukato/ComfyUI-RIFE-TensorRT-Auto"
