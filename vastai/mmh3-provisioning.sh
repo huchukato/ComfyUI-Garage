@@ -78,12 +78,9 @@ MINIMAX_MODELS=(
     "vae|minimax_h3_audio_vae_fp32.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors|600000000"
     # ── Tiny H3 VAE for fast previews (Kijai TAE) → models/vae_approx ──
     "vae_approx|taeh3.safetensors|https://raw.githubusercontent.com/madebyollin/taehv/main/safetensors/taeh3.safetensors|22000000"
-    "vae|taeh3.safetensors|https://raw.githubusercontent.com/madebyollin/taehv/main/safetensors/taeh3.safetensors|22000000"
     # ── Pure INT8 ConvRot DiT (Comfy-Org official) — better quality than NVFP4 hybrid ──
     # ── Singularity fusion (T2V/I2V/R2V/V2V in un unet solo) — sostituisce ref2va nativo ──
-    "diffusion_models|Minimax-h3_Singularity_ref2va_v2_pruned_int8.safetensors|https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity/resolve/main/Minimax-h3_Singularity_ref2va_v2_pruned_int8.safetensors|20000000000"
     "diffusion_models|PRISM_DMAD_PDMD_int8.safetensors|https://huggingface.co/OliviaRossi/Minimax-h3_Singularity-x-10Eros-Max_PRISM/resolve/main/PRISM_DMAD_PDMD_int8.safetensors|20000000000"
-    "diffusion_models|Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors|https://huggingface.co/OliviaRossi/Minimax-H3-Hybrid-DMAD-PDMD/resolve/main/Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors|19000000000"
     # ── Full H3 conditioning TE: Ultra Heretic INT8 ConvRot (uncensored, ethanfel) ──
     "text_encoders|qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|https://huggingface.co/Momoking/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4/resolve/main/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors|15000000000"
     # ── lightx2v Turbo LoRA 8-step 768p (Apache-2.0, trained at 1344×768) — no custom node needed ──
@@ -98,6 +95,14 @@ MINIMAX_MODELS=(
     # ── Prebuilt TensorRT engines (RTX PRO 6000, TRT 10.15.1.29) — skips ~1min compile at first use ──
     "tensorrt/rife|rife425_ensemble_False_scale_1_sim_fp16_large_1x3x720x720_1x3x1440x1440_1x3x1920x1920_10.15.1.29.trt|https://huggingface.co/huchukato/garage/resolve/main/tensorrt/rife/rife425_ensemble_False_scale_1_sim_fp16_large_1x3x720x720_1x3x1440x1440_1x3x1920x1920_10.15.1.29.trt|40000000"
     "tensorrt/upscaler|2xLexicaRRDBNet_fp16_1x3x256x256_2x3x512x512_2x3x2048x2048_10.15.1.29.trt|https://huggingface.co/huchukato/garage/resolve/main/tensorrt/upscaler/2xLexicaRRDBNet_fp16_1x3x256x256_2x3x512x512_2x3x2048x2048_10.15.1.29.trt|30000000"
+    # ── Director NG extra models (Comfy-Org official): SAM3 segmentation, SDPose, MoGe depth ──
+    "checkpoints|sam3.1_multiplex_fp16.safetensors|https://huggingface.co/Comfy-Org/sam3.1/resolve/main/checkpoints/sam3.1_multiplex_fp16.safetensors|1600000000"
+    "diffusion_models|rt_detr_v4-x-hgnet_fp16.safetensors|https://huggingface.co/Comfy-Org/SDPose/resolve/main/diffusion_models/rt_detr_v4-x-hgnet_fp16.safetensors|110000000"
+    "checkpoints|sdpose_wholebody_fp16.safetensors|https://huggingface.co/Comfy-Org/SDPose/resolve/main/checkpoints/sdpose_wholebody_fp16.safetensors|1800000000"
+    "geometry_estimation|moge_2_vitl_normal_fp16.safetensors|https://huggingface.co/Comfy-Org/MoGe/resolve/main/geometry_estimation/moge_2_vitl_normal_fp16.safetensors|620000000"
+    # ── H3 LoRA style (serverless manifest parity) ──
+    "loras|h3-realism-people-t2v-i2v-r2v.safetensors|https://huggingface.co/fal/MiniMax-H3-Realism-People-LoRA/resolve/main/h3-realism-people-t2v-i2v-r2v.safetensors|120000000"
+    "loras|h3_character_swap_v1.5.safetensors|https://huggingface.co/akatz-ai/MiniMax-H3-Character-Swap-LoRA/resolve/main/h3_character_swap_v1.5.safetensors|140000000"
 )
 
 
