@@ -95,7 +95,8 @@ LARGE_MODELS=(
     "vae|minimax_h3_video_vae_fp16.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors|5200000000"
     "vae|minimax_h3_audio_vae_fp32.safetensors|https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors|600000000"
     # ── Tiny H3 VAE for fast previews (Kijai TAE) → models/vae_approx ──
-    "vae_approx|taeh3.safetensors|https://huggingface.co/Kijai/MiniMax-H3-TAE/resolve/main/vae_approx/taeh3.safetensors|9000000"
+    "vae_approx|taeh3.safetensors|https://raw.githubusercontent.com/madebyollin/taehv/main/safetensors/taeh3.safetensors|22000000"
+    "vae|taeh3.safetensors|https://raw.githubusercontent.com/madebyollin/taehv/main/safetensors/taeh3.safetensors|22000000"
     # ── Pure INT8 ConvRot DiT (Comfy-Org official) — better quality than NVFP4 hybrid ──
     # ── Singularity fusion (T2V/I2V/R2V/V2V in un unet solo) — sostituisce ref2va nativo ──
     "diffusion_models|Minimax-h3_Singularity_ref2va_v2_pruned_int8.safetensors|https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity/resolve/main/Minimax-h3_Singularity_ref2va_v2_pruned_int8.safetensors|20000000000"
@@ -148,6 +149,27 @@ function provisioning_start() {
     done
 
     echo "✅ Workflows downloaded to: $WF_BASE"
+
+    # ── Director NG example workflows (fork upstream) → cartella dedicata ──
+    echo "🔄 Downloading Director NG workflows..."
+    NG_WF_BASE="https://raw.githubusercontent.com/huchukato/ComfyUI-MiniMaxH3-Director-Enhanced/main/example_workflows"
+    NG_WF_FILES=(
+        "H3 Director - 1 Text to video.json"
+        "H3 Director - 2 Characters and voice.json"
+        "H3 Director - 3 Music video.json"
+        "H3 Director - 4 Shots from pictures.json"
+        "H3 Director - 5 Pictures.json"
+        "H3 Director - 6 Storyboard.json"
+        "H3 Director - 7 Control video.json"
+        "H3 Director - 8 Inpaint (replace a figure).json"
+        "H3 Director - 9 Custom sampling (advanced).json"
+    )
+    mkdir -p "$WF_BASE/Director NG"
+    for wf in "${NG_WF_FILES[@]}"; do
+        wf_enc=$(printf '%s' "$wf" | sed 's/ /%20/g')
+        wget -q --tries=3 --timeout=30 "$NG_WF_BASE/$wf_enc" -O "$WF_BASE/Director NG/$wf" || echo "⚠️ NG workflow $wf download failed"
+    done
+    echo "✅ Director NG workflows downloaded"
 
     # ── Download PMP wildcards from Garage (yaml files) ──
     echo "🔄 Downloading PMP wildcards from Garage..."
