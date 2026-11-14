@@ -917,12 +917,12 @@
         1344,
         "",
         5,
-        "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
         8,
         "euler",
         "simple",
         12,
-        4,
+        3,
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
         "MiniMax › NSFW I2VA",
         "5s",
@@ -934,12 +934,12 @@
         "height": 1344,
         "prompt": "",
         "value_1": 5,
-        "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        "unet_name": "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
         "steps": 8,
         "sampler_name": "euler",
         "scheduler": "simple",
         "shift_video": 12,
-        "shift_audio": 4,
+        "shift_audio": 3,
         "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
         "preset_prompt": "MiniMax › NSFW I2VA",
         "duration": "5s",
@@ -2332,18 +2332,18 @@
               "Node name for S&R": "UNETLoader",
               "models": [
                 {
-                  "name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
-                  "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+                  "name": "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
+                  "url": "https://huggingface.co/OliviaRossi/Minimax-H3-Hybrid-DMAD-PDMD/resolve/main/Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
                   "directory": "diffusion_models"
                 }
               ]
             },
             "widgets_values": [
-              "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+              "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
               "default"
             ],
             "widgets_values_named": {
-              "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+              "unet_name": "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
               "weight_dtype": "default"
             }
           },
@@ -2537,7 +2537,7 @@
             ],
             "flags": {},
             "order": 16,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "model",

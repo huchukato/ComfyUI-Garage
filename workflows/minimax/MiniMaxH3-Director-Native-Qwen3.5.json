@@ -886,7 +886,7 @@
         "previewExposures": []
       },
       "widgets_values": [
-        "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
         "Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors",
         "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
         "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
@@ -894,7 +894,7 @@
         "minimax_h3_audio_vae_fp32.safetensors"
       ],
       "widgets_values_named": {
-        "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        "unet_name": "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
         "unet_name_1": "Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors",
         "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
         "clip_name": "qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors",
@@ -2921,18 +2921,18 @@
               "Node name for S&R": "UNETLoader",
               "models": [
                 {
-                  "name": "minimax_h3_fl2va_pruned_fp8_scaled.safetensors",
-                  "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_fp8_scaled.safetensors",
+                  "name": "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
+                  "url": "https://huggingface.co/OliviaRossi/Minimax-H3-Hybrid-DMAD-PDMD/resolve/main/Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
                   "directory": "diffusion_models"
                 }
               ]
             },
             "widgets_values": [
-              "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+              "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
               "default"
             ],
             "widgets_values_named": {
-              "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+              "unet_name": "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
               "weight_dtype": "default"
             },
             "color": "#323",
@@ -2980,18 +2980,18 @@
               "Node name for S&R": "UNETLoader",
               "models": [
                 {
-                  "name": "minimax_h3_ref2va_pruned_fp8_scaled.safetensors",
-                  "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_fp8_scaled.safetensors",
+                  "name": "PRISM_DMAD_PDMD_int8.safetensors",
+                  "url": "https://huggingface.co/OliviaRossi/Minimax-h3_Singularity-x-10Eros-Max_PRISM/resolve/main/PRISM_DMAD_PDMD_int8.safetensors",
                   "directory": "diffusion_models"
                 }
               ]
             },
             "widgets_values": [
-              "Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors",
+              "PRISM_DMAD_PDMD_int8.safetensors",
               "default"
             ],
             "widgets_values_named": {
-              "unet_name": "Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors",
+              "unet_name": "PRISM_DMAD_PDMD_int8.safetensors",
               "weight_dtype": "default"
             },
             "color": "#323",

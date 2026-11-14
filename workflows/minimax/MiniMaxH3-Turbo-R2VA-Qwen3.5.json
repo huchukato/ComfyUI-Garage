@@ -621,10 +621,10 @@
         1344,
         "",
         5,
-        "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
-        20,
-        "res_multistep",
-        "simple",
+        "PRISM_DMAD_PDMD_int8.safetensors",
+        8,
+        "euler",
+        "beta",
         12,
         3,
         "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
@@ -640,10 +640,10 @@
         "height": 1344,
         "prompt": "",
         "value_1": 5,
-        "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
-        "steps": 20,
-        "sampler_name": "res_multistep",
-        "scheduler": "simple",
+        "unet_name": "PRISM_DMAD_PDMD_int8.safetensors",
+        "steps": 8,
+        "sampler_name": "euler",
+        "scheduler": "beta",
         "shift_video": 12,
         "shift_audio": 3,
         "model_name": "GGUF: Qwen3.5-9B-The-Defiant-Fable-Uncnr-Heretic-NEO-MAX-Q6_K.gguf",
@@ -2072,18 +2072,18 @@
               "Node name for S&R": "UNETLoader",
               "models": [
                 {
-                  "name": "MiniMax-H3_Ref2VA-INT8-ConvRot-HQ.safetensors",
-                  "url": "https://huggingface.co/DmitryDB/MiniMax-H3-ComfyUI-Quants/resolve/main/Ref2VA/MiniMax-H3_Ref2VA-INT8-ConvRot-HQ.safetensors",
+                  "name": "PRISM_DMAD_PDMD_int8.safetensors",
+                  "url": "https://huggingface.co/OliviaRossi/Minimax-h3_Singularity-x-10Eros-Max_PRISM/resolve/main/PRISM_DMAD_PDMD_int8.safetensors",
                   "directory": "diffusion_models"
                 }
               ]
             },
             "widgets_values": [
-              "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+              "PRISM_DMAD_PDMD_int8.safetensors",
               "default"
             ],
             "widgets_values_named": {
-              "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+              "unet_name": "PRISM_DMAD_PDMD_int8.safetensors",
               "weight_dtype": "default"
             }
           },
@@ -3005,7 +3005,7 @@
             ],
             "flags": {},
             "order": 20,
-            "mode": 0,
+            "mode": 4,
             "inputs": [
               {
                 "localized_name": "model",

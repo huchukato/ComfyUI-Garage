@@ -782,9 +782,9 @@
         1344,
         "Doggystyle: the man penetrates the woman from behind",
         5,
-        "10Eros_Max_h3_hybrid_beta5_int8.safetensors",
-        20,
-        "res_multistep",
+        "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
+        8,
+        "euler",
         "simple",
         12,
         3,
@@ -799,9 +799,9 @@
         "height": 1344,
         "prompt": "Doggystyle: the man penetrates the woman from behind",
         "value_1": 5,
-        "unet_name": "10Eros_Max_h3_hybrid_beta5_int8.safetensors",
-        "steps": 20,
-        "sampler_name": "res_multistep",
+        "unet_name": "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
+        "steps": 8,
+        "sampler_name": "euler",
         "scheduler": "simple",
         "shift_video": 12,
         "shift_audio": 3,
@@ -2010,18 +2010,18 @@
               "Node name for S&R": "UNETLoader",
               "models": [
                 {
-                  "name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
-                  "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+                  "name": "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
+                  "url": "https://huggingface.co/OliviaRossi/Minimax-H3-Hybrid-DMAD-PDMD/resolve/main/Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
                   "directory": "diffusion_models"
                 }
               ]
             },
             "widgets_values": [
-              "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+              "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
               "default"
             ],
             "widgets_values_named": {
-              "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+              "unet_name": "Minimax-H3-Hybrid-DMAD-PDMD_int8.safetensors",
               "weight_dtype": "default"
             }
           },
