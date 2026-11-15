@@ -103,6 +103,7 @@ MINIMAX_MODELS=(
     # ── H3 LoRA style (serverless manifest parity) ──
     "loras|h3-realism-people-t2v-i2v-r2v.safetensors|https://huggingface.co/fal/MiniMax-H3-Realism-People-LoRA/resolve/main/h3-realism-people-t2v-i2v-r2v.safetensors|120000000"
     "loras|h3_character_swap_v1.5.safetensors|https://huggingface.co/akatz-ai/MiniMax-H3-Character-Swap-LoRA/resolve/main/h3_character_swap_v1.5.safetensors|140000000"
+    "loras|mmh3-cinematic-lora-v2.safetensors|https://huggingface.co/huchukato/garage/resolve/main/loras/mmh3/mmh3-cinematic-lora-v2.safetensors|150000000"
 )
 
 
